@@ -1,0 +1,11 @@
+# MF Overhaul 0.3.44: user: "the kicked-off dust has to match the explosion: larger explosions produce more dust, smaller equally".
+#   Tiers (sfx expl_desc c12): HE 105-122 mm and mortars -> dust_expl_sm, UHE 152 mm -> dust_expl, bombs / heavy rockets ->
+#   dust_expl_big. Until now the big tier was smaller than the medium one (14 puffs / 20 m vs 16 / 22). Now proportional:
+#   small 8 puffs, 1.5 -> 10 m, 24 s; medium 16 puffs, 3 -> 20 m, 38 s; big 28 puffs, 4 -> 32 m, 46 s. Opacity, hue, motion as 0.3.42.
+# 6 operations
+row~|pgens_desc|dust_expl_sm|c5=f:8
+row~|pgens_desc|dust_expl|c5=f:16
+row~|pgens_desc|dust_expl_big|c5=f:28
+row~|parts_desc|dust_expl_rnd_sm|c9=v:1.5;1.5|c10=v:10;10|c13=v:24;0.06;0.1;0.15
+row~|parts_desc|dust_expl_rnd|c9=v:3;3|c10=v:20;20|c13=v:38;0.06;0.1;0.3
+row~|parts_desc|dust_expl_rnd_big|c9=v:4;4|c10=v:32;32|c13=v:46;0.06;0.1;0.6

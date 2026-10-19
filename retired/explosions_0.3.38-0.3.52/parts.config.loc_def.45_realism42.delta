@@ -1,0 +1,13 @@
+# MF Overhaul 0.3.49: user on 0.3.48: "too much upward drift of smoke and dust from the initial explosion; make them thicker and
+#   dissipate smoother, they seem to just disappear fast".
+#   Rise: smoke +0.08/+0.06/+0.04 -> +0.02/+0.015/+0.01, dust -0.015 -> -0.02 (stays down).
+#   Thicker: smoke birth alpha 0xB8 -> 0xE0, dust 0xA0 -> 0xC8.
+#   Smoother: life small/medium/big 14/22/32 -> 18/28/40 s with the fade point at 0.5, so each puff holds dense for half its life
+#   and then thins over 9 / 14 / 20 s instead of fading from almost the start.
+# 6 operations
+row~|parts_desc|smoke_expl|c6=v:0;0.02|c11=a:-529898918|c13=v:18;0.5;0.05;0.15
+row~|parts_desc|smoke_expl_big|c6=v:0;0.015|c11=a:-530293676|c13=v:28;0.5;0.05;0.2
+row~|parts_desc|smoke_bomb|c6=v:0;0.01|c11=a:-530556848|c13=v:40;0.5;0.05;0.2
+row~|parts_desc|dust_expl_rnd_sm|c6=v:0;-0.02|c11=a:-928473980|c13=v:18;0.5;0.1;0.15
+row~|parts_desc|dust_expl_rnd|c6=v:0;-0.02|c11=a:-928473980|c13=v:28;0.5;0.1;0.3
+row~|parts_desc|dust_expl_rnd_big|c6=v:0;-0.02|c11=a:-928473980|c13=v:40;0.5;0.1;0.6

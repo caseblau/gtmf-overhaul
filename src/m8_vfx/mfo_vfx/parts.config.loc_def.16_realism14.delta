@@ -1,0 +1,6 @@
+# azcf delta  base=parts.config.loc_def.bin  target=parts_realism14.bin  2026-10-15T16:34:15
+# kids=0 name~=0 node-=0 node+=0 order=0 row-=0 row~=4 row+=0 shape~=0 types~=0
+row~|parts_desc|dust_shot|c11=a:-4671336|c12=a:12105880
+row~|parts_desc|dust_expl_rnd_sm|c11=a:-1330071400|c12=a:12105880
+row~|parts_desc|dust_expl_rnd|c11=a:-1330071400|c12=a:12105880
+row~|parts_desc|dust_expl_rnd_big|c11=a:-1330071400|c12=a:12105880

@@ -1,0 +1,7 @@
+i_unflat:unflat()
+{
+	expl_smk_0                    , sound           , loc_def ;
+	shot_smk                      , sound           , loc_def ;
+	shot_nebel                    , sound           , loc_def ;
+	expl_ks_0                     , sound           , loc_def ;
+}

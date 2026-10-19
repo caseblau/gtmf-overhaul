@@ -1,0 +1,14 @@
+# MF Overhaul 0.3.50: user: "particles of ground are too visible; tune them proportional to dust and smoke so they look good and
+#   realistic". Backs off the 0.3.46 push by about a third, keeping the launch and fall:
+#   clods 0.6 -> 0.35 m, 0xFF564636 -> 0xFF4E4030, medium/big counts 80/100 -> 60/70;
+#   earth lumps end 7/12/10 -> 6/10/9 m, 0xFF5A4A38 -> 0xFF524232 (big/bomb 0xFF64523E -> 0xFF5A4A38), pieces 100/100/80 -> 80/80/65.
+# 9 operations
+row~|pgens_desc|dirt_expl_big|c5=f:80
+row~|pgens_desc|dirt_bomb|c5=f:65
+row~|parts_desc|ext_dirt|c9=v:0.35;0.35|c10=v:0.35;0.35|c11=a:-11648976|c12=a:-11648976
+row~|parts_desc|dirt_expl|c10=v:6;6|c11=a:-11386318|c12=a:5390898
+row~|parts_desc|dirt_expl_big|c10=v:10;10|c11=a:-10859976|c12=a:5917240
+row~|parts_desc|dirt_bomb|c10=v:9;9|c11=a:-10859976|c12=a:5917240
+row~|pgens_desc|ext_dirt_med|c5=f:60
+row~|pgens_desc|ext_dirt_big|c5=f:70
+row~|pgens_desc|dirt_expl|c5=f:80

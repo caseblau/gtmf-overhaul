@@ -1,0 +1,6 @@
+# MF Overhaul 0.4.12: shells VFX class (c22): RDG -> SMKS (Soviet grenade, 80 s), SMK_MT -> SMPT (smoke pot, 300 s), SBML_SMK
+#   (British 2-inch mortar smoke) SMKG (green, vanilla mistake) -> SMKL. Physics (c25) and sound (c26) classes unchanged.
+# 3 operations
+row~|shells|RDG|c22=u:'SMKS'
+row~|shells|SMK_MT|c22=u:'SMPT'
+row~|shells|SBML_SMK|c22=u:'SMKL'

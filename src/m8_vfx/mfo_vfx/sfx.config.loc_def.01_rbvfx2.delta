@@ -1,0 +1,42 @@
+# Realistic Battlefield VFX Part 2 (Anton / Toni on Steam, add-on version 100, rvfxmod.flatdata) as a row-level delta on 6.00 build 3598:
+#   tools\gt3.ps1 diff <vanilla sfx> <rvfxmod sfx>, 2026-10-15. Third-party content, dependency until permission (docs\third_party.md 2, 3.2).
+#   expl_desc (27 cells) and expl_dect (9 cells) only. His 19 expl_snds rows are DROPPED: each vanilla "pattern, group" cell is
+#   split over two columns in his table, which unbinds the mixer group (docs\third_party.md 3.2, docs\sources.md). expl_snds stays vanilla.
+# 37 operations
+row~|expl_dect|u:'AP'|c1=s:dirt_low|c8=s:dirt_gren|c9=s:dirt_low
+row~|expl_dect|u:'LHE'|c3=s:air_can|c7=s:air_can|c9=s:dirt_lhe
+row~|expl_dect|u:'AHE'|c3=s:air_med|c7=s:air_med|c8=s:air_med
+row~|expl_dect|u:'HE'|c9=s:under_med
+row~|expl_dect|u:'UHE'|c9=s:under_hi
+row~|expl_dect|u:'CAN'|c9=s:dirt_lhe
+row~|expl_dect|u:'HEAT'|c1=s:dirt_med|c8=s:over_med|c9=s:dirt_med
+row~|expl_dect|u:'HEAL'|c1=s:dirt_med|c8=s:over_med|c9=s:dirt_med
+row~|expl_dect|u:'EXPL'|c1=s:dirt_can|c3=s:air_can|c7=s:air_can|c8=s:dirt_can|c9=s:dirt_can
+row~|expl_desc|dirt_gren|c1=s:flash_sm|c2=s:smoke_hit_obj_m|c4=s:
+row~|expl_desc|dirt_low|c2=s:smoke_hit_obj_sm
+row~|expl_desc|dirt_ign|c1=s:flash_med|c2=s:smoke_gray
+row~|expl_desc|dirt_can|c1=s:flash_sm|c2=s:smoke_hit_obj|c4=s:core_explug|c5=s:dirt_expl_sm|c7=s:ext_dirt_sm
+row~|expl_desc|steel_hi|c1=s:flash_med
+row~|expl_desc|steel_heat|c1=s:flash_med
+row~|expl_desc|steel_bul|c1=s:pc_flash
+row~|expl_desc|air_uhi|c2=s:smoke_hit_obj
+row~|expl_desc|air_hi|c1=s:flash_med|c2=s:smoke_hit_obj
+row~|expl_desc|air_med|c1=s:flash_sm|c2=s:smoke_hit_obj_sm
+row~|expl_desc|air_low|c6=s:smoke_expl_sm
+row~|expl_desc|air_heat|c1=s:flash_med|c2=s:smoke_hit_obj
+row~|expl_desc|air_can|c5=s:
+row~|expl_desc|air_buck|c5=s:
+row~|expl_desc|over_uhi|c2=s:smoke_air|c5=s:dirt_expl|c6=s:smoke_air_biguhi
+row~|expl_desc|over_hi|c6=s:smoke_expl
+row~|expl_desc|over_can|c4=s:dirt_expl_sm|c5=s:|c6=s:
+row~|expl_desc|under_med|c2=s:smoke_expl
+row~|expl_desc|flamh|c4=s:|c5=s:torch_ksc|c6=s:ext_flare_obj_bul
+row~|expl_desc|detonate|c4=s:
+row~|expl_desc|tree_uhi|c1=s:flash_big|c2=s:smoke_hit_obj
+row~|expl_desc|tree_hi|c1=s:flash_med|c3=s:spark_bomb
+row~|expl_desc|tree_med|c1=s:flash_med|c3=s:spark_hit
+row~|expl_desc|wood_uhi|c1=s:flash_big|c2=s:smoke_hit_obj
+row~|expl_desc|wood_hi|c1=s:flash_med|c3=s:spark_bomb
+row~|expl_desc|wood_med|c1=s:flash_med|c3=s:spark_hit
+row~|expl_desc|ric_steel_lmed|c1=s:flash_sm|c2=s:smoke_hit_obj_usm|c3=s:spark_hit
+name~|sfx.loc_def

@@ -1,0 +1,8 @@
+# azcf delta  base=common_res_mod.config.loc_def.bin  target=crm_rockets.bin  2026-10-15T17:09:07
+# 0.3.27: M_13 BOMB -> UHE, NBW41 BOMB -> HE, NBW42 BOMB -> UHE (rocket ground burst too much).
+# 0.3.33: NBW42 (21 cm) back to BOMB, WK_SPR (28/32 cm) UHE -> RHE (new heavy-rocket class in sfx 03_rhe.delta).
+# kids=0 name~=0 node-=0 node+=0 order=0 row-=0 row~=4 row+=0 shape~=0 types~=0
+row~|shells|M_13|c22=u:'UHE'
+row~|shells|NBW41|c22=u:'HE'
+row~|shells|NBW42|c22=u:'BOMB'
+row~|shells|WK_SPR|c22=u:'RHE'

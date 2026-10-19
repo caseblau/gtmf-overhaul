@@ -1,0 +1,22 @@
+# MF Overhaul 0.4.6 (interim, while the column-decoding workflow runs): the cloud at 40 % launch was lower but still discrete
+#   spheres flying apart, because puffs separate faster than they grow. Launch spread of every soil row now 15 % up and 60 %
+#   sideways of vanilla (UHE 6;35;6 -> 3.6;5.3;3.6), so the 36-56 puffs stay within ~15 m of each other and overlap.
+# 18 operations
+row~|expl_desc|dirt_auto|c10=v:0.9;1.8;0.9
+row~|expl_desc|dirt_alow|c10=v:0.7;1.5;0.7
+row~|expl_desc|dirt_lhe|c10=v:2.4;3;2.4
+row~|expl_desc|dirt_gren|c10=v:0.9;1.2;0.9
+row~|expl_desc|dirt_bomb|c10=v:4.2;6;4.2
+row~|expl_desc|dirt_uhi|c10=v:3.6;5.2;3.6
+row~|expl_desc|dirt_hi|c10=v:3.6;2.2;3.6
+row~|expl_desc|dirt_med|c10=v:6;1.8;6
+row~|expl_desc|dirt_low|c10=v:3;1.5;3
+row~|expl_desc|dirt_heat|c10=v:4.8;2.2;4.8
+row~|expl_desc|dirt_ign|c10=v:7.2;1;7.2
+row~|expl_desc|dirt_uign|c10=v:9;1.2;9
+row~|expl_desc|dirt_can|c10=v:6;1.8;6
+row~|expl_desc|dirt_bul|c10=v:0.6;0.2;0.6
+row~|expl_desc|dirt_bulh|c10=v:0.6;0.2;0.6
+row~|expl_desc|dirt_piece|c10=v:0.6;0.2;0.6
+row~|expl_desc|dirt_hit|c10=v:0.6;0.2;0.6
+row~|expl_desc|dirt_rhe|c10=v:4.8;6.3;4.8

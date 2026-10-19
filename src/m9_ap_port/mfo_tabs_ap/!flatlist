@@ -1,0 +1,17 @@
+i_unflat:unflat()
+{
+	div_units_ger                 , config          , loc_def ;
+	div_units_ussr                , config          , loc_def ;
+	ger_hum_base                  , config          , loc_def ;
+	ger_hum_base_autumn           , config          , loc_def ;
+	ger_hum_base_winter           , config          , loc_def ;
+	hum_params                    , config          , loc_def ;
+	outfit_hum                    , config          , loc_def ;
+	outfit_hum_autumn             , config          , loc_def ;
+	outfit_hum_winter             , config          , loc_def ;
+	rus_hum_base                  , config          , loc_def ;
+	rus_hum_base_autumn           , config          , loc_def ;
+	rus_hum_base_winter           , config          , loc_def ;
+	trans_marks0_dift             , texture         , loc_def ;
+	trans_marks0_dift_wint        , texture         , loc_def ;
+}

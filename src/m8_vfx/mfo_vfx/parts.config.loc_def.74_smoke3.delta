@@ -1,0 +1,14 @@
+# MF Overhaul 0.4.14: user on 0.4.13: "still small; from throw to full cloud is too fast (smoke appears at ~5 s)". Slower build-up:
+#   fade-in 5 -> 8 s (pot 6 -> 10), size growth ease-out c22 3 -> 1.5 (puffs swell over more of their life), end size 9 -> 12 m
+#   (pot 12 -> 15), start 1.5 -> 1 m. The horizontal pooling comes from the class launch spread (sfx 09_smoke2.delta).
+#   Screen volumes 9 -> 12 m (pot 12 -> 15). Winter rows matched.
+# 9 operations
+row~|parts_desc|smoke_longg|c9=v:1;1|c10=v:12;12|c13=v:70;8;0.1;0.3|c22=f:1.5
+row~|parts_desc|smoke_longgs|c9=v:1;1|c10=v:12;12|c13=v:70;8;0.1;0.3|c22=f:1.5
+row~|parts_desc|smoke_longgp|c9=v:1.5;1.5|c10=v:15;15|c13=v:90;10;0.1;0.3|c22=f:1.5
+row~|parts_desc|smk_screeng|c10=v:12;12
+row~|parts_desc|smk_screengs|c10=v:12;12
+row~|parts_desc|smk_screengp|c10=v:15;15
+row~|parts_desc_wint|smoke_longg|c9=v:1;1|c10=v:12;12|c13=v:50;8;0.1;0.3|c22=f:1.5
+row~|parts_desc_wint|smoke_longgs|c9=v:1;1|c10=v:12;12|c13=v:50;8;0.1;0.3|c22=f:1.5
+row~|parts_desc_wint|smoke_longgp|c9=v:1.5;1.5|c10=v:15;15|c13=v:70;10;0.1;0.3|c22=f:1.5

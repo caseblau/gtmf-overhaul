@@ -1,0 +1,19 @@
+# MF Overhaul 0.3.58: user sent howitzer-impact footage (youtube --JmEF446fE, "HOWITZER IMPACT! Powerful Artillery Rounds Impact
+#   the Ground"). What such footage shows on dry ground: (1) a flash mostly hidden inside the burst, (2) ONE dark earth-grey column
+#   that shoots up in under a second, mushrooms at 1-2 s and is the thing you see, (3) clods arcing out for 2-3 s, (4) the column
+#   turning into a soft tan-grey cloud that drifts with the wind and thins over 20-40 s, (5) a low dust skirt at the base.
+#   The engine already has the column: core_expl (ECOR). Until now it was near-black and short, and the separate smoke / dust
+#   generators did the work. This build makes the column the main element and the smoke / dust its soft aftermath:
+#   core_expl 0xFF202010 -> 0xFF4A4236 (dark earth grey), end 0x00605850, life 3.5 -> 5.5 s, speed 0.35 -> 0.55; core_expl_bomb
+#   same colour, life 4 -> 6.5 s, speed 0.25 -> 0.45.
+#   burst smoke 0xFF6A625A -> 0xE0564E46 (slightly translucent dark grey), life 32/40/48 -> 24/30/36 s, fade from 0.35;
+#   burst dust 0xD0A89C84 -> 0xD0A09480 (tan-grey), sideways 0.12/0.15 -> 0.2 (the base skirt). Earth pieces and flash as before.
+# 8 operations
+row~|parts_desc|core_expl|c11=a:-11910602|c12=a:6314064|c13=v:5.5;0;0.2;0.85|c14=f:0.55
+row~|parts_desc|core_expl_bomb|c11=a:-11910602|c12=a:6314064|c13=v:6.5;0;0.2;0.9|c14=f:0.45
+row~|parts_desc|smoke_expl|c11=a:-531214778|c12=a:5656134|c13=v:24;0.35;0.05;0.15
+row~|parts_desc|smoke_expl_big|c11=a:-531214778|c12=a:5656134|c13=v:30;0.35;0.05;0.2
+row~|parts_desc|smoke_bomb|c11=a:-531214778|c12=a:5656134|c13=v:36;0.4;0.05;0.2
+row~|parts_desc|dust_expl_rnd_sm|c11=a:-794782592|c12=a:10523776|c14=f:0.2
+row~|parts_desc|dust_expl_rnd|c11=a:-794782592|c12=a:10523776|c14=f:0.2
+row~|parts_desc|dust_expl_rnd_big|c11=a:-794782592|c12=a:10523776|c14=f:0.2

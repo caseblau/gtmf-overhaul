@@ -1,0 +1,340 @@
+﻿# Saur-Mogila 28 Aug 1943: generated change list (tools\oob_saur.ps1)
+
+
+## 08_28_Saur_RUS
+
+### 34 Gds RD: 30 July structure
+- old p_ra_103gds_rr removed: 8 platoons (HQ at node 92, 1st coy at 114, bn cmd at 76)
+- old p_ra_105gds_rr removed: 15 platoons (HQ at node 95, 1st coy at 117, bn cmd at 79)
+- old p_ra_293gds_rr removed: 6 platoons (HQ at node 89, 1st coy at 111, bn cmd at 89)
+- old p_ra_107gds_rr removed: 14 platoons (HQ at node 84, 1st coy at 68, bn cmd at 107)
+- formation p_ra_103rr (code 3, parent p_ra_34rd, ai USER)
+- formation p_ra_105rr (code 5, parent p_ra_34rd, ai USER)
+- formation p_ra_107rr (code 7, parent p_ra_34rd, ai USER)
+- formation p_ra_84ar (code 132, parent p_ra_34rd, ai USER)
+- formation p_ra_293rr (code 147, parent p_ra_96rd, ai AL1)
+- 386 platoons copied from 30 July (p_ra_34rd division troops, 103/105/107 Gds RR, 84 Gds AR, 293 Gds RR), 30 July compositions and strengths
+- `ra_293_3` (3rd bn battle group of the 30 July regiment) dropped: the user asked for two groups
+- `ra_293_1`: reserve link pool3 `p_ra_234ar` not in this operation, cleared
+- `ra_293_1`: slot SCT `ra_234ar_2b_ac` not in this operation, cleared
+- `ra_293_2`: reserve link pool3 `p_ra_234ar` not in this operation, cleared
+- `ra_293_2`: slot SCT `ra_15mt_ac_3p` not in this operation, cleared
+- `ra_293_2`: slot SUP `ra_435destr_1c_2p` not in this operation, cleared
+- `ra_103_3` NEW battle group (3rd bn): COM=ra_103_7c_com SCT= UNI=ra_103_7c_1p UNI=ra_103_7c_2p SUP= SUP=
+- `ra_105_3` NEW battle group (3rd bn): COM=ra_105_7c_com SCT= UNI=ra_105_7c_1p UNI=ra_105_7c_2p SUP= SUP=
+- `ra_293_1`: SCT slot <- `ra_293_ac120mt1` (its own placement removed: it deploys with the group)
+- `ra_293_1`: SUP slot <- `ra_9iptabr_1bat` (its own placement removed: it deploys with the group)
+- `ra_293_2`: SCT slot <- `ra_293_ac120mt2` (its own placement removed: it deploys with the group)
+- `ra_293_2`: SUP slot <- `ra_9iptabr_2bat` (its own placement removed: it deploys with the group)
+- `ra_107_2`: UNI slot <- `ra_107_3c_1p` (its own placement removed: it deploys with the group)
+- `ra_105_1`: SCT slot <- `ra_84ar_4b_ac` (its own placement removed: it deploys with the group)
+- `ra_105_1`: SUP slot <- `ra_9iptabr_3bat` (its own placement removed: it deploys with the group)
+- `ra_103_2`: SUP slot <- `ra_9iptabr_1atb` (its own placement removed: it deploys with the group)
+- `ra_103_3`: SCT slot <- `ra_84ar_5b_ac` (its own placement removed: it deploys with the group)
+- `ra_103_3`: SUP slot <- `ra_9iptabr_2atb` (its own placement removed: it deploys with the group)
+- `ra_103_3`: SUP slot <- `ra_103_1c_mt` (its own placement removed: it deploys with the group)
+- `ra_105_3`: SCT slot <- `ra_84ar_6b_ac` (its own placement removed: it deploys with the group)
+- `ra_105_3`: SUP slot <- `ra_105_1c_mt` (its own placement removed: it deploys with the group)
+- `ra_105_3`: SUP slot <- `ra_105_2c_mt` (its own placement removed: it deploys with the group)
+- `ra_84ar_hq` placed: cell 3;7 node 95 (wanted 95)
+- `ra_34rd_hq` placed: cell 3;7 node 93 (wanted 95)
+- `ra_293_hq` placed: cell 1;7 node 89 (wanted 89)
+- `ra_293_1` placed: cell 1;6 node 111 (wanted 111)
+- `ra_293_2` placed: cell 1;7 node 87 (wanted 89)
+- `ra_107_hq` placed: cell 5;6 node 84 (wanted 84)
+- `ra_107_1` placed: cell 5;5 node 68 (wanted 68)
+- `ra_107_2` placed: cell 4;6 node 107 (wanted 107)
+- `ra_105_hq` placed: cell 3;7 node 94 (wanted 95)
+- `ra_105_1` placed: cell 3;5 node 117 (wanted 117)
+- `ra_105_2` placed: cell 3;6 node 79 (wanted 79)
+- `ra_103_hq` placed: cell 2;7 node 92 (wanted 92)
+- `ra_103_1` placed: cell 2;5 node 114 (wanted 114)
+- `ra_103_2` placed: cell 2;6 node 76 (wanted 76)
+- `ra_103_3` placed: cell 2;7 node 90 (wanted 92)
+- `ra_105_3` placed: cell 2;7 node 91 (wanted 95)
+- `ra_105_3` moved to node 65 (cell 3;5) at the user's map mark
+- `ra_103_3` moved to node 115 (cell 2;5) at the user's map mark
+### Battle groups for the other formations
+- `wer_306id_bg1` (UNI, node 106, turn 1): COM=wer_306id_coy1 SCT= UNI=wer_306id_1c_1p UNI=wer_306id_1c_2p UNI=wer_306id_1c_3p SUP=wer_306id_1c_mgp
+- `wer_306id_bg2` (UNI, node 129, turn 1): COM=wer_306id_tcoy1 SCT= UNI=wer_306id_1tc_1p UNI=wer_306id_1tc_2p UNI=wer_306id_1tc_3p SUP=
+- `wer_306id_bg3` (SUPM, node 120, turn 1): COM= SCT= SUPM=wer_306id_mar_coy SUP=wer_306id_atg_plat
+- p_wer_210atbn has no HQ node: no battle group, its units keep their own placement
+- `wer_581ir_bg1` (UNI, node 102, turn 1): COM=wer_581ir_coy1 SCT= UNI=wer_581ir_1c_1p UNI=wer_581ir_1c_2p UNI=wer_581ir_1c_3p SUP=
+- `wer_570ir_bg1` (UNI, node 52, turn 1): COM=wer_570ir_coy9 SCT= UNI=wer_570ir_9c_1p UNI=wer_570ir_9c_2p UNI=wer_570ir_9c_3p SUP=
+- `wer_294id_bg1` (UNI, node 130, turn 1): COM=wer_294id_acoy SCT= UNI=wer_294id_ac_1p UNI=wer_294id_ac_2p UNI=wer_294id_ac_3p SUP=
+- `wer_514ir_bg1` (UNI, node 35, turn 1): COM=wer_514ir_coy5 SCT= UNI=wer_514ir_5c_1p UNI=wer_514ir_5c_2p UNI=wer_514ir_5c_3p SUP=wer_514ir_mgp
+- p_wer_335id has no HQ node: no battle group, its units keep their own placement
+- p_rkka_rgk has no HQ node: no battle group, its units keep their own placement
+- `ra_140_stbde_bg1` (TANK, node 71, turn 3): COM= SCT= STR=ra_140stbde_coy1 UNI=ra_140stbde_smg SUP=ra_140stbde_aamg
+- p_ra_60gds_tpp has no HQ node: no battle group, its units keep their own placement
+- `ra_7gds_stpp_bg1` (TANK, node 108, turn 1): COM= SCT= STR=ra_7otpp_1c_1p STR=ra_7otpp_1c_2p
+### SPG companies split into command + platoons
+- `wer_306id_mar_coy` split: `wer_306id_mar_coy_com` + `wer_306id_mar_coy` + `wer_306id_mar_coy_2p` in `wer_306id_bg3`: COM=wer_306id_mar_coy_com SCT= SUPM=wer_306id_mar_coy SUPM=wer_306id_mar_coy_2p SUP=wer_306id_atg_plat
+- `wer_210atbn_stug` split: `wer_210atbn_stug_com` + `wer_210atbn_stug` (node 103) + `wer_210atbn_stug_2p` (node 101), standalone, placed next to the original
+### German reserve guns, MGs and mortars as platoons (+ FO teams)
+- NEW `wer_306id_atg_1p` (0x141, SUP, pl_pak38) in p_wer_306id: wer_com_art_plat x1, rn_wer_atg x1, rn_wer_hatg x1
+- NEW `wer_306id_atg_2p` (0x142, SUP, pl_pak38) in p_wer_306id: wer_com_art_plat x1, wer_pak184_1r x2
+- NEW `wer_306id_mg_1p` (0x143, SUP, pl_mg42) in p_wer_306id: wer_com_art_plat x1, wer_mg42 x2
+- NEW `wer_306id_ig_1p` (0x144, SUP, pl_leig) in p_wer_306id: wer_com_art_plat x1, rn_wer_leig x2
+- NEW `wer_306id_ig_ac` (0x145, CTRL, plu_fo) in p_wer_306id: FO team (30 July composition)
+- NEW `wer_306id_mt_1p` (0x146, SUP, plu_mortars) in p_wer_306id: wer_com_art_plat x1, wer_squad_phone x1, wer_grw34 x2
+- NEW `wer_306id_mt_ac` (0x147, CTRL, plu_fo) in p_wer_306id: FO team (30 July composition)
+- p_wer_306id: reserve rows for the guns, MGs and mortars removed (now platoons)
+- NEW `wer_581ir_atg_1p` (0x141, SUP, pl_pak38) in p_wer_581ir: wer_com_art_plat x1, rn_wer_atg x1, rn_wer_hatg x1
+- NEW `wer_581ir_atg_2p` (0x142, SUP, pl_pak38) in p_wer_581ir: wer_com_art_plat x1, wer_pak184_1r x2
+- NEW `wer_581ir_mg_1p` (0x143, SUP, pl_mg42) in p_wer_581ir: wer_com_art_plat x1, wer_mg42 x2
+- NEW `wer_581ir_ig_1p` (0x144, SUP, pl_leig) in p_wer_581ir: wer_com_art_plat x1, rn_wer_leig x2
+- NEW `wer_581ir_ig_ac` (0x145, CTRL, plu_fo) in p_wer_581ir: FO team (30 July composition)
+- NEW `wer_581ir_mt_1p` (0x146, SUP, plu_mortars) in p_wer_581ir: wer_com_art_plat x1, wer_squad_phone x1, wer_grw34 x2
+- NEW `wer_581ir_mt_ac` (0x147, CTRL, plu_fo) in p_wer_581ir: FO team (30 July composition)
+- p_wer_581ir: reserve rows for the guns, MGs and mortars removed (now platoons)
+- NEW `wer_570ir_atg_1p` (0x141, SUP, pl_pak38) in p_wer_570ir: wer_com_art_plat x1, rn_wer_atg x1, rn_wer_hatg x1
+- NEW `wer_570ir_atg_2p` (0x142, SUP, pl_pak38) in p_wer_570ir: wer_com_art_plat x1, wer_pak184_1r x2
+- NEW `wer_570ir_mg_1p` (0x143, SUP, pl_mg42) in p_wer_570ir: wer_com_art_plat x1, wer_mg42 x2
+- NEW `wer_570ir_ig_1p` (0x144, SUP, pl_leig) in p_wer_570ir: wer_com_art_plat x1, rn_wer_leig x2
+- NEW `wer_570ir_ig_ac` (0x145, CTRL, plu_fo) in p_wer_570ir: FO team (30 July composition)
+- NEW `wer_570ir_mt_1p` (0x146, SUP, plu_mortars) in p_wer_570ir: wer_com_art_plat x1, wer_squad_phone x1, wer_grw34 x2
+- NEW `wer_570ir_mt_ac` (0x147, CTRL, plu_fo) in p_wer_570ir: FO team (30 July composition)
+- p_wer_570ir: reserve rows for the guns, MGs and mortars removed (now platoons)
+- NEW `wer_294id_atg_1p` (0x141, SUP, pl_pak38) in p_wer_294id: wer_com_art_plat x1, rn_wer_atg x1, rn_wer_hatg x1
+- NEW `wer_294id_atg_2p` (0x142, SUP, pl_pak38) in p_wer_294id: wer_com_art_plat x1, wer_pak184_1r x2
+- NEW `wer_294id_mg_1p` (0x143, SUP, pl_mg42) in p_wer_294id: wer_com_art_plat x1, wer_mg42 x2
+- NEW `wer_294id_ig_1p` (0x144, SUP, pl_leig) in p_wer_294id: wer_com_art_plat x1, rn_wer_leig x2
+- NEW `wer_294id_ig_ac` (0x145, CTRL, plu_fo) in p_wer_294id: FO team (30 July composition)
+- NEW `wer_294id_mt_1p` (0x146, SUP, plu_mortars) in p_wer_294id: wer_com_art_plat x1, wer_squad_phone x1, wer_grw34 x2
+- NEW `wer_294id_mt_ac` (0x147, CTRL, plu_fo) in p_wer_294id: FO team (30 July composition)
+- p_wer_294id: reserve rows for the guns, MGs and mortars removed (now platoons)
+- NEW `wer_514ir_atg_1p` (0x141, SUP, pl_pak38) in p_wer_514ir: wer_com_art_plat x1, rn_wer_atg x1, rn_wer_hatg x1
+- NEW `wer_514ir_atg_2p` (0x142, SUP, pl_pak38) in p_wer_514ir: wer_com_art_plat x1, wer_pak184_1r x2
+- NEW `wer_514ir_mg_1p` (0x143, SUP, pl_mg42) in p_wer_514ir: wer_com_art_plat x1, wer_mg42 x2
+- NEW `wer_514ir_ig_1p` (0x144, SUP, pl_leig) in p_wer_514ir: wer_com_art_plat x1, rn_wer_leig x2
+- NEW `wer_514ir_ig_ac` (0x145, CTRL, plu_fo) in p_wer_514ir: FO team (30 July composition)
+- NEW `wer_514ir_mt_1p` (0x146, SUP, plu_mortars) in p_wer_514ir: wer_com_art_plat x1, wer_squad_phone x1, wer_grw34 x2
+- NEW `wer_514ir_mt_ac` (0x147, CTRL, plu_fo) in p_wer_514ir: FO team (30 July composition)
+- p_wer_514ir: reserve rows for the guns, MGs and mortars removed (now platoons)
+- 35 platoons made from reserve rows
+### 293 Gds RR: FO and support platoons from its reserve pool (superseded in 0.5.10 by the full 30 July regiment)
+### 140 STBde: companies split, reserve pool units as platoons, two tank slots
+- `ra_140stbde_coy1` split: `ra_140stbde_coy1_com` (rkka_mk3_2_ccom x1) + `ra_140stbde_coy1` (rkka_mk3_2_com x1, rkka_mk3_2 x2)
+- `ra_140stbde_coy2` split: `ra_140stbde_coy2_com` (rkka_m3a1_stuart_ccom x1, rkka_m3a1_stuart x1) + `ra_140stbde_coy2` (rkka_m4a2_ccom x1, rkka_m4a2 x2)
+- `ra_140stbde_smg` split: `ra_140stbde_smg_com` (rkka_com_inf_coy x1) + `ra_140stbde_smg` (rkka_com_smg_plat x1, rkka_squad_smg_43a x3) + `ra_140stbde_smg_2p` (rkka_com_smg_plat x1, rkka_squad_smg_43a x3)
+- `ra_140stbde_atr` split: `ra_140stbde_atr_com` (rkka_com_inf_coy x1) + `ra_140stbde_atr` (rkka_com_art_fplat x1, rkka_squad_atr x3) + `ra_140stbde_atr_2p` (rkka_com_art_fplat x1, rkka_squad_atr x3)
+- `ra_140stbde_mtb` split: `ra_140stbde_mtb_com` (rkka_com_art_bat x1, rkka_squad_phone x1) + `ra_140stbde_mtb` (rkka_com_art_fplat x1, rkka_mt82 x3) + `ra_140stbde_mtb_2p` (rkka_com_art_fplat x1, rkka_mt82 x3)
+- `ra_140stbde_aamg` split: `ra_140stbde_aamg_com` (rkka_com_inf_coy x1) + `ra_140stbde_aamg` (rkka_com_art_fplat x1, rkka_dshk x3) + `ra_140stbde_aamg_2p` (rkka_com_art_fplat x1, rkka_dshk x3)
+- NEW `ra_140stbde_mtb_ac` (0x228, CTRL, plu_fo): FO team of the mortar battery
+- NEW `ra_140stbde_t3_plat` (0x215, STR, pl_pz3l): rkka_t3 x2
+- NEW `ra_140stbde_apc_plat` (0x241, SCT, pl_wscout): rkka_sdkfz250_1 x1
+- NEW `ra_140stbde_mr_1p` (0x251, UNI, plu_rifles): rkka_com_mr_plat x1, rkka_squad_mrifles_43a x3
+- NEW `ra_140stbde_mr_2p` (0x252, UNI, plu_rifles): rkka_com_mr_plat x1, rkka_squad_mrifles_43a x3
+- p_ra_140_stbde reserve pool now: rkka_t20 x1, rkka_zis5v x3, rkka_corr_air x1, rkka_corr_air x1
+- `ra_140_stbde_bg1` slots: COM=ra_140stbde_coy1_com SCT=ra_140stbde_apc_plat STR=ra_140stbde_coy1 STR=ra_140stbde_coy2 UNI=ra_140stbde_smg UNI=ra_140stbde_smg_2p SUP=ra_140stbde_aamg SUP=ra_140stbde_mtb
+### Batteries completed: FO <-> gun platoon in the same group
+- `ra_293_1b_ac82mt` (p_ra_293rr) moved to group 0x150 (code 0x153) where its mt82 guns are: ra_293_1mt_1p, ra_293_1mt_2p
+- `ra_293_2b_ac82mt` (p_ra_293rr) moved to group 0x280 (code 0x282) where its mt82 guns are: ra_293_2mt_1p
+- `ra_293_3b_ac82mt` (p_ra_293rr) moved to group 0x3b0 (code 0x3b3) where its mt82 guns are: ra_293_3mt_1p, ra_293_3mt_2p
+- NEW `ra_293_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_293rr for FO `ra_293_ac120mt1`
+- NEW `ra_293_guns_2` (0x44, SUP, rkka_pm38 x2) in p_ra_293rr for FO `ra_293_ac120mt2`
+- NEW `ra_16mt_guns` (0x65, SUP, rkka_pm38 x2) in p_ra_34rd for FO `ra_16mt_ac_1p`
+- NEW `ra_16mt_guns_2` (0x66, SUP, rkka_pm38 x2) in p_ra_34rd for FO `ra_16mt_ac_2p`
+- NEW `ra_16mt_guns_3` (0x67, SUP, rkka_pm38 x2) in p_ra_34rd for FO `ra_16mt_ac_3p`
+- NEW `ra_16mt_guns_4` (0x68, SUP, rkka_pm38 x2) in p_ra_34rd for FO `ra_16mt_ac_4p`
+- `ra_103_1b_ac82mt` (p_ra_103rr) moved to group 0x150 (code 0x154) where its mt82 guns are: ra_103_1mt_1p, ra_103_1mt_2p, ra_103_1mt_3p
+- `ra_103_2b_ac82mt` (p_ra_103rr) moved to group 0x280 (code 0x284) where its mt82 guns are: ra_103_2mt_1p, ra_103_2mt_2p, ra_103_2mt_3p
+- `ra_103_3b_ac82mt` (p_ra_103rr) moved to group 0x3b0 (code 0x3b2) where its mt82 guns are: ra_103_3mt_1p
+- `ra_103_ac76gun` (p_ra_103rr) moved to group 0x70 (code 0x73) where its pp27 guns are: ra_103_gunc_1p, ra_103_gunc_2p
+- NEW `ra_103_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_103rr for FO `ra_103_ac120mt1`
+- NEW `ra_103_guns_2` (0x44, SUP, rkka_pm38 x2) in p_ra_103rr for FO `ra_103_ac120mt2`
+- `ra_105_1b_ac82mt` (p_ra_105rr) moved to group 0x150 (code 0x153) where its mt82 guns are: ra_105_1mt_1p, ra_105_1mt_2p
+- `ra_105_2b_ac82mt` (p_ra_105rr) moved to group 0x280 (code 0x283) where its mt82 guns are: ra_105_2mt_1p, ra_105_2mt_2p
+- `ra_105_3b_ac82mt` (p_ra_105rr) moved to group 0x3b0 (code 0x3b3) where its mt82 guns are: ra_105_3mt_1p, ra_105_3mt_2p
+- NEW `ra_105_guns` (0x44, SUP, rkka_pm38 x2) in p_ra_105rr for FO `ra_105_ac120mt2`
+- NEW `ra_105_guns_2` (0x45, SUP, rkka_pm38 x2) in p_ra_105rr for FO `ra_105_ac120mt3`
+- `ra_107_1b_ac82mt` (p_ra_107rr) moved to group 0x150 (code 0x152) where its mt82 guns are: ra_107_1mt_1p
+- `ra_107_2b_ac82mt` (p_ra_107rr) moved to group 0x280 (code 0x283) where its mt82 guns are: ra_107_2mt_1p, ra_107_2mt_2p
+- `ra_107_3b_ac82mt` (p_ra_107rr) moved to group 0x3b0 (code 0x3b4) where its mt82 guns are: ra_107_3mt_1p, ra_107_3mt_2p, ra_107_3mt_3p
+- NEW `ra_107_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_107rr for FO `ra_107_ac120mt1`
+- NEW `ra_107_guns_2` (0x44, SUP, rkka_pm38 x2) in p_ra_107rr for FO `ra_107_ac120mt2`
+- NEW `ra_84ar_2b_guns` (0x122, SUP, rkka_zis3 x2) in p_ra_84ar for FO `ra_84ar_2b_ac`
+- NEW `ra_84ar_2b_hq` (0x120, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_4b_guns` (0x242, SUP, rkka_zis3 x2) in p_ra_84ar for FO `ra_84ar_4b_ac`
+- NEW `ra_84ar_4b_hq` (0x240, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_5b_guns` (0x252, SUP, rkka_zis3 x2) in p_ra_84ar for FO `ra_84ar_5b_ac`
+- NEW `ra_84ar_5b_hq` (0x250, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_6b_guns` (0x262, SUP, rkka_m30_m38 x2) in p_ra_84ar for FO `ra_84ar_6b_ac`
+- NEW `ra_84ar_6b_hq` (0x260, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_1b_guns` (0x112, SUP, rkka_zis3 x2) in p_ra_84ar for FO `ra_84ar_1b_ac`
+- NEW `ra_84ar_1b_hq` (0x110, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_3b_guns` (0x132, SUP, rkka_m30_m38 x2) in p_ra_84ar for FO `ra_84ar_3b_ac`
+- NEW `ra_84ar_3b_hq` (0x130, COMC, battery command) in p_ra_84ar
+- 37 battery fixes
+### mg_nodes occupants synced with plat_pos: 54 nodes changed
+### campgen features 0x2000008 -> 0x200000B
+
+## 08_28_Saur_GER
+
+### 34 Gds RD: 30 July structure
+- old p_ra_103gds_rr removed: 8 platoons (HQ at node 92, 1st coy at 114, bn cmd at 76)
+- old p_ra_105gds_rr removed: 15 platoons (HQ at node 95, 1st coy at 117, bn cmd at 79)
+- old p_ra_293gds_rr removed: 6 platoons (HQ at node 89, 1st coy at 111, bn cmd at 89)
+- old p_ra_107gds_rr removed: 14 platoons (HQ at node 84, 1st coy at 68, bn cmd at 107)
+- formation p_ra_103rr (code 3, parent p_ra_34rd, ai EN34)
+- formation p_ra_105rr (code 5, parent p_ra_34rd, ai EN34)
+- formation p_ra_107rr (code 7, parent p_ra_34rd, ai EN60)
+- formation p_ra_84ar (code 132, parent p_ra_34rd, ai EN34)
+- formation p_ra_293rr (code 147, parent p_ra_96rd, ai EN96)
+- 386 platoons copied from 30 July (p_ra_34rd division troops, 103/105/107 Gds RR, 84 Gds AR, 293 Gds RR), 30 July compositions and strengths
+- `ra_293_3` (3rd bn battle group of the 30 July regiment) dropped: the user asked for two groups
+- `ra_293_1`: reserve link pool3 `p_ra_234ar` not in this operation, cleared
+- `ra_293_1`: slot SCT `ra_234ar_2b_ac` not in this operation, cleared
+- `ra_293_2`: reserve link pool3 `p_ra_234ar` not in this operation, cleared
+- `ra_293_2`: slot SCT `ra_15mt_ac_3p` not in this operation, cleared
+- `ra_293_2`: slot SUP `ra_435destr_1c_2p` not in this operation, cleared
+- `ra_103_3` NEW battle group (3rd bn): COM=ra_103_7c_com SCT= UNI=ra_103_7c_1p UNI=ra_103_7c_2p SUP= SUP=
+- `ra_105_3` NEW battle group (3rd bn): COM=ra_105_7c_com SCT= UNI=ra_105_7c_1p UNI=ra_105_7c_2p SUP= SUP=
+- `ra_293_1`: SCT slot <- `ra_293_ac120mt1` (its own placement removed: it deploys with the group)
+- `ra_293_1`: SUP slot <- `ra_9iptabr_1bat` (its own placement removed: it deploys with the group)
+- `ra_293_2`: SCT slot <- `ra_293_ac120mt2` (its own placement removed: it deploys with the group)
+- `ra_293_2`: SUP slot <- `ra_9iptabr_2bat` (its own placement removed: it deploys with the group)
+- `ra_107_2`: UNI slot <- `ra_107_3c_1p` (its own placement removed: it deploys with the group)
+- `ra_105_1`: SCT slot <- `ra_84ar_4b_ac` (its own placement removed: it deploys with the group)
+- `ra_105_1`: SUP slot <- `ra_9iptabr_3bat` (its own placement removed: it deploys with the group)
+- `ra_103_2`: SUP slot <- `ra_9iptabr_1atb` (its own placement removed: it deploys with the group)
+- `ra_103_3`: SCT slot <- `ra_84ar_5b_ac` (its own placement removed: it deploys with the group)
+- `ra_103_3`: SUP slot <- `ra_9iptabr_2atb` (its own placement removed: it deploys with the group)
+- `ra_103_3`: SUP slot <- `ra_103_1c_mt` (its own placement removed: it deploys with the group)
+- `ra_105_3`: SCT slot <- `ra_84ar_6b_ac` (its own placement removed: it deploys with the group)
+- `ra_105_3`: SUP slot <- `ra_105_1c_mt` (its own placement removed: it deploys with the group)
+- `ra_105_3`: SUP slot <- `ra_105_2c_mt` (its own placement removed: it deploys with the group)
+- `ra_84ar_hq` placed: cell 3;7 node 95 (wanted 95)
+- `ra_34rd_hq` placed: cell 3;7 node 93 (wanted 95)
+- `ra_293_hq` placed: cell 1;7 node 89 (wanted 89)
+- `ra_293_1` placed: cell 1;6 node 111 (wanted 111)
+- `ra_293_2` placed: cell 1;7 node 87 (wanted 89)
+- `ra_107_hq` placed: cell 5;6 node 84 (wanted 84)
+- `ra_107_1` placed: cell 5;5 node 68 (wanted 68)
+- `ra_107_2` placed: cell 4;6 node 107 (wanted 107)
+- `ra_105_hq` placed: cell 3;7 node 94 (wanted 95)
+- `ra_105_1` placed: cell 3;5 node 117 (wanted 117)
+- `ra_105_2` placed: cell 3;6 node 79 (wanted 79)
+- `ra_103_hq` placed: cell 2;7 node 92 (wanted 92)
+- `ra_103_1` placed: cell 2;5 node 114 (wanted 114)
+- `ra_103_2` placed: cell 2;6 node 76 (wanted 76)
+- `ra_103_3` placed: cell 2;7 node 90 (wanted 92)
+- `ra_105_3` placed: cell 2;7 node 91 (wanted 95)
+- `ra_105_3` moved to node 65 (cell 3;5) at the user's map mark
+- `ra_103_3` moved to node 115 (cell 2;5) at the user's map mark
+### Battle groups for the other formations
+- `wer_306id_bg1` (UNI, node 106, turn 1): COM=wer_306id_coy1 SCT= UNI=wer_306id_1c_1p UNI=wer_306id_1c_2p UNI=wer_306id_1c_3p SUP=wer_306id_1c_mgp
+- `wer_306id_bg2` (UNI, node 129, turn 1): COM=wer_306id_tcoy1 SCT= UNI=wer_306id_1tc_1p UNI=wer_306id_1tc_2p UNI=wer_306id_1tc_3p SUP=
+- `wer_306id_bg3` (SUPM, node 120, turn 1): COM= SCT= SUPM=wer_306id_mar_coy SUP=wer_306id_atg_plat
+- p_wer_210atbn has no HQ node: no battle group, its units keep their own placement
+- `wer_581ir_bg1` (UNI, node 102, turn 1): COM=wer_581ir_coy1 SCT= UNI=wer_581ir_1c_1p UNI=wer_581ir_1c_2p UNI=wer_581ir_1c_3p SUP=
+- `wer_570ir_bg1` (UNI, node 52, turn 1): COM=wer_570ir_coy9 SCT= UNI=wer_570ir_9c_1p UNI=wer_570ir_9c_2p UNI=wer_570ir_9c_3p SUP=
+- `wer_294id_bg1` (UNI, node 130, turn 1): COM=wer_294id_acoy SCT= UNI=wer_294id_ac_1p UNI=wer_294id_ac_2p UNI=wer_294id_ac_3p SUP=
+- `wer_514ir_bg1` (UNI, node 35, turn 1): COM=wer_514ir_coy5 SCT= UNI=wer_514ir_5c_1p UNI=wer_514ir_5c_2p UNI=wer_514ir_5c_3p SUP=wer_514ir_mgp
+- p_wer_335id has no HQ node: no battle group, its units keep their own placement
+- p_rkka_rgk has no HQ node: no battle group, its units keep their own placement
+- `ra_140_stbde_bg1` (TANK, node 71, turn 3): COM= SCT= STR=ra_140stbde_coy1 UNI=ra_140stbde_smg SUP=ra_140stbde_aamg
+- p_ra_60gds_tpp has no HQ node: no battle group, its units keep their own placement
+- `ra_7gds_stpp_bg1` (TANK, node 108, turn 1): COM= SCT= STR=ra_7otpp_1c_1p STR=ra_7otpp_1c_2p
+### SPG companies split into command + platoons
+- `wer_306id_mar_coy` split: `wer_306id_mar_coy_com` + `wer_306id_mar_coy` + `wer_306id_mar_coy_2p` in `wer_306id_bg3`: COM=wer_306id_mar_coy_com SCT= SUPM=wer_306id_mar_coy SUPM=wer_306id_mar_coy_2p SUP=wer_306id_atg_plat
+- `wer_210atbn_stug` split: `wer_210atbn_stug_com` + `wer_210atbn_stug` (node 103) + `wer_210atbn_stug_2p` (node 101), standalone, placed next to the original
+### German reserve guns, MGs and mortars as platoons (+ FO teams)
+- NEW `wer_306id_atg_1p` (0x141, SUP, pl_pak38) in p_wer_306id: wer_com_art_plat x1, rn_wer_atg x1, rn_wer_hatg x1
+- NEW `wer_306id_atg_2p` (0x142, SUP, pl_pak38) in p_wer_306id: wer_com_art_plat x1, wer_pak184_1r x2
+- NEW `wer_306id_mg_1p` (0x143, SUP, pl_mg42) in p_wer_306id: wer_com_art_plat x1, wer_mg42 x2
+- NEW `wer_306id_ig_1p` (0x144, SUP, pl_leig) in p_wer_306id: wer_com_art_plat x1, rn_wer_leig x2
+- NEW `wer_306id_ig_ac` (0x145, CTRL, plu_fo) in p_wer_306id: FO team (30 July composition)
+- NEW `wer_306id_mt_1p` (0x146, SUP, plu_mortars) in p_wer_306id: wer_com_art_plat x1, wer_squad_phone x1, wer_grw34 x2
+- NEW `wer_306id_mt_ac` (0x147, CTRL, plu_fo) in p_wer_306id: FO team (30 July composition)
+- p_wer_306id: reserve rows for the guns, MGs and mortars removed (now platoons)
+- NEW `wer_581ir_atg_1p` (0x141, SUP, pl_pak38) in p_wer_581ir: wer_com_art_plat x1, rn_wer_atg x1, rn_wer_hatg x1
+- NEW `wer_581ir_atg_2p` (0x142, SUP, pl_pak38) in p_wer_581ir: wer_com_art_plat x1, wer_pak184_1r x2
+- NEW `wer_581ir_mg_1p` (0x143, SUP, pl_mg42) in p_wer_581ir: wer_com_art_plat x1, wer_mg42 x2
+- NEW `wer_581ir_ig_1p` (0x144, SUP, pl_leig) in p_wer_581ir: wer_com_art_plat x1, rn_wer_leig x2
+- NEW `wer_581ir_ig_ac` (0x145, CTRL, plu_fo) in p_wer_581ir: FO team (30 July composition)
+- NEW `wer_581ir_mt_1p` (0x146, SUP, plu_mortars) in p_wer_581ir: wer_com_art_plat x1, wer_squad_phone x1, wer_grw34 x2
+- NEW `wer_581ir_mt_ac` (0x147, CTRL, plu_fo) in p_wer_581ir: FO team (30 July composition)
+- p_wer_581ir: reserve rows for the guns, MGs and mortars removed (now platoons)
+- NEW `wer_570ir_atg_1p` (0x141, SUP, pl_pak38) in p_wer_570ir: wer_com_art_plat x1, rn_wer_atg x1, rn_wer_hatg x1
+- NEW `wer_570ir_atg_2p` (0x142, SUP, pl_pak38) in p_wer_570ir: wer_com_art_plat x1, wer_pak184_1r x2
+- NEW `wer_570ir_mg_1p` (0x143, SUP, pl_mg42) in p_wer_570ir: wer_com_art_plat x1, wer_mg42 x2
+- NEW `wer_570ir_ig_1p` (0x144, SUP, pl_leig) in p_wer_570ir: wer_com_art_plat x1, rn_wer_leig x2
+- NEW `wer_570ir_ig_ac` (0x145, CTRL, plu_fo) in p_wer_570ir: FO team (30 July composition)
+- NEW `wer_570ir_mt_1p` (0x146, SUP, plu_mortars) in p_wer_570ir: wer_com_art_plat x1, wer_squad_phone x1, wer_grw34 x2
+- NEW `wer_570ir_mt_ac` (0x147, CTRL, plu_fo) in p_wer_570ir: FO team (30 July composition)
+- p_wer_570ir: reserve rows for the guns, MGs and mortars removed (now platoons)
+- NEW `wer_294id_atg_1p` (0x141, SUP, pl_pak38) in p_wer_294id: wer_com_art_plat x1, rn_wer_atg x1, rn_wer_hatg x1
+- NEW `wer_294id_atg_2p` (0x142, SUP, pl_pak38) in p_wer_294id: wer_com_art_plat x1, wer_pak184_1r x2
+- NEW `wer_294id_mg_1p` (0x143, SUP, pl_mg42) in p_wer_294id: wer_com_art_plat x1, wer_mg42 x2
+- NEW `wer_294id_ig_1p` (0x144, SUP, pl_leig) in p_wer_294id: wer_com_art_plat x1, rn_wer_leig x2
+- NEW `wer_294id_ig_ac` (0x145, CTRL, plu_fo) in p_wer_294id: FO team (30 July composition)
+- NEW `wer_294id_mt_1p` (0x146, SUP, plu_mortars) in p_wer_294id: wer_com_art_plat x1, wer_squad_phone x1, wer_grw34 x2
+- NEW `wer_294id_mt_ac` (0x147, CTRL, plu_fo) in p_wer_294id: FO team (30 July composition)
+- p_wer_294id: reserve rows for the guns, MGs and mortars removed (now platoons)
+- NEW `wer_514ir_atg_1p` (0x141, SUP, pl_pak38) in p_wer_514ir: wer_com_art_plat x1, rn_wer_atg x1, rn_wer_hatg x1
+- NEW `wer_514ir_atg_2p` (0x142, SUP, pl_pak38) in p_wer_514ir: wer_com_art_plat x1, wer_pak184_1r x2
+- NEW `wer_514ir_mg_1p` (0x143, SUP, pl_mg42) in p_wer_514ir: wer_com_art_plat x1, wer_mg42 x2
+- NEW `wer_514ir_ig_1p` (0x144, SUP, pl_leig) in p_wer_514ir: wer_com_art_plat x1, rn_wer_leig x2
+- NEW `wer_514ir_ig_ac` (0x145, CTRL, plu_fo) in p_wer_514ir: FO team (30 July composition)
+- NEW `wer_514ir_mt_1p` (0x146, SUP, plu_mortars) in p_wer_514ir: wer_com_art_plat x1, wer_squad_phone x1, wer_grw34 x2
+- NEW `wer_514ir_mt_ac` (0x147, CTRL, plu_fo) in p_wer_514ir: FO team (30 July composition)
+- p_wer_514ir: reserve rows for the guns, MGs and mortars removed (now platoons)
+- 35 platoons made from reserve rows
+### 293 Gds RR: FO and support platoons from its reserve pool (superseded in 0.5.10 by the full 30 July regiment)
+### 140 STBde: companies split, reserve pool units as platoons, two tank slots
+- `ra_140stbde_coy1` split: `ra_140stbde_coy1_com` (rkka_mk3_2_ccom x1) + `ra_140stbde_coy1` (rkka_mk3_2_com x1, rkka_mk3_2 x2)
+- `ra_140stbde_coy2` split: `ra_140stbde_coy2_com` (rkka_m3a1_stuart_ccom x1, rkka_m3a1_stuart x1) + `ra_140stbde_coy2` (rkka_m4a2_ccom x1, rkka_m4a2 x2)
+- `ra_140stbde_smg` split: `ra_140stbde_smg_com` (rkka_com_inf_coy x1) + `ra_140stbde_smg` (rkka_com_smg_plat x1, rkka_squad_smg_43a x3) + `ra_140stbde_smg_2p` (rkka_com_smg_plat x1, rkka_squad_smg_43a x3)
+- `ra_140stbde_atr` split: `ra_140stbde_atr_com` (rkka_com_inf_coy x1) + `ra_140stbde_atr` (rkka_com_art_fplat x1, rkka_squad_atr x3) + `ra_140stbde_atr_2p` (rkka_com_art_fplat x1, rkka_squad_atr x3)
+- `ra_140stbde_mtb` split: `ra_140stbde_mtb_com` (rkka_com_art_bat x1, rkka_squad_phone x1) + `ra_140stbde_mtb` (rkka_com_art_fplat x1, rkka_mt82 x3) + `ra_140stbde_mtb_2p` (rkka_com_art_fplat x1, rkka_mt82 x3)
+- `ra_140stbde_aamg` split: `ra_140stbde_aamg_com` (rkka_com_inf_coy x1) + `ra_140stbde_aamg` (rkka_com_art_fplat x1, rkka_dshk x3) + `ra_140stbde_aamg_2p` (rkka_com_art_fplat x1, rkka_dshk x3)
+- NEW `ra_140stbde_mtb_ac` (0x228, CTRL, plu_fo): FO team of the mortar battery
+- NEW `ra_140stbde_t3_plat` (0x215, STR, pl_pz3l): rkka_t3 x2
+- NEW `ra_140stbde_apc_plat` (0x241, SCT, pl_wscout): rkka_sdkfz250_1 x1
+- NEW `ra_140stbde_mr_1p` (0x251, UNI, plu_rifles): rkka_com_mr_plat x1, rkka_squad_mrifles_43a x3
+- NEW `ra_140stbde_mr_2p` (0x252, UNI, plu_rifles): rkka_com_mr_plat x1, rkka_squad_mrifles_43a x3
+- p_ra_140_stbde reserve pool now: rkka_t20 x1, rkka_zis5v x3, rkka_corr_air x1, rkka_corr_air x1
+- `ra_140_stbde_bg1` slots: COM=ra_140stbde_coy1_com SCT=ra_140stbde_apc_plat STR=ra_140stbde_coy1 STR=ra_140stbde_coy2 UNI=ra_140stbde_smg UNI=ra_140stbde_smg_2p SUP=ra_140stbde_aamg SUP=ra_140stbde_mtb
+### Batteries completed: FO <-> gun platoon in the same group
+- `ra_293_1b_ac82mt` (p_ra_293rr) moved to group 0x150 (code 0x153) where its mt82 guns are: ra_293_1mt_1p, ra_293_1mt_2p
+- `ra_293_2b_ac82mt` (p_ra_293rr) moved to group 0x280 (code 0x282) where its mt82 guns are: ra_293_2mt_1p
+- `ra_293_3b_ac82mt` (p_ra_293rr) moved to group 0x3b0 (code 0x3b3) where its mt82 guns are: ra_293_3mt_1p, ra_293_3mt_2p
+- NEW `ra_293_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_293rr for FO `ra_293_ac120mt1`
+- NEW `ra_293_guns_2` (0x44, SUP, rkka_pm38 x2) in p_ra_293rr for FO `ra_293_ac120mt2`
+- NEW `ra_16mt_guns` (0x65, SUP, rkka_pm38 x2) in p_ra_34rd for FO `ra_16mt_ac_1p`
+- NEW `ra_16mt_guns_2` (0x66, SUP, rkka_pm38 x2) in p_ra_34rd for FO `ra_16mt_ac_2p`
+- NEW `ra_16mt_guns_3` (0x67, SUP, rkka_pm38 x2) in p_ra_34rd for FO `ra_16mt_ac_3p`
+- NEW `ra_16mt_guns_4` (0x68, SUP, rkka_pm38 x2) in p_ra_34rd for FO `ra_16mt_ac_4p`
+- `ra_103_1b_ac82mt` (p_ra_103rr) moved to group 0x150 (code 0x154) where its mt82 guns are: ra_103_1mt_1p, ra_103_1mt_2p, ra_103_1mt_3p
+- `ra_103_2b_ac82mt` (p_ra_103rr) moved to group 0x280 (code 0x284) where its mt82 guns are: ra_103_2mt_1p, ra_103_2mt_2p, ra_103_2mt_3p
+- `ra_103_3b_ac82mt` (p_ra_103rr) moved to group 0x3b0 (code 0x3b2) where its mt82 guns are: ra_103_3mt_1p
+- `ra_103_ac76gun` (p_ra_103rr) moved to group 0x70 (code 0x73) where its pp27 guns are: ra_103_gunc_1p, ra_103_gunc_2p
+- NEW `ra_103_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_103rr for FO `ra_103_ac120mt1`
+- NEW `ra_103_guns_2` (0x44, SUP, rkka_pm38 x2) in p_ra_103rr for FO `ra_103_ac120mt2`
+- `ra_105_1b_ac82mt` (p_ra_105rr) moved to group 0x150 (code 0x153) where its mt82 guns are: ra_105_1mt_1p, ra_105_1mt_2p
+- `ra_105_2b_ac82mt` (p_ra_105rr) moved to group 0x280 (code 0x283) where its mt82 guns are: ra_105_2mt_1p, ra_105_2mt_2p
+- `ra_105_3b_ac82mt` (p_ra_105rr) moved to group 0x3b0 (code 0x3b3) where its mt82 guns are: ra_105_3mt_1p, ra_105_3mt_2p
+- NEW `ra_105_guns` (0x44, SUP, rkka_pm38 x2) in p_ra_105rr for FO `ra_105_ac120mt2`
+- NEW `ra_105_guns_2` (0x45, SUP, rkka_pm38 x2) in p_ra_105rr for FO `ra_105_ac120mt3`
+- `ra_107_1b_ac82mt` (p_ra_107rr) moved to group 0x150 (code 0x152) where its mt82 guns are: ra_107_1mt_1p
+- `ra_107_2b_ac82mt` (p_ra_107rr) moved to group 0x280 (code 0x283) where its mt82 guns are: ra_107_2mt_1p, ra_107_2mt_2p
+- `ra_107_3b_ac82mt` (p_ra_107rr) moved to group 0x3b0 (code 0x3b4) where its mt82 guns are: ra_107_3mt_1p, ra_107_3mt_2p, ra_107_3mt_3p
+- NEW `ra_107_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_107rr for FO `ra_107_ac120mt1`
+- NEW `ra_107_guns_2` (0x44, SUP, rkka_pm38 x2) in p_ra_107rr for FO `ra_107_ac120mt2`
+- NEW `ra_84ar_2b_guns` (0x122, SUP, rkka_zis3 x2) in p_ra_84ar for FO `ra_84ar_2b_ac`
+- NEW `ra_84ar_2b_hq` (0x120, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_4b_guns` (0x242, SUP, rkka_zis3 x2) in p_ra_84ar for FO `ra_84ar_4b_ac`
+- NEW `ra_84ar_4b_hq` (0x240, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_5b_guns` (0x252, SUP, rkka_zis3 x2) in p_ra_84ar for FO `ra_84ar_5b_ac`
+- NEW `ra_84ar_5b_hq` (0x250, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_6b_guns` (0x262, SUP, rkka_m30_m38 x2) in p_ra_84ar for FO `ra_84ar_6b_ac`
+- NEW `ra_84ar_6b_hq` (0x260, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_1b_guns` (0x112, SUP, rkka_zis3 x2) in p_ra_84ar for FO `ra_84ar_1b_ac`
+- NEW `ra_84ar_1b_hq` (0x110, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_3b_guns` (0x132, SUP, rkka_m30_m38 x2) in p_ra_84ar for FO `ra_84ar_3b_ac`
+- NEW `ra_84ar_3b_hq` (0x130, COMC, battery command) in p_ra_84ar
+- 37 battery fixes
+### mg_nodes occupants synced with plat_pos: 54 nodes changed
+### campgen features 0x2000008 -> 0x200000B

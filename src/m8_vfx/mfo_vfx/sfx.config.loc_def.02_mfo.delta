@@ -1,0 +1,5 @@
+# MF Overhaul edits on top of the RBVFX Part 2 sfx delta (docs\sources.md), 0.3.4: expl_snds rows SMK and SMKP play the
+#   1 s expl_ks* ignition whoosh instead of the 47 s expl_smk* hiss (mixer group acts unchanged).
+# 2 operations
+row~|expl_snds|u:'SMK'|c1=s:expl_ks*, acts|c2=s:expl_ks*, acts
+row~|expl_snds|u:'SMKP'|c1=s:expl_ks*, acts|c2=s:expl_ks*, acts

@@ -1,0 +1,71 @@
+# Add-on override matrix, generated 2026-10-15T14:31:55
+# rows: entries present in more than one source. Sources: vanilla:<archive> or <add-on desc> [<folder>]/<archive>
+
+01_loc_kit_units                   text       <- vanilla:text_loc ; MFO collision test (remove after test) [mfo_coltest]/mfo_coltest_text ; MF Overhaul 0.3.1 [mfo_overhaul]/mfo_text_loc
+accept                             sound      <- vanilla:sounds ; vanilla:sounds_01
+bump_gequip_norsp                  texture    <- vanilla:tex_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Ger
+bump_geram_norsp                   texture    <- vanilla:tex_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Ger
+bump_ghandguns_norsp               texture    <- vanilla:tex_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Ger
+bump_minebox_norsp                 texture    <- vanilla:tex_objects ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Ger
+bump_requip_norsp                  texture    <- vanilla:tex_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Rus
+bump_requip1_norsp                 texture    <- vanilla:tex_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Rus
+bump_rhandguns_norsp               texture    <- vanilla:tex_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Rus
+bump_sfx_05_norsp                  texture    <- vanilla:tex_misc ; Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA]/ch_textures ; T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5]/ch_textures
+common_res_mod                     config     <- vanilla:tabs ; MF Overhaul 0.3.1 [mfo_overhaul]/mfo_tabs ; Realistic Battlefield VFX Part 2 [rbvfxpart2]/rvfxmod
+div_units_ger                      config     <- vanilla:tabs_oprum ; MF Overhaul 0.3.1 [mfo_overhaul]/mfo_tabs_ap
+div_units_ussr                     config     <- vanilla:tabs_oprum ; MF Overhaul 0.3.1 [mfo_overhaul]/mfo_tabs_ap
+expl_ks_0                          sound      <- vanilla:sounds ; MF Overhaul Sounds 0.3.1 [7C1E2B4A-5F3D-4B6E-9A2C-1D0E8F7A6B5C]/ch_sounds
+expl_smk_0                         sound      <- vanilla:sounds ; MF Overhaul Sounds 0.3.1 [7C1E2B4A-5F3D-4B6E-9A2C-1D0E8F7A6B5C]/ch_sounds
+g_shovelp                          mesh       <- vanilla:gos_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Ger
+ger_googles                        mesh       <- vanilla:gos_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Ger
+ger_hum_base_autumn                config     <- vanilla:tabs_oprum ; MF Overhaul 0.3.1 [mfo_overhaul]/mfo_tabs_ap
+ger_hum_base_winter                config     <- vanilla:tabs_oprum ; MF Overhaul 0.3.1 [mfo_overhaul]/mfo_tabs_ap
+ger_hum_base                       config     <- vanilla:tabs ; MF Overhaul 0.3.1 [mfo_overhaul]/mfo_tabs_ap
+hum_params                         config     <- vanilla:tabs ; MF Overhaul 0.3.1 [mfo_overhaul]/mfo_tabs_ap
+outfit_hum_autumn                  config     <- vanilla:tabs_oprum ; MF Overhaul 0.3.1 [mfo_overhaul]/mfo_tabs_ap
+outfit_hum_winter                  config     <- vanilla:tabs_oprum ; MF Overhaul 0.3.1 [mfo_overhaul]/mfo_tabs_ap
+outfit_hum                         config     <- vanilla:tabs ; MF Overhaul 0.3.1 [mfo_overhaul]/mfo_tabs_ap
+parts                              config     <- vanilla:tabs ; MF Overhaul 0.3.1 [mfo_overhaul]/mfo_vfx ; Realistic Battlefield VFX Part 2 [rbvfxpart2]/rvfxmod
+ppsh41                             mesh       <- vanilla:gos_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Rus
+reg_feldfunkb_dift                 texture    <- vanilla:tex_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Ger
+reg_flame_big0000_dift             texture    <- vanilla:tex_misc ; Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA]/ch_textures ; T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5]/ch_textures
+reg_flame_hum0000_dift             texture    <- vanilla:tex_misc ; Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA]/ch_textures ; T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5]/ch_textures
+reg_flame_mid0000_dift             texture    <- vanilla:tex_misc ; Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA]/ch_textures ; T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5]/ch_textures
+reg_flame_sm0000_dift              texture    <- vanilla:tex_misc ; Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA]/ch_textures ; T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5]/ch_textures
+reg_gequip_dift                    texture    <- vanilla:tex_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Ger
+reg_ger_handguns_01_dift           texture    <- vanilla:tex_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Ger
+reg_geram_dift                     texture    <- vanilla:tex_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Ger
+reg_ghandguns_dift                 texture    <- vanilla:tex_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Ger
+reg_requip_dift                    texture    <- vanilla:tex_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Rus
+reg_requip1_dift                   texture    <- vanilla:tex_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Rus
+reg_rhandguns_dift                 texture    <- vanilla:tex_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/MIUS_DB_Equip_Weapons_Rus
+reg_torch0000_dift                 texture    <- vanilla:tex_misc ; Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA]/ch_textures ; T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5]/ch_textures
+rus_hum_base_autumn                config     <- vanilla:tabs_oprum ; MF Overhaul 0.3.1 [mfo_overhaul]/mfo_tabs_ap
+rus_hum_base_winter                config     <- vanilla:tabs_oprum ; MF Overhaul 0.3.1 [mfo_overhaul]/mfo_tabs_ap
+rus_hum_base                       config     <- vanilla:tabs_oprum ; MF Overhaul 0.3.1 [mfo_overhaul]/mfo_tabs_ap
+sfx                                config     <- vanilla:tabs ; Realistic Battlefield VFX Part 2 [rbvfxpart2]/rvfxmod
+shot_nebel                         sound      <- vanilla:sounds ; MF Overhaul Sounds 0.3.1 [7C1E2B4A-5F3D-4B6E-9A2C-1D0E8F7A6B5C]/ch_sounds
+shot_smk                           sound      <- vanilla:sounds ; MF Overhaul Sounds 0.3.1 [7C1E2B4A-5F3D-4B6E-9A2C-1D0E8F7A6B5C]/ch_sounds
+trans_blast_01_dift                texture    <- vanilla:tex_misc ; Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA]/ch_textures ; T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5]/ch_textures
+trans_core_expl_01_dift            texture    <- vanilla:tex_misc ; Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA]/ch_textures ; T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5]/ch_textures
+trans_flash_01_dift                texture    <- vanilla:tex_misc ; Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA]/ch_textures ; T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5]/ch_textures
+trans_hblood_dift                  texture    <- vanilla:tex_humans ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/Edelveys_blood
+trans_marks0_dift_wint             texture    <- vanilla:tex_misc ; MF Overhaul 0.3.1 [mfo_overhaul]/mfo_tabs_ap
+trans_marks0_dift                  texture    <- vanilla:tex_misc ; MF Overhaul 0.3.1 [mfo_overhaul]/mfo_tabs_ap
+trans_sfx_01_dift                  texture    <- vanilla:tex_misc ; Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA]/ch_textures ; T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5]/ch_textures
+trans_sfx_03_dift                  texture    <- vanilla:tex_misc ; Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA]/ch_textures ; Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase]/Edelveys_blood ; T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5]/ch_textures
+trans_sfx_04_dift                  texture    <- vanilla:tex_misc ; Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA]/ch_textures ; T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5]/ch_textures
+trans_sfx_05_dift                  texture    <- vanilla:tex_misc ; Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA]/ch_textures ; T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5]/ch_textures
+trans_sfx_06_dift                  texture    <- vanilla:tex_misc ; Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA]/ch_textures ; T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5]/ch_textures
+trans_sfx_07_dift                  texture    <- vanilla:tex_misc ; Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA]/ch_textures ; T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5]/ch_textures
+trans_smoke_01_dift                texture    <- vanilla:tex_misc ; Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA]/ch_textures ; T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5]/ch_textures
+trans_ttail_01_dift                texture    <- vanilla:tex_misc ; Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA]/ch_textures ; T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5]/ch_textures
+
+# Summary per add-on: entries overriding vanilla / entries also overridden by another add-on
+Achtung Panzer Ostfront Mius DataBase [Achtung_Panzer_Ostfront_Mius_DataBase] vanilla=   20  addon-collisions=    1
+MF Overhaul 0.3.1 [mfo_overhaul]                             vanilla=   17  addon-collisions=    3
+MF Overhaul Sounds 0.3.1 [7C1E2B4A-5F3D-4B6E-9A2C-1D0E8F7A6B5C] vanilla=    4  addon-collisions=    0
+MFO collision test (remove after test) [mfo_coltest]         vanilla=    1  addon-collisions=    1
+Realistic Battlefield VFX Part 1 [4AB7A660-44EC-4150-BC64-80B141097CCA] vanilla=   17  addon-collisions=   17
+Realistic Battlefield VFX Part 2 [rbvfxpart2]                vanilla=    3  addon-collisions=    2
+T-D-Battlefield-SFX-Mod [F9758DB4-920C-4ECE-957A-1B2F1E1F27A5] vanilla=   17  addon-collisions=   17

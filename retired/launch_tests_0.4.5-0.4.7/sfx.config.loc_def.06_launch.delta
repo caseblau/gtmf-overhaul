@@ -1,0 +1,22 @@
+# MF Overhaul 0.4.5: diagnostic 0.4.4 proved the tall beaded columns are the burst smoke, and 0.4.3 proved neither parts c14 nor
+#   c6 tames them, so the launch comes straight from expl_desc c10 (x;up;z velocity spread). Up component of every soil row cut
+#   to 40 % (e.g. UHE 35 -> 14, BOMB 40 -> 16, LHE 20 -> 8); x/z kept so the cloud still spreads.
+# 18 operations
+row~|expl_desc|dirt_auto|c10=v:1.5;4.8;1.5
+row~|expl_desc|dirt_alow|c10=v:1.2;4;1.2
+row~|expl_desc|dirt_lhe|c10=v:4;8;4
+row~|expl_desc|dirt_gren|c10=v:1.5;3.2;1.5
+row~|expl_desc|dirt_bomb|c10=v:7;16;7
+row~|expl_desc|dirt_rhe|c10=v:8;16.8;8
+row~|expl_desc|dirt_uhi|c10=v:6;14;6
+row~|expl_desc|dirt_hi|c10=v:6;6;6
+row~|expl_desc|dirt_med|c10=v:10;4.8;10
+row~|expl_desc|dirt_low|c10=v:5;4;5
+row~|expl_desc|dirt_heat|c10=v:8;6;8
+row~|expl_desc|dirt_ign|c10=v:12;2.8;12
+row~|expl_desc|dirt_uign|c10=v:15;3.2;15
+row~|expl_desc|dirt_can|c10=v:10;4.8;10
+row~|expl_desc|dirt_bul|c10=v:1;0.4;1
+row~|expl_desc|dirt_bulh|c10=v:1;0.4;1
+row~|expl_desc|dirt_piece|c10=v:1;0.4;1
+row~|expl_desc|dirt_hit|c10=v:1;0.4;1

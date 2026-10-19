@@ -1,0 +1,11 @@
+# MF Overhaul 0.3.56: user: "smoke vertical puffs are too many and stick out unnaturally; make it organic and realistic".
+#   Burst smoke gets the same treatment as the dust: puffs 22/26/44 -> 8/10/14, start 1/2/3 -> 3/5/6 m, end 12/22/34 -> 16/26/36 m,
+#   sideways speed 0.22/0.22/0.25 -> 0.1/0.1/0.12, animation 3.5/3.5/2.5 -> 1.5/1.5/1.2, vertical accel -0.28/-0.24/-0.22 -> -0.05
+#   (near neutral; c6 negative = down). Lifetimes 32/40/48 s, fade points and colours as 0.3.55.
+# 6 operations
+row~|pgens_desc|smoke_expl|c5=f:8
+row~|pgens_desc|smoke_expl_big|c5=f:10
+row~|pgens_desc|smoke_bomb|c5=f:14
+row~|parts_desc|smoke_expl|c6=v:0;-0.05|c9=v:3;3|c10=v:16;16|c14=f:0.1|c22=f:1.5
+row~|parts_desc|smoke_expl_big|c6=v:0;-0.05|c9=v:5;5|c10=v:26;26|c14=f:0.1|c22=f:1.5
+row~|parts_desc|smoke_bomb|c6=v:0;-0.05|c9=v:6;6|c10=v:36;36|c14=f:0.12|c22=f:1.2

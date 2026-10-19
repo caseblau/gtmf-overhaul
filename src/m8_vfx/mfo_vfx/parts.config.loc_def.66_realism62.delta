@@ -1,0 +1,11 @@
+# MF Overhaul 0.4.5: burst smoke back to a cloud that drifts (c6 -0.1, c14 0.25 as vanilla, life 22/28/34 s) now that the launch is
+#   tamed in sfx 06_launch.delta. Thrown earth and clods get a higher speed factor (c14 0.9/0.85/0.8 -> 2/1.9/1.8, clods 0.8 -> 1.8)
+#   in case the earth shares the launch spread, so its column height stays where 0.3.59 put it.
+# 7 operations
+row~|parts_desc|smoke_expl|c6=v:0;-0.1|c13=v:22;0.35;0.05;0.15|c14=f:0.25
+row~|parts_desc|smoke_expl_big|c6=v:0;-0.1|c13=v:28;0.35;0.05;0.2|c14=f:0.25
+row~|parts_desc|smoke_bomb|c6=v:0;-0.1|c13=v:34;0.35;0.05;0.2|c14=f:0.25
+row~|parts_desc|dirt_expl|c14=f:2
+row~|parts_desc|dirt_expl_big|c14=f:1.9
+row~|parts_desc|dirt_bomb|c14=f:1.8
+row~|parts_desc|ext_dirt|c14=f:1.8

@@ -1,0 +1,7 @@
+# azcf delta  base=common_res.config.loc_def.bin  target=common_res_rockets.bin  2026-10-15T15:51:46
+# kids=0 name~=0 node-=0 node+=0 order=0 row-=0 row~=5 row+=0 shape~=0 types~=0
+row~|tracers|rocket|c10=a:12632256;12632256
+row~|tracers|rs_82|c10=a:12632256;12632256
+row~|tracers|m_13|c10=a:12632256;12632256
+row~|tracers|nbw41_15cm|c10=a:12632256;12632256
+row~|tracers|nbw42_21cm|c10=a:12632256;12632256

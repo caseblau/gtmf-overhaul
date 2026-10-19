@@ -1,0 +1,8 @@
+# MF Overhaul 0.4.10: user screenshots of 28 cm and 150 mm on 0.4.9: both are dense masses now; the 28 cm pillars stand ~4x the 150 mm
+#   columns. 28 cm carries ~8x the HE of a 15 cm shell and column height scales ~cube root of yield, so ~2x is right.
+#   Heavy row (smoke_bomb, 28 cm / 21 cm / bombs): life 16 -> 13 s, end 20 -> 18 m, alpha 0xC0/0xA0 -> 0xB0/0x90.
+#   Medium row (smoke_expl_big, 150 mm): life 14 -> 16 s, end 18 -> 22 m, puffs 48 -> 52.
+# 3 operations
+row~|parts_desc|smoke_bomb|c10=v:18;18|c11=a:-1336390076;-1874444746|c13=v:13;0.45;0.05;0.2
+row~|parts_desc|smoke_expl_big|c10=v:22;22|c13=v:16;0.4;0.05;0.2
+row~|pgens_desc|smoke_expl_big|c5=f:52

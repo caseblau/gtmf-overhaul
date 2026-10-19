@@ -1,0 +1,58 @@
+# M9 extraction report 2026-10-15T14:47:35
+outfit_hum             dropped node-=21 kept node+=314 kept row+=1127  ->  applied 1441 operations
+outfit_hum_autumn      dropped node-=20 kept node+=294 kept row+=1085  ->  applied 1379 operations
+outfit_hum_winter      kept node+=316 kept row+=1187  ->  applied 1503 operations
+ger_hum_base           dropped node-=5 dropped row-=1 fixup row~=2 kept node+=125 kept row~=6 kept row+=1061  ->  applied 1194 operations
+ger_hum_base_autumn    dropped node-=15 dropped row-=8 dropped types~=5 junk row+=12 kept node+=137 kept row~=12 kept row+=1127  ->  applied 1276 operations
+ger_hum_base_winter    dropped node-=7 kept node+=125 kept row~=5 kept row+=1035  ->  applied 1165 operations
+rus_hum_base           fixup row~=4 kept node+=101 kept row+=1057  ->  applied 1162 operations
+rus_hum_base_autumn    kept node+=101 kept row+=1047  ->  applied 1148 operations
+rus_hum_base_winter    kept node+=103 kept row+=1056  ->  applied 1159 operations
+hum_params             dropped node-=5 dropped row-=11 kept node+=3 kept row~=4 kept row+=346  ->  applied 353 operations
+div_units_ger          dropped node-=3 dropped order=2 dropped row-=247 dropped row~=187 kept row~=103 kept row+=142 unresolved row~=16 unresolved row+=11  ->  applied 245 operations
+div_units_ussr         dropped node-=3 dropped row-=273 dropped row~=148 dropped row+=4 kept row~=77 kept row+=107  ->  applied 184 operations
+copied trans_marks0_dift.texture.loc_def.bin
+copied trans_marks0_dift_wint.texture.loc_def.bin
+unit bindings left at vanilla because the soldier type does not exist or its skins are missing in his files too: 27
+  div_units_ger row+ weru_at_schuetze -> ger_hum_base/ger_regimentkommandeur (no such soldier type)
+  div_units_ger row+ weru_inf_scharfschutze -> ger_hum_base/ger_unter_scharfschutze (skin missing: ger_hum_base_autumn norsp_skin=_norsp)
+  div_units_ger row+ weru_pionier_gefreiter -> ger_hum_base/ger_pionier_schuetze (skin missing: ger_hum_base norsp_skin=_norsp)
+  div_units_ger row+ weru_pionier_schuetze -> ger_hum_base/ger_pionier_oberschuetze (skin missing: ger_hum_base norsp_skin=_norsp)
+  div_units_ger row+ weru_pionier_oberschuetze -> ger_hum_base/ger_pionier_gewehr43 (skin missing: ger_hum_base norsp_skin=pionier_98grschuetze_s_norsp)
+  div_units_ger row+ weru_pionier_gewehr43 -> ger_hum_base/ger_pionier_98grschuetze (skin missing: ger_hum_base norsp_skin=pionier_98grschuetze_s_norsp)
+  div_units_ger row+ weru_pionier_mgschuetze -> ger_hum_base/ger_pionier_mghelfer (skin missing: ger_hum_base norsp_skin=pionier_98grschuetze_s_norsp)
+  div_units_ger row+ weru_pionier_gp_gefreiter -> ger_hum_base/ger_pionier_schuetze (skin missing: ger_hum_base norsp_skin=_norsp)
+  div_units_ger row+ weru_pionier_gp_kar98 -> ger_hum_base/ger_pionier_oberschuetze (skin missing: ger_hum_base norsp_skin=_norsp)
+  div_units_ger row+ weru_pionier_gp_okar98 -> ger_hum_base/ger_pionier_98grschuetze (skin missing: ger_hum_base norsp_skin=pionier_98grschuetze_s_norsp)
+  div_units_ger row+ weru_pionier_gp_mg34 -> ger_hum_base/ger_pionier_mghelfer (skin missing: ger_hum_base norsp_skin=pionier_98grschuetze_s_norsp)
+  div_units_ger row~ weru_ja_at -> ger_hum_base/ger_jager _at (no such soldier type)
+  div_units_ger row~ weru_pinf_rifle -> ger_hum_base/ger_pionier_schuetze (skin missing: ger_hum_base norsp_skin=_norsp)
+  div_units_ger row~ weru_pinf_arifle -> ger_hum_base/ger_pionier_gewehr43 (skin missing: ger_hum_base norsp_skin=pionier_98grschuetze_s_norsp)
+  div_units_ger row~ weru_pinf_gren -> ger_hum_base/ger_pionier_98grschuetze (skin missing: ger_hum_base norsp_skin=pionier_98grschuetze_s_norsp)
+  div_units_ger row~ weru_pinf_gefr -> ger_hum_base/ger_pionier_gefreiter (no such soldier type)
+  div_units_ger row~ weru_pinf_support -> ger_hum_base/ger_pionier_mghelfer (skin missing: ger_hum_base norsp_skin=pionier_98grschuetze_s_norsp)
+  div_units_ger row~ weru_pinf_leuten -> ger_hum_base/ger_pionier_zugfuhrer (no such soldier type)
+  div_units_ger row~ weru_pinf_cap -> ger_hum_base/ger_pionier_kompaniefuhrer (no such soldier type)
+  div_units_ger row~ weru_pzgr_major -> ger_hum_base/ger_regimentkommandeur (no such soldier type)
+  div_units_ger row~ weru_pion_rifle -> ger_hum_base/ger_pionier_schuetze (skin missing: ger_hum_base norsp_skin=_norsp)
+  div_units_ger row~ weru_pion_gren -> ger_hum_base/ger_pionier_98grschuetze (skin missing: ger_hum_base norsp_skin=pionier_98grschuetze_s_norsp)
+  div_units_ger row~ weru_pion_gefr -> ger_hum_base/ger_pionier_gefreiter (no such soldier type)
+  div_units_ger row~ weru_pion_support -> ger_hum_base/ger_pionier_mghelfer (skin missing: ger_hum_base norsp_skin=pionier_98grschuetze_s_norsp)
+  div_units_ger row~ weru_pion_leuten -> ger_hum_base/ger_pionier_zugfuhrer (no such soldier type)
+  div_units_ger row~ weru_pion_cap -> ger_hum_base/ger_pionier_kompaniefuhrer (no such soldier type)
+  div_units_ger row~ weru_air_corr -> ger_hum_base/ger_avia_spotter (no such soldier type)
+skin/mesh re-bindings of vanilla soldiers dropped because the texture exists nowhere: 0
+ger_hum_base soldier types with missing skins (not bindable): 6: ger_pionier_98grschuetze [ger_hum_base norsp_skin=pionier_98grschuetze_s_norsp]; ger_pionier_gewehr43 [ger_hum_base norsp_skin=pionier_98grschuetze_s_norsp]; ger_pionier_mghelfer [ger_hum_base norsp_skin=pionier_98grschuetze_s_norsp]; ger_pionier_oberschuetze [ger_hum_base norsp_skin=_norsp]; ger_pionier_schuetze [ger_hum_base norsp_skin=_norsp]; ger_unter_scharfschutze [ger_hum_base_autumn norsp_skin=_norsp]
+rus_hum_base soldier types with missing skins (not bindable): 0: 
+div_units_ger : 266 i_human rows checked against the merged *_hum_base tables
+div_units_ussr : 187 i_human rows checked against the merged *_hum_base tables
+ger_hum_base : 195 ammo_pat and 192 outfit_pat references checked
+ger_hum_base_autumn : 207 ammo_pat and 204 outfit_pat references checked
+ger_hum_base_winter : 195 ammo_pat and 192 outfit_pat references checked
+rus_hum_base : 169 ammo_pat and 167 outfit_pat references checked
+rus_hum_base_autumn : 169 ammo_pat and 167 outfit_pat references checked
+rus_hum_base_winter : 169 ammo_pat and 167 outfit_pat references checked
+reference problems: 3
+  ger_hum_base_autumn/ger_inf_scharfschutze: outfit_pat 'scharfschutze_1_s' not in merged outfit_hum_autumn
+  ger_hum_base_autumn/ger_unter_scharfschutze: outfit_pat 'unter_scharfschutze_s' not in merged outfit_hum_autumn
+  rus_hum_base_autumn/rus_scout_lieuten: outfit_pat 'scout_lieuten_s' not in merged outfit_hum_autumn

@@ -1,0 +1,16 @@
+# MF Overhaul 0.3.42: user: "tune down the dust and smoke so the ground burst is clearly visible; blend both in, less dominant,
+#   still dissipating realistically". Opacity and count down, lifetimes / sizes / motion kept:
+#   burst dust birth alpha 0xE0 -> 0xA0, puffs 18/24/20 -> 12/16/14; burst smoke birth alpha 0xFF -> 0xB8, puffs 12/12/25 -> 9/9/18.
+# 12 operations
+row~|parts_desc|dust_expl_rnd_sm|c11=a:-1599562620
+row~|parts_desc|dust_expl_rnd|c11=a:-1599562620
+row~|parts_desc|dust_expl_rnd_big|c11=a:-1599562620
+row~|parts_desc|smoke_expl|c11=a:-1200987558
+row~|parts_desc|smoke_expl_big|c11=a:-1201382316
+row~|parts_desc|smoke_bomb|c11=a:-1201645488
+row~|pgens_desc|dust_expl_sm|c5=f:12
+row~|pgens_desc|dust_expl|c5=f:16
+row~|pgens_desc|dust_expl_big|c5=f:14
+row~|pgens_desc|smoke_expl|c5=f:9
+row~|pgens_desc|smoke_expl_big|c5=f:9
+row~|pgens_desc|smoke_bomb|c5=f:18

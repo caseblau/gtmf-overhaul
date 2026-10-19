@@ -1,0 +1,19 @@
+# MF Overhaul 0.4.1: user screenshot: burst smoke "is spherical instead of fluid". Each puff was one big (3-6 m at birth), slowly
+#   animated (c22 1.2-1.5, vanilla 5) sprite with little overlap, so it read as a ball. The smoke / dust textures are animated
+#   flipbooks: the animation rate is what makes them boil. Now: animation back to 4.5 (bomb 3.5, dust 3), puffs born small and
+#   growing (smoke 1.5/2.5/3 -> 18/28/38 m, dust 2/3/3 -> 20/30/30 m), more of them at lower opacity so they merge (smoke 8/10/14 ->
+#   14/16/22 at alpha 0xB0, dust 8/10/10 -> 12/16/14 at alpha 0xB0), a little more sideways drift (0.2 / 0.22) so the mass spreads.
+#   Lifetimes, fade points, colours and vertical motion as 0.4.0.
+# 12 operations
+row~|parts_desc|smoke_expl|c9=v:1.5;1.5|c10=v:18;18|c11=a:-1336390076|c14=f:0.2|c22=f:4.5
+row~|parts_desc|smoke_expl_big|c9=v:2.5;2.5|c10=v:28;28|c11=a:-1336390076|c14=f:0.2|c22=f:4.5
+row~|parts_desc|smoke_bomb|c9=v:3;3|c10=v:38;38|c11=a:-1336390076|c14=f:0.22|c22=f:3.5
+row~|parts_desc|dust_expl_rnd_sm|c9=v:2;2|c10=v:20;20|c11=a:-1331127170|c14=f:0.22|c22=f:3
+row~|parts_desc|dust_expl_rnd|c9=v:3;3|c10=v:30;30|c11=a:-1331127170|c14=f:0.22|c22=f:3
+row~|parts_desc|dust_expl_rnd_big|c9=v:3;3|c10=v:30;30|c11=a:-1331127170|c14=f:0.22|c22=f:3
+row~|pgens_desc|smoke_expl|c5=f:14
+row~|pgens_desc|smoke_expl_big|c5=f:16
+row~|pgens_desc|smoke_bomb|c5=f:22
+row~|pgens_desc|dust_expl_sm|c5=f:12
+row~|pgens_desc|dust_expl|c5=f:16
+row~|pgens_desc|dust_expl_big|c5=f:14

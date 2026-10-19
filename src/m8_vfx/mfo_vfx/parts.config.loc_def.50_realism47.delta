@@ -1,0 +1,5 @@
+# MF Overhaul 0.3.51: user: "smoke exhaust from vehicle hatches after they fire should be smoother and less visible".
+#   smoke_vent (hatch / breech venting, 2 puffs): alpha 0x80/0x40 -> 0x50/0x40, end colour 0x40C3C0CD -> fully transparent,
+#   life 3.5 -> 5 s with fade from 0.3 and a 0.3 fade-in so it wells up and thins instead of popping, end 1.1 -> 1.5 m, anim 0.85 -> 0.6.
+# 1 operation
+row~|parts_desc|smoke_vent|c10=v:1.5;1.5|c11=a:1352704160;1083216016|c12=a:10526880|c13=v:5;0.3;0.3;0.12|c22=f:0.6

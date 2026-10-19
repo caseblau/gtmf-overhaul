@@ -1,0 +1,26 @@
+﻿== unit position dumps (MP_DUMP)
+  sim     10 ms: 154 units in A (7944), 154 in B (23136), 154 common, 6 differ, 0 further than 5 m, largest 0,103 m
+       i_human:hum_100864e1             0,103 m
+       i_human:hum_100864e3             0,094 m
+       i_human:hum_10086481             0,068 m
+  sim 1000 ms: only one instance dumped
+  sim   5000 ms: 154 units in A (7944), 154 in B (23136), 154 common, 101 differ, 0 further than 5 m, largest 0,103 m
+       i_human:hum_1008426a             0,103 m
+       i_human:hum_080822c5             0,058 m
+       i_human:hum_100864c2             0,051 m
+  sim  20000 ms: 154 units in A (7944), 154 in B (23136), 154 common, 131 differ, 0 further than 5 m, largest 0,192 m
+       i_human:hum_080822e9             0,192 m
+       i_human:hum_080822c1             0,190 m
+       i_human:hum_080822e8             0,188 m
+== per-second traces (MP_DEBUG)
+  mp_trace_tacgame_23136.txt: 694 seconds traced
+  mp_trace_tacgame_7944.txt: 690 seconds traced
+  common seconds: 690; identical position hashes: 0; first differing second: 1; seconds with different unit counts: 0
+    s    1: A units=154 hash=387cc8a0  B units=154 hash=da120037
+    s    2: A units=154 hash=a33660a2  B units=154 hash=8244c391
+    s  689: A units=154 hash=e08a9c6f  B units=154 hash=39da4b11
+    s  690: A units=154 hash=aa1a7097  B units=154 hash=d9e4f7bd
+== MiusPlayer state/clock log lines
+  basic_network_tacgame_23136.log: 144 state reports, not-loaded total 0 (max 0); clock drift max 0,20 s avg 0,08 s; last: [t06960] clock: battle time 687.2 s, in the other game 687.0 s (time scaled by 1.00 to wait for it)
+    ! 12:05:11.872 [t06960] net: connection lost (nothing received for 8 s)
+  basic_network_tacgame_7944.log: 143 state reports, not-loaded total 0 (max 0); clock drift max 0,10 s avg 0,03 s; last: [t23048] clock: battle time here 689.4 s, on the host 689.4 s (time scaled by 1.00 to stay on it)

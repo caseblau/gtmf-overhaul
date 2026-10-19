@@ -1,0 +1,9 @@
+# MF Overhaul 0.4.9: user screenshot of 150 mm bursts on 0.4.8: thin, faint 40 m wisps next to the dense 28 cm pillars. A 15 cm HE
+#   burst is a dense dark column 30-40 m high and 15-20 m wide. Medium row (smoke_expl_big, UHE / 152 mm): puffs 30 -> 48,
+#   end 15 -> 18 m, birth alpha 0xC0/0xA0 -> 0xF0/0xD0. Small row (smoke_expl, HE 105-122 mm, mortars, 76 mm): puffs 24 -> 32,
+#   end 10 -> 12 m, alpha 0xC0/0xA0 -> 0xE0/0xC0. Heavy row unchanged (reference look).
+# 4 operations
+row~|parts_desc|smoke_expl_big|c10=v:18;18|c11=a:-262648252;-800702922
+row~|parts_desc|smoke_expl|c10=v:12;12|c11=a:-531083708;-1069138378
+row~|pgens_desc|smoke_expl_big|c5=f:48
+row~|pgens_desc|smoke_expl|c5=f:32

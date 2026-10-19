@@ -1,0 +1,32 @@
+# MF Overhaul 0.4.2: user on 0.4.1: "still spherical". A puff that grows to 18-38 m is a ball whatever its animation. Back to the
+#   vanilla structure (many small puffs that overlap into a cloud) and the vanilla pull-down (-0.1) that keeps them low, keeping only
+#   the longer life and the palette: burst smoke 24/30/40 puffs, 1/1.5/2 -> 9/14/18 m, two birth tints for variation, sideways 0.25,
+#   animation 5; burst dust 20/28/24 puffs, 1.5/2/2 -> 10/16/16 m, two tints, -0.03, animation 4.
+#   The spheres in the screenshot sat above the treeline, where tree-burst and airburst smoke lives (smoke_hit*, smoke_air*): those
+#   rows get the same treatment (more, smaller puffs; rise back to the vanilla +0.01) and spin 30.
+# 25 operations
+row~|parts_desc|smoke_expl|c6=v:0;-0.1|c9=v:1;1|c10=v:9;9|c11=a:-1067954620;-1606009290|c14=f:0.25|c22=f:5
+row~|parts_desc|smoke_expl_big|c6=v:0;-0.1|c9=v:1.5;1.5|c10=v:14;14|c11=a:-1067954620;-1606009290|c14=f:0.25|c22=f:5
+row~|parts_desc|smoke_bomb|c6=v:0;-0.1|c9=v:2;2|c10=v:18;18|c11=a:-1067954620;-1606009290|c14=f:0.25|c22=f:4
+row~|parts_desc|dust_expl_rnd_sm|c6=v:0;-0.03|c9=v:1.5;1.5|c10=v:10;10|c11=a:-1062691714;-1869182354|c14=f:0.25|c22=f:4
+row~|parts_desc|dust_expl_rnd|c6=v:0;-0.03|c9=v:2;2|c10=v:16;16|c11=a:-1062691714;-1869182354|c14=f:0.25|c22=f:4
+row~|parts_desc|dust_expl_rnd_big|c6=v:0;-0.03|c9=v:2;2|c10=v:16;16|c11=a:-1062691714;-1869182354|c14=f:0.25|c22=f:4
+row~|pgens_desc|smoke_expl|c5=f:24
+row~|pgens_desc|smoke_expl_big|c5=f:30
+row~|pgens_desc|smoke_bomb|c5=f:40
+row~|pgens_desc|dust_expl_sm|c5=f:20
+row~|pgens_desc|dust_expl|c5=f:28
+row~|pgens_desc|dust_expl_big|c5=f:24
+row~|parts_desc|smoke_hit|c6=v:0;0.01|c9=v:1;1|c10=v:7;7|c23=f:30
+row~|parts_desc|smoke_hit_sm|c6=v:0;0.01|c10=v:4;4|c23=f:30
+row~|parts_desc|smoke_hit_sm_treecp|c6=v:0;0.01|c23=f:30
+row~|parts_desc|smoke_hit_usmc|c6=v:0;0.01|c23=f:30
+row~|parts_desc|smoke_air|c6=v:0;0.01|c9=v:1;1|c10=v:10;10|c23=f:30
+row~|parts_desc|smoke_air_big|c6=v:0;0.01|c9=v:1.5;1.5|c10=v:16;16|c23=f:30
+row~|parts_desc|smoke_air_biguhip|c6=v:0;0.01|c9=v:1.5;1.5|c10=v:16;16|c23=f:30
+row~|parts_desc|smoke_gray|c6=v:0;0.01|c23=f:30
+row~|parts_desc|smoke_gray_big|c6=v:0;0.01|c23=f:30
+row~|pgens_desc|smoke_hit_obj|c5=f:22
+row~|pgens_desc|smoke_air|c5=f:22
+row~|pgens_desc|smoke_air_big|c5=f:36
+row~|pgens_desc|smoke_over_big|c5=f:30

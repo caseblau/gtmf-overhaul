@@ -1,0 +1,59 @@
+# MF Overhaul 0.4.0: user: "make everything realistic in colour palette and physics, no shortcuts". Rules applied to every
+#   particle family the overhaul had not yet touched (burst smoke / dust / earth were done in 57-59_realism):
+#   SOLIDS fall under real gravity (c6 y -9.8), light things with drag (leaves -2, hay -1.5); earth takes the soil palette
+#   (black earth 0x4C4D41 / clay 0x4E4332 / mud 0x8D7D63 from season soils c6), debris takes plaster-grey.
+#   DUST drifts with the wind, settles slowly (-0.02 .. -0.03), spins little (40 deg), takes the lightened field/mud tone 0xA89C7E.
+#   HOT SMOKE is buoyant (+0.05 .. +0.3, the hotter the faster) and sooty: burning fuel / vehicles near-black brown, HE on steel
+#   dark grey; coloured signal smoke keeps its hue; spin 360 -> 60 everywhere (a full turn reads as rotating puffs).
+#   WATER: spray under gravity (-9.8), columns -5; colours unchanged. Flashes untouched.
+# 50 operations
+row~|parts_desc|dirt_wh|c6=v:0;-9.8|c10=v:2.5;2.5|c11=a:-11912144|c12=a:4865072
+row~|parts_desc|dirt_shot|c6=v:0;-9.8|c11=a:-7568788|c12=a:9208428|c23=f:60
+row~|parts_desc|dirt_broke|c6=v:0;-9.8|c11=a:-7699850|c12=a:9077366|c23=f:60
+row~|parts_desc|ext_dirt_sm|c11=a:-12173776|c12=a:-12173776
+row~|parts_desc|ext_leaves|c6=v:0;-2|c11=a:-9536964|c12=a:7240252
+row~|parts_desc|branch_parts|c6=v:0;-9.8|c11=a:-9545150|c12=a:-11648978
+row~|parts_desc|seno_parts|c6=v:0;-1.5
+row~|parts_desc|fuel_drops|c6=v:0;-9.8
+row~|parts_desc|ext_stone_brk|c11=a:-7435646|c12=a:-9541022
+row~|parts_desc|dust_wh|c6=v:0;-0.02|c11=a:-1331127170;1084791934|c12=a:11050110|c23=f:40
+row~|parts_desc|dust_shot|c6=v:0;-0.03|c11=a:-794256258|c12=a:11050110|c23=f:40
+row~|parts_desc|dust_shot_rnd|c6=v:0;-0.02|c11=a:-1062691714;-2136433538|c12=a:11050110|c23=f:40
+row~|parts_desc|dust_broke|c6=v:0;-0.03|c11=a:-526346104|c12=a:10524808|c23=f:40
+row~|parts_desc|smoke|c6=v:0;0.12|c11=a:-802149334;-2146036718|c12=a:6315098;1613769770|c23=f:60
+row~|parts_desc|smoke_sm|c6=v:0;0.08|c11=a:-802149334;-2146036718|c12=a:6315098;1613769770|c23=f:60
+row~|parts_desc|choke|c6=v:0;0.12|c11=a:-265278422;-1609165806|c12=a:6315098;1613769770|c23=f:60
+row~|parts_desc|smoke_burn|c6=v:0;0.08|c11=a:-1607455702|c12=a:7367786;1076898858|c23=f:60
+row~|parts_desc|smoke_filler|c6=v:0;0.05|c11=a:1613769768;806884884|c12=a:7367786;1076898856|c23=f:60
+row~|parts_desc|smoke_mid|c6=v:0;0.06|c11=a:-1069532102|c12=a:6315098|c23=f:60
+row~|parts_desc|smoke_fuel|c6=v:0;0.15|c11=a:-1340861936|c12=a:3157034|c23=f:60
+row~|parts_desc|fuel_smoke|c6=v:0;0.3|c11=a:-1072426480|c12=a:3157034|c23=f:60
+row~|parts_desc|smoke_fbomb|c6=v:0;0.2|c11=a:-14014940|c12=a:4209722;-1070584790|c23=f:60
+row~|parts_desc|smoke_flam|c6=v:0;0.2|c11=a:-14014940|c12=a:4209722;-1070584790|c23=f:60
+row~|parts_desc|smoke_hit_sm|c6=v:0;0.04|c23=f:60
+row~|parts_desc|smoke_hit_sm_treecp|c6=v:0;0.04|c23=f:60
+row~|parts_desc|smoke_hit_usmc|c6=v:0;0.04|c23=f:60
+row~|parts_desc|smoke_hit|c6=v:0;0.04|c23=f:60
+row~|parts_desc|smoke_air|c6=v:0;0.04|c23=f:60
+row~|parts_desc|smoke_air_big|c6=v:0;0.04|c23=f:60
+row~|parts_desc|smoke_air_biguhip|c6=v:0;0.04|c23=f:60
+row~|parts_desc|smoke_gray|c6=v:0;0.03|c23=f:60
+row~|parts_desc|smoke_gray_big|c6=v:0;0.03|c23=f:60
+row~|parts_desc|smk_air_red|c23=f:60
+row~|parts_desc|smk_air_green|c23=f:60
+row~|parts_desc|smk_air_yellow|c23=f:60
+row~|parts_desc|smk_air_magenta|c23=f:60
+row~|parts_desc|smk_air_orange|c23=f:60
+row~|parts_desc|smk_air_blue|c23=f:60
+row~|parts_desc|smoke_water|c6=v:0;0.05|c23=f:60
+row~|parts_desc|water_wh|c6=v:0;-9.8
+row~|parts_desc|splash_expl_big|c6=v:0;-9.8
+row~|parts_desc|splash_expl|c6=v:0;-9.8
+row~|parts_desc|splash_expl_sm|c6=v:0;-9.8
+row~|parts_desc|splash_shot|c6=v:0;-9.8
+row~|parts_desc|splash_expl_det|c6=v:0;-9.8
+row~|parts_desc|splash_expl_hit|c6=v:0;-9.8
+row~|parts_desc|bul_water|c6=v:0;-9.8
+row~|parts_desc|core_water_big|c6=v:0;-5
+row~|parts_desc|core_water|c6=v:0;-5
+row~|parts_desc|core_water_low|c6=v:0;-5

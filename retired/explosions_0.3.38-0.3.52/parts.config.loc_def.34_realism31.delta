@@ -1,0 +1,12 @@
+# MF Overhaul 0.3.39: user: "more dust kicked off from the initial explosion; it does not have to travel vertically like smoke;
+#   the explosion and its blast should be more realistic". Burst dust (sm/med/big) is a blast skirt now, not a plume:
+#   puffs per burst 10/14/10 -> 18/24/20; sideways speed 0.3/0.35/0.35 -> 0.55/0.6/0.6 (rushes out at detonation, then slows as it
+#   fades); lift -0.03 -> -0.015 (stays near the ground); fade-in 0.15 -> 0.06 so the skirt is there at the flash, not a second later;
+#   birth alpha 0xD0 -> 0xE0. Lifetimes, end sizes and colour hue unchanged from 0.3.37.
+# 6 operations
+row~|pgens_desc|dust_expl_sm|c5=f:18
+row~|pgens_desc|dust_expl|c5=f:24
+row~|pgens_desc|dust_expl_big|c5=f:20
+row~|parts_desc|dust_expl_rnd_sm|c6=v:0;-0.015|c11=a:-525820796|c13=v:26;0.06;0.1;0.15|c14=f:0.55
+row~|parts_desc|dust_expl_rnd|c6=v:0;-0.015|c11=a:-525820796|c13=v:38;0.06;0.1;0.3|c14=f:0.6
+row~|parts_desc|dust_expl_rnd_big|c6=v:0;-0.015|c11=a:-525820796|c13=v:42;0.06;0.1;0.6|c14=f:0.6

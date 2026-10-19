@@ -1,0 +1,22 @@
+# MF Overhaul 0.4.3: user screenshot: tall beaded columns of grey spheres rising far above the trees. Those are the burning-vehicle
+#   and fire smoke rows (smoke, smoke_burn, smoke_filler, smoke_mid, smoke_fuel ...), which 0.4.0 made buoyant (+0.05 .. +0.3). Over
+#   a 60-130 s life that lifts each puff hundreds of metres and strings the continuous emission into separate balls. The column
+#   shape of a real fire plume comes from steady emission and wind, so: vertical accel back to the vanilla values (smoke +0.1,
+#   smoke_sm +0.05, choke +0.1, smoke_burn +0.01, smoke_filler -0.01, smoke_mid +0.03, smoke_fuel +0.07, fuel_smoke -0.5,
+#   smoke_fbomb -0.02, smoke_flam -0.05), emission doubled so the plume is continuous (smoke_burn 1 -> 2, smoke 3 -> 5, smoke_big
+#   5 -> 8, smoke_mid 3 -> 5), spin 60 -> 30. Sooty palette from 0.4.0 kept.
+# 14 operations
+row~|parts_desc|smoke|c6=v:0;0.1|c23=f:30
+row~|parts_desc|smoke_sm|c6=v:0;0.05|c23=f:30
+row~|parts_desc|choke|c6=v:0;0.1|c23=f:30
+row~|parts_desc|smoke_burn|c6=v:0;0.01|c23=f:30
+row~|parts_desc|smoke_filler|c6=v:0;-0.01|c23=f:30
+row~|parts_desc|smoke_mid|c6=v:0;0.03|c23=f:30
+row~|parts_desc|smoke_fuel|c6=v:0;0.07|c23=f:30
+row~|parts_desc|fuel_smoke|c6=v:0;-0.5|c23=f:30
+row~|parts_desc|smoke_fbomb|c6=v:0;-0.02|c23=f:30
+row~|parts_desc|smoke_flam|c6=v:0;-0.05|c23=f:30
+row~|pgens_desc|smoke_burn|c5=f:2
+row~|pgens_desc|smoke|c5=f:5
+row~|pgens_desc|smoke_big|c5=f:8
+row~|pgens_desc|smoke_mid|c5=f:5

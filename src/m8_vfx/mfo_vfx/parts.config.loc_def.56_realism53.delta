@@ -1,0 +1,11 @@
+# MF Overhaul 0.3.57: user on 0.3.56: "rotating separate puffs of smoke; dust that does not fade fast enough; not realistic".
+#   c23 is the sprite spin (degrees over the life): flashes and cores 0, screen smoke 60, burst smoke and dust 360 (a full turn,
+#   which is what reads as "rotating puffs"). Burst smoke and dust c23 360 -> 40, like the screen smoke.
+#   Dust fade: life 48/64/72 -> 26/34/40 s, fade starts at 0.4 -> 0.25 of life. Smoke lifetimes as 0.3.55.
+# 6 operations
+row~|parts_desc|smoke_expl|c23=f:40
+row~|parts_desc|smoke_expl_big|c23=f:40
+row~|parts_desc|smoke_bomb|c23=f:40
+row~|parts_desc|dust_expl_rnd_sm|c13=v:26;0.25;0.1;0.15|c23=f:40
+row~|parts_desc|dust_expl_rnd|c13=v:34;0.25;0.1;0.3|c23=f:40
+row~|parts_desc|dust_expl_rnd_big|c13=v:40;0.25;0.1;0.6|c23=f:40

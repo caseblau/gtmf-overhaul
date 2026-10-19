@@ -1,0 +1,16 @@
+# MF Overhaul 0.3.51: user: "all the effects except the ground explosion and its falling particles can stay longer and be thicker,
+#   for more realism". Earth (dirt_*, ext_dirt) untouched. Everything else longer and denser:
+#   burst smoke life 18/28/40 -> 24/36/50 s, alpha 0xE0 -> 0xF0; burst dust life 18/28/40 -> 24/36/50 s, alpha 0xC8 -> 0xE0
+#   (hold-then-thin fade point 0.5 kept); dark fireball core life 3.5/4 -> 4.5/5.5 s;
+#   muzzle smoke smoke_white 8 -> 10 s alpha 0xB0 -> 0xC8, smoke_shotb 11 -> 14 s alpha 0x90/0x60 -> 0xA8/0x78.
+# 10 operations
+row~|parts_desc|smoke_expl|c11=a:-261463462|c13=v:24;0.5;0.02;0.15
+row~|parts_desc|smoke_expl_big|c11=a:-261858220|c13=v:36;0.5;0.02;0.2
+row~|parts_desc|smoke_bomb|c11=a:-262121392|c13=v:50;0.5;0.02;0.2
+row~|parts_desc|dust_expl_rnd_sm|c11=a:-525820796|c13=v:24;0.5;0.02;0.15
+row~|parts_desc|dust_expl_rnd|c11=a:-525820796|c13=v:36;0.5;0.02;0.3
+row~|parts_desc|dust_expl_rnd_big|c11=a:-525820796|c13=v:50;0.5;0.02;0.6
+row~|parts_desc|core_expl|c13=v:4.5;0;0.2;0.85
+row~|parts_desc|core_expl_bomb|c13=v:5.5;0;0.2;0.9
+row~|parts_desc|smoke_white|c11=a:-926366532|c13=v:10;0.3;0.2;0.6
+row~|parts_desc|smoke_shotb|c11=a:-1464290132;2024318108|c13=v:14;0.3;0.2;0.3

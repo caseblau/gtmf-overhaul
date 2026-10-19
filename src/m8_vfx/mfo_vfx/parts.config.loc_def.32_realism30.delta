@@ -1,0 +1,12 @@
+# MF Overhaul 0.3.37: user: "dust and smoke from explosions should be wider and smoothly dissipate; small dust around crater and
+#   explosions should be smoother too".
+#   Smoke: end size 9/16/30 -> 12/22/34 m, fade point 0.35/0.35/0.7 -> 0.3/0.3/0.5 (thins over more of its life), sideways speed 0.18 -> 0.22.
+#   Dust sm/med/big: start 1.5/2.5/2 -> 2/3/3 m, end 9/16/14 -> 13/22/20 m, fade-in 0.05 -> 0.15 (no pop-in), sideways 0.25/0.3/0.3 ->
+#   0.3/0.35/0.35, animation 1.4/1.1/1 -> 1/0.8/0.7. Lifetimes from 0.3.35 and colours unchanged.
+# 6 operations
+row~|parts_desc|smoke_expl|c10=v:12;12|c13=v:16;0.3;0.05;0.15|c14=f:0.22
+row~|parts_desc|smoke_expl_big|c10=v:22;22|c13=v:19;0.3;0.05;0.2|c14=f:0.22
+row~|parts_desc|smoke_bomb|c10=v:34;34|c13=v:22;0.5;0.05;0.2
+row~|parts_desc|dust_expl_rnd_sm|c9=v:2;2|c10=v:13;13|c13=v:26;0.15;0.1;0.15|c14=f:0.3|c22=f:1
+row~|parts_desc|dust_expl_rnd|c9=v:3;3|c10=v:22;22|c13=v:38;0.15;0.1;0.3|c14=f:0.35|c22=f:0.8
+row~|parts_desc|dust_expl_rnd_big|c9=v:3;3|c10=v:20;20|c13=v:42;0.15;0.1;0.6|c14=f:0.35|c22=f:0.7

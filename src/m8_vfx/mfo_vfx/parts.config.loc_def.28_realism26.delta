@@ -1,0 +1,3 @@
+# MF Overhaul 0.3.33: bomb-class dirt thrown faster (c14 0.25 -> 0.45) so the 21 cm / 28 cm rocket bursts look violent, not just big.
+# 1 operation
+row~|parts_desc|dirt_bomb|c14=f:0.45

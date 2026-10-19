@@ -1,0 +1,5 @@
+i_unflat:unflat()
+{
+	parts                         , config          , loc_def ;
+	sfx                           , config          , loc_def ;
+}

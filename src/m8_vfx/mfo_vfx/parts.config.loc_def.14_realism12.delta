@@ -1,0 +1,13 @@
+# azcf delta  base=parts.config.loc_def.bin  target=parts_realism12.bin  2026-10-15T16:26:22
+# kids=0 name~=0 node-=0 node+=0 order=0 row-=0 row~=11 row+=0 shape~=0 types~=0
+row~|parts_desc|dust_shot|c11=a:-2571104|c12=a:14206112
+row~|parts_desc|ext_dirt|c11=a:-9808577|c12=a:-9808577
+row~|parts_desc|dirt_expl|c11=a:-10728906|c12=a:6048310
+row~|parts_desc|dirt_expl_big|c11=a:-10728906|c12=a:6048310
+row~|parts_desc|dirt_bomb|c11=a:-10728906|c12=a:6048310
+row~|parts_desc|ext_dirt_sm|c11=a:-9808577|c12=a:-9808577
+row~|parts_desc|smoke_expl|c11=a:-260017048|c12=a:5787720
+row~|parts_desc|smoke_expl_big|c11=a:-260017048|c12=a:5787720
+row~|parts_desc|dust_expl_rnd_sm|c11=a:-2133277536|c12=a:14206112
+row~|parts_desc|dust_expl_rnd|c11=a:-2133277536|c12=a:14206112
+row~|parts_desc|dust_expl_rnd_big|c11=a:-2133277536|c12=a:14206112

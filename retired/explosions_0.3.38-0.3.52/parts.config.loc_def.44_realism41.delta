@@ -1,0 +1,21 @@
+# MF Overhaul 0.3.48: user: "explosions look less powerful due to how fast smoke and dust dissipate; both have to match the power
+#   of the explosion, organic, proportional to the explosive power". After 0.3.46/0.3.47 the bomb tier had shrunk to the medium
+#   tier's size. One ladder now, each step ~1.5x the one below in size, amount and duration:
+#            smoke: puffs  start->end   life  rise      dust: puffs  start->end   life
+#   small    8      1 -> 10 m    14 s  +0.08         8      1.5 -> 10 m  14 s      (76 mm, 105-122 mm, mortars)
+#   medium   10     2 -> 18 m    22 s  +0.06         14     3 -> 18 m    22 s      (152 mm)
+#   big      14     3 -> 28 m    32 s  +0.04         20     4 -> 28 m    32 s      (21 / 28 cm rockets, aerial bombs)
+#   Fade points: smoke 0.3 (bomb 0.4), dust 0.2. Opacity (smoke 0xB8, dust 0xA0), hue and the low fast dust spread unchanged.
+# 12 operations
+row~|parts_desc|smoke_expl|c6=v:0;0.08|c9=v:1;1|c10=v:10;10|c13=v:14;0.3;0.05;0.15
+row~|parts_desc|smoke_expl_big|c6=v:0;0.06|c9=v:2;2|c10=v:18;18|c13=v:22;0.3;0.05;0.2
+row~|parts_desc|smoke_bomb|c6=v:0;0.04|c9=v:3;3|c10=v:28;28|c13=v:32;0.4;0.05;0.2
+row~|parts_desc|dust_expl_rnd_sm|c9=v:1.5;1.5|c10=v:10;10|c13=v:14;0.2;0.1;0.15
+row~|parts_desc|dust_expl_rnd|c9=v:3;3|c10=v:18;18|c13=v:22;0.2;0.1;0.3
+row~|parts_desc|dust_expl_rnd_big|c9=v:4;4|c10=v:28;28|c13=v:32;0.2;0.1;0.6
+row~|pgens_desc|smoke_expl|c5=f:8
+row~|pgens_desc|smoke_expl_big|c5=f:10
+row~|pgens_desc|smoke_bomb|c5=f:14
+row~|pgens_desc|dust_expl_sm|c5=f:8
+row~|pgens_desc|dust_expl|c5=f:14
+row~|pgens_desc|dust_expl_big|c5=f:20

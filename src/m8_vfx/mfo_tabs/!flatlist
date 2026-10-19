@@ -1,0 +1,5 @@
+i_unflat:unflat()
+{
+	common_res_mod                , config          , loc_def ;
+	common_res                    , config          , loc_def ;
+}

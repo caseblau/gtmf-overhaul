@@ -1,0 +1,11 @@
+# MF Overhaul 0.3.35: user: "dust and smoke from explosion impacts should last a bit longer". Lifetimes (c13 slot 0) up ~45 %,
+#   fade point kept, so the plume and the hanging dust linger and thin instead of cutting off:
+#   smoke_expl 11 -> 16 s, smoke_expl_big 13 -> 19 s, smoke_bomb 15 -> 22 s; dust sm/med/big 18/26/28 -> 26/38/42 s.
+#   Sprite animation (c22) slowed in step so the longer-lived puffs do not churn: smoke 5 -> 3.5, bomb 3.5 -> 2.5, dust 2/1.6/1.4 -> 1.4/1.1/1.
+# 6 operations
+row~|parts_desc|smoke_expl|c13=v:16;0.35;0.05;0.15|c22=f:3.5
+row~|parts_desc|smoke_expl_big|c13=v:19;0.35;0.05;0.2|c22=f:3.5
+row~|parts_desc|smoke_bomb|c13=v:22;0.7;0.05;0.2|c22=f:2.5
+row~|parts_desc|dust_expl_rnd_sm|c13=v:26;0.05;0.1;0.15|c22=f:1.4
+row~|parts_desc|dust_expl_rnd|c13=v:38;0.05;0.1;0.3|c22=f:1.1
+row~|parts_desc|dust_expl_rnd_big|c13=v:42;0.05;0.1;0.6|c22=f:1

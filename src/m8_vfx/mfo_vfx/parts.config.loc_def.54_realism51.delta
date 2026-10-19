@@ -1,0 +1,11 @@
+# MF Overhaul 0.3.56: user on 0.3.55: "dust creates several smaller moving puffs instead of one organic, realistic big one".
+#   Fewer, bigger, slower puffs that overlap into one mass: burst dust puffs 20/28/24 -> 8/10/10, start 2/3/3 -> 4/6/6 m,
+#   end 13/22/20 -> 18/28/28 m, sideways speed 0.3/0.35/0.35 -> 0.12/0.15/0.15, sprite animation 1/0.8/0.7 -> 0.6/0.5/0.5.
+#   Lifetimes (48/64/72 s), fade point 0.4 and colour as 0.3.55.
+# 6 operations
+row~|pgens_desc|dust_expl_sm|c5=f:8
+row~|pgens_desc|dust_expl|c5=f:10
+row~|pgens_desc|dust_expl_big|c5=f:10
+row~|parts_desc|dust_expl_rnd_sm|c9=v:4;4|c10=v:18;18|c14=f:0.12|c22=f:0.6
+row~|parts_desc|dust_expl_rnd|c9=v:6;6|c10=v:28;28|c14=f:0.15|c22=f:0.5
+row~|parts_desc|dust_expl_rnd_big|c9=v:6;6|c10=v:28;28|c14=f:0.15|c22=f:0.5

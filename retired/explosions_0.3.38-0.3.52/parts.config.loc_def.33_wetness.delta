@@ -1,0 +1,13 @@
+# MF Overhaul 0.3.40: parts_desc c26 is a wetness gate (A/B at 0.3.38: burst smoke with c26 = 0.5 was unchanged in clear
+#   weather and weaker in rain; vanilla uses 0.5 on burst dust, wheel dirt/water and burning fragments, -1 = never affected).
+#   User: "during rain dust, smoke etc. will be tuned down". Rows that vanilla leaves at -1 now get the dust value 0.5:
+#   burst smoke (smoke_expl, smoke_expl_big, smoke_bomb), muzzle smoke (smoke_white, smoke_shotb), muzzle dust (dust_shot),
+#   vehicle dust (dust_wh). Wheel mud and water spray keep their vanilla 0.5; clods keep 0.2-0.7.
+# 7 operations
+row~|parts_desc|smoke_expl|c26=f:0.5
+row~|parts_desc|smoke_expl_big|c26=f:0.5
+row~|parts_desc|smoke_bomb|c26=f:0.5
+row~|parts_desc|smoke_white|c26=f:0.5
+row~|parts_desc|smoke_shotb|c26=f:0.5
+row~|parts_desc|dust_shot|c26=f:0.5
+row~|parts_desc|dust_wh|c26=f:0.5

@@ -1,0 +1,7 @@
+# MF Overhaul 0.3.44: user: "it does not necessarily have to go upward, just more realistic" (burst smoke). The strong rise from
+#   0.3.41 (+0.25/+0.2/+0.18) becomes gentle buoyancy, so the plume lifts a little and is otherwise carried by the wind (ADVW):
+#   smoke_expl +0.08, smoke_expl_big +0.06, smoke_bomb +0.05.
+# 3 operations
+row~|parts_desc|smoke_expl|c6=v:0;0.08
+row~|parts_desc|smoke_expl_big|c6=v:0;0.06
+row~|parts_desc|smoke_bomb|c6=v:0;0.05

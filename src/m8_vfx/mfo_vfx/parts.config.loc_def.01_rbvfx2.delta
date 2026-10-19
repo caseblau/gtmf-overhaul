@@ -1,0 +1,28 @@
+# Realistic Battlefield VFX Part 2 (Anton / Toni on Steam, add-on version 100, rvfxmod.flatdata) as a row-level delta on 6.00 build 3598:
+#   tools\gt3.ps1 diff <vanilla parts> <rvfxmod parts>, 2026-10-15. Third-party content, dependency until permission (docs\third_party.md 2, 3.2).
+#   parts_desc +4 rows, pgens_desc +5 rows, pgens_desc_wint emptied (shape~), 13 changed rows.
+# 24 operations
+shape~|pgens_desc_wint|1|0|
+row+|pgens_desc|torch|torch_ksc|s:torch_ksc|b:0|u:'ANI0'|f:-1|b:1|f:1|s:torch_smc|b:0
+row~|pgens_desc|ext_flare_obj|c5=f:300
+row~|pgens_desc|ext_flare_obj_sm|c5=f:200
+row~|pgens_desc|ext_flare_obj_bul|c5=f:50
+row+|pgens_desc|smoke_hit_obj|smoke_hit_obj_usm|s:smoke_hit_obj_usm|b:0|u:'SMKG'|f:-1|b:1|f:1|s:smoke_hit_usmc|b:0
+row+|pgens_desc|smoke_hit_obj_usm|smoke_hit_obj_sm_treec|s:smoke_hit_obj_sm_treec|b:0|u:'SMK0'|f:-1|b:1|f:2|s:smoke_hit_sm_treecp|b:0
+row+|pgens_desc|smoke_hit_obj_sm|smoke_hit_obj_m|s:smoke_hit_obj_m|b:0|u:'SMK0'|f:-1|b:1|f:8|s:smoke_hit_sm|b:0
+row+|pgens_desc|smoke_air_big|smoke_air_biguhi|s:smoke_air_biguhi|b:0|u:'SMK0'|f:-1|b:1|f:25|s:smoke_air_biguhip|b:0
+row+|parts_desc|torch|torch_smc|s:torch_smc|s:sh_flame|s:flame|s:torch0000_dift|s:|u:5|v:0|v:0;0;0.0625;0.125|v:0.002;0.002;-0.004;-0.004|v:2;4|v:2;4|a:-1|a:-1|v:5.12|f:0|f:25|f:0|u:16|u:8|u:3|u:0|b:1|f:0|f:0|u:'SIMM'|b:0|f:-1
+row~|parts_desc|flash_shot_sm|c9=v:0.09;0.09|c10=v:0.12;0.12
+row~|parts_desc|smk_air_red|c9=v:1.5;1.5|c10=v:4;4|c13=v:25;0.2;0.02;0.025
+row~|parts_desc|smk_air_green|c9=v:1.5;1.5|c10=v:4;4|c13=v:25;0.2;0.02;0.025
+row~|parts_desc|smk_air_yellow|c9=v:1.5;1.5|c10=v:4;4|c13=v:25;0.2;0.02;0.025
+row~|parts_desc|smk_air_magenta|c9=v:1.5;1.5|c10=v:4;4|c13=v:25;0.2;0.02;0.025
+row~|parts_desc|smk_air_orange|c9=v:1.5;1.5|c10=v:4;4|c13=v:25;0.2;0.02;0.025
+row~|parts_desc|smk_air_blue|c9=v:1.5;1.5|c10=v:4;4|c13=v:25;0.2;0.02;0.025
+row~|parts_desc|smoke_hit_sm|c13=v:8;0.1;0.05;0.1
+row+|parts_desc|smoke_hit_sm|smoke_hit_sm_treecp|s:smoke_hit_sm_treecp|s:sh_smoke|s:sfx_01|s:sfx_01_dift|s:sfx_01_norsp|u:5|v:0;0.01|v:0;0.25;0.25;0.25|v:0.002;0.002;-0.004;-0.004|v:0.6;0.6|v:2.5;2.5|a:-10461088;1613770800|a:6316128;-1066373000|v:8;0.05;0.04;0.03|f:0.25|f:1|f:4|u:4|u:1|u:0|u:2|b:0|f:4|f:360|u:'ADVW'|b:0|f:-1
+row+|parts_desc|smoke_hit_sm_treecp|smoke_hit_usmc|s:smoke_hit_usmc|s:sh_smoke|s:sfx_01|s:sfx_01_dift|s:sfx_01_norsp|u:5|v:0;0.01|v:0;0.25;0.25;0.25|v:0.002;0.002;-0.004;-0.004|v:0.5;0.5|v:2;2|a:-10461088;1613770800|a:6316128;-1066373000|v:5;0.1;0.01;0.1|f:0.25|f:1|f:4|u:4|u:1|u:0|u:2|b:0|f:4|f:360|u:'ADVW'|b:0|f:-1
+row~|parts_desc|smoke_hit|c13=v:8;0.2;0.05;0.1
+row+|parts_desc|smoke_air_big|smoke_air_biguhip|s:smoke_air_biguhip|s:sh_smoke|s:sfx_01|s:sfx_01_dift|s:sfx_01_norsp|u:5|v:0;0.01|v:0;0.25;0.25;0.25|v:0.002;0.002;-0.004;-0.004|v:2.5;2.5|v:25;25|a:-258961264|a:6316128|v:12;0.8;0.05;0.1|f:0.25|f:1|f:4|u:4|u:1|u:0|u:2|b:0|f:4|f:360|u:'ADVW'|b:0|f:-1
+row~|parts_desc|ext_flare_hit|c9=v:0.05;0.05|c10=v:0.03;0.03|c11=a:-1598000599
+name~|parts.loc_def

@@ -1,0 +1,15 @@
+# MF Overhaul 0.3.45: user: "looking from afar, explosions seem like just puffs of dust and smoke; make them more visible, yet the
+#   dust and smoke dissipate". A 0.12 s flash cannot be seen at range. Flash bigger and a touch longer (still a snap):
+#   flash_sm 1.2 -> 2 m start / 1.5 -> 3 m end, flash_med 2 -> 3.5 / 2.5 -> 5, flash_big 4 -> 6 / 5 -> 9; life 0.12/0.12/0.14 ->
+#   0.22/0.25/0.3 s. Sparks fuller: spark_expl 5 -> 10 per burst, end 2.5 -> 4 m, life 0.3 -> 0.5 s; spark_bomb 10 -> 16.
+#   Dark fireball core (core_expl / core_expl_bomb) starts bigger: 8;9 -> 11;13 and 12;15 -> 15;19 m, so the burst has a body at range.
+# 9 operations
+row~|parts_desc|flash_sm|c9=v:2;2|c10=v:3;3|c13=v:0.22;0;0.5;2
+row~|parts_desc|flash_med|c9=v:3.5;3.5|c10=v:5;5|c13=v:0.25;0;0.5;2
+row~|parts_desc|flash_big|c9=v:6;6|c10=v:9;9|c13=v:0.3;0;0.5;2
+row~|parts_desc|spark_expl|c10=v:4;4|c13=v:0.5;0;0.5;2
+row~|parts_desc|core_expl|c9=v:11;13
+row~|parts_desc|core_expl_bomb|c9=v:15;19
+row~|pgens_desc|spark_expl|c5=f:10
+row~|pgens_desc|spark_bomb|c5=f:16
+row~|pgens_desc|spark_expl_sm|c5=f:5

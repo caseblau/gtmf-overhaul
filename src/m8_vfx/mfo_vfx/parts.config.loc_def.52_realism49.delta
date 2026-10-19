@@ -1,0 +1,16 @@
+# MF Overhaul 0.3.54 (on the 0.3.37 / 0.3.53 baseline): user: "more smoke and dust during explosions, it dissipates slower".
+#   Burst smoke puffs 12/12/25 -> 16/18/32, life 16/19/22 -> 22/28/32 s; burst dust puffs 10/14/10 -> 14/20/16,
+#   life 26/38/42 -> 34/48/54 s. Fade points, sizes, colours and motion exactly as 0.3.37.
+# 12 operations
+row~|pgens_desc|smoke_expl|c5=f:16
+row~|pgens_desc|smoke_expl_big|c5=f:18
+row~|pgens_desc|smoke_bomb|c5=f:32
+row~|pgens_desc|dust_expl_sm|c5=f:14
+row~|pgens_desc|dust_expl|c5=f:20
+row~|pgens_desc|dust_expl_big|c5=f:16
+row~|parts_desc|smoke_expl|c13=v:22;0.3;0.05;0.15
+row~|parts_desc|smoke_expl_big|c13=v:28;0.3;0.05;0.2
+row~|parts_desc|smoke_bomb|c13=v:32;0.5;0.05;0.2
+row~|parts_desc|dust_expl_rnd_sm|c13=v:34;0.15;0.1;0.15
+row~|parts_desc|dust_expl_rnd|c13=v:48;0.15;0.1;0.3
+row~|parts_desc|dust_expl_rnd_big|c13=v:54;0.15;0.1;0.6

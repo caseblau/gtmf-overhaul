@@ -1,0 +1,4 @@
+# MF Overhaul 0.3.44: light HE (LHE: 75/76 mm field guns, tank HE) had no dust generator at all; it now gets the small tier so the
+#   dust scale runs 76 mm < 105-122 mm < 152 mm < bombs. Grenades, 45/50 mm (GREN / LLHE / AHE) still raise none.
+# 1 operation
+row~|expl_desc|dirt_lhe|c12=s:dust_expl_sm

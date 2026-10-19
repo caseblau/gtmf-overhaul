@@ -1,0 +1,8 @@
+# MF Overhaul edits on top of the RBVFX Part 2 parts table (docs\sources.md): signal-flare smoke trail removed.
+#   0.2.11/0.3.2: smk_flare_black emission 0; smoke_flare_black and smoke_burn_air colours fully transparent.
+#   0.3.4: smoke_flare colours fully transparent (the grey plume drawn on a flying flare).
+# 4 operations
+row~|pgens_desc|smk_flare_black|c5=f:0
+row~|parts_desc|smoke_burn_air|c11=a:12632256|c12=a:12632256;12632256
+row~|parts_desc|smoke_flare_black|c11=a:12632256|c12=a:12632256;12632256|c13=v:8;0.5;0.3;1.5|c22=f:2
+row~|parts_desc|smoke_flare|c11=a:12632256|c12=a:12632256

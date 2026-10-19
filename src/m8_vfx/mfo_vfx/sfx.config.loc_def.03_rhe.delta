@@ -1,0 +1,7 @@
+# MF Overhaul 0.3.33: new VFX class RHE (heavy rocket, 28/32 cm Wurfkoerper) = the BOMB burst scaled up.
+#   expl_dect RHE -> dirt_rhe on soil, otherwise the BOMB surface rows; expl_desc dirt_rhe = dirt_bomb with scale 1.4 -> 1.6,
+#   c10 7;40;7 -> 8;50;8, c11 80 -> 90. Class names are table-driven (adv_game.codelib only names expl_dect/expl_desc), so a new
+#   fourcc is safe. Sounds come from shells c26 (BOMB), so expl_snds needs no row.
+# 2 operations
+row+|expl_dect|u:'BOMB'|u:'RHE'|u:'RHE'|s:dirt_rhe|s:water_uhi|s:air_uhi|s:steel_uhi|s:wood_uhi|s:tree_uhi|s:air_uhi|s:over_uhi|s:under_bomb
+row+|expl_desc|dirt_bomb|dirt_rhe|s:dirt_rhe|s:flash_bomb|s:smoke_bomb|s:spark_bomb|s:core_bomb|s:dirt_bomb|s:|s:ext_dirt_big|s:scr_expl|v:1.6;1.6;35|v:8;50;8|v:90;2.5;5;0.3|s:dust_expl_big|s:water_med|a:100;25

@@ -1,0 +1,6 @@
+# MF Overhaul 0.3.34: user: "too large burst of ground" (0.3.33 heavy rockets). Bomb-class earth smaller in radius but still fast:
+#   dirt_bomb start 3 -> 2.5 m, end 20 -> 13 m, life 5.5 -> 5 s, pieces 65 -> 50 (pgens); big-burst clods 100 -> 80.
+# 3 operations
+row~|parts_desc|dirt_bomb|c9=v:2.5;2.5|c10=v:13;13|c13=v:5;0.1;0.1;0.7
+row~|pgens_desc|dirt_bomb|c5=f:50
+row~|pgens_desc|ext_dirt_big|c5=f:80

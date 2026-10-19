@@ -1,0 +1,17 @@
+# MF Overhaul 0.3.55: user on 0.3.54: "fading too fast, more smoke and dust". Second step in the same direction:
+#   burst smoke puffs 16/18/32 -> 22/26/44, life 22/28/32 -> 32/40/48 s, fade starts at 0.3/0.3/0.5 -> 0.5/0.5/0.6 of life;
+#   burst dust puffs 14/20/16 -> 20/28/24, life 34/48/54 -> 48/64/72 s, fade starts at 0.15 -> 0.4.
+#   Sizes, colours and motion still as 0.3.37.
+# 12 operations
+row~|pgens_desc|smoke_expl|c5=f:22
+row~|pgens_desc|smoke_expl_big|c5=f:26
+row~|pgens_desc|smoke_bomb|c5=f:44
+row~|pgens_desc|dust_expl_sm|c5=f:20
+row~|pgens_desc|dust_expl|c5=f:28
+row~|pgens_desc|dust_expl_big|c5=f:24
+row~|parts_desc|smoke_expl|c13=v:32;0.5;0.05;0.15
+row~|parts_desc|smoke_expl_big|c13=v:40;0.5;0.05;0.2
+row~|parts_desc|smoke_bomb|c13=v:48;0.6;0.05;0.2
+row~|parts_desc|dust_expl_rnd_sm|c13=v:48;0.4;0.1;0.15
+row~|parts_desc|dust_expl_rnd|c13=v:64;0.4;0.1;0.3
+row~|parts_desc|dust_expl_rnd_big|c13=v:72;0.4;0.1;0.6

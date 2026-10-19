@@ -1,0 +1,6 @@
+# MF Overhaul 0.4.14: smoke classes launch spread (expl_desc c10, x;up;z m/s): vanilla 1;1;1 bore every puff at the can, so in calm
+#   air the cloud was one puff wide. Grenades 3;0.3;3, pot 4;0.3;4: puffs pool outward a few metres, hugging the ground.
+# 3 operations
+row~|expl_desc|smkl|c10=v:3;0.3;3
+row~|expl_desc|smkls|c10=v:3;0.3;3
+row~|expl_desc|smkpt|c10=v:4;0.3;4

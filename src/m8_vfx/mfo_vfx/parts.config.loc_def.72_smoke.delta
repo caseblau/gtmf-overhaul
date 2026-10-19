@@ -1,0 +1,22 @@
+# MF Overhaul 0.4.12: smoke-grenade pass (docs\smoke_grenades.md). c13 slot 1 = fade-in seconds confirmed in game at 0.4.11.
+#   smoke_longg (German Nb.Hgr.39 / British grenades, class SMKL): low grey-white wall: 0.8 -> 6 m, settle -0.02, 55 s, 5 s fade-in,
+#   keyframes translucent -> opaque -> thinning -> gone; 3 puffs/s for 110 s. New smoke_longgs (Soviet RDG, class SMKS): same puff,
+#   3/s for 80 s. New smoke_longgp (smoke pot SMK_MT, class SMPT): 1 -> 9 m, 70 s, 6 s fade-in, 1.2/s for 300 s. Screen volumes
+#   (SCR) follow: smk_screeng 0.5 -> 7 m for 110 s, smk_screengs 85 s, smk_screengp 0.5 -> 9 m 60 s each for 305 s.
+#   Winter override: smoke_longg / smoke_longgs / smoke_longgp with life 40/40/55 s (cold dry air gives a thin, short cloud).
+# 15 operations
+row~|parts_desc|smoke_longg|c6=v:0;-0.02|c9=v:0.8;0.8|c10=v:6;6|c11=a:-252908828;-1595481382|c12=a:14737112;-1058610470|c13=v:55;5;0.1;0.1
+row~|parts_desc|smk_screeng|c10=v:7;7
+row+|parts_desc|smoke_longg|smoke_longgs|s:smoke_longgs|s:sh_smoke|s:sfx_01|s:sfx_01_dift|s:sfx_01_norsp|u:5|v:0;-0.02|v:0;0.25;0.25;0.25|v:0.002;0.002;-0.004;-0.004|v:0.8;0.8|v:6;6|a:-252908828;-1595481382|a:14737112;-1058610470|v:55;5;0.1;0.1|f:0.25|f:1|f:4|u:4|u:1|u:0|u:2|b:0|f:3|f:120|u:'ADWP'|b:0|f:-1
+row+|parts_desc|smoke_longgs|smoke_longgp|s:smoke_longgp|s:sh_smoke|s:sfx_01|s:sfx_01_dift|s:sfx_01_norsp|u:5|v:0;-0.02|v:0;0.25;0.25;0.25|v:0.002;0.002;-0.004;-0.004|v:1;1|v:9;9|a:-252908828;-1595481382|a:14737112;-1058610470|v:70;6;0.1;0.1|f:0.25|f:1|f:4|u:4|u:1|u:0|u:2|b:0|f:3|f:120|u:'ADWP'|b:0|f:-1
+row+|parts_desc|smk_screeng|smk_screengs|s:smk_screengs|s:sh_smoke|s:sfx_01|s:sfx_01_dift|s:sfx_01_norsp|u:5|v:0|v:0;0.25;0.25;0.25|v:0.002;0.002;-0.004;-0.004|v:0.5;0.5|v:7;7|a:-65536|a:-65536|v:40;1;0.05;0.35|f:0.25|f:1|f:4|u:4|u:1|u:0|u:2|b:0|f:1.5|f:60|u:'SCR'|b:0|f:-1
+row+|parts_desc|smk_screengs|smk_screengp|s:smk_screengp|s:sh_smoke|s:sfx_01|s:sfx_01_dift|s:sfx_01_norsp|u:5|v:0|v:0;0.25;0.25;0.25|v:0.002;0.002;-0.004;-0.004|v:0.5;0.5|v:9;9|a:-65536|a:-65536|v:60;1;0.05;0.35|f:0.25|f:1|f:4|u:4|u:1|u:0|u:2|b:0|f:1.5|f:60|u:'SCR'|b:0|f:-1
+row+|parts_desc_wint|@end|smoke_longg|s:smoke_longg|s:sh_smoke|s:sfx_01|s:sfx_01_dift|s:sfx_01_norsp|u:5|v:0;-0.02|v:0;0.25;0.25;0.25|v:0.002;0.002;-0.004;-0.004|v:0.8;0.8|v:6;6|a:-252908828;-1595481382|a:14737112;-1058610470|v:40;5;0.1;0.1|f:0.25|f:1|f:4|u:4|u:1|u:0|u:2|b:0|f:3|f:120|u:'ADWP'|b:0|f:-1
+row+|parts_desc_wint|@end|smoke_longgs|s:smoke_longgs|s:sh_smoke|s:sfx_01|s:sfx_01_dift|s:sfx_01_norsp|u:5|v:0;-0.02|v:0;0.25;0.25;0.25|v:0.002;0.002;-0.004;-0.004|v:0.8;0.8|v:6;6|a:-252908828;-1595481382|a:14737112;-1058610470|v:40;5;0.1;0.1|f:0.25|f:1|f:4|u:4|u:1|u:0|u:2|b:0|f:3|f:120|u:'ADWP'|b:0|f:-1
+row+|parts_desc_wint|@end|smoke_longgp|s:smoke_longgp|s:sh_smoke|s:sfx_01|s:sfx_01_dift|s:sfx_01_norsp|u:5|v:0;-0.02|v:0;0.25;0.25;0.25|v:0.002;0.002;-0.004;-0.004|v:1;1|v:9;9|a:-252908828;-1595481382|a:14737112;-1058610470|v:55;6;0.1;0.1|f:0.25|f:1|f:4|u:4|u:1|u:0|u:2|b:0|f:3|f:120|u:'ADWP'|b:0|f:-1
+row~|pgens_desc|smoke_longg|c5=f:3
+row+|pgens_desc|smoke_longg|smoke_longgs|s:smoke_longgs|b:0|u:'SMKG'|f:80|b:1|f:3|s:smoke_longgs|b:0
+row+|pgens_desc|smoke_longgs|smoke_longgp|s:smoke_longgp|b:0|u:'SMKG'|f:300|b:1|f:1.2|s:smoke_longgp|b:0
+row~|pgens_desc|smk_screeng|c3=f:110
+row+|pgens_desc|smk_screeng|smk_screengs|s:smk_screengs|b:0|u:'SCR'|f:85|b:1|f:0.2|s:smk_screengs|b:0
+row+|pgens_desc|smk_screengs|smk_screengp|s:smk_screengp|b:0|u:'SCR'|f:305|b:1|f:0.15|s:smk_screengp|b:0

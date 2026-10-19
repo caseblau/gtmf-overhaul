@@ -1,0 +1,17 @@
+# MF Overhaul 0.4.13: user on 0.4.12: "without wind the smoke cloud is small". A calm-air HC cloud still pools 15-30 m around the
+#   grenade. Grenade puffs 6 -> 9 m (pot 9 -> 12 m), start 0.8 -> 1.5 m, life 55 -> 70 s (pot 70 -> 90), launch-drift time constant
+#   (c13 slot 3) 0.1 -> 0.3 so the SMKG drift carries each puff further from the can before it settles, 3 -> 4 puffs/s (pot 1.2 -> 1.5).
+#   Screen volumes follow: 7 -> 9 m (pot 9 -> 12 m). Winter rows updated to match (life 50 / 50 / 70).
+# 12 operations
+row~|parts_desc|smoke_longg|c9=v:1.5;1.5|c10=v:9;9|c13=v:70;5;0.1;0.3
+row~|parts_desc|smoke_longgs|c9=v:1.5;1.5|c10=v:9;9|c13=v:70;5;0.1;0.3
+row~|parts_desc|smoke_longgp|c9=v:2;2|c10=v:12;12|c13=v:90;6;0.1;0.3
+row~|parts_desc|smk_screeng|c10=v:9;9
+row~|parts_desc|smk_screengs|c10=v:9;9
+row~|parts_desc|smk_screengp|c10=v:12;12
+row~|parts_desc_wint|smoke_longg|c9=v:1.5;1.5|c10=v:9;9|c13=v:50;5;0.1;0.3
+row~|parts_desc_wint|smoke_longgs|c9=v:1.5;1.5|c10=v:9;9|c13=v:50;5;0.1;0.3
+row~|parts_desc_wint|smoke_longgp|c9=v:2;2|c10=v:12;12|c13=v:70;6;0.1;0.3
+row~|pgens_desc|smoke_longg|c5=f:4
+row~|pgens_desc|smoke_longgs|c5=f:4
+row~|pgens_desc|smoke_longgp|c5=f:1.5

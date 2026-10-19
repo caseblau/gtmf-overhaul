@@ -1,0 +1,3337 @@
+# Generated change list (tools\oob_17jul.ps1)
+
+One line per platoon: NEW = added to the formation reserve; MOVED = re-pooled into a new artillery regiment formation; otherwise a composition change, a company split or a battle-group slot change.
+
+## 07_17_Stepanovka_NA_RUS
+
+### p_ra_362rr  (362 RR: 30 July 362 RR structure)
+- NEW `ra_362rr_saps` (0x10, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x2
+- NEW `ra_362rr_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x3
+- NEW `ra_362rr_1smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_362rr_1smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_362rr_ac120mt1` (0x41, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_coy)
+- NEW `ra_362rr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_362rr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_362rr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_362rr_atgc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_362rr_atgc_1p` (0x61, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_362rr_atgc_2p` (0x62, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_362rr_gunc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_362rr_ac76gun` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_pp27_plat)
+- NEW `ra_362rr_gunc_1p` (0x72, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_362rr_gunc_2p` (0x73, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_362rr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_362rr_coy1` (0x110, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_362rr_1c_mt` (0x115, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_362rr_coy2` (0x120, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_362rr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_362rr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_362rr_1mtc_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_362rr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_362rr_1mt_2p` (0x152, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_362rr_2b_ac82mt` (0x208, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_362rr_coy4` (0x240, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- `ra_362rr_coy5` (0x250, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- `ra_362rr_coy6` (0x260, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_362rr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_362rr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_362rr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_362rr_2mtc_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_362rr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_362rr  (315 RD recon company -> 362 RR)
+- NEW `ra_362rr_rcoy` (0x820, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_362rr_rc_1p` (0x821, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x4
+- NEW `ra_362rr_rc_2p` (0x822, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x4
+### p_ra_362rr  (431 AT bn HQ + 1 battery -> 362 RR)
+- NEW `ra_362rr_atbn_hq` (0xc01, COM, plu_batcmd): rkka_com_art_div x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_362rr_atbn_1c_com` (0xc10, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_362rr_atbn_1c_1p` (0xc11, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+- NEW `ra_362rr_atbn_1c_2p` (0xc12, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+### p_ra_724rr  (724 RR: 30 July 724 RR structure)
+- NEW `ra_724rr_saps` (0x10, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x2
+- NEW `ra_724rr_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x3
+- NEW `ra_724rr_1smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_724rr_1smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_724rr_1smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_724rr_ac120mt1` (0x41, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_coy)
+- NEW `ra_724rr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_724rr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_724rr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_724rr_atgc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_724rr_atgc_1p` (0x61, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_724rr_atgc_2p` (0x62, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_724rr_gunc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_724rr_ac76gun` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_pp27_plat)
+- NEW `ra_724rr_gunc_1p` (0x72, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_724rr_gunc_2p` (0x73, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_724rr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_724rr_coy1` (0x110, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- `ra_724rr_coy2` (0x120, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_724rr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_724rr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_724rr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_724rr_1mtc_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_724rr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_724rr_2b_ac82mt` (0x208, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_724rr_2b_atg` (0x209, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- `ra_724rr_coy4` (0x240, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_724rr_4c_mt` (0x245, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_724rr_coy5` (0x250, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- `ra_724rr_coy6` (0x260, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_724rr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_724rr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_724rr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_724rr_2mtc_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_724rr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_724rr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_724rr_3b_hq` (0x301, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_724rr_3b_ac82mt` (0x302, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_724rr_3b_atg` (0x303, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_724rr_3b_atr` (0x304, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_724rr_7c_com` (0x370, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_724rr_7c_1p` (0x371, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_724rr_7c_2p` (0x372, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_724rr_7c_mt` (0x375, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_724rr_8c_com` (0x380, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_724rr_8c_1p` (0x381, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_724rr_8c_2p` (0x382, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_724rr_3mgc_com` (0x3a0, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_724rr_3mg_1p` (0x3a1, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+### p_ra_724rr  (700 sap bn HQ + 1 coy -> 724 RR)
+- NEW `ra_724rr_sbn_hq` (0xb01, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_724rr_sbn_1c_com` (0xb10, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_724rr_sbn_1c_1p` (0xb11, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_724rr_sbn_1c_2p` (0xb12, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+### p_ra_724rr  (431 AT bn 2 battery -> 724 RR)
+- NEW `ra_724rr_atbn_2c_com` (0xc20, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_724rr_atbn_2c_1p` (0xc21, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+### p_ra_1328rr  (1328 RR: 30 July 1328 RR structure)
+- NEW `ra_1328rr_reconh` (0x12, SCT, plu_cavalary): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_1328rr_1smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_1328rr_1smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_1328rr_1smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_1328rr_ac120mt1` (0x41, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_coy)
+- NEW `ra_1328rr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_1328rr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_1328rr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_1328rr_atgc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_1328rr_atgc_1p` (0x61, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_1328rr_gunc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_1328rr_ac76gun` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_pp27_plat)
+- NEW `ra_1328rr_gunc_1p` (0x72, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_1328rr_gunc_2p` (0x73, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_1328rr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_1328rr_1b_atg` (0x109, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_1328rr_1b_atr` (0x104, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- `ra_1328rr_coy1` (0x110, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- `ra_1328rr_coy2` (0x120, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_1328rr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_1328rr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_1328rr_2b_hq` (0x201, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_1328rr_2b_ac82mt` (0x202, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_1328rr_2b_atg` (0x203, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_1328rr_4c_com` (0x240, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_1328rr_4c_1p` (0x241, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_1328rr_4c_2p` (0x242, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_1328rr_4c_mt` (0x245, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_1328rr_5c_com` (0x250, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_1328rr_5c_1p` (0x251, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_1328rr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_1328rr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_1328rr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_1328rr_2mtc_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_1328rr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_1328rr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_1328rr_3b_hq` (0x301, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_1328rr_3b_ac82mt` (0x302, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_1328rr_7c_com` (0x370, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_1328rr_7c_1p` (0x371, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_1328rr_7c_2p` (0x372, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_1328rr_9c_com` (0x390, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_1328rr_9c_1p` (0x391, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_1328rr_9c_2p` (0x392, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_1328rr_3mgc_com` (0x3a0, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_1328rr_3mg_1p` (0x3a1, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_1328rr_3mtc_com` (0x3b0, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_1328rr_3mt_1p` (0x3b1, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_1328rr  (700 sap bn 2 coy -> 1328 RR)
+- NEW `ra_1328rr_sbn_2c_com` (0xb20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_1328rr_sbn_2c_1p` (0xb21, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_1328rr_sbn_2c_2p` (0xb22, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+### p_ra_1328rr  (431 AT bn 3 battery + ATR coy -> 1328 RR)
+- NEW `ra_1328rr_atbn_3c_com` (0xc30, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_1328rr_atbn_3c_1p` (0xc31, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+- NEW `ra_1328rr_atbn_atrc_com` (0xc40, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_1328rr_atbn_atrc_1p` (0xc41, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_1328rr_atbn_atrc_2p` (0xc42, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+### p_ra_1012ar  NEW FORMATION under p_ra_315rd (name key op_ra_1012ar, ai USER)
+- MOVED `ra_315_3arty` (0x132, SUP, name oppl_ussr_ar_3b2) from p_ra_724rr: gun platoon of battery 3
+- MOVED `ra_315_1arty` (0x112, SUP, name oppl_ussr_ar_1b2) from p_ra_362rr: gun platoon of battery 1
+- MOVED `ra_315_2arty` (0x122, SUP, name oppl_ussr_ar_2b2) from p_ra_1328rr: gun platoon of battery 2
+### p_ra_1012ar  (1012 AR: new formation under 315 RD (30 July 1012 AR: HQ, FO teams, batteries) + the 17 July division batteries)
+- NEW `ra_1012ar_hq` (0x0, CAMP, plu_rgt_arty): rkka_com_sup x1, rkka_squad_sup x4;0;0;16, rkka_squad_sup_mot x2;0;0;16, rkka_squad_spam x2;0;0;8, rkka_squad_scout_42m x1
+- NEW `ra_1012ar_1b_ac` (0x111, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_1012ar_2b_ac` (0x121, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_1012ar_3b_ac` (0x131, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+- NEW `ra_1012ar_4b_hq` (0x240, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_1012ar_4b_ac` (0x241, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_1012ar_4b_1p` (0x242, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_1012ar_5b_ac` (0x251, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_1012ar_6b_hq` (0x260, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_1012ar_6b_ac` (0x261, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+- NEW `ra_1012ar_6b_1p` (0x262, SUP, pl_m30): rkka_com_art_fplat x1, rkka_m30_m38 x2
+- NEW `ra_1012ar_9b_ac` (0x391, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+### p_ra_103rr  (103 Gds RR: 30 July structure)
+- NEW `ra_103rr_saps` (0x10, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x2
+- NEW `ra_103rr_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x3
+- NEW `ra_103rr_reconh` (0x12, SCT, plu_cavalary): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_103rr_1smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_103rr_1smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_103rr_1smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_103rr_2smgc_com` (0x30, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_103rr_2smgc_1p` (0x31, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_103rr_ac76gun` (0x40, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_pp27_plat)
+- NEW `ra_103rr_ac120mt1` (0x41, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_coy)
+- NEW `ra_103rr_ac120mt2` (0x42, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_103rr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_103rr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_103rr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_103rr_atgc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_103rr_atgc_1p` (0x61, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_103rr_atgc_2p` (0x62, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_103rr_gunc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_103rr_gunc_1p` (0x71, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_103rr_gunc_2p` (0x72, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_103rr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_103rr_1b_atg` (0x109, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_103rr_1b_atr` (0x105, SUP, plu_atrs): rkka_com_inf_coy x1, rkka_com_inf_plat x1, rkka_squad_atr x3, rkka_com_inf_plat x1, rkka_squad_atr x2, rkka_ptr x1
+- `ra_103rr_coy1` (0x110, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_103rr_1c_mt` (0x115, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_103rr_coy2` (0x120, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_103rr_2c_mt` (0x125, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_103rr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_103rr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_1mg_3p` (0x143, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_1mtc_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_103rr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_103rr_1mt_2p` (0x152, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_103rr_1mt_3p` (0x153, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_103rr_2b_ac82mt` (0x208, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_103rr_coy4` (0x240, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_103rr_4c_mt` (0x245, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_103rr_coy5` (0x250, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- `ra_103rr_coy6` (0x260, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_103rr_6c_mt` (0x265, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_103rr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_103rr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_2mg_3p` (0x273, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_2mg_4p` (0x274, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_2mtc_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_103rr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_103rr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_103rr_2mt_3p` (0x283, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_103rr_3b_hq` (0x301, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_103rr_3b_ac82mt` (0x302, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_103rr_3b_atg` (0x303, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_103rr_3b_atr` (0x305, SUP, plu_atrs): rkka_com_inf_coy x1, rkka_com_inf_plat x1, rkka_squad_atr x3, rkka_com_inf_plat x1, rkka_squad_atr x2, rkka_ptr x1
+- NEW `ra_103rr_7c_com` (0x370, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_103rr_7c_1p` (0x371, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_103rr_7c_2p` (0x372, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_103rr_7c_mt` (0x375, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_103rr_8c_com` (0x380, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_103rr_8c_1p` (0x381, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_103rr_8c_2p` (0x382, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_103rr_3mgc_com` (0x3a0, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_103rr_3mg_1p` (0x3a1, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_3mg_2p` (0x3a2, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_3mg_3p` (0x3a3, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_3mtc_com` (0x3b0, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_103rr_3mt_1p` (0x3b1, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_103rr  (34 Gds RD recon company -> 103 RR)
+- NEW `ra_103rr_rcoy` (0x820, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_103rr_rc_1p` (0x821, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x4
+- NEW `ra_103rr_rc_2p` (0x822, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x4
+### p_ra_103rr  (38 AT bn HQ + 1 battery -> 103 RR)
+- NEW `ra_103rr_atbn_hq` (0xc01, COM, plu_batcmd): rkka_com_art_div x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_103rr_atbn_1c_com` (0xc10, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_103rr_atbn_1c_1p` (0xc11, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+- NEW `ra_103rr_atbn_1c_2p` (0xc12, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+### p_ra_105rr  (105 Gds RR: 30 July structure)
+- NEW `ra_105rr_saps` (0x10, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x2
+- NEW `ra_105rr_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x3
+- NEW `ra_105rr_reconh` (0x12, SCT, plu_cavalary): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_105rr_1smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_105rr_1smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_105rr_1smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_105rr_ac120mt2` (0x42, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_105rr_ac120mt3` (0x43, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_105rr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_105rr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_105rr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_105rr_atgc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_105rr_atgc_1p` (0x61, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_105rr_atgc_2p` (0x62, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_105rr_gunc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_105rr_ac76gun` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_pp27_plat)
+- NEW `ra_105rr_gunc_1p` (0x72, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_105rr_gunc_2p` (0x73, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_105rr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_105rr_coy1` (0x110, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_105rr_1c_mt` (0x115, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_105rr_coy2` (0x120, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_105rr_2c_mt` (0x125, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_105rr_coy3` (0x130, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_105rr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_105rr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_1mg_3p` (0x143, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_1mtc_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_105rr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_105rr_1mt_2p` (0x152, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_105rr_2b_ac82mt` (0x208, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_105rr_2b_atg` (0x209, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_105rr_2b_atr` (0x205, SUP, plu_atrs): rkka_com_inf_coy x1, rkka_com_inf_plat x1, rkka_squad_atr x3, rkka_com_inf_plat x1, rkka_squad_atr x2, rkka_ptr x1
+- `ra_105rr_coy4` (0x240, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_105rr_4c_mt` (0x245, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_105rr_coy6` (0x260, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_105rr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_105rr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_2mg_3p` (0x273, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_2mtc_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_105rr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_105rr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_105rr_3b_hq` (0x301, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_105rr_3b_ac82mt` (0x302, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_105rr_3b_atr` (0x305, SUP, plu_atrs): rkka_com_inf_coy x1, rkka_com_inf_plat x1, rkka_squad_atr x3, rkka_com_inf_plat x1, rkka_squad_atr x2, rkka_ptr x1
+- NEW `ra_105rr_7c_com` (0x370, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_105rr_7c_1p` (0x371, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_105rr_7c_2p` (0x372, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_105rr_7c_mt` (0x375, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_105rr_8c_com` (0x380, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_105rr_8c_1p` (0x381, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_105rr_8c_2p` (0x382, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_105rr_9c_com` (0x390, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_105rr_9c_1p` (0x391, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_105rr_3mgc_com` (0x3a0, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_105rr_3mg_1p` (0x3a1, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_3mg_2p` (0x3a2, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_3mg_3p` (0x3a3, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_3mtc_com` (0x3b0, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_105rr_3mt_1p` (0x3b1, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_105rr_3mt_2p` (0x3b2, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_105rr  (37 sap bn HQ + 1 coy -> 105 RR)
+- NEW `ra_105rr_sbn_hq` (0xb01, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_105rr_sbn_1c_com` (0xb10, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_105rr_sbn_1c_1p` (0xb11, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_105rr_sbn_1c_2p` (0xb12, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+### p_ra_105rr  (38 AT bn 2 battery -> 105 RR)
+- NEW `ra_105rr_atbn_2c_com` (0xc20, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_105rr_atbn_2c_1p` (0xc21, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+### p_ra_107rr  (107 Gds RR: 30 July structure)
+- NEW `ra_107rr_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x3
+- NEW `ra_107rr_1smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_107rr_1smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_107rr_1smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_107rr_2smgc_com` (0x30, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_107rr_2smgc_1p` (0x31, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_107rr_2smgc_2p` (0x32, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_107rr_ac120mt1` (0x41, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_coy)
+- NEW `ra_107rr_ac120mt2` (0x42, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_107rr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_107rr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_107rr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_107rr_atgc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_107rr_atgc_1p` (0x61, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_107rr_gunc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_107rr_ac76gun` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_pp27_plat)
+- NEW `ra_107rr_gunc_1p` (0x72, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_107rr_gunc_2p` (0x73, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_107rr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_107rr_coy1` (0x110, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_107rr_1c_mt` (0x115, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_107rr_coy3` (0x130, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_107rr_3c_mt` (0x135, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_107rr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_107rr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_107rr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_107rr_1mg_3p` (0x143, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_107rr_1mtc_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_107rr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_107rr_2b_ac82mt` (0x208, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_107rr_2b_atr` (0x205, SUP, plu_atrs): rkka_com_inf_coy x1, rkka_com_inf_plat x1, rkka_squad_atr x3, rkka_com_inf_plat x1, rkka_squad_atr x2, rkka_ptr x1
+- `ra_107rr_coy4` (0x240, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- `ra_107rr_coy5` (0x250, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_107rr_5c_mt` (0x255, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_107rr_coy6` (0x260, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_107rr_6c_mt` (0x265, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_107rr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_107rr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_107rr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_107rr_2mg_3p` (0x273, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_107rr_2mtc_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_107rr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_107rr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_107rr_3b_hq` (0x301, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_107rr_3b_ac82mt` (0x302, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_107rr_3b_atg` (0x303, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_107rr_3b_atr` (0x305, SUP, plu_atrs): rkka_com_inf_coy x1, rkka_com_inf_plat x1, rkka_squad_atr x3, rkka_com_inf_plat x1, rkka_squad_atr x2, rkka_ptr x1
+- NEW `ra_107rr_7c_com` (0x370, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_107rr_7c_1p` (0x371, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_107rr_7c_2p` (0x372, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_107rr_7c_mt` (0x375, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_107rr_8c_com` (0x380, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_107rr_8c_1p` (0x381, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_107rr_8c_2p` (0x382, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_107rr_3mgc_com` (0x3a0, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_107rr_3mg_1p` (0x3a1, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_107rr_3mg_2p` (0x3a2, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_107rr_3mtc_com` (0x3b0, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_107rr_3mt_1p` (0x3b1, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_107rr_3mt_2p` (0x3b2, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_107rr_3mt_3p` (0x3b3, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_107rr  (37 sap bn 2 coy -> 107 RR)
+- NEW `ra_107rr_sbn_2c_com` (0xb20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_107rr_sbn_2c_1p` (0xb21, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_107rr_sbn_2c_2p` (0xb22, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+### p_ra_107rr  (38 AT bn 3 battery + ATR coy -> 107 RR)
+- NEW `ra_107rr_atbn_3c_com` (0xc30, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_107rr_atbn_3c_1p` (0xc31, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+- NEW `ra_107rr_atbn_atrc_com` (0xc40, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_107rr_atbn_atrc_1p` (0xc41, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_107rr_atbn_atrc_2p` (0xc42, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+### p_ra_84ar  NEW FORMATION under p_ra_34rd (name key op_ra_84ar, ai USER)
+- MOVED `ra_34_2arty` (0x122, SUP, name oppl_ussr_ar_2b2) from p_ra_107rr: gun platoon of battery 2
+- MOVED `ra_34_1arty` (0x112, SUP, name oppl_ussr_ar_1b2) from p_ra_105rr: gun platoon of battery 1
+- MOVED `ra_34_3arty` (0x132, SUP, name oppl_ussr_ar_3b2) from p_ra_103rr: gun platoon of battery 3
+### p_ra_84ar  (84 Gds AR: new formation under 34 Gds RD (30 July 84 AR) + the 17 July division batteries)
+- NEW `ra_84ar_hq` (0x0, CAMP, plu_rgt_arty): rkka_com_sup x1, rkka_squad_sup x4;0;0;16, rkka_squad_sup_mot x2;0;0;16, rkka_squad_spam x2;0;0;8, rkka_squad_scout_42m x1
+- NEW `ra_84ar_1b_ac` (0x111, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_84ar_2b_ac` (0x121, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_84ar_3b_ac` (0x131, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+- NEW `ra_84ar_4b_ac` (0x241, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_84ar_5b_ac` (0x251, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_84ar_6b_ac` (0x261, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+- NEW `ra_84ar_7b_hq` (0x370, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_84ar_7b_ac` (0x371, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_84ar_7b_1p` (0x372, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_84ar_8b_hq` (0x380, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_84ar_8b_ac` (0x381, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_84ar_8b_1p` (0x382, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_84ar_8b_2p` (0x383, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_84ar_9b_hq` (0x390, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_84ar_9b_ac` (0x391, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+- NEW `ra_84ar_9b_1p` (0x392, SUP, pl_m30): rkka_com_art_fplat x1, rkka_m30_m38 x2
+### p_ra_116rr  (116 Gds RR: 30 July 111 Gds RR structure (116 RR has no platoons in the 30 July file))
+- NEW `ra_116rr_saps` (0x10, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x2
+- NEW `ra_116rr_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x3
+- NEW `ra_116rr_reconh` (0x12, SCT, plu_cavalary): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_116rr_1smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_116rr_1smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_116rr_1smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_116rr_2smgc_com` (0x30, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_116rr_2smgc_1p` (0x31, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_116rr_2smgc_2p` (0x32, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_116rr_ac120mt1` (0x41, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_coy)
+- NEW `ra_116rr_ac120mt2` (0x42, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_116rr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_116rr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_116rr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_116rr_atgc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_116rr_atgc_1p` (0x61, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_116rr_atgc_2p` (0x62, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_116rr_gunc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_116rr_ac76gun` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_pp27_plat)
+- NEW `ra_116rr_gunc_1p` (0x72, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_116rr_gunc_2p` (0x73, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_116rr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_116rr_1b_atg` (0x109, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_116rr_1b_atr` (0x105, SUP, plu_atrs): rkka_com_inf_coy x1, rkka_com_inf_plat x1, rkka_squad_atr x3, rkka_com_inf_plat x1, rkka_squad_atr x2, rkka_ptr x1
+- `ra_116rr_coy1` (0x110, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_116rr_1c_mt` (0x115, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_116rr_coy2` (0x120, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_116rr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_116rr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_116rr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_116rr_1mtc_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_116rr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_116rr_1mt_2p` (0x152, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_116rr  (40 Gds RD recon, 42 sap bn 1 coy, 41 AT bn 1 battery + ATR coy -> 116 RR)
+- NEW `ra_116rr_rcoy` (0x820, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_116rr_rc_1p` (0x821, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x4
+- NEW `ra_116rr_rc_2p` (0x822, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x4
+- NEW `ra_116rr_sbn_hq` (0xb01, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_116rr_sbn_1c_com` (0xb10, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_116rr_sbn_1c_1p` (0xb11, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_116rr_sbn_1c_2p` (0xb12, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_116rr_atbn_hq` (0xc01, COM, plu_batcmd): rkka_com_art_div x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_116rr_atbn_1c_com` (0xc10, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_116rr_atbn_1c_1p` (0xc11, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+- NEW `ra_116rr_atbn_1c_2p` (0xc12, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+- NEW `ra_116rr_atbn_atrc_com` (0xc40, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_116rr_atbn_atrc_1p` (0xc41, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_116rr_atbn_atrc_2p` (0xc42, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+### p_ra_90ar  NEW FORMATION under p_ra_40rd (name key op_ra_90ar, ai AL1)
+- MOVED `ra_40_2arty` (0x122, SUP, name oppl_ussr_ar_2b2) from p_ra_116rr: gun platoon of battery 2
+- MOVED `ra_40_3arty` (0x132, SUP, name oppl_ussr_ar_3b2) from p_ra_116rr: gun platoon of battery 3
+### p_ra_90ar  (90 Gds AR: new formation under 40 Gds RD (30 July 90 AR) + the 17 July division batteries)
+- NEW `ra_90ar_hq` (0x0, CAMP, plu_rgt_arty): rkka_com_sup x1, rkka_squad_sup x4;0;0;16, rkka_squad_sup_mot x2;0;0;16, rkka_squad_spam x2;0;0;8, rkka_squad_scout_42m x1
+- NEW `ra_90ar_1b_ac` (0x111, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_90ar_2b_ac` (0x121, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_90ar_3b_ac` (0x131, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+### p_ra_291rr  (291 Gds RR: 30 July structure)
+- NEW `ra_291rr_saps` (0x10, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x2
+- NEW `ra_291rr_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x3
+- NEW `ra_291rr_1smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_291rr_1smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_291rr_1smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_291rr_ac120mt2` (0x42, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_291rr_ac120mt3` (0x43, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_291rr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_291rr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_291rr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_291rr_atgc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_atgc_1p` (0x61, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_291rr_atgc_2p` (0x62, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_291rr_gunc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_ac76gun` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_pp27_plat)
+- NEW `ra_291rr_gunc_1p` (0x72, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_291rr_gunc_2p` (0x73, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_291rr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_291rr_1b_atg` (0x109, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- `ra_291rr_coy1` (0x110, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_291rr_1c_mt` (0x115, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_291rr_coy2` (0x120, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_291rr_2c_mt` (0x125, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_291rr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_291rr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_1mg_3p` (0x143, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_1mtc_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_291rr_1mt_2p` (0x152, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_291rr_2b_hq` (0x201, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_2b_ac82mt` (0x202, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_291rr_2b_atg` (0x203, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_291rr_2b_atr` (0x205, SUP, plu_atrs): rkka_com_inf_coy x1, rkka_com_inf_plat x1, rkka_squad_atr x3, rkka_com_inf_plat x1, rkka_squad_atr x2, rkka_ptr x1
+- NEW `ra_291rr_4c_com` (0x240, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_291rr_4c_1p` (0x241, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_4c_2p` (0x242, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_4c_3p` (0x243, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_4c_mt` (0x245, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_291rr_5c_com` (0x250, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_291rr_5c_1p` (0x251, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_5c_2p` (0x252, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_6c_com` (0x260, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_291rr_6c_1p` (0x261, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_6c_mt` (0x265, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_291rr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_291rr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_2mg_3p` (0x273, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_2mtc_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_291rr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_291rr_2mt_3p` (0x283, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_291rr_3b_hq` (0x301, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_3b_ac82mt` (0x302, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_291rr_7c_com` (0x370, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_291rr_7c_1p` (0x371, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_7c_2p` (0x372, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_7c_mt` (0x375, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_291rr_8c_com` (0x380, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_291rr_8c_1p` (0x381, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_8c_mt` (0x385, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_291rr_9c_com` (0x390, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_291rr_9c_1p` (0x391, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_3mgc_com` (0x3a0, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_291rr_3mg_1p` (0x3a1, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_3mg_2p` (0x3a2, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_3mg_3p` (0x3a3, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_3mtc_com` (0x3b0, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_3mt_1p` (0x3b1, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_291rr  (96 Gds RD recon, 111 sap bn 1 coy, 102 AT bn 1 battery + ATR coy -> 291 RR)
+- NEW `ra_291rr_rcoy` (0x820, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_291rr_rc_1p` (0x821, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x4
+- NEW `ra_291rr_rc_2p` (0x822, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x4
+- NEW `ra_291rr_sbn_hq` (0xb01, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_sbn_1c_com` (0xb10, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_291rr_sbn_1c_1p` (0xb11, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_291rr_sbn_1c_2p` (0xb12, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_291rr_sbn_1c_3p` (0xb13, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_291rr_atbn_hq` (0xc01, COM, plu_batcmd): rkka_com_art_div x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_291rr_atbn_1c_com` (0xc10, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_atbn_1c_1p` (0xc11, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+- NEW `ra_291rr_atbn_1c_2p` (0xc12, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+- NEW `ra_291rr_atbn_atrc_com` (0xc40, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_291rr_atbn_atrc_1p` (0xc41, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_291rr_atbn_atrc_2p` (0xc42, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_291rr_atbn_atrc_3p` (0xc43, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+### p_ra_234ar  NEW FORMATION under p_ra_96rd (name key op_ra_234ar, ai USER)
+- MOVED `ra_234_1arty` (0x112, SUP, name oppl_ussr_ar_1b2) from p_ra_291rr: gun platoon of battery 1
+- MOVED `ra_234_2arty` (0x122, SUP, name oppl_ussr_ar_2b2) from p_ra_291rr: gun platoon of battery 2
+- MOVED `ra_234_3arty` (0x132, SUP, name oppl_ussr_ar_3b2) from p_ra_291rr: gun platoon of battery 3
+### p_ra_234ar  (234 Gds AR: new formation under 96 Gds RD (30 July 234 AR) + the 17 July division batteries)
+- NEW `ra_234ar_hq` (0x0, CAMP, plu_rgt_arty): rkka_com_sup x1, rkka_squad_sup x4;0;0;16, rkka_squad_sup_mot x2;0;0;16, rkka_squad_spam x2;0;0;8, rkka_squad_scout_42m x1
+- NEW `ra_234ar_1b_ac` (0x111, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_234ar_2b_ac` (0x121, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_234ar_3b_ac` (0x131, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+- NEW `ra_234ar_4b_hq` (0x240, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_234ar_4b_ac` (0x241, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_234ar_4b_1p` (0x242, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_234ar_5b_ac` (0x251, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_234ar_6b_ac` (0x261, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+- NEW `ra_234ar_7b_hq` (0x370, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_234ar_7b_ac` (0x371, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_234ar_7b_1p` (0x372, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_234ar_8b_ac` (0x381, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+### p_ra_32tbde  (32 Gds TBde: recon, sappers, AT battery, AA, MR bn structure, mortar coy)
+- NEW `ra_32tbde_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_32tbde_sap` (0x12, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_32tbde_atc_com` (0x40, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_32tbde_atc_1p` (0x41, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_32tbde_atc_2p` (0x42, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_32tbde_aac_1p` (0x51, SUP, pl_ds39): rkka_com_art_fplat x1, rkka_dshk x3
+- NEW `ra_32tbde_mrbn_ac82mt` (0x308, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_32tbde_coy1` (0x310, COMC): composition rkka_com_mr_coy x1 -> rkka_com_mr_coy x1, rkka_squad_atr x1
+- `ra_32tbde_1c_1p` (0x311, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x3, rkka_squad_atr x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_32tbde_1c_2p` (0x312, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x3, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_32tbde_2c_com` (0x320, COMC, plu_field_com): rkka_com_mr_coy x1, rkka_squad_atr x1
+- NEW `ra_32tbde_2c_1p` (0x321, UNI, plu_rifles): rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_32tbde_mtc_com` (0x350, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_32tbde_mtc_1p` (0x351, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_32tbde_mtc_2p` (0x352, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_32tbde_mtc_3p` (0x353, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_37tbde  (37 Gds TBde: recon, sappers, AT battery, MR bn structure, mortar coy)
+- NEW `ra_37tbde_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_37tbde_sap` (0x12, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_37tbde_atc_com` (0x40, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_37tbde_atc_1p` (0x41, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_37tbde_atc_2p` (0x42, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- `ra_37tbde_tbn1` (0x101, COM): composition rkka_t34_42_uztm_bcom x1 -> rkka_t34_42l_uztm_bcom x1
+- `ra_37tbde_tbn2` (0x201, COM): composition rkka_t34_42_uztm_bcom x1 -> rkka_t34_42l_uztm_bcom x1
+- NEW `ra_37tbde_mrbn_ac82mt` (0x308, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_37tbde_coy1` (0x310, COMC): composition rkka_com_mr_coy x1 -> rkka_com_mr_coy x1, rkka_squad_atr x1
+- `ra_37tbde_1c_1p` (0x311, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x3, rkka_squad_atr x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_37tbde_1c_2p` (0x312, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x3, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_37tbde_coy2` (0x320, COMC): composition rkka_com_mr_coy x1 -> rkka_com_mr_coy x1, rkka_squad_atr x1
+- `ra_37tbde_2c_1p` (0x321, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x3, rkka_squad_atr x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_37tbde_3c_1p` (0x331, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x3, rkka_squad_atr x1 -> rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+- NEW `ra_37tbde_3c_2p` (0x332, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+- NEW `ra_37tbde_mtc_com` (0x350, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_37tbde_mtc_1p` (0x351, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_37tbde_mtc_2p` (0x352, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_22stp  (22 Gds det TR: recon, sapper and SMG platoons)
+- NEW `ra_22stp_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_22stp_sap` (0x12, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_22stp_smg` (0x13, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+### p_ra_1543tsap  (1543 SAP: regiment command group and SU-152 FO team)
+- NEW `ra_1543tsap_cmd` (0x10, COMC, plu_batcmd): rkka_kv1sl_m42_rcom x1, rkka_ba64 x1
+- NEW `ra_1543tsap_ac152` (0x11, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_su152x2_plat)
+### p_ra_4mrbde  (4 Gds MBde: 30 July mech brigade standard (13 Gds MBde))
+- NEW `ra_4mr_recc_com` (0x10, COMC, plu_field_com): rkka_ba64_ccom x1, rkka_ba64 x1
+- NEW `ra_4mr_recc_1p` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_4mr_recc_arm1` (0x12, SCT, pl_wscout): rkka_com_apc_m3a1 x1, rkka_squad_apc_m3a1 x2
+- NEW `ra_4mr_smgc_com` (0x20, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_4mr_smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+- NEW `ra_4mr_smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+- NEW `ra_4mr_engc_com` (0x30, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_4mr_engc_1p` (0x31, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_4mr_engc_2p` (0x32, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_4mr_ac120mt1` (0x42, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_4mr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_4mr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_mr_plat x1, rkka_squad_atr x3
+- NEW `ra_4mr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_mr_plat x1, rkka_squad_atr x3
+- NEW `ra_4mr_1mtc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_4mr_ac82mt1` (0x61, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82d_plat)
+- NEW `ra_4mr_1mtc_1p` (0x62, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_4mr_1mtc_2p` (0x63, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_4mr_2mtc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_4mr_ac82mt2` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82d_plat)
+- NEW `ra_4mr_2mtc_1p` (0x72, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_4mr_2mtc_2p` (0x73, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_4mr_aac_com` (0x80, COMC, plu_batcmd): rkka_com_art_bat x1
+- NEW `ra_4mr_aac_1p` (0x81, SUP, pl_ds39): rkka_com_art_fplat x1, rkka_dshk x3
+- NEW `ra_4mr_1art_com` (0x90, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_4mr_ac76gun1` (0x91, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_4mr_1art_1p` (0x92, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_4mr_1art_2p` (0x93, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_4mr_2art_com` (0xa0, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_4mr_ac76gun2` (0xa1, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_4mr_2art_1p` (0xa2, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_4mr_2art_2p` (0xa3, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_4mr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_4mr_atr_plat1` (0x104, SUP): composition rkka_com_inf_plat x1, rkka_squad_atr x3 -> rkka_com_mr_plat x1, rkka_squad_atr x3
+- `ra_4mr_1c_1p` (0x111, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_4mr_1c_2p` (0x112, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_4mr_1c_3p` (0x113, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_4mr_1c_mg` (0x114, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_4mr_2c_1p` (0x121, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_4mr_2c_2p` (0x122, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_4mr_2c_mg` (0x124, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_4mr_3c_1p` (0x131, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_4mr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_4mr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_4mr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_4mr_1mt_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_4mr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_4mr_2b_ac82mt` (0x208, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_4mr_atr_plat2` (0x204, SUP): composition rkka_com_inf_plat x1, rkka_squad_atr x3 -> rkka_com_mr_plat x1, rkka_squad_atr x3
+- `ra_4mr_4c_1p` (0x241, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- `ra_4mr_4c_2p` (0x242, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_4mr_4c_3p` (0x243, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_4mr_4c_mg` (0x244, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_4mr_5c_1p` (0x251, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- `ra_4mr_5c_2p` (0x252, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_4mr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_4mr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_4mr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_4mr_2mt_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_4mr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_4mr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_5mrbde  (5 Gds MBde: 30 July mech brigade standard (13 Gds MBde))
+- NEW `ra_5mr_recc_com` (0x10, COMC, plu_field_com): rkka_ba64_ccom x1, rkka_ba64 x1
+- NEW `ra_5mr_recc_1p` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_5mr_recc_arm1` (0x12, SCT, pl_wscout): rkka_com_apc_m3a1 x1, rkka_squad_apc_m3a1 x2
+- NEW `ra_5mr_smgc_com` (0x20, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_5mr_smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+- NEW `ra_5mr_smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+- NEW `ra_5mr_engc_com` (0x30, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_5mr_engc_1p` (0x31, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_5mr_engc_2p` (0x32, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_5mr_ac120mt1` (0x42, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_5mr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_5mr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_mr_plat x1, rkka_squad_atr x3
+- NEW `ra_5mr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_mr_plat x1, rkka_squad_atr x3
+- NEW `ra_5mr_1mtc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_5mr_ac82mt1` (0x61, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82d_plat)
+- NEW `ra_5mr_1mtc_1p` (0x62, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_5mr_1mtc_2p` (0x63, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_5mr_2mtc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_5mr_ac82mt2` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82d_plat)
+- NEW `ra_5mr_2mtc_1p` (0x72, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_5mr_2mtc_2p` (0x73, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_5mr_aac_com` (0x80, COMC, plu_batcmd): rkka_com_art_bat x1
+- NEW `ra_5mr_aac_1p` (0x81, SUP, pl_ds39): rkka_com_art_fplat x1, rkka_dshk x3
+- NEW `ra_5mr_1art_com` (0x90, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_5mr_ac76gun1` (0x91, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_5mr_1art_1p` (0x92, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_5mr_1art_2p` (0x93, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_5mr_2art_com` (0xa0, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_5mr_ac76gun2` (0xa1, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_5mr_2art_1p` (0xa2, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_5mr_2art_2p` (0xa3, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_5mr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_5mr_atr_plat1` (0x104, SUP): composition rkka_com_inf_plat x1, rkka_squad_atr x3 -> rkka_com_mr_plat x1, rkka_squad_atr x3
+- `ra_5mr_1c_1p` (0x111, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_5mr_1c_2p` (0x112, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_5mr_1c_3p` (0x113, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_5mr_1c_mg` (0x114, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_5mr_2c_1p` (0x121, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_5mr_2c_2p` (0x122, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_5mr_2c_mg` (0x124, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_5mr_3c_1p` (0x131, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_5mr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_5mr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_5mr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_5mr_1mt_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_5mr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_5mr_2b_ac82mt` (0x208, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_5mr_atr_plat2` (0x204, SUP): composition rkka_com_inf_plat x1, rkka_squad_atr x3 -> rkka_com_mr_plat x1, rkka_squad_atr x3
+- `ra_5mr_4c_1p` (0x241, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- `ra_5mr_4c_2p` (0x242, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_5mr_4c_3p` (0x243, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_5mr_4c_mg` (0x244, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_5mr_5c_1p` (0x251, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- `ra_5mr_5c_2p` (0x252, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_5mr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_5mr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_5mr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_5mr_2mt_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_5mr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_5mr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_6mrbde  (6 Gds MBde: 30 July mech brigade standard (13 Gds MBde))
+- NEW `ra_6mr_recc_com` (0x10, COMC, plu_field_com): rkka_ba64_ccom x1, rkka_ba64 x1
+- NEW `ra_6mr_recc_1p` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_6mr_recc_arm1` (0x12, SCT, pl_wscout): rkka_com_apc_m3a1 x1, rkka_squad_apc_m3a1 x2
+- NEW `ra_6mr_smgc_com` (0x20, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_6mr_smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+- NEW `ra_6mr_smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+- NEW `ra_6mr_engc_com` (0x30, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_6mr_engc_1p` (0x31, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_6mr_engc_2p` (0x32, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_6mr_ac120mt1` (0x42, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_6mr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_6mr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_mr_plat x1, rkka_squad_atr x3
+- NEW `ra_6mr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_mr_plat x1, rkka_squad_atr x3
+- NEW `ra_6mr_1mtc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_6mr_ac82mt1` (0x61, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82d_plat)
+- NEW `ra_6mr_1mtc_1p` (0x62, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_6mr_1mtc_2p` (0x63, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_6mr_2mtc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_6mr_ac82mt2` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82d_plat)
+- NEW `ra_6mr_2mtc_1p` (0x72, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_6mr_2mtc_2p` (0x73, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_6mr_aac_com` (0x80, COMC, plu_batcmd): rkka_com_art_bat x1
+- NEW `ra_6mr_aac_1p` (0x81, SUP, pl_ds39): rkka_com_art_fplat x1, rkka_dshk x3
+- NEW `ra_6mr_1art_com` (0x90, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_6mr_ac76gun1` (0x91, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_6mr_1art_1p` (0x92, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_6mr_1art_2p` (0x93, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_6mr_2art_com` (0xa0, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_6mr_ac76gun2` (0xa1, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_6mr_2art_1p` (0xa2, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_6mr_2art_2p` (0xa3, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_6mr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_6mr_atr_plat1` (0x104, SUP): composition rkka_com_inf_plat x1, rkka_squad_atr x3 -> rkka_com_mr_plat x1, rkka_squad_atr x3
+- `ra_6mr_1c_1p` (0x111, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_6mr_1c_2p` (0x112, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_6mr_1c_3p` (0x113, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_6mr_1c_mg` (0x114, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_6mr_2c_1p` (0x121, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_6mr_2c_2p` (0x122, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_6mr_2c_mg` (0x124, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_6mr_3c_1p` (0x131, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_6mr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_6mr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_6mr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_6mr_1mt_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_6mr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_6mr_2b_ac82mt` (0x208, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_6mr_atr_plat2` (0x204, SUP): composition rkka_com_inf_plat x1, rkka_squad_atr x3 -> rkka_com_mr_plat x1, rkka_squad_atr x3
+- `ra_6mr_4c_1p` (0x241, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- `ra_6mr_4c_2p` (0x242, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_6mr_4c_3p` (0x243, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_6mr_4c_mg` (0x244, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_6mr_5c_1p` (0x251, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- `ra_6mr_5c_2p` (0x252, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_6mr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_6mr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_6mr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_6mr_2mt_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_6mr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_6mr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_8iptabr  (8 AT Bde: SMG company and sapper company (1 Gds AT Bde pattern))
+- NEW `ra_8iptabr_smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_8iptabr_smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_8iptabr_smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_8iptabr_smgc_3p` (0x23, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_8iptabr_engbn_hq` (0x301, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_8iptabr_engbn_1c_com` (0x310, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_8iptabr_engbn_1c_1p` (0x311, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_8iptabr_engbn_1c_2p` (0x312, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_8iptabr_engbn_1c_3p` (0x318, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+### p_ra_15iptabr  (15 AT Bde: SMG company and sapper company (1 Gds AT Bde pattern))
+- NEW `ra_15iptabr_smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_15iptabr_smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_15iptabr_smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_15iptabr_smgc_3p` (0x23, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_15iptabr_engbn_hq` (0x301, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_15iptabr_engbn_1c_com` (0x310, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_15iptabr_engbn_1c_1p` (0x311, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_15iptabr_engbn_1c_2p` (0x318, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_15iptabr_engbn_1c_3p` (0x319, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+### p_we_513ir  (513 IR: 30 July 513 IR structure (13th coy guns already in the 17 July supcoy))
+- NEW `wer_513ir_bicp` (0x18, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_41r x4
+- NEW `wer_513ir_13c_ac75` (0xd1, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- NEW `wer_513ir_14c_com` (0xe0, COMC, plu_field_com): wer_com_inf_coy x1, wer_squad_phone x1
+- NEW `wer_513ir_14c_atg1` (0xe1, SUP, pl_pak40): wer_com_art_plat x1, wer_pak40 x2, wer_team_mg_41 x2
+- NEW `wer_513ir_14c_atg2` (0xe2, SUP, pl_pak40): wer_com_art_plat x1, wer_pak38 x2, wer_team_mg_41 x2
+- NEW `wer_513ir_14c_atg3` (0xe3, SUP, pl_pak40): wer_com_art_plat x1, wer_pak97_38 x2, wer_team_mg_41 x2
+- NEW `wer_513ir_1b_ac81` (0x102, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_sec)
+- `wer_513ir_coy1` (0x110, COMC): composition wer_com_inf_coy x1, rn_wer_pzb41 x1, wer_pak40 x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- `wer_513ir_coy2` (0x120, COMC): composition wer_com_inf_coy x1, wer_pak35 x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- `wer_513ir_coy3` (0x130, COMC): composition wer_com_inf_coy x1, wer_pak184_1r x1, wer_pak97_38 x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_513ir_4c_com` (0x140, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_513ir_4cmg_1p` (0x141, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_513ir_4cmg_2p` (0x142, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_513ir_4cmg_4pmo_1s` (0x144, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_513ir_4cmg_4pmo_2s` (0x145, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_513ir_2b_ac81` (0x202, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_sec)
+- `wer_513ir_coy5` (0x250, COMC): composition wer_com_inf_coy x1, rn_wer_pzb41 x1, wer_pak97_38 x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- `wer_513ir_coy6` (0x260, COMC): composition wer_com_inf_coy x1, wer_pak35 x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- `wer_513ir_coy7` (0x270, COMC): composition wer_com_inf_coy x1, wer_pak184_1r x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_513ir_8c_com` (0x280, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_513ir_8cmg_1p` (0x281, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_513ir_8cmg_2p` (0x282, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_513ir_8cmg_4pmo_1s` (0x284, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_513ir_8cmg_4pmo_2s` (0x285, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_513ir_3b_ac81` (0x302, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_sec)
+- `wer_513ir_coy9` (0x390, COMC): composition wer_com_inf_coy x1, rn_wer_pzb41 x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_513ir_10c_com` (0x3a0, COMC, plu_field_com): wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_513ir_10c_1p` (0x3a1, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_513ir_10c_2p` (0x3a2, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_513ir_12c_com` (0x3c0, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_513ir_12cmg_1p` (0x3c1, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_513ir_12cmg_2p` (0x3c2, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_513ir_12cmg_4pmo_1s` (0x3c4, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+### p_we_294id  (294 AT bn: recon coy + 3 AT companies)
+- NEW `wer_294at_ccoy` (0x910, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_294at_ccoy_1p` (0x911, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_42m x3
+- NEW `wer_294at_ccoy_2p` (0x912, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_42m x3
+- NEW `wer_294at_ccoy_3p` (0x913, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_42m x3
+- NEW `wer_294at_atc1_com` (0x920, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_294at_atc1_p1` (0x921, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_294at_atc1_p2` (0x922, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_294at_atc1_p3` (0x923, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_294at_atc2_com` (0x930, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_294at_atc2_p1` (0x931, SUP, pl_pak40): wer_com_art_plat x1, wer_pak38 x2, wer_team_mg_41 x1, wer_pak38 x2, wer_team_mg_41 x1
+- NEW `wer_294at_atc2_p2` (0x932, SUP, pl_pak35): wer_com_art_plat x1, wer_pak35 x2, wer_team_mg_41 x1, wer_pak35 x2, wer_team_mg_41 x1
+- NEW `wer_294at_atc3_com` (0x940, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_294at_atc3_p1` (0x941, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_294at_atc3_p2` (0x942, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+### p_we_294ar  NEW FORMATION under p_we_294id (name key op_we_294ar, ai EN3)
+- MOVED `wer_294ar_1c_2b` (0x122, SUP, name op_we_294ar_2b2) from p_we_294id: gun platoon of battery 2
+- MOVED `wer_294ar_1c_3b` (0x134, SUP, name op_we_294ar_3b4) from p_we_294id: gun platoon of battery 3
+### p_we_294ar  (294 AR: new formation under 294 ID (30 July 294 AR: HQ, FO teams, 3rd/4th/5th batteries) + the 17 July I/294 AR batteries)
+- NEW `wer_294ar_hq` (0x0, CAMP, plu_rgt_arty): wer_com_spam x1, wer_squad_sup_mot x4;0;0;16, wer_squad_spam x2;0;0;8
+- NEW `wer_294ar_1b_ac` (0x111, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_294ar_2b_ac` (0x121, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_294ar_3b_hq` (0x130, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_294ar_3b_1p` (0x132, SUP, pl_flak36): wer_com_art_plat x1, wer_flak36 x2, wer_team_mg_41 x1
+- NEW `wer_294ar_3b_2p` (0x133, SUP, pl_flak36): wer_com_art_plat x1, wer_flak36 x2, wer_team_mg_41 x1
+- NEW `wer_294ar_4b_hq` (0x240, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_294ar_4b_ac` (0x241, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_294ar_4b_1p` (0x242, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_294ar_4b_2p` (0x243, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_294ar_5b_hq` (0x250, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_294ar_5b_ac` (0x251, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_sfh414f_plat)
+- NEW `wer_294ar_5b_1p` (0x252, SUP, pl_c17s_howit): wer_com_art_plat x1, wer_sfh414f x2, wer_team_mg_41 x1
+- NEW `wer_294ar_5b_2p` (0x253, SUP, pl_c17s_howit): wer_com_art_plat x1, wer_sfh414f x2, wer_team_mg_41 x1
+- NEW `wer_294ar_6b_ac` (0x261, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_294ar_7b_ac` (0x371, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_294ar_8b_ac` (0x381, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_294ar_9b_ac` (0x391, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_sfh414f_plat)
+### p_we_581ir  (581 IR: 513 IR structure (14th coy already in the 17 July 14at))
+- NEW `wer_581ir_bicp` (0x12, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_41r x4
+- NEW `wer_581ir_13c_com` (0xd0, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_581ir_13c_ac75` (0xd1, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- NEW `wer_581ir_leig1` (0xd2, SUP, pl_leig): wer_com_art_plat x1, rn_wer_leig x2
+- NEW `wer_581ir_leig2` (0xd3, SUP, pl_leig): wer_com_art_plat x1, rn_wer_leig x2
+- NEW `wer_581ir_1b_hq` (0x101, COM, plu_commander): wer_com_inf_bat x1, wer_squad_phone x1
+- NEW `wer_581ir_1b_ac81` (0x102, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_sec)
+- `wer_581ir_coy1` (0x110, COMC): composition wer_com_inf_coy x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_581ir_2c_com` (0x120, COMC, plu_field_com): wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_581ir_2c_1p` (0x121, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_581ir_2c_2p` (0x122, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- `wer_581ir_coy3` (0x130, COMC): composition wer_com_inf_coy x1, wer_pak97_38 x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_581ir_4c_com` (0x140, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_581ir_4cmg_1p` (0x141, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_581ir_4cmg_2p` (0x142, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_581ir_4cmg_4pmo_1s` (0x144, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_581ir_4cmg_4pmo_2s` (0x145, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_581ir_2b_hq` (0x201, COM, plu_commander): wer_com_inf_bat x1, wer_squad_phone x1
+- NEW `wer_581ir_2b_ac81` (0x202, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_sec)
+- `wer_581ir_coy5` (0x250, COMC): composition wer_com_inf_coy x1, wer_squad_gren x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_581ir_5c_2p` (0x252, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_581ir_5c_3p` (0x253, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_581ir_6c_com` (0x260, COMC, plu_field_com): wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_581ir_6c_1p` (0x261, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_581ir_6c_2p` (0x262, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_581ir_7c_com` (0x270, COMC, plu_field_com): wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_581ir_7c_1p` (0x271, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_581ir_7c_2p` (0x272, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_581ir_8c_com` (0x280, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_581ir_8cmg_1p` (0x281, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_581ir_8cmg_2p` (0x282, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_581ir_8cmg_4pmo_1s` (0x284, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_581ir_8cmg_4pmo_2s` (0x285, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_581ir_3b_hq` (0x301, COM, plu_commander): wer_com_inf_bat x1, wer_squad_phone x1
+- NEW `wer_581ir_3b_ac81` (0x302, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_sec)
+- `wer_581ir_coy9` (0x390, COMC): composition wer_com_inf_coy x1, rn_wer_leig x1, wer_grw34 x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_581ir_9c_2p` (0x392, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- `wer_581ir_coy10` (0x3a0, COMC): composition wer_com_inf_coy x1, wer_squad_gren x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_581ir_10c_2p` (0x3a2, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_581ir_12c_com` (0x3c0, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_581ir_12cmg_1p` (0x3c1, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_581ir_12cmg_2p` (0x3c2, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_581ir_12cmg_4pmo_1s` (0x3c4, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+### p_we_572ir  (III/572 IR: battalion FO, 10th coy, 12th MG coy, 13th coy)
+- NEW `wer_572ir_bicp` (0x12, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_41r x4
+- NEW `wer_572ir_13c_com` (0xd0, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_572ir_13c_ac75` (0xd1, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_572ir_cbn3` (0x301, COM): composition wer_com_inf_bat x1, wer_squad_phone x1, wer_squad_phone_mot_rad x1 -> wer_com_inf_bat x1, wer_squad_phone x1
+- NEW `wer_572ir_3b_ac81` (0x308, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_sec)
+- `wer_572ir_coy9` (0x390, COMC): composition wer_com_inf_coy x1, wer_squad_gren x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_572ir_12c_com` (0x3c0, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_572ir_12cmg_1p` (0x3c1, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_572ir_12cmg_2p` (0x3c2, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_572ir_12cmg_4pmo_1s` (0x3c4, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+### p_we_306id  (306 AT bn (294 AT bn pattern))
+- NEW `wer_306at_ccoy` (0x910, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_306at_ccoy_1p` (0x911, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_42m x3
+- NEW `wer_306at_ccoy_2p` (0x912, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_42m x3
+- NEW `wer_306at_ccoy_3p` (0x913, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_42m x3
+- NEW `wer_306at_atc1_com` (0x920, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_306at_atc1_p1` (0x921, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_306at_atc1_p2` (0x922, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_306at_atc1_p3` (0x923, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_306at_atc2_com` (0x930, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_306at_atc2_p1` (0x931, SUP, pl_pak40): wer_com_art_plat x1, wer_pak38 x2, wer_team_mg_41 x1, wer_pak38 x2, wer_team_mg_41 x1
+- NEW `wer_306at_atc2_p2` (0x932, SUP, pl_pak35): wer_com_art_plat x1, wer_pak35 x2, wer_team_mg_41 x1, wer_pak35 x2, wer_team_mg_41 x1
+- NEW `wer_306at_atc3_com` (0x940, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_306at_atc3_p1` (0x941, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_306at_atc3_p2` (0x942, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+### p_we_306ar  NEW FORMATION under p_we_306id (name key op_we_306ar, ai EN1)
+### p_we_306ar  (306 AR: new formation under 306 ID (294 AR pattern))
+- NEW `wer_306ar_hq` (0x0, CAMP, plu_rgt_arty): wer_com_spam x1, wer_squad_sup_mot x4;0;0;16, wer_squad_spam x2;0;0;8
+- NEW `wer_306ar_1b_ac` (0x111, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_306ar_2b_ac` (0x121, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_306ar_3b_hq` (0x130, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_306ar_3b_1p` (0x132, SUP, pl_flak36): wer_com_art_plat x1, wer_flak36 x2, wer_team_mg_41 x1
+- NEW `wer_306ar_3b_2p` (0x133, SUP, pl_flak36): wer_com_art_plat x1, wer_flak36 x2, wer_team_mg_41 x1
+- NEW `wer_306ar_4b_hq` (0x240, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_306ar_4b_ac` (0x241, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_306ar_4b_1p` (0x242, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_306ar_4b_2p` (0x243, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_306ar_5b_hq` (0x250, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_306ar_5b_ac` (0x251, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_sfh414f_plat)
+- NEW `wer_306ar_5b_1p` (0x252, SUP, pl_c17s_howit): wer_com_art_plat x1, wer_sfh414f x2, wer_team_mg_41 x1
+- NEW `wer_306ar_5b_2p` (0x253, SUP, pl_c17s_howit): wer_com_art_plat x1, wer_sfh414f x2, wer_team_mg_41 x1
+- NEW `wer_306ar_6b_ac` (0x261, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_306ar_7b_ac` (0x371, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_306ar_8b_ac` (0x381, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_306ar_9b_ac` (0x391, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_sfh414f_plat)
+### p_we_302id  (302 AT bn companies (294 AT bn pattern; recon coy already present))
+- NEW `wer_302at_atc1_com` (0x920, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_302at_atc1_p1` (0x921, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_302at_atc1_p2` (0x922, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_302at_atc1_p3` (0x923, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_302at_atc2_com` (0x930, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_302at_atc2_p1` (0x931, SUP, pl_pak40): wer_com_art_plat x1, wer_pak38 x2, wer_team_mg_41 x1, wer_pak38 x2, wer_team_mg_41 x1
+- NEW `wer_302at_atc2_p2` (0x932, SUP, pl_pak35): wer_com_art_plat x1, wer_pak35 x2, wer_team_mg_41 x1, wer_pak35 x2, wer_team_mg_41 x1
+- NEW `wer_302at_atc3_com` (0x940, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_302at_atc3_p1` (0x941, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_302at_atc3_p2` (0x942, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+### p_we_302ar  NEW FORMATION under p_we_302id (name key op_we_302ar, ai EN2)
+### p_we_302ar  (302 AR: new formation under 302 ID (294 AR pattern))
+- NEW `wer_302ar_hq` (0x0, CAMP, plu_rgt_arty): wer_com_spam x1, wer_squad_sup_mot x4;0;0;16, wer_squad_spam x2;0;0;8
+- NEW `wer_302ar_1b_ac` (0x111, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_302ar_2b_ac` (0x121, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_302ar_3b_hq` (0x130, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_302ar_3b_1p` (0x132, SUP, pl_flak36): wer_com_art_plat x1, wer_flak36 x2, wer_team_mg_41 x1
+- NEW `wer_302ar_3b_2p` (0x133, SUP, pl_flak36): wer_com_art_plat x1, wer_flak36 x2, wer_team_mg_41 x1
+- NEW `wer_302ar_4b_hq` (0x240, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_302ar_4b_ac` (0x241, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_302ar_4b_1p` (0x242, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_302ar_4b_2p` (0x243, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_302ar_5b_hq` (0x250, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_302ar_5b_ac` (0x251, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_sfh414f_plat)
+- NEW `wer_302ar_5b_1p` (0x252, SUP, pl_c17s_howit): wer_com_art_plat x1, wer_sfh414f x2, wer_team_mg_41 x1
+- NEW `wer_302ar_5b_2p` (0x253, SUP, pl_c17s_howit): wer_com_art_plat x1, wer_sfh414f x2, wer_team_mg_41 x1
+- NEW `wer_302ar_6b_ac` (0x261, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_302ar_7b_ac` (0x371, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_302ar_8b_ac` (0x381, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_302ar_9b_ac` (0x391, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_sfh414f_plat)
+### p_we_60mir  (60 MIR: 30 July 156 MIR structure)
+- `wer_60mir_cbn1` (0x101, COM): composition wer_com_pzgr_bat x1, wer_squad_phone_mot_rad x1 -> wer_com_pzgr_bat x1, wer_squad_phone_mech x1
+- NEW `wer_60mir_1b_ac81` (0x108, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_plat)
+- NEW `wer_60mir_1b_ac75` (0x103, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_60mir_coy1` (0x110, COMC): composition wer_com_pzgr_coym x1, wer_squad_gren x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_60mir_1c_1p` (0x111, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_60mir_1c_2p` (0x112, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_60mir_1c_3p` (0x113, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_60mir_1c_mt` (0x115, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_60mir_1c_mg` (0x116, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_60mir_coy2` (0x120, COMC): composition wer_com_pzgr_coym x1, wer_squad_gren x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_60mir_2c_1p` (0x121, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_60mir_2c_2p` (0x122, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_60mir_2c_3p` (0x123, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_60mir_2c_mt` (0x125, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_60mir_2c_mg` (0x126, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- NEW `wer_60mir_4c_com` (0x140, COMC, plu_field_com): wer_com_pinf_coy x1, wer_squad_phone x1
+- NEW `wer_60mir_4c_sap` (0x141, UNI, plu_saps): wer_com_pinf_plat x1, wer_squad_engid_43a x3
+- NEW `wer_60mir_4c_atg` (0x142, SUP, pl_pak40): wer_com_art_plat x1, rn_wer_hatg_tun x2, wer_team_mg_41 x1, rn_wer_hatg_tun x1, wer_team_mg_41 x1
+- NEW `wer_60mir_4c_leig1` (0x143, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_60mir_4c_leig2` (0x144, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_60mir_4c_atr` (0x145, SUP, plu_atrs): wer_com_art_plat x1, wer_sdkfz250a_11 x3, wer_team_mg_41 x3
+- `wer_60mir_cbn2` (0x201, COM): composition wer_com_pzgr_bat x1, wer_squad_phone_mot_rad x1 -> wer_com_pzgr_bat x1, wer_squad_phone_mech x1
+- NEW `wer_60mir_2b_ac81` (0x208, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_plat)
+- NEW `wer_60mir_2b_ac75` (0x203, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_60mir_coy5` (0x250, COMC): composition wer_com_pzgr_coym x1, wer_squad_gren x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_60mir_5c_1p` (0x251, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_60mir_5c_2p` (0x252, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_60mir_5c_3p` (0x253, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_60mir_5c_mt` (0x255, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_60mir_5c_mg` (0x256, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_60mir_coy6` (0x260, COMC): composition wer_com_pzgr_coym x1, wer_squad_gren x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_60mir_6c_1p` (0x261, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_60mir_6c_2p` (0x262, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_60mir_6c_mt` (0x265, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_60mir_6c_mg` (0x266, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- NEW `wer_60mir_8c_com` (0x280, COMC, plu_field_com): wer_com_pinf_coy x1, wer_squad_phone x1
+- NEW `wer_60mir_8c_sap` (0x281, UNI, plu_saps): wer_com_pinf_plat x1, wer_squad_engid_43a x3
+- NEW `wer_60mir_8c_atg` (0x282, SUP, pl_pak40): wer_com_art_plat x1, rn_wer_hatg_tun x2, wer_team_mg_41 x1, rn_wer_hatg_tun x1, wer_team_mg_41 x1
+- NEW `wer_60mir_8c_leig1` (0x283, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_60mir_8c_atr` (0x285, SUP, plu_atrs): wer_com_art_plat x1, wer_sdkfz250a_11 x3, wer_team_mg_41 x3
+### p_we_156mir  (156 MIR: 30 July 156 MIR structure)
+- `wer_156mir_cbn1` (0x101, COM): composition wer_com_pzgr_bat x1, wer_squad_phone_mot_rad x1 -> wer_com_pzgr_bat x1, wer_squad_phone_mech x1
+- NEW `wer_156mir_1b_ac81` (0x108, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_plat)
+- NEW `wer_156mir_1b_ac75` (0x103, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_156mir_coy1` (0x110, COMC): composition wer_com_pzgr_coym x1, wer_squad_gren x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_156mir_1c_1p` (0x111, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_156mir_1c_2p` (0x112, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_156mir_1c_3p` (0x113, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_156mir_1c_mt` (0x115, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_156mir_1c_mg` (0x116, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_156mir_coy2` (0x120, COMC): composition wer_com_pzgr_coym x1, wer_squad_gren x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_156mir_2c_1p` (0x121, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_156mir_2c_2p` (0x122, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_156mir_2c_3p` (0x123, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_156mir_2c_mt` (0x125, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_156mir_2c_mg` (0x126, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- NEW `wer_156mir_4c_com` (0x140, COMC, plu_field_com): wer_com_pinf_coy x1, wer_squad_phone x1
+- NEW `wer_156mir_4c_sap` (0x141, UNI, plu_saps): wer_com_pinf_plat x1, wer_squad_engid_43a x3
+- NEW `wer_156mir_4c_atg` (0x142, SUP, pl_pak40): wer_com_art_plat x1, rn_wer_hatg_tun x2, wer_team_mg_41 x1, rn_wer_hatg_tun x1, wer_team_mg_41 x1
+- NEW `wer_156mir_4c_leig1` (0x143, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_156mir_4c_leig2` (0x144, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_156mir_4c_atr` (0x145, SUP, plu_atrs): wer_com_art_plat x1, wer_sdkfz250a_11 x3, wer_team_mg_41 x3
+- `wer_156mir_cbn2` (0x201, COM): composition wer_com_pzgr_bat x1, wer_squad_phone_mot_rad x1 -> wer_com_pzgr_bat x1, wer_squad_phone_mech x1
+- NEW `wer_156mir_2b_ac81` (0x208, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_plat)
+- NEW `wer_156mir_2b_ac75` (0x203, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_156mir_5c_1p` (0x251, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_156mir_5c_2p` (0x252, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_156mir_5c_3p` (0x253, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_156mir_5c_mt` (0x255, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_156mir_5c_mg` (0x256, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_156mir_coy6` (0x260, COMC): composition wer_com_pzgr_coym x1, wer_squad_gren x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_156mir_6c_1p` (0x261, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_156mir_6c_2p` (0x262, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_156mir_6c_mt` (0x265, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_156mir_6c_mg` (0x266, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- NEW `wer_156mir_8c_com` (0x280, COMC, plu_field_com): wer_com_pinf_coy x1, wer_squad_phone x1
+- NEW `wer_156mir_8c_sap` (0x281, UNI, plu_saps): wer_com_pinf_plat x1, wer_squad_engid_43a x3
+- NEW `wer_156mir_8c_atg` (0x282, SUP, pl_pak40): wer_com_art_plat x1, rn_wer_hatg_tun x2, wer_team_mg_41 x1, rn_wer_hatg_tun x1, wer_team_mg_41 x1
+- NEW `wer_156mir_8c_leig1` (0x283, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_156mir_8c_atr` (0x285, SUP, plu_atrs): wer_com_art_plat x1, wer_sdkfz250a_11 x3, wer_team_mg_41 x3
+### p_we_146ar  NEW FORMATION under p_we_16mid (name key op_we_146ar, ai EN16)
+### p_we_146ar  (146 AR: new formation under 16 PzGr Div (30 July 146 AR: HQ, FO teams, 4th battery))
+- NEW `wer_146ar_hq` (0x0, CAMP, plu_rgt_arty): wer_com_spam x1, wer_squad_sup_mot x4;0;0;16, wer_squad_spam x2;0;0;8
+- NEW `wer_146ar_1b_ac` (0x111, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_146ar_2b_ac` (0x121, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_146ar_3b_ac` (0x131, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_146ar_4b_hq` (0x240, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_146ar_4b_ac` (0x241, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_146ar_4b_1p` (0x242, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_146ar_5b_ac` (0x251, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_146ar_6b_ac` (0x261, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_146ar_7b_ac` (0x371, CTRL, plu_fo): wer_corr_art x1(wer_artsup_sk18_plat)
+- NEW `wer_146ar_8b_ac` (0x381, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_sfh414f_plat)
+- NEW `wer_146ar_9b_ac` (0x391, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_sfh414f_plat)
+### p_we_126mir  (126 MIR: 30 July 126 MIR structure (8th coy already present))
+- NEW `wer_126mir_1b_ac81` (0x102, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_plat)
+- NEW `wer_126mir_1b_ac75` (0x103, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_126mir_coy1` (0x110, COMC): composition wer_com_pzgr_coym x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_126mir_1c_1p` (0x111, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_126mir_1c_2p` (0x112, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_126mir_1c_3p` (0x113, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_126mir_1c_mt` (0x115, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_126mir_1c_mg` (0x116, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_126mir_coy2` (0x120, COMC): composition wer_com_pzgr_coym x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_126mir_2c_1p` (0x121, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_126mir_2c_2p` (0x122, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_126mir_2c_mt` (0x125, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_126mir_2c_mg` (0x126, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_126mir_coy3` (0x130, COMC): composition wer_com_pzgr_coym x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_126mir_3c_1p` (0x131, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_126mir_coy4` (0x140, COMC): composition wer_com_pinf_coy x1 -> wer_com_pinf_coy x1, wer_squad_phone x1
+- `wer_126mir_4c_1p` (0x141, UNI): composition wer_com_pinf_plat x1, wer_squad_engid_43a x2, wer_squad_engid_43a2 x1 -> wer_com_pinf_plat x1, wer_squad_engid_43a x3
+- `wer_126mir_4c_2p` (0x142, SUP): composition wer_com_art_plat x1, wer_pak40 x1, wer_pak97_38 x2 -> wer_com_art_plat x1, rn_wer_hatg_tun x2, wer_team_mg_41 x1, rn_wer_hatg_tun x1, wer_team_mg_41 x1
+- `wer_126mir_4c_3p` (0x143, SUP): composition wer_com_art_batm x1, wer_squad_phone x1, wer_com_art_plat x1, rn_wer_leig x2, wer_com_art_plat x1, rn_wer_leig x2 -> wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_126mir_4c_leig2` (0x148, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_126mir_4c_atr` (0x145, SUP, plu_atrs): wer_com_art_plat x1, wer_sdkfz250a_11 x3, wer_team_mg_41 x3
+- `wer_126mir_cbn2` (0x201, COM): composition wer_com_pzgr_bat x1, wer_squad_phone_mot_rad x1 -> wer_com_pzgr_bat x1, wer_squad_phone_mech x1
+- NEW `wer_126mir_2b_ac81` (0x202, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_plat)
+- NEW `wer_126mir_2b_ac75` (0x203, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_126mir_coy5` (0x250, COMC): composition wer_com_pzgr_coym x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_126mir_5c_1p` (0x251, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_126mir_5c_2p` (0x252, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_126mir_5c_3p` (0x253, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_126mir_5c_mt` (0x255, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_126mir_5c_mg` (0x256, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_126mir_coy6` (0x260, COMC): composition wer_com_pzgr_coym x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_126mir_6c_1p` (0x261, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_126mir_6c_2p` (0x262, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_126mir_6c_mt` (0x265, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_126mir_6c_mg` (0x266, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+### p_we_128mir  (128 MIR: 30 July 128 MIR structure)
+- NEW `wer_128mir_1b_ac81` (0x102, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_plat)
+- NEW `wer_128mir_1b_ac75` (0x103, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_128mir_coy1` (0x110, COMC): composition wer_com_pzgr_coym x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_128mir_1c_1p` (0x111, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_1c_2p` (0x112, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_1c_3p` (0x113, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_128mir_1c_mt` (0x115, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_128mir_1c_mg` (0x116, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_128mir_coy2` (0x120, COMC): composition wer_com_pzgr_coym x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_128mir_2c_1p` (0x121, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_2c_2p` (0x122, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_2c_3p` (0x123, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_128mir_2c_mt` (0x125, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_128mir_2c_mg` (0x126, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_128mir_coy3` (0x130, COMC): composition wer_com_pzgr_coym x1, wer_mg42 x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_128mir_3c_1p` (0x131, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_3c_2p` (0x132, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_coy4` (0x140, COMC): composition wer_com_pinf_coy x1 -> wer_com_pinf_coy x1, wer_squad_phone x1
+- `wer_128mir_4c_1p` (0x141, UNI): composition wer_com_pinf_plat x1, wer_squad_engid_43a x2, wer_squad_engid_43a2 x1 -> wer_com_pinf_plat x1, wer_squad_engid_43a x3
+- `wer_128mir_4c_2p` (0x142, SUP): composition wer_com_art_plat x1, wer_pak40 x1, wer_pak97_38 x2 -> wer_com_art_plat x1, rn_wer_hatg_tun x2, wer_team_mg_41 x1, rn_wer_hatg_tun x1, wer_team_mg_41 x1
+- `wer_128mir_4c_3p` (0x143, SUP): composition wer_com_art_batm x1, wer_squad_phone x1, wer_com_art_plat x1, rn_wer_leig x2, wer_com_art_plat x1, rn_wer_leig x2 -> wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_128mir_4c_leig2` (0x148, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_128mir_4c_atr` (0x145, SUP, plu_atrs): wer_com_art_plat x1, wer_sdkfz250a_11 x3, wer_team_mg_41 x3
+- `wer_128mir_cbn2` (0x201, COM): composition wer_com_pzgr_bat x1, wer_squad_phone_mot_rad x1 -> wer_com_pzgr_bat x1, wer_squad_phone_mech x1
+- NEW `wer_128mir_2b_ac81` (0x202, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_plat)
+- NEW `wer_128mir_2b_ac75` (0x203, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_128mir_coy5` (0x250, COMC): composition wer_com_pzgr_coym x1, wer_mg42 x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_128mir_5c_1p` (0x251, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_5c_2p` (0x252, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_5c_3p` (0x253, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_128mir_5c_mt` (0x255, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_128mir_5c_mg` (0x256, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_128mir_coy6` (0x260, COMC): composition wer_com_pzgr_coym x1, wer_mg42 x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_128mir_6c_1p` (0x261, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_6c_2p` (0x262, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_128mir_6c_mt` (0x265, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_128mir_6c_mg` (0x266, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- NEW `wer_128mir_8c_com` (0x288, COMC, plu_field_com): wer_com_pinf_coy x1, wer_squad_phone x1
+- `wer_128mir_8c_1p` (0x281, UNI): composition wer_com_pinf_plat x1, wer_squad_engid_43a x2, wer_squad_engid_43a2 x1 -> wer_com_pinf_plat x1, wer_squad_engid_43a x3
+- NEW `wer_128mir_8c_atg` (0x282, SUP, pl_pak40): wer_com_art_plat x1, rn_wer_hatg_tun x2, wer_team_mg_41 x1, rn_wer_hatg_tun x1, wer_team_mg_41 x1
+- `wer_128mir_8c_3p` (0x283, SUP): composition wer_com_art_batm x1, wer_squad_phone x1, wer_com_art_plat x1, rn_wer_leig x2, wer_com_art_plat x1, rn_wer_leig x2 -> wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_128mir_8c_atr` (0x285, SUP, plu_atrs): wer_com_art_plat x1, wer_sdkfz250a_11 x3, wer_team_mg_41 x3
+### p_we_23td  (51 eng bn HQ + 1 coy (2 and 3 coy already present))
+- NEW `wer_51sbn_com` (0x101, COM, plu_commander): wer_com_inf_bat x1, wer_squad_phone x1
+- NEW `wer_51sbn_1c_com` (0x110, COMC, plu_field_com): wer_com_pinf_coy x1
+- NEW `wer_51sbn_1c_1p` (0x111, UNI, plu_saps): wer_com_pinf_plat x1, wer_squad_engid_43a x2, wer_squad_engid_43a2 x2, wer_flamer x1
+- NEW `wer_51sbn_1c_2p` (0x112, UNI, plu_saps): wer_com_pinf_plat x1, wer_squad_engid_43a x2, wer_squad_engid_43a2 x2, wer_flamer x1
+- NEW `wer_51sbn_1c_3p` (0x113, UNI, plu_saps): wer_com_pinf_plat x1, wer_squad_engid_43a x2, wer_squad_engid_43a2 x2, wer_flamer x1
+- NEW `wer_51sbn_1c_mg` (0x114, SUP, pl_mg42): wer_com_pinf_plat x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- NEW `wer_51sbn_1c_mt` (0x115, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+### p_we_23td  (23 recon bn: HQ, FO, armoured-car coy, 2 scout coys, heavy coy (APC coy already present))
+- NEW `wer_23rb_com` (0x201, COM, plu_commander): wer_com_inf_bat x1
+- NEW `wer_23rb_ac81` (0x202, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_sec)
+- NEW `wer_23rb_1c_com` (0x210, COMC, plu_field_com): wer_com_pzgr_scout_coy x1, wer_com_pzgr_scout_coy1 x1
+- NEW `wer_23rb_1c_1p` (0x211, SCT, pl_sdkfz232): wer_sdkfz232_8_com x1, wer_sdkfz232_8 x2, wer_sdkfz231_8 x3
+- NEW `wer_23rb_3c_com` (0x230, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_23rb_3c_1p` (0x231, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_43a x3
+- NEW `wer_23rb_3c_2p` (0x232, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_43a x3
+- NEW `wer_23rb_3c_3p` (0x233, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_43a x3
+- NEW `wer_23rb_3c_mg` (0x234, SUP, pl_mg42): wer_com_art_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_23rb_3c_mt` (0x235, SUP, plu_mortars): wer_com_hw_sq x1, wer_grw36 x3
+- NEW `wer_23rb_4c_com` (0x240, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_23rb_4c_1p` (0x241, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_43a x3
+- NEW `wer_23rb_4c_2p` (0x242, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_43a x3
+- NEW `wer_23rb_4c_3p` (0x243, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_43a x3
+- NEW `wer_23rb_4c_mt` (0x245, SUP, plu_mortars): wer_com_hw_sq x1, wer_grw36 x3
+- NEW `wer_23rb_5c_com` (0x250, COMC, plu_field_com): wer_com_pinf_coy x1, wer_squad_phone x1
+- NEW `wer_23rb_5c_eng` (0x251, SUP, plu_saps): wer_com_pinf_plat x1, wer_squad_engid_43a x4
+- NEW `wer_23rb_5c_atg` (0x252, SUP, pl_pak35): wer_com_art_plat x1, wer_pak38 x1, wer_team_mg_41 x1, wer_pak38 x1, wer_team_mg_41 x1, wer_pak38 x1, wer_team_mg_41 x1
+- NEW `wer_23rb_5c_art1` (0x253, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+### p_we_128ar  NEW FORMATION under p_we_23td (name key op_we_128ar, ai EN23)
+- MOVED `wer_128ar_1abat` (0x112, SUP, name op_we_128ar_1b2) from p_we_23td: gun platoon of battery 1
+- MOVED `wer_128ar_2abat` (0x122, SUP, name op_we_128ar_2b2) from p_we_23td: gun platoon of battery 2
+- MOVED `wer_128ar_3abat` (0x134, SUP, name op_we_128ar_3b4) from p_we_23td: gun platoon of battery 3
+### p_we_128ar  (128 AR: new formation under 23 PzD (30 July 128 AR: HQ, FO teams, 3rd battery) + the 17 July I/128 AR batteries)
+- NEW `wer_128ar_hq` (0x0, CAMP, plu_rgt_arty): wer_com_spam x1, wer_squad_sup_mot x4;0;0;16, wer_squad_spam x2;0;0;8
+- NEW `wer_128ar_1b_ac` (0x111, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_128ar_2b_ac` (0x121, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_128ar_3b_hq` (0x130, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_128ar_3b_ac` (0x131, CTRL, plu_fo): wer_pz3jbef_ccom x1(wer_artsup_lefh_plat)
+- NEW `wer_128ar_3b_1p` (0x132, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_128ar_3b_2p` (0x133, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_128ar_4b_ac` (0x241, CTRL, plu_fo): wer_pz3jbef_ccom x1(wer_artsup_lefh_plat)
+- NEW `wer_128ar_5b_ac` (0x251, CTRL, plu_fo): wer_corr_art x1(wer_artsup_lefh_plat)
+- NEW `wer_128ar_6b_ac` (0x261, CTRL, plu_fo): wer_corr_art x1(wer_artsup_lefh_plat)
+- NEW `wer_128ar_7b_ac` (0x371, CTRL, plu_fo): wer_corr_art x1(wer_artsup_sk18_plat)
+- NEW `wer_128ar_8b_ac` (0x381, CTRL, plu_fo): wer_corr_art x1(wer_artsup_sfh414f_plat)
+- NEW `wer_128ar_9b_ac` (0x391, CTRL, plu_fo): wer_corr_art x1(wer_artsup_sfh414f_plat)
+### Tank and SPG companies split into command + platoons (30 July pattern)
+- `wer_306id_mar_coy1` (0x9) -> `wer_306id_mar_coy1_com` command (rn_wer_atspg_ccom x1) + `wer_306id_mar_coy1` (rn_wer_atspg_com x1, rn_wer_atspg x3) + `wer_306id_mar_coy1_2p` (rn_wer_atspg_com x1, rn_wer_atspg x3)
+- `wer_210atbn_stug` (0x10) -> `wer_210atbn_stug_com` command (wer_stug3f8_ccom x1, wer_stug3f8 x2) + `wer_210atbn_stug` (wer_stug3f8_com x1, wer_stug3f8 x2) + `wer_210atbn_stug_2p` (wer_stug3f8_com x1, wer_stug3f8 x2)
+- `wer_201tr_ltc1` (0x110) -> `wer_201tr_ltc1_com` command (wer_pz3l_ccom x1) + `wer_201tr_ltc1` (wer_pz3m_com x1, rn_wer_pz3lg x2, wer_pz3nes x1) + `wer_201tr_ltc1_2p` (wer_pz3l_com x1, rn_wer_pz3lg x2) + `wer_201tr_ltc1_3p` (wer_pz4g_com x1, rn_wer_pz4lg x3)
+- `wer_201tr_ltc2` (0x120) -> `wer_201tr_ltc2_com` command (wer_pz3m_ccom x1) + `wer_201tr_ltc2` (wer_pz3m_com x1, rn_wer_pz3lg x2, wer_pz3ne x1) + `wer_201tr_ltc2_2p` (wer_pz3l_com x1, rn_wer_pz3lg x2, wer_pz3n x1) + `wer_201tr_ltc2_3p` (wer_pz4f2_com x1, rn_wer_pz4lg x3)
+- `wer_201tr_mtc3` (0x130) -> `wer_201tr_mtc3_com` command (wer_pz4f2_ccom x1) + `wer_201tr_mtc3` (wer_pz4g_com x1, rn_wer_pz4lg x4) + `wer_201tr_mtc3_2p` (wer_pz4g_com x1, rn_wer_pz4lg x4)
+- `wer_201tr_mtc4` (0x140) -> `wer_201tr_mtc4_com` command (wer_pz4g_ccom x1) + `wer_201tr_mtc4` (wer_pz4g_com x1, rn_wer_pz4lg x4) + `wer_201tr_mtc4_2p` (wer_pz4f2_com x1, rn_wer_pz4lg x4)
+- `wer_201tr_asgun9` (0x190) -> `wer_201tr_asgun9_com` command (wer_stuig33b_ccom x1) + `wer_201tr_asgun9` (wer_stuig33b_com x1, wer_stuig33b x1) + `wer_201tr_asgun9_2p` (wer_stuig33b_com x1, wer_stuig33b x1) + `wer_201tr_asgun9_3p` (wer_stuig33b_com x1, wer_stuig33b x1)
+- `wer_116tbn_ltc1` (0x110) -> `wer_116tbn_ltc1_com` command (wer_pz3l_ccom x1) + `wer_116tbn_ltc1` (wer_pz3m_com x1, rn_wer_pz3lg x2) + `wer_116tbn_ltc1_2p` (wer_pz3l_com x1, rn_wer_pz3lg x2)
+- `wer_116tbn_mtc2` (0x120) -> `wer_116tbn_mtc2_com` command (wer_pz4g_ccom x1) + `wer_116tbn_mtc2` (wer_pz4f2_com x1, rn_wer_pz4lg x3) + `wer_116tbn_mtc2_2p` (wer_pz3l_com x1, rn_wer_pz3lg x2, wer_pz4f1 x1)
+- `wer_116tbn_mtc3` (0x130) -> `wer_116tbn_mtc3_com` command (wer_pz3l_ccom x1, rn_wer_pz3lg x1) + `wer_116tbn_mtc3` (wer_pz3m_com x1, rn_wer_pz3lg x2) + `wer_116tbn_mtc3_2p` (wer_pz3l_com x1, rn_wer_pz3lg x2)
+- `ra_6mr_tcoy1` (0x410) -> `ra_6mr_tcoy1_com` command (rn_rkka_t34_42_ccom x1) + `ra_6mr_tcoy1` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_6mr_tcoy1_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_6mr_tcoy1_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_6mr_tcoy2` (0x420) -> `ra_6mr_tcoy2_com` command (rkka_t34_41_stz_ccom x1) + `ra_6mr_tcoy2` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_6mr_tcoy2_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_6mr_tcoy2_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_6mr_tcoy3` (0x430) -> `ra_6mr_tcoy3_com` command (rkka_t70_42_ccom x1) + `ra_6mr_tcoy3` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_6mr_tcoy3_2p` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_6mr_tcoy3_3p` (rkka_t70_42_com x1, rkka_t70_42 x2)
+- `ra_6mr_tcoy4` (0x440) -> `ra_6mr_tcoy4_com` command (rkka_t70_42_ccom x1) + `ra_6mr_tcoy4` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_6mr_tcoy4_2p` (rkka_t70_42_com x1, rkka_t70_42 x2)
+- `ra_5mr_tcoy1` (0x410) -> `ra_5mr_tcoy1_com` command (rn_rkka_t34_42_ccom x1) + `ra_5mr_tcoy1` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_5mr_tcoy1_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_5mr_tcoy1_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_5mr_tcoy2` (0x420) -> `ra_5mr_tcoy2_com` command (rkka_t34_41_stz_ccom x1) + `ra_5mr_tcoy2` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_5mr_tcoy2_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_5mr_tcoy2_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_5mr_tcoy3` (0x430) -> `ra_5mr_tcoy3_com` command (rkka_t70_42_ccom x1) + `ra_5mr_tcoy3` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_5mr_tcoy3_2p` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_5mr_tcoy3_3p` (rkka_t70_42_com x1, rkka_t70_42 x2)
+- `ra_5mr_tcoy4` (0x440) -> `ra_5mr_tcoy4_com` command (rkka_t70_42_ccom x1) + `ra_5mr_tcoy4` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_5mr_tcoy4_2p` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_5mr_tcoy4_3p` (rkka_t70_42_com x1, rkka_t70_42 x1)
+- `ra_4mr_tcoy1` (0x410) -> `ra_4mr_tcoy1_com` command (rn_rkka_t34_42_ccom x1) + `ra_4mr_tcoy1` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_4mr_tcoy1_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_4mr_tcoy1_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_4mr_tcoy2` (0x420) -> `ra_4mr_tcoy2_com` command (rkka_t34_41_stz_ccom x1) + `ra_4mr_tcoy2` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_4mr_tcoy2_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_4mr_tcoy2_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_4mr_tcoy3` (0x430) -> `ra_4mr_tcoy3_com` command (rkka_t70_42_ccom x1) + `ra_4mr_tcoy3` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_4mr_tcoy3_2p` (rkka_t70_42_com x1, rkka_t70_42 x2)
+- `ra_4mr_tcoy4` (0x440) -> `ra_4mr_tcoy4_com` command (rkka_t70_42_ccom x1) + `ra_4mr_tcoy4` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_4mr_tcoy4_2p` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_4mr_tcoy4_3p` (rkka_t70_42_com x1, rkka_t70_42 x1)
+- `ra_37tbde_tcoy1` (0x110) -> `ra_37tbde_tcoy1_com` command (rn_rkka_t34_42_ccom x1) + `ra_37tbde_tcoy1` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_37tbde_tcoy1_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_37tbde_tcoy1_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_37tbde_tcoy2` (0x120) -> `ra_37tbde_tcoy2_com` command (rkka_t34_41_stz_ccom x1) + `ra_37tbde_tcoy2` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_37tbde_tcoy2_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_37tbde_tcoy3` (0x130) -> `ra_37tbde_tcoy3_com` command (rkka_t70_42_ccom x1) + `ra_37tbde_tcoy3` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_37tbde_tcoy3_2p` (rkka_t70_42_com x1, rkka_t70_42 x2)
+- `ra_37tbde_tcoy4` (0x210) -> `ra_37tbde_tcoy4_com` command (rn_rkka_t34_42_ccom x1) + `ra_37tbde_tcoy4` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_37tbde_tcoy4_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_37tbde_tcoy5` (0x220) -> `ra_37tbde_tcoy5_com` command (rkka_t70_42_ccom x1) + `ra_37tbde_tcoy5` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_37tbde_tcoy5_2p` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_37tbde_tcoy5_3p` (rkka_t70_42_com x1, rkka_t70_42 x1)
+- `ra_37tbde_tcoy6` (0x230) -> `ra_37tbde_tcoy6_com` command (rkka_t70_42_ccom x1) + `ra_37tbde_tcoy6` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_37tbde_tcoy6_2p` (rkka_t70_42_com x1, rkka_t70_42 x1)
+- `ra_32tbde_tcoy1` (0x110) -> `ra_32tbde_tcoy1_com` command (rn_rkka_t34_42_ccom x1) + `ra_32tbde_tcoy1` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_32tbde_tcoy1_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_32tbde_tcoy1_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_32tbde_tcoy2` (0x120) -> `ra_32tbde_tcoy2_com` command (rn_rkka_t34_42_ccom x1) + `ra_32tbde_tcoy2` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_32tbde_tcoy2_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_32tbde_tcoy2_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x1)
+- `ra_32tbde_tcoy3` (0x130) -> `ra_32tbde_tcoy3_com` command (rkka_t70_42_ccom x1) + `ra_32tbde_tcoy3` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_32tbde_tcoy3_2p` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_32tbde_tcoy3_3p` (rkka_t60_41_com x1, rkka_t60_41 x2)
+- `ra_22stp_1c` (0x110) -> `ra_22stp_1c_com` command (rn_rkka_t34_42_ccom x1, rn_rkka_t34 x1) + `ra_22stp_1c` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_22stp_1c_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_22stp_2c` (0x120) -> `ra_22stp_2c_com` command (rkka_t34_41_stz_ccom x1) + `ra_22stp_2c` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_22stp_2c_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_22stp_2c_3p` (rn_rkka_t34_com x1, rkka_ot34_41_stz x2)
+- `ra_22stp_3c` (0x130) -> `ra_22stp_3c_com` command (rn_rkka_t34_42_ccom x1) + `ra_22stp_3c` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_22stp_3c_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_22stp_4c` (0x140) -> `ra_22stp_4c_com` command (rkka_t70_42_ccom x1) + `ra_22stp_4c` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_22stp_4c_2p` (rkka_t70_42_com x1, rkka_t70_42 x1)
+### Batteries completed: FO <-> gun platoon in the same group
+- NEW `wer_46ar_1abat_ac` (0x24, CTRL, FO lefh) in p_we_306id for `wer_46ar_1abat`
+- NEW `wer_72ar_1abat_ac` (0x14, CTRL, FO lefh) in p_we_306id for `wer_72ar_1abat`
+- NEW `wer_306id_1abat_ac` (0x1, CTRL, FO lefh) in p_we_306id for `wer_306id_1abat`
+- NEW `wer_581ir_12cmg_4pmo_1s_ac` (0x3c3, CTRL, FO grw34) in p_we_581ir for `wer_581ir_12cmg_4pmo_1s`
+- `wer_581ir_1b_ac81` (p_we_581ir) moved to group 0x140 (code 0x143) where its grw34 guns are: wer_581ir_4cmg_4pmo_1s, wer_581ir_4cmg_4pmo_2s
+- `wer_581ir_2b_ac81` (p_we_581ir) moved to group 0x280 (code 0x283) where its grw34 guns are: wer_581ir_8cmg_4pmo_1s, wer_581ir_8cmg_4pmo_2s
+- NEW `wer_581ir_3b_guns` (0x303, SUP, wer_grw34 x2) in p_we_581ir for FO `wer_581ir_3b_ac81`
+- NEW `wer_306ar_2b_guns` (0x122, SUP, wer_lefh18m x2) in p_we_306ar for FO `wer_306ar_2b_ac`
+- NEW `wer_306ar_2b_hq` (0x120, COMC, battery command) in p_we_306ar
+- NEW `wer_306ar_6b_guns` (0x262, SUP, wer_lefh18m x2) in p_we_306ar for FO `wer_306ar_6b_ac`
+- NEW `wer_306ar_6b_hq` (0x260, COMC, battery command) in p_we_306ar
+- NEW `wer_306ar_8b_guns` (0x382, SUP, wer_lefh18m x2) in p_we_306ar for FO `wer_306ar_8b_ac`
+- NEW `wer_306ar_8b_hq` (0x380, COMC, battery command) in p_we_306ar
+- NEW `wer_306ar_9b_guns` (0x392, SUP, wer_sfh414f x2) in p_we_306ar for FO `wer_306ar_9b_ac`
+- NEW `wer_306ar_9b_hq` (0x390, COMC, battery command) in p_we_306ar
+- NEW `wer_306ar_7b_guns` (0x372, SUP, wer_lefh18m x2) in p_we_306ar for FO `wer_306ar_7b_ac`
+- NEW `wer_306ar_7b_hq` (0x370, COMC, battery command) in p_we_306ar
+- NEW `wer_306ar_1b_guns` (0x112, SUP, wer_lefh18m x2) in p_we_306ar for FO `wer_306ar_1b_ac`
+- NEW `wer_306ar_1b_hq` (0x110, COMC, battery command) in p_we_306ar
+- NEW `wer_572ir_12cmg_4pmo_1s_ac` (0x3c3, CTRL, FO grw34) in p_we_572ir for `wer_572ir_12cmg_4pmo_1s`
+- NEW `wer_572ir_13c_guns` (0xd2, SUP, wer_leig18 x2) in p_we_572ir for FO `wer_572ir_13c_ac75`
+- NEW `wer_572ir_3b_guns` (0x304, SUP, wer_grw34 x2) in p_we_572ir for FO `wer_572ir_3b_ac81`
+- NEW `wer_302ar_2b_guns` (0x122, SUP, wer_lefh18m x2) in p_we_302ar for FO `wer_302ar_2b_ac`
+- NEW `wer_302ar_2b_hq` (0x120, COMC, battery command) in p_we_302ar
+- NEW `wer_302ar_6b_guns` (0x262, SUP, wer_lefh18m x2) in p_we_302ar for FO `wer_302ar_6b_ac`
+- NEW `wer_302ar_6b_hq` (0x260, COMC, battery command) in p_we_302ar
+- NEW `wer_302ar_8b_guns` (0x382, SUP, wer_lefh18m x2) in p_we_302ar for FO `wer_302ar_8b_ac`
+- NEW `wer_302ar_8b_hq` (0x380, COMC, battery command) in p_we_302ar
+- NEW `wer_302ar_9b_guns` (0x392, SUP, wer_sfh414f x2) in p_we_302ar for FO `wer_302ar_9b_ac`
+- NEW `wer_302ar_9b_hq` (0x390, COMC, battery command) in p_we_302ar
+- NEW `wer_302ar_7b_guns` (0x372, SUP, wer_lefh18m x2) in p_we_302ar for FO `wer_302ar_7b_ac`
+- NEW `wer_302ar_7b_hq` (0x370, COMC, battery command) in p_we_302ar
+- NEW `wer_302ar_1b_guns` (0x112, SUP, wer_lefh18m x2) in p_we_302ar for FO `wer_302ar_1b_ac`
+- NEW `wer_302ar_1b_hq` (0x110, COMC, battery command) in p_we_302ar
+- NEW `wer_513ir_12cmg_4pmo_1s_ac` (0x3c3, CTRL, FO grw34) in p_we_513ir for `wer_513ir_12cmg_4pmo_1s`
+- `wer_513ir_1b_ac81` (p_we_513ir) moved to group 0x140 (code 0x143) where its grw34 guns are: wer_513ir_4cmg_4pmo_1s, wer_513ir_4cmg_4pmo_2s
+- `wer_513ir_2b_ac81` (p_we_513ir) moved to group 0x280 (code 0x283) where its grw34 guns are: wer_513ir_8cmg_4pmo_1s, wer_513ir_8cmg_4pmo_2s
+- NEW `wer_513ir_3b_guns` (0x303, SUP, wer_grw34 x2) in p_we_513ir for FO `wer_513ir_3b_ac81`
+- `wer_513ir_13c_ac75` (p_we_513ir) moved to group 0x0 (code 0x1) where its leig guns are: wer_513ir_supcoy
+- NEW `wer_294ar_2b_hq` (0x120, COMC, battery command) in p_we_294ar
+- NEW `wer_294ar_6b_guns` (0x262, SUP, wer_lefh18m x2) in p_we_294ar for FO `wer_294ar_6b_ac`
+- NEW `wer_294ar_6b_hq` (0x260, COMC, battery command) in p_we_294ar
+- NEW `wer_294ar_8b_guns` (0x382, SUP, wer_lefh18m x2) in p_we_294ar for FO `wer_294ar_8b_ac`
+- NEW `wer_294ar_8b_hq` (0x380, COMC, battery command) in p_we_294ar
+- `wer_294ar_9b_ac` (p_we_294ar) moved to group 0x130 (code 0x131) where its sfh guns are: wer_294ar_1c_3b
+- NEW `wer_294ar_7b_guns` (0x372, SUP, wer_lefh18m x2) in p_we_294ar for FO `wer_294ar_7b_ac`
+- NEW `wer_294ar_7b_hq` (0x370, COMC, battery command) in p_we_294ar
+- NEW `wer_294ar_1b_guns` (0x112, SUP, wer_lefh18m x2) in p_we_294ar for FO `wer_294ar_1b_ac`
+- NEW `wer_294ar_1b_hq` (0x110, COMC, battery command) in p_we_294ar
+- NEW `wer_23rb_5c_art1_ac` (0x254, CTRL, FO leig) in p_we_23td for `wer_23rb_5c_art1`
+- `wer_23rb_ac81` (p_we_23td) moved to group 0x110 (code 0x116) where its grw34 guns are: wer_51sbn_1c_mt
+- NEW `wer_126mir_2c_mt_ac` (0x124, CTRL, FO grw34) in p_we_126mir for `wer_126mir_2c_mt`
+- NEW `wer_126mir_4c_3p_ac` (0x146, CTRL, FO leig) in p_we_126mir for `wer_126mir_4c_3p`
+- NEW `wer_126mir_6c_mt_ac` (0x264, CTRL, FO grw34) in p_we_126mir for `wer_126mir_6c_mt`
+- NEW `wer_126mir_8c_3p_ac` (0x182, CTRL, FO leig) in p_we_126mir for `wer_126mir_8c_3p`
+- NEW `wer_126mir_5c_mt_ac` (0x254, CTRL, FO grw34) in p_we_126mir for `wer_126mir_5c_mt`
+- `wer_126mir_2b_ac81` (p_we_126mir) moved to group 0x110 (code 0x114) where its grw34 guns are: wer_126mir_1c_mt
+- NEW `wer_126mir_2b_guns` (0x202, SUP, wer_leig18 x2) in p_we_126mir for FO `wer_126mir_2b_ac75`
+- NEW `wer_126mir_1b_guns` (0x104, SUP, wer_grw34 x2) in p_we_126mir for FO `wer_126mir_1b_ac81`
+- NEW `wer_126mir_1b_guns_2` (0x105, SUP, wer_leig18 x2) in p_we_126mir for FO `wer_126mir_1b_ac75`
+- NEW `wer_128mir_2c_mt_ac` (0x124, CTRL, FO grw34) in p_we_128mir for `wer_128mir_2c_mt`
+- NEW `wer_128mir_4c_3p_ac` (0x146, CTRL, FO leig) in p_we_128mir for `wer_128mir_4c_3p`
+- NEW `wer_128mir_6c_mt_ac` (0x264, CTRL, FO grw34) in p_we_128mir for `wer_128mir_6c_mt`
+- NEW `wer_128mir_8c_3p_ac` (0x286, CTRL, FO leig) in p_we_128mir for `wer_128mir_8c_3p`
+- NEW `wer_128mir_5c_mt_ac` (0x254, CTRL, FO grw34) in p_we_128mir for `wer_128mir_5c_mt`
+- `wer_128mir_2b_ac81` (p_we_128mir) moved to group 0x110 (code 0x114) where its grw34 guns are: wer_128mir_1c_mt
+- NEW `wer_128mir_2b_guns` (0x202, SUP, wer_leig18 x2) in p_we_128mir for FO `wer_128mir_2b_ac75`
+- NEW `wer_128mir_1b_guns` (0x104, SUP, wer_grw34 x2) in p_we_128mir for FO `wer_128mir_1b_ac81`
+- NEW `wer_128mir_1b_guns_2` (0x105, SUP, wer_leig18 x2) in p_we_128mir for FO `wer_128mir_1b_ac75`
+- NEW `wer_128ar_2b_hq` (0x120, COMC, battery command) in p_we_128ar
+- `wer_128ar_5b_ac` (p_we_128ar) moved to group 0x130 (code 0x135) where its lefh guns are: wer_128ar_3b_1p, wer_128ar_3b_2p, wer_128ar_3abat
+- NEW `wer_128ar_6b_guns` (0x262, SUP, wer_lefh18m x2) in p_we_128ar for FO `wer_128ar_6b_ac`
+- NEW `wer_128ar_6b_hq` (0x260, COMC, battery command) in p_we_128ar
+- NEW `wer_128ar_8b_guns` (0x382, SUP, wer_sfh414f x2) in p_we_128ar for FO `wer_128ar_8b_ac`
+- NEW `wer_128ar_8b_hq` (0x380, COMC, battery command) in p_we_128ar
+- NEW `wer_128ar_9b_guns` (0x392, SUP, wer_sfh414f x2) in p_we_128ar for FO `wer_128ar_9b_ac`
+- NEW `wer_128ar_9b_hq` (0x390, COMC, battery command) in p_we_128ar
+- NEW `wer_128ar_1b_hq` (0x110, COMC, battery command) in p_we_128ar
+- NEW `wer_16mid_2rc_4p_ac` (0x625, CTRL, FO grw34) in p_we_16mid for `wer_16mid_2rc_4p`
+- NEW `wer_16mid_3rc_4p_ac` (0x635, CTRL, FO grw34) in p_we_16mid for `wer_16mid_3rc_4p`
+- NEW `wer_16mid_4rc_4p_ac` (0x645, CTRL, FO grw34) in p_we_16mid for `wer_16mid_4rc_4p`
+- NEW `wer_16mid_5rc_guns_ac` (0x655, CTRL, FO leig) in p_we_16mid for `wer_16mid_5rc_guns`
+- `wer_60mir_1b_ac81` (p_we_60mir) moved to group 0x110 (code 0x114) where its grw34 guns are: wer_60mir_1c_mt
+- `wer_60mir_1b_ac75` (p_we_60mir) moved to group 0x140 (code 0x146) where its leig guns are: wer_60mir_4c_leig1, wer_60mir_4c_leig2
+- NEW `wer_60mir_5c_mt_ac` (0x254, CTRL, FO grw34) in p_we_60mir for `wer_60mir_5c_mt`
+- `wer_60mir_2b_ac81` (p_we_60mir) moved to group 0x260 (code 0x264) where its grw34 guns are: wer_60mir_6c_mt
+- `wer_60mir_2b_ac75` (p_we_60mir) moved to group 0x280 (code 0x284) where its leig guns are: wer_60mir_8c_leig1
+- NEW `wer_60mir_2c_mt_ac` (0x124, CTRL, FO grw34) in p_we_60mir for `wer_60mir_2c_mt`
+- NEW `wer_60mir_gun_plat_ac` (0x1, CTRL, FO leig) in p_we_60mir for `wer_60mir_gun_plat`
+- `wer_156mir_1b_ac81` (p_we_156mir) moved to group 0x110 (code 0x114) where its grw34 guns are: wer_156mir_1c_mt
+- `wer_156mir_1b_ac75` (p_we_156mir) moved to group 0x140 (code 0x146) where its leig guns are: wer_156mir_4c_leig1, wer_156mir_4c_leig2
+- NEW `wer_156mir_5c_mt_ac` (0x254, CTRL, FO grw34) in p_we_156mir for `wer_156mir_5c_mt`
+- `wer_156mir_2b_ac81` (p_we_156mir) moved to group 0x260 (code 0x264) where its grw34 guns are: wer_156mir_6c_mt
+- `wer_156mir_2b_ac75` (p_we_156mir) moved to group 0x280 (code 0x284) where its leig guns are: wer_156mir_8c_leig1
+- NEW `wer_156mir_2c_mt_ac` (0x124, CTRL, FO grw34) in p_we_156mir for `wer_156mir_2c_mt`
+- NEW `wer_156mir_gun_plat_ac` (0x1, CTRL, FO leig) in p_we_156mir for `wer_156mir_gun_plat`
+- NEW `wer_146ar_2b_guns` (0x122, SUP, wer_lefh18m x2) in p_we_146ar for FO `wer_146ar_2b_ac`
+- NEW `wer_146ar_2b_hq` (0x120, COMC, battery command) in p_we_146ar
+- NEW `wer_146ar_5b_guns` (0x252, SUP, wer_lefh18m x2) in p_we_146ar for FO `wer_146ar_5b_ac`
+- NEW `wer_146ar_5b_hq` (0x250, COMC, battery command) in p_we_146ar
+- NEW `wer_146ar_6b_guns` (0x262, SUP, wer_lefh18m x2) in p_we_146ar for FO `wer_146ar_6b_ac`
+- NEW `wer_146ar_6b_hq` (0x260, COMC, battery command) in p_we_146ar
+- NEW `wer_146ar_8b_guns` (0x382, SUP, wer_sfh414f x2) in p_we_146ar for FO `wer_146ar_8b_ac`
+- NEW `wer_146ar_8b_hq` (0x380, COMC, battery command) in p_we_146ar
+- NEW `wer_146ar_9b_guns` (0x392, SUP, wer_sfh414f x2) in p_we_146ar for FO `wer_146ar_9b_ac`
+- NEW `wer_146ar_9b_hq` (0x390, COMC, battery command) in p_we_146ar
+- NEW `wer_146ar_1b_guns` (0x112, SUP, wer_lefh18m x2) in p_we_146ar for FO `wer_146ar_1b_ac`
+- NEW `wer_146ar_1b_hq` (0x110, COMC, battery command) in p_we_146ar
+- NEW `wer_146ar_3b_guns` (0x132, SUP, wer_lefh18m x2) in p_we_146ar for FO `wer_146ar_3b_ac`
+- NEW `wer_146ar_3b_hq` (0x130, COMC, battery command) in p_we_146ar
+- NEW `ra_32tbde_atc_1p_ac` (0x43, CTRL, FO zis3) in p_ra_32tbde for `ra_32tbde_atc_1p`
+- NEW `ra_32tbde_mtc_1p_ac` (0x354, CTRL, FO mt82) in p_ra_32tbde for `ra_32tbde_mtc_1p`
+- NEW `ra_37tbde_atc_1p_ac` (0x43, CTRL, FO zis3) in p_ra_37tbde for `ra_37tbde_atc_1p`
+- NEW `ra_37tbde_arty_bat1_ac` (0x13, CTRL, FO zis3) in p_ra_37tbde for `ra_37tbde_arty_bat1`
+- NEW `ra_37tbde_mtc_1p_ac` (0x353, CTRL, FO mt82) in p_ra_37tbde for `ra_37tbde_mtc_1p`
+- NEW `ra_4mr_1mt_1p_ac` (0x152, CTRL, FO mt82) in p_ra_4mrbde for `ra_4mr_1mt_1p`
+- NEW `ra_4mr_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_4mrbde for FO `ra_4mr_ac120mt1`
+- NEW `ra_4mr_2mt_1p_ac` (0x283, CTRL, FO mt82) in p_ra_4mrbde for `ra_4mr_2mt_1p`
+- NEW `ra_5mr_1mt_1p_ac` (0x152, CTRL, FO mt82) in p_ra_5mrbde for `ra_5mr_1mt_1p`
+- NEW `ra_5mr_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_5mrbde for FO `ra_5mr_ac120mt1`
+- NEW `ra_5mr_2mt_1p_ac` (0x283, CTRL, FO mt82) in p_ra_5mrbde for `ra_5mr_2mt_1p`
+- NEW `ra_6mr_1mt_1p_ac` (0x152, CTRL, FO mt82) in p_ra_6mrbde for `ra_6mr_1mt_1p`
+- NEW `ra_6mr_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_6mrbde for FO `ra_6mr_ac120mt1`
+- NEW `ra_6mr_2mt_1p_ac` (0x283, CTRL, FO mt82) in p_ra_6mrbde for `ra_6mr_2mt_1p`
+- NEW `ra_103rr_1mt_1p_ac` (0x154, CTRL, FO mt82) in p_ra_103rr for `ra_103rr_1mt_1p`
+- `ra_103rr_ac76gun` (p_ra_103rr) moved to group 0x70 (code 0x73) where its pp27 guns are: ra_103rr_gunc_1p, ra_103rr_gunc_2p
+- NEW `ra_103rr_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_103rr for FO `ra_103rr_ac120mt1`
+- NEW `ra_103rr_guns_2` (0x44, SUP, rkka_pm38 x2) in p_ra_103rr for FO `ra_103rr_ac120mt2`
+- `ra_103rr_3b_ac82mt` (p_ra_103rr) moved to group 0x3b0 (code 0x3b2) where its mt82 guns are: ra_103rr_3mt_1p
+- NEW `ra_103rr_2mt_1p_ac` (0x284, CTRL, FO mt82) in p_ra_103rr for `ra_103rr_2mt_1p`
+- `ra_105rr_1b_ac82mt` (p_ra_105rr) moved to group 0x150 (code 0x153) where its mt82 guns are: ra_105rr_1mt_1p, ra_105rr_1mt_2p
+- NEW `ra_105rr_guns` (0x44, SUP, rkka_pm38 x2) in p_ra_105rr for FO `ra_105rr_ac120mt2`
+- NEW `ra_105rr_guns_2` (0x45, SUP, rkka_pm38 x2) in p_ra_105rr for FO `ra_105rr_ac120mt3`
+- `ra_105rr_3b_ac82mt` (p_ra_105rr) moved to group 0x3b0 (code 0x3b3) where its mt82 guns are: ra_105rr_3mt_1p, ra_105rr_3mt_2p
+- NEW `ra_105rr_2mt_1p_ac` (0x283, CTRL, FO mt82) in p_ra_105rr for `ra_105rr_2mt_1p`
+- `ra_107rr_1b_ac82mt` (p_ra_107rr) moved to group 0x150 (code 0x152) where its mt82 guns are: ra_107rr_1mt_1p
+- NEW `ra_107rr_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_107rr for FO `ra_107rr_ac120mt1`
+- NEW `ra_107rr_guns_2` (0x44, SUP, rkka_pm38 x2) in p_ra_107rr for FO `ra_107rr_ac120mt2`
+- `ra_107rr_3b_ac82mt` (p_ra_107rr) moved to group 0x3b0 (code 0x3b4) where its mt82 guns are: ra_107rr_3mt_1p, ra_107rr_3mt_2p, ra_107rr_3mt_3p
+- NEW `ra_107rr_2mt_1p_ac` (0x283, CTRL, FO mt82) in p_ra_107rr for `ra_107rr_2mt_1p`
+- NEW `ra_84ar_2b_hq` (0x120, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_4b_guns` (0x242, SUP, rkka_zis3 x2) in p_ra_84ar for FO `ra_84ar_4b_ac`
+- NEW `ra_84ar_4b_hq` (0x240, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_5b_guns` (0x252, SUP, rkka_zis3 x2) in p_ra_84ar for FO `ra_84ar_5b_ac`
+- NEW `ra_84ar_5b_hq` (0x250, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_6b_guns` (0x262, SUP, rkka_m30_m38 x2) in p_ra_84ar for FO `ra_84ar_6b_ac`
+- NEW `ra_84ar_6b_hq` (0x260, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_1b_hq` (0x110, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_3b_hq` (0x130, COMC, battery command) in p_ra_84ar
+- NEW `ra_116rr_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_116rr for FO `ra_116rr_ac120mt1`
+- NEW `ra_116rr_guns_2` (0x44, SUP, rkka_pm38 x2) in p_ra_116rr for FO `ra_116rr_ac120mt2`
+- NEW `ra_116rr_1mt_1p_ac` (0x153, CTRL, FO mt82) in p_ra_116rr for `ra_116rr_1mt_1p`
+- NEW `ra_90ar_1b_guns` (0x112, SUP, rkka_zis3 x2) in p_ra_90ar for FO `ra_90ar_1b_ac`
+- NEW `ra_90ar_1b_hq` (0x110, COMC, battery command) in p_ra_90ar
+- NEW `ra_90ar_3b_hq` (0x130, COMC, battery command) in p_ra_90ar
+- NEW `ra_90ar_2b_hq` (0x120, COMC, battery command) in p_ra_90ar
+- NEW `ra_362rr_guns` (0x42, SUP, rkka_pm38 x2) in p_ra_362rr for FO `ra_362rr_ac120mt1`
+- NEW `ra_362rr_2mt_1p_ac` (0x282, CTRL, FO mt82) in p_ra_362rr for `ra_362rr_2mt_1p`
+- NEW `ra_362rr_1mt_1p_ac` (0x153, CTRL, FO mt82) in p_ra_362rr for `ra_362rr_1mt_1p`
+- `ra_724rr_1b_ac82mt` (p_ra_724rr) moved to group 0x150 (code 0x152) where its mt82 guns are: ra_724rr_1mt_1p
+- `ra_724rr_2b_ac82mt` (p_ra_724rr) moved to group 0x280 (code 0x283) where its mt82 guns are: ra_724rr_2mt_1p, ra_724rr_2mt_2p
+- NEW `ra_724rr_3b_guns` (0x305, SUP, rkka_mt82 x2) in p_ra_724rr for FO `ra_724rr_3b_ac82mt`
+- NEW `ra_724rr_guns` (0x42, SUP, rkka_pm38 x2) in p_ra_724rr for FO `ra_724rr_ac120mt1`
+- `ra_1328rr_1b_ac82mt` (p_ra_1328rr) moved to group 0x280 (code 0x283) where its mt82 guns are: ra_1328rr_2mt_1p, ra_1328rr_2mt_2p
+- `ra_1328rr_2b_ac82mt` (p_ra_1328rr) moved to group 0x3b0 (code 0x3b2) where its mt82 guns are: ra_1328rr_3mt_1p
+- NEW `ra_1328rr_3b_guns` (0x303, SUP, rkka_mt82 x2) in p_ra_1328rr for FO `ra_1328rr_3b_ac82mt`
+- NEW `ra_1328rr_guns` (0x42, SUP, rkka_pm38 x2) in p_ra_1328rr for FO `ra_1328rr_ac120mt1`
+- NEW `ra_1012ar_2b_hq` (0x120, COMC, battery command) in p_ra_1012ar
+- NEW `ra_1012ar_5b_guns` (0x252, SUP, rkka_zis3 x2) in p_ra_1012ar for FO `ra_1012ar_5b_ac`
+- NEW `ra_1012ar_5b_hq` (0x250, COMC, battery command) in p_ra_1012ar
+- NEW `ra_1012ar_9b_guns` (0x392, SUP, rkka_m30_m38 x2) in p_ra_1012ar for FO `ra_1012ar_9b_ac`
+- NEW `ra_1012ar_9b_hq` (0x390, COMC, battery command) in p_ra_1012ar
+- NEW `ra_1012ar_1b_hq` (0x110, COMC, battery command) in p_ra_1012ar
+- NEW `ra_1012ar_3b_hq` (0x130, COMC, battery command) in p_ra_1012ar
+- NEW `ra_291rr_1mt_1p_ac` (0x153, CTRL, FO mt82) in p_ra_291rr for `ra_291rr_1mt_1p`
+- `ra_291rr_2b_ac82mt` (p_ra_291rr) moved to group 0x280 (code 0x284) where its mt82 guns are: ra_291rr_2mt_1p, ra_291rr_2mt_2p, ra_291rr_2mt_3p
+- NEW `ra_291rr_guns` (0x44, SUP, rkka_pm38 x2) in p_ra_291rr for FO `ra_291rr_ac120mt2`
+- NEW `ra_291rr_guns_2` (0x45, SUP, rkka_pm38 x2) in p_ra_291rr for FO `ra_291rr_ac120mt3`
+- `ra_291rr_3b_ac82mt` (p_ra_291rr) moved to group 0x3b0 (code 0x3b2) where its mt82 guns are: ra_291rr_3mt_1p
+- NEW `ra_234ar_2b_hq` (0x120, COMC, battery command) in p_ra_234ar
+- NEW `ra_234ar_5b_guns` (0x252, SUP, rkka_zis3 x2) in p_ra_234ar for FO `ra_234ar_5b_ac`
+- NEW `ra_234ar_5b_hq` (0x250, COMC, battery command) in p_ra_234ar
+- NEW `ra_234ar_6b_guns` (0x262, SUP, rkka_m30_m38 x2) in p_ra_234ar for FO `ra_234ar_6b_ac`
+- NEW `ra_234ar_6b_hq` (0x260, COMC, battery command) in p_ra_234ar
+- NEW `ra_234ar_8b_guns` (0x382, SUP, rkka_zis3 x2) in p_ra_234ar for FO `ra_234ar_8b_ac`
+- NEW `ra_234ar_8b_hq` (0x380, COMC, battery command) in p_ra_234ar
+- NEW `ra_234ar_1b_hq` (0x110, COMC, battery command) in p_ra_234ar
+- NEW `ra_234ar_3b_hq` (0x130, COMC, battery command) in p_ra_234ar
+- 188 battery fixes
+### Battle-group slots
+- `wer_60mir_1`: reserve links p_we_16mid// -> p_we_16mid/p_we_146ar/
+- `wer_60mir_1`: SCT slot <- `wer_146ar_1b_ac`
+- `wer_60mir_2`: reserve links p_we_16mid// -> p_we_16mid/p_we_146ar/
+- `wer_60mir_2`: SCT slot <- `wer_60mir_5c_mt_ac`
+- `wer_60mir_2`: SUP slot <- `wer_60mir_5c_mt`
+- `wer_581ir_1`: reserve links p_we_306id// -> p_we_306id/p_we_306ar/
+- `wer_581ir_1`: SCT slot <- `wer_306ar_1b_ac`
+- `wer_581ir_1`: SUP slot <- `wer_581ir_4cmg_4pmo_1s`
+- `wer_581ir_5`: reserve links p_we_306id// -> p_we_306id/p_we_306ar/
+- `wer_581ir_5`: SCT slot <- `wer_581ir_2b_ac81`
+- `wer_581ir_5`: UNI slot <- `wer_581ir_5c_2p`
+- `wer_581ir_5`: SUP slot <- `wer_581ir_8cmg_4pmo_1s`
+- `wer_581ir_3`: reserve links p_we_306id// -> p_we_306id/p_we_306ar/
+- `wer_581ir_3`: SCT slot <- `wer_306ar_2b_ac`
+- `wer_572ir_3`: reserve links p_we_302id// -> p_we_302id/p_we_302ar/
+- `wer_572ir_3`: SCT slot <- `wer_302ar_1b_ac`
+- `wer_572ir_3`: SUP slot <- `wer_572ir_3b_guns`
+- `wer_513ir_bg`: reserve links p_we_294id// -> p_we_294id/p_we_294ar/
+- `wer_513ir_bg`: SCT slot <- `wer_294ar_1b_ac`
+- `wer_513ir_bg`: SUP slot <- `wer_513ir_14c_atg1`
+- `wer_513ir_1`: reserve links p_we_294id// -> p_we_294id/p_we_294ar/
+- `wer_513ir_1`: SCT slot <- `wer_513ir_1b_ac81`
+- `wer_513ir_1`: SUP slot <- `wer_513ir_4cmg_4pmo_1s`
+- `wer_513ir_2`: reserve links p_we_294id// -> p_we_294id/p_we_294ar/
+- `wer_513ir_2`: SCT slot <- `wer_294ar_4b_ac`
+- `wer_513ir_2`: SUP slot <- `wer_513ir_8cmg_4pmo_1s`
+- `wer_513ir_2`: SUP slot <- `wer_513ir_8cmg_4pmo_2s`
+- `wer_513ir_3`: reserve links p_we_294id// -> p_we_294id/p_we_294ar/
+- `wer_513ir_3`: SCT slot <- `wer_513ir_3b_ac81`
+- `wer_513ir_3`: SUP slot <- `wer_513ir_3b_guns`
+- `wer_513ir_3`: SUP slot <- `wer_513ir_12cmg_4pmo_1s`
+- `wer_306id_1`: reserve links // -> p_we_306ar//
+- `wer_306id_1`: SCT slot <- `wer_306ar_4b_ac`
+- `wer_306id_2`: reserve links // -> p_we_306ar//
+- `wer_306id_2`: SCT slot <- `wer_306id_1abat_ac`
+- `wer_306id_3`: reserve links // -> p_we_306ar//
+- `wer_306id_3`: SCT slot <- `wer_306ar_5b_ac`
+- `wer_306id_4`: reserve links // -> p_we_306ar//
+- `wer_306id_4`: SCT slot <- `wer_306at_ccoy_1p`
+- `wer_306id_4`: SUP slot <- `wer_306id_4tc_1mgp`
+- `wer_302id_1`: reserve links p_we_572ir// -> p_we_302ar/p_we_572ir/
+- `wer_302id_1`: SCT slot <- `wer_302ar_2b_ac`
+- `wer_302id_1`: SUP slot <- `wer_302at_atc1_p1`
+- `wer_302id_1`: SUP slot <- `wer_302at_atc1_p2`
+- `wer_302id_2`: reserve links p_we_572ir// -> p_we_302ar/p_we_572ir/
+- `wer_294id_1`: reserve links // -> p_we_294ar//
+- `wer_294id_1`: SCT slot <- `wer_294ar_5b_ac`
+- `wer_294id_2`: reserve links // -> p_we_294ar//
+- `wer_294id_2`: SCT slot <- `wer_294ar_9b_ac`
+- `wer_294id_2`: battery `wer_294ar_1c_3b` removed from the group (its FO `wer_294ar_9b_ac` is in it); it stays in reserve
+- `wer_294id_2`: SUP slot <- `wer_294at_atc1_p1`
+- `wer_294id_2`: SUP slot <- `wer_294at_atc1_p2`
+- `wer_294id_3`: reserve links // -> p_we_294ar//
+- `wer_294id_3`: SUP slot <- `wer_294at_atc1_p3`
+- `wer_294id_4`: reserve links // -> p_we_294ar//
+- `wer_294id_4`: SCT slot <- `wer_294ar_2b_ac`
+- `wer_294id_4`: battery `wer_294ar_1c_2b` removed from the group (its FO `wer_294ar_2b_ac` is in it); it stays in reserve
+- `wer_294id_4`: SUP slot <- `wer_294at_atc2_p1`
+- `wer_294id_4`: SUP slot <- `wer_294at_atc2_p2`
+- `wer_23td_1`: reserve links // -> p_we_128ar//
+- `wer_23td_1`: SCT slot <- `wer_128ar_1b_ac`
+- `wer_23td_1`: UNI slot <- `wer_51sbn_3sc_2p`
+- `wer_23td_1`: SUP slot <- `wer_51sbn_1c_mt`
+- `wer_23td_2`: reserve links // -> p_we_128ar//
+- `wer_23td_2`: SUP slot <- `wer_23rb_3c_mt`
+- `wer_201tr_1`: reserve links p_we_23td/p_we_126mir/ -> p_we_23td/p_we_128ar/p_we_126mir
+- `wer_201tr_1`: SUPM slot <- `wer_201tr_asgun9_2p`
+- `wer_17ac_1`: reserve links // -> p_we_6a//
+- `wer_16mid_1`: reserve links p_we_116tbn// -> p_we_146ar/p_we_116tbn/
+- `wer_16mid_1`: UNI slot <- `wer_16mid_5rc_eng`
+- `wer_16mid_2`: reserve links p_we_116tbn// -> p_we_146ar/p_we_116tbn/
+- `wer_16mid_2`: third STR slot added
+- `wer_16mid_2`: STR slot <- `wer_116tbn_ltc1_2p`
+- `wer_16mid_2`: UNI slot <- `wer_675sbn_2sc_1p`
+- `wer_16mid_3`: reserve links p_we_116tbn// -> p_we_146ar/p_we_116tbn/
+- `wer_16mid_3`: SCT slot <- `wer_16mid_3rc_1p`
+- `wer_16mid_3`: SUP slot <- `wer_16mid_3rc_4p`
+- `wer_156mir_1`: reserve links p_we_16mid// -> p_we_16mid/p_we_146ar/
+- `wer_156mir_1`: SCT slot <- `wer_146ar_2b_ac`
+- `wer_156mir_2`: reserve links p_we_16mid// -> p_we_16mid/p_we_146ar/
+- `wer_156mir_2`: SCT slot <- `wer_156mir_5c_mt_ac`
+- `wer_128mir_1`: reserve links p_we_23td/p_we_201tr/ -> p_we_23td/p_we_128ar/p_we_201tr
+- `wer_128mir_1`: third STR slot added
+- `wer_128mir_1`: SCT slot <- `wer_128ar_3b_ac`
+- `wer_128mir_1`: battery `wer_128ar_3abat` removed from the group (its FO `wer_128ar_3b_ac` is in it); it stays in reserve
+- `wer_128mir_1`: STR slot <- `wer_201tr_ltc2_2p`
+- `wer_128mir_1`: SUP slot <- `wer_128mir_1b_guns`
+- `wer_128mir_2`: reserve links p_we_23td/p_we_201tr/ -> p_we_23td/p_we_128ar/p_we_201tr
+- `wer_128mir_2`: SCT slot <- `wer_128mir_2b_ac75`
+- `wer_126mir_1`: reserve links p_we_23td/p_we_201tr/ -> p_we_23td/p_we_128ar/p_we_201tr
+- `wer_126mir_1`: SCT slot <- `wer_128ar_2b_ac`
+- `wer_126mir_2`: reserve links p_we_23td/p_we_201tr/ -> p_we_23td/p_we_128ar/p_we_201tr
+- `wer_126mir_2`: third STR slot added
+- `wer_126mir_2`: STR slot <- `wer_201tr_ltc1_2p`
+- `wer_126mir_2`: SCT slot <- `wer_126mir_2b_ac75`
+- `wer_116tbn_bg`: reserve links p_we_16mid// -> p_we_16mid/p_we_146ar/
+- `wer_116tbn_bg`: third STR slot added
+- `wer_116tbn_bg`: STR slot <- `wer_116tbn_mtc2_2p`
+- `ra_315rd_bg724a`: reserve links p_ra_8iptabr// -> p_ra_315rd/p_ra_1012ar/p_ra_8iptabr
+- `ra_315rd_bg724a`: SCT slot <- `ra_1012ar_4b_ac`
+- `ra_315rd_bg724b`: reserve links p_ra_8iptabr// -> p_ra_315rd/p_ra_1012ar/p_ra_8iptabr
+- `ra_315rd_bg724b`: SCT slot <- `ra_1012ar_3b_ac`
+- `ra_315rd_bg724b`: battery `ra_315_3arty` removed from the group (its FO `ra_1012ar_3b_ac` is in it); it stays in reserve
+- `ra_315rd_bg724b`: SUP slot <- `ra_724rr_4c_mt`
+- `ra_6mr_bg1`: third STR slot added
+- `ra_6mr_bg1`: SCT slot <- `ra_6mr_recc_1p`
+- `ra_6mr_bg1`: STR slot <- `ra_6mr_tcoy1_2p`
+- `ra_6mr_bg2`: STR slot <- `ra_6mr_tcoy1_3p`
+- `ra_6mr_bg2`: SUP slot <- `ra_6mr_mt_bat2`
+- `ra_5mr_bg1`: third STR slot added
+- `ra_5mr_bg1`: SCT slot <- `ra_5mr_recc_1p`
+- `ra_5mr_bg1`: STR slot <- `ra_5mr_tcoy1_2p`
+- `ra_5mr_bg2`: STR slot <- `ra_5mr_tcoy1_3p`
+- `ra_5mr_bg2`: SUP slot <- `ra_5mr_mt_bat2`
+- `ra_4mr_bg1`: third STR slot added
+- `ra_4mr_bg1`: SCT slot <- `ra_4mr_recc_1p`
+- `ra_4mr_bg1`: STR slot <- `ra_4mr_tcoy1_2p`
+- `ra_4mr_bg2`: STR slot <- `ra_4mr_tcoy1_3p`
+- `ra_4mr_bg2`: SUP slot <- `ra_4mr_mt_bat2`
+- `ra_37tbde_bg1`: third STR slot added
+- `ra_37tbde_bg1`: SCT slot <- `ra_37tbde_recon`
+- `ra_37tbde_bg1`: STR slot <- `ra_37tbde_tcoy1_2p`
+- `ra_37tbde_bg2`: third STR slot added
+- `ra_37tbde_bg2`: STR slot <- `ra_37tbde_tcoy4_2p`
+- `ra_315rd_bg362a`: reserve links p_ra_8iptabr// -> p_ra_315rd/p_ra_1012ar/p_ra_8iptabr
+- `ra_315rd_bg362a`: SCT slot <- `ra_1012ar_1b_ac`
+- `ra_315rd_bg362a`: battery `ra_315_1arty` removed from the group (its FO `ra_1012ar_1b_ac` is in it); it stays in reserve
+- `ra_315rd_bg362a`: SUP slot <- `ra_362rr_mt_bat1`
+- `ra_315rd_bg362b`: reserve links p_ra_8iptabr// -> p_ra_315rd/p_ra_1012ar/p_ra_8iptabr
+- `ra_315rd_bg362b`: SCT slot <- `ra_362rr_2b_ac82mt`
+- `ra_32tbde_bg1`: reserve links p_ra_116rr// -> p_ra_5ua/p_ra_116rr/
+- `ra_32tbde_bg1`: third STR slot added
+- `ra_32tbde_bg1`: STR slot <- `ra_32tbde_tcoy1_2p`
+- `ra_32tbde_bg1`: STR slot <- `ra_32tbde_tcoy1_3p`
+- `ra_96rd_bg291a`: reserve links p_ra_15iptabr/p_ra_8iptabr/ -> p_ra_96rd/p_ra_234ar/p_ra_15iptabr (dropped p_ra_8iptabr)
+- `ra_96rd_bg291a`: SCT slot <- `ra_234ar_3b_ac`
+- `ra_96rd_bg291a`: battery `ra_234_3arty` removed from the group (its FO `ra_234ar_3b_ac` is in it); it stays in reserve
+- `ra_96rd_bg291a`: SUP slot <- `ra_291rr_1c_mt`
+- `ra_96rd_bg291b`: reserve links p_ra_15iptabr/p_ra_8iptabr/ -> p_ra_96rd/p_ra_234ar/p_ra_15iptabr (dropped p_ra_8iptabr)
+- `ra_96rd_bg291b`: SCT slot <- `ra_291rr_1b_ac82mt`
+- `ra_22stp_bg1`: reserve links p_ra_105rr/p_ra_5ua/ -> p_ra_5ua/p_ra_105rr/
+- `ra_22stp_bg1`: third STR slot added
+- `ra_22stp_bg1`: SCT slot <- `ra_22stp_recon`
+- `ra_22stp_bg1`: STR slot <- `ra_22stp_1c_2p`
+- `ra_22stp_bg1`: STR slot <- `ra_22stp_2c_2p`
+- `ra_22stp_bg2`: reserve links p_ra_103rr/p_ra_5ua/ -> p_ra_5ua/p_ra_103rr/
+- `ra_22stp_bg2`: third STR slot added
+- `ra_22stp_bg2`: STR slot <- `ra_22stp_2c_3p`
+- `ra_22stp_bg2`: UNI slot <- `ra_22stp_smg`
+- `ra_1543tsap_bg1`: reserve links p_ra_291rr/p_ra_5ua/ -> p_ra_2mc/p_ra_291rr/p_ra_5ua
+- `ra_1543tsap_bg2`: reserve links p_ra_103rr/p_ra_5ua/ -> p_ra_2mc/p_ra_103rr/p_ra_5ua
+- `ra_315rd_bg1328a`: reserve links p_ra_8iptabr// -> p_ra_315rd/p_ra_1012ar/p_ra_8iptabr
+- `ra_315rd_bg1328a`: SCT slot <- `ra_1012ar_2b_ac`
+- `ra_315rd_bg1328a`: battery `ra_315_2arty` removed from the group (its FO `ra_1012ar_2b_ac` is in it); it stays in reserve
+- `ra_315rd_bg1328a`: SUP slot <- `ra_1328rr_1b_atr`
+- `ra_315rd_bg1328b`: reserve links p_ra_8iptabr// -> p_ra_315rd/p_ra_1012ar/p_ra_8iptabr
+- `ra_315rd_bg1328b`: SCT slot <- `ra_1328rr_ac120mt1`
+- `ra_40rd_bg116a`: reserve links p_ra_32tbde// -> p_ra_40rd/p_ra_90ar/p_ra_32tbde
+- `ra_40rd_bg116a`: SCT slot <- `ra_90ar_2b_ac`
+- `ra_40rd_bg116a`: battery `ra_40_2arty` removed from the group (its FO `ra_90ar_2b_ac` is in it); it stays in reserve
+- `ra_40rd_bg116a`: SUP slot <- `ra_116rr_1c_mt`
+- `ra_40rd_bg116b`: reserve links p_ra_32tbde// -> p_ra_40rd/p_ra_90ar/p_ra_32tbde
+- `ra_40rd_bg116b`: SCT slot <- `ra_90ar_3b_ac`
+- `ra_40rd_bg116b`: battery `ra_40_3arty` removed from the group (its FO `ra_90ar_3b_ac` is in it); it stays in reserve
+- `ra_40rd_bg116b`: SUP slot <- `ra_116rr_1mt_1p`
+- `ra_34rd_bg107a`: reserve links p_ra_15iptabr// -> p_ra_34rd/p_ra_84ar/p_ra_15iptabr
+- `ra_34rd_bg107a`: SCT slot <- `ra_84ar_3b_ac`
+- `ra_34rd_bg107a`: SUP slot <- `ra_107rr_1c_mt`
+- `ra_34rd_bg107b`: reserve links p_ra_15iptabr// -> p_ra_34rd/p_ra_84ar/p_ra_15iptabr
+- `ra_34rd_bg107b`: SCT slot <- `ra_84ar_2b_ac`
+- `ra_34rd_bg107b`: battery `ra_34_2arty` removed from the group (its FO `ra_84ar_2b_ac` is in it); it stays in reserve
+- `ra_34rd_bg107b`: SUP slot <- `ra_107rr_5c_mt`
+- `ra_34rd_bg105a`: reserve links p_ra_15iptabr// -> p_ra_34rd/p_ra_84ar/p_ra_15iptabr
+- `ra_34rd_bg105a`: SCT slot <- `ra_84ar_1b_ac`
+- `ra_34rd_bg105a`: battery `ra_34_1arty` removed from the group (its FO `ra_84ar_1b_ac` is in it); it stays in reserve
+- `ra_34rd_bg105a`: SUP slot <- `ra_105rr_1c_mt`
+- `ra_34rd_bg105b`: reserve links p_ra_15iptabr// -> p_ra_34rd/p_ra_84ar/p_ra_15iptabr
+- `ra_34rd_bg105b`: SCT slot <- `ra_105rr_2b_ac82mt`
+- `ra_34rd_bg103a`: reserve links p_ra_15iptabr// -> p_ra_34rd/p_ra_84ar/p_ra_15iptabr
+- `ra_34rd_bg103a`: SCT slot <- `ra_84ar_4b_ac`
+- `ra_34rd_bg103b`: reserve links p_ra_15iptabr// -> p_ra_34rd/p_ra_84ar/p_ra_15iptabr
+- `ra_34rd_bg103b`: SCT slot <- `ra_103rr_2b_ac82mt`
+### Map placement
+- `ra_1012ar_hq` placed next to the HQ of p_ra_362rr (cell 13;8, own map node 232, turn 1)
+- `ra_84ar_hq` placed next to the HQ of p_ra_103rr (cell 13;4, own map node 130, turn 1)
+- `ra_90ar_hq` placed next to the HQ of p_ra_116rr (cell 13;1, own map node 57, turn 1)
+- `ra_234ar_hq` placed next to the HQ of p_ra_291rr (cell 13;5, own map node 156, turn 6)
+- `wer_294ar_hq` placed next to the HQ of p_we_294id (cell 8;9, own map node 176, turn 1)
+- `wer_306ar_hq` placed next to the HQ of p_we_306id (cell 9;0, own map node 27, turn 1)
+- `wer_302ar_hq` placed next to the HQ of p_we_302id (cell 10;0, own map node 29, turn 1)
+- `wer_146ar_hq` placed next to the HQ of p_we_16mid (cell 0;8, own map node 204, turn 1)
+- `wer_128ar_hq` placed next to the HQ of p_we_23td (cell 7;1, own map node 49, turn 9)
+- 1228 reserve placement rows added (one per new platoon)
+- mg_nodes occupants synced with plat_pos: 9 nodes changed
+- `ra_22stp_bg2`: `ra_22stp_4c` -> reserve, `ra_22stp_2c_2p` in its slot
+- `ra_22stp_bg1`: `ra_22stp_2c_2p` taken out, slot now ``
+
+## 07_17_Stepanovka_NA_GER
+
+### p_ra_362rr  (362 RR: 30 July 362 RR structure)
+- NEW `ra_362rr_saps` (0x10, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x2
+- NEW `ra_362rr_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x3
+- NEW `ra_362rr_1smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_362rr_1smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_362rr_ac120mt1` (0x41, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_coy)
+- NEW `ra_362rr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_362rr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_362rr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_362rr_atgc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_362rr_atgc_1p` (0x61, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_362rr_atgc_2p` (0x62, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_362rr_gunc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_362rr_ac76gun` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_pp27_plat)
+- NEW `ra_362rr_gunc_1p` (0x72, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_362rr_gunc_2p` (0x73, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_362rr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_362rr_coy1` (0x110, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_362rr_1c_mt` (0x115, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_362rr_coy2` (0x120, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_362rr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_362rr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_362rr_1mtc_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_362rr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_362rr_1mt_2p` (0x152, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_362rr_2b_ac82mt` (0x208, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_362rr_coy4` (0x240, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- `ra_362rr_coy5` (0x250, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- `ra_362rr_coy6` (0x260, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_362rr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_362rr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_362rr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_362rr_2mtc_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_362rr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_362rr  (315 RD recon company -> 362 RR)
+- NEW `ra_362rr_rcoy` (0x820, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_362rr_rc_1p` (0x821, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x4
+- NEW `ra_362rr_rc_2p` (0x822, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x4
+### p_ra_362rr  (431 AT bn HQ + 1 battery -> 362 RR)
+- NEW `ra_362rr_atbn_hq` (0xc01, COM, plu_batcmd): rkka_com_art_div x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_362rr_atbn_1c_com` (0xc10, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_362rr_atbn_1c_1p` (0xc11, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+- NEW `ra_362rr_atbn_1c_2p` (0xc12, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+### p_ra_724rr  (724 RR: 30 July 724 RR structure)
+- NEW `ra_724rr_saps` (0x10, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x2
+- NEW `ra_724rr_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x3
+- NEW `ra_724rr_1smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_724rr_1smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_724rr_1smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_724rr_ac120mt1` (0x41, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_coy)
+- NEW `ra_724rr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_724rr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_724rr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_724rr_atgc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_724rr_atgc_1p` (0x61, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_724rr_atgc_2p` (0x62, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_724rr_gunc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_724rr_ac76gun` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_pp27_plat)
+- NEW `ra_724rr_gunc_1p` (0x72, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_724rr_gunc_2p` (0x73, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_724rr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_724rr_coy1` (0x110, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- `ra_724rr_coy2` (0x120, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_724rr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_724rr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_724rr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_724rr_1mtc_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_724rr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_724rr_2b_ac82mt` (0x208, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_724rr_2b_atg` (0x209, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- `ra_724rr_coy4` (0x240, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_724rr_4c_mt` (0x245, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_724rr_coy5` (0x250, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- `ra_724rr_coy6` (0x260, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_724rr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_724rr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_724rr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_724rr_2mtc_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_724rr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_724rr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_724rr_3b_hq` (0x301, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_724rr_3b_ac82mt` (0x302, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_724rr_3b_atg` (0x303, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_724rr_3b_atr` (0x304, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_724rr_7c_com` (0x370, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_724rr_7c_1p` (0x371, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_724rr_7c_2p` (0x372, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_724rr_7c_mt` (0x375, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_724rr_8c_com` (0x380, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_724rr_8c_1p` (0x381, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_724rr_8c_2p` (0x382, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_724rr_3mgc_com` (0x3a0, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_724rr_3mg_1p` (0x3a1, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+### p_ra_724rr  (700 sap bn HQ + 1 coy -> 724 RR)
+- NEW `ra_724rr_sbn_hq` (0xb01, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_724rr_sbn_1c_com` (0xb10, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_724rr_sbn_1c_1p` (0xb11, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_724rr_sbn_1c_2p` (0xb12, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+### p_ra_724rr  (431 AT bn 2 battery -> 724 RR)
+- NEW `ra_724rr_atbn_2c_com` (0xc20, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_724rr_atbn_2c_1p` (0xc21, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+### p_ra_1328rr  (1328 RR: 30 July 1328 RR structure)
+- NEW `ra_1328rr_reconh` (0x12, SCT, plu_cavalary): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_1328rr_1smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_1328rr_1smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_1328rr_1smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_1328rr_ac120mt1` (0x41, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_coy)
+- NEW `ra_1328rr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_1328rr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_1328rr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_1328rr_atgc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_1328rr_atgc_1p` (0x61, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_1328rr_gunc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_1328rr_ac76gun` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_pp27_plat)
+- NEW `ra_1328rr_gunc_1p` (0x72, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_1328rr_gunc_2p` (0x73, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_1328rr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_1328rr_1b_atg` (0x109, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_1328rr_1b_atr` (0x104, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- `ra_1328rr_coy1` (0x110, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- `ra_1328rr_coy2` (0x120, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_1328rr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_1328rr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_1328rr_2b_hq` (0x201, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_1328rr_2b_ac82mt` (0x202, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_1328rr_2b_atg` (0x203, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_1328rr_4c_com` (0x240, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_1328rr_4c_1p` (0x241, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_1328rr_4c_2p` (0x242, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_1328rr_4c_mt` (0x245, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_1328rr_5c_com` (0x250, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_1328rr_5c_1p` (0x251, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_1328rr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_1328rr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_1328rr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_1328rr_2mtc_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_1328rr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_1328rr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_1328rr_3b_hq` (0x301, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_1328rr_3b_ac82mt` (0x302, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_1328rr_7c_com` (0x370, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_1328rr_7c_1p` (0x371, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_1328rr_7c_2p` (0x372, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_1328rr_9c_com` (0x390, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x1
+- NEW `ra_1328rr_9c_1p` (0x391, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_1328rr_9c_2p` (0x392, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_1328rr_3mgc_com` (0x3a0, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_1328rr_3mg_1p` (0x3a1, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_1328rr_3mtc_com` (0x3b0, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_1328rr_3mt_1p` (0x3b1, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_1328rr  (700 sap bn 2 coy -> 1328 RR)
+- NEW `ra_1328rr_sbn_2c_com` (0xb20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_1328rr_sbn_2c_1p` (0xb21, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_1328rr_sbn_2c_2p` (0xb22, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+### p_ra_1328rr  (431 AT bn 3 battery + ATR coy -> 1328 RR)
+- NEW `ra_1328rr_atbn_3c_com` (0xc30, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_1328rr_atbn_3c_1p` (0xc31, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+- NEW `ra_1328rr_atbn_atrc_com` (0xc40, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_1328rr_atbn_atrc_1p` (0xc41, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_1328rr_atbn_atrc_2p` (0xc42, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+### p_ra_1012ar  NEW FORMATION under p_ra_315rd (name key op_ra_1012ar, ai EN31)
+- MOVED `ra_315_3arty` (0x132, SUP, name oppl_ussr_ar_3b2) from p_ra_724rr: gun platoon of battery 3
+- MOVED `ra_315_1arty` (0x112, SUP, name oppl_ussr_ar_1b2) from p_ra_362rr: gun platoon of battery 1
+- MOVED `ra_315_2arty` (0x122, SUP, name oppl_ussr_ar_2b2) from p_ra_1328rr: gun platoon of battery 2
+### p_ra_1012ar  (1012 AR: new formation under 315 RD (30 July 1012 AR: HQ, FO teams, batteries) + the 17 July division batteries)
+- NEW `ra_1012ar_hq` (0x0, CAMP, plu_rgt_arty): rkka_com_sup x1, rkka_squad_sup x4;0;0;16, rkka_squad_sup_mot x2;0;0;16, rkka_squad_spam x2;0;0;8, rkka_squad_scout_42m x1
+- NEW `ra_1012ar_1b_ac` (0x111, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_1012ar_2b_ac` (0x121, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_1012ar_3b_ac` (0x131, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+- NEW `ra_1012ar_4b_hq` (0x240, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_1012ar_4b_ac` (0x241, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_1012ar_4b_1p` (0x242, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_1012ar_5b_ac` (0x251, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_1012ar_6b_hq` (0x260, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_1012ar_6b_ac` (0x261, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+- NEW `ra_1012ar_6b_1p` (0x262, SUP, pl_m30): rkka_com_art_fplat x1, rkka_m30_m38 x2
+- NEW `ra_1012ar_9b_ac` (0x391, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+### p_ra_103rr  (103 Gds RR: 30 July structure)
+- NEW `ra_103rr_saps` (0x10, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x2
+- NEW `ra_103rr_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x3
+- NEW `ra_103rr_reconh` (0x12, SCT, plu_cavalary): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_103rr_1smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_103rr_1smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_103rr_1smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_103rr_2smgc_com` (0x30, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_103rr_2smgc_1p` (0x31, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_103rr_ac76gun` (0x40, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_pp27_plat)
+- NEW `ra_103rr_ac120mt1` (0x41, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_coy)
+- NEW `ra_103rr_ac120mt2` (0x42, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_103rr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_103rr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_103rr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_103rr_atgc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_103rr_atgc_1p` (0x61, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_103rr_atgc_2p` (0x62, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_103rr_gunc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_103rr_gunc_1p` (0x71, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_103rr_gunc_2p` (0x72, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_103rr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_103rr_1b_atg` (0x109, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_103rr_1b_atr` (0x105, SUP, plu_atrs): rkka_com_inf_coy x1, rkka_com_inf_plat x1, rkka_squad_atr x3, rkka_com_inf_plat x1, rkka_squad_atr x2, rkka_ptr x1
+- `ra_103rr_coy1` (0x110, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_103rr_1c_mt` (0x115, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_103rr_coy2` (0x120, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_103rr_2c_mt` (0x125, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_103rr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_103rr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_1mg_3p` (0x143, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_1mtc_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_103rr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_103rr_1mt_2p` (0x152, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_103rr_1mt_3p` (0x153, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_103rr_2b_ac82mt` (0x208, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_103rr_coy4` (0x240, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_103rr_4c_mt` (0x245, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_103rr_coy5` (0x250, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- `ra_103rr_coy6` (0x260, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_103rr_6c_mt` (0x265, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_103rr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_103rr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_2mg_3p` (0x273, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_2mg_4p` (0x274, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_2mtc_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_103rr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_103rr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_103rr_2mt_3p` (0x283, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_103rr_3b_hq` (0x301, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_103rr_3b_ac82mt` (0x302, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_103rr_3b_atg` (0x303, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_103rr_3b_atr` (0x305, SUP, plu_atrs): rkka_com_inf_coy x1, rkka_com_inf_plat x1, rkka_squad_atr x3, rkka_com_inf_plat x1, rkka_squad_atr x2, rkka_ptr x1
+- NEW `ra_103rr_7c_com` (0x370, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_103rr_7c_1p` (0x371, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_103rr_7c_2p` (0x372, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_103rr_7c_mt` (0x375, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_103rr_8c_com` (0x380, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_103rr_8c_1p` (0x381, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_103rr_8c_2p` (0x382, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_103rr_3mgc_com` (0x3a0, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_103rr_3mg_1p` (0x3a1, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_3mg_2p` (0x3a2, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_3mg_3p` (0x3a3, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_103rr_3mtc_com` (0x3b0, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_103rr_3mt_1p` (0x3b1, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_103rr  (34 Gds RD recon company -> 103 RR)
+- NEW `ra_103rr_rcoy` (0x820, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_103rr_rc_1p` (0x821, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x4
+- NEW `ra_103rr_rc_2p` (0x822, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x4
+### p_ra_103rr  (38 AT bn HQ + 1 battery -> 103 RR)
+- NEW `ra_103rr_atbn_hq` (0xc01, COM, plu_batcmd): rkka_com_art_div x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_103rr_atbn_1c_com` (0xc10, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_103rr_atbn_1c_1p` (0xc11, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+- NEW `ra_103rr_atbn_1c_2p` (0xc12, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+### p_ra_105rr  (105 Gds RR: 30 July structure)
+- NEW `ra_105rr_saps` (0x10, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x2
+- NEW `ra_105rr_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x3
+- NEW `ra_105rr_reconh` (0x12, SCT, plu_cavalary): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_105rr_1smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_105rr_1smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_105rr_1smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_105rr_ac120mt2` (0x42, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_105rr_ac120mt3` (0x43, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_105rr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_105rr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_105rr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_105rr_atgc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_105rr_atgc_1p` (0x61, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_105rr_atgc_2p` (0x62, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_105rr_gunc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_105rr_ac76gun` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_pp27_plat)
+- NEW `ra_105rr_gunc_1p` (0x72, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_105rr_gunc_2p` (0x73, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_105rr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_105rr_coy1` (0x110, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_105rr_1c_mt` (0x115, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_105rr_coy2` (0x120, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_105rr_2c_mt` (0x125, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_105rr_coy3` (0x130, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_105rr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_105rr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_1mg_3p` (0x143, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_1mtc_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_105rr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_105rr_1mt_2p` (0x152, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_105rr_2b_ac82mt` (0x208, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_105rr_2b_atg` (0x209, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_105rr_2b_atr` (0x205, SUP, plu_atrs): rkka_com_inf_coy x1, rkka_com_inf_plat x1, rkka_squad_atr x3, rkka_com_inf_plat x1, rkka_squad_atr x2, rkka_ptr x1
+- `ra_105rr_coy4` (0x240, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_105rr_4c_mt` (0x245, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_105rr_coy6` (0x260, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_105rr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_105rr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_2mg_3p` (0x273, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_2mtc_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_105rr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_105rr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_105rr_3b_hq` (0x301, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_105rr_3b_ac82mt` (0x302, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_105rr_3b_atr` (0x305, SUP, plu_atrs): rkka_com_inf_coy x1, rkka_com_inf_plat x1, rkka_squad_atr x3, rkka_com_inf_plat x1, rkka_squad_atr x2, rkka_ptr x1
+- NEW `ra_105rr_7c_com` (0x370, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_105rr_7c_1p` (0x371, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_105rr_7c_2p` (0x372, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_105rr_7c_mt` (0x375, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_105rr_8c_com` (0x380, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_105rr_8c_1p` (0x381, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_105rr_8c_2p` (0x382, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_105rr_9c_com` (0x390, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_105rr_9c_1p` (0x391, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_105rr_3mgc_com` (0x3a0, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_105rr_3mg_1p` (0x3a1, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_3mg_2p` (0x3a2, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_3mg_3p` (0x3a3, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_105rr_3mtc_com` (0x3b0, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_105rr_3mt_1p` (0x3b1, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_105rr_3mt_2p` (0x3b2, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_105rr  (37 sap bn HQ + 1 coy -> 105 RR)
+- NEW `ra_105rr_sbn_hq` (0xb01, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_105rr_sbn_1c_com` (0xb10, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_105rr_sbn_1c_1p` (0xb11, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_105rr_sbn_1c_2p` (0xb12, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+### p_ra_105rr  (38 AT bn 2 battery -> 105 RR)
+- NEW `ra_105rr_atbn_2c_com` (0xc20, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_105rr_atbn_2c_1p` (0xc21, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+### p_ra_107rr  (107 Gds RR: 30 July structure)
+- NEW `ra_107rr_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x3
+- NEW `ra_107rr_1smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_107rr_1smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_107rr_1smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_107rr_2smgc_com` (0x30, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_107rr_2smgc_1p` (0x31, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_107rr_2smgc_2p` (0x32, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_107rr_ac120mt1` (0x41, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_coy)
+- NEW `ra_107rr_ac120mt2` (0x42, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_107rr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_107rr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_107rr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_107rr_atgc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_107rr_atgc_1p` (0x61, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_107rr_gunc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_107rr_ac76gun` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_pp27_plat)
+- NEW `ra_107rr_gunc_1p` (0x72, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_107rr_gunc_2p` (0x73, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_107rr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_107rr_coy1` (0x110, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_107rr_1c_mt` (0x115, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_107rr_coy3` (0x130, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_107rr_3c_mt` (0x135, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_107rr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_107rr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_107rr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_107rr_1mg_3p` (0x143, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_107rr_1mtc_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_107rr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_107rr_2b_ac82mt` (0x208, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_107rr_2b_atr` (0x205, SUP, plu_atrs): rkka_com_inf_coy x1, rkka_com_inf_plat x1, rkka_squad_atr x3, rkka_com_inf_plat x1, rkka_squad_atr x2, rkka_ptr x1
+- `ra_107rr_coy4` (0x240, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- `ra_107rr_coy5` (0x250, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_107rr_5c_mt` (0x255, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_107rr_coy6` (0x260, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_107rr_6c_mt` (0x265, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_107rr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_107rr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_107rr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_107rr_2mg_3p` (0x273, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_107rr_2mtc_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_107rr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_107rr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_107rr_3b_hq` (0x301, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_107rr_3b_ac82mt` (0x302, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_107rr_3b_atg` (0x303, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_107rr_3b_atr` (0x305, SUP, plu_atrs): rkka_com_inf_coy x1, rkka_com_inf_plat x1, rkka_squad_atr x3, rkka_com_inf_plat x1, rkka_squad_atr x2, rkka_ptr x1
+- NEW `ra_107rr_7c_com` (0x370, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_107rr_7c_1p` (0x371, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_107rr_7c_2p` (0x372, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_107rr_7c_mt` (0x375, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_107rr_8c_com` (0x380, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_107rr_8c_1p` (0x381, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_107rr_8c_2p` (0x382, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_107rr_3mgc_com` (0x3a0, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_107rr_3mg_1p` (0x3a1, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_107rr_3mg_2p` (0x3a2, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_107rr_3mtc_com` (0x3b0, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_107rr_3mt_1p` (0x3b1, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_107rr_3mt_2p` (0x3b2, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_107rr_3mt_3p` (0x3b3, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_107rr  (37 sap bn 2 coy -> 107 RR)
+- NEW `ra_107rr_sbn_2c_com` (0xb20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_107rr_sbn_2c_1p` (0xb21, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_107rr_sbn_2c_2p` (0xb22, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+### p_ra_107rr  (38 AT bn 3 battery + ATR coy -> 107 RR)
+- NEW `ra_107rr_atbn_3c_com` (0xc30, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_107rr_atbn_3c_1p` (0xc31, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+- NEW `ra_107rr_atbn_atrc_com` (0xc40, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_107rr_atbn_atrc_1p` (0xc41, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_107rr_atbn_atrc_2p` (0xc42, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+### p_ra_84ar  NEW FORMATION under p_ra_34rd (name key op_ra_84ar, ai EN22)
+- MOVED `ra_34_2arty` (0x122, SUP, name oppl_ussr_ar_2b2) from p_ra_107rr: gun platoon of battery 2
+- MOVED `ra_34_1arty` (0x112, SUP, name oppl_ussr_ar_1b2) from p_ra_105rr: gun platoon of battery 1
+- MOVED `ra_34_3arty` (0x132, SUP, name oppl_ussr_ar_3b2) from p_ra_103rr: gun platoon of battery 3
+### p_ra_84ar  (84 Gds AR: new formation under 34 Gds RD (30 July 84 AR) + the 17 July division batteries)
+- NEW `ra_84ar_hq` (0x0, CAMP, plu_rgt_arty): rkka_com_sup x1, rkka_squad_sup x4;0;0;16, rkka_squad_sup_mot x2;0;0;16, rkka_squad_spam x2;0;0;8, rkka_squad_scout_42m x1
+- NEW `ra_84ar_1b_ac` (0x111, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_84ar_2b_ac` (0x121, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_84ar_3b_ac` (0x131, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+- NEW `ra_84ar_4b_ac` (0x241, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_84ar_5b_ac` (0x251, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_84ar_6b_ac` (0x261, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+- NEW `ra_84ar_7b_hq` (0x370, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_84ar_7b_ac` (0x371, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_84ar_7b_1p` (0x372, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_84ar_8b_hq` (0x380, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_84ar_8b_ac` (0x381, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_84ar_8b_1p` (0x382, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_84ar_8b_2p` (0x383, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_84ar_9b_hq` (0x390, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_84ar_9b_ac` (0x391, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+- NEW `ra_84ar_9b_1p` (0x392, SUP, pl_m30): rkka_com_art_fplat x1, rkka_m30_m38 x2
+### p_ra_116rr  (116 Gds RR: 30 July 111 Gds RR structure (116 RR has no platoons in the 30 July file))
+- NEW `ra_116rr_saps` (0x10, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x2
+- NEW `ra_116rr_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x3
+- NEW `ra_116rr_reconh` (0x12, SCT, plu_cavalary): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_116rr_1smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_116rr_1smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_116rr_1smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_116rr_2smgc_com` (0x30, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_116rr_2smgc_1p` (0x31, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_116rr_2smgc_2p` (0x32, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_116rr_ac120mt1` (0x41, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_coy)
+- NEW `ra_116rr_ac120mt2` (0x42, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_116rr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_116rr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_116rr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_116rr_atgc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_116rr_atgc_1p` (0x61, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_116rr_atgc_2p` (0x62, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_116rr_gunc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_116rr_ac76gun` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_pp27_plat)
+- NEW `ra_116rr_gunc_1p` (0x72, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_116rr_gunc_2p` (0x73, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_116rr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_116rr_1b_atg` (0x109, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_116rr_1b_atr` (0x105, SUP, plu_atrs): rkka_com_inf_coy x1, rkka_com_inf_plat x1, rkka_squad_atr x3, rkka_com_inf_plat x1, rkka_squad_atr x2, rkka_ptr x1
+- `ra_116rr_coy1` (0x110, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_116rr_1c_mt` (0x115, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_116rr_coy2` (0x120, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_116rr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_116rr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_116rr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_116rr_1mtc_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_116rr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_116rr_1mt_2p` (0x152, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_116rr  (40 Gds RD recon, 42 sap bn 1 coy, 41 AT bn 1 battery + ATR coy -> 116 RR)
+- NEW `ra_116rr_rcoy` (0x820, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_116rr_rc_1p` (0x821, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x4
+- NEW `ra_116rr_rc_2p` (0x822, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x4
+- NEW `ra_116rr_sbn_hq` (0xb01, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_116rr_sbn_1c_com` (0xb10, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_116rr_sbn_1c_1p` (0xb11, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_116rr_sbn_1c_2p` (0xb12, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_116rr_atbn_hq` (0xc01, COM, plu_batcmd): rkka_com_art_div x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_116rr_atbn_1c_com` (0xc10, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_116rr_atbn_1c_1p` (0xc11, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+- NEW `ra_116rr_atbn_1c_2p` (0xc12, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+- NEW `ra_116rr_atbn_atrc_com` (0xc40, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_116rr_atbn_atrc_1p` (0xc41, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_116rr_atbn_atrc_2p` (0xc42, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+### p_ra_90ar  NEW FORMATION under p_ra_40rd (name key op_ra_90ar, ai EN40)
+- MOVED `ra_40_2arty` (0x122, SUP, name oppl_ussr_ar_2b2) from p_ra_116rr: gun platoon of battery 2
+- MOVED `ra_40_3arty` (0x132, SUP, name oppl_ussr_ar_3b2) from p_ra_116rr: gun platoon of battery 3
+### p_ra_90ar  (90 Gds AR: new formation under 40 Gds RD (30 July 90 AR) + the 17 July division batteries)
+- NEW `ra_90ar_hq` (0x0, CAMP, plu_rgt_arty): rkka_com_sup x1, rkka_squad_sup x4;0;0;16, rkka_squad_sup_mot x2;0;0;16, rkka_squad_spam x2;0;0;8, rkka_squad_scout_42m x1
+- NEW `ra_90ar_1b_ac` (0x111, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_90ar_2b_ac` (0x121, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_90ar_3b_ac` (0x131, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+### p_ra_291rr  (291 Gds RR: 30 July structure)
+- NEW `ra_291rr_saps` (0x10, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x2
+- NEW `ra_291rr_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x3
+- NEW `ra_291rr_1smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_291rr_1smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_291rr_1smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_291rr_ac120mt2` (0x42, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_291rr_ac120mt3` (0x43, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_291rr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_291rr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_291rr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_291rr_atgc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_atgc_1p` (0x61, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_291rr_atgc_2p` (0x62, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg x2
+- NEW `ra_291rr_gunc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_ac76gun` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_pp27_plat)
+- NEW `ra_291rr_gunc_1p` (0x72, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_291rr_gunc_2p` (0x73, SUP, pl_pp27): rkka_com_art_fplat x1, rkka_pp27 x2
+- NEW `ra_291rr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_291rr_1b_atg` (0x109, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- `ra_291rr_coy1` (0x110, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_291rr_1c_mt` (0x115, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- `ra_291rr_coy2` (0x120, COMC): composition rkka_com_inf_coy x1 -> rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_291rr_2c_mt` (0x125, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_291rr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_291rr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_1mg_3p` (0x143, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_1mtc_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_291rr_1mt_2p` (0x152, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_291rr_2b_hq` (0x201, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_2b_ac82mt` (0x202, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_291rr_2b_atg` (0x203, SUP, pl_53k): rkka_com_art_fplat x1, rn_rkka_atg_old x2
+- NEW `ra_291rr_2b_atr` (0x205, SUP, plu_atrs): rkka_com_inf_coy x1, rkka_com_inf_plat x1, rkka_squad_atr x3, rkka_com_inf_plat x1, rkka_squad_atr x2, rkka_ptr x1
+- NEW `ra_291rr_4c_com` (0x240, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_291rr_4c_1p` (0x241, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_4c_2p` (0x242, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_4c_3p` (0x243, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_4c_mt` (0x245, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_291rr_5c_com` (0x250, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_291rr_5c_1p` (0x251, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_5c_2p` (0x252, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_6c_com` (0x260, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_291rr_6c_1p` (0x261, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_6c_mt` (0x265, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_291rr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_291rr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_2mg_3p` (0x273, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_2mtc_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_291rr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_291rr_2mt_3p` (0x283, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_291rr_3b_hq` (0x301, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_3b_ac82mt` (0x302, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- NEW `ra_291rr_7c_com` (0x370, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_291rr_7c_1p` (0x371, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_7c_2p` (0x372, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_7c_mt` (0x375, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_291rr_8c_com` (0x380, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_291rr_8c_1p` (0x381, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_8c_mt` (0x385, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt50 x2
+- NEW `ra_291rr_9c_com` (0x390, COMC, plu_field_com): rkka_com_inf_coy x1, rkka_maxim x2
+- NEW `ra_291rr_9c_1p` (0x391, UNI, plu_rifles): rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- NEW `ra_291rr_3mgc_com` (0x3a0, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_291rr_3mg_1p` (0x3a1, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_3mg_2p` (0x3a2, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_3mg_3p` (0x3a3, SUP, pl_maxim): rkka_com_inf_plat x1, rkka_maxim x3
+- NEW `ra_291rr_3mtc_com` (0x3b0, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_3mt_1p` (0x3b1, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_291rr  (96 Gds RD recon, 111 sap bn 1 coy, 102 AT bn 1 battery + ATR coy -> 291 RR)
+- NEW `ra_291rr_rcoy` (0x820, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_291rr_rc_1p` (0x821, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x4
+- NEW `ra_291rr_rc_2p` (0x822, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x4
+- NEW `ra_291rr_sbn_hq` (0xb01, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_sbn_1c_com` (0xb10, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_291rr_sbn_1c_1p` (0xb11, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_291rr_sbn_1c_2p` (0xb12, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_291rr_sbn_1c_3p` (0xb13, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_291rr_atbn_hq` (0xc01, COM, plu_batcmd): rkka_com_art_div x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_291rr_atbn_1c_com` (0xc10, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_291rr_atbn_1c_1p` (0xc11, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+- NEW `ra_291rr_atbn_1c_2p` (0xc12, SUP, pl_53k): rkka_com_art_fplat x1, rkka_53k43 x3
+- NEW `ra_291rr_atbn_atrc_com` (0xc40, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_291rr_atbn_atrc_1p` (0xc41, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_291rr_atbn_atrc_2p` (0xc42, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+- NEW `ra_291rr_atbn_atrc_3p` (0xc43, SUP, plu_atrs): rkka_com_inf_plat x1, rkka_squad_atr x3
+### p_ra_234ar  NEW FORMATION under p_ra_96rd (name key op_ra_234ar, ai EN96)
+- MOVED `ra_234_1arty` (0x112, SUP, name oppl_ussr_ar_1b2) from p_ra_291rr: gun platoon of battery 1
+- MOVED `ra_234_2arty` (0x122, SUP, name oppl_ussr_ar_2b2) from p_ra_291rr: gun platoon of battery 2
+- MOVED `ra_234_3arty` (0x132, SUP, name oppl_ussr_ar_3b2) from p_ra_291rr: gun platoon of battery 3
+### p_ra_234ar  (234 Gds AR: new formation under 96 Gds RD (30 July 234 AR) + the 17 July division batteries)
+- NEW `ra_234ar_hq` (0x0, CAMP, plu_rgt_arty): rkka_com_sup x1, rkka_squad_sup x4;0;0;16, rkka_squad_sup_mot x2;0;0;16, rkka_squad_spam x2;0;0;8, rkka_squad_scout_42m x1
+- NEW `ra_234ar_1b_ac` (0x111, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_234ar_2b_ac` (0x121, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_234ar_3b_ac` (0x131, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+- NEW `ra_234ar_4b_hq` (0x240, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_234ar_4b_ac` (0x241, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_234ar_4b_1p` (0x242, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_234ar_5b_ac` (0x251, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_234ar_6b_ac` (0x261, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_m30_plat)
+- NEW `ra_234ar_7b_hq` (0x370, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_234ar_7b_ac` (0x371, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_234ar_7b_1p` (0x372, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_234ar_8b_ac` (0x381, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+### p_ra_32tbde  (32 Gds TBde: recon, sappers, AT battery, AA, MR bn structure, mortar coy)
+- NEW `ra_32tbde_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_32tbde_sap` (0x12, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_32tbde_atc_com` (0x40, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_32tbde_atc_1p` (0x41, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_32tbde_atc_2p` (0x42, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_32tbde_aac_1p` (0x51, SUP, pl_ds39): rkka_com_art_fplat x1, rkka_dshk x3
+- NEW `ra_32tbde_mrbn_ac82mt` (0x308, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_32tbde_coy1` (0x310, COMC): composition rkka_com_mr_coy x1 -> rkka_com_mr_coy x1, rkka_squad_atr x1
+- `ra_32tbde_1c_1p` (0x311, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x3, rkka_squad_atr x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_32tbde_1c_2p` (0x312, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x3, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_32tbde_2c_com` (0x320, COMC, plu_field_com): rkka_com_mr_coy x1, rkka_squad_atr x1
+- NEW `ra_32tbde_2c_1p` (0x321, UNI, plu_rifles): rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_32tbde_mtc_com` (0x350, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_32tbde_mtc_1p` (0x351, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_32tbde_mtc_2p` (0x352, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_32tbde_mtc_3p` (0x353, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_37tbde  (37 Gds TBde: recon, sappers, AT battery, MR bn structure, mortar coy)
+- NEW `ra_37tbde_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_37tbde_sap` (0x12, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_37tbde_atc_com` (0x40, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_37tbde_atc_1p` (0x41, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_37tbde_atc_2p` (0x42, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- `ra_37tbde_tbn1` (0x101, COM): composition rkka_t34_42_uztm_bcom x1 -> rkka_t34_42l_uztm_bcom x1
+- `ra_37tbde_tbn2` (0x201, COM): composition rkka_t34_42_uztm_bcom x1 -> rkka_t34_42l_uztm_bcom x1
+- NEW `ra_37tbde_mrbn_ac82mt` (0x308, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_37tbde_coy1` (0x310, COMC): composition rkka_com_mr_coy x1 -> rkka_com_mr_coy x1, rkka_squad_atr x1
+- `ra_37tbde_1c_1p` (0x311, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x3, rkka_squad_atr x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_37tbde_1c_2p` (0x312, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x3, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_37tbde_coy2` (0x320, COMC): composition rkka_com_mr_coy x1 -> rkka_com_mr_coy x1, rkka_squad_atr x1
+- `ra_37tbde_2c_1p` (0x321, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x3, rkka_squad_atr x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_37tbde_3c_1p` (0x331, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x3, rkka_squad_atr x1 -> rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+- NEW `ra_37tbde_3c_2p` (0x332, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+- NEW `ra_37tbde_mtc_com` (0x350, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_37tbde_mtc_1p` (0x351, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_37tbde_mtc_2p` (0x352, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_22stp  (22 Gds det TR: recon, sapper and SMG platoons)
+- NEW `ra_22stp_recon` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_22stp_sap` (0x12, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_22stp_smg` (0x13, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+### p_ra_1543tsap  (1543 SAP: regiment command group and SU-152 FO team)
+- NEW `ra_1543tsap_cmd` (0x10, COMC, plu_batcmd): rkka_kv1sl_m42_rcom x1, rkka_ba64 x1
+- NEW `ra_1543tsap_ac152` (0x11, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_su152x2_plat)
+### p_ra_4mrbde  (4 Gds MBde: 30 July mech brigade standard (13 Gds MBde))
+- NEW `ra_4mr_recc_com` (0x10, COMC, plu_field_com): rkka_ba64_ccom x1, rkka_ba64 x1
+- NEW `ra_4mr_recc_1p` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_4mr_recc_arm1` (0x12, SCT, pl_wscout): rkka_com_apc_m3a1 x1, rkka_squad_apc_m3a1 x2
+- NEW `ra_4mr_smgc_com` (0x20, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_4mr_smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+- NEW `ra_4mr_smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+- NEW `ra_4mr_engc_com` (0x30, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_4mr_engc_1p` (0x31, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_4mr_engc_2p` (0x32, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_4mr_ac120mt1` (0x42, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_4mr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_4mr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_mr_plat x1, rkka_squad_atr x3
+- NEW `ra_4mr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_mr_plat x1, rkka_squad_atr x3
+- NEW `ra_4mr_1mtc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_4mr_ac82mt1` (0x61, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82d_plat)
+- NEW `ra_4mr_1mtc_1p` (0x62, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_4mr_1mtc_2p` (0x63, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_4mr_2mtc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_4mr_ac82mt2` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82d_plat)
+- NEW `ra_4mr_2mtc_1p` (0x72, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_4mr_2mtc_2p` (0x73, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_4mr_aac_com` (0x80, COMC, plu_batcmd): rkka_com_art_bat x1
+- NEW `ra_4mr_aac_1p` (0x81, SUP, pl_ds39): rkka_com_art_fplat x1, rkka_dshk x3
+- NEW `ra_4mr_1art_com` (0x90, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_4mr_ac76gun1` (0x91, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_4mr_1art_1p` (0x92, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_4mr_1art_2p` (0x93, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_4mr_2art_com` (0xa0, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_4mr_ac76gun2` (0xa1, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_4mr_2art_1p` (0xa2, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_4mr_2art_2p` (0xa3, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_4mr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_4mr_atr_plat1` (0x104, SUP): composition rkka_com_inf_plat x1, rkka_squad_atr x3 -> rkka_com_mr_plat x1, rkka_squad_atr x3
+- `ra_4mr_1c_1p` (0x111, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_4mr_1c_2p` (0x112, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_4mr_1c_3p` (0x113, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_4mr_1c_mg` (0x114, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_4mr_2c_1p` (0x121, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_4mr_2c_2p` (0x122, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_4mr_2c_mg` (0x124, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_4mr_3c_1p` (0x131, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_4mr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_4mr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_4mr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_4mr_1mt_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_4mr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_4mr_2b_ac82mt` (0x208, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_4mr_atr_plat2` (0x204, SUP): composition rkka_com_inf_plat x1, rkka_squad_atr x3 -> rkka_com_mr_plat x1, rkka_squad_atr x3
+- `ra_4mr_4c_1p` (0x241, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- `ra_4mr_4c_2p` (0x242, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_4mr_4c_3p` (0x243, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_4mr_4c_mg` (0x244, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_4mr_5c_1p` (0x251, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- `ra_4mr_5c_2p` (0x252, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_4mr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_4mr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_4mr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_4mr_2mt_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_4mr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_4mr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_5mrbde  (5 Gds MBde: 30 July mech brigade standard (13 Gds MBde))
+- NEW `ra_5mr_recc_com` (0x10, COMC, plu_field_com): rkka_ba64_ccom x1, rkka_ba64 x1
+- NEW `ra_5mr_recc_1p` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_5mr_recc_arm1` (0x12, SCT, pl_wscout): rkka_com_apc_m3a1 x1, rkka_squad_apc_m3a1 x2
+- NEW `ra_5mr_smgc_com` (0x20, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_5mr_smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+- NEW `ra_5mr_smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+- NEW `ra_5mr_engc_com` (0x30, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_5mr_engc_1p` (0x31, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_5mr_engc_2p` (0x32, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_5mr_ac120mt1` (0x42, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_5mr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_5mr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_mr_plat x1, rkka_squad_atr x3
+- NEW `ra_5mr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_mr_plat x1, rkka_squad_atr x3
+- NEW `ra_5mr_1mtc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_5mr_ac82mt1` (0x61, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82d_plat)
+- NEW `ra_5mr_1mtc_1p` (0x62, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_5mr_1mtc_2p` (0x63, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_5mr_2mtc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_5mr_ac82mt2` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82d_plat)
+- NEW `ra_5mr_2mtc_1p` (0x72, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_5mr_2mtc_2p` (0x73, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_5mr_aac_com` (0x80, COMC, plu_batcmd): rkka_com_art_bat x1
+- NEW `ra_5mr_aac_1p` (0x81, SUP, pl_ds39): rkka_com_art_fplat x1, rkka_dshk x3
+- NEW `ra_5mr_1art_com` (0x90, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_5mr_ac76gun1` (0x91, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_5mr_1art_1p` (0x92, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_5mr_1art_2p` (0x93, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_5mr_2art_com` (0xa0, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_5mr_ac76gun2` (0xa1, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_5mr_2art_1p` (0xa2, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_5mr_2art_2p` (0xa3, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_5mr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_5mr_atr_plat1` (0x104, SUP): composition rkka_com_inf_plat x1, rkka_squad_atr x3 -> rkka_com_mr_plat x1, rkka_squad_atr x3
+- `ra_5mr_1c_1p` (0x111, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_5mr_1c_2p` (0x112, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_5mr_1c_3p` (0x113, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_5mr_1c_mg` (0x114, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_5mr_2c_1p` (0x121, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_5mr_2c_2p` (0x122, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_5mr_2c_mg` (0x124, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_5mr_3c_1p` (0x131, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_5mr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_5mr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_5mr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_5mr_1mt_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_5mr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_5mr_2b_ac82mt` (0x208, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_5mr_atr_plat2` (0x204, SUP): composition rkka_com_inf_plat x1, rkka_squad_atr x3 -> rkka_com_mr_plat x1, rkka_squad_atr x3
+- `ra_5mr_4c_1p` (0x241, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- `ra_5mr_4c_2p` (0x242, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_5mr_4c_3p` (0x243, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_5mr_4c_mg` (0x244, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_5mr_5c_1p` (0x251, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- `ra_5mr_5c_2p` (0x252, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_5mr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_5mr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_5mr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_5mr_2mt_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_5mr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_5mr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_6mrbde  (6 Gds MBde: 30 July mech brigade standard (13 Gds MBde))
+- NEW `ra_6mr_recc_com` (0x10, COMC, plu_field_com): rkka_ba64_ccom x1, rkka_ba64 x1
+- NEW `ra_6mr_recc_1p` (0x11, SCT, plu_scouts): rkka_com_scout_plat x1, rkka_squad_scout_43a x2
+- NEW `ra_6mr_recc_arm1` (0x12, SCT, pl_wscout): rkka_com_apc_m3a1 x1, rkka_squad_apc_m3a1 x2
+- NEW `ra_6mr_smgc_com` (0x20, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_6mr_smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+- NEW `ra_6mr_smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3, rkka_squad_atr x1
+- NEW `ra_6mr_engc_com` (0x30, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_6mr_engc_1p` (0x31, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_6mr_engc_2p` (0x32, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_6mr_ac120mt1` (0x42, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt120_plat)
+- NEW `ra_6mr_atrc_com` (0x50, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_6mr_atrc_1p` (0x51, SUP, plu_atrs): rkka_com_mr_plat x1, rkka_squad_atr x3
+- NEW `ra_6mr_atrc_2p` (0x52, SUP, plu_atrs): rkka_com_mr_plat x1, rkka_squad_atr x3
+- NEW `ra_6mr_1mtc_com` (0x60, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_6mr_ac82mt1` (0x61, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82d_plat)
+- NEW `ra_6mr_1mtc_1p` (0x62, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_6mr_1mtc_2p` (0x63, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_6mr_2mtc_com` (0x70, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_6mr_ac82mt2` (0x71, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82d_plat)
+- NEW `ra_6mr_2mtc_1p` (0x72, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_6mr_2mtc_2p` (0x73, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_6mr_aac_com` (0x80, COMC, plu_batcmd): rkka_com_art_bat x1
+- NEW `ra_6mr_aac_1p` (0x81, SUP, pl_ds39): rkka_com_art_fplat x1, rkka_dshk x3
+- NEW `ra_6mr_1art_com` (0x90, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_6mr_ac76gun1` (0x91, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_6mr_1art_1p` (0x92, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_6mr_1art_2p` (0x93, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_6mr_2art_com` (0xa0, COMC, plu_batcmd): rkka_com_art_bat x1, rkka_squad_phone x1, rkka_corr_art x1
+- NEW `ra_6mr_ac76gun2` (0xa1, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_zis3_plat)
+- NEW `ra_6mr_2art_1p` (0xa2, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_6mr_2art_2p` (0xa3, SUP, pl_zis3): rkka_com_art_fplat x1, rkka_zis3 x2
+- NEW `ra_6mr_1b_ac82mt` (0x108, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_6mr_atr_plat1` (0x104, SUP): composition rkka_com_inf_plat x1, rkka_squad_atr x3 -> rkka_com_mr_plat x1, rkka_squad_atr x3
+- `ra_6mr_1c_1p` (0x111, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_6mr_1c_2p` (0x112, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_6mr_1c_3p` (0x113, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_6mr_1c_mg` (0x114, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_6mr_2c_1p` (0x121, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_6mr_2c_2p` (0x122, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_6mr_2c_mg` (0x124, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_6mr_3c_1p` (0x131, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_6mr_1mgc_com` (0x140, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_6mr_1mg_1p` (0x141, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_6mr_1mg_2p` (0x142, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_6mr_1mt_com` (0x150, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_6mr_1mt_1p` (0x151, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_6mr_2b_ac82mt` (0x208, CTRL, plu_fo): rkka_com_art_fplat x1, rkka_corr_art x1(rkka_artsup_mt82_plat)
+- `ra_6mr_atr_plat2` (0x204, SUP): composition rkka_com_inf_plat x1, rkka_squad_atr x3 -> rkka_com_mr_plat x1, rkka_squad_atr x3
+- `ra_6mr_4c_1p` (0x241, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- `ra_6mr_4c_2p` (0x242, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- `ra_6mr_4c_3p` (0x243, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_6mr_4c_mg` (0x244, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x2
+- `ra_6mr_5c_1p` (0x251, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4, rkka_maxim x1 -> rkka_com_inf_plat x1, rkka_squad_inf_43a2 x2, rkka_squad_inf_43a x2
+- `ra_6mr_5c_2p` (0x252, UNI): composition rkka_com_mr_plat x1, rkka_squad_mrifles_43a x4 -> rkka_com_mr_plat x1, rkka_squad_mrifles_43m x4
+- NEW `ra_6mr_2mgc_com` (0x270, COMC, plu_field_com): rkka_com_mr_coy x1
+- NEW `ra_6mr_2mg_1p` (0x271, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_6mr_2mg_2p` (0x272, SUP, pl_maxim): rkka_com_mr_plat x1, rkka_maxim x3
+- NEW `ra_6mr_2mt_com` (0x280, COMC, plu_field_com): rkka_com_art_bat x1, rkka_squad_phone x1
+- NEW `ra_6mr_2mt_1p` (0x281, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+- NEW `ra_6mr_2mt_2p` (0x282, SUP, plu_mortars): rkka_com_art_fplat x1, rkka_mt82 x3
+### p_ra_8iptabr  (8 AT Bde: SMG company and sapper company (1 Gds AT Bde pattern))
+- NEW `ra_8iptabr_smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_8iptabr_smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_8iptabr_smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_8iptabr_smgc_3p` (0x23, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_8iptabr_engbn_hq` (0x301, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_8iptabr_engbn_1c_com` (0x310, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_8iptabr_engbn_1c_1p` (0x311, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_8iptabr_engbn_1c_2p` (0x312, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_8iptabr_engbn_1c_3p` (0x318, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+### p_ra_15iptabr  (15 AT Bde: SMG company and sapper company (1 Gds AT Bde pattern))
+- NEW `ra_15iptabr_smgc_com` (0x20, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_15iptabr_smgc_1p` (0x21, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_15iptabr_smgc_2p` (0x22, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_15iptabr_smgc_3p` (0x23, UNI, plu_smg): rkka_com_smg_plat x1, rkka_squad_smg_43a x3
+- NEW `ra_15iptabr_engbn_hq` (0x301, COM, plu_commander): rkka_com_inf_bat x1, rkka_squad_phone x1
+- NEW `ra_15iptabr_engbn_1c_com` (0x310, COMC, plu_field_com): rkka_com_inf_coy x1
+- NEW `ra_15iptabr_engbn_1c_1p` (0x311, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_15iptabr_engbn_1c_2p` (0x318, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+- NEW `ra_15iptabr_engbn_1c_3p` (0x319, SUP, plu_saps): rkka_com_eng_plat x1, rkka_squad_eng_43a x3
+### p_we_513ir  (513 IR: 30 July 513 IR structure (13th coy guns already in the 17 July supcoy))
+- NEW `wer_513ir_bicp` (0x18, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_41r x4
+- NEW `wer_513ir_13c_ac75` (0xd1, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- NEW `wer_513ir_14c_com` (0xe0, COMC, plu_field_com): wer_com_inf_coy x1, wer_squad_phone x1
+- NEW `wer_513ir_14c_atg1` (0xe1, SUP, pl_pak40): wer_com_art_plat x1, wer_pak40 x2, wer_team_mg_41 x2
+- NEW `wer_513ir_14c_atg2` (0xe2, SUP, pl_pak40): wer_com_art_plat x1, wer_pak38 x2, wer_team_mg_41 x2
+- NEW `wer_513ir_14c_atg3` (0xe3, SUP, pl_pak40): wer_com_art_plat x1, wer_pak97_38 x2, wer_team_mg_41 x2
+- NEW `wer_513ir_1b_ac81` (0x102, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_sec)
+- `wer_513ir_coy1` (0x110, COMC): composition wer_com_inf_coy x1, rn_wer_pzb41 x1, wer_pak40 x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- `wer_513ir_coy2` (0x120, COMC): composition wer_com_inf_coy x1, wer_pak35 x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- `wer_513ir_coy3` (0x130, COMC): composition wer_com_inf_coy x1, wer_pak184_1r x1, wer_pak97_38 x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_513ir_4c_com` (0x140, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_513ir_4cmg_1p` (0x141, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_513ir_4cmg_2p` (0x142, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_513ir_4cmg_4pmo_1s` (0x144, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_513ir_4cmg_4pmo_2s` (0x145, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_513ir_2b_ac81` (0x202, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_sec)
+- `wer_513ir_coy5` (0x250, COMC): composition wer_com_inf_coy x1, rn_wer_pzb41 x1, wer_pak97_38 x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- `wer_513ir_coy6` (0x260, COMC): composition wer_com_inf_coy x1, wer_pak35 x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- `wer_513ir_coy7` (0x270, COMC): composition wer_com_inf_coy x1, wer_pak184_1r x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_513ir_8c_com` (0x280, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_513ir_8cmg_1p` (0x281, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_513ir_8cmg_2p` (0x282, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_513ir_8cmg_4pmo_1s` (0x284, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_513ir_8cmg_4pmo_2s` (0x285, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_513ir_3b_ac81` (0x302, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_sec)
+- `wer_513ir_coy9` (0x390, COMC): composition wer_com_inf_coy x1, rn_wer_pzb41 x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_513ir_10c_com` (0x3a0, COMC, plu_field_com): wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_513ir_10c_1p` (0x3a1, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_513ir_10c_2p` (0x3a2, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_513ir_12c_com` (0x3c0, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_513ir_12cmg_1p` (0x3c1, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_513ir_12cmg_2p` (0x3c2, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_513ir_12cmg_4pmo_1s` (0x3c4, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+### p_we_294id  (294 AT bn: recon coy + 3 AT companies)
+- NEW `wer_294at_ccoy` (0x910, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_294at_ccoy_1p` (0x911, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_42m x3
+- NEW `wer_294at_ccoy_2p` (0x912, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_42m x3
+- NEW `wer_294at_ccoy_3p` (0x913, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_42m x3
+- NEW `wer_294at_atc1_com` (0x920, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_294at_atc1_p1` (0x921, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_294at_atc1_p2` (0x922, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_294at_atc1_p3` (0x923, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_294at_atc2_com` (0x930, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_294at_atc2_p1` (0x931, SUP, pl_pak40): wer_com_art_plat x1, wer_pak38 x2, wer_team_mg_41 x1, wer_pak38 x2, wer_team_mg_41 x1
+- NEW `wer_294at_atc2_p2` (0x932, SUP, pl_pak35): wer_com_art_plat x1, wer_pak35 x2, wer_team_mg_41 x1, wer_pak35 x2, wer_team_mg_41 x1
+- NEW `wer_294at_atc3_com` (0x940, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_294at_atc3_p1` (0x941, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_294at_atc3_p2` (0x942, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+### p_we_294ar  NEW FORMATION under p_we_294id (name key op_we_294ar, ai USER)
+- MOVED `wer_294ar_1c_2b` (0x122, SUP, name op_we_294ar_2b2) from p_we_294id: gun platoon of battery 2
+- MOVED `wer_294ar_1c_3b` (0x134, SUP, name op_we_294ar_3b4) from p_we_294id: gun platoon of battery 3
+### p_we_294ar  (294 AR: new formation under 294 ID (30 July 294 AR: HQ, FO teams, 3rd/4th/5th batteries) + the 17 July I/294 AR batteries)
+- NEW `wer_294ar_hq` (0x0, CAMP, plu_rgt_arty): wer_com_spam x1, wer_squad_sup_mot x4;0;0;16, wer_squad_spam x2;0;0;8
+- NEW `wer_294ar_1b_ac` (0x111, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_294ar_2b_ac` (0x121, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_294ar_3b_hq` (0x130, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_294ar_3b_1p` (0x132, SUP, pl_flak36): wer_com_art_plat x1, wer_flak36 x2, wer_team_mg_41 x1
+- NEW `wer_294ar_3b_2p` (0x133, SUP, pl_flak36): wer_com_art_plat x1, wer_flak36 x2, wer_team_mg_41 x1
+- NEW `wer_294ar_4b_hq` (0x240, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_294ar_4b_ac` (0x241, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_294ar_4b_1p` (0x242, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_294ar_4b_2p` (0x243, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_294ar_5b_hq` (0x250, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_294ar_5b_ac` (0x251, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_sfh414f_plat)
+- NEW `wer_294ar_5b_1p` (0x252, SUP, pl_c17s_howit): wer_com_art_plat x1, wer_sfh414f x2, wer_team_mg_41 x1
+- NEW `wer_294ar_5b_2p` (0x253, SUP, pl_c17s_howit): wer_com_art_plat x1, wer_sfh414f x2, wer_team_mg_41 x1
+- NEW `wer_294ar_6b_ac` (0x261, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_294ar_7b_ac` (0x371, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_294ar_8b_ac` (0x381, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_294ar_9b_ac` (0x391, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_sfh414f_plat)
+### p_we_581ir  (581 IR: 513 IR structure (14th coy already in the 17 July 14at))
+- NEW `wer_581ir_bicp` (0x12, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_41r x4
+- NEW `wer_581ir_13c_com` (0xd0, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_581ir_13c_ac75` (0xd1, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- NEW `wer_581ir_leig1` (0xd2, SUP, pl_leig): wer_com_art_plat x1, rn_wer_leig x2
+- NEW `wer_581ir_leig2` (0xd3, SUP, pl_leig): wer_com_art_plat x1, rn_wer_leig x2
+- NEW `wer_581ir_1b_hq` (0x101, COM, plu_commander): wer_com_inf_bat x1, wer_squad_phone x1
+- NEW `wer_581ir_1b_ac81` (0x102, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_sec)
+- `wer_581ir_coy1` (0x110, COMC): composition wer_com_inf_coy x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_581ir_2c_com` (0x120, COMC, plu_field_com): wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_581ir_2c_1p` (0x121, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_581ir_2c_2p` (0x122, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- `wer_581ir_coy3` (0x130, COMC): composition wer_com_inf_coy x1, wer_pak97_38 x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_581ir_4c_com` (0x140, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_581ir_4cmg_1p` (0x141, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_581ir_4cmg_2p` (0x142, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_581ir_4cmg_4pmo_1s` (0x144, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_581ir_4cmg_4pmo_2s` (0x145, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_581ir_2b_hq` (0x201, COM, plu_commander): wer_com_inf_bat x1, wer_squad_phone x1
+- NEW `wer_581ir_2b_ac81` (0x202, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_sec)
+- `wer_581ir_coy5` (0x250, COMC): composition wer_com_inf_coy x1, wer_squad_gren x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_581ir_5c_2p` (0x252, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_581ir_5c_3p` (0x253, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_581ir_6c_com` (0x260, COMC, plu_field_com): wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_581ir_6c_1p` (0x261, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_581ir_6c_2p` (0x262, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_581ir_7c_com` (0x270, COMC, plu_field_com): wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_581ir_7c_1p` (0x271, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_581ir_7c_2p` (0x272, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_581ir_8c_com` (0x280, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_581ir_8cmg_1p` (0x281, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_581ir_8cmg_2p` (0x282, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_581ir_8cmg_4pmo_1s` (0x284, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_581ir_8cmg_4pmo_2s` (0x285, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_581ir_3b_hq` (0x301, COM, plu_commander): wer_com_inf_bat x1, wer_squad_phone x1
+- NEW `wer_581ir_3b_ac81` (0x302, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_sec)
+- `wer_581ir_coy9` (0x390, COMC): composition wer_com_inf_coy x1, rn_wer_leig x1, wer_grw34 x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_581ir_9c_2p` (0x392, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- `wer_581ir_coy10` (0x3a0, COMC): composition wer_com_inf_coy x1, wer_squad_gren x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_581ir_10c_2p` (0x3a2, UNI, plu_rifles): wer_com_inf_plat x1, wer_squad_inf_41m x4, wer_grw36 x1
+- NEW `wer_581ir_12c_com` (0x3c0, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_581ir_12cmg_1p` (0x3c1, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_581ir_12cmg_2p` (0x3c2, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_581ir_12cmg_4pmo_1s` (0x3c4, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+### p_we_572ir  (III/572 IR: battalion FO, 10th coy, 12th MG coy, 13th coy)
+- NEW `wer_572ir_bicp` (0x12, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_41r x4
+- NEW `wer_572ir_13c_com` (0xd0, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_572ir_13c_ac75` (0xd1, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_572ir_cbn3` (0x301, COM): composition wer_com_inf_bat x1, wer_squad_phone x1, wer_squad_phone_mot_rad x1 -> wer_com_inf_bat x1, wer_squad_phone x1
+- NEW `wer_572ir_3b_ac81` (0x308, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_sec)
+- `wer_572ir_coy9` (0x390, COMC): composition wer_com_inf_coy x1, wer_squad_gren x1 -> wer_com_inf_coy x1, wer_squad_atr x1
+- NEW `wer_572ir_12c_com` (0x3c0, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_572ir_12cmg_1p` (0x3c1, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_572ir_12cmg_2p` (0x3c2, SUP, pl_mg42): wer_com_inf_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_572ir_12cmg_4pmo_1s` (0x3c4, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+### p_we_306id  (306 AT bn (294 AT bn pattern))
+- NEW `wer_306at_ccoy` (0x910, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_306at_ccoy_1p` (0x911, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_42m x3
+- NEW `wer_306at_ccoy_2p` (0x912, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_42m x3
+- NEW `wer_306at_ccoy_3p` (0x913, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_42m x3
+- NEW `wer_306at_atc1_com` (0x920, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_306at_atc1_p1` (0x921, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_306at_atc1_p2` (0x922, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_306at_atc1_p3` (0x923, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_306at_atc2_com` (0x930, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_306at_atc2_p1` (0x931, SUP, pl_pak40): wer_com_art_plat x1, wer_pak38 x2, wer_team_mg_41 x1, wer_pak38 x2, wer_team_mg_41 x1
+- NEW `wer_306at_atc2_p2` (0x932, SUP, pl_pak35): wer_com_art_plat x1, wer_pak35 x2, wer_team_mg_41 x1, wer_pak35 x2, wer_team_mg_41 x1
+- NEW `wer_306at_atc3_com` (0x940, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_306at_atc3_p1` (0x941, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_306at_atc3_p2` (0x942, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+### p_we_306ar  NEW FORMATION under p_we_306id (name key op_we_306ar, ai USER)
+### p_we_306ar  (306 AR: new formation under 306 ID (294 AR pattern))
+- NEW `wer_306ar_hq` (0x0, CAMP, plu_rgt_arty): wer_com_spam x1, wer_squad_sup_mot x4;0;0;16, wer_squad_spam x2;0;0;8
+- NEW `wer_306ar_1b_ac` (0x111, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_306ar_2b_ac` (0x121, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_306ar_3b_hq` (0x130, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_306ar_3b_1p` (0x132, SUP, pl_flak36): wer_com_art_plat x1, wer_flak36 x2, wer_team_mg_41 x1
+- NEW `wer_306ar_3b_2p` (0x133, SUP, pl_flak36): wer_com_art_plat x1, wer_flak36 x2, wer_team_mg_41 x1
+- NEW `wer_306ar_4b_hq` (0x240, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_306ar_4b_ac` (0x241, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_306ar_4b_1p` (0x242, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_306ar_4b_2p` (0x243, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_306ar_5b_hq` (0x250, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_306ar_5b_ac` (0x251, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_sfh414f_plat)
+- NEW `wer_306ar_5b_1p` (0x252, SUP, pl_c17s_howit): wer_com_art_plat x1, wer_sfh414f x2, wer_team_mg_41 x1
+- NEW `wer_306ar_5b_2p` (0x253, SUP, pl_c17s_howit): wer_com_art_plat x1, wer_sfh414f x2, wer_team_mg_41 x1
+- NEW `wer_306ar_6b_ac` (0x261, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_306ar_7b_ac` (0x371, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_306ar_8b_ac` (0x381, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_306ar_9b_ac` (0x391, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_sfh414f_plat)
+### p_we_302id  (302 AT bn companies (294 AT bn pattern; recon coy already present))
+- NEW `wer_302at_atc1_com` (0x920, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_302at_atc1_p1` (0x921, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_302at_atc1_p2` (0x922, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_302at_atc1_p3` (0x923, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_302at_atc2_com` (0x930, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_302at_atc2_p1` (0x931, SUP, pl_pak40): wer_com_art_plat x1, wer_pak38 x2, wer_team_mg_41 x1, wer_pak38 x2, wer_team_mg_41 x1
+- NEW `wer_302at_atc2_p2` (0x932, SUP, pl_pak35): wer_com_art_plat x1, wer_pak35 x2, wer_team_mg_41 x1, wer_pak35 x2, wer_team_mg_41 x1
+- NEW `wer_302at_atc3_com` (0x940, COMC, plu_field_com): wer_com_art_batm x1, wer_squad_phone x1
+- NEW `wer_302at_atc3_p1` (0x941, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+- NEW `wer_302at_atc3_p2` (0x942, SUP, pl_pak40): wer_com_art_plat x1, wer_pak184_1r x2, wer_team_mg_41 x1, wer_pak184_1r x2, wer_team_mg_41 x1
+### p_we_302ar  NEW FORMATION under p_we_302id (name key op_we_302ar, ai USER)
+### p_we_302ar  (302 AR: new formation under 302 ID (294 AR pattern))
+- NEW `wer_302ar_hq` (0x0, CAMP, plu_rgt_arty): wer_com_spam x1, wer_squad_sup_mot x4;0;0;16, wer_squad_spam x2;0;0;8
+- NEW `wer_302ar_1b_ac` (0x111, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_302ar_2b_ac` (0x121, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_302ar_3b_hq` (0x130, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_302ar_3b_1p` (0x132, SUP, pl_flak36): wer_com_art_plat x1, wer_flak36 x2, wer_team_mg_41 x1
+- NEW `wer_302ar_3b_2p` (0x133, SUP, pl_flak36): wer_com_art_plat x1, wer_flak36 x2, wer_team_mg_41 x1
+- NEW `wer_302ar_4b_hq` (0x240, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_302ar_4b_ac` (0x241, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_302ar_4b_1p` (0x242, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_302ar_4b_2p` (0x243, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_302ar_5b_hq` (0x250, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_302ar_5b_ac` (0x251, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_sfh414f_plat)
+- NEW `wer_302ar_5b_1p` (0x252, SUP, pl_c17s_howit): wer_com_art_plat x1, wer_sfh414f x2, wer_team_mg_41 x1
+- NEW `wer_302ar_5b_2p` (0x253, SUP, pl_c17s_howit): wer_com_art_plat x1, wer_sfh414f x2, wer_team_mg_41 x1
+- NEW `wer_302ar_6b_ac` (0x261, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_302ar_7b_ac` (0x371, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_302ar_8b_ac` (0x381, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_302ar_9b_ac` (0x391, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_sfh414f_plat)
+### p_we_60mir  (60 MIR: 30 July 156 MIR structure)
+- `wer_60mir_cbn1` (0x101, COM): composition wer_com_pzgr_bat x1, wer_squad_phone_mot_rad x1 -> wer_com_pzgr_bat x1, wer_squad_phone_mech x1
+- NEW `wer_60mir_1b_ac81` (0x108, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_plat)
+- NEW `wer_60mir_1b_ac75` (0x103, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_60mir_coy1` (0x110, COMC): composition wer_com_pzgr_coym x1, wer_squad_gren x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_60mir_1c_1p` (0x111, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_60mir_1c_2p` (0x112, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_60mir_1c_3p` (0x113, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_60mir_1c_mt` (0x115, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_60mir_1c_mg` (0x116, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_60mir_coy2` (0x120, COMC): composition wer_com_pzgr_coym x1, wer_squad_gren x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_60mir_2c_1p` (0x121, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_60mir_2c_2p` (0x122, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_60mir_2c_3p` (0x123, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_60mir_2c_mt` (0x125, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_60mir_2c_mg` (0x126, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- NEW `wer_60mir_4c_com` (0x140, COMC, plu_field_com): wer_com_pinf_coy x1, wer_squad_phone x1
+- NEW `wer_60mir_4c_sap` (0x141, UNI, plu_saps): wer_com_pinf_plat x1, wer_squad_engid_43a x3
+- NEW `wer_60mir_4c_atg` (0x142, SUP, pl_pak40): wer_com_art_plat x1, rn_wer_hatg_tun x2, wer_team_mg_41 x1, rn_wer_hatg_tun x1, wer_team_mg_41 x1
+- NEW `wer_60mir_4c_leig1` (0x143, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_60mir_4c_leig2` (0x144, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_60mir_4c_atr` (0x145, SUP, plu_atrs): wer_com_art_plat x1, wer_sdkfz250a_11 x3, wer_team_mg_41 x3
+- `wer_60mir_cbn2` (0x201, COM): composition wer_com_pzgr_bat x1, wer_squad_phone_mot_rad x1 -> wer_com_pzgr_bat x1, wer_squad_phone_mech x1
+- NEW `wer_60mir_2b_ac81` (0x208, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_plat)
+- NEW `wer_60mir_2b_ac75` (0x203, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_60mir_coy5` (0x250, COMC): composition wer_com_pzgr_coym x1, wer_squad_gren x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_60mir_5c_1p` (0x251, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_60mir_5c_2p` (0x252, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_60mir_5c_3p` (0x253, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_60mir_5c_mt` (0x255, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_60mir_5c_mg` (0x256, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_60mir_coy6` (0x260, COMC): composition wer_com_pzgr_coym x1, wer_squad_gren x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_60mir_6c_1p` (0x261, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_60mir_6c_2p` (0x262, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_60mir_6c_mt` (0x265, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_60mir_6c_mg` (0x266, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- NEW `wer_60mir_8c_com` (0x280, COMC, plu_field_com): wer_com_pinf_coy x1, wer_squad_phone x1
+- NEW `wer_60mir_8c_sap` (0x281, UNI, plu_saps): wer_com_pinf_plat x1, wer_squad_engid_43a x3
+- NEW `wer_60mir_8c_atg` (0x282, SUP, pl_pak40): wer_com_art_plat x1, rn_wer_hatg_tun x2, wer_team_mg_41 x1, rn_wer_hatg_tun x1, wer_team_mg_41 x1
+- NEW `wer_60mir_8c_leig1` (0x283, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_60mir_8c_atr` (0x285, SUP, plu_atrs): wer_com_art_plat x1, wer_sdkfz250a_11 x3, wer_team_mg_41 x3
+### p_we_156mir  (156 MIR: 30 July 156 MIR structure)
+- `wer_156mir_cbn1` (0x101, COM): composition wer_com_pzgr_bat x1, wer_squad_phone_mot_rad x1 -> wer_com_pzgr_bat x1, wer_squad_phone_mech x1
+- NEW `wer_156mir_1b_ac81` (0x108, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_plat)
+- NEW `wer_156mir_1b_ac75` (0x103, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_156mir_coy1` (0x110, COMC): composition wer_com_pzgr_coym x1, wer_squad_gren x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_156mir_1c_1p` (0x111, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_156mir_1c_2p` (0x112, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_156mir_1c_3p` (0x113, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_156mir_1c_mt` (0x115, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_156mir_1c_mg` (0x116, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_156mir_coy2` (0x120, COMC): composition wer_com_pzgr_coym x1, wer_squad_gren x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_156mir_2c_1p` (0x121, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_156mir_2c_2p` (0x122, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_156mir_2c_3p` (0x123, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_156mir_2c_mt` (0x125, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_156mir_2c_mg` (0x126, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- NEW `wer_156mir_4c_com` (0x140, COMC, plu_field_com): wer_com_pinf_coy x1, wer_squad_phone x1
+- NEW `wer_156mir_4c_sap` (0x141, UNI, plu_saps): wer_com_pinf_plat x1, wer_squad_engid_43a x3
+- NEW `wer_156mir_4c_atg` (0x142, SUP, pl_pak40): wer_com_art_plat x1, rn_wer_hatg_tun x2, wer_team_mg_41 x1, rn_wer_hatg_tun x1, wer_team_mg_41 x1
+- NEW `wer_156mir_4c_leig1` (0x143, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_156mir_4c_leig2` (0x144, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_156mir_4c_atr` (0x145, SUP, plu_atrs): wer_com_art_plat x1, wer_sdkfz250a_11 x3, wer_team_mg_41 x3
+- `wer_156mir_cbn2` (0x201, COM): composition wer_com_pzgr_bat x1, wer_squad_phone_mot_rad x1 -> wer_com_pzgr_bat x1, wer_squad_phone_mech x1
+- NEW `wer_156mir_2b_ac81` (0x208, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_plat)
+- NEW `wer_156mir_2b_ac75` (0x203, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_156mir_5c_1p` (0x251, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_156mir_5c_2p` (0x252, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_156mir_5c_3p` (0x253, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_156mir_5c_mt` (0x255, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_156mir_5c_mg` (0x256, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_156mir_coy6` (0x260, COMC): composition wer_com_pzgr_coym x1, wer_squad_gren x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_156mir_6c_1p` (0x261, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_156mir_6c_2p` (0x262, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw36 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_156mir_6c_mt` (0x265, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_156mir_6c_mg` (0x266, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- NEW `wer_156mir_8c_com` (0x280, COMC, plu_field_com): wer_com_pinf_coy x1, wer_squad_phone x1
+- NEW `wer_156mir_8c_sap` (0x281, UNI, plu_saps): wer_com_pinf_plat x1, wer_squad_engid_43a x3
+- NEW `wer_156mir_8c_atg` (0x282, SUP, pl_pak40): wer_com_art_plat x1, rn_wer_hatg_tun x2, wer_team_mg_41 x1, rn_wer_hatg_tun x1, wer_team_mg_41 x1
+- NEW `wer_156mir_8c_leig1` (0x283, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_156mir_8c_atr` (0x285, SUP, plu_atrs): wer_com_art_plat x1, wer_sdkfz250a_11 x3, wer_team_mg_41 x3
+### p_we_146ar  NEW FORMATION under p_we_16mid (name key op_we_146ar, ai USER)
+### p_we_146ar  (146 AR: new formation under 16 PzGr Div (30 July 146 AR: HQ, FO teams, 4th battery))
+- NEW `wer_146ar_hq` (0x0, CAMP, plu_rgt_arty): wer_com_spam x1, wer_squad_sup_mot x4;0;0;16, wer_squad_spam x2;0;0;8
+- NEW `wer_146ar_1b_ac` (0x111, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_146ar_2b_ac` (0x121, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_146ar_3b_ac` (0x131, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_146ar_4b_hq` (0x240, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_146ar_4b_ac` (0x241, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_146ar_4b_1p` (0x242, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_146ar_5b_ac` (0x251, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_146ar_6b_ac` (0x261, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_146ar_7b_ac` (0x371, CTRL, plu_fo): wer_corr_art x1(wer_artsup_sk18_plat)
+- NEW `wer_146ar_8b_ac` (0x381, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_sfh414f_plat)
+- NEW `wer_146ar_9b_ac` (0x391, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_sfh414f_plat)
+### p_we_126mir  (126 MIR: 30 July 126 MIR structure (8th coy already present))
+- NEW `wer_126mir_1b_ac81` (0x102, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_plat)
+- NEW `wer_126mir_1b_ac75` (0x103, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_126mir_coy1` (0x110, COMC): composition wer_com_pzgr_coym x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_126mir_1c_1p` (0x111, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_126mir_1c_2p` (0x112, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_126mir_1c_3p` (0x113, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_126mir_1c_mt` (0x115, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_126mir_1c_mg` (0x116, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_126mir_coy2` (0x120, COMC): composition wer_com_pzgr_coym x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_126mir_2c_1p` (0x121, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_126mir_2c_2p` (0x122, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_126mir_2c_mt` (0x125, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_126mir_2c_mg` (0x126, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_126mir_coy3` (0x130, COMC): composition wer_com_pzgr_coym x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_126mir_3c_1p` (0x131, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_126mir_coy4` (0x140, COMC): composition wer_com_pinf_coy x1 -> wer_com_pinf_coy x1, wer_squad_phone x1
+- `wer_126mir_4c_1p` (0x141, UNI): composition wer_com_pinf_plat x1, wer_squad_engid_43a x2, wer_squad_engid_43a2 x1 -> wer_com_pinf_plat x1, wer_squad_engid_43a x3
+- `wer_126mir_4c_2p` (0x142, SUP): composition wer_com_art_plat x1, wer_pak40 x1, wer_pak97_38 x2 -> wer_com_art_plat x1, rn_wer_hatg_tun x2, wer_team_mg_41 x1, rn_wer_hatg_tun x1, wer_team_mg_41 x1
+- `wer_126mir_4c_3p` (0x143, SUP): composition wer_com_art_batm x1, wer_squad_phone x1, wer_com_art_plat x1, rn_wer_leig x2, wer_com_art_plat x1, rn_wer_leig x2 -> wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_126mir_4c_leig2` (0x148, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_126mir_4c_atr` (0x145, SUP, plu_atrs): wer_com_art_plat x1, wer_sdkfz250a_11 x3, wer_team_mg_41 x3
+- `wer_126mir_cbn2` (0x201, COM): composition wer_com_pzgr_bat x1, wer_squad_phone_mot_rad x1 -> wer_com_pzgr_bat x1, wer_squad_phone_mech x1
+- NEW `wer_126mir_2b_ac81` (0x202, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_plat)
+- NEW `wer_126mir_2b_ac75` (0x203, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_126mir_coy5` (0x250, COMC): composition wer_com_pzgr_coym x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_126mir_5c_1p` (0x251, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_126mir_5c_2p` (0x252, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_126mir_5c_3p` (0x253, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_126mir_5c_mt` (0x255, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_126mir_5c_mg` (0x256, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_126mir_coy6` (0x260, COMC): composition wer_com_pzgr_coym x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_126mir_6c_1p` (0x261, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_126mir_6c_2p` (0x262, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_126mir_6c_mt` (0x265, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_126mir_6c_mg` (0x266, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+### p_we_128mir  (128 MIR: 30 July 128 MIR structure)
+- NEW `wer_128mir_1b_ac81` (0x102, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_plat)
+- NEW `wer_128mir_1b_ac75` (0x103, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_128mir_coy1` (0x110, COMC): composition wer_com_pzgr_coym x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_128mir_1c_1p` (0x111, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_1c_2p` (0x112, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_1c_3p` (0x113, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_128mir_1c_mt` (0x115, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_128mir_1c_mg` (0x116, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_128mir_coy2` (0x120, COMC): composition wer_com_pzgr_coym x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_128mir_2c_1p` (0x121, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_2c_2p` (0x122, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_2c_3p` (0x123, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_128mir_2c_mt` (0x125, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_128mir_2c_mg` (0x126, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_128mir_coy3` (0x130, COMC): composition wer_com_pzgr_coym x1, wer_mg42 x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_128mir_3c_1p` (0x131, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_3c_2p` (0x132, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_coy4` (0x140, COMC): composition wer_com_pinf_coy x1 -> wer_com_pinf_coy x1, wer_squad_phone x1
+- `wer_128mir_4c_1p` (0x141, UNI): composition wer_com_pinf_plat x1, wer_squad_engid_43a x2, wer_squad_engid_43a2 x1 -> wer_com_pinf_plat x1, wer_squad_engid_43a x3
+- `wer_128mir_4c_2p` (0x142, SUP): composition wer_com_art_plat x1, wer_pak40 x1, wer_pak97_38 x2 -> wer_com_art_plat x1, rn_wer_hatg_tun x2, wer_team_mg_41 x1, rn_wer_hatg_tun x1, wer_team_mg_41 x1
+- `wer_128mir_4c_3p` (0x143, SUP): composition wer_com_art_batm x1, wer_squad_phone x1, wer_com_art_plat x1, rn_wer_leig x2, wer_com_art_plat x1, rn_wer_leig x2 -> wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_128mir_4c_leig2` (0x148, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_128mir_4c_atr` (0x145, SUP, plu_atrs): wer_com_art_plat x1, wer_sdkfz250a_11 x3, wer_team_mg_41 x3
+- `wer_128mir_cbn2` (0x201, COM): composition wer_com_pzgr_bat x1, wer_squad_phone_mot_rad x1 -> wer_com_pzgr_bat x1, wer_squad_phone_mech x1
+- NEW `wer_128mir_2b_ac81` (0x202, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_plat)
+- NEW `wer_128mir_2b_ac75` (0x203, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_leig_plat)
+- `wer_128mir_coy5` (0x250, COMC): composition wer_com_pzgr_coym x1, wer_mg42 x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_128mir_5c_1p` (0x251, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_5c_2p` (0x252, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_5c_3p` (0x253, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_128mir_5c_mt` (0x255, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_128mir_5c_mg` (0x256, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- `wer_128mir_coy6` (0x260, COMC): composition wer_com_pzgr_coym x1, wer_mg42 x1 -> wer_com_pzgr_coym x1, wer_squad_atr x1
+- `wer_128mir_6c_1p` (0x261, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_mg42 x2 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- `wer_128mir_6c_2p` (0x262, UNI): composition wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3, wer_grw34 x1, wer_mg42 x1 -> wer_com_pzgr_platm x1, wer_squad_pzgr_43am x3
+- NEW `wer_128mir_6c_mt` (0x265, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+- NEW `wer_128mir_6c_mg` (0x266, SUP, pl_mg42): wer_com_pzgr_platm x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- NEW `wer_128mir_8c_com` (0x288, COMC, plu_field_com): wer_com_pinf_coy x1, wer_squad_phone x1
+- `wer_128mir_8c_1p` (0x281, UNI): composition wer_com_pinf_plat x1, wer_squad_engid_43a x2, wer_squad_engid_43a2 x1 -> wer_com_pinf_plat x1, wer_squad_engid_43a x3
+- NEW `wer_128mir_8c_atg` (0x282, SUP, pl_pak40): wer_com_art_plat x1, rn_wer_hatg_tun x2, wer_team_mg_41 x1, rn_wer_hatg_tun x1, wer_team_mg_41 x1
+- `wer_128mir_8c_3p` (0x283, SUP): composition wer_com_art_batm x1, wer_squad_phone x1, wer_com_art_plat x1, rn_wer_leig x2, wer_com_art_plat x1, rn_wer_leig x2 -> wer_com_art_plat x1, wer_leig18 x2
+- NEW `wer_128mir_8c_atr` (0x285, SUP, plu_atrs): wer_com_art_plat x1, wer_sdkfz250a_11 x3, wer_team_mg_41 x3
+### p_we_23td  (51 eng bn HQ + 1 coy (2 and 3 coy already present))
+- NEW `wer_51sbn_com` (0x101, COM, plu_commander): wer_com_inf_bat x1, wer_squad_phone x1
+- NEW `wer_51sbn_1c_com` (0x110, COMC, plu_field_com): wer_com_pinf_coy x1
+- NEW `wer_51sbn_1c_1p` (0x111, UNI, plu_saps): wer_com_pinf_plat x1, wer_squad_engid_43a x2, wer_squad_engid_43a2 x2, wer_flamer x1
+- NEW `wer_51sbn_1c_2p` (0x112, UNI, plu_saps): wer_com_pinf_plat x1, wer_squad_engid_43a x2, wer_squad_engid_43a2 x2, wer_flamer x1
+- NEW `wer_51sbn_1c_3p` (0x113, UNI, plu_saps): wer_com_pinf_plat x1, wer_squad_engid_43a x2, wer_squad_engid_43a2 x2, wer_flamer x1
+- NEW `wer_51sbn_1c_mg` (0x114, SUP, pl_mg42): wer_com_pinf_plat x1, wer_com_hw_sq x1, wer_mg42_rc5 x2, wer_com_hw_sq x1, wer_mg42_rc5 x2
+- NEW `wer_51sbn_1c_mt` (0x115, SUP, plu_mortars): wer_com_art_plat x1, wer_squad_phone x1, wer_com_hw_sq x1, wer_grw34 x2
+### p_we_23td  (23 recon bn: HQ, FO, armoured-car coy, 2 scout coys, heavy coy (APC coy already present))
+- NEW `wer_23rb_com` (0x201, COM, plu_commander): wer_com_inf_bat x1
+- NEW `wer_23rb_ac81` (0x202, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_grw34_sec)
+- NEW `wer_23rb_1c_com` (0x210, COMC, plu_field_com): wer_com_pzgr_scout_coy x1, wer_com_pzgr_scout_coy1 x1
+- NEW `wer_23rb_1c_1p` (0x211, SCT, pl_sdkfz232): wer_sdkfz232_8_com x1, wer_sdkfz232_8 x2, wer_sdkfz231_8 x3
+- NEW `wer_23rb_3c_com` (0x230, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_23rb_3c_1p` (0x231, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_43a x3
+- NEW `wer_23rb_3c_2p` (0x232, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_43a x3
+- NEW `wer_23rb_3c_3p` (0x233, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_43a x3
+- NEW `wer_23rb_3c_mg` (0x234, SUP, pl_mg42): wer_com_art_plat x1, wer_com_hw_sq x1, wer_mg34 x2, wer_com_hw_sq x1, wer_mg34 x2
+- NEW `wer_23rb_3c_mt` (0x235, SUP, plu_mortars): wer_com_hw_sq x1, wer_grw36 x3
+- NEW `wer_23rb_4c_com` (0x240, COMC, plu_field_com): wer_com_inf_coy x1
+- NEW `wer_23rb_4c_1p` (0x241, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_43a x3
+- NEW `wer_23rb_4c_2p` (0x242, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_43a x3
+- NEW `wer_23rb_4c_3p` (0x243, SCT, plu_scouts): wer_com_scout_plat x1, wer_squad_scout_43a x3
+- NEW `wer_23rb_4c_mt` (0x245, SUP, plu_mortars): wer_com_hw_sq x1, wer_grw36 x3
+- NEW `wer_23rb_5c_com` (0x250, COMC, plu_field_com): wer_com_pinf_coy x1, wer_squad_phone x1
+- NEW `wer_23rb_5c_eng` (0x251, SUP, plu_saps): wer_com_pinf_plat x1, wer_squad_engid_43a x4
+- NEW `wer_23rb_5c_atg` (0x252, SUP, pl_pak35): wer_com_art_plat x1, wer_pak38 x1, wer_team_mg_41 x1, wer_pak38 x1, wer_team_mg_41 x1, wer_pak38 x1, wer_team_mg_41 x1
+- NEW `wer_23rb_5c_art1` (0x253, SUP, pl_leig): wer_com_art_plat x1, wer_leig18 x2
+### p_we_128ar  NEW FORMATION under p_we_23td (name key op_we_128ar, ai USER)
+- MOVED `wer_128ar_1abat` (0x112, SUP, name op_we_128ar_1b2) from p_we_23td: gun platoon of battery 1
+- MOVED `wer_128ar_2abat` (0x122, SUP, name op_we_128ar_2b2) from p_we_23td: gun platoon of battery 2
+- MOVED `wer_128ar_3abat` (0x134, SUP, name op_we_128ar_3b4) from p_we_23td: gun platoon of battery 3
+### p_we_128ar  (128 AR: new formation under 23 PzD (30 July 128 AR: HQ, FO teams, 3rd battery) + the 17 July I/128 AR batteries)
+- NEW `wer_128ar_hq` (0x0, CAMP, plu_rgt_arty): wer_com_spam x1, wer_squad_sup_mot x4;0;0;16, wer_squad_spam x2;0;0;8
+- NEW `wer_128ar_1b_ac` (0x111, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_128ar_2b_ac` (0x121, CTRL, plu_fo): wer_com_art_plat x1, wer_corr_artm x1(wer_artsup_lefh_plat)
+- NEW `wer_128ar_3b_hq` (0x130, COMC, plu_batcmd): wer_com_art_batm x1, wer_squad_phone x1, wer_corr_artm x1
+- NEW `wer_128ar_3b_ac` (0x131, CTRL, plu_fo): wer_pz3jbef_ccom x1(wer_artsup_lefh_plat)
+- NEW `wer_128ar_3b_1p` (0x132, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_128ar_3b_2p` (0x133, SUP, pl_lefh): wer_com_art_plat x1, wer_lefh18m x2, wer_team_mg_41 x1
+- NEW `wer_128ar_4b_ac` (0x241, CTRL, plu_fo): wer_pz3jbef_ccom x1(wer_artsup_lefh_plat)
+- NEW `wer_128ar_5b_ac` (0x251, CTRL, plu_fo): wer_corr_art x1(wer_artsup_lefh_plat)
+- NEW `wer_128ar_6b_ac` (0x261, CTRL, plu_fo): wer_corr_art x1(wer_artsup_lefh_plat)
+- NEW `wer_128ar_7b_ac` (0x371, CTRL, plu_fo): wer_corr_art x1(wer_artsup_sk18_plat)
+- NEW `wer_128ar_8b_ac` (0x381, CTRL, plu_fo): wer_corr_art x1(wer_artsup_sfh414f_plat)
+- NEW `wer_128ar_9b_ac` (0x391, CTRL, plu_fo): wer_corr_art x1(wer_artsup_sfh414f_plat)
+### Tank and SPG companies split into command + platoons (30 July pattern)
+- `wer_306id_mar_coy1` (0x9) -> `wer_306id_mar_coy1_com` command (rn_wer_atspg_ccom x1) + `wer_306id_mar_coy1` (rn_wer_atspg_com x1, rn_wer_atspg x3) + `wer_306id_mar_coy1_2p` (rn_wer_atspg_com x1, rn_wer_atspg x3)
+- `wer_210atbn_stug` (0x10) -> `wer_210atbn_stug_com` command (wer_stug3f8_ccom x1, wer_stug3f8 x2) + `wer_210atbn_stug` (wer_stug3f8_com x1, wer_stug3f8 x2) + `wer_210atbn_stug_2p` (wer_stug3f8_com x1, wer_stug3f8 x2)
+- `wer_201tr_ltc1` (0x110) -> `wer_201tr_ltc1_com` command (wer_pz3l_ccom x1) + `wer_201tr_ltc1` (wer_pz3m_com x1, rn_wer_pz3lg x2, wer_pz3nes x1) + `wer_201tr_ltc1_2p` (wer_pz3l_com x1, rn_wer_pz3lg x2) + `wer_201tr_ltc1_3p` (wer_pz4g_com x1, rn_wer_pz4lg x3)
+- `wer_201tr_ltc2` (0x120) -> `wer_201tr_ltc2_com` command (wer_pz3m_ccom x1) + `wer_201tr_ltc2` (wer_pz3m_com x1, rn_wer_pz3lg x2, wer_pz3ne x1) + `wer_201tr_ltc2_2p` (wer_pz3l_com x1, rn_wer_pz3lg x2, wer_pz3n x1) + `wer_201tr_ltc2_3p` (wer_pz4f2_com x1, rn_wer_pz4lg x3)
+- `wer_201tr_mtc3` (0x130) -> `wer_201tr_mtc3_com` command (wer_pz4f2_ccom x1) + `wer_201tr_mtc3` (wer_pz4g_com x1, rn_wer_pz4lg x4) + `wer_201tr_mtc3_2p` (wer_pz4g_com x1, rn_wer_pz4lg x4)
+- `wer_201tr_mtc4` (0x140) -> `wer_201tr_mtc4_com` command (wer_pz4g_ccom x1) + `wer_201tr_mtc4` (wer_pz4g_com x1, rn_wer_pz4lg x4) + `wer_201tr_mtc4_2p` (wer_pz4f2_com x1, rn_wer_pz4lg x4)
+- `wer_201tr_asgun9` (0x190) -> `wer_201tr_asgun9_com` command (wer_stuig33b_ccom x1) + `wer_201tr_asgun9` (wer_stuig33b_com x1, wer_stuig33b x1) + `wer_201tr_asgun9_2p` (wer_stuig33b_com x1, wer_stuig33b x1) + `wer_201tr_asgun9_3p` (wer_stuig33b_com x1, wer_stuig33b x1)
+- `wer_116tbn_ltc1` (0x110) -> `wer_116tbn_ltc1_com` command (wer_pz3l_ccom x1) + `wer_116tbn_ltc1` (wer_pz3m_com x1, rn_wer_pz3lg x2) + `wer_116tbn_ltc1_2p` (wer_pz3l_com x1, rn_wer_pz3lg x2)
+- `wer_116tbn_mtc2` (0x120) -> `wer_116tbn_mtc2_com` command (wer_pz4g_ccom x1) + `wer_116tbn_mtc2` (wer_pz4f2_com x1, rn_wer_pz4lg x3) + `wer_116tbn_mtc2_2p` (wer_pz3l_com x1, rn_wer_pz3lg x2, wer_pz4f1 x1)
+- `wer_116tbn_mtc3` (0x130) -> `wer_116tbn_mtc3_com` command (wer_pz3l_ccom x1, rn_wer_pz3lg x1) + `wer_116tbn_mtc3` (wer_pz3m_com x1, rn_wer_pz3lg x2) + `wer_116tbn_mtc3_2p` (wer_pz3l_com x1, rn_wer_pz3lg x2)
+- `ra_6mr_tcoy1` (0x410) -> `ra_6mr_tcoy1_com` command (rn_rkka_t34_42_ccom x1) + `ra_6mr_tcoy1` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_6mr_tcoy1_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_6mr_tcoy1_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_6mr_tcoy2` (0x420) -> `ra_6mr_tcoy2_com` command (rkka_t34_41_stz_ccom x1) + `ra_6mr_tcoy2` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_6mr_tcoy2_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_6mr_tcoy2_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_6mr_tcoy3` (0x430) -> `ra_6mr_tcoy3_com` command (rkka_t70_42_ccom x1) + `ra_6mr_tcoy3` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_6mr_tcoy3_2p` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_6mr_tcoy3_3p` (rkka_t70_42_com x1, rkka_t70_42 x2)
+- `ra_6mr_tcoy4` (0x440) -> `ra_6mr_tcoy4_com` command (rkka_t70_42_ccom x1) + `ra_6mr_tcoy4` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_6mr_tcoy4_2p` (rkka_t70_42_com x1, rkka_t70_42 x2)
+- `ra_5mr_tcoy1` (0x410) -> `ra_5mr_tcoy1_com` command (rn_rkka_t34_42_ccom x1) + `ra_5mr_tcoy1` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_5mr_tcoy1_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_5mr_tcoy1_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_5mr_tcoy2` (0x420) -> `ra_5mr_tcoy2_com` command (rkka_t34_41_stz_ccom x1) + `ra_5mr_tcoy2` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_5mr_tcoy2_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_5mr_tcoy2_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_5mr_tcoy3` (0x430) -> `ra_5mr_tcoy3_com` command (rkka_t70_42_ccom x1) + `ra_5mr_tcoy3` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_5mr_tcoy3_2p` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_5mr_tcoy3_3p` (rkka_t70_42_com x1, rkka_t70_42 x2)
+- `ra_5mr_tcoy4` (0x440) -> `ra_5mr_tcoy4_com` command (rkka_t70_42_ccom x1) + `ra_5mr_tcoy4` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_5mr_tcoy4_2p` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_5mr_tcoy4_3p` (rkka_t70_42_com x1, rkka_t70_42 x1)
+- `ra_4mr_tcoy1` (0x410) -> `ra_4mr_tcoy1_com` command (rn_rkka_t34_42_ccom x1) + `ra_4mr_tcoy1` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_4mr_tcoy1_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_4mr_tcoy1_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_4mr_tcoy2` (0x420) -> `ra_4mr_tcoy2_com` command (rkka_t34_41_stz_ccom x1) + `ra_4mr_tcoy2` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_4mr_tcoy2_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_4mr_tcoy2_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_4mr_tcoy3` (0x430) -> `ra_4mr_tcoy3_com` command (rkka_t70_42_ccom x1) + `ra_4mr_tcoy3` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_4mr_tcoy3_2p` (rkka_t70_42_com x1, rkka_t70_42 x2)
+- `ra_4mr_tcoy4` (0x440) -> `ra_4mr_tcoy4_com` command (rkka_t70_42_ccom x1) + `ra_4mr_tcoy4` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_4mr_tcoy4_2p` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_4mr_tcoy4_3p` (rkka_t70_42_com x1, rkka_t70_42 x1)
+- `ra_37tbde_tcoy1` (0x110) -> `ra_37tbde_tcoy1_com` command (rn_rkka_t34_42_ccom x1) + `ra_37tbde_tcoy1` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_37tbde_tcoy1_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_37tbde_tcoy1_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_37tbde_tcoy2` (0x120) -> `ra_37tbde_tcoy2_com` command (rkka_t34_41_stz_ccom x1) + `ra_37tbde_tcoy2` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_37tbde_tcoy2_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_37tbde_tcoy3` (0x130) -> `ra_37tbde_tcoy3_com` command (rkka_t70_42_ccom x1) + `ra_37tbde_tcoy3` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_37tbde_tcoy3_2p` (rkka_t70_42_com x1, rkka_t70_42 x2)
+- `ra_37tbde_tcoy4` (0x210) -> `ra_37tbde_tcoy4_com` command (rn_rkka_t34_42_ccom x1) + `ra_37tbde_tcoy4` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_37tbde_tcoy4_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_37tbde_tcoy5` (0x220) -> `ra_37tbde_tcoy5_com` command (rkka_t70_42_ccom x1) + `ra_37tbde_tcoy5` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_37tbde_tcoy5_2p` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_37tbde_tcoy5_3p` (rkka_t70_42_com x1, rkka_t70_42 x1)
+- `ra_37tbde_tcoy6` (0x230) -> `ra_37tbde_tcoy6_com` command (rkka_t70_42_ccom x1) + `ra_37tbde_tcoy6` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_37tbde_tcoy6_2p` (rkka_t70_42_com x1, rkka_t70_42 x1)
+- `ra_32tbde_tcoy1` (0x110) -> `ra_32tbde_tcoy1_com` command (rn_rkka_t34_42_ccom x1) + `ra_32tbde_tcoy1` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_32tbde_tcoy1_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_32tbde_tcoy1_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_32tbde_tcoy2` (0x120) -> `ra_32tbde_tcoy2_com` command (rn_rkka_t34_42_ccom x1) + `ra_32tbde_tcoy2` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_32tbde_tcoy2_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_32tbde_tcoy2_3p` (rn_rkka_t34_com x1, rn_rkka_t34 x1)
+- `ra_32tbde_tcoy3` (0x130) -> `ra_32tbde_tcoy3_com` command (rkka_t70_42_ccom x1) + `ra_32tbde_tcoy3` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_32tbde_tcoy3_2p` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_32tbde_tcoy3_3p` (rkka_t60_41_com x1, rkka_t60_41 x2)
+- `ra_22stp_1c` (0x110) -> `ra_22stp_1c_com` command (rn_rkka_t34_42_ccom x1, rn_rkka_t34 x1) + `ra_22stp_1c` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_22stp_1c_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_22stp_2c` (0x120) -> `ra_22stp_2c_com` command (rkka_t34_41_stz_ccom x1) + `ra_22stp_2c` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_22stp_2c_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_22stp_2c_3p` (rn_rkka_t34_com x1, rkka_ot34_41_stz x2)
+- `ra_22stp_3c` (0x130) -> `ra_22stp_3c_com` command (rn_rkka_t34_42_ccom x1) + `ra_22stp_3c` (rn_rkka_t34_com x1, rn_rkka_t34 x2) + `ra_22stp_3c_2p` (rn_rkka_t34_com x1, rn_rkka_t34 x2)
+- `ra_22stp_4c` (0x140) -> `ra_22stp_4c_com` command (rkka_t70_42_ccom x1) + `ra_22stp_4c` (rkka_t70_42_com x1, rkka_t70_42 x2) + `ra_22stp_4c_2p` (rkka_t70_42_com x1, rkka_t70_42 x1)
+### Batteries completed: FO <-> gun platoon in the same group
+- NEW `wer_46ar_1abat_ac` (0x24, CTRL, FO lefh) in p_we_306id for `wer_46ar_1abat`
+- NEW `wer_72ar_1abat_ac` (0x14, CTRL, FO lefh) in p_we_306id for `wer_72ar_1abat`
+- NEW `wer_306id_1abat_ac` (0x1, CTRL, FO lefh) in p_we_306id for `wer_306id_1abat`
+- NEW `wer_581ir_12cmg_4pmo_1s_ac` (0x3c3, CTRL, FO grw34) in p_we_581ir for `wer_581ir_12cmg_4pmo_1s`
+- `wer_581ir_1b_ac81` (p_we_581ir) moved to group 0x140 (code 0x143) where its grw34 guns are: wer_581ir_4cmg_4pmo_1s, wer_581ir_4cmg_4pmo_2s
+- `wer_581ir_2b_ac81` (p_we_581ir) moved to group 0x280 (code 0x283) where its grw34 guns are: wer_581ir_8cmg_4pmo_1s, wer_581ir_8cmg_4pmo_2s
+- NEW `wer_581ir_3b_guns` (0x303, SUP, wer_grw34 x2) in p_we_581ir for FO `wer_581ir_3b_ac81`
+- NEW `wer_306ar_2b_guns` (0x122, SUP, wer_lefh18m x2) in p_we_306ar for FO `wer_306ar_2b_ac`
+- NEW `wer_306ar_2b_hq` (0x120, COMC, battery command) in p_we_306ar
+- NEW `wer_306ar_6b_guns` (0x262, SUP, wer_lefh18m x2) in p_we_306ar for FO `wer_306ar_6b_ac`
+- NEW `wer_306ar_6b_hq` (0x260, COMC, battery command) in p_we_306ar
+- NEW `wer_306ar_8b_guns` (0x382, SUP, wer_lefh18m x2) in p_we_306ar for FO `wer_306ar_8b_ac`
+- NEW `wer_306ar_8b_hq` (0x380, COMC, battery command) in p_we_306ar
+- NEW `wer_306ar_9b_guns` (0x392, SUP, wer_sfh414f x2) in p_we_306ar for FO `wer_306ar_9b_ac`
+- NEW `wer_306ar_9b_hq` (0x390, COMC, battery command) in p_we_306ar
+- NEW `wer_306ar_7b_guns` (0x372, SUP, wer_lefh18m x2) in p_we_306ar for FO `wer_306ar_7b_ac`
+- NEW `wer_306ar_7b_hq` (0x370, COMC, battery command) in p_we_306ar
+- NEW `wer_306ar_1b_guns` (0x112, SUP, wer_lefh18m x2) in p_we_306ar for FO `wer_306ar_1b_ac`
+- NEW `wer_306ar_1b_hq` (0x110, COMC, battery command) in p_we_306ar
+- NEW `wer_572ir_12cmg_4pmo_1s_ac` (0x3c3, CTRL, FO grw34) in p_we_572ir for `wer_572ir_12cmg_4pmo_1s`
+- NEW `wer_572ir_13c_guns` (0xd2, SUP, wer_leig18 x2) in p_we_572ir for FO `wer_572ir_13c_ac75`
+- NEW `wer_572ir_3b_guns` (0x304, SUP, wer_grw34 x2) in p_we_572ir for FO `wer_572ir_3b_ac81`
+- NEW `wer_302ar_2b_guns` (0x122, SUP, wer_lefh18m x2) in p_we_302ar for FO `wer_302ar_2b_ac`
+- NEW `wer_302ar_2b_hq` (0x120, COMC, battery command) in p_we_302ar
+- NEW `wer_302ar_6b_guns` (0x262, SUP, wer_lefh18m x2) in p_we_302ar for FO `wer_302ar_6b_ac`
+- NEW `wer_302ar_6b_hq` (0x260, COMC, battery command) in p_we_302ar
+- NEW `wer_302ar_8b_guns` (0x382, SUP, wer_lefh18m x2) in p_we_302ar for FO `wer_302ar_8b_ac`
+- NEW `wer_302ar_8b_hq` (0x380, COMC, battery command) in p_we_302ar
+- NEW `wer_302ar_9b_guns` (0x392, SUP, wer_sfh414f x2) in p_we_302ar for FO `wer_302ar_9b_ac`
+- NEW `wer_302ar_9b_hq` (0x390, COMC, battery command) in p_we_302ar
+- NEW `wer_302ar_7b_guns` (0x372, SUP, wer_lefh18m x2) in p_we_302ar for FO `wer_302ar_7b_ac`
+- NEW `wer_302ar_7b_hq` (0x370, COMC, battery command) in p_we_302ar
+- NEW `wer_302ar_1b_guns` (0x112, SUP, wer_lefh18m x2) in p_we_302ar for FO `wer_302ar_1b_ac`
+- NEW `wer_302ar_1b_hq` (0x110, COMC, battery command) in p_we_302ar
+- NEW `wer_513ir_12cmg_4pmo_1s_ac` (0x3c3, CTRL, FO grw34) in p_we_513ir for `wer_513ir_12cmg_4pmo_1s`
+- `wer_513ir_1b_ac81` (p_we_513ir) moved to group 0x140 (code 0x143) where its grw34 guns are: wer_513ir_4cmg_4pmo_1s, wer_513ir_4cmg_4pmo_2s
+- `wer_513ir_2b_ac81` (p_we_513ir) moved to group 0x280 (code 0x283) where its grw34 guns are: wer_513ir_8cmg_4pmo_1s, wer_513ir_8cmg_4pmo_2s
+- NEW `wer_513ir_3b_guns` (0x303, SUP, wer_grw34 x2) in p_we_513ir for FO `wer_513ir_3b_ac81`
+- `wer_513ir_13c_ac75` (p_we_513ir) moved to group 0x0 (code 0x1) where its leig guns are: wer_513ir_supcoy
+- NEW `wer_294ar_2b_hq` (0x120, COMC, battery command) in p_we_294ar
+- NEW `wer_294ar_6b_guns` (0x262, SUP, wer_lefh18m x2) in p_we_294ar for FO `wer_294ar_6b_ac`
+- NEW `wer_294ar_6b_hq` (0x260, COMC, battery command) in p_we_294ar
+- NEW `wer_294ar_8b_guns` (0x382, SUP, wer_lefh18m x2) in p_we_294ar for FO `wer_294ar_8b_ac`
+- NEW `wer_294ar_8b_hq` (0x380, COMC, battery command) in p_we_294ar
+- `wer_294ar_9b_ac` (p_we_294ar) moved to group 0x130 (code 0x131) where its sfh guns are: wer_294ar_1c_3b
+- NEW `wer_294ar_7b_guns` (0x372, SUP, wer_lefh18m x2) in p_we_294ar for FO `wer_294ar_7b_ac`
+- NEW `wer_294ar_7b_hq` (0x370, COMC, battery command) in p_we_294ar
+- NEW `wer_294ar_1b_guns` (0x112, SUP, wer_lefh18m x2) in p_we_294ar for FO `wer_294ar_1b_ac`
+- NEW `wer_294ar_1b_hq` (0x110, COMC, battery command) in p_we_294ar
+- NEW `wer_23rb_5c_art1_ac` (0x254, CTRL, FO leig) in p_we_23td for `wer_23rb_5c_art1`
+- `wer_23rb_ac81` (p_we_23td) moved to group 0x110 (code 0x116) where its grw34 guns are: wer_51sbn_1c_mt
+- NEW `wer_126mir_2c_mt_ac` (0x124, CTRL, FO grw34) in p_we_126mir for `wer_126mir_2c_mt`
+- NEW `wer_126mir_4c_3p_ac` (0x146, CTRL, FO leig) in p_we_126mir for `wer_126mir_4c_3p`
+- NEW `wer_126mir_6c_mt_ac` (0x264, CTRL, FO grw34) in p_we_126mir for `wer_126mir_6c_mt`
+- NEW `wer_126mir_8c_3p_ac` (0x182, CTRL, FO leig) in p_we_126mir for `wer_126mir_8c_3p`
+- NEW `wer_126mir_5c_mt_ac` (0x254, CTRL, FO grw34) in p_we_126mir for `wer_126mir_5c_mt`
+- `wer_126mir_2b_ac81` (p_we_126mir) moved to group 0x110 (code 0x114) where its grw34 guns are: wer_126mir_1c_mt
+- NEW `wer_126mir_2b_guns` (0x202, SUP, wer_leig18 x2) in p_we_126mir for FO `wer_126mir_2b_ac75`
+- NEW `wer_126mir_1b_guns` (0x104, SUP, wer_grw34 x2) in p_we_126mir for FO `wer_126mir_1b_ac81`
+- NEW `wer_126mir_1b_guns_2` (0x105, SUP, wer_leig18 x2) in p_we_126mir for FO `wer_126mir_1b_ac75`
+- NEW `wer_128mir_2c_mt_ac` (0x124, CTRL, FO grw34) in p_we_128mir for `wer_128mir_2c_mt`
+- NEW `wer_128mir_4c_3p_ac` (0x146, CTRL, FO leig) in p_we_128mir for `wer_128mir_4c_3p`
+- NEW `wer_128mir_6c_mt_ac` (0x264, CTRL, FO grw34) in p_we_128mir for `wer_128mir_6c_mt`
+- NEW `wer_128mir_8c_3p_ac` (0x286, CTRL, FO leig) in p_we_128mir for `wer_128mir_8c_3p`
+- NEW `wer_128mir_5c_mt_ac` (0x254, CTRL, FO grw34) in p_we_128mir for `wer_128mir_5c_mt`
+- `wer_128mir_2b_ac81` (p_we_128mir) moved to group 0x110 (code 0x114) where its grw34 guns are: wer_128mir_1c_mt
+- NEW `wer_128mir_2b_guns` (0x202, SUP, wer_leig18 x2) in p_we_128mir for FO `wer_128mir_2b_ac75`
+- NEW `wer_128mir_1b_guns` (0x104, SUP, wer_grw34 x2) in p_we_128mir for FO `wer_128mir_1b_ac81`
+- NEW `wer_128mir_1b_guns_2` (0x105, SUP, wer_leig18 x2) in p_we_128mir for FO `wer_128mir_1b_ac75`
+- NEW `wer_128ar_2b_hq` (0x120, COMC, battery command) in p_we_128ar
+- `wer_128ar_5b_ac` (p_we_128ar) moved to group 0x130 (code 0x135) where its lefh guns are: wer_128ar_3b_1p, wer_128ar_3b_2p, wer_128ar_3abat
+- NEW `wer_128ar_6b_guns` (0x262, SUP, wer_lefh18m x2) in p_we_128ar for FO `wer_128ar_6b_ac`
+- NEW `wer_128ar_6b_hq` (0x260, COMC, battery command) in p_we_128ar
+- NEW `wer_128ar_8b_guns` (0x382, SUP, wer_sfh414f x2) in p_we_128ar for FO `wer_128ar_8b_ac`
+- NEW `wer_128ar_8b_hq` (0x380, COMC, battery command) in p_we_128ar
+- NEW `wer_128ar_9b_guns` (0x392, SUP, wer_sfh414f x2) in p_we_128ar for FO `wer_128ar_9b_ac`
+- NEW `wer_128ar_9b_hq` (0x390, COMC, battery command) in p_we_128ar
+- NEW `wer_128ar_1b_hq` (0x110, COMC, battery command) in p_we_128ar
+- NEW `wer_16mid_2rc_4p_ac` (0x625, CTRL, FO grw34) in p_we_16mid for `wer_16mid_2rc_4p`
+- NEW `wer_16mid_3rc_4p_ac` (0x635, CTRL, FO grw34) in p_we_16mid for `wer_16mid_3rc_4p`
+- NEW `wer_16mid_4rc_4p_ac` (0x645, CTRL, FO grw34) in p_we_16mid for `wer_16mid_4rc_4p`
+- NEW `wer_16mid_5rc_guns_ac` (0x655, CTRL, FO leig) in p_we_16mid for `wer_16mid_5rc_guns`
+- `wer_60mir_1b_ac81` (p_we_60mir) moved to group 0x110 (code 0x114) where its grw34 guns are: wer_60mir_1c_mt
+- `wer_60mir_1b_ac75` (p_we_60mir) moved to group 0x140 (code 0x146) where its leig guns are: wer_60mir_4c_leig1, wer_60mir_4c_leig2
+- NEW `wer_60mir_5c_mt_ac` (0x254, CTRL, FO grw34) in p_we_60mir for `wer_60mir_5c_mt`
+- `wer_60mir_2b_ac81` (p_we_60mir) moved to group 0x260 (code 0x264) where its grw34 guns are: wer_60mir_6c_mt
+- `wer_60mir_2b_ac75` (p_we_60mir) moved to group 0x280 (code 0x284) where its leig guns are: wer_60mir_8c_leig1
+- NEW `wer_60mir_2c_mt_ac` (0x124, CTRL, FO grw34) in p_we_60mir for `wer_60mir_2c_mt`
+- NEW `wer_60mir_gun_plat_ac` (0x1, CTRL, FO leig) in p_we_60mir for `wer_60mir_gun_plat`
+- `wer_156mir_1b_ac81` (p_we_156mir) moved to group 0x110 (code 0x114) where its grw34 guns are: wer_156mir_1c_mt
+- `wer_156mir_1b_ac75` (p_we_156mir) moved to group 0x140 (code 0x146) where its leig guns are: wer_156mir_4c_leig1, wer_156mir_4c_leig2
+- NEW `wer_156mir_5c_mt_ac` (0x254, CTRL, FO grw34) in p_we_156mir for `wer_156mir_5c_mt`
+- `wer_156mir_2b_ac81` (p_we_156mir) moved to group 0x260 (code 0x264) where its grw34 guns are: wer_156mir_6c_mt
+- `wer_156mir_2b_ac75` (p_we_156mir) moved to group 0x280 (code 0x284) where its leig guns are: wer_156mir_8c_leig1
+- NEW `wer_156mir_2c_mt_ac` (0x124, CTRL, FO grw34) in p_we_156mir for `wer_156mir_2c_mt`
+- NEW `wer_156mir_gun_plat_ac` (0x1, CTRL, FO leig) in p_we_156mir for `wer_156mir_gun_plat`
+- NEW `wer_146ar_2b_guns` (0x122, SUP, wer_lefh18m x2) in p_we_146ar for FO `wer_146ar_2b_ac`
+- NEW `wer_146ar_2b_hq` (0x120, COMC, battery command) in p_we_146ar
+- NEW `wer_146ar_5b_guns` (0x252, SUP, wer_lefh18m x2) in p_we_146ar for FO `wer_146ar_5b_ac`
+- NEW `wer_146ar_5b_hq` (0x250, COMC, battery command) in p_we_146ar
+- NEW `wer_146ar_6b_guns` (0x262, SUP, wer_lefh18m x2) in p_we_146ar for FO `wer_146ar_6b_ac`
+- NEW `wer_146ar_6b_hq` (0x260, COMC, battery command) in p_we_146ar
+- NEW `wer_146ar_8b_guns` (0x382, SUP, wer_sfh414f x2) in p_we_146ar for FO `wer_146ar_8b_ac`
+- NEW `wer_146ar_8b_hq` (0x380, COMC, battery command) in p_we_146ar
+- NEW `wer_146ar_9b_guns` (0x392, SUP, wer_sfh414f x2) in p_we_146ar for FO `wer_146ar_9b_ac`
+- NEW `wer_146ar_9b_hq` (0x390, COMC, battery command) in p_we_146ar
+- NEW `wer_146ar_1b_guns` (0x112, SUP, wer_lefh18m x2) in p_we_146ar for FO `wer_146ar_1b_ac`
+- NEW `wer_146ar_1b_hq` (0x110, COMC, battery command) in p_we_146ar
+- NEW `wer_146ar_3b_guns` (0x132, SUP, wer_lefh18m x2) in p_we_146ar for FO `wer_146ar_3b_ac`
+- NEW `wer_146ar_3b_hq` (0x130, COMC, battery command) in p_we_146ar
+- NEW `ra_32tbde_atc_1p_ac` (0x43, CTRL, FO zis3) in p_ra_32tbde for `ra_32tbde_atc_1p`
+- NEW `ra_32tbde_mtc_1p_ac` (0x354, CTRL, FO mt82) in p_ra_32tbde for `ra_32tbde_mtc_1p`
+- NEW `ra_37tbde_atc_1p_ac` (0x43, CTRL, FO zis3) in p_ra_37tbde for `ra_37tbde_atc_1p`
+- NEW `ra_37tbde_arty_bat1_ac` (0x13, CTRL, FO zis3) in p_ra_37tbde for `ra_37tbde_arty_bat1`
+- NEW `ra_37tbde_mtc_1p_ac` (0x353, CTRL, FO mt82) in p_ra_37tbde for `ra_37tbde_mtc_1p`
+- NEW `ra_4mr_1mt_1p_ac` (0x152, CTRL, FO mt82) in p_ra_4mrbde for `ra_4mr_1mt_1p`
+- NEW `ra_4mr_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_4mrbde for FO `ra_4mr_ac120mt1`
+- NEW `ra_4mr_2mt_1p_ac` (0x283, CTRL, FO mt82) in p_ra_4mrbde for `ra_4mr_2mt_1p`
+- NEW `ra_5mr_1mt_1p_ac` (0x152, CTRL, FO mt82) in p_ra_5mrbde for `ra_5mr_1mt_1p`
+- NEW `ra_5mr_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_5mrbde for FO `ra_5mr_ac120mt1`
+- NEW `ra_5mr_2mt_1p_ac` (0x283, CTRL, FO mt82) in p_ra_5mrbde for `ra_5mr_2mt_1p`
+- NEW `ra_6mr_1mt_1p_ac` (0x152, CTRL, FO mt82) in p_ra_6mrbde for `ra_6mr_1mt_1p`
+- NEW `ra_6mr_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_6mrbde for FO `ra_6mr_ac120mt1`
+- NEW `ra_6mr_2mt_1p_ac` (0x283, CTRL, FO mt82) in p_ra_6mrbde for `ra_6mr_2mt_1p`
+- NEW `ra_103rr_1mt_1p_ac` (0x154, CTRL, FO mt82) in p_ra_103rr for `ra_103rr_1mt_1p`
+- `ra_103rr_ac76gun` (p_ra_103rr) moved to group 0x70 (code 0x73) where its pp27 guns are: ra_103rr_gunc_1p, ra_103rr_gunc_2p
+- NEW `ra_103rr_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_103rr for FO `ra_103rr_ac120mt1`
+- NEW `ra_103rr_guns_2` (0x44, SUP, rkka_pm38 x2) in p_ra_103rr for FO `ra_103rr_ac120mt2`
+- `ra_103rr_3b_ac82mt` (p_ra_103rr) moved to group 0x3b0 (code 0x3b2) where its mt82 guns are: ra_103rr_3mt_1p
+- NEW `ra_103rr_2mt_1p_ac` (0x284, CTRL, FO mt82) in p_ra_103rr for `ra_103rr_2mt_1p`
+- `ra_105rr_1b_ac82mt` (p_ra_105rr) moved to group 0x150 (code 0x153) where its mt82 guns are: ra_105rr_1mt_1p, ra_105rr_1mt_2p
+- NEW `ra_105rr_guns` (0x44, SUP, rkka_pm38 x2) in p_ra_105rr for FO `ra_105rr_ac120mt2`
+- NEW `ra_105rr_guns_2` (0x45, SUP, rkka_pm38 x2) in p_ra_105rr for FO `ra_105rr_ac120mt3`
+- `ra_105rr_3b_ac82mt` (p_ra_105rr) moved to group 0x3b0 (code 0x3b3) where its mt82 guns are: ra_105rr_3mt_1p, ra_105rr_3mt_2p
+- NEW `ra_105rr_2mt_1p_ac` (0x283, CTRL, FO mt82) in p_ra_105rr for `ra_105rr_2mt_1p`
+- `ra_107rr_1b_ac82mt` (p_ra_107rr) moved to group 0x150 (code 0x152) where its mt82 guns are: ra_107rr_1mt_1p
+- NEW `ra_107rr_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_107rr for FO `ra_107rr_ac120mt1`
+- NEW `ra_107rr_guns_2` (0x44, SUP, rkka_pm38 x2) in p_ra_107rr for FO `ra_107rr_ac120mt2`
+- `ra_107rr_3b_ac82mt` (p_ra_107rr) moved to group 0x3b0 (code 0x3b4) where its mt82 guns are: ra_107rr_3mt_1p, ra_107rr_3mt_2p, ra_107rr_3mt_3p
+- NEW `ra_107rr_2mt_1p_ac` (0x283, CTRL, FO mt82) in p_ra_107rr for `ra_107rr_2mt_1p`
+- NEW `ra_84ar_2b_hq` (0x120, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_4b_guns` (0x242, SUP, rkka_zis3 x2) in p_ra_84ar for FO `ra_84ar_4b_ac`
+- NEW `ra_84ar_4b_hq` (0x240, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_5b_guns` (0x252, SUP, rkka_zis3 x2) in p_ra_84ar for FO `ra_84ar_5b_ac`
+- NEW `ra_84ar_5b_hq` (0x250, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_6b_guns` (0x262, SUP, rkka_m30_m38 x2) in p_ra_84ar for FO `ra_84ar_6b_ac`
+- NEW `ra_84ar_6b_hq` (0x260, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_1b_hq` (0x110, COMC, battery command) in p_ra_84ar
+- NEW `ra_84ar_3b_hq` (0x130, COMC, battery command) in p_ra_84ar
+- NEW `ra_116rr_guns` (0x43, SUP, rkka_pm38 x2) in p_ra_116rr for FO `ra_116rr_ac120mt1`
+- NEW `ra_116rr_guns_2` (0x44, SUP, rkka_pm38 x2) in p_ra_116rr for FO `ra_116rr_ac120mt2`
+- NEW `ra_116rr_1mt_1p_ac` (0x153, CTRL, FO mt82) in p_ra_116rr for `ra_116rr_1mt_1p`
+- NEW `ra_90ar_1b_guns` (0x112, SUP, rkka_zis3 x2) in p_ra_90ar for FO `ra_90ar_1b_ac`
+- NEW `ra_90ar_1b_hq` (0x110, COMC, battery command) in p_ra_90ar
+- NEW `ra_90ar_3b_hq` (0x130, COMC, battery command) in p_ra_90ar
+- NEW `ra_90ar_2b_hq` (0x120, COMC, battery command) in p_ra_90ar
+- NEW `ra_362rr_guns` (0x42, SUP, rkka_pm38 x2) in p_ra_362rr for FO `ra_362rr_ac120mt1`
+- NEW `ra_362rr_2mt_1p_ac` (0x282, CTRL, FO mt82) in p_ra_362rr for `ra_362rr_2mt_1p`
+- NEW `ra_362rr_1mt_1p_ac` (0x153, CTRL, FO mt82) in p_ra_362rr for `ra_362rr_1mt_1p`
+- `ra_724rr_1b_ac82mt` (p_ra_724rr) moved to group 0x150 (code 0x152) where its mt82 guns are: ra_724rr_1mt_1p
+- `ra_724rr_2b_ac82mt` (p_ra_724rr) moved to group 0x280 (code 0x283) where its mt82 guns are: ra_724rr_2mt_1p, ra_724rr_2mt_2p
+- NEW `ra_724rr_3b_guns` (0x305, SUP, rkka_mt82 x2) in p_ra_724rr for FO `ra_724rr_3b_ac82mt`
+- NEW `ra_724rr_guns` (0x42, SUP, rkka_pm38 x2) in p_ra_724rr for FO `ra_724rr_ac120mt1`
+- `ra_1328rr_1b_ac82mt` (p_ra_1328rr) moved to group 0x280 (code 0x283) where its mt82 guns are: ra_1328rr_2mt_1p, ra_1328rr_2mt_2p
+- `ra_1328rr_2b_ac82mt` (p_ra_1328rr) moved to group 0x3b0 (code 0x3b2) where its mt82 guns are: ra_1328rr_3mt_1p
+- NEW `ra_1328rr_3b_guns` (0x303, SUP, rkka_mt82 x2) in p_ra_1328rr for FO `ra_1328rr_3b_ac82mt`
+- NEW `ra_1328rr_guns` (0x42, SUP, rkka_pm38 x2) in p_ra_1328rr for FO `ra_1328rr_ac120mt1`
+- NEW `ra_1012ar_2b_hq` (0x120, COMC, battery command) in p_ra_1012ar
+- NEW `ra_1012ar_5b_guns` (0x252, SUP, rkka_zis3 x2) in p_ra_1012ar for FO `ra_1012ar_5b_ac`
+- NEW `ra_1012ar_5b_hq` (0x250, COMC, battery command) in p_ra_1012ar
+- NEW `ra_1012ar_9b_guns` (0x392, SUP, rkka_m30_m38 x2) in p_ra_1012ar for FO `ra_1012ar_9b_ac`
+- NEW `ra_1012ar_9b_hq` (0x390, COMC, battery command) in p_ra_1012ar
+- NEW `ra_1012ar_1b_hq` (0x110, COMC, battery command) in p_ra_1012ar
+- NEW `ra_1012ar_3b_hq` (0x130, COMC, battery command) in p_ra_1012ar
+- NEW `ra_291rr_1mt_1p_ac` (0x153, CTRL, FO mt82) in p_ra_291rr for `ra_291rr_1mt_1p`
+- `ra_291rr_2b_ac82mt` (p_ra_291rr) moved to group 0x280 (code 0x284) where its mt82 guns are: ra_291rr_2mt_1p, ra_291rr_2mt_2p, ra_291rr_2mt_3p
+- NEW `ra_291rr_guns` (0x44, SUP, rkka_pm38 x2) in p_ra_291rr for FO `ra_291rr_ac120mt2`
+- NEW `ra_291rr_guns_2` (0x45, SUP, rkka_pm38 x2) in p_ra_291rr for FO `ra_291rr_ac120mt3`
+- `ra_291rr_3b_ac82mt` (p_ra_291rr) moved to group 0x3b0 (code 0x3b2) where its mt82 guns are: ra_291rr_3mt_1p
+- NEW `ra_234ar_2b_hq` (0x120, COMC, battery command) in p_ra_234ar
+- NEW `ra_234ar_5b_guns` (0x252, SUP, rkka_zis3 x2) in p_ra_234ar for FO `ra_234ar_5b_ac`
+- NEW `ra_234ar_5b_hq` (0x250, COMC, battery command) in p_ra_234ar
+- NEW `ra_234ar_6b_guns` (0x262, SUP, rkka_m30_m38 x2) in p_ra_234ar for FO `ra_234ar_6b_ac`
+- NEW `ra_234ar_6b_hq` (0x260, COMC, battery command) in p_ra_234ar
+- NEW `ra_234ar_8b_guns` (0x382, SUP, rkka_zis3 x2) in p_ra_234ar for FO `ra_234ar_8b_ac`
+- NEW `ra_234ar_8b_hq` (0x380, COMC, battery command) in p_ra_234ar
+- NEW `ra_234ar_1b_hq` (0x110, COMC, battery command) in p_ra_234ar
+- NEW `ra_234ar_3b_hq` (0x130, COMC, battery command) in p_ra_234ar
+- 188 battery fixes
+### Battle-group slots
+- `wer_60mir_1`: reserve links p_we_16mid// -> p_we_16mid/p_we_146ar/
+- `wer_60mir_1`: SCT slot <- `wer_146ar_1b_ac`
+- `wer_60mir_2`: reserve links p_we_16mid// -> p_we_16mid/p_we_146ar/
+- `wer_60mir_2`: SCT slot <- `wer_60mir_5c_mt_ac`
+- `wer_60mir_2`: SUP slot <- `wer_60mir_5c_mt`
+- `wer_581ir_1`: reserve links p_we_306id// -> p_we_306id/p_we_306ar/
+- `wer_581ir_1`: SCT slot <- `wer_306ar_1b_ac`
+- `wer_581ir_1`: SUP slot <- `wer_581ir_4cmg_4pmo_1s`
+- `wer_581ir_5`: reserve links p_we_306id// -> p_we_306id/p_we_306ar/
+- `wer_581ir_5`: SCT slot <- `wer_581ir_2b_ac81`
+- `wer_581ir_5`: UNI slot <- `wer_581ir_5c_2p`
+- `wer_581ir_5`: SUP slot <- `wer_581ir_8cmg_4pmo_1s`
+- `wer_581ir_3`: reserve links p_we_306id// -> p_we_306id/p_we_306ar/
+- `wer_581ir_3`: SCT slot <- `wer_306ar_2b_ac`
+- `wer_572ir_3`: reserve links p_we_302id// -> p_we_302id/p_we_302ar/
+- `wer_572ir_3`: SCT slot <- `wer_302ar_1b_ac`
+- `wer_572ir_3`: SUP slot <- `wer_572ir_3b_guns`
+- `wer_513ir_bg`: reserve links p_we_294id// -> p_we_294id/p_we_294ar/
+- `wer_513ir_bg`: SCT slot <- `wer_294ar_1b_ac`
+- `wer_513ir_bg`: SUP slot <- `wer_513ir_14c_atg1`
+- `wer_513ir_1`: reserve links p_we_294id// -> p_we_294id/p_we_294ar/
+- `wer_513ir_1`: SCT slot <- `wer_513ir_1b_ac81`
+- `wer_513ir_1`: SUP slot <- `wer_513ir_4cmg_4pmo_1s`
+- `wer_513ir_2`: reserve links p_we_294id// -> p_we_294id/p_we_294ar/
+- `wer_513ir_2`: SCT slot <- `wer_294ar_4b_ac`
+- `wer_513ir_2`: SUP slot <- `wer_513ir_8cmg_4pmo_1s`
+- `wer_513ir_2`: SUP slot <- `wer_513ir_8cmg_4pmo_2s`
+- `wer_513ir_3`: reserve links p_we_294id// -> p_we_294id/p_we_294ar/
+- `wer_513ir_3`: SCT slot <- `wer_513ir_3b_ac81`
+- `wer_513ir_3`: SUP slot <- `wer_513ir_3b_guns`
+- `wer_513ir_3`: SUP slot <- `wer_513ir_12cmg_4pmo_1s`
+- `wer_306id_1`: reserve links // -> p_we_306ar//
+- `wer_306id_1`: SCT slot <- `wer_306ar_4b_ac`
+- `wer_306id_2`: reserve links // -> p_we_306ar//
+- `wer_306id_2`: SCT slot <- `wer_306id_1abat_ac`
+- `wer_306id_3`: reserve links // -> p_we_306ar//
+- `wer_306id_3`: SCT slot <- `wer_306ar_5b_ac`
+- `wer_306id_4`: reserve links // -> p_we_306ar//
+- `wer_306id_4`: SCT slot <- `wer_306at_ccoy_1p`
+- `wer_306id_4`: SUP slot <- `wer_306id_4tc_1mgp`
+- `wer_302id_1`: reserve links p_we_572ir// -> p_we_302ar/p_we_572ir/
+- `wer_302id_1`: SCT slot <- `wer_302ar_2b_ac`
+- `wer_302id_1`: SUP slot <- `wer_302at_atc1_p1`
+- `wer_302id_1`: SUP slot <- `wer_302at_atc1_p2`
+- `wer_302id_2`: reserve links p_we_572ir// -> p_we_302ar/p_we_572ir/
+- `wer_294id_1`: reserve links // -> p_we_294ar//
+- `wer_294id_1`: SCT slot <- `wer_294ar_5b_ac`
+- `wer_294id_2`: reserve links // -> p_we_294ar//
+- `wer_294id_2`: SCT slot <- `wer_294ar_9b_ac`
+- `wer_294id_2`: battery `wer_294ar_1c_3b` removed from the group (its FO `wer_294ar_9b_ac` is in it); it stays in reserve
+- `wer_294id_2`: SUP slot <- `wer_294at_atc1_p1`
+- `wer_294id_2`: SUP slot <- `wer_294at_atc1_p2`
+- `wer_294id_3`: reserve links // -> p_we_294ar//
+- `wer_294id_3`: SUP slot <- `wer_294at_atc1_p3`
+- `wer_294id_4`: reserve links // -> p_we_294ar//
+- `wer_294id_4`: SCT slot <- `wer_294ar_2b_ac`
+- `wer_294id_4`: battery `wer_294ar_1c_2b` removed from the group (its FO `wer_294ar_2b_ac` is in it); it stays in reserve
+- `wer_294id_4`: SUP slot <- `wer_294at_atc2_p1`
+- `wer_294id_4`: SUP slot <- `wer_294at_atc2_p2`
+- `wer_23td_1`: reserve links // -> p_we_128ar//
+- `wer_23td_1`: SCT slot <- `wer_128ar_1b_ac`
+- `wer_23td_1`: UNI slot <- `wer_51sbn_3sc_2p`
+- `wer_23td_1`: SUP slot <- `wer_51sbn_1c_mt`
+- `wer_23td_2`: reserve links // -> p_we_128ar//
+- `wer_23td_2`: SUP slot <- `wer_23rb_3c_mt`
+- `wer_201tr_1`: reserve links p_we_23td/p_we_126mir/ -> p_we_23td/p_we_128ar/p_we_126mir
+- `wer_201tr_1`: SUPM slot <- `wer_201tr_asgun9_2p`
+- `wer_17ac_1`: reserve links // -> p_we_6a//
+- `wer_16mid_1`: reserve links p_we_116tbn// -> p_we_146ar/p_we_116tbn/
+- `wer_16mid_1`: UNI slot <- `wer_16mid_5rc_eng`
+- `wer_16mid_2`: reserve links p_we_116tbn// -> p_we_146ar/p_we_116tbn/
+- `wer_16mid_2`: third STR slot added
+- `wer_16mid_2`: STR slot <- `wer_116tbn_ltc1_2p`
+- `wer_16mid_2`: UNI slot <- `wer_675sbn_2sc_1p`
+- `wer_16mid_3`: reserve links p_we_116tbn// -> p_we_146ar/p_we_116tbn/
+- `wer_16mid_3`: SCT slot <- `wer_16mid_3rc_1p`
+- `wer_16mid_3`: SUP slot <- `wer_16mid_3rc_4p`
+- `wer_156mir_1`: reserve links p_we_16mid// -> p_we_16mid/p_we_146ar/
+- `wer_156mir_1`: SCT slot <- `wer_146ar_2b_ac`
+- `wer_156mir_2`: reserve links p_we_16mid// -> p_we_16mid/p_we_146ar/
+- `wer_156mir_2`: SCT slot <- `wer_156mir_5c_mt_ac`
+- `wer_128mir_1`: reserve links p_we_23td/p_we_201tr/ -> p_we_23td/p_we_128ar/p_we_201tr
+- `wer_128mir_1`: third STR slot added
+- `wer_128mir_1`: SCT slot <- `wer_128ar_3b_ac`
+- `wer_128mir_1`: battery `wer_128ar_3abat` removed from the group (its FO `wer_128ar_3b_ac` is in it); it stays in reserve
+- `wer_128mir_1`: STR slot <- `wer_201tr_ltc2_2p`
+- `wer_128mir_1`: SUP slot <- `wer_128mir_1b_guns`
+- `wer_128mir_2`: reserve links p_we_23td/p_we_201tr/ -> p_we_23td/p_we_128ar/p_we_201tr
+- `wer_128mir_2`: SCT slot <- `wer_128mir_2b_ac75`
+- `wer_126mir_1`: reserve links p_we_23td/p_we_201tr/ -> p_we_23td/p_we_128ar/p_we_201tr
+- `wer_126mir_1`: SCT slot <- `wer_128ar_2b_ac`
+- `wer_126mir_2`: reserve links p_we_23td/p_we_201tr/ -> p_we_23td/p_we_128ar/p_we_201tr
+- `wer_126mir_2`: third STR slot added
+- `wer_126mir_2`: STR slot <- `wer_201tr_ltc1_2p`
+- `wer_126mir_2`: SCT slot <- `wer_126mir_2b_ac75`
+- `wer_116tbn_bg`: reserve links p_we_16mid// -> p_we_16mid/p_we_146ar/
+- `wer_116tbn_bg`: third STR slot added
+- `wer_116tbn_bg`: STR slot <- `wer_116tbn_mtc2_2p`
+- `ra_315rd_bg724a`: reserve links p_ra_8iptabr// -> p_ra_315rd/p_ra_1012ar/p_ra_8iptabr
+- `ra_315rd_bg724a`: SCT slot <- `ra_1012ar_4b_ac`
+- `ra_315rd_bg724b`: reserve links p_ra_8iptabr// -> p_ra_315rd/p_ra_1012ar/p_ra_8iptabr
+- `ra_315rd_bg724b`: SCT slot <- `ra_1012ar_3b_ac`
+- `ra_315rd_bg724b`: battery `ra_315_3arty` removed from the group (its FO `ra_1012ar_3b_ac` is in it); it stays in reserve
+- `ra_315rd_bg724b`: SUP slot <- `ra_724rr_4c_mt`
+- `ra_6mr_bg1`: third STR slot added
+- `ra_6mr_bg1`: SCT slot <- `ra_6mr_recc_1p`
+- `ra_6mr_bg1`: STR slot <- `ra_6mr_tcoy1_2p`
+- `ra_6mr_bg2`: STR slot <- `ra_6mr_tcoy1_3p`
+- `ra_6mr_bg2`: SUP slot <- `ra_6mr_mt_bat2`
+- `ra_5mr_bg1`: third STR slot added
+- `ra_5mr_bg1`: SCT slot <- `ra_5mr_recc_1p`
+- `ra_5mr_bg1`: STR slot <- `ra_5mr_tcoy1_2p`
+- `ra_5mr_bg2`: STR slot <- `ra_5mr_tcoy1_3p`
+- `ra_5mr_bg2`: SUP slot <- `ra_5mr_mt_bat2`
+- `ra_4mr_bg1`: third STR slot added
+- `ra_4mr_bg1`: SCT slot <- `ra_4mr_recc_1p`
+- `ra_4mr_bg1`: STR slot <- `ra_4mr_tcoy1_2p`
+- `ra_4mr_bg2`: STR slot <- `ra_4mr_tcoy1_3p`
+- `ra_4mr_bg2`: SUP slot <- `ra_4mr_mt_bat2`
+- `ra_37tbde_bg1`: third STR slot added
+- `ra_37tbde_bg1`: SCT slot <- `ra_37tbde_recon`
+- `ra_37tbde_bg1`: STR slot <- `ra_37tbde_tcoy1_2p`
+- `ra_37tbde_bg2`: third STR slot added
+- `ra_37tbde_bg2`: STR slot <- `ra_37tbde_tcoy4_2p`
+- `ra_315rd_bg362a`: reserve links p_ra_8iptabr// -> p_ra_315rd/p_ra_1012ar/p_ra_8iptabr
+- `ra_315rd_bg362a`: SCT slot <- `ra_1012ar_1b_ac`
+- `ra_315rd_bg362a`: battery `ra_315_1arty` removed from the group (its FO `ra_1012ar_1b_ac` is in it); it stays in reserve
+- `ra_315rd_bg362a`: SUP slot <- `ra_362rr_mt_bat1`
+- `ra_315rd_bg362b`: reserve links p_ra_8iptabr// -> p_ra_315rd/p_ra_1012ar/p_ra_8iptabr
+- `ra_315rd_bg362b`: SCT slot <- `ra_362rr_2b_ac82mt`
+- `ra_32tbde_bg1`: reserve links p_ra_116rr// -> p_ra_5ua/p_ra_116rr/
+- `ra_32tbde_bg1`: third STR slot added
+- `ra_32tbde_bg1`: STR slot <- `ra_32tbde_tcoy1_2p`
+- `ra_32tbde_bg1`: STR slot <- `ra_32tbde_tcoy1_3p`
+- `ra_96rd_bg291a`: reserve links p_ra_15iptabr/p_ra_8iptabr/ -> p_ra_96rd/p_ra_234ar/p_ra_15iptabr (dropped p_ra_8iptabr)
+- `ra_96rd_bg291a`: SCT slot <- `ra_234ar_3b_ac`
+- `ra_96rd_bg291a`: battery `ra_234_3arty` removed from the group (its FO `ra_234ar_3b_ac` is in it); it stays in reserve
+- `ra_96rd_bg291a`: SUP slot <- `ra_291rr_1c_mt`
+- `ra_96rd_bg291b`: reserve links p_ra_15iptabr/p_ra_8iptabr/ -> p_ra_96rd/p_ra_234ar/p_ra_15iptabr (dropped p_ra_8iptabr)
+- `ra_96rd_bg291b`: SCT slot <- `ra_291rr_1b_ac82mt`
+- `ra_22stp_bg1`: reserve links p_ra_105rr/p_ra_5ua/ -> p_ra_5ua/p_ra_105rr/
+- `ra_22stp_bg1`: third STR slot added
+- `ra_22stp_bg1`: SCT slot <- `ra_22stp_recon`
+- `ra_22stp_bg1`: STR slot <- `ra_22stp_1c_2p`
+- `ra_22stp_bg1`: STR slot <- `ra_22stp_2c_2p`
+- `ra_22stp_bg2`: reserve links p_ra_103rr/p_ra_5ua/ -> p_ra_5ua/p_ra_103rr/
+- `ra_22stp_bg2`: third STR slot added
+- `ra_22stp_bg2`: STR slot <- `ra_22stp_2c_3p`
+- `ra_22stp_bg2`: UNI slot <- `ra_22stp_smg`
+- `ra_1543tsap_bg1`: reserve links p_ra_291rr/p_ra_5ua/ -> p_ra_2mc/p_ra_291rr/p_ra_5ua
+- `ra_1543tsap_bg2`: reserve links p_ra_103rr/p_ra_5ua/ -> p_ra_2mc/p_ra_103rr/p_ra_5ua
+- `ra_315rd_bg1328a`: reserve links p_ra_8iptabr// -> p_ra_315rd/p_ra_1012ar/p_ra_8iptabr
+- `ra_315rd_bg1328a`: SCT slot <- `ra_1012ar_2b_ac`
+- `ra_315rd_bg1328a`: battery `ra_315_2arty` removed from the group (its FO `ra_1012ar_2b_ac` is in it); it stays in reserve
+- `ra_315rd_bg1328a`: SUP slot <- `ra_1328rr_1b_atr`
+- `ra_315rd_bg1328b`: reserve links p_ra_8iptabr// -> p_ra_315rd/p_ra_1012ar/p_ra_8iptabr
+- `ra_315rd_bg1328b`: SCT slot <- `ra_1328rr_ac120mt1`
+- `ra_40rd_bg116a`: reserve links p_ra_32tbde// -> p_ra_40rd/p_ra_90ar/p_ra_32tbde
+- `ra_40rd_bg116a`: SCT slot <- `ra_90ar_2b_ac`
+- `ra_40rd_bg116a`: battery `ra_40_2arty` removed from the group (its FO `ra_90ar_2b_ac` is in it); it stays in reserve
+- `ra_40rd_bg116a`: SUP slot <- `ra_116rr_1c_mt`
+- `ra_40rd_bg116b`: reserve links p_ra_32tbde// -> p_ra_40rd/p_ra_90ar/p_ra_32tbde
+- `ra_40rd_bg116b`: SCT slot <- `ra_90ar_3b_ac`
+- `ra_40rd_bg116b`: battery `ra_40_3arty` removed from the group (its FO `ra_90ar_3b_ac` is in it); it stays in reserve
+- `ra_40rd_bg116b`: SUP slot <- `ra_116rr_1mt_1p`
+- `ra_34rd_bg107a`: reserve links p_ra_15iptabr// -> p_ra_34rd/p_ra_84ar/p_ra_15iptabr
+- `ra_34rd_bg107a`: SCT slot <- `ra_84ar_3b_ac`
+- `ra_34rd_bg107a`: SUP slot <- `ra_107rr_1c_mt`
+- `ra_34rd_bg107b`: reserve links p_ra_15iptabr// -> p_ra_34rd/p_ra_84ar/p_ra_15iptabr
+- `ra_34rd_bg107b`: SCT slot <- `ra_84ar_2b_ac`
+- `ra_34rd_bg107b`: battery `ra_34_2arty` removed from the group (its FO `ra_84ar_2b_ac` is in it); it stays in reserve
+- `ra_34rd_bg107b`: SUP slot <- `ra_107rr_5c_mt`
+- `ra_34rd_bg105a`: reserve links p_ra_15iptabr// -> p_ra_34rd/p_ra_84ar/p_ra_15iptabr
+- `ra_34rd_bg105a`: SCT slot <- `ra_84ar_1b_ac`
+- `ra_34rd_bg105a`: battery `ra_34_1arty` removed from the group (its FO `ra_84ar_1b_ac` is in it); it stays in reserve
+- `ra_34rd_bg105a`: SUP slot <- `ra_105rr_1c_mt`
+- `ra_34rd_bg105b`: reserve links p_ra_15iptabr// -> p_ra_34rd/p_ra_84ar/p_ra_15iptabr
+- `ra_34rd_bg105b`: SCT slot <- `ra_105rr_2b_ac82mt`
+- `ra_34rd_bg103a`: reserve links p_ra_15iptabr// -> p_ra_34rd/p_ra_84ar/p_ra_15iptabr
+- `ra_34rd_bg103a`: SCT slot <- `ra_84ar_4b_ac`
+- `ra_34rd_bg103b`: reserve links p_ra_15iptabr// -> p_ra_34rd/p_ra_84ar/p_ra_15iptabr
+- `ra_34rd_bg103b`: SCT slot <- `ra_103rr_2b_ac82mt`
+### Map placement
+- `ra_1012ar_hq` placed next to the HQ of p_ra_362rr (cell 13;8, own map node 232, turn 1)
+- `ra_84ar_hq` placed next to the HQ of p_ra_103rr (cell 13;4, own map node 130, turn 1)
+- `ra_90ar_hq` placed next to the HQ of p_ra_116rr (cell 13;1, own map node 57, turn 1)
+- `ra_234ar_hq` placed next to the HQ of p_ra_291rr (cell 13;5, own map node 156, turn 6)
+- `wer_294ar_hq` placed next to the HQ of p_we_294id (cell 8;9, own map node 176, turn 1)
+- `wer_306ar_hq` placed next to the HQ of p_we_306id (cell 9;0, own map node 27, turn 1)
+- `wer_302ar_hq` placed next to the HQ of p_we_302id (cell 10;0, own map node 29, turn 1)
+- `wer_146ar_hq` placed next to the HQ of p_we_16mid (cell 0;8, own map node 204, turn 1)
+- `wer_128ar_hq` placed next to the HQ of p_we_23td (cell 7;1, own map node 49, turn 9)
+- 1228 reserve placement rows added (one per new platoon)
+- mg_nodes occupants synced with plat_pos: 9 nodes changed
+- `ra_22stp_bg2`: `ra_22stp_4c` -> reserve, `ra_22stp_2c_2p` in its slot
+- `ra_22stp_bg1`: `ra_22stp_2c_2p` taken out, slot now ``

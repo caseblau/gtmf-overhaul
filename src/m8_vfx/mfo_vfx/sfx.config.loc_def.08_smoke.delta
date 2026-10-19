@@ -1,0 +1,7 @@
+# MF Overhaul 0.4.12: smoke classes. SMKS (Soviet RDG, 80 s) and SMPT (smoke pot, 300 s) copy SMKL with their own generators;
+#   class names are table-driven (see 03_rhe.delta).
+# 4 operations
+row+|expl_dect|u:'SMKL'|u:'SMKS'|u:'SMKS'|s:smkls|s:water_lmed|s:smkls|s:smkls|s:smkls|s:smkls|s:smkls|s:smkls|s:smkls
+row+|expl_dect|u:'SMKS'|u:'SMPT'|u:'SMPT'|s:smkpt|s:water_lmed|s:smkpt|s:smkpt|s:smkpt|s:smkpt|s:smkpt|s:smkpt|s:smkpt
+row+|expl_desc|smkl|smkls|s:smkls|s:|s:smoke_longgs|s:|s:|s:|s:|s:|s:smk_screengs|v:1;1;1|v:1;1;1|v:0|s:|s:|a:0
+row+|expl_desc|smkls|smkpt|s:smkpt|s:|s:smoke_longgp|s:|s:|s:|s:|s:|s:smk_screengp|v:1;1;1|v:1;1;1|v:0|s:|s:|a:0

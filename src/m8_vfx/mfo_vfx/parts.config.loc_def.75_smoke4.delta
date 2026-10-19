@@ -1,0 +1,14 @@
+# MF Overhaul 0.4.15: user on 0.4.14: "still too fast from throw to full wall". The wall saturated because four 12 m puffs per second
+#   appear within seconds. Now: 2 puffs/s (pot 1), fade-in 8 -> 12 s (pot 15), size ease-out 1.5 -> 0.8 (puffs keep swelling for
+#   most of their life), life 70 -> 85 s (pot 110) so the same total smoke is there, just later: thin at 5-10 s, full at 20-30 s.
+#   Winter rows matched (life 60 / 60 / 85).
+# 9 operations
+row~|parts_desc|smoke_longg|c13=v:85;12;0.1;0.3|c22=f:0.8
+row~|parts_desc|smoke_longgs|c13=v:85;12;0.1;0.3|c22=f:0.8
+row~|parts_desc|smoke_longgp|c13=v:110;15;0.1;0.3|c22=f:0.8
+row~|parts_desc_wint|smoke_longg|c13=v:60;12;0.1;0.3|c22=f:0.8
+row~|parts_desc_wint|smoke_longgs|c13=v:60;12;0.1;0.3|c22=f:0.8
+row~|parts_desc_wint|smoke_longgp|c13=v:85;15;0.1;0.3|c22=f:0.8
+row~|pgens_desc|smoke_longg|c5=f:2
+row~|pgens_desc|smoke_longgs|c5=f:2
+row~|pgens_desc|smoke_longgp|c5=f:1

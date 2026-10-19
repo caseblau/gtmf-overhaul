@@ -1,0 +1,11 @@
+# MF Overhaul 0.3.51: user: "wider too" (the non-earth effects). Burst smoke end size 10/18/28 -> 14/24/36 m, burst dust
+#   10/18/28 -> 14/24/36 m, muzzle smoke smoke_white 2.5 -> 3.5 m, smoke_shotb 6 -> 8 m. Earth untouched.
+# 8 operations
+row~|parts_desc|smoke_expl|c10=v:14;14
+row~|parts_desc|smoke_expl_big|c10=v:24;24
+row~|parts_desc|smoke_bomb|c10=v:36;36
+row~|parts_desc|dust_expl_rnd_sm|c10=v:14;14
+row~|parts_desc|dust_expl_rnd|c10=v:24;24
+row~|parts_desc|dust_expl_rnd_big|c10=v:36;36
+row~|parts_desc|smoke_white|c10=v:3.5;3.5
+row~|parts_desc|smoke_shotb|c10=v:8;8

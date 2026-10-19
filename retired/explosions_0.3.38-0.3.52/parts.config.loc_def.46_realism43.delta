@@ -1,0 +1,16 @@
+# MF Overhaul 0.3.50: user: "near the crater it should have the opposite effect: violent explosion, and the dust over the explosion
+#   dissipates smoothly". c13 = (life; fade starts at; fade-in; ?). The first second gets violent, the rest stays as 0.3.49:
+#   dust fade-in 0.1 -> 0.02 (there at the flash) and launch speed 0.55/0.6/0.6 -> 0.7/0.8/0.85 (the skirt rushes out, then the
+#   long 0.5 hold and slow thin-out follow); smoke fade-in 0.05 -> 0.02; the dark fireball core billows harder: core_expl speed
+#   0.35 -> 0.65, core_expl_bomb 0.25 -> 0.55; sparks fly faster (spark_expl 0.1 -> 0.3, spark_bomb 0.1 -> 0.25).
+# 10 operations
+row~|parts_desc|dust_expl_rnd_sm|c13=v:18;0.5;0.02;0.15|c14=f:0.7
+row~|parts_desc|dust_expl_rnd|c13=v:28;0.5;0.02;0.3|c14=f:0.8
+row~|parts_desc|dust_expl_rnd_big|c13=v:40;0.5;0.02;0.6|c14=f:0.85
+row~|parts_desc|smoke_expl|c13=v:18;0.5;0.02;0.15
+row~|parts_desc|smoke_expl_big|c13=v:28;0.5;0.02;0.2
+row~|parts_desc|smoke_bomb|c13=v:40;0.5;0.02;0.2
+row~|parts_desc|core_expl|c14=f:0.65
+row~|parts_desc|core_expl_bomb|c14=f:0.55
+row~|parts_desc|spark_expl|c14=f:0.3
+row~|parts_desc|spark_bomb|c14=f:0.25

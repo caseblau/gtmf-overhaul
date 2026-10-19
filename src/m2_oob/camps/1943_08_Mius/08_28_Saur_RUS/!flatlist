@@ -1,0 +1,6 @@
+i_unflat:unflat()
+{
+	desc                          , config          , loc_def ;
+	text                          , text            , loc_eng ;
+	text                          , text            , loc_rus ;
+}

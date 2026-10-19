@@ -1,0 +1,10 @@
+# MF Overhaul 0.4.3 (second part): user: the beaded columns of spheres come from artillery shell bursts. expl_desc c10 (x;up;z,
+#   e.g. 6;35;6 for UHE, 7;40;7 for BOMB) is the launch velocity of the burst smoke and parts_desc c14 scales it. With the long
+#   lifetimes (24-48 s) and only the vanilla -0.1 pull-down, each puff kept climbing for its whole life: 35 m/s * 0.25 = ~9 m/s for
+#   30 s = a 200 m string of balls. Real plumes stop rising at 20-30 m within 10-15 s. Now: launch factor 0.25 -> 0.1 (~3.5 m/s),
+#   pull-down -0.1 -> -0.25 (rise stops at ~14 s, ~25 m), life 24/30/36 -> 18/22/26 s so it fades before it could sink,
+#   fade from 0.35. Dust rows keep their low skirt (they were fine in the screenshot).
+# 3 operations
+row~|parts_desc|smoke_expl|c6=v:0;-0.25|c13=v:18;0.35;0.05;0.15|c14=f:0.1
+row~|parts_desc|smoke_expl_big|c6=v:0;-0.25|c13=v:22;0.35;0.05;0.2|c14=f:0.1
+row~|parts_desc|smoke_bomb|c6=v:0;-0.25|c13=v:26;0.35;0.05;0.2|c14=f:0.1

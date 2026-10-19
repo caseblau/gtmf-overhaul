@@ -1,0 +1,13 @@
+# MF Overhaul 0.3.52: user: "thrown earth and clods should be more proportional to the explosion; big round chunks of earth do not
+#   look realistic". The earth sprites grew to 6/10/9 m blobs. Now many small pieces instead of few big ones, stepped by tier:
+#   dirt_expl (76-122 mm, mortars) 2 -> 1 m start, 6 -> 3.5 m end, 80 -> 110 pieces; dirt_expl_big (152 mm) 5 -> 2 / 10 -> 5.5 m,
+#   80 -> 120 pieces; dirt_bomb (rockets, bombs) 4.5 -> 2.5 / 9 -> 7 m, 65 -> 100 pieces; clods 0.35 -> 0.25 m. Launch, fall and
+#   colours as 0.3.50.
+# 7 operations
+row~|parts_desc|dirt_expl|c9=v:1;1|c10=v:3.5;3.5
+row~|parts_desc|dirt_expl_big|c9=v:2;2|c10=v:5.5;5.5
+row~|parts_desc|dirt_bomb|c9=v:2.5;2.5|c10=v:7;7
+row~|parts_desc|ext_dirt|c9=v:0.25;0.25|c10=v:0.25;0.25
+row~|pgens_desc|dirt_expl|c5=f:110
+row~|pgens_desc|dirt_expl_big|c5=f:120
+row~|pgens_desc|dirt_bomb|c5=f:100

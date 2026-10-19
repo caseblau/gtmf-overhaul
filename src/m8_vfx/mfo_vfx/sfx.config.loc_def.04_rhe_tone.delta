@@ -1,0 +1,3 @@
+# MF Overhaul 0.3.34: RHE (28/32 cm) burst scale 1.6 -> 1.45 and dirt count 8;50;8 -> 8;42;8 (user: "too large burst of ground").
+# 1 operation
+row~|expl_desc|dirt_rhe|c9=v:1.45;1.45;35|c10=v:8;42;8

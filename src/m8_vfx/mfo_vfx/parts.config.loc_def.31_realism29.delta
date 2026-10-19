@@ -1,0 +1,11 @@
+# MF Overhaul 0.3.36: user: "smoke from gun muzzles should be longer but withers away with the next shot; dissipate more smoothly
+#   instead of white trails". Muzzle smoke rows: smoke_white (smoke_shot, the main gun puff), smoke_shotb (big guns), smoke_shot_sm.
+#   The white trail is smoke_white's end colour 0x40F0F0F0, which never reached alpha 0: every puff left a pale ghost. Now all three
+#   fade to alpha 0, start less bright and warmer grey, live longer, grow a little bigger and animate slower:
+#   smoke_white  0xC0E0E0E0 -> 0xB0C8C4BC, end 0x00F0F0F0;0x40F0F0F0 -> 0x00C8C4BC, life 5 -> 8 s (fade point 0 -> 0.3), end 1.5 -> 2.5 m, anim 2 -> 1.2
+#   smoke_shotb  0xA0D0D0D0;0x60C0C0C0 -> 0x90B8B4AC;0x60A8A49C, end 0x00808080 -> 0x00807C74, life 7 -> 11 s (fade 0 -> 0.3), end 5 -> 6 m, anim 3 -> 1.8
+#   smoke_shot_sm 0xC0C0C0C0;0xC0808080 -> 0xA0B0ACA4;0xA0807C74, life 3 -> 4.5 s (fade 0 -> 0.3), anim 1.5 -> 1.2
+# 3 operations
+row~|parts_desc|smoke_white|c10=v:2.5;2.5|c11=a:-1329019716|c12=a:13157564|c13=v:8;0.3;0.2;0.6|c22=f:1.2
+row~|parts_desc|smoke_shotb|c10=v:6;6|c11=a:-1866943316;1621664924|c12=a:8420468|c13=v:11;0.3;0.2;0.3|c22=f:1.8
+row~|parts_desc|smoke_shot_sm|c11=a:-1599034204;-1602192268|c13=v:4.5;0.3;0.3;1|c22=f:1.2
