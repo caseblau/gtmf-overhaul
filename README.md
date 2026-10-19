@@ -183,6 +183,9 @@ if two modules ship the same entry whole, or any MiusPlayer-owned file. Details:
   (`basic_game.codelib`), so wetness is a global engine value, not a table. The only per-particle candidate is `parts_desc` c26:
   -1 on smoke and flashes, 0.5 on burst dust, wheel dirt/water and burning fragments, 0.2–0.7 on clods. Its meaning is unverified
   (a wetness gate fits dust and burning fragments but not wheel mud at 0.5), so an A/B in a rain battle is needed first.
+- (repo, 2026-10-19) Published to https://github.com/caseblau/gtmf-overhaul (public, user's choice, third-party-derived modules
+  included with credits in `docs\third_party.md`; permission requests in `docs\permission_requests.md` still to be posted).
+  `build\` is git-ignored; regenerate with `tools\build.ps1`.
 - (docs, 2026-10-16) `docs\mp_operations.md`: inventory of all 58 operations on this install (base `oprum`, 17 `ma_*` packs,
   12 `addons\*` packs); every one has both sides' campack2 files, which is MiusPlayer's requirement for the joiner's own map view.
   Three have been played over MiusPlayer by its author (Odintsov, Saur-Mogila, Peleshi); the rest are file-checked only.
