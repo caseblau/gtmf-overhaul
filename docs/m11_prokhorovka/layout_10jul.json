@@ -1,0 +1,9634 @@
+{
+ "_comment": "10 July 1943 layout for the Prokh block (operation 10-13 July). Coordinates are DEM-lattice metres: x east from lon 36.4903, y north from lat 50.904605 (tools/prokh_op.py shifts them into the 7 x 5 block: x - 4096, y - 6144). 'units' maps platoon-name prefixes of the OOB (tools/oob_12jul.ps1) to the positions their HQs and battle groups take on turn 1 (round-robin; HQ-type units - HQs, supply, construction - stand on a border node of their own ground instead, as in the vanilla operations), or - with 'turn' > 1 - to the map edge and turn they arrive on. Turn = 4 h from 06:00 10 July: 1 = 06-10 10 Jul, 5 = 22-02, 7 = 06-10 11 Jul, 13 = 06-10 12 Jul, 19 = 06-10 13 Jul. Sources: docs/m11_prokhorovka/sources_11_14jul.md and sources_10jul.md (Zamulin ch. 5-7, Lawrence ch. 7-9, Wheatley 2019).",
+ "date_beg": "0x19430710",
+ "time_beg": 1536,
+ "turns": 24,
+ "hours_per_turn": 4,
+ "front": [
+  [
+   4096,
+   14131
+  ],
+  [
+   4659,
+   13619
+  ],
+  [
+   5120,
+   13414
+  ],
+  [
+   5222,
+   12800
+  ],
+  [
+   6144,
+   12339
+  ],
+  [
+   6707,
+   12319
+  ],
+  [
+   6779,
+   11776
+  ],
+  [
+   7168,
+   11725
+  ],
+  [
+   7168,
+   8192
+  ],
+  [
+   7680,
+   8172
+  ],
+  [
+   7680,
+   7700
+  ],
+  [
+   8192,
+   7680
+  ],
+  [
+   8192,
+   6144
+  ]
+ ],
+ "_comment_front": "German line on the morning of 10 July (06:00), west/north end first, Germans west / south of it - drawn by the user on the op map (25 Oct) and checked against Zamulin Map 5: the Psel at the west edge (Krasny Oktyabr and the south bank taken on 9 July) - Yudinka and Kozlovka German (taken 18:45 9 July), Bogoroditskoye on the line - south of Vasilyevka (Soviet: 99 TBr) - south along the western edge of the Komsomolets wood (1/285 RR in the svkh. Komsomolets works) - 258.2 German - east of Teterevino to the south edge, Ivanovsky Vyselok Soviet. No bridgehead north of the Psel yet: Totenkopf crossed at Krasny Oktyabr / Klyuchi in the afternoon of 10 July (bridgehead reported 20:00). prokh_op.py treats the line as a polygon (Territory): each side uses only the border nodes on its own ground as HQ / reinforcement slots - Germans: west edge south of the Psel and the south edge west of the line (41 nodes), Soviets: the rest (139).",
+ "heights": [
+  {
+   "name": "252.2",
+   "xy": [
+    13120,
+    12768
+   ],
+   "value": 9
+  },
+  {
+   "name": "241.6",
+   "xy": [
+    9600,
+    10288
+   ],
+   "value": 4
+  },
+  {
+   "name": "245.8",
+   "xy": [
+    13280,
+    11264
+   ],
+   "value": 3
+  },
+  {
+   "name": "230.5",
+   "xy": [
+    17600,
+    12992
+   ],
+   "value": 3
+  },
+  {
+   "name": "252.4",
+   "xy": [
+    16800,
+    16416
+   ],
+   "value": 4
+  },
+  {
+   "name": "226.6",
+   "xy": [
+    6720,
+    15136
+   ],
+   "value": 8
+  },
+  {
+   "name": "236.7",
+   "xy": [
+    6880,
+    19376
+   ],
+   "value": 2
+  },
+  {
+   "name": "243.5",
+   "xy": [
+    9600,
+    22016
+   ],
+   "value": 1
+  },
+  {
+   "name": "224.5",
+   "xy": [
+    4320,
+    8656
+   ],
+   "value": 2
+  },
+  {
+   "name": "258.2",
+   "xy": [
+    6640,
+    7216
+   ],
+   "value": 3
+  },
+  {
+   "name": "236.5",
+   "xy": [
+    9440,
+    4736
+   ],
+   "value": 2
+  },
+  {
+   "name": "243.9",
+   "xy": [
+    6720,
+    3216
+   ],
+   "value": 2
+  },
+  {
+   "name": "247.7",
+   "xy": [
+    16880,
+    2736
+   ],
+   "value": 2
+  },
+  {
+   "name": "242.7",
+   "xy": [
+    20960,
+    8016
+   ],
+   "value": 3
+  },
+  {
+   "name": "249.2",
+   "xy": [
+    20000,
+    6496
+   ],
+   "value": 2
+  },
+  {
+   "name": "234.9",
+   "xy": [
+    12640,
+    3296
+   ],
+   "value": 2
+  },
+  {
+   "name": "228.9",
+   "xy": [
+    15200,
+    1136
+   ],
+   "value": 1
+  },
+  {
+   "name": "220.3",
+   "xy": [
+    9280,
+    2816
+   ],
+   "value": 1
+  },
+  {
+   "name": "237.5",
+   "xy": [
+    21760,
+    21136
+   ],
+   "value": 1
+  },
+  {
+   "name": "232.7",
+   "xy": [
+    17600,
+    18656
+   ],
+   "value": 1
+  },
+  {
+   "name": "248.4",
+   "xy": [
+    21280,
+    15456
+   ],
+   "value": 1
+  },
+  {
+   "name": "246.4",
+   "xy": [
+    960,
+    22816
+   ],
+   "value": 1
+  },
+  {
+   "name": "253.9",
+   "xy": [
+    22080,
+    11376
+   ],
+   "value": 1
+  }
+ ],
+ "places": [
+  {
+   "name": "svkh. Oktyabrsky",
+   "rus": "\u0441\u0432\u0445. \u041e\u043a\u0442\u044f\u0431\u0440\u044c\u0441\u043a\u0438\u0439",
+   "xy": [
+    11900,
+    13100
+   ],
+   "value": 8
+  },
+  {
+   "name": "Prokhorovka station",
+   "rus": "\u0441\u0442. \u041f\u0440\u043e\u0445\u043e\u0440\u043e\u0432\u043a\u0430",
+   "xy": [
+    15667,
+    14131
+   ],
+   "value": 9
+  },
+  {
+   "name": "svkh. Komsomolets",
+   "rus": "\u0441\u0432\u0445. \u041a\u043e\u043c\u0441\u043e\u043c\u043e\u043b\u0435\u0446",
+   "xy": [
+    8468,
+    8939
+   ],
+   "value": 4
+  },
+  {
+   "name": "svkh. Stalinskoye otd.",
+   "rus": "\u0441\u0432\u0445. \u0421\u0442\u0430\u043b\u0438\u043d\u0441\u043a\u043e\u0435 \u043e\u0442\u0434.",
+   "xy": [
+    12640,
+    11056
+   ],
+   "value": 3
+  },
+  {
+   "name": "Lutovo",
+   "rus": "\u041b\u0443\u0442\u043e\u0432\u043e",
+   "xy": [
+    14400,
+    13136
+   ],
+   "value": 2
+  },
+  {
+   "name": "Klyuchi",
+   "rus": "\u041a\u043b\u044e\u0447\u0438",
+   "xy": [
+    4000,
+    15376
+   ],
+   "value": 4
+  },
+  {
+   "name": "Polezhayev",
+   "rus": "\u041f\u043e\u043b\u0435\u0436\u0430\u0435\u0432",
+   "xy": [
+    8320,
+    16656
+   ],
+   "value": 4
+  },
+  {
+   "name": "Kozlovka",
+   "rus": "\u041a\u043e\u0437\u043b\u043e\u0432\u043a\u0430",
+   "xy": [
+    4800,
+    12416
+   ],
+   "value": 2
+  },
+  {
+   "name": "Krasny Oktyabr",
+   "rus": "\u041a\u0440\u0430\u0441\u043d\u044b\u0439 \u041e\u043a\u0442\u044f\u0431\u0440\u044c",
+   "xy": [
+    3406,
+    13975
+   ],
+   "value": 4
+  },
+  {
+   "name": "Bogoroditskoye",
+   "rus": "\u0411\u043e\u0433\u043e\u0440\u043e\u0434\u0438\u0446\u043a\u043e\u0435",
+   "xy": [
+    5400,
+    12900
+   ],
+   "value": 2
+  },
+  {
+   "name": "Barchevka",
+   "rus": "\u0411\u0430\u0440\u0447\u0435\u0432\u043a\u0430",
+   "xy": [
+    16640,
+    15936
+   ],
+   "value": 1
+  },
+  {
+   "name": "Kusty",
+   "rus": "\u041a\u0443\u0441\u0442\u044b",
+   "xy": [
+    18880,
+    17536
+   ],
+   "value": 1
+  },
+  {
+   "name": "Ivanovsky Vyselok",
+   "rus": "\u0418\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0438\u0439 \u0412\u044b\u0441\u0435\u043b\u043e\u043a",
+   "xy": [
+    8640,
+    8256
+   ],
+   "value": 3
+  },
+  {
+   "name": "Belenikhino",
+   "rus": "\u0411\u0435\u043b\u0435\u043d\u0438\u0445\u0438\u043d\u043e",
+   "xy": [
+    9600,
+    3424
+   ],
+   "value": 6
+  },
+  {
+   "name": "Ivanovka",
+   "rus": "\u0418\u0432\u0430\u043d\u043e\u0432\u043a\u0430",
+   "xy": [
+    11520,
+    3136
+   ],
+   "value": 2
+  },
+  {
+   "name": "Leski",
+   "rus": "\u041b\u0435\u0441\u043a\u0438",
+   "xy": [
+    11520,
+    896
+   ],
+   "value": 2
+  },
+  {
+   "name": "Mal. Yablonovo",
+   "rus": "\u041c\u0430\u043b. \u042f\u0431\u043b\u043e\u043d\u043e\u0432\u043e",
+   "xy": [
+    14400,
+    1584
+   ],
+   "value": 2
+  },
+  {
+   "name": "Teterevino",
+   "rus": "\u0422\u0435\u0442\u0435\u0440\u0435\u0432\u0438\u043d\u043e",
+   "xy": [
+    5683,
+    6195
+   ],
+   "value": 4,
+   "note": "village centre from the RKKA sheet (the sheet's label sits 1.3 km E of the houses, where the point used to be)"
+  },
+  {
+   "name": "Kalinin",
+   "rus": "\u041a\u0430\u043b\u0438\u043d\u0438\u043d",
+   "xy": [
+    2400,
+    4300
+   ],
+   "value": 3
+  },
+  {
+   "name": "Plota",
+   "rus": "\u041f\u043b\u043e\u0442\u0430",
+   "xy": [
+    18880,
+    896
+   ],
+   "value": 2
+  },
+  {
+   "name": "Storozhevoye wood",
+   "rus": "\u043b\u0435\u0441 \u0421\u0442\u043e\u0440\u043e\u0436\u0435\u0432\u043e\u0435",
+   "xy": [
+    11873,
+    9931
+   ],
+   "value": 4
+  },
+  {
+   "name": "brick works",
+   "rus": "\u043a\u0438\u0440\u043f. \u0437\u0430\u0432\u043e\u0434",
+   "xy": [
+    16000,
+    15216
+   ],
+   "value": 1
+  }
+ ],
+ "minefields": [
+  {
+   "name": "mines in front of 26/23 Gds AB Rgt (lanes cleared for 29 TC)",
+   "rus": "\u043c\u0438\u043d\u043d\u043e\u0435 \u043f\u043e\u043b\u0435",
+   "side": "USSR",
+   "pts": [
+    [
+     14900,
+     14900
+    ],
+    [
+     15500,
+     14100
+    ],
+    [
+     15900,
+     14400
+    ],
+    [
+     15300,
+     15200
+    ]
+   ]
+  },
+  {
+   "name": "mines in the ravine E of Petrovka (42 Gds RD / 18 TC junction)",
+   "rus": "\u043c\u0438\u043d\u043d\u043e\u0435 \u043f\u043e\u043b\u0435",
+   "side": "USSR",
+   "pts": [
+    [
+     11300,
+     15700
+    ],
+    [
+     11900,
+     15700
+    ],
+    [
+     11900,
+     16300
+    ],
+    [
+     11300,
+     16300
+    ]
+   ]
+  },
+  {
+   "name": "German mines on the approaches from Prokhorovka, E of 252.2",
+   "rus": "\u043c\u0438\u043d\u043d\u043e\u0435 \u043f\u043e\u043b\u0435",
+   "side": "GER",
+   "pts": [
+    [
+     13600,
+     12400
+    ],
+    [
+     14200,
+     12500
+    ],
+    [
+     14100,
+     13100
+    ],
+    [
+     13500,
+     13000
+    ]
+   ]
+  },
+  {
+   "name": "Psel bend, Vesyoly - Klyuchi (both sides)",
+   "rus": "\u043c\u0438\u043d\u043d\u043e\u0435 \u043f\u043e\u043b\u0435",
+   "side": "USSR",
+   "pts": [
+    [
+     3500,
+     16200
+    ],
+    [
+     4400,
+     16100
+    ],
+    [
+     4500,
+     16800
+    ],
+    [
+     3600,
+     16900
+    ]
+   ]
+  },
+  {
+   "name": "S of Storozhevoye (Das Reich / 2 Gds TC junction)",
+   "rus": "\u043c\u0438\u043d\u043d\u043e\u0435 \u043f\u043e\u043b\u0435",
+   "side": "GER",
+   "pts": [
+    [
+     11300,
+     8300
+    ],
+    [
+     12100,
+     8300
+    ],
+    [
+     12100,
+     8900
+    ],
+    [
+     11300,
+     8900
+    ]
+   ]
+  },
+  {
+   "name": "Belenikhino W (183 RD)",
+   "rus": "\u043c\u0438\u043d\u043d\u043e\u0435 \u043f\u043e\u043b\u0435",
+   "side": "USSR",
+   "pts": [
+    [
+     9000,
+     3600
+    ],
+    [
+     9500,
+     3300
+    ],
+    [
+     9700,
+     4000
+    ],
+    [
+     9200,
+     4200
+    ]
+   ]
+  }
+ ],
+ "strongpoints": [
+  {
+   "name": "svkh. Komsomolets / 241.6",
+   "rus": "\u041f\u0422\u041e\u041f \u0441\u0432\u0445. \u041a\u043e\u043c\u0441\u043e\u043c\u043e\u043b\u0435\u0446",
+   "side": "USSR",
+   "xy": [
+    9000,
+    9600
+   ],
+   "r": 300
+  },
+  {
+   "name": "Storozhevoye wood",
+   "rus": "\u043e\u043f\u043e\u0440\u043d\u044b\u0439 \u043f\u0443\u043d\u043a\u0442 \u043b\u0435\u0441 \u0421\u0442\u043e\u0440\u043e\u0436\u0435\u0432\u043e\u0435",
+   "side": "USSR",
+   "xy": [
+    11900,
+    10600
+   ],
+   "r": 250
+  },
+  {
+   "name": "Klyuchi / 226.6",
+   "rus": "\u043e\u043f\u043e\u0440\u043d\u044b\u0439 \u043f\u0443\u043d\u043a\u0442 \u041a\u043b\u044e\u0447\u0438",
+   "side": "USSR",
+   "xy": [
+    5000,
+    15100
+   ],
+   "r": 300
+  },
+  {
+   "name": "Yasnaya Polyana",
+   "rus": "\u043e\u043f\u043e\u0440\u043d\u044b\u0439 \u043f\u0443\u043d\u043a\u0442 \u042f\u0441\u043d\u0430\u044f \u041f\u043e\u043b\u044f\u043d\u0430",
+   "side": "GER",
+   "xy": [
+    7594,
+    5083
+   ],
+   "r": 250
+  },
+  {
+   "name": "AT strongpoint 252.4",
+   "rus": "\u041f\u0422\u041e\u041f \u0432\u044b\u0441. 252.4",
+   "side": "USSR",
+   "xy": [
+    16800,
+    16416
+   ],
+   "r": 300
+  },
+  {
+   "name": "AT strongpoint 230.5",
+   "rus": "\u041f\u0422\u041e\u041f \u0432\u044b\u0441. 230.6",
+   "side": "USSR",
+   "xy": [
+    17600,
+    12992
+   ],
+   "r": 300
+  },
+  {
+   "name": "Prokhorovka SW (AT guns dug in)",
+   "rus": "\u041f\u0422\u041e\u041f \u041f\u0440\u043e\u0445\u043e\u0440\u043e\u0432\u043a\u0430",
+   "side": "USSR",
+   "xy": [
+    16200,
+    14000
+   ],
+   "r": 300
+  },
+  {
+   "name": "Vasilyevka",
+   "rus": "\u043e\u043f\u043e\u0440\u043d\u044b\u0439 \u043f\u0443\u043d\u043a\u0442 \u0412\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u043a\u0430",
+   "side": "USSR",
+   "xy": [
+    6800,
+    13200
+   ],
+   "r": 250
+  },
+  {
+   "name": "Belenikhino",
+   "rus": "\u041f\u0422\u041e\u041f \u0411\u0435\u043b\u0435\u043d\u0438\u0445\u0438\u043d\u043e",
+   "side": "USSR",
+   "xy": [
+    9800,
+    3600
+   ],
+   "r": 300
+  },
+  {
+   "name": "Polezhayev",
+   "rus": "\u041f\u0422\u041e\u041f \u041f\u043e\u043b\u0435\u0436\u0430\u0435\u0432",
+   "side": "USSR",
+   "xy": [
+    8000,
+    16500
+   ],
+   "r": 250
+  }
+ ],
+ "works": [
+  {
+   "type": "at_ditch",
+   "side": "USSR",
+   "name": "army rear belt anti-tank ditch: railway embankment SW of 252.2 - foot of 252.2 - Psel valley (4.5 m deep; Luftwaffe photos GX-3734-SK-61 / Wheatley 2019)",
+   "pts": [
+    [
+     12300,
+     12000
+    ],
+    [
+     11800,
+     12700
+    ],
+    [
+     11250,
+     13300
+    ],
+    [
+     10600,
+     13900
+    ],
+    [
+     9950,
+     14450
+    ],
+    [
+     9450,
+     14850
+    ]
+   ],
+   "gaps": [
+    [
+     12090,
+     12290
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "firing positions behind the anti-tank ditch (stubs on the NE side, Luftwaffe photo 7 Aug)",
+   "pts": [
+    [
+     12480,
+     12160
+    ],
+    [
+     12080,
+     12700
+    ],
+    [
+     11600,
+     13250
+    ],
+    [
+     11000,
+     13800
+    ]
+   ],
+   "behind_ditch": true
+  },
+  {
+   "type": "at_ditch",
+   "side": "USSR",
+   "name": "rear belt anti-tank ditch on the SW slopes of 258.2, across the Teterevino - Prokhorovka road (183 RD report of 8 July: 'an anti-tank ditch had been placed in front of the forward edge [of 4/285 RR], with removable road blocks on the road'; position from the report, no photograph)",
+   "pts": [
+    [
+     5939,
+     7014
+    ],
+    [
+     6195,
+     6861
+    ],
+    [
+     6451,
+     6656
+    ],
+    [
+     6656,
+     6400
+    ],
+    [
+     6758,
+     6195
+    ]
+   ],
+   "gaps": [
+    [
+     6451,
+     6656
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 1 (983 m)",
+   "pts": [
+    [
+     6048,
+     15852
+    ],
+    [
+     6092,
+     15822
+    ],
+    [
+     6133,
+     15789
+    ],
+    [
+     6178,
+     15761
+    ],
+    [
+     6218,
+     15727
+    ],
+    [
+     6261,
+     15697
+    ],
+    [
+     6305,
+     15669
+    ],
+    [
+     6348,
+     15638
+    ],
+    [
+     6389,
+     15605
+    ],
+    [
+     6434,
+     15577
+    ],
+    [
+     6474,
+     15544
+    ],
+    [
+     6517,
+     15513
+    ],
+    [
+     6561,
+     15485
+    ],
+    [
+     6604,
+     15454
+    ],
+    [
+     6642,
+     15417
+    ],
+    [
+     6681,
+     15382
+    ],
+    [
+     6725,
+     15353
+    ],
+    [
+     6767,
+     15321
+    ],
+    [
+     6809,
+     15289
+    ],
+    [
+     6837,
+     15272
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 2 (328 m)",
+   "pts": [
+    [
+     6976,
+     14839
+    ],
+    [
+     7027,
+     14825
+    ],
+    [
+     7079,
+     14819
+    ],
+    [
+     7131,
+     14826
+    ],
+    [
+     7174,
+     14856
+    ],
+    [
+     7202,
+     14901
+    ],
+    [
+     7224,
+     14948
+    ],
+    [
+     7229,
+     14959
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 3 (373 m)",
+   "pts": [
+    [
+     4819,
+     14838
+    ],
+    [
+     4821,
+     14891
+    ],
+    [
+     4817,
+     14943
+    ],
+    [
+     4812,
+     14996
+    ],
+    [
+     4811,
+     15048
+    ],
+    [
+     4818,
+     15100
+    ],
+    [
+     4837,
+     15149
+    ],
+    [
+     4874,
+     15186
+    ],
+    [
+     4877,
+     15189
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 4 (638 m)",
+   "pts": [
+    [
+     4651,
+     14521
+    ],
+    [
+     4698,
+     14497
+    ],
+    [
+     4744,
+     14471
+    ],
+    [
+     4794,
+     14456
+    ],
+    [
+     4845,
+     14441
+    ],
+    [
+     4897,
+     14438
+    ],
+    [
+     4937,
+     14468
+    ],
+    [
+     4947,
+     14520
+    ],
+    [
+     4956,
+     14572
+    ],
+    [
+     4965,
+     14624
+    ],
+    [
+     4970,
+     14676
+    ],
+    [
+     4985,
+     14726
+    ],
+    [
+     4996,
+     14778
+    ],
+    [
+     4997,
+     14783
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 5 (273 m)",
+   "pts": [
+    [
+     9466,
+     14442
+    ],
+    [
+     9415,
+     14458
+    ],
+    [
+     9364,
+     14471
+    ],
+    [
+     9312,
+     14477
+    ],
+    [
+     9260,
+     14486
+    ],
+    [
+     9215,
+     14513
+    ],
+    [
+     9209,
+     14520
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 6 (261 m)",
+   "pts": [
+    [
+     4958,
+     14429
+    ],
+    [
+     5007,
+     14410
+    ],
+    [
+     5060,
+     14405
+    ],
+    [
+     5112,
+     14408
+    ],
+    [
+     5165,
+     14410
+    ],
+    [
+     5211,
+     14426
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 7 (858 m)",
+   "pts": [
+    [
+     6525,
+     14221
+    ],
+    [
+     6560,
+     14181
+    ],
+    [
+     6598,
+     14145
+    ],
+    [
+     6637,
+     14110
+    ],
+    [
+     6680,
+     14079
+    ],
+    [
+     6730,
+     14075
+    ],
+    [
+     6753,
+     14121
+    ],
+    [
+     6756,
+     14174
+    ],
+    [
+     6764,
+     14225
+    ],
+    [
+     6774,
+     14277
+    ],
+    [
+     6759,
+     14326
+    ],
+    [
+     6716,
+     14356
+    ],
+    [
+     6681,
+     14395
+    ],
+    [
+     6654,
+     14440
+    ],
+    [
+     6627,
+     14485
+    ],
+    [
+     6591,
+     14524
+    ],
+    [
+     6549,
+     14555
+    ],
+    [
+     6538,
+     14565
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 8 (554 m)",
+   "pts": [
+    [
+     6270,
+     14187
+    ],
+    [
+     6224,
+     14162
+    ],
+    [
+     6173,
+     14173
+    ],
+    [
+     6131,
+     14205
+    ],
+    [
+     6090,
+     14238
+    ],
+    [
+     6045,
+     14264
+    ],
+    [
+     5997,
+     14287
+    ],
+    [
+     5953,
+     14316
+    ],
+    [
+     5916,
+     14353
+    ],
+    [
+     5879,
+     14390
+    ],
+    [
+     5843,
+     14429
+    ],
+    [
+     5826,
+     14449
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 9 (193 m)",
+   "pts": [
+    [
+     6936,
+     14080
+    ],
+    [
+     6897,
+     14047
+    ],
+    [
+     6846,
+     14038
+    ],
+    [
+     6793,
+     14038
+    ],
+    [
+     6760,
+     14048
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 10 (537 m)",
+   "pts": [
+    [
+     5472,
+     13904
+    ],
+    [
+     5494,
+     13861
+    ],
+    [
+     5545,
+     13848
+    ],
+    [
+     5596,
+     13836
+    ],
+    [
+     5648,
+     13830
+    ],
+    [
+     5700,
+     13837
+    ],
+    [
+     5748,
+     13859
+    ],
+    [
+     5787,
+     13894
+    ],
+    [
+     5803,
+     13943
+    ],
+    [
+     5816,
+     13995
+    ],
+    [
+     5806,
+     14045
+    ],
+    [
+     5801,
+     14054
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 11 (421 m)",
+   "pts": [
+    [
+     7734,
+     13804
+    ],
+    [
+     7698,
+     13766
+    ],
+    [
+     7675,
+     13718
+    ],
+    [
+     7667,
+     13667
+    ],
+    [
+     7706,
+     13635
+    ],
+    [
+     7755,
+     13652
+    ],
+    [
+     7804,
+     13672
+    ],
+    [
+     7853,
+     13690
+    ],
+    [
+     7895,
+     13720
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 12 (305 m)",
+   "pts": [
+    [
+     12140,
+     13667
+    ],
+    [
+     12162,
+     13619
+    ],
+    [
+     12192,
+     13576
+    ],
+    [
+     12230,
+     13540
+    ],
+    [
+     12273,
+     13510
+    ],
+    [
+     12315,
+     13477
+    ],
+    [
+     12349,
+     13453
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 13 (114 m)",
+   "pts": [
+    [
+     7669,
+     13493
+    ],
+    [
+     7662,
+     13545
+    ],
+    [
+     7670,
+     13597
+    ],
+    [
+     7671,
+     13605
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 14 (642 m)",
+   "pts": [
+    [
+     8212,
+     13333
+    ],
+    [
+     8173,
+     13298
+    ],
+    [
+     8124,
+     13278
+    ],
+    [
+     8075,
+     13259
+    ],
+    [
+     8038,
+     13223
+    ],
+    [
+     8029,
+     13173
+    ],
+    [
+     8058,
+     13129
+    ],
+    [
+     8084,
+     13083
+    ],
+    [
+     8108,
+     13036
+    ],
+    [
+     8141,
+     12995
+    ],
+    [
+     8181,
+     12961
+    ],
+    [
+     8223,
+     12929
+    ],
+    [
+     8270,
+     12907
+    ],
+    [
+     8279,
+     12904
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 15 (116 m)",
+   "pts": [
+    [
+     7892,
+     13280
+    ],
+    [
+     7927,
+     13242
+    ],
+    [
+     7971,
+     13213
+    ],
+    [
+     7980,
+     13208
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 16 (219 m)",
+   "pts": [
+    [
+     11730,
+     13142
+    ],
+    [
+     11722,
+     13194
+    ],
+    [
+     11717,
+     13246
+    ],
+    [
+     11713,
+     13299
+    ],
+    [
+     11712,
+     13351
+    ],
+    [
+     11714,
+     13359
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 17 (613 m)",
+   "pts": [
+    [
+     8678,
+     12912
+    ],
+    [
+     8725,
+     12889
+    ],
+    [
+     8776,
+     12879
+    ],
+    [
+     8826,
+     12863
+    ],
+    [
+     8876,
+     12845
+    ],
+    [
+     8925,
+     12825
+    ],
+    [
+     8976,
+     12811
+    ],
+    [
+     9027,
+     12802
+    ],
+    [
+     9079,
+     12792
+    ],
+    [
+     9130,
+     12779
+    ],
+    [
+     9182,
+     12773
+    ],
+    [
+     9234,
+     12785
+    ],
+    [
+     9263,
+     12800
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 18 (161 m)",
+   "pts": [
+    [
+     12225,
+     12874
+    ],
+    [
+     12173,
+     12873
+    ],
+    [
+     12120,
+     12877
+    ],
+    [
+     12072,
+     12896
+    ],
+    [
+     12069,
+     12897
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 19 (620 m)",
+   "pts": [
+    [
+     6122,
+     12788
+    ],
+    [
+     6105,
+     12738
+    ],
+    [
+     6079,
+     12692
+    ],
+    [
+     6067,
+     12641
+    ],
+    [
+     6057,
+     12589
+    ],
+    [
+     6047,
+     12538
+    ],
+    [
+     6012,
+     12503
+    ],
+    [
+     5965,
+     12522
+    ],
+    [
+     5928,
+     12559
+    ],
+    [
+     5894,
+     12599
+    ],
+    [
+     5864,
+     12643
+    ],
+    [
+     5838,
+     12689
+    ],
+    [
+     5828,
+     12727
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 20 (89 m)",
+   "pts": [
+    [
+     4653,
+     12746
+    ],
+    [
+     4617,
+     12785
+    ],
+    [
+     4589,
+     12809
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 21 (461 m)",
+   "pts": [
+    [
+     4939,
+     12730
+    ],
+    [
+     4887,
+     12728
+    ],
+    [
+     4834,
+     12727
+    ],
+    [
+     4782,
+     12718
+    ],
+    [
+     4730,
+     12717
+    ],
+    [
+     4678,
+     12711
+    ],
+    [
+     4628,
+     12695
+    ],
+    [
+     4575,
+     12692
+    ],
+    [
+     4523,
+     12698
+    ],
+    [
+     4484,
+     12696
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 22 (344 m)",
+   "pts": [
+    [
+     5213,
+     12696
+    ],
+    [
+     5263,
+     12678
+    ],
+    [
+     5314,
+     12667
+    ],
+    [
+     5366,
+     12658
+    ],
+    [
+     5416,
+     12641
+    ],
+    [
+     5468,
+     12641
+    ],
+    [
+     5514,
+     12666
+    ],
+    [
+     5537,
+     12683
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 23 (652 m)",
+   "pts": [
+    [
+     7347,
+     12637
+    ],
+    [
+     7299,
+     12617
+    ],
+    [
+     7255,
+     12588
+    ],
+    [
+     7209,
+     12561
+    ],
+    [
+     7158,
+     12553
+    ],
+    [
+     7108,
+     12570
+    ],
+    [
+     7071,
+     12605
+    ],
+    [
+     7066,
+     12657
+    ],
+    [
+     7067,
+     12710
+    ],
+    [
+     7077,
+     12761
+    ],
+    [
+     7094,
+     12811
+    ],
+    [
+     7119,
+     12858
+    ],
+    [
+     7146,
+     12903
+    ],
+    [
+     7156,
+     12920
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 24 (85 m)",
+   "pts": [
+    [
+     6970,
+     12622
+    ],
+    [
+     7015,
+     12621
+    ],
+    [
+     7041,
+     12604
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 25 (667 m)",
+   "pts": [
+    [
+     12305,
+     12604
+    ],
+    [
+     12263,
+     12572
+    ],
+    [
+     12223,
+     12538
+    ],
+    [
+     12184,
+     12503
+    ],
+    [
+     12134,
+     12501
+    ],
+    [
+     12087,
+     12525
+    ],
+    [
+     12038,
+     12545
+    ],
+    [
+     11990,
+     12567
+    ],
+    [
+     11946,
+     12595
+    ],
+    [
+     11902,
+     12624
+    ],
+    [
+     11856,
+     12650
+    ],
+    [
+     11808,
+     12673
+    ],
+    [
+     11761,
+     12697
+    ],
+    [
+     11735,
+     12718
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 26 (174 m)",
+   "pts": [
+    [
+     6027,
+     12463
+    ],
+    [
+     6063,
+     12425
+    ],
+    [
+     6105,
+     12392
+    ],
+    [
+     6154,
+     12377
+    ],
+    [
+     6169,
+     12380
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 27 (71 m)",
+   "pts": [
+    [
+     12269,
+     12434
+    ],
+    [
+     12224,
+     12461
+    ],
+    [
+     12210,
+     12473
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 28 (342 m)",
+   "pts": [
+    [
+     6554,
+     12157
+    ],
+    [
+     6544,
+     12209
+    ],
+    [
+     6531,
+     12260
+    ],
+    [
+     6515,
+     12310
+    ],
+    [
+     6492,
+     12357
+    ],
+    [
+     6469,
+     12405
+    ],
+    [
+     6454,
+     12455
+    ],
+    [
+     6455,
+     12480
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 29 (427 m)",
+   "pts": [
+    [
+     6572,
+     11962
+    ],
+    [
+     6594,
+     11915
+    ],
+    [
+     6629,
+     11876
+    ],
+    [
+     6662,
+     11835
+    ],
+    [
+     6702,
+     11800
+    ],
+    [
+     6749,
+     11778
+    ],
+    [
+     6801,
+     11781
+    ],
+    [
+     6850,
+     11799
+    ],
+    [
+     6895,
+     11827
+    ],
+    [
+     6899,
+     11830
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 30 (249 m)",
+   "pts": [
+    [
+     7814,
+     11911
+    ],
+    [
+     7789,
+     11957
+    ],
+    [
+     7776,
+     12008
+    ],
+    [
+     7777,
+     12061
+    ],
+    [
+     7793,
+     12110
+    ],
+    [
+     7822,
+     12135
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 31 (291 m)",
+   "pts": [
+    [
+     8061,
+     11824
+    ],
+    [
+     8112,
+     11811
+    ],
+    [
+     8163,
+     11799
+    ],
+    [
+     8214,
+     11786
+    ],
+    [
+     8266,
+     11778
+    ],
+    [
+     8316,
+     11761
+    ],
+    [
+     8340,
+     11749
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 32 (69 m)",
+   "pts": [
+    [
+     12376,
+     11487
+    ],
+    [
+     12369,
+     11435
+    ],
+    [
+     12367,
+     11419
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 33 (295 m)",
+   "pts": [
+    [
+     11981,
+     11139
+    ],
+    [
+     12019,
+     11175
+    ],
+    [
+     12051,
+     11217
+    ],
+    [
+     12089,
+     11253
+    ],
+    [
+     12137,
+     11274
+    ],
+    [
+     12188,
+     11287
+    ],
+    [
+     12217,
+     11299
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 34 (565 m)",
+   "pts": [
+    [
+     8614,
+     10881
+    ],
+    [
+     8600,
+     10831
+    ],
+    [
+     8568,
+     10789
+    ],
+    [
+     8533,
+     10750
+    ],
+    [
+     8497,
+     10712
+    ],
+    [
+     8455,
+     10679
+    ],
+    [
+     8409,
+     10658
+    ],
+    [
+     8387,
+     10702
+    ],
+    [
+     8385,
+     10755
+    ],
+    [
+     8387,
+     10807
+    ],
+    [
+     8411,
+     10854
+    ],
+    [
+     8437,
+     10881
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 35 (167 m)",
+   "pts": [
+    [
+     8394,
+     10617
+    ],
+    [
+     8403,
+     10565
+    ],
+    [
+     8429,
+     10520
+    ],
+    [
+     8473,
+     10491
+    ],
+    [
+     8481,
+     10488
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 36 (372 m)",
+   "pts": [
+    [
+     7894,
+     10601
+    ],
+    [
+     7909,
+     10652
+    ],
+    [
+     7930,
+     10700
+    ],
+    [
+     7944,
+     10751
+    ],
+    [
+     7949,
+     10803
+    ],
+    [
+     7962,
+     10854
+    ],
+    [
+     7974,
+     10906
+    ],
+    [
+     7996,
+     10953
+    ],
+    [
+     7999,
+     10955
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 37 (660 m)",
+   "pts": [
+    [
+     9561,
+     10372
+    ],
+    [
+     9599,
+     10335
+    ],
+    [
+     9640,
+     10302
+    ],
+    [
+     9683,
+     10271
+    ],
+    [
+     9718,
+     10232
+    ],
+    [
+     9747,
+     10188
+    ],
+    [
+     9775,
+     10144
+    ],
+    [
+     9803,
+     10099
+    ],
+    [
+     9831,
+     10054
+    ],
+    [
+     9861,
+     10011
+    ],
+    [
+     9896,
+     9972
+    ],
+    [
+     9933,
+     9935
+    ],
+    [
+     9976,
+     9904
+    ],
+    [
+     10002,
+     9897
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 38 (107 m)",
+   "pts": [
+    [
+     8641,
+     10035
+    ],
+    [
+     8687,
+     10009
+    ],
+    [
+     8734,
+     9986
+    ],
+    [
+     8736,
+     9986
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 39 (567 m)",
+   "pts": [
+    [
+     8932,
+     10010
+    ],
+    [
+     8897,
+     9972
+    ],
+    [
+     8851,
+     9947
+    ],
+    [
+     8799,
+     9951
+    ],
+    [
+     8778,
+     9995
+    ],
+    [
+     8804,
+     10040
+    ],
+    [
+     8840,
+     10079
+    ],
+    [
+     8879,
+     10114
+    ],
+    [
+     8926,
+     10137
+    ],
+    [
+     8979,
+     10143
+    ],
+    [
+     9031,
+     10145
+    ],
+    [
+     9070,
+     10150
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 40 (283 m)",
+   "pts": [
+    [
+     9228,
+     9800
+    ],
+    [
+     9195,
+     9759
+    ],
+    [
+     9153,
+     9728
+    ],
+    [
+     9101,
+     9721
+    ],
+    [
+     9049,
+     9728
+    ],
+    [
+     9001,
+     9751
+    ],
+    [
+     8984,
+     9760
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 41 (335 m)",
+   "pts": [
+    [
+     8200,
+     9617
+    ],
+    [
+     8161,
+     9652
+    ],
+    [
+     8121,
+     9687
+    ],
+    [
+     8084,
+     9725
+    ],
+    [
+     8049,
+     9764
+    ],
+    [
+     8015,
+     9804
+    ],
+    [
+     7982,
+     9846
+    ],
+    [
+     7972,
+     9861
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 42 (83 m)",
+   "pts": [
+    [
+     10126,
+     9598
+    ],
+    [
+     10086,
+     9567
+    ],
+    [
+     10064,
+     9546
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 43 (884 m)",
+   "pts": [
+    [
+     10555,
+     9436
+    ],
+    [
+     10503,
+     9428
+    ],
+    [
+     10453,
+     9412
+    ],
+    [
+     10409,
+     9385
+    ],
+    [
+     10366,
+     9353
+    ],
+    [
+     10327,
+     9318
+    ],
+    [
+     10291,
+     9281
+    ],
+    [
+     10242,
+     9293
+    ],
+    [
+     10207,
+     9332
+    ],
+    [
+     10189,
+     9381
+    ],
+    [
+     10178,
+     9432
+    ],
+    [
+     10138,
+     9463
+    ],
+    [
+     10091,
+     9487
+    ],
+    [
+     10046,
+     9514
+    ],
+    [
+     9998,
+     9499
+    ],
+    [
+     9961,
+     9462
+    ],
+    [
+     9931,
+     9419
+    ],
+    [
+     9921,
+     9380
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 44 (194 m)",
+   "pts": [
+    [
+     11531,
+     9397
+    ],
+    [
+     11490,
+     9364
+    ],
+    [
+     11456,
+     9324
+    ],
+    [
+     11427,
+     9280
+    ],
+    [
+     11412,
+     9248
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 45 (332 m)",
+   "pts": [
+    [
+     8112,
+     9395
+    ],
+    [
+     8082,
+     9352
+    ],
+    [
+     8074,
+     9301
+    ],
+    [
+     8090,
+     9251
+    ],
+    [
+     8129,
+     9221
+    ],
+    [
+     8179,
+     9234
+    ],
+    [
+     8229,
+     9251
+    ],
+    [
+     8244,
+     9257
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 46 (120 m)",
+   "pts": [
+    [
+     10325,
+     9258
+    ],
+    [
+     10374,
+     9240
+    ],
+    [
+     10426,
+     9238
+    ],
+    [
+     10441,
+     9238
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 47 (223 m)",
+   "pts": [
+    [
+     11285,
+     9181
+    ],
+    [
+     11236,
+     9163
+    ],
+    [
+     11189,
+     9138
+    ],
+    [
+     11145,
+     9109
+    ],
+    [
+     11116,
+     9066
+    ],
+    [
+     11112,
+     9054
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 48 (231 m)",
+   "pts": [
+    [
+     8464,
+     9026
+    ],
+    [
+     8456,
+     8974
+    ],
+    [
+     8442,
+     8923
+    ],
+    [
+     8458,
+     8875
+    ],
+    [
+     8505,
+     8853
+    ],
+    [
+     8525,
+     8851
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 49 (178 m)",
+   "pts": [
+    [
+     11724,
+     8921
+    ],
+    [
+     11685,
+     8886
+    ],
+    [
+     11646,
+     8851
+    ],
+    [
+     11603,
+     8819
+    ],
+    [
+     11586,
+     8810
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 50 (132 m)",
+   "pts": [
+    [
+     11041,
+     8826
+    ],
+    [
+     11048,
+     8878
+    ],
+    [
+     11051,
+     8930
+    ],
+    [
+     11058,
+     8956
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 51 (254 m)",
+   "pts": [
+    [
+     8868,
+     8767
+    ],
+    [
+     8816,
+     8757
+    ],
+    [
+     8764,
+     8755
+    ],
+    [
+     8712,
+     8765
+    ],
+    [
+     8671,
+     8797
+    ],
+    [
+     8640,
+     8828
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "painted trench line 52 (186 m)",
+   "pts": [
+    [
+     10821,
+     8648
+    ],
+    [
+     10867,
+     8622
+    ],
+    [
+     10905,
+     8586
+    ],
+    [
+     10946,
+     8552
+    ],
+    [
+     10969,
+     8536
+    ]
+   ]
+  }
+ ],
+ "_comment_works": "works: (1) the army rear-belt anti-tank ditch 500 m SW of 252.2 from the railway embankment to the Psel valley, trace, road gap (the bridge) and the firing stubs behind it from the Luftwaffe photographs GX-3734-SK-61 (16 July) and GX-3942-SD-124 (7 Aug) in Wheatley 2019 (Figs. 11-22; 'not completely finished', Zamulin ch. 7); (2) the ditch in front of 4/285 RR on the SW slopes of 258.2 with the road block gap (183 RD Combat Report No. 3, Zamulin ch. 5 - German-held from 6 July, so behind the German line on 10 July); (3) the trench lines painted by the user on the op map on 25 Oct (docs/m11_prokhorovka/painted_trenches_25oct.png, traced with tools/trace_paint.py; tools/works.py sectionise() turns each into dug sections, rifle-pit chains and gaps as on the photographs). The trench slot is 2 m wide so tanks can cross it; the ditches (6.5 m x 3 m trapezoid) are the obstacle. The strongpoints list only places op-map markers (works_from_strongpoints false).",
+ "units": [
+  {
+   "side": "GER",
+   "form": [
+    "we_lah_2mir"
+   ],
+   "pos": [
+    [
+     6912,
+     7936
+    ],
+    [
+     7424,
+     7424
+    ],
+    [
+     6400,
+     7424
+    ]
+   ],
+   "name": "2 SS-PzGr Rgt (I, II bns) at 258.2 - Teterevino road; III bn follows",
+   "hq": [
+    6656,
+    6246
+   ],
+   "note": "2 SS PzGr Rgt (Krass), 10 July 06:00: I Bn (Becker) facing the SW outskirts of svkh. Komsomolets, II Bn (Sandig) on the Teterevino - Ivanovsky Vyselok road, III Bn in Teterevino on halftracks in reserve; the attack starts 10:45 (Zamulin ch. 6, II SS PzK order of 9 July)"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_lah_stug",
+    "we_lah_stug2stug"
+   ],
+   "pos": [
+    [
+     5888,
+     7936
+    ]
+   ],
+   "name": "StuG bn with the 2 SS-PzGr Rgt",
+   "hq": [
+    5939,
+    6246
+   ],
+   "note": "assault gun battalion and the Tiger company, attached to 2 SS PzGr Rgt for the attack"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_lah_1at",
+    "we_lah_1at2at"
+   ],
+   "pos": [
+    [
+     5632,
+     6246
+    ]
+   ],
+   "hq": [
+    5632,
+    6246
+   ],
+   "note": "AT battalion: one company with the reconnaissance battalion on the left flank, the rest at Teterevino (HQ with its platoons on the edge)"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_lah_rb"
+   ],
+   "pos": [
+    [
+     6912,
+     9984
+    ],
+    [
+     6400,
+     9472
+    ]
+   ],
+   "name": "LSSAH recon bn: covers the left (Psel) flank, exploits after the breakthrough",
+   "hq": [
+    4403,
+    9728
+   ],
+   "note": "reconnaissance battalion covering the left flank between Vasilyevka and the Komsomolets wood (order of 06:45 10 July); after the breakthrough it is to round the northern tip of the wood to svkh. Oktyabrsky and 252.4"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_lah_eb",
+    "we_lah_aab",
+    "we_lah_eng"
+   ],
+   "pos": [
+    [
+     5888,
+     9984
+    ]
+   ],
+   "hq": [
+    4403,
+    10035
+   ],
+   "note": "pioneer battalion (one company with 2 SS PzGr Rgt); eb / aab (escort, AA) have no battle groups"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_lah_ar",
+    "we_lah_140ar",
+    "we_lah_72ar",
+    "we_lah_52mtr"
+   ],
+   "pos": [
+    [
+     6144,
+     6246
+    ]
+   ],
+   "name": "1 SS-AR and Werfer Rgt 55 firing positions S of 258.2",
+   "hq": [
+    6144,
+    6246
+   ],
+   "note": "artillery regiment at Teterevino with Werfer-Rgt 55 (minus one battalion); HQ with the battalions on the south edge"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_lah_hq"
+   ],
+   "pos": [
+    [
+     5120,
+     6246
+    ]
+   ],
+   "hq": [
+    5120,
+    6246
+   ],
+   "note": "LSSAH division HQ (Luchki, S of the map)"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_dr_3mir"
+   ],
+   "pos": [
+    [
+     7168,
+     6554
+    ],
+    [
+     7782,
+     6554
+    ],
+    [
+     6758,
+     6554
+    ]
+   ],
+   "name": "Das Reich, SS-PzGr Rgt Deutschland: Yasnaya Polyana - Ivanovsky Vyselok",
+   "hq": [
+    7680,
+    6246
+   ],
+   "note": "'Deutschland' Rgt south-east of Teterevino (Yasnaya Polyana, S of the map): to take the heights 2 km SE of Ivanovsky Vyselok with the LSSAH on 10 July, attacks from Teterevino along the railway on 11 July (Zamulin ch. 6-7)"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_dr_stug"
+   ],
+   "pos": [
+    [
+     7475,
+     6451
+    ]
+   ],
+   "hq": [
+    7475,
+    6246
+   ]
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_dr_2at"
+   ],
+   "pos": [
+    [
+     7168,
+     6246
+    ]
+   ],
+   "hq": [
+    7168,
+    6246
+   ],
+   "note": "AT battalion HQ on the south edge; the reconnaissance, escort, AA and pioneer battalions (we_dr_rb / eb / aab / eng) stay off the map - southern flank Kalinin - Ozerovsky, no room on the German edge"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_dr_ar",
+    "we_dr_140ar",
+    "we_dr_72ar",
+    "we_dr_52mtr"
+   ],
+   "pos": [
+    [
+     7987,
+     6246
+    ]
+   ],
+   "hq": [
+    7987,
+    6246
+   ],
+   "note": "artillery regiment HQ with its battalions on the south edge"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_dr_hq"
+   ],
+   "pos": [
+    [
+     6963,
+     6246
+    ]
+   ],
+   "hq": [
+    6963,
+    6246
+   ]
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_tk_6mir"
+   ],
+   "pos": [
+    [
+     5888,
+     12032
+    ],
+    [
+     5376,
+     11520
+    ],
+    [
+     6400,
+     11520
+    ]
+   ],
+   "name": "Totenkopf, SS-PzGr Rgt Eicke: Klyuchi bridgehead on the north bank",
+   "hq": [
+    4403,
+    11981
+   ],
+   "note": "6 SS PzGr Rgt 'Theodor Eicke': assault group at Yudinka - Kozlovka - W outskirts of Vasilyevka (taken 18:45 9 July); the 99 TBr / 11 MRBr counterattack drove it out of Yudinka and Kozlovka by 11:00 10 July, its attack at Kozlovka - Vasilyevka started 10:45 (Zamulin ch. 6)"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_tk_5mir"
+   ],
+   "pos": [
+    [
+     4403,
+     12800
+    ],
+    [
+     4403,
+     12083
+    ]
+   ],
+   "name": "Totenkopf, SS-PzGr Rgt Thule: Kozlovka - Bogoroditskoye on the south bank",
+   "turn": 2,
+   "edge": "W",
+   "note": "5 SS PzGr Rgt 'Thule' from Krasny Oktyabr (W of the map): joins the crossing at Kozlovka - Klyuchi from midday 10 July (bridgehead reported 20:00)"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_tk_eng"
+   ],
+   "pos": [
+    [
+     4403,
+     13005
+    ]
+   ],
+   "name": "T recon bn in the bridgehead; pioneers at the Krasny Oktyabr crossing",
+   "turn": 2,
+   "edge": "W",
+   "note": "pioneer battalion: the Psel crossings at Krasny Oktyabr / N of Bogoroditskoye (two bridges found by Soviet reconnaissance 14:20 11 July); rb / eb have no battle groups"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_tk_ar",
+    "we_tk_46ar"
+   ],
+   "pos": [
+    [
+     4403,
+     11469
+    ]
+   ],
+   "hq": [
+    4403,
+    11469
+   ],
+   "note": "artillery regiment firing from the south bank; HQ with the battalions on the west edge. SS-PzJg-Abt 3 (we_tk_3at, wer_3at) stays off the map - no room on the German edge"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_tk_hq"
+   ],
+   "pos": [
+    [
+     4403,
+     11264
+    ]
+   ],
+   "hq": [
+    4403,
+    11264
+   ]
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_2tc_ss",
+    "we_1hmtr",
+    "we_kmtbn"
+   ],
+   "pos": [
+    [
+     5200,
+     6500
+    ],
+    [
+     5800,
+     6300
+    ],
+    [
+     4600,
+     6400
+    ]
+   ],
+   "name": "II SS-Pz Corps HQ (Luchki) and corps werfer battalions",
+   "hq": [
+    4403,
+    6656
+   ]
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_285"
+   ],
+   "pos": [
+    [
+     7168,
+     10752
+    ],
+    [
+     7424,
+     10496
+    ],
+    [
+     8448,
+     8448
+    ],
+    [
+     6912,
+     11008
+    ],
+    [
+     8960,
+     7936
+    ]
+   ],
+   "name": "285 RR: 1 bn Vasilyevka - Molozhavaya gully, 2 bn svkh. Komsomolets - 258.2 - Ivanovsky Vyselok, 3 bn Storozhevoye",
+   "hq": [
+    11899,
+    10598
+   ],
+   "hq_interior": true,
+   "note": "285 RR of 183 RD: 1st bn Vasilyevka - Molozhavaya gully - W of svkh. Komsomolets (two battle groups side by side), 2nd bn svkh. Komsomolets - Ivanovsky Vyselok (two battle groups); 3rd bn is with 169 TBr at Storozhevoye; the regiment HQ in the Storozhevoye wood (user, 25 Oct) (pos: the first entry is consumed by the regiment HQ, then 1/285, 2/285, 1/285 (2 coy), 2/285 (5 coy) in platoon-table order)"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_623ar"
+   ],
+   "pos": [
+    [
+     9500,
+     9900
+    ],
+    [
+     8000,
+     11500
+    ]
+   ],
+   "name": "II/623 AR behind the sovkhoz",
+   "hq": [
+    11571,
+    6246
+   ]
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_295"
+   ],
+   "pos": [
+    [
+     9600,
+     7300
+    ],
+    [
+     10400,
+     6700
+    ]
+   ],
+   "name": "295 RR: Ivanovsky Vyselok - Belenikhino approaches"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_227"
+   ],
+   "pos": [
+    [
+     13824,
+     6144
+    ],
+    [
+     14848,
+     6144
+    ]
+   ],
+   "name": "227 RR: Vinogradovka - Leski (left flank of 183 RD)",
+   "turn": 6,
+   "edge": "S",
+   "note": "227 RR of 183 RD: on 10 July in the division's second echelon far to the south (Volobuyevka - Sazhnoye, Lawrence); night march Sazhnoye - Shakhovo - Plota - Novoselovka, in position astride the railway at the Stalinskoye branch by 05:00 11 July (Zamulin ch. 7, Sazhinov) - arrives turn 6 from the south-east"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_183rd"
+   ],
+   "pos": [
+    [
+     13800,
+     8000
+    ]
+   ],
+   "hq": [
+    11878,
+    6246
+   ],
+   "name": "183 RD HQ Krasnoye"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_99tbr"
+   ],
+   "pos": [
+    [
+     6500,
+     13100
+    ],
+    [
+     7100,
+     13250
+    ],
+    [
+     7500,
+     13350
+    ]
+   ],
+   "name": "99 TBr dug in at Vasilyevka, Andreyevka, Mikhailovka",
+   "hq": [
+    4403,
+    14746
+   ]
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_32mrbr"
+   ],
+   "pos": [
+    [
+     8300,
+     13900
+    ],
+    [
+     9400,
+     14900
+    ],
+    [
+     10400,
+     15900
+    ]
+   ],
+   "note": "32 MRBr of 18 TC: second echelon Prelestnoye - Petrovka on the south bank (Zamulin Map 5, 10 July); the corps' tank brigades follow on 11 July evening"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_80gmr"
+   ],
+   "pos": [
+    [
+     14300,
+     11500
+    ]
+   ],
+   "note": "80 gds mortar regiment (M-13) of 5 gds TA at Yamki (Zamulin Map 5, 10 July)"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_11mrbr"
+   ],
+   "pos": [
+    [
+     6300,
+     12950
+    ],
+    [
+     6700,
+     13500
+    ],
+    [
+     6500,
+     15300
+    ]
+   ],
+   "name": "11 MRBr (10 TC): 1 and 2 bns Vasilyevka, 3 bn on 226.6",
+   "hq": [
+    4403,
+    14541
+   ]
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_26tbr"
+   ],
+   "pos": [
+    [
+     9400,
+     12000
+    ],
+    [
+     11000,
+     11500
+    ],
+    [
+     12000,
+     11150
+    ]
+   ],
+   "name": "26 TBr dug in Mikhailovka - Stalinskoye otd."
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_169tbr"
+   ],
+   "pos": [
+    [
+     11674,
+     9147
+    ],
+    [
+     12100,
+     9600
+    ],
+    [
+     9800,
+     8600
+    ],
+    [
+     8700,
+     9900
+    ]
+   ],
+   "name": "169 TBr: Storozhevoye; 370 TB in the grove at Ivanovsky Vyselok, 371 TB in the wood N of the sovkhoz"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_58mrbr"
+   ],
+   "pos": [
+    [
+     12515,
+     10984
+    ],
+    [
+     13900,
+     11800
+    ],
+    [
+     12000,
+     10200
+    ]
+   ],
+   "name": "58 MRBr: Storozhevoye-2 - Yamki"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_15gtr"
+   ],
+   "pos": [
+    [
+     12200,
+     9400
+    ]
+   ],
+   "name": "15 gds sep. hvy TR (12 Churchill; KV-1 stands in) at Storozhevoye"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_2tc"
+   ],
+   "pos": [
+    [
+     9600,
+     8900
+    ],
+    [
+     12800,
+     10400
+    ],
+    [
+     7300,
+     13100
+    ]
+   ],
+   "name": "2 TC HQ and corps troops: 1502 det AT bn batteries at Ivanovsky Vyselok and Vasilyevka, 269 MTR"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_27iptabr"
+   ],
+   "pos": [
+    [
+     16300,
+     14200
+    ],
+    [
+     13926,
+     11771
+    ],
+    [
+     18030,
+     11954
+    ],
+    [
+     11674,
+     9147
+    ]
+   ],
+   "name": "27 AT Bde (Front reserve): batteries at Prokhorovka station, Yamki, Grushki, Storozhevoye"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_151"
+   ],
+   "pos": [
+    [
+     4500,
+     15700
+    ],
+    [
+     5300,
+     15100
+    ]
+   ],
+   "name": "151 gds RR: 500 m N of Klyuchi - 1.5 km SW of 226.6",
+   "hq": [
+    4403,
+    15104
+   ]
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_155"
+   ],
+   "pos": [
+    [
+     6300,
+     15400
+    ],
+    [
+     5600,
+     14600
+    ]
+   ],
+   "name": "155 gds RR: 226.6 - the grove SE of Klyuchi",
+   "hq": [
+    4403,
+    14899
+   ]
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_153"
+   ],
+   "pos": [
+    [
+     8000,
+     15700
+    ],
+    [
+     9500,
+     15900
+    ]
+   ],
+   "name": "153 gds RR: 1.5 km E of 226.6 - Polezhayev"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_124ar"
+   ],
+   "pos": [
+    [
+     8500,
+     16100
+    ],
+    [
+     7600,
+     16000
+    ]
+   ],
+   "name": "124 gds AR: 1 km SW of Polezhayev",
+   "hq": [
+    4403,
+    14234
+   ]
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_245otp"
+   ],
+   "pos": [
+    [
+     7000,
+     15800
+    ]
+   ],
+   "name": "tank company of 245 sep. TR with 52 gds RD",
+   "hq": [
+    4403,
+    15258
+   ]
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_52grd"
+   ],
+   "pos": [
+    [
+     9000,
+     16000
+    ]
+   ],
+   "hq": [
+    4403,
+    14131
+   ]
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_4gtbr"
+   ],
+   "pos": [
+    [
+     10200,
+     6500
+    ],
+    [
+     10600,
+     6900
+    ]
+   ],
+   "name": "2 gds TC moved to Belenikhino - Leski - Shakhovo on the night of 10 July"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_25gtbr"
+   ],
+   "pos": [
+    [
+     11200,
+     6600
+    ],
+    [
+     11600,
+     7000
+    ]
+   ]
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_26gtbr"
+   ],
+   "pos": [
+    [
+     12300,
+     6500
+    ],
+    [
+     12700,
+     6900
+    ]
+   ]
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_4gmrbr"
+   ],
+   "pos": [
+    [
+     10800,
+     7300
+    ],
+    [
+     11800,
+     7400
+    ]
+   ]
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_47gtr"
+   ],
+   "pos": [
+    [
+     12000,
+     7800
+    ]
+   ]
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_2gtc"
+   ],
+   "pos": [
+    [
+     12500,
+     7200
+    ]
+   ],
+   "hq": [
+    14000,
+    6700
+   ],
+   "name": "2 gds TC HQ Plota (S edge)"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_48rc"
+   ],
+   "pos": [
+    [
+     15000,
+     8500
+    ]
+   ],
+   "hq": [
+    18000,
+    9000
+   ]
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_rgk",
+    "ra_airsup"
+   ],
+   "pos": [
+    [
+     18000,
+     15500
+    ]
+   ]
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_5gta"
+   ],
+   "pos": [
+    [
+     18000,
+     15800
+    ]
+   ],
+   "hq": [
+    18200,
+    15800
+   ],
+   "name": "5 gds TA HQ Skorovka (NE of Prokhorovka)"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_lah_tr"
+   ],
+   "pos": [
+    [
+     5888,
+     8960
+    ],
+    [
+     5376,
+     8448
+    ],
+    [
+     6912,
+     8960
+    ],
+    [
+     6400,
+     8448
+    ]
+   ],
+   "name": "1 SS-Pz Rgt (minus the Tiger company) from the area S of the Teterevino - Luchki road",
+   "hq": [
+    6349,
+    6246
+   ],
+   "note": "1 SS Pz Rgt (minus the Tigers) standing ready behind 2 SS PzGr Rgt north of Teterevino, to be moved up after the breakthrough (II SS PzK order of 9 July); subordinated to the regiment from 11 July"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_lah_1mir"
+   ],
+   "pos": [
+    [
+     6195,
+     6144
+    ],
+    [
+     6799,
+     6144
+    ]
+   ],
+   "turn": 8,
+   "edge": "S",
+   "name": "1 SS-PzGr Rgt from Luchki / Teterevino (attacks svkh. Oktyabrsky on 11 July)",
+   "note": "1 SS PzGr Rgt at Bolshiye Mayachki on 10 July; ordered to Luchki (north) at 06:30 11 July, at Teterevino by the evening (Zamulin ch. 7)"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_dr_tr"
+   ],
+   "pos": [
+    [
+     7475,
+     6144
+    ]
+   ],
+   "turn": 2,
+   "edge": "S",
+   "name": "2 SS-Pz Rgt from Luchki / Ozerovsky",
+   "note": "Das Reich panzer regiment: moves up from Yasnaya Polyana on 10 July, attacks along the railway on 11 July"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_dr_4mir"
+   ],
+   "pos": [
+    [
+     6554,
+     6144
+    ],
+    [
+     7270,
+     6144
+    ]
+   ],
+   "turn": 4,
+   "edge": "S",
+   "name": "SS-PzGr Rgt Der Fuehrer from Kalinin (toward Belenikhino / Vinogradovka on 11 July)",
+   "note": "'Der Fuehrer' Rgt from the Kalinin - Yasnaya Polyana line (S of the map), arrives for the 11-12 July attacks on Storozhevoye / Belenikhino"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_tk_tr"
+   ],
+   "pos": [
+    [
+     5888,
+     11008
+    ],
+    [
+     5376,
+     10496
+    ],
+    [
+     6912,
+     11008
+    ],
+    [
+     6400,
+     10496
+    ]
+   ],
+   "name": "3 SS-Pz Rgt over the pontoon bridge at Krasny Oktyabr (11 July)",
+   "hq": [
+    4403,
+    10752
+   ],
+   "note": "3 SS Pz Rgt on the south bank south of Kozlovka (Zamulin Map 5); the Psel bridges were ready only in the night of 11/12 July, so it fights south of the river and crosses in the game"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_tk_stug"
+   ],
+   "pos": [
+    [
+     4403,
+     12800
+    ]
+   ],
+   "turn": 11,
+   "edge": "W",
+   "note": "assault gun battalion crosses with the panzers in the night of 11/12 July (turn 11 = 02-06 12 July)"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_9gabd"
+   ],
+   "pos": [
+    [
+     18432,
+     14800
+    ]
+   ],
+   "turn": 5,
+   "edge": "E",
+   "name": "9 gds AB Div marched into Prokhorovka at 22:10 10 July"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_23gab"
+   ],
+   "pos": [
+    [
+     18432,
+     16000
+    ],
+    [
+     18432,
+     15600
+    ]
+   ],
+   "turn": 5,
+   "edge": "E"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_26gab"
+   ],
+   "pos": [
+    [
+     18432,
+     14000
+    ],
+    [
+     18432,
+     13600
+    ]
+   ],
+   "turn": 5,
+   "edge": "E"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_28gab"
+   ],
+   "pos": [
+    [
+     18000,
+     6144
+    ],
+    [
+     17500,
+     6144
+    ]
+   ],
+   "turn": 5,
+   "edge": "S"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_10iptabr"
+   ],
+   "pos": [
+    [
+     18432,
+     13800
+    ],
+    [
+     18432,
+     13200
+    ]
+   ],
+   "turn": 8,
+   "edge": "E"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_32tbr",
+    "ra_31tbr",
+    "ra_1446sap",
+    "ra_29tc"
+   ],
+   "pos": [
+    [
+     18432,
+     15000
+    ],
+    [
+     18432,
+     14000
+    ],
+    [
+     18432,
+     13500
+    ]
+   ],
+   "turn": 10,
+   "edge": "E",
+   "name": "29 TC through Prokhorovka (evening 11 July)"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_25tbr",
+    "ra_53mrbr"
+   ],
+   "pos": [
+    [
+     18432,
+     12500
+    ],
+    [
+     18432,
+     11500
+    ]
+   ],
+   "turn": 11,
+   "edge": "E"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_678har",
+    "ra_689iptap",
+    "ra_76gmr"
+   ],
+   "pos": [
+    [
+     18432,
+     13000
+    ],
+    [
+     18432,
+     14000
+    ],
+    [
+     18432,
+     12000
+    ]
+   ],
+   "turn": 11,
+   "edge": "E"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_1529sap"
+   ],
+   "pos": [
+    [
+     18432,
+     15200
+    ]
+   ],
+   "turn": 13,
+   "edge": "E"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_284",
+    "ra_290"
+   ],
+   "pos": [
+    [
+     8500,
+     16384
+    ],
+    [
+     6500,
+     16384
+    ],
+    [
+     7500,
+     16384
+    ]
+   ],
+   "turn": 6,
+   "edge": "N",
+   "name": "95 gds RD takes over the Psel bend from 52 gds RD by 04:00 11 July"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_287",
+    "ra_95grd",
+    "ra_233ar"
+   ],
+   "pos": [
+    [
+     10000,
+     16384
+    ],
+    [
+     9000,
+     16384
+    ],
+    [
+     9500,
+     16384
+    ]
+   ],
+   "turn": 6,
+   "edge": "N"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_5ga",
+    "ra_33grc"
+   ],
+   "pos": [
+    [
+     7500,
+     16384
+    ],
+    [
+     11000,
+     16384
+    ],
+    [
+     10500,
+     16384
+    ]
+   ],
+   "turn": 6,
+   "edge": "N"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_29iptabr"
+   ],
+   "pos": [
+    [
+     10500,
+     16384
+    ],
+    [
+     9000,
+     16384
+    ]
+   ],
+   "turn": 7,
+   "edge": "N"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_127",
+    "ra_132",
+    "ra_136",
+    "ra_42grd",
+    "ra_91ar"
+   ],
+   "pos": [
+    [
+     11500,
+     16384
+    ],
+    [
+     12500,
+     16384
+    ],
+    [
+     13000,
+     16384
+    ]
+   ],
+   "turn": 8,
+   "edge": "N",
+   "name": "42 gds RD into the Petrovka - Prelestnoye sector (11 July)"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_93gtr"
+   ],
+   "pos": [
+    [
+     18432,
+     16000
+    ]
+   ],
+   "turn": 9,
+   "edge": "E"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_181tbr",
+    "ra_170tbr",
+    "ra_18tc"
+   ],
+   "pos": [
+    [
+     11500,
+     16384
+    ],
+    [
+     12500,
+     16384
+    ],
+    [
+     13500,
+     16384
+    ]
+   ],
+   "turn": 10,
+   "edge": "N",
+   "name": "18 TC to its assembly area Petrovka - Prelestnoye (evening 11 July)"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_110tbr",
+    "ra_36gtr"
+   ],
+   "pos": [
+    [
+     12000,
+     16384
+    ],
+    [
+     13000,
+     16384
+    ],
+    [
+     14000,
+     16384
+    ]
+   ],
+   "turn": 11,
+   "edge": "N"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_53gtr"
+   ],
+   "pos": [
+    [
+     13000,
+     16384
+    ],
+    [
+     12500,
+     16384
+    ]
+   ],
+   "turn": 11,
+   "edge": "N"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_10gmbr",
+    "ra_24gtbr",
+    "ra_5gmc",
+    "ra_51gtr"
+   ],
+   "pos": [
+    [
+     15000,
+     6144
+    ],
+    [
+     16000,
+     6144
+    ],
+    [
+     17000,
+     6144
+    ]
+   ],
+   "turn": 12,
+   "edge": "S",
+   "name": "5 gds MC on the Pravorot road, army reserve (11 / 12 gds MBde went south to Rzhavets)"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_27gabr",
+    "ra_16gmr"
+   ],
+   "pos": [
+    [
+     17500,
+     6144
+    ],
+    [
+     16500,
+     6144
+    ]
+   ],
+   "turn": 12,
+   "edge": "S"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_1447sap"
+   ],
+   "pos": [
+    [
+     16000,
+     6144
+    ]
+   ],
+   "turn": 13,
+   "edge": "S"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_7gabar"
+   ],
+   "pos": [
+    [
+     17000,
+     6144
+    ]
+   ],
+   "turn": 5,
+   "edge": "S"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_301iptap"
+   ],
+   "pos": [
+    [
+     13000,
+     6144
+    ]
+   ],
+   "turn": 6,
+   "edge": "S"
+  }
+ ],
+ "air": {
+  "we_air_01": 3,
+  "we_air_02": 3,
+  "we_air_03": 7,
+  "we_air_04": 8,
+  "we_air_05": 7,
+  "we_air_06": 13,
+  "we_air_07": 14,
+  "ra_air_01": 3,
+  "ra_air_02": 8,
+  "ra_air_03": 9,
+  "ra_air_04": 13,
+  "ra_air_05": 10,
+  "ra_air_06": 15
+ },
+ "_comment_air": "platoon name -> turn the squadron becomes available. 10 July: rain until 14:00 (VIII Fliegerkorps grounded in the morning, first squadron from turn 3), 0 sorties over LSSAH, 62 over Totenkopf; 11 July VIII Fliegerkorps Ju 87 / Fw 190 over the LSSAH sector from the morning; 12 July massed on both sides; 2 VA Il-2 regiments from the afternoon of 11 July, Po-2 night bombers at night (Lawrence, Aces at Kursk).",
+ "frames": [
+  {
+   "brief": "brief_01",
+   "w0": "rain",
+   "w1": "rain",
+   "day": 0
+  },
+  {
+   "brief": "brief_02",
+   "w0": "rain",
+   "w1": "cloudy",
+   "day": 0
+  },
+  {
+   "brief": "brief_03",
+   "w0": "cloudy",
+   "w1": "clear",
+   "day": 0
+  },
+  {
+   "brief": "brief_04",
+   "w0": "clear",
+   "w1": "clear",
+   "day": 0
+  },
+  {
+   "brief": "",
+   "w0": "clear",
+   "w1": "clear",
+   "day": 0
+  },
+  {
+   "brief": "",
+   "w0": "fog",
+   "w1": "cloudy",
+   "day": 1
+  },
+  {
+   "brief": "brief_07",
+   "w0": "cloudy",
+   "w1": "clear",
+   "day": 1
+  },
+  {
+   "brief": "",
+   "w0": "clear",
+   "w1": "clear",
+   "day": 1
+  },
+  {
+   "brief": "",
+   "w0": "clear",
+   "w1": "cloudy",
+   "day": 1
+  },
+  {
+   "brief": "brief_10",
+   "w0": "cloudy",
+   "w1": "cloudy",
+   "day": 1
+  },
+  {
+   "brief": "",
+   "w0": "cloudy",
+   "w1": "rain",
+   "day": 1
+  },
+  {
+   "brief": "",
+   "w0": "rain",
+   "w1": "cloudy",
+   "day": 2
+  },
+  {
+   "brief": "brief_13",
+   "w0": "cloudy",
+   "w1": "clear",
+   "day": 2
+  },
+  {
+   "brief": "brief_14",
+   "w0": "clear",
+   "w1": "rain",
+   "day": 2
+  },
+  {
+   "brief": "brief_15",
+   "w0": "rain",
+   "w1": "clear",
+   "day": 2
+  },
+  {
+   "brief": "",
+   "w0": "clear",
+   "w1": "clear",
+   "day": 2
+  },
+  {
+   "brief": "",
+   "w0": "clear",
+   "w1": "clear",
+   "day": 2
+  },
+  {
+   "brief": "",
+   "w0": "fog",
+   "w1": "cloudy",
+   "day": 3
+  },
+  {
+   "brief": "brief_19",
+   "w0": "rain",
+   "w1": "rain",
+   "day": 3
+  },
+  {
+   "brief": "",
+   "w0": "rain",
+   "w1": "cloudy",
+   "day": 3
+  },
+  {
+   "brief": "",
+   "w0": "cloudy",
+   "w1": "clear",
+   "day": 3
+  },
+  {
+   "brief": "",
+   "w0": "clear",
+   "w1": "clear",
+   "day": 3
+  },
+  {
+   "brief": "",
+   "w0": "clear",
+   "w1": "clear",
+   "day": 3
+  },
+  {
+   "brief": "",
+   "w0": "clear",
+   "w1": "clear",
+   "day": 4
+  }
+ ],
+ "_comment_frames": "one row per turn: weather at the start / end of the turn (clear, cloudy, rain, fog), day index from the start date, brief = text key of the turn briefing. 10 July: showers until 14:00 then clearing; 11 July fine; 12 July drizzle at dawn, thunderstorm about 17:00; 13 July rain in the morning.",
+ "briefing": {
+  "op_name": "Prokhorovka\n\u0006July 10 - 13, 1943\n\u000469 A, 5 gds TA, 5 gds A",
+  "op_name1": "Prokhorovka\n\u0006July 10 - 13, 1943\n\u0007II SS-Panzerkorps",
+  "op_chap": "Kursk\n\u0006July, 1943\n\u0006USSR - Germany",
+  "op_name_rus": "\u041f\u0440\u043e\u0445\u043e\u0440\u043e\u0432\u043a\u0430\n\u000610 - 13 \u0438\u044e\u043b\u044f 1943\n\u000469 \u0410, 5 \u0433\u0432.\u0422\u0410, 5 \u0433\u0432.\u0410",
+  "op_name1_rus": "\u041f\u0440\u043e\u0445\u043e\u0440\u043e\u0432\u043a\u0430\n\u000610 - 13 \u0438\u044e\u043b\u044f 1943\n\u0007II \u0422\u041a \u0421\u0421",
+  "op_chap_rus": "\u041a\u0443\u0440\u0441\u043a\n\u0006\u0438\u044e\u043b\u044c 1943\n\u0006\u0421\u0421\u0421\u0420 - \u0413\u0435\u0440\u043c\u0430\u043d\u0438\u044f",
+  "op_canvas": [
+   "06:00, 10 July 1943. After five days of fighting II SS-Panzerkorps turns on Prokhorovka: LSSAH is to attack at 06:00 from Teterevino along the road and the railway, take svkh. Komsomolets, Hill 241.6 and the station; Das Reich covers its right at Ivanovsky Vyselok and Belenikhino; Totenkopf holds Kozlovka on the south bank of the Psel and is crossing the river at Krasny Oktyabr to take Hill 226.6 and open the way to Kartashevka. Facing them: 285 RR of 183 RD in the rear army belt Vasilyevka - svkh. Komsomolets - Ivanovsky Vyselok - Storozhevoye with 2 TC (99, 26, 169 TBr) dug in behind it, 11 MRBr at Vasilyevka and on 226.6, 52 gds RD on the north bank, 2 gds TC at Belenikhino. Showers until the afternoon, roads sodden.",
+   "10 July, afternoon. The sovkhoz and the railway bend are the key of the position - the gullies between Vasilyevka and Komsomolets end 300-400 m from the embankment. 15 gds hvy TR (Churchills) counter-attacks from Storozhevoye; 26 TBr moves to 241.6. 9 gds AB Div is marching into Prokhorovka during the night.",
+   "11 July. 95 gds RD relieves 52 gds RD in the Psel bend by 04:00, 42 gds RD takes the Petrovka - Prelestnoye sector; 9 gds AB Div digs in at svkh. Oktyabrsky - 252.2 (26 gds AB Rgt), Yamki (28) and 252.4 (23). LSSAH attacks the sovkhoz and 252.2 along the railway; Totenkopf brings its tanks over the Psel. 5 gds TA (18 TC, 29 TC, 5 gds MC) arrives from the east and north-east in the evening.",
+   "12 July. Counter-attack of 5 gds TA at 08:30: 29 TC along the railway on the sovkhoz and 252.2, 18 TC along the Psel on Prelestnoye - Mikhaylovka - Vasilyevka, 2 gds TC on Yasnaya Polyana and Kalinin; 9 gds AB Div and 95 gds RD follow the tanks. Totenkopf attacks 226.6 - Polezhayev on the north bank. Thunderstorm in the late afternoon.",
+   "13 July. Both sides hold what they have taken; LSSAH and Totenkopf regroup, 5 gds TA and 5 gds A dig in on the line Vasilyevka - 252.2 - Storozhevoye. Rain in the morning."
+  ],
+  "op_canvas_rus": [
+   "06:00, 10 \u0438\u044e\u043b\u044f 1943. II \u0422\u041a \u0421\u0421 \u043f\u043e\u0432\u043e\u0440\u0430\u0447\u0438\u0432\u0430\u0435\u0442 \u043d\u0430 \u041f\u0440\u043e\u0445\u043e\u0440\u043e\u0432\u043a\u0443: \u041b\u0410\u0413 \u043d\u0430\u0441\u0442\u0443\u043f\u0430\u0435\u0442 \u043e\u0442 \u0422\u0435\u0442\u0435\u0440\u0435\u0432\u0438\u043d\u043e \u0432\u0434\u043e\u043b\u044c \u0434\u043e\u0440\u043e\u0433\u0438 \u0438 \u0436\u0435\u043b\u0435\u0437\u043d\u043e\u0439 \u0434\u043e\u0440\u043e\u0433\u0438 \u043d\u0430 \u0441\u0432\u0445. \u041a\u043e\u043c\u0441\u043e\u043c\u043e\u043b\u0435\u0446, \u0432\u044b\u0441. 241.6 \u0438 \u0441\u0442\u0430\u043d\u0446\u0438\u044e; \u0420\u0435\u0439\u0445 \u043f\u0440\u0438\u043a\u0440\u044b\u0432\u0430\u0435\u0442 \u043f\u0440\u0430\u0432\u044b\u0439 \u0444\u043b\u0430\u043d\u0433 \u0443 \u0418\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u043e\u0433\u043e \u0412\u044b\u0441\u0435\u043b\u043a\u0430 \u0438 \u0411\u0435\u043b\u0435\u043d\u0438\u0445\u0438\u043d\u043e; \u041c\u0451\u0440\u0442\u0432\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 \u0443\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442 \u041a\u043e\u0437\u043b\u043e\u0432\u043a\u0443 \u043d\u0430 \u044e\u0436\u043d\u043e\u043c \u0431\u0435\u0440\u0435\u0433\u0443 \u041f\u0441\u0451\u043b\u0430 \u0438 \u0444\u043e\u0440\u0441\u0438\u0440\u0443\u0435\u0442 \u0440\u0435\u043a\u0443 \u0443 \u041a\u0440\u0430\u0441\u043d\u043e\u0433\u043e \u041e\u043a\u0442\u044f\u0431\u0440\u044f \u043d\u0430 \u0432\u044b\u0441. 226.6. \u041f\u0440\u043e\u0442\u0438\u0432 \u043d\u0438\u0445 285 \u0441\u043f 183 \u0441\u0434 \u0432 \u0442\u044b\u043b\u043e\u0432\u043e\u0439 \u0430\u0440\u043c\u0435\u0439\u0441\u043a\u043e\u0439 \u043f\u043e\u043b\u043e\u0441\u0435 \u0412\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u043a\u0430 - \u0441\u0432\u0445. \u041a\u043e\u043c\u0441\u043e\u043c\u043e\u043b\u0435\u0446 - \u0418\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0438\u0439 \u0412\u044b\u0441\u0435\u043b\u043e\u043a - \u0421\u0442\u043e\u0440\u043e\u0436\u0435\u0432\u043e\u0435, \u0437\u0430 \u043d\u0438\u043c \u043e\u043a\u043e\u043f\u0430\u043b\u0441\u044f 2 \u0442\u043a (99, 26, 169 \u0442\u0431\u0440), 11 \u043c\u0441\u0431\u0440 \u0432 \u0412\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u043a\u0435 \u0438 \u043d\u0430 226.6, 52 \u0433\u0432.\u0441\u0434 \u043d\u0430 \u0441\u0435\u0432\u0435\u0440\u043d\u043e\u043c \u0431\u0435\u0440\u0435\u0433\u0443, 2 \u0433\u0432.\u0442\u043a \u0443 \u0411\u0435\u043b\u0435\u043d\u0438\u0445\u0438\u043d\u043e. \u0414\u043e\u0436\u0434\u0438 \u0434\u043e \u043f\u043e\u043b\u0443\u0434\u043d\u044f, \u0434\u043e\u0440\u043e\u0433\u0438 \u0440\u0430\u0437\u043c\u043e\u043a\u043b\u0438.",
+   "10 \u0438\u044e\u043b\u044f, \u0434\u0435\u043d\u044c. \u0421\u043e\u0432\u0445\u043e\u0437 \u0438 \u0438\u0437\u0433\u0438\u0431 \u0436\u0435\u043b\u0435\u0437\u043d\u043e\u0439 \u0434\u043e\u0440\u043e\u0433\u0438 - \u043a\u043b\u044e\u0447 \u043f\u043e\u0437\u0438\u0446\u0438\u0438. 15 \u0433\u0432.\u0442\u0442\u043f (\u0427\u0435\u0440\u0447\u0438\u043b\u043b\u0438) \u043a\u043e\u043d\u0442\u0440\u0430\u0442\u0430\u043a\u0443\u0435\u0442 \u043e\u0442 \u0421\u0442\u043e\u0440\u043e\u0436\u0435\u0432\u043e\u0433\u043e, 26 \u0442\u0431\u0440 \u0432\u044b\u0434\u0432\u0438\u0433\u0430\u0435\u0442\u0441\u044f \u043a 241.6. 9 \u0433\u0432.\u0432\u0434\u0434 \u043d\u043e\u0447\u044c\u044e \u0432\u0445\u043e\u0434\u0438\u0442 \u0432 \u041f\u0440\u043e\u0445\u043e\u0440\u043e\u0432\u043a\u0443.",
+   "11 \u0438\u044e\u043b\u044f. 95 \u0433\u0432.\u0441\u0434 \u0441\u043c\u0435\u043d\u044f\u0435\u0442 52 \u0433\u0432.\u0441\u0434 \u0432 \u0438\u0437\u043b\u0443\u0447\u0438\u043d\u0435 \u041f\u0441\u0451\u043b\u0430 \u043a 04:00, 42 \u0433\u0432.\u0441\u0434 \u0437\u0430\u043d\u0438\u043c\u0430\u0435\u0442 \u0443\u0447\u0430\u0441\u0442\u043e\u043a \u041f\u0435\u0442\u0440\u043e\u0432\u043a\u0430 - \u041f\u0440\u0435\u043b\u0435\u0441\u0442\u043d\u043e\u0435; 9 \u0433\u0432.\u0432\u0434\u0434 \u043e\u043a\u0430\u043f\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u0443 \u0441\u0432\u0445. \u041e\u043a\u0442\u044f\u0431\u0440\u044c\u0441\u043a\u0438\u0439 - 252.2 (26 \u0433\u0432.\u0432\u0434\u0441\u043f), \u042f\u043c\u043a\u0438 (28) \u0438 252.4 (23). \u041b\u0410\u0413 \u0430\u0442\u0430\u043a\u0443\u0435\u0442 \u0441\u043e\u0432\u0445\u043e\u0437 \u0438 252.2 \u0432\u0434\u043e\u043b\u044c \u0436\u0435\u043b\u0435\u0437\u043d\u043e\u0439 \u0434\u043e\u0440\u043e\u0433\u0438; \u041c\u0451\u0440\u0442\u0432\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 \u043f\u0435\u0440\u0435\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u0442 \u0442\u0430\u043d\u043a\u0438 \u0447\u0435\u0440\u0435\u0437 \u041f\u0441\u0451\u043b. 5 \u0433\u0432.\u0422\u0410 (18 \u0442\u043a, 29 \u0442\u043a, 5 \u0433\u0432.\u043c\u043a) \u043f\u043e\u0434\u0445\u043e\u0434\u0438\u0442 \u0441 \u0432\u043e\u0441\u0442\u043e\u043a\u0430 \u0438 \u0441\u0435\u0432\u0435\u0440\u043e-\u0432\u043e\u0441\u0442\u043e\u043a\u0430 \u043a \u0432\u0435\u0447\u0435\u0440\u0443.",
+   "12 \u0438\u044e\u043b\u044f. \u041a\u043e\u043d\u0442\u0440\u0443\u0434\u0430\u0440 5 \u0433\u0432.\u0422\u0410 \u0432 08:30: 29 \u0442\u043a \u0432\u0434\u043e\u043b\u044c \u0436\u0435\u043b\u0435\u0437\u043d\u043e\u0439 \u0434\u043e\u0440\u043e\u0433\u0438 \u043d\u0430 \u0441\u043e\u0432\u0445\u043e\u0437 \u0438 252.2, 18 \u0442\u043a \u0432\u0434\u043e\u043b\u044c \u041f\u0441\u0451\u043b\u0430 \u043d\u0430 \u041f\u0440\u0435\u043b\u0435\u0441\u0442\u043d\u043e\u0435 - \u041c\u0438\u0445\u0430\u0439\u043b\u043e\u0432\u043a\u0443 - \u0412\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u043a\u0443, 2 \u0433\u0432.\u0442\u043a \u043d\u0430 \u042f\u0441\u043d\u0443\u044e \u041f\u043e\u043b\u044f\u043d\u0443 \u0438 \u041a\u0430\u043b\u0438\u043d\u0438\u043d; 9 \u0433\u0432.\u0432\u0434\u0434 \u0438 95 \u0433\u0432.\u0441\u0434 \u0437\u0430 \u0442\u0430\u043d\u043a\u0430\u043c\u0438. \u041c\u0451\u0440\u0442\u0432\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 \u0430\u0442\u0430\u043a\u0443\u0435\u0442 226.6 - \u041f\u043e\u043b\u0435\u0436\u0430\u0435\u0432 \u043d\u0430 \u0441\u0435\u0432\u0435\u0440\u043d\u043e\u043c \u0431\u0435\u0440\u0435\u0433\u0443. \u041a \u0432\u0435\u0447\u0435\u0440\u0443 \u0433\u0440\u043e\u0437\u0430.",
+   "13 \u0438\u044e\u043b\u044f. \u041e\u0431\u0435 \u0441\u0442\u043e\u0440\u043e\u043d\u044b \u0443\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u044e\u0442 \u0437\u0430\u043d\u044f\u0442\u043e\u0435; \u041b\u0410\u0413 \u0438 \u041c\u0451\u0440\u0442\u0432\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 \u043f\u0435\u0440\u0435\u0433\u0440\u0443\u043f\u043f\u0438\u0440\u043e\u0432\u044b\u0432\u0430\u044e\u0442\u0441\u044f, 5 \u0433\u0432.\u0422\u0410 \u0438 5 \u0433\u0432.\u0410 \u0437\u0430\u043a\u0440\u0435\u043f\u043b\u044f\u044e\u0442\u0441\u044f \u043d\u0430 \u0440\u0443\u0431\u0435\u0436\u0435 \u0412\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u043a\u0430 - 252.2 - \u0421\u0442\u043e\u0440\u043e\u0436\u0435\u0432\u043e\u0435. \u0423\u0442\u0440\u043e\u043c \u0434\u043e\u0436\u0434\u044c."
+  ],
+  "briefs": {
+   "brief_01": "06:00, 10 July. LSSAH attacks svkh. Komsomolets and the railway bend after the barrage of 1 SS-AR and Werfer Rgt 55; Totenkopf probes Vasilyevka and crosses the Psel at Krasny Oktyabr. Hold the sovkhoz - Ivanovsky Vyselok - Storozhevoye line and the Psel villages; 2 TC counter-attacks into the flank of the breakthrough.",
+   "brief_02": "10:00, 10 July. The attack on the sovkhoz is on; the 2 SS-PzGr Rgt pushes along the Teterevino - Ivanovsky Vyselok road to the railway, the recon bn into the gap. 1 SS-Pz Rgt comes up behind. Showers; the roads are sodden.",
+   "brief_03": "14:00, 10 July. Hill 241.6 and the railway bend are under attack; 15 gds hvy TR counter-attacks from Storozhevoye, 26 TBr moves to 241.6. The 27 AT Bde batteries at Yamki, Grushki and the station cover the approaches. Weather clearing.",
+   "brief_04": "18:00, 10 July. Totenkopf attacks out of the bridgehead at Klyuchi towards 226.6 after an air strike; 52 gds RD counter-attacks with its training bn and tanks of 245 TR. Das Reich presses on the Storozhevoye wood. 9 gds AB Div marches into Prokhorovka at 22:00.",
+   "brief_07": "06:00, 11 July. 95 gds RD holds the Psel bend, 9 gds AB Div the sovkhoz - 252.2 - Yamki line. LSSAH attacks the sovkhoz and 252.2 with 1 SS-PzGr Rgt and the panzer regiment; Totenkopf brings its tanks over the river. 5 gds TA arrives in the evening - do not commit it piecemeal.",
+   "brief_10": "18:00, 11 July. 18 TC and 29 TC move into their assembly areas (Petrovka - Prelestnoye; the brick works - Lutovo); 5 gds MC follows as reserve. Sappers clear lanes through the minefields in front of 26 and 23 gds AB Rgts for the morning.",
+   "brief_13": "06:00, 12 July. Counter-attack at 08:30 after a 15-minute barrage: 29 TC on the sovkhoz and 252.2, 18 TC along the Psel, 2 gds TC on Yasnaya Polyana. Drizzle at dawn.",
+   "brief_14": "10:00, 12 July. The tank corps are in the sovkhoz fields; LSSAH holds 252.2 with Tigers and the StuG bn, Totenkopf attacks 226.6 - Polezhayev. Air on both sides.",
+   "brief_15": "14:00, 12 July. Hold what has been taken, pull the damaged brigades back behind the AT ditch; thunderstorm towards 17:00.",
+   "brief_19": "06:00, 13 July. Rain. Both sides dig in on the line Vasilyevka - 252.2 - Storozhevoye; LSSAH and Totenkopf regroup for the Psel bend."
+  },
+  "briefs_rus": {
+   "brief_01": "06:00, 10 \u0438\u044e\u043b\u044f. \u041b\u0410\u0413 \u0430\u0442\u0430\u043a\u0443\u0435\u0442 \u0441\u0432\u0445. \u041a\u043e\u043c\u0441\u043e\u043c\u043e\u043b\u0435\u0446 \u0438 \u0438\u0437\u0433\u0438\u0431 \u0436\u0435\u043b\u0435\u0437\u043d\u043e\u0439 \u0434\u043e\u0440\u043e\u0433\u0438 \u043f\u043e\u0441\u043b\u0435 \u043e\u0433\u043d\u0435\u0432\u043e\u0433\u043e \u043d\u0430\u043b\u0451\u0442\u0430; \u041c\u0451\u0440\u0442\u0432\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 \u043f\u0440\u043e\u0449\u0443\u043f\u044b\u0432\u0430\u0435\u0442 \u0412\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u043a\u0443 \u0438 \u0444\u043e\u0440\u0441\u0438\u0440\u0443\u0435\u0442 \u041f\u0441\u0451\u043b \u0443 \u041a\u0440\u0430\u0441\u043d\u043e\u0433\u043e \u041e\u043a\u0442\u044f\u0431\u0440\u044f. \u0423\u0434\u0435\u0440\u0436\u0430\u0442\u044c \u0440\u0443\u0431\u0435\u0436 \u0441\u043e\u0432\u0445\u043e\u0437 - \u0418\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0438\u0439 \u0412\u044b\u0441\u0435\u043b\u043e\u043a - \u0421\u0442\u043e\u0440\u043e\u0436\u0435\u0432\u043e\u0435 \u0438 \u0441\u0451\u043b\u0430 \u043d\u0430 \u041f\u0441\u0451\u043b\u0435; 2 \u0442\u043a \u043a\u043e\u043d\u0442\u0440\u0430\u0442\u0430\u043a\u0443\u0435\u0442 \u0432\u043e \u0444\u043b\u0430\u043d\u0433 \u043f\u0440\u043e\u0440\u044b\u0432\u0430.",
+   "brief_02": "10:00, 10 \u0438\u044e\u043b\u044f. \u0410\u0442\u0430\u043a\u0430 \u043d\u0430 \u0441\u043e\u0432\u0445\u043e\u0437 \u043d\u0430\u0447\u0430\u043b\u0430\u0441\u044c; 2 \u043c\u043f\u043f \u0421\u0421 \u043f\u0440\u043e\u0431\u0438\u0432\u0430\u0435\u0442\u0441\u044f \u0432\u0434\u043e\u043b\u044c \u0434\u043e\u0440\u043e\u0433\u0438 \u0422\u0435\u0442\u0435\u0440\u0435\u0432\u0438\u043d\u043e - \u0418\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0438\u0439 \u0412\u044b\u0441\u0435\u043b\u043e\u043a \u043a \u0436\u0435\u043b\u0435\u0437\u043d\u043e\u0439 \u0434\u043e\u0440\u043e\u0433\u0435, \u0440\u0430\u0437\u0432\u0435\u0434\u0431\u0430\u0442 \u0432 \u043f\u0440\u043e\u0440\u044b\u0432. 1 \u0442\u043f \u0421\u0421 \u043f\u043e\u0434\u0442\u044f\u0433\u0438\u0432\u0430\u0435\u0442\u0441\u044f. \u0414\u043e\u0436\u0434\u0438, \u0434\u043e\u0440\u043e\u0433\u0438 \u0440\u0430\u0437\u043c\u043e\u043a\u043b\u0438.",
+   "brief_03": "14:00, 10 \u0438\u044e\u043b\u044f. \u0412\u044b\u0441. 241.6 \u0438 \u0438\u0437\u0433\u0438\u0431 \u0436\u0435\u043b\u0435\u0437\u043d\u043e\u0439 \u0434\u043e\u0440\u043e\u0433\u0438 \u043f\u043e\u0434 \u0443\u0434\u0430\u0440\u043e\u043c; 15 \u0433\u0432.\u0442\u0442\u043f \u043a\u043e\u043d\u0442\u0440\u0430\u0442\u0430\u043a\u0443\u0435\u0442 \u043e\u0442 \u0421\u0442\u043e\u0440\u043e\u0436\u0435\u0432\u043e\u0433\u043e, 26 \u0442\u0431\u0440 \u0432\u044b\u0434\u0432\u0438\u0433\u0430\u0435\u0442\u0441\u044f \u043a 241.6. \u0411\u0430\u0442\u0430\u0440\u0435\u0438 27 \u0438\u043f\u0442\u0430\u0431\u0440 \u0443 \u042f\u043c\u043e\u043a, \u0413\u0440\u0443\u0448\u0435\u043a \u0438 \u0441\u0442\u0430\u043d\u0446\u0438\u0438 \u043f\u0440\u0438\u043a\u0440\u044b\u0432\u0430\u044e\u0442 \u043f\u043e\u0434\u0441\u0442\u0443\u043f\u044b. \u041f\u0440\u043e\u044f\u0441\u043d\u044f\u0435\u0442\u0441\u044f.",
+   "brief_04": "18:00, 10 \u0438\u044e\u043b\u044f. \u041c\u0451\u0440\u0442\u0432\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 \u043f\u043e\u0441\u043b\u0435 \u0430\u0432\u0438\u0430\u043d\u0430\u043b\u0451\u0442\u0430 \u0430\u0442\u0430\u043a\u0443\u0435\u0442 \u0438\u0437 \u043f\u043b\u0430\u0446\u0434\u0430\u0440\u043c\u0430 \u0443 \u041a\u043b\u044e\u0447\u0435\u0439 \u043d\u0430 226.6; 52 \u0433\u0432.\u0441\u0434 \u043a\u043e\u043d\u0442\u0440\u0430\u0442\u0430\u043a\u0443\u0435\u0442 \u0443\u0447\u0435\u0431\u043d\u044b\u043c \u0431\u0430\u0442\u0430\u043b\u044c\u043e\u043d\u043e\u043c \u0438 \u0442\u0430\u043d\u043a\u0430\u043c\u0438 245 \u0442\u043f. \u0420\u0435\u0439\u0445 \u043d\u0430\u0436\u0438\u043c\u0430\u0435\u0442 \u043d\u0430 \u043b\u0435\u0441 \u0443 \u0421\u0442\u043e\u0440\u043e\u0436\u0435\u0432\u043e\u0433\u043e. 9 \u0433\u0432.\u0432\u0434\u0434 \u0432\u0445\u043e\u0434\u0438\u0442 \u0432 \u041f\u0440\u043e\u0445\u043e\u0440\u043e\u0432\u043a\u0443 \u0432 22:00.",
+   "brief_07": "06:00, 11 \u0438\u044e\u043b\u044f. 95 \u0433\u0432.\u0441\u0434 \u0434\u0435\u0440\u0436\u0438\u0442 \u0438\u0437\u043b\u0443\u0447\u0438\u043d\u0443 \u041f\u0441\u0451\u043b\u0430, 9 \u0433\u0432.\u0432\u0434\u0434 \u0440\u0443\u0431\u0435\u0436 \u0441\u043e\u0432\u0445\u043e\u0437 - 252.2 - \u042f\u043c\u043a\u0438. \u041b\u0410\u0413 \u0430\u0442\u0430\u043a\u0443\u0435\u0442 \u0441\u043e\u0432\u0445\u043e\u0437 \u0438 252.2 \u0441\u0438\u043b\u0430\u043c\u0438 1 \u043c\u043f\u043f \u0438 \u0442\u0430\u043d\u043a\u043e\u0432\u043e\u0433\u043e \u043f\u043e\u043b\u043a\u0430; \u041c\u0451\u0440\u0442\u0432\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 \u043f\u0435\u0440\u0435\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u0442 \u0442\u0430\u043d\u043a\u0438. 5 \u0433\u0432.\u0422\u0410 \u043f\u043e\u0434\u0445\u043e\u0434\u0438\u0442 \u043a \u0432\u0435\u0447\u0435\u0440\u0443 - \u043d\u0435 \u0432\u0432\u043e\u0434\u0438\u0442\u044c \u043f\u043e \u0447\u0430\u0441\u0442\u044f\u043c.",
+   "brief_10": "18:00, 11 \u0438\u044e\u043b\u044f. 18 \u0438 29 \u0442\u043a \u0432\u044b\u0445\u043e\u0434\u044f\u0442 \u0432 \u0440\u0430\u0439\u043e\u043d\u044b \u0441\u043e\u0441\u0440\u0435\u0434\u043e\u0442\u043e\u0447\u0435\u043d\u0438\u044f (\u041f\u0435\u0442\u0440\u043e\u0432\u043a\u0430 - \u041f\u0440\u0435\u043b\u0435\u0441\u0442\u043d\u043e\u0435; \u043a\u0438\u0440\u043f\u0438\u0447\u043d\u044b\u0439 \u0437\u0430\u0432\u043e\u0434 - \u041b\u0443\u0442\u043e\u0432\u043e); 5 \u0433\u0432.\u043c\u043a \u0432 \u0440\u0435\u0437\u0435\u0440\u0432\u0435. \u0421\u0430\u043f\u0451\u0440\u044b \u043f\u0440\u043e\u0434\u0435\u043b\u044b\u0432\u0430\u044e\u0442 \u043f\u0440\u043e\u0445\u043e\u0434\u044b \u0432 \u043c\u0438\u043d\u043d\u044b\u0445 \u043f\u043e\u043b\u044f\u0445 \u043f\u0435\u0440\u0435\u0434 26 \u0438 23 \u0433\u0432.\u0432\u0434\u0441\u043f.",
+   "brief_13": "06:00, 12 \u0438\u044e\u043b\u044f. \u041a\u043e\u043d\u0442\u0440\u0443\u0434\u0430\u0440 \u0432 08:30 \u043f\u043e\u0441\u043b\u0435 15-\u043c\u0438\u043d\u0443\u0442\u043d\u043e\u0433\u043e \u043e\u0433\u043d\u0435\u0432\u043e\u0433\u043e \u043d\u0430\u043b\u0451\u0442\u0430: 29 \u0442\u043a \u043d\u0430 \u0441\u043e\u0432\u0445\u043e\u0437 \u0438 252.2, 18 \u0442\u043a \u0432\u0434\u043e\u043b\u044c \u041f\u0441\u0451\u043b\u0430, 2 \u0433\u0432.\u0442\u043a \u043d\u0430 \u042f\u0441\u043d\u0443\u044e \u041f\u043e\u043b\u044f\u043d\u0443. \u041d\u0430 \u0440\u0430\u0441\u0441\u0432\u0435\u0442\u0435 \u043c\u043e\u0440\u043e\u0441\u044c.",
+   "brief_14": "10:00, 12 \u0438\u044e\u043b\u044f. \u0422\u0430\u043d\u043a\u043e\u0432\u044b\u0435 \u043a\u043e\u0440\u043f\u0443\u0441\u0430 \u0432 \u0441\u043e\u0432\u0445\u043e\u0437\u043d\u044b\u0445 \u043f\u043e\u043b\u044f\u0445; \u041b\u0410\u0413 \u0434\u0435\u0440\u0436\u0438\u0442 252.2 \u0422\u0438\u0433\u0440\u0430\u043c\u0438 \u0438 \u0434\u0438\u0432\u0438\u0437\u0438\u043e\u043d\u043e\u043c \u0448\u0442\u0443\u0440\u043c\u043e\u0432\u044b\u0445 \u043e\u0440\u0443\u0434\u0438\u0439, \u041c\u0451\u0440\u0442\u0432\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 \u0430\u0442\u0430\u043a\u0443\u0435\u0442 226.6 - \u041f\u043e\u043b\u0435\u0436\u0430\u0435\u0432. \u0410\u0432\u0438\u0430\u0446\u0438\u044f \u0441 \u043e\u0431\u0435\u0438\u0445 \u0441\u0442\u043e\u0440\u043e\u043d.",
+   "brief_15": "14:00, 12 \u0438\u044e\u043b\u044f. \u0423\u0434\u0435\u0440\u0436\u0430\u0442\u044c \u0437\u0430\u043d\u044f\u0442\u043e\u0435, \u043e\u0442\u0432\u0435\u0441\u0442\u0438 \u043f\u043e\u0442\u0440\u0451\u043f\u0430\u043d\u043d\u044b\u0435 \u0431\u0440\u0438\u0433\u0430\u0434\u044b \u0437\u0430 \u043f\u0440\u043e\u0442\u0438\u0432\u043e\u0442\u0430\u043d\u043a\u043e\u0432\u044b\u0439 \u0440\u043e\u0432; \u043a 17:00 \u0433\u0440\u043e\u0437\u0430.",
+   "brief_19": "06:00, 13 \u0438\u044e\u043b\u044f. \u0414\u043e\u0436\u0434\u044c. \u041e\u0431\u0435 \u0441\u0442\u043e\u0440\u043e\u043d\u044b \u0437\u0430\u043a\u0440\u0435\u043f\u043b\u044f\u044e\u0442\u0441\u044f \u043d\u0430 \u0440\u0443\u0431\u0435\u0436\u0435 \u0412\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u043a\u0430 - 252.2 - \u0421\u0442\u043e\u0440\u043e\u0436\u0435\u0432\u043e\u0435; \u041b\u0410\u0413 \u0438 \u041c\u0451\u0440\u0442\u0432\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 \u043f\u0435\u0440\u0435\u0433\u0440\u0443\u043f\u043f\u0438\u0440\u043e\u0432\u044b\u0432\u0430\u044e\u0442\u0441\u044f \u0434\u043b\u044f \u0438\u0437\u043b\u0443\u0447\u0438\u043d\u044b \u041f\u0441\u0451\u043b\u0430."
+  },
+  "_comment_briefs_ger": "German-side turn briefings (op_GER uses briefs_ger / briefs_ger_rus, op_RUS briefs / briefs_rus; prokh_op.py picks by the op dir name)",
+  "briefs_ger": {
+   "brief_01": "06:00, 10 July. Corps order: LSSAH attacks at 06:00 from Teterevino along the road and the railway, takes svkh. Komsomolets and Hill 241.6 and pushes on to the station; 2 SS-PzGr Rgt leads, the panzer regiment follows once the Ivanovsky Vyselok - Komsomolets road is open. Das Reich holds the right flank at Ivanovsky Vyselok and takes the Storozhevoye wood; Totenkopf holds Kozlovka and crosses the Psel at Krasny Oktyabr for Hill 226.6. Rain until midday - the tracks are sodden, keep the panzers on the roads.",
+   "brief_02": "10:00, 10 July. The artillery and Werfer preparation is over; 2 SS-PzGr Rgt is in the sovkhoz fields, the recon battalion covers the gap to Vasilyevka. Expect 2 TC (T-34s and Churchills) to counter-attack from Storozhevoye and 241.6 into the flank; the StuG battalion and the Pz-Jg battalion go with the grenadiers.",
+   "brief_03": "14:00, 10 July. Komsomolets is ours; the Russians are falling back on Ivanovsky Vyselok and the Storozhevoye wood. Take 241.6 and the railway bend before dark; the heavy AT batteries at Yamki and the station cover the embankment. Totenkopf's bridgehead at Klyuchi is to be widened. Weather clearing.",
+   "brief_04": "18:00, 10 July. Totenkopf attacks out of the bridgehead on 226.6 after the Stuka strike; the Russians counter-attack it with tanks of 245 TR. Das Reich presses the Storozhevoye wood. Dig in on 241.6 for the night - fresh Russian infantry (9 gds AB Div) is marching into Prokhorovka.",
+   "brief_07": "06:00, 11 July. LSSAH attacks svkh. Oktyabrsky and Hill 252.2 along the railway with 2 SS-PzGr Rgt and the panzer regiment, 1 SS-PzGr Rgt on Mikhailovka; Das Reich takes Storozhevoye; Totenkopf brings the panzer regiment over the Psel and attacks 226.6 - Polezhayev. The AT ditch in front of 252.2 has one crossing, on the road. Fine weather, VIII Fliegerkorps over the sector from the morning.",
+   "brief_10": "18:00, 11 July. The sovkhoz and 252.2 are taken; the station is 2.5 km away. Radio intercepts and air reconnaissance report a tank army (5 gds TA) arriving from the north-east: hold 252.2 with the Tigers and the StuGs, pull the panzer regiment back behind the hill for the morning, 1 SS-PzGr Rgt covers the Psel flank at Mikhailovka.",
+   "brief_13": "06:00, 12 July. Totenkopf attacks from the bridgehead along the Kartashevka road to cut the Prokhorovka - Oboyan road; LSSAH holds 252.2 - the sovkhoz and attacks only when Totenkopf is on 226.6; Das Reich attacks Storozhevoye - Vinogradovka. Drizzle at dawn.",
+   "brief_14": "10:00, 12 July. Mass of Russian tanks attacking along the railway on 252.2 and along the Psel on Mikhailovka - Vasilyevka; 2 gds TC on Das Reich at Yasnaya Polyana. Stand at the AT ditch, the panzer regiment counter-attacks from behind 252.2 at midday; Totenkopf continues on 226.6. Air on both sides.",
+   "brief_15": "14:00, 12 July. The field in front of the sovkhoz is full of burning T-34s; hold the line, recover vehicles. Totenkopf's panzers are on the Kartashevka road. Thunderstorm expected towards 17:00.",
+   "brief_19": "06:00, 13 July. Rain. Hold the line Vasilyevka - 252.2 - Storozhevoye and regroup; Totenkopf pulls back into the bridgehead; Das Reich pushes south on Belenikhino."
+  },
+  "briefs_ger_rus": {
+   "brief_01": "06:00, 10 \u0438\u044e\u043b\u044f. \u041f\u0440\u0438\u043a\u0430\u0437 \u043a\u043e\u0440\u043f\u0443\u0441\u0430: \u041b\u0410\u0413 \u0432 06:00 \u043d\u0430\u0441\u0442\u0443\u043f\u0430\u0435\u0442 \u043e\u0442 \u0422\u0435\u0442\u0435\u0440\u0435\u0432\u0438\u043d\u043e \u0432\u0434\u043e\u043b\u044c \u0434\u043e\u0440\u043e\u0433\u0438 \u0438 \u0436\u0435\u043b\u0435\u0437\u043d\u043e\u0439 \u0434\u043e\u0440\u043e\u0433\u0438, \u0431\u0435\u0440\u0451\u0442 \u0441\u0432\u0445. \u041a\u043e\u043c\u0441\u043e\u043c\u043e\u043b\u0435\u0446 \u0438 \u0432\u044b\u0441. 241.6 \u0438 \u0432\u044b\u0445\u043e\u0434\u0438\u0442 \u043a \u0441\u0442\u0430\u043d\u0446\u0438\u0438; \u0432\u043f\u0435\u0440\u0435\u0434\u0438 2 \u043c\u043f\u043f \u0421\u0421, \u0442\u0430\u043d\u043a\u043e\u0432\u044b\u0439 \u043f\u043e\u043b\u043a \u0437\u0430 \u043d\u0438\u043c, \u043a\u0430\u043a \u0442\u043e\u043b\u044c\u043a\u043e \u043e\u0442\u043a\u0440\u044b\u0442\u0430 \u0434\u043e\u0440\u043e\u0433\u0430 \u0418\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0438\u0439 \u0412\u044b\u0441\u0435\u043b\u043e\u043a - \u041a\u043e\u043c\u0441\u043e\u043c\u043e\u043b\u0435\u0446. \u0420\u0435\u0439\u0445 \u0434\u0435\u0440\u0436\u0438\u0442 \u043f\u0440\u0430\u0432\u044b\u0439 \u0444\u043b\u0430\u043d\u0433 \u0443 \u0418\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u043e\u0433\u043e \u0412\u044b\u0441\u0435\u043b\u043a\u0430 \u0438 \u0431\u0435\u0440\u0451\u0442 \u043b\u0435\u0441 \u0443 \u0421\u0442\u043e\u0440\u043e\u0436\u0435\u0432\u043e\u0433\u043e; \u041c\u0451\u0440\u0442\u0432\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 \u0443\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442 \u041a\u043e\u0437\u043b\u043e\u0432\u043a\u0443 \u0438 \u0444\u043e\u0440\u0441\u0438\u0440\u0443\u0435\u0442 \u041f\u0441\u0451\u043b \u0443 \u041a\u0440\u0430\u0441\u043d\u043e\u0433\u043e \u041e\u043a\u0442\u044f\u0431\u0440\u044f \u043d\u0430 \u0432\u044b\u0441. 226.6. \u0414\u043e\u0436\u0434\u044c \u0434\u043e \u043f\u043e\u043b\u0443\u0434\u043d\u044f - \u043f\u0440\u043e\u0441\u0451\u043b\u043a\u0438 \u0440\u0430\u0437\u043c\u043e\u043a\u043b\u0438, \u0442\u0430\u043d\u043a\u0438 \u0434\u0435\u0440\u0436\u0430\u0442\u044c \u043d\u0430 \u0434\u043e\u0440\u043e\u0433\u0430\u0445.",
+   "brief_02": "10:00, 10 \u0438\u044e\u043b\u044f. \u0410\u0440\u0442\u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u043e\u043a\u043e\u043d\u0447\u0435\u043d\u0430; 2 \u043c\u043f\u043f \u0421\u0421 \u0432 \u043f\u043e\u043b\u044f\u0445 \u0441\u043e\u0432\u0445\u043e\u0437\u0430, \u0440\u0430\u0437\u0432\u0435\u0434\u0431\u0430\u0442 \u043f\u0440\u0438\u043a\u0440\u044b\u0432\u0430\u0435\u0442 \u0440\u0430\u0437\u0440\u044b\u0432 \u0434\u043e \u0412\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u043a\u0438. \u0416\u0434\u0430\u0442\u044c \u043a\u043e\u043d\u0442\u0440\u0430\u0442\u0430\u043a\u0438 2 \u0442\u043a (\u0422-34 \u0438 \u0427\u0435\u0440\u0447\u0438\u043b\u043b\u0438) \u043e\u0442 \u0421\u0442\u043e\u0440\u043e\u0436\u0435\u0432\u043e\u0433\u043e \u0438 241.6 \u0432\u043e \u0444\u043b\u0430\u043d\u0433; \u0434\u0438\u0432\u0438\u0437\u0438\u043e\u043d \u0448\u0442\u0443\u0440\u043c\u043e\u0432\u044b\u0445 \u043e\u0440\u0443\u0434\u0438\u0439 \u0438 \u043f\u0440\u043e\u0442\u0438\u0432\u043e\u0442\u0430\u043d\u043a\u043e\u0432\u044b\u0439 \u0431\u0430\u0442\u0430\u043b\u044c\u043e\u043d \u0438\u0434\u0443\u0442 \u0441 \u0433\u0440\u0435\u043d\u0430\u0434\u0435\u0440\u0430\u043c\u0438.",
+   "brief_03": "14:00, 10 \u0438\u044e\u043b\u044f. \u041a\u043e\u043c\u0441\u043e\u043c\u043e\u043b\u0435\u0446 \u043d\u0430\u0448; \u0440\u0443\u0441\u0441\u043a\u0438\u0435 \u043e\u0442\u0445\u043e\u0434\u044f\u0442 \u043d\u0430 \u0418\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0438\u0439 \u0412\u044b\u0441\u0435\u043b\u043e\u043a \u0438 \u043b\u0435\u0441 \u0443 \u0421\u0442\u043e\u0440\u043e\u0436\u0435\u0432\u043e\u0433\u043e. \u0414\u043e \u0442\u0435\u043c\u043d\u043e\u0442\u044b \u0432\u0437\u044f\u0442\u044c 241.6 \u0438 \u0438\u0437\u0433\u0438\u0431 \u0436\u0435\u043b\u0435\u0437\u043d\u043e\u0439 \u0434\u043e\u0440\u043e\u0433\u0438; \u0442\u044f\u0436\u0451\u043b\u044b\u0435 \u043f\u0440\u043e\u0442\u0438\u0432\u043e\u0442\u0430\u043d\u043a\u043e\u0432\u044b\u0435 \u0431\u0430\u0442\u0430\u0440\u0435\u0438 \u0443 \u042f\u043c\u043e\u043a \u0438 \u0441\u0442\u0430\u043d\u0446\u0438\u0438 \u043f\u0440\u0438\u043a\u0440\u044b\u0432\u0430\u044e\u0442 \u043d\u0430\u0441\u044b\u043f\u044c. \u041f\u043b\u0430\u0446\u0434\u0430\u0440\u043c \u041c\u0451\u0440\u0442\u0432\u043e\u0439 \u0433\u043e\u043b\u043e\u0432\u044b \u0443 \u041a\u043b\u044e\u0447\u0435\u0439 \u0440\u0430\u0441\u0448\u0438\u0440\u044f\u0442\u044c. \u041f\u0440\u043e\u044f\u0441\u043d\u044f\u0435\u0442\u0441\u044f.",
+   "brief_04": "18:00, 10 \u0438\u044e\u043b\u044f. \u041c\u0451\u0440\u0442\u0432\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 \u043f\u043e\u0441\u043b\u0435 \u0443\u0434\u0430\u0440\u0430 \u0448\u0442\u0443\u043a \u0430\u0442\u0430\u043a\u0443\u0435\u0442 \u0441 \u043f\u043b\u0430\u0446\u0434\u0430\u0440\u043c\u0430 \u043d\u0430 226.6; \u0440\u0443\u0441\u0441\u043a\u0438\u0435 \u043a\u043e\u043d\u0442\u0440\u0430\u0442\u0430\u043a\u0443\u044e\u0442 \u0442\u0430\u043d\u043a\u0430\u043c\u0438 245 \u0442\u043f. \u0420\u0435\u0439\u0445 \u043d\u0430\u0436\u0438\u043c\u0430\u0435\u0442 \u043d\u0430 \u043b\u0435\u0441 \u0443 \u0421\u0442\u043e\u0440\u043e\u0436\u0435\u0432\u043e\u0433\u043e. \u041d\u0430 \u043d\u043e\u0447\u044c \u0437\u0430\u043a\u0440\u0435\u043f\u0438\u0442\u044c\u0441\u044f \u043d\u0430 241.6 - \u0432 \u041f\u0440\u043e\u0445\u043e\u0440\u043e\u0432\u043a\u0443 \u0432\u0445\u043e\u0434\u0438\u0442 \u0441\u0432\u0435\u0436\u0430\u044f \u043f\u0435\u0445\u043e\u0442\u0430 (9 \u0433\u0432.\u0432\u0434\u0434).",
+   "brief_07": "06:00, 11 \u0438\u044e\u043b\u044f. \u041b\u0410\u0413 \u0430\u0442\u0430\u043a\u0443\u0435\u0442 \u0441\u0432\u0445. \u041e\u043a\u0442\u044f\u0431\u0440\u044c\u0441\u043a\u0438\u0439 \u0438 \u0432\u044b\u0441. 252.2 \u0432\u0434\u043e\u043b\u044c \u0436\u0435\u043b\u0435\u0437\u043d\u043e\u0439 \u0434\u043e\u0440\u043e\u0433\u0438 \u0441\u0438\u043b\u0430\u043c\u0438 2 \u043c\u043f\u043f \u0438 \u0442\u0430\u043d\u043a\u043e\u0432\u043e\u0433\u043e \u043f\u043e\u043b\u043a\u0430, 1 \u043c\u043f\u043f \u043d\u0430 \u041c\u0438\u0445\u0430\u0439\u043b\u043e\u0432\u043a\u0443; \u0420\u0435\u0439\u0445 \u0431\u0435\u0440\u0451\u0442 \u0421\u0442\u043e\u0440\u043e\u0436\u0435\u0432\u043e\u0435; \u041c\u0451\u0440\u0442\u0432\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 \u043f\u0435\u0440\u0435\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u0442 \u0442\u0430\u043d\u043a\u043e\u0432\u044b\u0439 \u043f\u043e\u043b\u043a \u0447\u0435\u0440\u0435\u0437 \u041f\u0441\u0451\u043b \u0438 \u0430\u0442\u0430\u043a\u0443\u0435\u0442 226.6 - \u041f\u043e\u043b\u0435\u0436\u0430\u0435\u0432. \u041f\u0440\u043e\u0442\u0438\u0432\u043e\u0442\u0430\u043d\u043a\u043e\u0432\u044b\u0439 \u0440\u043e\u0432 \u043f\u0435\u0440\u0435\u0434 252.2 \u0438\u043c\u0435\u0435\u0442 \u043e\u0434\u0438\u043d \u043f\u0440\u043e\u0445\u043e\u0434 - \u043f\u043e \u0434\u043e\u0440\u043e\u0433\u0435. \u042f\u0441\u043d\u043e, VIII \u0430\u0432\u0438\u0430\u043a\u043e\u0440\u043f\u0443\u0441 \u043d\u0430\u0434 \u0443\u0447\u0430\u0441\u0442\u043a\u043e\u043c \u0441 \u0443\u0442\u0440\u0430.",
+   "brief_10": "18:00, 11 \u0438\u044e\u043b\u044f. \u0421\u043e\u0432\u0445\u043e\u0437 \u0438 252.2 \u0432\u0437\u044f\u0442\u044b; \u0434\u043e \u0441\u0442\u0430\u043d\u0446\u0438\u0438 2,5 \u043a\u043c. \u0420\u0430\u0434\u0438\u043e\u043f\u0435\u0440\u0435\u0445\u0432\u0430\u0442 \u0438 \u0430\u0432\u0438\u0430\u0440\u0430\u0437\u0432\u0435\u0434\u043a\u0430 \u0441\u043e\u043e\u0431\u0449\u0430\u044e\u0442 \u043e \u043f\u043e\u0434\u0445\u043e\u0434\u0435 \u0442\u0430\u043d\u043a\u043e\u0432\u043e\u0439 \u0430\u0440\u043c\u0438\u0438 (5 \u0433\u0432.\u0422\u0410) \u0441 \u0441\u0435\u0432\u0435\u0440\u043e-\u0432\u043e\u0441\u0442\u043e\u043a\u0430: \u0434\u0435\u0440\u0436\u0430\u0442\u044c 252.2 \u0422\u0438\u0433\u0440\u0430\u043c\u0438 \u0438 \u0448\u0442\u0443\u0440\u043c\u043e\u0432\u044b\u043c\u0438 \u043e\u0440\u0443\u0434\u0438\u044f\u043c\u0438, \u0442\u0430\u043d\u043a\u043e\u0432\u044b\u0439 \u043f\u043e\u043b\u043a \u043d\u0430 \u0443\u0442\u0440\u043e \u043e\u0442\u0432\u0435\u0441\u0442\u0438 \u0437\u0430 \u0432\u044b\u0441\u043e\u0442\u0443, 1 \u043c\u043f\u043f \u043f\u0440\u0438\u043a\u0440\u044b\u0432\u0430\u0435\u0442 \u0444\u043b\u0430\u043d\u0433 \u043d\u0430 \u041f\u0441\u0451\u043b\u0435 \u0443 \u041c\u0438\u0445\u0430\u0439\u043b\u043e\u0432\u043a\u0438.",
+   "brief_13": "06:00, 12 \u0438\u044e\u043b\u044f. \u041c\u0451\u0440\u0442\u0432\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 \u043d\u0430\u0441\u0442\u0443\u043f\u0430\u0435\u0442 \u0441 \u043f\u043b\u0430\u0446\u0434\u0430\u0440\u043c\u0430 \u0432\u0434\u043e\u043b\u044c \u0434\u043e\u0440\u043e\u0433\u0438 \u043d\u0430 \u041a\u0430\u0440\u0442\u0430\u0448\u0451\u0432\u043a\u0443, \u0447\u0442\u043e\u0431\u044b \u043f\u0435\u0440\u0435\u0440\u0435\u0437\u0430\u0442\u044c \u0434\u043e\u0440\u043e\u0433\u0443 \u041f\u0440\u043e\u0445\u043e\u0440\u043e\u0432\u043a\u0430 - \u041e\u0431\u043e\u044f\u043d\u044c; \u041b\u0410\u0413 \u0443\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442 252.2 - \u0441\u043e\u0432\u0445\u043e\u0437 \u0438 \u0430\u0442\u0430\u043a\u0443\u0435\u0442 \u043b\u0438\u0448\u044c \u043a\u043e\u0433\u0434\u0430 \u041c\u0451\u0440\u0442\u0432\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 \u043d\u0430 226.6; \u0420\u0435\u0439\u0445 \u0430\u0442\u0430\u043a\u0443\u0435\u0442 \u0421\u0442\u043e\u0440\u043e\u0436\u0435\u0432\u043e\u0435 - \u0412\u0438\u043d\u043e\u0433\u0440\u0430\u0434\u043e\u0432\u043a\u0443. \u041d\u0430 \u0440\u0430\u0441\u0441\u0432\u0435\u0442\u0435 \u043c\u043e\u0440\u043e\u0441\u044c.",
+   "brief_14": "10:00, 12 \u0438\u044e\u043b\u044f. \u041c\u0430\u0441\u0441\u0430 \u0440\u0443\u0441\u0441\u043a\u0438\u0445 \u0442\u0430\u043d\u043a\u043e\u0432 \u0430\u0442\u0430\u043a\u0443\u0435\u0442 \u0432\u0434\u043e\u043b\u044c \u0436\u0435\u043b\u0435\u0437\u043d\u043e\u0439 \u0434\u043e\u0440\u043e\u0433\u0438 \u043d\u0430 252.2 \u0438 \u0432\u0434\u043e\u043b\u044c \u041f\u0441\u0451\u043b\u0430 \u043d\u0430 \u041c\u0438\u0445\u0430\u0439\u043b\u043e\u0432\u043a\u0443 - \u0412\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u043a\u0443; 2 \u0433\u0432.\u0442\u043a \u043d\u0430 \u0420\u0435\u0439\u0445 \u0443 \u042f\u0441\u043d\u043e\u0439 \u041f\u043e\u043b\u044f\u043d\u044b. \u0421\u0442\u043e\u044f\u0442\u044c \u0443 \u043f\u0440\u043e\u0442\u0438\u0432\u043e\u0442\u0430\u043d\u043a\u043e\u0432\u043e\u0433\u043e \u0440\u0432\u0430, \u0442\u0430\u043d\u043a\u043e\u0432\u044b\u0439 \u043f\u043e\u043b\u043a \u043a\u043e\u043d\u0442\u0440\u0430\u0442\u0430\u043a\u0443\u0435\u0442 \u0438\u0437-\u0437\u0430 252.2 \u0432 \u043f\u043e\u043b\u0434\u0435\u043d\u044c; \u041c\u0451\u0440\u0442\u0432\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 \u043f\u0440\u043e\u0434\u043e\u043b\u0436\u0430\u0435\u0442 \u043d\u0430 226.6. \u0410\u0432\u0438\u0430\u0446\u0438\u044f \u0441 \u043e\u0431\u0435\u0438\u0445 \u0441\u0442\u043e\u0440\u043e\u043d.",
+   "brief_15": "14:00, 12 \u0438\u044e\u043b\u044f. \u041f\u043e\u043b\u0435 \u043f\u0435\u0440\u0435\u0434 \u0441\u043e\u0432\u0445\u043e\u0437\u043e\u043c \u043f\u043e\u043b\u043d\u043e \u0433\u043e\u0440\u044f\u0449\u0438\u0445 \u0422-34; \u0434\u0435\u0440\u0436\u0430\u0442\u044c \u0440\u0443\u0431\u0435\u0436, \u044d\u0432\u0430\u043a\u0443\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043c\u0430\u0448\u0438\u043d\u044b. \u0422\u0430\u043d\u043a\u0438 \u041c\u0451\u0440\u0442\u0432\u043e\u0439 \u0433\u043e\u043b\u043e\u0432\u044b \u043d\u0430 \u0434\u043e\u0440\u043e\u0433\u0435 \u043d\u0430 \u041a\u0430\u0440\u0442\u0430\u0448\u0451\u0432\u043a\u0443. \u041a 17:00 \u043e\u0436\u0438\u0434\u0430\u0435\u0442\u0441\u044f \u0433\u0440\u043e\u0437\u0430.",
+   "brief_19": "06:00, 13 \u0438\u044e\u043b\u044f. \u0414\u043e\u0436\u0434\u044c. \u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0442\u044c \u0440\u0443\u0431\u0435\u0436 \u0412\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u043a\u0430 - 252.2 - \u0421\u0442\u043e\u0440\u043e\u0436\u0435\u0432\u043e\u0435 \u0438 \u043f\u0435\u0440\u0435\u0433\u0440\u0443\u043f\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c\u0441\u044f; \u041c\u0451\u0440\u0442\u0432\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u0430 \u043e\u0442\u0445\u043e\u0434\u0438\u0442 \u043d\u0430 \u043f\u043b\u0430\u0446\u0434\u0430\u0440\u043c; \u0420\u0435\u0439\u0445 \u043d\u0430\u0441\u0442\u0443\u043f\u0430\u0435\u0442 \u043d\u0430 \u044e\u0433 \u043d\u0430 \u0411\u0435\u043b\u0435\u043d\u0438\u0445\u0438\u043d\u043e."
+  }
+ },
+ "_comment_edges": "border-node capacity (one unit per node, own ground only): Soviets N 56 + E 32 + S east of the line 40 + W north of the Psel 11 = 139 for 28 turn-1 HQ-type units and 102 reinforcement platoons; Germans W south of the Psel 25 + S west of the line 16 = 41 for 16 turn-1 HQ-type units and 24 reinforcement platoons. Off the map for lack of room or because they fought outside the block: 97 and 13 gds RD (33 gds RC second echelon), 148 gds TR, 1510 IPTAP, 1549 SAP, 522 / 1148 HAR, 11 / 12 gds MBde with 54 / 55 gds TR; Totenkopf SS-PzJg-Abt 3, Das Reich reconnaissance / escort / AA / pioneer battalions",
+ "farms": [
+  {
+   "name": "svkh. Oktyabrsky (central yard: barns, workshops, the brick buildings N of the railway)",
+   "pts": [
+    [
+     11700,
+     12950
+    ],
+    [
+     12050,
+     12950
+    ],
+    [
+     12050,
+     13230
+    ],
+    [
+     11700,
+     13230
+    ]
+   ]
+  },
+  {
+   "name": "svkh. Komsomolets (yard E of the wood, on the Teterevino - Prokhorovka road)",
+   "pts": [
+    [
+     8350,
+     8850
+    ],
+    [
+     8650,
+     8850
+    ],
+    [
+     8650,
+     9080
+    ],
+    [
+     8350,
+     9080
+    ]
+   ]
+  },
+  {
+   "name": "Stalinskoye otd. of the Oktyabrsky sovkhoz",
+   "pts": [
+    [
+     12540,
+     10980
+    ],
+    [
+     12740,
+     10980
+    ],
+    [
+     12740,
+     11140
+    ],
+    [
+     12540,
+     11140
+    ]
+   ]
+  }
+ ],
+ "_comment_farms": "state-farm yards drawn as village cover + farm mask (settle.kolkhoz: long barns, clay yard, haystacks); the period mask trims the modern villages, these stay",
+ "fields_1943": [
+  {
+   "name": "Stalinskoye otd.: block of kolkhoz strips between the farm and the railway (GX-3734-SK-61, Wheatley Fig. 2 / 40: ten strips ~32 m wide, 320 m long, perpendicular to the railway, alternately standing and cut)",
+   "pts": [
+    [
+     12163,
+     11086
+    ],
+    [
+     12619,
+     11534
+    ],
+    [
+     12395,
+     11762
+    ],
+    [
+     11939,
+     11314
+    ]
+   ],
+   "strip_width": 32,
+   "axis_deg": 30,
+   "pattern": [
+    1,
+    4,
+    1,
+    1,
+    4,
+    1,
+    3,
+    1,
+    4,
+    1
+   ]
+  },
+  {
+   "name": "Stalinskoye otd.: the dark (ploughed) field between the farm and the strips",
+   "pts": [
+    [
+     12309,
+     10937
+    ],
+    [
+     12765,
+     11385
+    ],
+    [
+     12611,
+     11543
+    ],
+    [
+     12155,
+     11095
+    ]
+   ],
+   "pattern": [
+    4
+   ]
+  },
+  {
+   "name": "the bright long field SW of the Stalinskoye farm (cut / stubble; Wheatley Fig. 40)",
+   "pts": [
+    [
+     11799,
+     10356
+    ],
+    [
+     12399,
+     10944
+    ],
+    [
+     12301,
+     11044
+    ],
+    [
+     11701,
+     10456
+    ]
+   ],
+   "pattern": [
+    1
+   ]
+  }
+ ],
+ "_comment_fields_1943": "field blocks traced from the 16 July 1943 Luftwaffe photograph GX-3734-SK-61 (Wheatley 2019, Figs. 2, 40): photo up = SW, the Stalinskoye farm (long barns) SE of the railway, the strip block and a dark ploughed field between the farm and the railway, svkh. Oktyabrsky a loose scatter of houses along a scrub-filled ravine NW of the railway; the rest of the plateau large uniform grain fields with faint boundaries and tracks, no shelterbelts",
+ "works_from_strongpoints": false,
+ "villages_1943": [
+  {
+   "name": "kh. Teterevino (north), 50 households (RKKA 1:100 000 sheet M-37-38, 1941): homesteads on both sides of the Yakovlevo - Prokhorovka highway over ~800 m, a school N of the road, a lane of farmsteads running S at the eastern end; the southern half lies beyond the map edge. Modern OSM has no village here (only Yasnaya Polyana further S)",
+   "rus": "\u0445. \u0422\u0435\u0442\u0435\u0440\u0435\u0432\u0438\u043d\u043e",
+   "pts": [
+    [
+     5243,
+     5970
+    ],
+    [
+     5530,
+     6369
+    ],
+    [
+     5632,
+     6533
+    ],
+    [
+     5857,
+     6554
+    ],
+    [
+     6072,
+     6472
+    ],
+    [
+     6195,
+     6287
+    ],
+    [
+     6124,
+     6093
+    ],
+    [
+     5427,
+     5714
+    ]
+   ]
+  },
+  {
+   "name": "Prelestnoye (RKKA 1:100 000 sheet, blob 1)",
+   "pts": [
+    [
+     9368,
+     14898
+    ],
+    [
+     9336,
+     14898
+    ],
+    [
+     9292,
+     14942
+    ],
+    [
+     9252,
+     14930
+    ],
+    [
+     9128,
+     14926
+    ],
+    [
+     9126,
+     14952
+    ],
+    [
+     9090,
+     14992
+    ],
+    [
+     9132,
+     15022
+    ],
+    [
+     9224,
+     15126
+    ],
+    [
+     9252,
+     15126
+    ],
+    [
+     9318,
+     15192
+    ],
+    [
+     9328,
+     15234
+    ],
+    [
+     9364,
+     15230
+    ],
+    [
+     9492,
+     15370
+    ],
+    [
+     9528,
+     15370
+    ],
+    [
+     9656,
+     15510
+    ],
+    [
+     9744,
+     15574
+    ],
+    [
+     9956,
+     15790
+    ],
+    [
+     10032,
+     15806
+    ],
+    [
+     10084,
+     15834
+    ],
+    [
+     10178,
+     15920
+    ],
+    [
+     10188,
+     15942
+    ],
+    [
+     10224,
+     15958
+    ],
+    [
+     10368,
+     15954
+    ],
+    [
+     10434,
+     16020
+    ],
+    [
+     10434,
+     16080
+    ],
+    [
+     10502,
+     16200
+    ],
+    [
+     10546,
+     16244
+    ],
+    [
+     10546,
+     16276
+    ],
+    [
+     10572,
+     16322
+    ],
+    [
+     11042,
+     16320
+    ],
+    [
+     11042,
+     16308
+    ],
+    [
+     10970,
+     16240
+    ],
+    [
+     10970,
+     16216
+    ],
+    [
+     10946,
+     16188
+    ],
+    [
+     10942,
+     16116
+    ],
+    [
+     10870,
+     16040
+    ],
+    [
+     10882,
+     15988
+    ],
+    [
+     10956,
+     15914
+    ],
+    [
+     11004,
+     15898
+    ],
+    [
+     11080,
+     15818
+    ],
+    [
+     11154,
+     15812
+    ],
+    [
+     11156,
+     15730
+    ],
+    [
+     11072,
+     15742
+    ],
+    [
+     11032,
+     15702
+    ],
+    [
+     11004,
+     15694
+    ],
+    [
+     10876,
+     15698
+    ],
+    [
+     10866,
+     15796
+    ],
+    [
+     10732,
+     15922
+    ],
+    [
+     10684,
+     15874
+    ],
+    [
+     10600,
+     15874
+    ],
+    [
+     10524,
+     15954
+    ],
+    [
+     10440,
+     15974
+    ],
+    [
+     10366,
+     15896
+    ],
+    [
+     10442,
+     15804
+    ],
+    [
+     10442,
+     15768
+    ],
+    [
+     10494,
+     15716
+    ],
+    [
+     10494,
+     15668
+    ],
+    [
+     10478,
+     15648
+    ],
+    [
+     10490,
+     15584
+    ],
+    [
+     10476,
+     15570
+    ],
+    [
+     10424,
+     15574
+    ],
+    [
+     10358,
+     15508
+    ],
+    [
+     10356,
+     15482
+    ],
+    [
+     10272,
+     15482
+    ],
+    [
+     10254,
+     15532
+    ],
+    [
+     10188,
+     15598
+    ],
+    [
+     10000,
+     15434
+    ],
+    [
+     9868,
+     15434
+    ],
+    [
+     9840,
+     15454
+    ],
+    [
+     9720,
+     15346
+    ],
+    [
+     9668,
+     15338
+    ],
+    [
+     9470,
+     15144
+    ],
+    [
+     9494,
+     15116
+    ],
+    [
+     9494,
+     15084
+    ],
+    [
+     9514,
+     15064
+    ],
+    [
+     9514,
+     15040
+    ],
+    [
+     9554,
+     15000
+    ],
+    [
+     9472,
+     14910
+    ],
+    [
+     9368,
+     14898
+    ]
+   ]
+  },
+  {
+   "name": "hamlet N of Prokhorovka (RKKA 1:100 000 sheet, blob 3)",
+   "pts": [
+    [
+     15120,
+     15950
+    ],
+    [
+     15032,
+     15950
+    ],
+    [
+     14960,
+     16026
+    ],
+    [
+     14924,
+     16030
+    ],
+    [
+     14832,
+     16018
+    ],
+    [
+     14760,
+     15978
+    ],
+    [
+     14624,
+     15978
+    ],
+    [
+     14622,
+     16064
+    ],
+    [
+     14676,
+     16090
+    ],
+    [
+     14742,
+     16156
+    ],
+    [
+     14686,
+     16216
+    ],
+    [
+     14682,
+     16256
+    ],
+    [
+     14642,
+     16296
+    ],
+    [
+     14688,
+     16322
+    ],
+    [
+     14796,
+     16310
+    ],
+    [
+     14794,
+     16252
+    ],
+    [
+     14860,
+     16186
+    ],
+    [
+     14952,
+     16194
+    ],
+    [
+     15000,
+     16166
+    ],
+    [
+     15118,
+     16048
+    ],
+    [
+     15120,
+     15950
+    ]
+   ]
+  },
+  {
+   "name": "Polezhayev / Petrovka (W) (RKKA 1:100 000 sheet, blob 6)",
+   "pts": [
+    [
+     8692,
+     15890
+    ],
+    [
+     8614,
+     15892
+    ],
+    [
+     8614,
+     15940
+    ],
+    [
+     8598,
+     15968
+    ],
+    [
+     8610,
+     16072
+    ],
+    [
+     8644,
+     16074
+    ],
+    [
+     8646,
+     16056
+    ],
+    [
+     8712,
+     15990
+    ],
+    [
+     8748,
+     15974
+    ],
+    [
+     8792,
+     16014
+    ],
+    [
+     8852,
+     16026
+    ],
+    [
+     8918,
+     16092
+    ],
+    [
+     8920,
+     16170
+    ],
+    [
+     8980,
+     16170
+    ],
+    [
+     9046,
+     16236
+    ],
+    [
+     9048,
+     16314
+    ],
+    [
+     9112,
+     16314
+    ],
+    [
+     9130,
+     16228
+    ],
+    [
+     9130,
+     16112
+    ],
+    [
+     9126,
+     16060
+    ],
+    [
+     9098,
+     15980
+    ],
+    [
+     9072,
+     15958
+    ],
+    [
+     9004,
+     15934
+    ],
+    [
+     8924,
+     15922
+    ],
+    [
+     8808,
+     15930
+    ],
+    [
+     8760,
+     15966
+    ],
+    [
+     8692,
+     15890
+    ]
+   ]
+  },
+  {
+   "name": "Petrovka (N) (RKKA 1:100 000 sheet, blob 7)",
+   "pts": [
+    [
+     9680,
+     16058
+    ],
+    [
+     9614,
+     16060
+    ],
+    [
+     9610,
+     16176
+    ],
+    [
+     9620,
+     16218
+    ],
+    [
+     9702,
+     16216
+    ],
+    [
+     9706,
+     16088
+    ],
+    [
+     9702,
+     16068
+    ],
+    [
+     9680,
+     16058
+    ]
+   ]
+  },
+  {
+   "name": "Polezhayev (RKKA 1:100 000 sheet, blob 12)",
+   "pts": [
+    [
+     8756,
+     15410
+    ],
+    [
+     8664,
+     15410
+    ],
+    [
+     8520,
+     15454
+    ],
+    [
+     8420,
+     15542
+    ],
+    [
+     8380,
+     15562
+    ],
+    [
+     8340,
+     15562
+    ],
+    [
+     8284,
+     15618
+    ],
+    [
+     8192,
+     15622
+    ],
+    [
+     8182,
+     15636
+    ],
+    [
+     8186,
+     15748
+    ],
+    [
+     8138,
+     15796
+    ],
+    [
+     8154,
+     15832
+    ],
+    [
+     8098,
+     15888
+    ],
+    [
+     8120,
+     15894
+    ],
+    [
+     8166,
+     15880
+    ],
+    [
+     8166,
+     15808
+    ],
+    [
+     8232,
+     15742
+    ],
+    [
+     8364,
+     15742
+    ],
+    [
+     8388,
+     15718
+    ],
+    [
+     8428,
+     15758
+    ],
+    [
+     8456,
+     15758
+    ],
+    [
+     8564,
+     15746
+    ],
+    [
+     8600,
+     15722
+    ],
+    [
+     8692,
+     15722
+    ],
+    [
+     8702,
+     15624
+    ],
+    [
+     8694,
+     15560
+    ],
+    [
+     8758,
+     15496
+    ],
+    [
+     8756,
+     15410
+    ]
+   ]
+  },
+  {
+   "name": "Polezhayev (RKKA 1:100 000 sheet, blob 12)",
+   "pts": [
+    [
+     7980,
+     15582
+    ],
+    [
+     7876,
+     15582
+    ],
+    [
+     7826,
+     15644
+    ],
+    [
+     7830,
+     15740
+    ],
+    [
+     7888,
+     15794
+    ],
+    [
+     7992,
+     15794
+    ],
+    [
+     8050,
+     15756
+    ],
+    [
+     8042,
+     15660
+    ],
+    [
+     7982,
+     15600
+    ],
+    [
+     7980,
+     15582
+    ]
+   ]
+  },
+  {
+   "name": "hamlet on the N bank W of Prelestnoye (RKKA 1:100 000 sheet, blob 18)",
+   "pts": [
+    [
+     8136,
+     15238
+    ],
+    [
+     8024,
+     15238
+    ],
+    [
+     8026,
+     15328
+    ],
+    [
+     8052,
+     15342
+    ],
+    [
+     8156,
+     15342
+    ],
+    [
+     8158,
+     15276
+    ],
+    [
+     8174,
+     15260
+    ],
+    [
+     8136,
+     15238
+    ]
+   ]
+  },
+  {
+   "name": "hamlet on the N bank W of Prelestnoye (W) (RKKA 1:100 000 sheet, blob 19)",
+   "pts": [
+    [
+     7840,
+     15034
+    ],
+    [
+     7794,
+     15036
+    ],
+    [
+     7798,
+     15120
+    ],
+    [
+     7786,
+     15144
+    ],
+    [
+     7798,
+     15160
+    ],
+    [
+     7796,
+     15258
+    ],
+    [
+     7874,
+     15256
+    ],
+    [
+     7878,
+     15144
+    ],
+    [
+     7834,
+     15100
+    ],
+    [
+     7840,
+     15034
+    ]
+   ]
+  },
+  {
+   "name": "hamlet on the N bank W of Prelestnoye (RKKA 1:100 000 sheet, blob 18)",
+   "pts": [
+    [
+     8352,
+     15138
+    ],
+    [
+     8256,
+     15138
+    ],
+    [
+     8254,
+     15200
+    ],
+    [
+     8238,
+     15220
+    ],
+    [
+     8288,
+     15250
+    ],
+    [
+     8384,
+     15250
+    ],
+    [
+     8386,
+     15164
+    ],
+    [
+     8352,
+     15138
+    ]
+   ]
+  },
+  {
+   "name": "Prokhorovka brick works (RKKA 1:100 000 sheet, blob 21)",
+   "pts": [
+    [
+     15492,
+     14898
+    ],
+    [
+     15378,
+     14908
+    ],
+    [
+     15374,
+     14984
+    ],
+    [
+     15322,
+     15036
+    ],
+    [
+     15324,
+     15130
+    ],
+    [
+     15446,
+     15128
+    ],
+    [
+     15454,
+     15056
+    ],
+    [
+     15498,
+     15008
+    ],
+    [
+     15492,
+     14898
+    ]
+   ]
+  },
+  {
+   "name": "Prokhorovka W (N of the railway) (RKKA 1:100 000 sheet, blob 24)",
+   "pts": [
+    [
+     16032,
+     14662
+    ],
+    [
+     15910,
+     14672
+    ],
+    [
+     15906,
+     14744
+    ],
+    [
+     15886,
+     14780
+    ],
+    [
+     15898,
+     14804
+    ],
+    [
+     15898,
+     14928
+    ],
+    [
+     15942,
+     14980
+    ],
+    [
+     15944,
+     15030
+    ],
+    [
+     15974,
+     15028
+    ],
+    [
+     15966,
+     14956
+    ],
+    [
+     15982,
+     14928
+    ],
+    [
+     16052,
+     14858
+    ],
+    [
+     16132,
+     14858
+    ],
+    [
+     16150,
+     14812
+    ],
+    [
+     16146,
+     14684
+    ],
+    [
+     16032,
+     14662
+    ]
+   ]
+  },
+  {
+   "name": "Andreyevka - Mikhailovka - Prelestnoye SW (RKKA 1:100 000 sheet, blob 27)",
+   "pts": [
+    [
+     8028,
+     13290
+    ],
+    [
+     8000,
+     13318
+    ],
+    [
+     7942,
+     13324
+    ],
+    [
+     7942,
+     13428
+    ],
+    [
+     7876,
+     13494
+    ],
+    [
+     7816,
+     13434
+    ],
+    [
+     7718,
+     13436
+    ],
+    [
+     7706,
+     13460
+    ],
+    [
+     7706,
+     13592
+    ],
+    [
+     7762,
+     13668
+    ],
+    [
+     7774,
+     13720
+    ],
+    [
+     7848,
+     13758
+    ],
+    [
+     7922,
+     13832
+    ],
+    [
+     7932,
+     13858
+    ],
+    [
+     7964,
+     13862
+    ],
+    [
+     8060,
+     13958
+    ],
+    [
+     8136,
+     13954
+    ],
+    [
+     8206,
+     14024
+    ],
+    [
+     8206,
+     14064
+    ],
+    [
+     8370,
+     14212
+    ],
+    [
+     8350,
+     14236
+    ],
+    [
+     8350,
+     14324
+    ],
+    [
+     8380,
+     14326
+    ],
+    [
+     8428,
+     14374
+    ],
+    [
+     8524,
+     14394
+    ],
+    [
+     8600,
+     14466
+    ],
+    [
+     8636,
+     14474
+    ],
+    [
+     8730,
+     14584
+    ],
+    [
+     8776,
+     14718
+    ],
+    [
+     8804,
+     14714
+    ],
+    [
+     8900,
+     14810
+    ],
+    [
+     8992,
+     14810
+    ],
+    [
+     9002,
+     14704
+    ],
+    [
+     8930,
+     14612
+    ],
+    [
+     8958,
+     14576
+    ],
+    [
+     8942,
+     14552
+    ],
+    [
+     8942,
+     14484
+    ],
+    [
+     8844,
+     14470
+    ],
+    [
+     8686,
+     14304
+    ],
+    [
+     8682,
+     14220
+    ],
+    [
+     8702,
+     14196
+    ],
+    [
+     8702,
+     14148
+    ],
+    [
+     8682,
+     14120
+    ],
+    [
+     8702,
+     14100
+    ],
+    [
+     8702,
+     14060
+    ],
+    [
+     8682,
+     14032
+    ],
+    [
+     8682,
+     13956
+    ],
+    [
+     8670,
+     13936
+    ],
+    [
+     8694,
+     13888
+    ],
+    [
+     8690,
+     13808
+    ],
+    [
+     8608,
+     13794
+    ],
+    [
+     8606,
+     13812
+    ],
+    [
+     8540,
+     13878
+    ],
+    [
+     8516,
+     13858
+    ],
+    [
+     8416,
+     13862
+    ],
+    [
+     8346,
+     13792
+    ],
+    [
+     8346,
+     13728
+    ],
+    [
+     8290,
+     13672
+    ],
+    [
+     8294,
+     13652
+    ],
+    [
+     8360,
+     13586
+    ],
+    [
+     8444,
+     13602
+    ],
+    [
+     8472,
+     13582
+    ],
+    [
+     8516,
+     13582
+    ],
+    [
+     8526,
+     13508
+    ],
+    [
+     8404,
+     13482
+    ],
+    [
+     8388,
+     13494
+    ],
+    [
+     8336,
+     13498
+    ],
+    [
+     8260,
+     13578
+    ],
+    [
+     8236,
+     13554
+    ],
+    [
+     8184,
+     13554
+    ],
+    [
+     8034,
+     13416
+    ],
+    [
+     8046,
+     13324
+    ],
+    [
+     8028,
+     13290
+    ]
+   ]
+  },
+  {
+   "name": "Andreyevka - Mikhailovka - Prelestnoye SW (RKKA 1:100 000 sheet, blob 27)",
+   "pts": [
+    [
+     8502,
+     14096
+    ],
+    [
+     8590,
+     14172
+    ],
+    [
+     8590,
+     14236
+    ],
+    [
+     8524,
+     14302
+    ],
+    [
+     8484,
+     14302
+    ],
+    [
+     8390,
+     14204
+    ],
+    [
+     8406,
+     14164
+    ],
+    [
+     8472,
+     14098
+    ],
+    [
+     8502,
+     14096
+    ]
+   ]
+  },
+  {
+   "name": "Prokhorovka W (small) (RKKA 1:100 000 sheet, blob 30)",
+   "pts": [
+    [
+     15708,
+     14682
+    ],
+    [
+     15676,
+     14682
+    ],
+    [
+     15654,
+     14696
+    ],
+    [
+     15656,
+     14754
+    ],
+    [
+     15710,
+     14752
+    ],
+    [
+     15708,
+     14682
+    ]
+   ]
+  },
+  {
+   "name": "Prokhorovka MTS (E) (RKKA 1:100 000 sheet, blob 37)",
+   "pts": [
+    [
+     16892,
+     13842
+    ],
+    [
+     16838,
+     13844
+    ],
+    [
+     16836,
+     13910
+    ],
+    [
+     16898,
+     13908
+    ],
+    [
+     16892,
+     13842
+    ]
+   ]
+  },
+  {
+   "name": "Prokhorovka MTS (RKKA 1:100 000 sheet, blob 40)",
+   "pts": [
+    [
+     16200,
+     13430
+    ],
+    [
+     16108,
+     13430
+    ],
+    [
+     16076,
+     13454
+    ],
+    [
+     16066,
+     13508
+    ],
+    [
+     16000,
+     13574
+    ],
+    [
+     15964,
+     13574
+    ],
+    [
+     15950,
+     13588
+    ],
+    [
+     15950,
+     13664
+    ],
+    [
+     16036,
+     13690
+    ],
+    [
+     16038,
+     13640
+    ],
+    [
+     16058,
+     13616
+    ],
+    [
+     16050,
+     13608
+    ],
+    [
+     16120,
+     13538
+    ],
+    [
+     16174,
+     13536
+    ],
+    [
+     16174,
+     13500
+    ],
+    [
+     16226,
+     13448
+    ],
+    [
+     16200,
+     13430
+    ]
+   ]
+  },
+  {
+   "name": "svkh. Oktyabrsky yard and houses (RKKA 1:100 000 sheet, blob 42)",
+   "pts": [
+    [
+     12476,
+     13046
+    ],
+    [
+     12336,
+     13050
+    ],
+    [
+     12212,
+     13114
+    ],
+    [
+     12164,
+     13118
+    ],
+    [
+     12108,
+     13146
+    ],
+    [
+     12028,
+     13166
+    ],
+    [
+     11948,
+     13162
+    ],
+    [
+     11896,
+     13178
+    ],
+    [
+     11818,
+     13264
+    ],
+    [
+     11818,
+     13380
+    ],
+    [
+     11854,
+     13416
+    ],
+    [
+     11842,
+     13436
+    ],
+    [
+     11842,
+     13552
+    ],
+    [
+     11856,
+     13566
+    ],
+    [
+     11972,
+     13562
+    ],
+    [
+     12020,
+     13514
+    ],
+    [
+     12044,
+     13506
+    ],
+    [
+     12208,
+     13494
+    ],
+    [
+     12210,
+     13460
+    ],
+    [
+     12352,
+     13314
+    ],
+    [
+     12378,
+     13312
+    ],
+    [
+     12378,
+     13252
+    ],
+    [
+     12444,
+     13186
+    ],
+    [
+     12574,
+     13168
+    ],
+    [
+     12578,
+     13068
+    ],
+    [
+     12508,
+     13070
+    ],
+    [
+     12476,
+     13046
+    ]
+   ]
+  },
+  {
+   "name": "hamlet SE of Prokhorovka (E) (RKKA 1:100 000 sheet, blob 46)",
+   "pts": [
+    [
+     18284,
+     13230
+    ],
+    [
+     18264,
+     13230
+    ],
+    [
+     18210,
+     13276
+    ],
+    [
+     18214,
+     13380
+    ],
+    [
+     18336,
+     13390
+    ],
+    [
+     18366,
+     13376
+    ],
+    [
+     18366,
+     13296
+    ],
+    [
+     18344,
+     13290
+    ],
+    [
+     18284,
+     13230
+    ]
+   ]
+  },
+  {
+   "name": "Kozlovka - Bogoroditskoye (RKKA 1:100 000 sheet, blob 50)",
+   "pts": [
+    [
+     5556,
+     12522
+    ],
+    [
+     5368,
+     12526
+    ],
+    [
+     5324,
+     12558
+    ],
+    [
+     5236,
+     12558
+    ],
+    [
+     5234,
+     12652
+    ],
+    [
+     5168,
+     12718
+    ],
+    [
+     5132,
+     12722
+    ],
+    [
+     5100,
+     12750
+    ],
+    [
+     5034,
+     12684
+    ],
+    [
+     5028,
+     12606
+    ],
+    [
+     4928,
+     12606
+    ],
+    [
+     4922,
+     12680
+    ],
+    [
+     4866,
+     12736
+    ],
+    [
+     4866,
+     12800
+    ],
+    [
+     4800,
+     12866
+    ],
+    [
+     4768,
+     12862
+    ],
+    [
+     4732,
+     12826
+    ],
+    [
+     4700,
+     12854
+    ],
+    [
+     4584,
+     12858
+    ],
+    [
+     4582,
+     12888
+    ],
+    [
+     4512,
+     12958
+    ],
+    [
+     4480,
+     12942
+    ],
+    [
+     4348,
+     12950
+    ],
+    [
+     4252,
+     13038
+    ],
+    [
+     4220,
+     13038
+    ],
+    [
+     4164,
+     13070
+    ],
+    [
+     4158,
+     13328
+    ],
+    [
+     4192,
+     13330
+    ],
+    [
+     4252,
+     13270
+    ],
+    [
+     4300,
+     13254
+    ],
+    [
+     4372,
+     13182
+    ],
+    [
+     4400,
+     13182
+    ],
+    [
+     4464,
+     13154
+    ],
+    [
+     4540,
+     13066
+    ],
+    [
+     4584,
+     13066
+    ],
+    [
+     4586,
+     13020
+    ],
+    [
+     4652,
+     12954
+    ],
+    [
+     4988,
+     12962
+    ],
+    [
+     5304,
+     12918
+    ],
+    [
+     5444,
+     12878
+    ],
+    [
+     5448,
+     12786
+    ],
+    [
+     5360,
+     12786
+    ],
+    [
+     5292,
+     12806
+    ],
+    [
+     5226,
+     12740
+    ],
+    [
+     5226,
+     12712
+    ],
+    [
+     5296,
+     12642
+    ],
+    [
+     5328,
+     12642
+    ],
+    [
+     5376,
+     12618
+    ],
+    [
+     5404,
+     12618
+    ],
+    [
+     5468,
+     12646
+    ],
+    [
+     5568,
+     12646
+    ],
+    [
+     5570,
+     12580
+    ],
+    [
+     5598,
+     12552
+    ],
+    [
+     5556,
+     12522
+    ]
+   ]
+  },
+  {
+   "name": "Lutovo (RKKA 1:100 000 sheet, blob 51)",
+   "pts": [
+    [
+     15252,
+     12970
+    ],
+    [
+     15208,
+     13010
+    ],
+    [
+     15128,
+     13026
+    ],
+    [
+     15044,
+     13118
+    ],
+    [
+     14956,
+     13122
+    ],
+    [
+     14938,
+     13172
+    ],
+    [
+     14942,
+     13228
+    ],
+    [
+     14930,
+     13272
+    ],
+    [
+     15032,
+     13250
+    ],
+    [
+     15056,
+     13254
+    ],
+    [
+     15120,
+     13318
+    ],
+    [
+     15184,
+     13318
+    ],
+    [
+     15212,
+     13302
+    ],
+    [
+     15252,
+     13310
+    ],
+    [
+     15288,
+     13274
+    ],
+    [
+     15364,
+     13274
+    ],
+    [
+     15366,
+     13240
+    ],
+    [
+     15432,
+     13174
+    ],
+    [
+     15534,
+     13172
+    ],
+    [
+     15530,
+     13080
+    ],
+    [
+     15508,
+     13022
+    ],
+    [
+     15416,
+     13022
+    ],
+    [
+     15418,
+     13096
+    ],
+    [
+     15352,
+     13162
+    ],
+    [
+     15316,
+     13162
+    ],
+    [
+     15246,
+     13092
+    ],
+    [
+     15270,
+     13028
+    ],
+    [
+     15270,
+     12988
+    ],
+    [
+     15252,
+     12970
+    ]
+   ]
+  },
+  {
+   "name": "Vasilyevka (RKKA 1:100 000 sheet, blob 47)",
+   "pts": [
+    [
+     7172,
+     12574
+    ],
+    [
+     7082,
+     12580
+    ],
+    [
+     7034,
+     12636
+    ],
+    [
+     7030,
+     12680
+    ],
+    [
+     6958,
+     12752
+    ],
+    [
+     6958,
+     12812
+    ],
+    [
+     6822,
+     12928
+    ],
+    [
+     6822,
+     12988
+    ],
+    [
+     6758,
+     13052
+    ],
+    [
+     6760,
+     13150
+    ],
+    [
+     7032,
+     13150
+    ],
+    [
+     7108,
+     13182
+    ],
+    [
+     7216,
+     13186
+    ],
+    [
+     7352,
+     13218
+    ],
+    [
+     7396,
+     13258
+    ],
+    [
+     7412,
+     13242
+    ],
+    [
+     7456,
+     13270
+    ],
+    [
+     7572,
+     13290
+    ],
+    [
+     7696,
+     13290
+    ],
+    [
+     7740,
+     13246
+    ],
+    [
+     7840,
+     13242
+    ],
+    [
+     7926,
+     13164
+    ],
+    [
+     7924,
+     13054
+    ],
+    [
+     7820,
+     13058
+    ],
+    [
+     7752,
+     13106
+    ],
+    [
+     7686,
+     13040
+    ],
+    [
+     7680,
+     13014
+    ],
+    [
+     7604,
+     13014
+    ],
+    [
+     7552,
+     13066
+    ],
+    [
+     7452,
+     13070
+    ],
+    [
+     7382,
+     13000
+    ],
+    [
+     7454,
+     12928
+    ],
+    [
+     7454,
+     12828
+    ],
+    [
+     7432,
+     12790
+    ],
+    [
+     7388,
+     12778
+    ],
+    [
+     7328,
+     12778
+    ],
+    [
+     7276,
+     12830
+    ],
+    [
+     7204,
+     12830
+    ],
+    [
+     7092,
+     12938
+    ],
+    [
+     7026,
+     12872
+    ],
+    [
+     7046,
+     12840
+    ],
+    [
+     7046,
+     12804
+    ],
+    [
+     7174,
+     12668
+    ],
+    [
+     7172,
+     12574
+    ]
+   ]
+  },
+  {
+   "name": "hamlet SE of Prokhorovka (RKKA 1:100 000 sheet, blob 52)",
+   "pts": [
+    [
+     17936,
+     13162
+    ],
+    [
+     17804,
+     13170
+    ],
+    [
+     17798,
+     13264
+    ],
+    [
+     18032,
+     13270
+    ],
+    [
+     18030,
+     13212
+    ],
+    [
+     17980,
+     13174
+    ],
+    [
+     17936,
+     13162
+    ]
+   ]
+  },
+  {
+   "name": "hamlet SE of Prokhorovka (W) (RKKA 1:100 000 sheet, blob 53)",
+   "pts": [
+    [
+     17384,
+     13118
+    ],
+    [
+     17370,
+     13120
+    ],
+    [
+     17370,
+     13172
+    ],
+    [
+     17384,
+     13198
+    ],
+    [
+     17444,
+     13246
+    ],
+    [
+     17530,
+     13244
+    ],
+    [
+     17530,
+     13204
+    ],
+    [
+     17468,
+     13142
+    ],
+    [
+     17400,
+     13134
+    ],
+    [
+     17384,
+     13118
+    ]
+   ]
+  },
+  {
+   "name": "Kozlovka - Bogoroditskoye (RKKA 1:100 000 sheet, blob 50)",
+   "pts": [
+    [
+     6664,
+     12334
+    ],
+    [
+     6584,
+     12334
+    ],
+    [
+     6570,
+     12388
+    ],
+    [
+     6504,
+     12454
+    ],
+    [
+     6410,
+     12468
+    ],
+    [
+     6410,
+     12580
+    ],
+    [
+     6354,
+     12636
+    ],
+    [
+     6338,
+     12684
+    ],
+    [
+     6260,
+     12762
+    ],
+    [
+     6178,
+     12684
+    ],
+    [
+     6178,
+     12604
+    ],
+    [
+     6140,
+     12602
+    ],
+    [
+     6074,
+     12536
+    ],
+    [
+     6074,
+     12460
+    ],
+    [
+     5984,
+     12458
+    ],
+    [
+     5966,
+     12516
+    ],
+    [
+     5962,
+     12616
+    ],
+    [
+     5984,
+     12614
+    ],
+    [
+     6054,
+     12684
+    ],
+    [
+     6034,
+     12712
+    ],
+    [
+     6038,
+     12848
+    ],
+    [
+     5972,
+     12914
+    ],
+    [
+     5944,
+     12914
+    ],
+    [
+     5874,
+     12844
+    ],
+    [
+     5868,
+     12770
+    ],
+    [
+     5756,
+     12742
+    ],
+    [
+     5664,
+     12742
+    ],
+    [
+     5658,
+     12808
+    ],
+    [
+     5626,
+     12844
+    ],
+    [
+     5630,
+     12964
+    ],
+    [
+     5764,
+     13046
+    ],
+    [
+     5804,
+     13050
+    ],
+    [
+     5900,
+     13118
+    ],
+    [
+     5936,
+     13122
+    ],
+    [
+     6084,
+     13182
+    ],
+    [
+     6224,
+     13194
+    ],
+    [
+     6376,
+     13170
+    ],
+    [
+     6512,
+     13098
+    ],
+    [
+     6514,
+     12976
+    ],
+    [
+     6482,
+     12924
+    ],
+    [
+     6626,
+     12584
+    ],
+    [
+     6626,
+     12516
+    ],
+    [
+     6666,
+     12428
+    ],
+    [
+     6664,
+     12334
+    ]
+   ]
+  },
+  {
+   "name": "Grushki-Vtorye (RKKA 1:100 000 sheet, blob 55)",
+   "pts": [
+    [
+     18364,
+     12566
+    ],
+    [
+     18346,
+     12568
+    ],
+    [
+     18346,
+     12624
+    ],
+    [
+     18310,
+     12668
+    ],
+    [
+     18306,
+     12700
+    ],
+    [
+     18240,
+     12766
+    ],
+    [
+     18148,
+     12766
+    ],
+    [
+     18110,
+     12780
+    ],
+    [
+     18110,
+     12860
+    ],
+    [
+     18190,
+     12928
+    ],
+    [
+     18184,
+     12954
+    ],
+    [
+     18332,
+     12946
+    ],
+    [
+     18366,
+     12928
+    ],
+    [
+     18364,
+     12566
+    ]
+   ]
+  },
+  {
+   "name": "Lutovo (S) (RKKA 1:100 000 sheet, blob 56)",
+   "pts": [
+    [
+     14944,
+     12534
+    ],
+    [
+     14918,
+     12580
+    ],
+    [
+     14842,
+     12652
+    ],
+    [
+     14846,
+     12712
+    ],
+    [
+     14810,
+     12756
+    ],
+    [
+     14810,
+     12892
+    ],
+    [
+     14836,
+     12910
+    ],
+    [
+     14938,
+     12912
+    ],
+    [
+     14938,
+     12816
+    ],
+    [
+     14902,
+     12740
+    ],
+    [
+     14930,
+     12696
+    ],
+    [
+     15018,
+     12612
+    ],
+    [
+     15018,
+     12584
+    ],
+    [
+     14994,
+     12560
+    ],
+    [
+     15002,
+     12544
+    ],
+    [
+     14944,
+     12534
+    ]
+   ]
+  },
+  {
+   "name": "Vasilyevka (RKKA 1:100 000 sheet, blob 47)",
+   "pts": [
+    [
+     7404,
+     12390
+    ],
+    [
+     7316,
+     12390
+    ],
+    [
+     7290,
+     12444
+    ],
+    [
+     7286,
+     12536
+    ],
+    [
+     7350,
+     12600
+    ],
+    [
+     7344,
+     12622
+    ],
+    [
+     7384,
+     12622
+    ],
+    [
+     7426,
+     12600
+    ],
+    [
+     7426,
+     12504
+    ],
+    [
+     7406,
+     12456
+    ],
+    [
+     7404,
+     12390
+    ]
+   ]
+  },
+  {
+   "name": "Grushki-Pervye (RKKA 1:100 000 sheet, blob 62)",
+   "pts": [
+    [
+     18304,
+     12358
+    ],
+    [
+     18302,
+     12420
+    ],
+    [
+     18364,
+     12422
+    ],
+    [
+     18366,
+     12376
+    ],
+    [
+     18320,
+     12374
+    ],
+    [
+     18304,
+     12358
+    ]
+   ]
+  },
+  {
+   "name": "Grushki-Pervye (RKKA 1:100 000 sheet, blob 62)",
+   "pts": [
+    [
+     17776,
+     11410
+    ],
+    [
+     17664,
+     11410
+    ],
+    [
+     17616,
+     11458
+    ],
+    [
+     17572,
+     11454
+    ],
+    [
+     17566,
+     11464
+    ],
+    [
+     17566,
+     11576
+    ],
+    [
+     17584,
+     11614
+    ],
+    [
+     17692,
+     11618
+    ],
+    [
+     17716,
+     11598
+    ],
+    [
+     17760,
+     11602
+    ],
+    [
+     17826,
+     11668
+    ],
+    [
+     17806,
+     11692
+    ],
+    [
+     17806,
+     11844
+    ],
+    [
+     17740,
+     11910
+    ],
+    [
+     17662,
+     11920
+    ],
+    [
+     17694,
+     11952
+    ],
+    [
+     17702,
+     12028
+    ],
+    [
+     17780,
+     12106
+    ],
+    [
+     17880,
+     12106
+    ],
+    [
+     18012,
+     12030
+    ],
+    [
+     18080,
+     12038
+    ],
+    [
+     18108,
+     12058
+    ],
+    [
+     18148,
+     12058
+    ],
+    [
+     18214,
+     12124
+    ],
+    [
+     18202,
+     12144
+    ],
+    [
+     18202,
+     12244
+    ],
+    [
+     18260,
+     12250
+    ],
+    [
+     18288,
+     12274
+    ],
+    [
+     18318,
+     12244
+    ],
+    [
+     18322,
+     12208
+    ],
+    [
+     18366,
+     12164
+    ],
+    [
+     18366,
+     12056
+    ],
+    [
+     18290,
+     11988
+    ],
+    [
+     18276,
+     11914
+    ],
+    [
+     18116,
+     11922
+    ],
+    [
+     18050,
+     11856
+    ],
+    [
+     18116,
+     11790
+    ],
+    [
+     18194,
+     11764
+    ],
+    [
+     18198,
+     11628
+    ],
+    [
+     18178,
+     11592
+    ],
+    [
+     18190,
+     11540
+    ],
+    [
+     18108,
+     11538
+    ],
+    [
+     18012,
+     11562
+    ],
+    [
+     18006,
+     11652
+    ],
+    [
+     17940,
+     11718
+    ],
+    [
+     17884,
+     11706
+    ],
+    [
+     17810,
+     11636
+    ],
+    [
+     17838,
+     11608
+    ],
+    [
+     17858,
+     11496
+    ],
+    [
+     17776,
+     11410
+    ]
+   ]
+  },
+  {
+   "name": "Yamki (RKKA 1:100 000 sheet, blob 65)",
+   "pts": [
+    [
+     14568,
+     11278
+    ],
+    [
+     14476,
+     11278
+    ],
+    [
+     14474,
+     11316
+    ],
+    [
+     14404,
+     11386
+    ],
+    [
+     14380,
+     11386
+    ],
+    [
+     14336,
+     11414
+    ],
+    [
+     14334,
+     11432
+    ],
+    [
+     14264,
+     11502
+    ],
+    [
+     14192,
+     11502
+    ],
+    [
+     14156,
+     11466
+    ],
+    [
+     14140,
+     11482
+    ],
+    [
+     14032,
+     11486
+    ],
+    [
+     13992,
+     11518
+    ],
+    [
+     13928,
+     11518
+    ],
+    [
+     13926,
+     11544
+    ],
+    [
+     13898,
+     11584
+    ],
+    [
+     13890,
+     11672
+    ],
+    [
+     13940,
+     11674
+    ],
+    [
+     14006,
+     11740
+    ],
+    [
+     13940,
+     11806
+    ],
+    [
+     13882,
+     11808
+    ],
+    [
+     13874,
+     11840
+    ],
+    [
+     13808,
+     11906
+    ],
+    [
+     13790,
+     11908
+    ],
+    [
+     13790,
+     11972
+    ],
+    [
+     13828,
+     11986
+    ],
+    [
+     13884,
+     11986
+    ],
+    [
+     13920,
+     12014
+    ],
+    [
+     13968,
+     12010
+    ],
+    [
+     14042,
+     12084
+    ],
+    [
+     14052,
+     12134
+    ],
+    [
+     14160,
+     12130
+    ],
+    [
+     14300,
+     11990
+    ],
+    [
+     14344,
+     11978
+    ],
+    [
+     14346,
+     11860
+    ],
+    [
+     14362,
+     11824
+    ],
+    [
+     14428,
+     11758
+    ],
+    [
+     14444,
+     11770
+    ],
+    [
+     14562,
+     11772
+    ],
+    [
+     14562,
+     11660
+    ],
+    [
+     14526,
+     11612
+    ],
+    [
+     14558,
+     11572
+    ],
+    [
+     14570,
+     11532
+    ],
+    [
+     14568,
+     11278
+    ]
+   ]
+  },
+  {
+   "name": "Grushki (S street) (RKKA 1:100 000 sheet, blob 71)",
+   "pts": [
+    [
+     17900,
+     10582
+    ],
+    [
+     17856,
+     10582
+    ],
+    [
+     17850,
+     10592
+    ],
+    [
+     17858,
+     10672
+    ],
+    [
+     17892,
+     10674
+    ],
+    [
+     17958,
+     10740
+    ],
+    [
+     18006,
+     11172
+    ],
+    [
+     18042,
+     11208
+    ],
+    [
+     18040,
+     11230
+    ],
+    [
+     18076,
+     11230
+    ],
+    [
+     18094,
+     11136
+    ],
+    [
+     18086,
+     10908
+    ],
+    [
+     18114,
+     10864
+    ],
+    [
+     18102,
+     10748
+    ],
+    [
+     18084,
+     10734
+    ],
+    [
+     18004,
+     10734
+    ],
+    [
+     17934,
+     10664
+    ],
+    [
+     17934,
+     10592
+    ],
+    [
+     17900,
+     10582
+    ]
+   ]
+  },
+  {
+   "name": "svkh. Stalinskoye otd. (RKKA 1:100 000 sheet, blob 73)",
+   "pts": [
+    [
+     12156,
+     10754
+    ],
+    [
+     12080,
+     10754
+    ],
+    [
+     12058,
+     10868
+    ],
+    [
+     11992,
+     10934
+    ],
+    [
+     11950,
+     10924
+    ],
+    [
+     11954,
+     10992
+    ],
+    [
+     12068,
+     11122
+    ],
+    [
+     12160,
+     11122
+    ],
+    [
+     12226,
+     11052
+    ],
+    [
+     12194,
+     11016
+    ],
+    [
+     12198,
+     10952
+    ],
+    [
+     12174,
+     10916
+    ],
+    [
+     12186,
+     10868
+    ],
+    [
+     12182,
+     10764
+    ],
+    [
+     12156,
+     10754
+    ]
+   ]
+  },
+  {
+   "name": "svkh. Stalinskoye otd. (RKKA 1:100 000 sheet, blob 73)",
+   "pts": [
+    [
+     12756,
+     10854
+    ],
+    [
+     12652,
+     10854
+    ],
+    [
+     12646,
+     10900
+    ],
+    [
+     12586,
+     10960
+    ],
+    [
+     12614,
+     10988
+    ],
+    [
+     12614,
+     11052
+    ],
+    [
+     12602,
+     11080
+    ],
+    [
+     12620,
+     11102
+    ],
+    [
+     12676,
+     11090
+    ],
+    [
+     12764,
+     11094
+    ],
+    [
+     12816,
+     11046
+    ],
+    [
+     12868,
+     11094
+    ],
+    [
+     12992,
+     11086
+    ],
+    [
+     13048,
+     11030
+    ],
+    [
+     13104,
+     11026
+    ],
+    [
+     13160,
+     10986
+    ],
+    [
+     13206,
+     10984
+    ],
+    [
+     13204,
+     10918
+    ],
+    [
+     13092,
+     10910
+    ],
+    [
+     13064,
+     10926
+    ],
+    [
+     12984,
+     10922
+    ],
+    [
+     12968,
+     10934
+    ],
+    [
+     12948,
+     10930
+    ],
+    [
+     12920,
+     10954
+    ],
+    [
+     12880,
+     10954
+    ],
+    [
+     12828,
+     10926
+    ],
+    [
+     12756,
+     10854
+    ]
+   ]
+  },
+  {
+   "name": "svkh. Stalinskoye otd. (RKKA 1:100 000 sheet, blob 73)",
+   "pts": [
+    [
+     12424,
+     10826
+    ],
+    [
+     12418,
+     10884
+    ],
+    [
+     12326,
+     10968
+    ],
+    [
+     12326,
+     11016
+    ],
+    [
+     12294,
+     11048
+    ],
+    [
+     12328,
+     11086
+    ],
+    [
+     12428,
+     11086
+    ],
+    [
+     12458,
+     11000
+    ],
+    [
+     12542,
+     10928
+    ],
+    [
+     12514,
+     10900
+    ],
+    [
+     12512,
+     10830
+    ],
+    [
+     12424,
+     10826
+    ]
+   ]
+  },
+  {
+   "name": "Storozhevoye (RKKA 1:100 000 sheet, blob 93)",
+   "pts": [
+    [
+     11424,
+     8854
+    ],
+    [
+     11368,
+     8854
+    ],
+    [
+     11328,
+     8882
+    ],
+    [
+     11224,
+     8886
+    ],
+    [
+     11222,
+     8976
+    ],
+    [
+     11300,
+     9022
+    ],
+    [
+     11352,
+     9074
+    ],
+    [
+     11416,
+     9094
+    ],
+    [
+     11588,
+     9282
+    ],
+    [
+     11908,
+     9274
+    ],
+    [
+     12016,
+     9362
+    ],
+    [
+     12088,
+     9278
+    ],
+    [
+     12162,
+     9264
+    ],
+    [
+     12162,
+     9160
+    ],
+    [
+     12102,
+     9100
+    ],
+    [
+     12106,
+     9048
+    ],
+    [
+     12074,
+     8992
+    ],
+    [
+     12072,
+     8938
+    ],
+    [
+     11980,
+     8930
+    ],
+    [
+     11928,
+     8946
+    ],
+    [
+     11852,
+     8998
+    ],
+    [
+     11808,
+     9006
+    ],
+    [
+     11740,
+     8930
+    ],
+    [
+     11580,
+     8926
+    ],
+    [
+     11508,
+     8858
+    ],
+    [
+     11424,
+     8854
+    ]
+   ]
+  },
+  {
+   "name": "railway barracks NE of the Komsomolets wood (RKKA 1:100 000 sheet, blob 92)",
+   "pts": [
+    [
+     9828,
+     9082
+    ],
+    [
+     9728,
+     9082
+    ],
+    [
+     9718,
+     9092
+    ],
+    [
+     9722,
+     9184
+    ],
+    [
+     9682,
+     9228
+    ],
+    [
+     9736,
+     9282
+    ],
+    [
+     9734,
+     9252
+    ],
+    [
+     9800,
+     9186
+    ],
+    [
+     9836,
+     9186
+    ],
+    [
+     9854,
+     9172
+    ],
+    [
+     9854,
+     9092
+    ],
+    [
+     9828,
+     9082
+    ]
+   ]
+  },
+  {
+   "name": "svkh. Komsomolets yard and houses (RKKA 1:100 000 sheet, blob 96)",
+   "pts": [
+    [
+     8252,
+     8710
+    ],
+    [
+     8192,
+     8710
+    ],
+    [
+     8190,
+     8768
+    ],
+    [
+     8242,
+     8820
+    ],
+    [
+     8230,
+     8840
+    ],
+    [
+     8242,
+     8936
+    ],
+    [
+     8306,
+     9004
+    ],
+    [
+     8266,
+     9052
+    ],
+    [
+     8356,
+     9146
+    ],
+    [
+     8436,
+     9150
+    ],
+    [
+     8438,
+     9080
+    ],
+    [
+     8426,
+     9060
+    ],
+    [
+     8466,
+     9012
+    ],
+    [
+     8466,
+     8916
+    ],
+    [
+     8376,
+     8906
+    ],
+    [
+     8266,
+     8796
+    ],
+    [
+     8252,
+     8710
+    ]
+   ]
+  },
+  {
+   "name": "Pravorot (RKKA 1:100 000 sheet, blob 94)",
+   "pts": [
+    [
+     18260,
+     6862
+    ],
+    [
+     18186,
+     6868
+    ],
+    [
+     18186,
+     6940
+    ],
+    [
+     18120,
+     7006
+    ],
+    [
+     18004,
+     7006
+    ],
+    [
+     17994,
+     7120
+    ],
+    [
+     17924,
+     7190
+    ],
+    [
+     17912,
+     7186
+    ],
+    [
+     17844,
+     7262
+    ],
+    [
+     17700,
+     7262
+    ],
+    [
+     17652,
+     7302
+    ],
+    [
+     17604,
+     7302
+    ],
+    [
+     17602,
+     7344
+    ],
+    [
+     17518,
+     7428
+    ],
+    [
+     17518,
+     7512
+    ],
+    [
+     17448,
+     7582
+    ],
+    [
+     17418,
+     7584
+    ],
+    [
+     17430,
+     7772
+    ],
+    [
+     17446,
+     7840
+    ],
+    [
+     17418,
+     7872
+    ],
+    [
+     17456,
+     7906
+    ],
+    [
+     17532,
+     7906
+    ],
+    [
+     17638,
+     8008
+    ],
+    [
+     17638,
+     8316
+    ],
+    [
+     17702,
+     8380
+    ],
+    [
+     17698,
+     8500
+    ],
+    [
+     17730,
+     8580
+    ],
+    [
+     17730,
+     8844
+    ],
+    [
+     17844,
+     8850
+    ],
+    [
+     17910,
+     8916
+    ],
+    [
+     17914,
+     8980
+    ],
+    [
+     17890,
+     9020
+    ],
+    [
+     17892,
+     9130
+    ],
+    [
+     17978,
+     9128
+    ],
+    [
+     17978,
+     9028
+    ],
+    [
+     18048,
+     8954
+    ],
+    [
+     18172,
+     8926
+    ],
+    [
+     18252,
+     8842
+    ],
+    [
+     18328,
+     8838
+    ],
+    [
+     18330,
+     8756
+    ],
+    [
+     18228,
+     8754
+    ],
+    [
+     18164,
+     8818
+    ],
+    [
+     18120,
+     8818
+    ],
+    [
+     18046,
+     8748
+    ],
+    [
+     18086,
+     8700
+    ],
+    [
+     18086,
+     8576
+    ],
+    [
+     18154,
+     8508
+    ],
+    [
+     18152,
+     8450
+    ],
+    [
+     18088,
+     8450
+    ],
+    [
+     18020,
+     8518
+    ],
+    [
+     17976,
+     8518
+    ],
+    [
+     17912,
+     8582
+    ],
+    [
+     17890,
+     8588
+    ],
+    [
+     17950,
+     8648
+    ],
+    [
+     17926,
+     8676
+    ],
+    [
+     17950,
+     8704
+    ],
+    [
+     17884,
+     8770
+    ],
+    [
+     17818,
+     8704
+    ],
+    [
+     17842,
+     8680
+    ],
+    [
+     17818,
+     8648
+    ],
+    [
+     17866,
+     8600
+    ],
+    [
+     17794,
+     8528
+    ],
+    [
+     17782,
+     8460
+    ],
+    [
+     17848,
+     8394
+    ],
+    [
+     17892,
+     8398
+    ],
+    [
+     18038,
+     8256
+    ],
+    [
+     18038,
+     8232
+    ],
+    [
+     18112,
+     8158
+    ],
+    [
+     18188,
+     8146
+    ],
+    [
+     18206,
+     8120
+    ],
+    [
+     18206,
+     8056
+    ],
+    [
+     18040,
+     8074
+    ],
+    [
+     17974,
+     8008
+    ],
+    [
+     17968,
+     7942
+    ],
+    [
+     17888,
+     7942
+    ],
+    [
+     17856,
+     7930
+    ],
+    [
+     17844,
+     7942
+    ],
+    [
+     17796,
+     7938
+    ],
+    [
+     17784,
+     7950
+    ],
+    [
+     17714,
+     7880
+    ],
+    [
+     17694,
+     7848
+    ],
+    [
+     17742,
+     7788
+    ],
+    [
+     17848,
+     7678
+    ],
+    [
+     17870,
+     7688
+    ],
+    [
+     17870,
+     7664
+    ],
+    [
+     17850,
+     7640
+    ],
+    [
+     17846,
+     7576
+    ],
+    [
+     17832,
+     7562
+    ],
+    [
+     17804,
+     7562
+    ],
+    [
+     17738,
+     7496
+    ],
+    [
+     17770,
+     7428
+    ],
+    [
+     17818,
+     7380
+    ],
+    [
+     17818,
+     7308
+    ],
+    [
+     17896,
+     7230
+    ],
+    [
+     17952,
+     7274
+    ],
+    [
+     18008,
+     7274
+    ],
+    [
+     18078,
+     7228
+    ],
+    [
+     18138,
+     7124
+    ],
+    [
+     18134,
+     7024
+    ],
+    [
+     18204,
+     6954
+    ],
+    [
+     18246,
+     6952
+    ],
+    [
+     18246,
+     6880
+    ],
+    [
+     18260,
+     6862
+    ]
+   ]
+  },
+  {
+   "name": "Pravorot (RKKA 1:100 000 sheet, blob 94)",
+   "pts": [
+    [
+     17810,
+     7980
+    ],
+    [
+     17848,
+     7982
+    ],
+    [
+     17872,
+     8006
+    ],
+    [
+     17896,
+     8010
+    ],
+    [
+     17974,
+     8092
+    ],
+    [
+     17812,
+     8242
+    ],
+    [
+     17746,
+     8176
+    ],
+    [
+     17738,
+     8048
+    ],
+    [
+     17810,
+     7980
+    ]
+   ]
+  },
+  {
+   "name": "Pravorot (RKKA 1:100 000 sheet, blob 94)",
+   "pts": [
+    [
+     17622,
+     7536
+    ],
+    [
+     17686,
+     7604
+    ],
+    [
+     17600,
+     7702
+    ],
+    [
+     17534,
+     7636
+    ],
+    [
+     17526,
+     7604
+    ],
+    [
+     17592,
+     7538
+    ],
+    [
+     17622,
+     7536
+    ]
+   ]
+  },
+  {
+   "name": "svkh. Komsomolets yard and houses (RKKA 1:100 000 sheet, blob 96)",
+   "pts": [
+    [
+     8228,
+     9062
+    ],
+    [
+     8128,
+     9062
+    ],
+    [
+     8126,
+     9116
+    ],
+    [
+     8192,
+     9122
+    ],
+    [
+     8234,
+     9072
+    ],
+    [
+     8228,
+     9062
+    ]
+   ]
+  },
+  {
+   "name": "Pravorot (RKKA 1:100 000 sheet, blob 94)",
+   "pts": [
+    [
+     17368,
+     7906
+    ],
+    [
+     17240,
+     7910
+    ],
+    [
+     17032,
+     8026
+    ],
+    [
+     16948,
+     8050
+    ],
+    [
+     16578,
+     8236
+    ],
+    [
+     16578,
+     8328
+    ],
+    [
+     16658,
+     8400
+    ],
+    [
+     16660,
+     8414
+    ],
+    [
+     16708,
+     8414
+    ],
+    [
+     16718,
+     8352
+    ],
+    [
+     16800,
+     8270
+    ],
+    [
+     16856,
+     8246
+    ],
+    [
+     16926,
+     8312
+    ],
+    [
+     16926,
+     8340
+    ],
+    [
+     16998,
+     8408
+    ],
+    [
+     16974,
+     8432
+    ],
+    [
+     16978,
+     8548
+    ],
+    [
+     16912,
+     8614
+    ],
+    [
+     16840,
+     8630
+    ],
+    [
+     16792,
+     8678
+    ],
+    [
+     16672,
+     8690
+    ],
+    [
+     16606,
+     8624
+    ],
+    [
+     16604,
+     8598
+    ],
+    [
+     16492,
+     8594
+    ],
+    [
+     16436,
+     8614
+    ],
+    [
+     16384,
+     8562
+    ],
+    [
+     16324,
+     8542
+    ],
+    [
+     16322,
+     8712
+    ],
+    [
+     16416,
+     8722
+    ],
+    [
+     16482,
+     8788
+    ],
+    [
+     16496,
+     8886
+    ],
+    [
+     16580,
+     8886
+    ],
+    [
+     16582,
+     8848
+    ],
+    [
+     16648,
+     8782
+    ],
+    [
+     16720,
+     8842
+    ],
+    [
+     16840,
+     8846
+    ],
+    [
+     16910,
+     8920
+    ],
+    [
+     16916,
+     9026
+    ],
+    [
+     16996,
+     9030
+    ],
+    [
+     17006,
+     9004
+    ],
+    [
+     16994,
+     8980
+    ],
+    [
+     17010,
+     8936
+    ],
+    [
+     17148,
+     8806
+    ],
+    [
+     17296,
+     8806
+    ],
+    [
+     17352,
+     8826
+    ],
+    [
+     17512,
+     8806
+    ],
+    [
+     17522,
+     8720
+    ],
+    [
+     17486,
+     8644
+    ],
+    [
+     17486,
+     8608
+    ],
+    [
+     17384,
+     8602
+    ],
+    [
+     17318,
+     8536
+    ],
+    [
+     17318,
+     8520
+    ],
+    [
+     17388,
+     8450
+    ],
+    [
+     17438,
+     8432
+    ],
+    [
+     17462,
+     8300
+    ],
+    [
+     17424,
+     8298
+    ],
+    [
+     17380,
+     8334
+    ],
+    [
+     17332,
+     8326
+    ],
+    [
+     17288,
+     8346
+    ],
+    [
+     17222,
+     8280
+    ],
+    [
+     17242,
+     8256
+    ],
+    [
+     17242,
+     8188
+    ],
+    [
+     17230,
+     8172
+    ],
+    [
+     17230,
+     8132
+    ],
+    [
+     17210,
+     8112
+    ],
+    [
+     17276,
+     8046
+    ],
+    [
+     17358,
+     8020
+    ],
+    [
+     17354,
+     7940
+    ],
+    [
+     17382,
+     7912
+    ],
+    [
+     17368,
+     7906
+    ]
+   ]
+  },
+  {
+   "name": "Pravorot (RKKA 1:100 000 sheet, blob 94)",
+   "pts": [
+    [
+     17174,
+     8516
+    ],
+    [
+     17238,
+     8584
+    ],
+    [
+     17206,
+     8644
+    ],
+    [
+     17136,
+     8714
+    ],
+    [
+     17032,
+     8714
+    ],
+    [
+     16958,
+     8644
+    ],
+    [
+     16958,
+     8620
+    ],
+    [
+     17028,
+     8550
+    ],
+    [
+     17174,
+     8516
+    ]
+   ]
+  },
+  {
+   "name": "Pravorot (RKKA 1:100 000 sheet, blob 94)",
+   "pts": [
+    [
+     17106,
+     8136
+    ],
+    [
+     17170,
+     8200
+    ],
+    [
+     17088,
+     8270
+    ],
+    [
+     17022,
+     8204
+    ],
+    [
+     17088,
+     8138
+    ],
+    [
+     17106,
+     8136
+    ]
+   ]
+  },
+  {
+   "name": "Storozhevoye (SW) (RKKA 1:100 000 sheet, blob 110)",
+   "pts": [
+    [
+     11532,
+     8146
+    ],
+    [
+     11484,
+     8146
+    ],
+    [
+     11368,
+     8182
+    ],
+    [
+     11362,
+     8220
+    ],
+    [
+     11296,
+     8286
+    ],
+    [
+     11240,
+     8294
+    ],
+    [
+     11234,
+     8408
+    ],
+    [
+     11340,
+     8402
+    ],
+    [
+     11350,
+     8352
+    ],
+    [
+     11416,
+     8286
+    ],
+    [
+     11480,
+     8278
+    ],
+    [
+     11538,
+     8208
+    ],
+    [
+     11532,
+     8146
+    ]
+   ]
+  },
+  {
+   "name": "hamlet E of Pravorot (RKKA 1:100 000 sheet, blob 120)",
+   "pts": [
+    [
+     18248,
+     7362
+    ],
+    [
+     18170,
+     7368
+    ],
+    [
+     18170,
+     7448
+    ],
+    [
+     18204,
+     7482
+    ],
+    [
+     18248,
+     7482
+    ],
+    [
+     18262,
+     7456
+    ],
+    [
+     18248,
+     7362
+    ]
+   ]
+  },
+  {
+   "name": "Dalny (RKKA 1:100 000 sheet, blob 124)",
+   "pts": [
+    [
+     16836,
+     6210
+    ],
+    [
+     16692,
+     6210
+    ],
+    [
+     16690,
+     6244
+    ],
+    [
+     16698,
+     6276
+    ],
+    [
+     16736,
+     6314
+    ],
+    [
+     16820,
+     6390
+    ],
+    [
+     16844,
+     6394
+    ],
+    [
+     16914,
+     6464
+    ],
+    [
+     16938,
+     6528
+    ],
+    [
+     16864,
+     6614
+    ],
+    [
+     16838,
+     6616
+    ],
+    [
+     16838,
+     6684
+    ],
+    [
+     16822,
+     6704
+    ],
+    [
+     16846,
+     6732
+    ],
+    [
+     16850,
+     6776
+    ],
+    [
+     16904,
+     6794
+    ],
+    [
+     16976,
+     6794
+    ],
+    [
+     17054,
+     6868
+    ],
+    [
+     17066,
+     6968
+    ],
+    [
+     17106,
+     7008
+    ],
+    [
+     17118,
+     7140
+    ],
+    [
+     17200,
+     7142
+    ],
+    [
+     17202,
+     7056
+    ],
+    [
+     17186,
+     6984
+    ],
+    [
+     17146,
+     6916
+    ],
+    [
+     17142,
+     6812
+    ],
+    [
+     17222,
+     6724
+    ],
+    [
+     17234,
+     6700
+    ],
+    [
+     17234,
+     6636
+    ],
+    [
+     17270,
+     6584
+    ],
+    [
+     17336,
+     6518
+    ],
+    [
+     17366,
+     6516
+    ],
+    [
+     17366,
+     6440
+    ],
+    [
+     17272,
+     6426
+    ],
+    [
+     17258,
+     6476
+    ],
+    [
+     17266,
+     6528
+    ],
+    [
+     17200,
+     6594
+    ],
+    [
+     17164,
+     6586
+    ],
+    [
+     17120,
+     6602
+    ],
+    [
+     17032,
+     6702
+    ],
+    [
+     17016,
+     6702
+    ],
+    [
+     16926,
+     6616
+    ],
+    [
+     16996,
+     6546
+    ],
+    [
+     17022,
+     6544
+    ],
+    [
+     17006,
+     6528
+    ],
+    [
+     17006,
+     6460
+    ],
+    [
+     16986,
+     6384
+    ],
+    [
+     16866,
+     6248
+    ],
+    [
+     16858,
+     6220
+    ],
+    [
+     16836,
+     6210
+    ]
+   ]
+  },
+  {
+   "name": "Vinogradovka (N) (RKKA 1:100 000 sheet, blob 134)",
+   "pts": [
+    [
+     12348,
+     6306
+    ],
+    [
+     12284,
+     6314
+    ],
+    [
+     12286,
+     6360
+    ],
+    [
+     12348,
+     6362
+    ],
+    [
+     12348,
+     6306
+    ]
+   ]
+  },
+  {
+   "name": "Vinogradovka (NW) (RKKA 1:100 000 sheet, blob 137)",
+   "pts": [
+    [
+     11616,
+     6210
+    ],
+    [
+     11516,
+     6210
+    ],
+    [
+     11518,
+     6292
+    ],
+    [
+     11612,
+     6298
+    ],
+    [
+     11616,
+     6210
+    ]
+   ]
+  },
+  {
+   "name": "Ivanovsky Vyselok: the houses at the railway bend (RKKA sheet: blocks W of the line, under the staff's blue pencil band)",
+   "rus": "\u0418\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0438\u0439 \u0412\u044b\u0441\u0435\u043b\u043e\u043a",
+   "pts": [
+    [
+     8448,
+     8397
+    ],
+    [
+     9062,
+     8397
+    ],
+    [
+     9165,
+     8090
+    ],
+    [
+     8960,
+     7834
+    ],
+    [
+     8499,
+     7885
+    ],
+    [
+     8346,
+     8141
+    ]
+   ]
+  },
+  {
+   "name": "Ivanovsky Vyselok: the scattered farmsteads with orchards E of the railway (RKKA sheet)",
+   "rus": "\u0418\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0438\u0439 \u0412\u044b\u0441\u0435\u043b\u043e\u043a",
+   "pts": [
+    [
+     9216,
+     8090
+    ],
+    [
+     9830,
+     8038
+    ],
+    [
+     10240,
+     7731
+    ],
+    [
+     10138,
+     7322
+    ],
+    [
+     9523,
+     7373
+    ],
+    [
+     9267,
+     7680
+    ]
+   ]
+  }
+ ],
+ "roads_1943": [
+  {
+   "name": "Teterevino: lane of farmsteads S from the highway (RKKA sheet)",
+   "kind": "track",
+   "pts": [
+    [
+     6042,
+     6410
+    ],
+    [
+     6062,
+     6195
+    ],
+    [
+     6093,
+     5837
+    ]
+   ]
+  },
+  {
+   "name": "Ivanovsky Vyselok: lane through the eastern farmsteads (RKKA sheet)",
+   "kind": "track",
+   "pts": [
+    [
+     9114,
+     8141
+    ],
+    [
+     9523,
+     7885
+    ],
+    [
+     9882,
+     7629
+    ],
+    [
+     10189,
+     7475
+    ]
+   ]
+  }
+ ],
+ "_comment_villages_1943": "villages_1943 / roads_1943: settlements and lanes of 1943 drawn as village cover exempt from the period trim; tools/settle.py places the homesteads along the streets inside. Teterevino traced by hand; the other 48 polygons are the built-up blocks of the RKKA 1:100 000 sheet (docs/m12_terrain/period/rkka100k_block.png, 4 m/px, row 0 = north: square X = (4 px - 4096) / 1024, Y = (16384 - (24576 - 4 py)) / 1024) detected as black-ink density blobs (tools/period_villages.py), reviewed tile by tile on 25 Oct and cleaned of the staff overprint (blue / red pencil bands, black smudges), labels and the railway; eroded 40 m to undo the symbol exaggeration. Prokhorovka town is left to OSM + the period trim. ponds_1943 false: none of the OSM ponds (dammed gully reservoirs) exists on the 1941 sheet, so standing water is dropped; the Psel and the streams stay.",
+ "ponds_1943": false,
+ "hq_stack": 3,
+ "_comment_hq_stack": "HQ-type units per border node at turn 1 (user, 25 Oct: the HQ elements bunch up, several on one node). The mg_nodes occupant field has four slots; vanilla uses one. If the game crashes on a stacked node, set 1."
+}

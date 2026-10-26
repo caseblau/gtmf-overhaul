@@ -1,0 +1,260 @@
+﻿# M12 terrain probe 1  2026-10-22T15:37:18
+GameRoot = C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Mius-Front
+
+## terrain folders (30)
+- data\addons\bird_grove\shared\polygons: 44 files, 734 748 493 bytes
+    8o_olkhovatka                  44 files    734 748 493 bytes
+- data\addons\cold_spr\shared\polygons: 54 files, 1 025 692 964 bytes
+    7p_peschanoe_s                 54 files  1 025 692 964 bytes
+- data\addons\count_bl\shared\polygons: 52 files, 1 158 882 421 bytes
+    9k_kostrino                    52 files  1 158 882 421 bytes
+- data\addons\don_bend\shared\polygons: 232 files, 4 200 757 625 bytes
+    9k_kalach                     116 files  2 010 373 311 bytes
+    9k_kalach_w                   116 files  2 190 384 314 bytes
+- data\addons\far_esc\shared\polygons: 28 files, 462 566 409 bytes
+    9r_romny                       28 files    462 566 409 bytes
+- data\addons\op_victory\shared\polygons: 40 files, 673 142 435 bytes
+    s_susangerd                    40 files    673 142 435 bytes
+- data\addons\pivot\shared\polygons: 64 files, 1 182 849 292 bytes
+    9s_shefatov                    64 files  1 182 849 292 bytes
+- data\addons\predators\shared\polygons: 44 files, 781 090 471 bytes
+    9b_brovkovo                    44 files    781 090 471 bytes
+- data\addons\rage_bridge\shared\polygons: 54 files, 1 147 612 683 bytes
+    9y_yazvische                   54 files  1 147 612 683 bytes
+- data\addons\stal_donets\shared\polygons: 88 files, 1 754 885 684 bytes
+    9p_petropolye                  88 files  1 754 885 684 bytes
+- data\addons\trlakes\shared\polygons: 116 files, 1 938 286 657 bytes
+    9s_semkin                     116 files  1 938 286 657 bytes
+- data\addons\typhoon\shared\polygons: 44 files, 774 403 280 bytes
+    9c_chervonnoe                  44 files    774 403 280 bytes
+- data\common\ma_agst_tide\shared\polygons: 72 files, 1 432 566 005 bytes
+    7k_korotich                    36 files    703 540 379 bytes
+    7k_korotich_w                  36 files    729 025 626 bytes
+- data\common\ma_black_snow\shared\polygons: 54 files, 1 236 742 577 bytes
+    7k_karbusel                    54 files  1 236 742 577 bytes
+- data\common\ma_croat_leg\shared\polygons: 28 files, 479 667 911 bytes
+    3o_oskol                       28 files    479 667 911 bytes
+- data\common\ma_dark_forest\shared\polygons: 28 files, 603 331 601 bytes
+    9f_forestry                    28 files    603 331 601 bytes
+- data\common\ma_day_olif\shared\polygons: 34 files, 708 683 386 bytes
+    7c_chambinga                   34 files    708 683 386 bytes
+- data\common\ma_drv_voron\shared\polygons: 44 files, 788 441 783 bytes
+    5s_shilovo                     44 files    788 441 783 bytes
+- data\common\ma_dwn_blau\shared\polygons: 34 files, 589 053 159 bytes
+    7v_verhlubanki                 34 files    589 053 159 bytes
+- data\common\ma_edstorm\shared\polygons: 108 files, 1 991 797 977 bytes
+    7b_bulahi_a                    28 files    440 045 154 bytes
+    7d_dzhgun_a                    28 files    472 313 713 bytes
+    7k_kr_polana_a                 52 files  1 079 439 110 bytes
+- data\common\ma_fat_str\shared\polygons: 76 files, 1 485 775 626 bytes
+    7d_dzhgun                      76 files  1 485 775 626 bytes
+- data\common\ma_fin_off\shared\polygons: 88 files, 1 582 849 152 bytes
+    7k_kalinovka                   88 files  1 582 849 152 bytes
+- data\common\ma_fur_spr\shared\polygons: 54 files, 1 076 611 625 bytes
+    7p_peschanoe                   54 files  1 076 611 625 bytes
+- data\common\ma_grdeath\shared\polygons: 28 files, 533 205 091 bytes
+    7v_vinyagolovo                 28 files    533 205 091 bytes
+- data\common\ma_leo_leap\shared\polygons: 36 files, 653 493 131 bytes
+    7l_lomba                       36 files    653 493 131 bytes
+- data\common\ma_op_moduler\shared\polygons: 76 files, 1 573 496 545 bytes
+    7c_cuzizi                      76 files  1 573 496 545 bytes
+- data\common\ma_raid\shared\polygons: 52 files, 1 105 525 978 bytes
+    7k_kr_polana                   52 files  1 105 525 978 bytes
+- data\common\ma_strpoint\shared\polygons: 56 files, 1 025 058 704 bytes
+    9s_strong_point                28 files    492 116 660 bytes
+    9s_strong_point_w              28 files    532 942 044 bytes
+- data\common\ma_ucstar\shared\polygons: 28 files, 447 162 639 bytes
+    7b_bulahi                      28 files    447 162 639 bytes
+- data\oprum\shared\polygons: 148 files, 2 996 739 231 bytes
+    6m_mius                        74 files  1 529 631 908 bytes
+    6m_mius_a                      74 files  1 467 107 323 bytes
+
+## files of data\oprum\shared\polygons\6m_mius
+          14 721  6m_mius.cfgpack
+           3 502  6m_mius_cells.cfgpack
+           3 209  local\6m_mius_text.loc_eng.textpack
+           3 238  local\6m_mius_text.loc_rus.textpack
+      33 554 432  mge2_mius.polypack2
+       6 668 412  mge2_mius_ao.aomap
+      35 192 832  mge3_mius.polypack2
+      12 916 442  mge3_mius_ao.aomap
+      33 161 216  mge4_mius.polypack2
+      11 564 882  mge4_mius_ao.aomap
+      32 505 856  mgf2_mius.polypack2
+       4 384 149  mgf2_mius_ao.aomap
+      33 947 648  mgf3_mius.polypack2
+       7 431 846  mgf3_mius_ao.aomap
+      35 127 296  mgf4_mius.polypack2
+       9 305 679  mgf4_mius_ao.aomap
+      34 406 400  mgg2_mius.polypack2
+       8 410 772  mgg2_mius_ao.aomap
+      32 702 464  mgg3_mius.polypack2
+       5 559 291  mgg3_mius_ao.aomap
+      34 013 184  mgg4_mius.polypack2
+       7 232 836  mgg4_mius_ao.aomap
+      35 258 368  mgh2_mius.polypack2
+      12 469 706  mgh2_mius_ao.aomap
+      37 486 592  mgh3_mius.polypack2
+      11 225 848  mgh3_mius_ao.aomap
+      32 833 536  mgh4_mius.polypack2
+       7 897 117  mgh4_mius_ao.aomap
+      33 816 576  mgi2_mius.polypack2
+       8 573 926  mgi2_mius_ao.aomap
+      34 406 400  mgi3_mius.polypack2
+       9 509 225  mgi3_mius_ao.aomap
+      36 831 232  mgi4_mius.polypack2
+      13 020 097  mgi4_mius_ao.aomap
+      33 685 504  mxd1_mius.polypack2
+      10 953 855  mxd1_mius_ao.aomap
+      33 947 648  mxd2_mius.polypack2
+      10 061 990  mxd2_mius_ao.aomap
+      34 078 720  mxd3_mius.polypack2
+      11 585 955  mxd3_mius_ao.aomap
+      32 899 072  mxd4_mius.polypack2
+      11 994 188  mxd4_mius_ao.aomap
+      32 309 248  mxd5_mius.polypack2
+      10 130 200  mxd5_mius_ao.aomap
+      32 440 320  mxe1_mius.polypack2
+       8 512 066  mxe1_mius_ao.aomap
+      33 685 504  mxe5_mius.polypack2
+       9 289 827  mxe5_mius_ao.aomap
+      33 357 824  mxf1_mius.polypack2
+       6 088 763  mxf1_mius_ao.aomap
+      32 899 072  mxf5_mius.polypack2
+       5 916 015  mxf5_mius_ao.aomap
+      33 095 680  mxg1_mius.polypack2
+       7 416 743  mxg1_mius_ao.aomap
+      34 340 864  mxg5_mius.polypack2
+       6 625 936  mxg5_mius_ao.aomap
+      34 209 792  mxh1_mius.polypack2
+      10 788 500  mxh1_mius_ao.aomap
+      32 964 608  mxh5_mius.polypack2
+      10 571 704  mxh5_mius_ao.aomap
+      34 013 184  mxi1_mius.polypack2
+      13 701 697  mxi1_mius_ao.aomap
+      34 340 864  mxi5_mius.polypack2
+      14 317 709  mxi5_mius_ao.aomap
+      34 406 400  mxj1_mius.polypack2
+      12 490 885  mxj1_mius_ao.aomap
+      33 095 680  mxj2_mius.polypack2
+      10 548 610  mxj2_mius_ao.aomap
+      33 030 144  mxj3_mius.polypack2
+      10 524 960  mxj3_mius_ao.aomap
+      33 947 648  mxj4_mius.polypack2
+      12 093 635  mxj4_mius_ao.aomap
+      34 013 184  mxj5_mius.polypack2
+      13 818 780  mxj5_mius_ao.aomap
+
+## extension histogram over all terrain folders
+  .aomap           880 files    7 538 066 341 bytes
+  .polypack2       880 files   28 606 201 856 bytes
+  .textpack         72 files          261 178 bytes
+  .cfgpack          72 files          591 160 bytes
+
+## header bytes, one file per extension (from the Mius terrain)
+### 6m_mius_cells.cfgpack  (3 502 bytes) [2 files with this extension]
+    0000  41 5a 43 46 02 00 00 00 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  AZCF....@.......................
+    0020  36 4d 5f 4d 69 75 73 5f 63 65 6c 6c 73 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  6M_Mius_cells...................
+    0040  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+    0060  00 00 00 00 00 00 00 00 00 00 00 00 e4 0a 00 00 40 01 00 00 e0 0a 00 00 01 00 00 00 00 00 00 00  ............?...@...?...........
+    0080  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+### 6m_mius.cfgpack  (14 721 bytes)
+    0000  41 5a 43 46 02 00 00 00 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  AZCF....@.......................
+    0020  36 4d 5f 4d 69 75 73 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  6M_Mius.........................
+    0040  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+### local\6m_mius_text.loc_eng.textpack  (3 209 bytes) [2 files with this extension]
+    0000  41 5a 54 58 01 00 00 00 20 00 00 00 00 00 00 00 20 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  AZTX.... ....... ...............
+    0020  6c 6f 63 5f 65 6e 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  loc_eng.........................
+    0040  1a 00 00 00 50 04 00 00 80 00 00 00 50 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ....P...?...P...................
+    0060  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05 00 00 80 80 04 00 00  ...........................??...
+    0080  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+### local\6m_mius_text.loc_rus.textpack  (3 238 bytes)
+    0000  41 5a 54 58 01 00 00 00 20 00 00 00 00 00 00 00 20 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  AZTX.... ....... ...............
+    0020  6c 6f 63 5f 72 75 73 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  loc_rus.........................
+    0040  1a 00 00 00 50 04 00 00 80 00 00 00 50 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ....P...?...P...................
+### mxd5_mius.polypack2  (32 309 248 bytes) [35 files with this extension]
+    0000  41 5a 50 33 1a 00 00 00 80 00 00 00 00 00 00 00 40 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00  AZP3....?.......@...............
+    0020  47 52 41 56 49 54 45 43 48 33 20 70 61 63 6b 20 73 79 73 74 65 6d 20 76 33 2e 30 00 00 00 00 00  GRAVITECH3 pack system v3.0.....
+    0040  7e 00 00 80 02 00 00 00 7e 00 00 80 03 00 00 00 7e 00 00 80 04 00 00 00 7e 00 00 80 05 00 00 00  ~..?....~..?....~..?....~..?....
+    0060  7e 00 00 80 06 00 00 00 7e 00 00 80 12 00 00 00 7e 00 00 80 16 00 00 00 00 00 00 00 00 00 00 00  ~..?....~..?....~..?............
+    0080  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+### mgh3_mius.polypack2  (37 486 592 bytes)
+    0000  41 5a 50 33 1b 00 00 00 80 00 00 00 00 00 00 00 c0 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00  AZP3....?.......?...............
+    0020  47 52 41 56 49 54 45 43 48 33 20 70 61 63 6b 20 73 79 73 74 65 6d 20 76 33 2e 30 00 00 00 00 00  GRAVITECH3 pack system v3.0.....
+    0040  7e 00 00 80 02 00 00 00 7e 00 00 80 03 00 00 00 7e 00 00 80 04 00 00 00 7e 00 00 80 05 00 00 00  ~..?....~..?....~..?....~..?....
+### mgf2_mius_ao.aomap  (4 384 149 bytes) [35 files with this extension]
+    0000  41 5a 4c 4d 03 00 00 00 00 08 00 08 04 18 01 00 9b f1 a3 b3 d6 53 66 3f 8e 8d df 3e 00 00 00 00  AZLM............?????Sf????>....
+    0020  74 70 e7 3d d6 53 66 3f 82 ef d7 3e 00 00 00 00 2a de be 3e ba 99 2a 3f db 4b 25 3f 00 00 00 00  tp?=?Sf????>....*??>??*??K%?....
+    0040  f1 24 26 3f 00 7c cb 3e f0 24 26 3f 00 00 00 00 4f e0 55 3f ac d4 86 3e 87 f6 f6 3e 00 00 00 00  ?$&?.|?>?$&?....O?U????>???>....
+    0060  cd c1 76 3f 9a 19 86 3d 9c 3c 84 3e 00 00 00 00 30 76 7f 3f 9a 19 86 3d 1e 58 3b 34 00 00 00 00  ??v??.?=?<?>....0v.??.?=.X;4....
+    0080  5c 2f 75 3f 01 46 06 3e e6 64 83 be 00 00 00 00 c2 63 59 3f 24 c8 49 3e 15 05 fb be 00 00 00 00  \/u?.F.>?d??....?cY?$?I>..??....
+### mxi5_mius_ao.aomap  (14 317 709 bytes)
+    0000  41 5a 4c 4d 03 00 00 00 00 08 00 08 04 18 01 00 9b f1 a3 b3 d6 53 66 3f 8e 8d df 3e 00 00 00 00  AZLM............?????Sf????>....
+    0020  74 70 e7 3d d6 53 66 3f 82 ef d7 3e 00 00 00 00 2a de be 3e ba 99 2a 3f db 4b 25 3f 00 00 00 00  tp?=?Sf????>....*??>??*??K%?....
+    0040  f1 24 26 3f 00 7c cb 3e f0 24 26 3f 00 00 00 00 4f e0 55 3f ac d4 86 3e 87 f6 f6 3e 00 00 00 00  ?$&?.|?>?$&?....O?U????>???>....
+
+## AZCF configs in the terrain folder
+  6m_mius.cfgpack -> decoded, 155 lines in C:\Users\konid\Documents\GitHub\gtmf-overhaul\docs\m12_terrain\samples\6m_mius\6m_mius.cfgpack.azcf.txt
+      [0]   type=0 cols=0 rows=0 types=''
+      [1] i_polygen:polygen  type=1 cols=1 rows=153 types='bsuuuuuvssssssasusssssssssssssssffuuuuffvufffbfuuffuaaaaavvffuvfbvubuuuuuvfuuufbuufuuuufvvuaauuufffuuufufffffuaffusauvvsfsfufuuuuuuuuuuuuuuuuuuuuuuuuuuuu'
+            is_dist_cfg      = b:1
+            out_path         = polygons\6M_Mius
+            dist_width       = u:2816
+            dist_height      = u:1792
+            cell_size        = u:256
+            size             = u:2048
+            dis_step         = u:1
+            lat_lon_tz       = v:47.55;38.48;2
+            src_hei_map      = MAPS\6M_Mius_hei.raw
+            src_rou_map      = MAPS\6M_Mius_rou.tga
+            src_grass_map    = MAPS\6M_Mius_gra.tga
+            src_flora_map    = MAPS\6M_Mius_flo.tga
+            src_ext_flora_map = MAPS\6M_Mius_eflo.tga
+            src_det_map      = MAPS\6M_Mius_det.tga
+            det_offs         = a:3;1
+            season           = tabs\season_ua_summer.cfgpack
+            land_type        = u:1
+            hei_map          = hei_map
+            max_map          = max_map
+            var_map          = vars_map
+            mat_map          = mat_map
+            detail_map       = det_map
+            water_map        = water_map
+            normal_map       = nor_map
+            grass_map        = grass_map
+            veg_map          = flora_quads
+            map_vec          = opmap
+            map_tri          = opmap_tri
+            map_back         = back
+            obj_map          = obj_quads
+            cell_map         = 6M_Mius_cells.cfgpack
+            text_desc        = 6M_Mius_text.textpack
+            max_h            = f:320
+            water_h          = f:23
+            hfcc             = u:PHA6
+            hei_range_bias   = u:16
+            generations      = u:0
+            next_pow2_size   = u:1
+  6m_mius_cells.cfgpack -> decoded, 9 lines in C:\Users\konid\Documents\GitHub\gtmf-overhaul\docs\m12_terrain\samples\6m_mius\6m_mius_cells.cfgpack.azcf.txt
+      [0]   type=0 cols=0 rows=0 types=''
+      [1] i_polygen:polygen  type=2 cols=11 rows=7 types='sssssssssss'
+             |  |  |  |  |  |  |  |  |  | 
+             |  |  | MxD1_Mius.polypack2 | MxE1_Mius.polypack2 | MxF1_Mius.polypack2 | MxG1_Mius.polypack2 | MxH1_Mius.polypack2 | MxI1_Mius.polypack2 | MxJ1_Mius.polypack2 | 
+             |  |  | MxD2_Mius.polypack2 | MgE2_Mius.polypack2 | MgF2_Mius.polypack2 | MgG2_Mius.polypack2 | MgH2_Mius.polypack2 | MgI2_Mius.polypack2 | MxJ2_Mius.polypack2 | 
+             |  |  | MxD3_Mius.polypack2 | MgE3_Mius.polypack2 | MgF3_Mius.polypack2 | MgG3_Mius.polypack2 | MgH3_Mius.polypack2 | MgI3_Mius.polypack2 | MxJ3_Mius.polypack2 | 
+             |  |  | MxD4_Mius.polypack2 | MgE4_Mius.polypack2 | MgF4_Mius.polypack2 | MgG4_Mius.polypack2 | MgH4_Mius.polypack2 | MgI4_Mius.polypack2 | MxJ4_Mius.polypack2 | 
+             |  |  | MxD5_Mius.polypack2 | MxE5_Mius.polypack2 | MxF5_Mius.polypack2 | MxG5_Mius.polypack2 | MxH5_Mius.polypack2 | MxI5_Mius.polypack2 | MxJ5_Mius.polypack2 | 
+             |  |  |  |  |  |  |  |  |  | 
+
+## small files copied to samples\
+  local\6m_mius_text.loc_eng.textpack
+  local\6m_mius_text.loc_rus.textpack
+
+## codelibs mentioning polygon/terrain strings
+  adv_game.codelib: polygon=4, polygons\=1
+  adv_opgame.codelib: polygon=2, land_=3
+  adv_qbattle.codelib: polygon=3, land_=1, polygons\=1
+  basic_game.codelib: polygon=2, land_=10
+  basic_render.codelib: polygon=1
+
+done

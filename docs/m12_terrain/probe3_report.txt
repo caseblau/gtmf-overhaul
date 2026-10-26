@@ -1,0 +1,260 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261022163230
+Username: PECET\konid
+RunAs User: PECET\konid
+Configuration Name: 
+Machine: PECET (Microsoft Windows NT 10.0.26200.0)
+Host Application: powershell -NoProfile -ExecutionPolicy Bypass -File C:\Users\konid\Documents\GitHub\gtmf-overhaul\tools\terrain_probe3.ps1
+Process ID: 22704
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+# M12 probe 3  2026-10-22T16:32:30
+  season_ua_summer : 71874 bytes, 13 nodes exported -> samples\tabs\season_ua_summer\
+      C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Mius-Front\users\modwork\_orig\3598\tabs_oprum\season_ua_summer.config.loc_def.bin : 14 nodes
+        [   0]                                  type=0 cols=0   rows=0
+        [   1] common                           type=1 cols=1   rows=26    name=season_ua_summer  //  season=summer
+        [   2] daytime                          type=2 cols=15  rows=7     night|dayt_night|dt_night|v:0.2;0;1;0.2|v:0.8;0.6;0.8;1|night_moon_dift  //  emorning|dayt_emorning|dt_emorning|v:0.4;0;0.8;0.2|v:1;1;0.7;1|emorning_dift
+        [   3] dtstart                          type=2 cols=1   rows=7     u:0  //  u:4
+        [   4] dtkey_refs                       type=2 cols=2   rows=24    night|v:360;70;0;0.1  //  night|v:345;70;0;0.1
+        [   5] weather                          type=2 cols=19  rows=8     clear|weat_clear|wea_clear|v:1;0;0;1|v:1;1;1;1|  //  cloudy|weat_cloudy|wea_cloudy|v:0.7;0;0.3;0.3|v:0.7;0.9;1;1|cloudy_dift
+        [   6] vegetation                       type=2 cols=21  rows=23    tabs\flora_sum.cfgpack|pine_sm|f:100|valezn|f:10|  //  tabs\flora_sum.cfgpack|pine_mid|f:100|br_tree|f:10|valezn
+        [   7] materials                        type=2 cols=6   rows=24    grass|u:3g]|u:16711680|u:13631488|black|grass  //  marsh|u:>q]|u:272633856|u:3145760|clay|marsh
+        [   8] micros                           type=2 cols=8   rows=15    grass_field_01|v:1|f:0.3|f:0.7|f:1|v:0;0;0.25  //  grass_field_02|v:1|f:0.3|f:0.7|f:1|v:0.25;0;0.25
+        [   9] ambients                         type=2 cols=14  rows=10    meadow|u:AMME|amb_plain_nig*|v:0|v:1;0.5;0.7;0.6|amb_plain_day*  //  swamp|u:AMSW|amb_swamp_nig*|v:0|v:1;0.5;0.7;0.6|amb_swamp_mor*
+        [  10] soils                            type=2 cols=17  rows=18    grass|u:GRAS|v:0.003;1|v:0;0.018|v:0.5;-0.1;0.4|f:1  //  marsh|u:MARS|v:-0.01;1|v:0;0.007|v:0.3;-0.5;0.05|f:1
+        [  11] grass                            type=2 cols=11  rows=15    grass_field_01|f:0|f:1|f:0|f:0.5|u:64  //  grass_field_02|f:0|f:1|f:0|f:0.5|u:65
+        [  12] flora                            type=2 cols=15  rows=23    pine_sm|u:SPIN|f:0.01|f:1|f:0|f:0.1  //  pine_mid|u:MPIN|f:0.02|f:1|f:0|f:0.1
+        [  13] ext_edit_props                   type=2 cols=1   rows=2     tabs\eep_kh_summer.cfgpack  //  tabs\eep_common.cfgpack
+  materials : 27190 bytes, 1 nodes exported -> samples\tabs\materials\
+      C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Mius-Front\users\modwork\_orig\3598\tabs\materials.config.loc_def.bin : 2 nodes
+        [   0]                                  type=0 cols=0   rows=0
+        [   1] i_matlib:matlib                  type=2 cols=19  rows=41    SKY_DEF|editor|u:0|u:0|u:0|u:0  //  LAND_SUMMER_RU|editor|u:4294967295|u:0|u:0|u:0
+  builds : 157121 bytes, 170 nodes exported -> samples\tabs\builds\
+      C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Mius-Front\users\modwork\_orig\3598\tabs\builds.config.loc_def.bin : 171 nodes
+        [   0]                                  type=0 cols=0   rows=0
+        [   1] build0                           type=1 cols=1   rows=26    type=u:BLD  //  mesh=build01_s01_c0
+        [   2] col_bounds                       type=2 cols=4   rows=2     d_coll_01|f:0|u:0|f:0.2  //  d_coll_02|f:0|u:0|f:0.2
+        [   3] cplx                             type=2 cols=2   rows=4     |build0_c1  //  |build0_c2
+        [   4] enters                           type=2 cols=2   rows=1     s_enterhb_01|s_enterh_01
+        [   5] places                           type=2 cols=4   rows=9     s_placeh_01|s_shoth_01|v:60;1.5|u:0  //  s_placeh_02|s_shoth_02|v:60;1.5|u:0
+        [   6] flames                           type=2 cols=2   rows=3     s_flame_01|f:1  //  s_flame_02|f:0.5
+        [   7] build0_c1                        type=1 cols=1   rows=6     type=u:CPLX  //  mesh=build01_s01_c1
+        [   8] build0_c2                        type=1 cols=1   rows=6     type=u:CPLX  //  mesh=build01_s01_c2
+        [   9] build0_c3                        type=1 cols=1   rows=6     type=u:CPLX  //  mesh=build01_s01_c3
+        [  10] build0_c4                        type=1 cols=1   rows=6     type=u:CPLX  //  mesh=build01_s01_c4
+        [  11] build0_s2                        type=1 cols=1   rows=26    type=u:BLD  //  mesh=build01_s02_c0
+        [  12] col_bounds                       type=2 cols=4   rows=2     d_coll_01|f:0|u:0|f:0.2  //  d_coll_02|f:0|u:0|f:0.2
+        [  13] cplx                             type=2 cols=2   rows=4     |build0_s2_c1  //  |build0_s2_c2
+        [  14] enters                           type=2 cols=2   rows=1     s_enterhb_01|s_enterh_01
+        [  15] places                           type=2 cols=4   rows=9     s_placeh_01|s_shoth_01|v:60;1.5|u:0  //  s_placeh_02|s_shoth_02|v:60;1.5|u:0
+        [  16] flames                           type=2 cols=2   rows=3     s_flame_01|f:1  //  s_flame_02|f:0.5
+        [  17] build0_s2_c1                     type=1 cols=1   rows=6     type=u:CPLX  //  mesh=build01_s02_c1
+        [  18] build0_s2_c2                     type=1 cols=1   rows=6     type=u:CPLX  //  mesh=build01_s02_c2
+        [  19] build0_s2_c3                     type=1 cols=1   rows=6     type=u:CPLX  //  mesh=build01_s02_c3
+        [  20] build0_s2_c4                     type=1 cols=1   rows=6     type=u:CPLX  //  mesh=build01_s02_c4
+        [  21] build0_s3                        type=1 cols=1   rows=26    type=u:BLD  //  mesh=build01_s03_c0
+        [  22] col_bounds                       type=2 cols=4   rows=2     d_coll_01|f:0|u:0|f:0.2  //  d_coll_02|f:0|u:0|f:0.2
+        [  23] cplx                             type=2 cols=2   rows=4     |build0_s3_c1  //  |build0_s3_c2
+>> TerminatingError(): "The pipeline has been stopped."
+  fences : 25823 bytes, 14 nodes exported -> samples\tabs\fences\
+      C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Mius-Front\users\modwork\_orig\3598\tabs\fences.config.loc_def.bin : 15 nodes
+        [   0]                                  type=0 cols=0   rows=0
+        [   1] fence1a                          type=1 cols=1   rows=36    type=u:FENC  //  mesh=fence1a
+        [   2] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [   3] fence2a                          type=1 cols=1   rows=34    type=u:FENC  //  mesh=fence2a
+        [   4] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [   5] fence3a                          type=1 cols=1   rows=35    type=u:FENC  //  mesh=fence3a
+        [   6] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [   7] fence4a                          type=1 cols=1   rows=34    type=u:FENC  //  mesh=fence4a
+        [   8] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [   9] gates1                           type=1 cols=1   rows=31    type=u:FENC  //  mesh=gates1
+        [  10] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [  11] kalitka1                         type=1 cols=1   rows=32    type=u:FENC  //  mesh=kalitka1
+        [  12] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [  13] kalitka2                         type=1 cols=1   rows=32    type=u:FENC  //  mesh=kalitka2
+        [  14] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+  flora_sum : 315033 bytes, 164 nodes exported -> samples\tabs\flora_sum\
+      C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Mius-Front\users\modwork\_orig\3598\tabs\flora_sum.config.loc_def.bin : 165 nodes
+        [   0]                                  type=0 cols=0   rows=0
+        [   1] bush                             type=1 cols=1   rows=34    type=u:0  //  mesh=bush_01
+        [   2] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [   3] bush2                            type=1 cols=1   rows=34    type=u:0  //  mesh=bush_01
+        [   4] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [   5] bush3                            type=1 cols=1   rows=34    type=u:0  //  mesh=bush_02
+        [   6] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [   7] bush_big                         type=1 cols=1   rows=33    type=u:BUSH  //  mesh=bush_asp
+        [   8] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [   9] bush_big2                        type=1 cols=1   rows=33    type=u:BUSH  //  mesh=bush_asp2
+        [  10] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [  11] rogoz                            type=1 cols=1   rows=36    type=u:BUSH  //  mesh=rogoz_sum
+        [  12] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [  13] tree_sm                          type=1 cols=1   rows=36    type=u:TREE  //  mesh=aspen_01
+        [  14] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [  15] tree_mid2                        type=1 cols=1   rows=37    type=u:TREE  //  mesh=olha_01
+        [  16] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [  17] tree_mid2_s02                    type=1 cols=1   rows=37    type=u:TREE  //  mesh=olha_01_s02
+        [  18] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [  19] tree_mid2_s03                    type=1 cols=1   rows=35    type=u:TREE  //  mesh=olha_01_s03
+        [  20] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [  21] tree_mid                         type=1 cols=1   rows=37    type=u:TREE  //  mesh=verba
+        [  22] col_bounds                       type=2 cols=4   rows=2     d_coll|f:0|u:0|f:0.2  //  d_coll_vis|f:0|u:0|f:1
+        [  23] tree_mid_s02                     type=1 cols=1   rows=37    type=u:TREE  //  mesh=verba_s02
+>> TerminatingError(): "The pipeline has been stopped."
+  objects : 83979 bytes, 46 nodes exported -> samples\tabs\objects\
+      C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Mius-Front\users\modwork\_orig\3598\tabs\objects.config.loc_def.bin : 47 nodes
+        [   0]                                  type=0 cols=0   rows=0
+        [   1] footgates                        type=1 cols=1   rows=34    type=u:BLD  //  mesh=footgates
+        [   2] col_bounds                       type=2 cols=4   rows=3     d_coll_01|f:0|u:0|f:0.2  //  d_coll_02|f:0|u:0|f:0.2
+        [   3] skameyka1                        type=1 cols=1   rows=34    type=u:OBJ  //  mesh=skameyka1
+        [   4] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [   5] skameyka2                        type=1 cols=1   rows=34    type=u:OBJ  //  mesh=skameyka2
+        [   6] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [   7] cross_rec                        type=1 cols=1   rows=34    type=u:OBJ  //  mesh=cross_rec
+        [   8] col_bounds                       type=2 cols=4   rows=2     d_coll_01|f:0|u:0|f:0.2  //  d_coll_02|f:0|u:0|f:0.2
+        [   9] cross_roun                       type=1 cols=1   rows=34    type=u:OBJ  //  mesh=cross_roun
+        [  10] col_bounds                       type=2 cols=4   rows=2     d_coll_01|f:0|u:0|f:0.2  //  d_coll_02|f:0|u:0|f:0.2
+        [  11] rail                             type=1 cols=1   rows=33    type=u:OBJ  //  mesh=rail
+        [  12] col_bounds                       type=2 cols=4   rows=3     d_coll_03|f:0|u:0|f:0.2  //  d_coll_01|f:0|u:0|f:0.25
+        [  13] dike01                           type=1 cols=1   rows=36    type=u:OBJ  //  mesh=dike1
+        [  14] col_bounds                       type=2 cols=4   rows=1     d_coll_01|f:0|u:0|f:0.25
+        [  15] dike01_s02                       type=1 cols=1   rows=33    type=u:OBJ  //  mesh=dike1_s02
+        [  16] col_bounds                       type=2 cols=4   rows=2     d_coll_01|f:0|u:0|f:0.4  //  d_coll_02|f:0|u:0|f:0.4
+        [  17] dike02                           type=1 cols=1   rows=36    type=u:OBJ  //  mesh=dike2
+        [  18] col_bounds                       type=2 cols=4   rows=1     d_coll_01|f:0|u:0|f:0.25
+        [  19] dike03                           type=1 cols=1   rows=36    type=u:OBJ  //  mesh=dike3
+        [  20] col_bounds                       type=2 cols=4   rows=1     d_coll_01|f:0|u:0|f:0.25
+        [  21] sign                             type=1 cols=1   rows=33    type=u:OBJ  //  mesh=sign
+        [  22] col_bounds                       type=2 cols=4   rows=2     d_coll_01|f:0|u:0|f:0.2  //  d_coll_02|f:0|u:0|f:0.2
+        [  23] drova                            type=1 cols=1   rows=36    type=u:OBJ  //  mesh=drova
+>> TerminatingError(): "The pipeline has been stopped."
+  structs : 134304 bytes, 99 nodes exported -> samples\tabs\structs\
+      C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Mius-Front\users\modwork\_orig\3598\tabs\structs.config.loc_def.bin : 100 nodes
+        [   0]                                  type=0 cols=0   rows=0
+        [   1] bridge0                          type=1 cols=1   rows=27    type=u:BLD  //  mesh=bridge01_s01
+        [   2] col_bounds                       type=2 cols=4   rows=3     d_coll_00|f:0|u:0|f:0.5  //  d_coll_01|f:0|u:0|f:0.25
+        [   3] bridge0_s2                       type=1 cols=1   rows=26    type=u:BLD  //  mesh=bridge01_s02
+        [   4] col_bounds                       type=2 cols=4   rows=3     d_coll_00|f:0|u:0|f:0.5  //  d_coll_01|f:0|u:0|f:0.25
+        [   5] bridge0_s3                       type=1 cols=1   rows=26    type=u:BLD  //  mesh=bridge01_s03
+        [   6] col_bounds                       type=2 cols=4   rows=5     d_coll_00|f:0|u:0|f:0.5  //  d_coll_01|f:0|u:0|f:0.5
+        [   7] bridge0_s4                       type=1 cols=1   rows=26    type=u:BLD  //  mesh=bridge01_s04
+        [   8] col_bounds                       type=2 cols=4   rows=5     d_coll_00|f:0|u:0|f:0.5  //  d_coll_01|f:0|u:0|f:0.5
+        [   9] pmm01                            type=1 cols=1   rows=29    type=u:BLD  //  mesh=pmm
+        [  10] col_bounds                       type=2 cols=4   rows=3     d_coll_00|f:0|u:0|f:0.3  //  d_coll_01|f:0|u:0|f:0.3
+        [  11] pmm01_s2                         type=1 cols=1   rows=30    type=u:BLD  //  mesh=pmm_s02
+        [  12] col_bounds                       type=2 cols=4   rows=3     d_coll_00|f:0|u:0|f:0.3  //  d_coll_01|f:0|u:0|f:0.3
+        [  13] pmm01_s3                         type=1 cols=1   rows=30    type=u:BLD  //  mesh=pmm_s03
+        [  14] col_bounds                       type=2 cols=4   rows=3     d_coll_00|f:0|u:0|f:0.3  //  d_coll_01|f:0|u:0|f:0.3
+        [  15] pmm01_s4                         type=1 cols=1   rows=30    type=u:BLD  //  mesh=pmm_s04
+        [  16] col_bounds                       type=2 cols=4   rows=2     d_coll_00|f:0|u:0|f:0.3  //  d_coll_01|f:0|u:0|f:0.3
+        [  17] pmm03                            type=1 cols=1   rows=29    type=u:BLD  //  mesh=pmm_end
+        [  18] col_bounds                       type=2 cols=4   rows=5     d_coll_00|f:0|u:0|f:0.3  //  d_coll_01|f:0|u:0|f:0.3
+        [  19] pmm04                            type=1 cols=1   rows=29    type=u:BLD  //  mesh=pmm_start
+        [  20] col_bounds                       type=2 cols=4   rows=5     d_coll_00|f:0|u:0|f:0.3  //  d_coll_01|f:0|u:0|f:0.3
+        [  21] well0                            type=1 cols=1   rows=24    type=u:BLD  //  mesh=well01_s01
+        [  22] col_bounds                       type=2 cols=4   rows=3     d_coll_01|f:0|u:0|f:0.2  //  d_coll_02|f:0|u:0|f:0.2
+        [  23] well0_s2                         type=1 cols=1   rows=24    type=u:BLD  //  mesh=well01_s02
+>> TerminatingError(): "The pipeline has been stopped."
+  posts : 36156 bytes, 23 nodes exported -> samples\tabs\posts\
+      C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Mius-Front\users\modwork\_orig\3598\tabs\posts.config.loc_def.bin : 24 nodes
+        [   0]                                  type=0 cols=0   rows=0
+        [   1] rupor                            type=1 cols=1   rows=34    type=u:OBJ  //  mesh=rupor
+        [   2] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [   3] lights                           type=2 cols=5   rows=2     s_light|v:10;50;1|u:4294967168|b:0|b:0  //  s_light|v:2;0;1|u:4294967168|b:1|b:0
+        [   4] elpost                           type=1 cols=1   rows=34    type=u:OBJ  //  mesh=elpost
+        [   5] col_bounds                       type=2 cols=4   rows=3     d_coll_00|f:0|u:0|f:0.2  //  d_coll_01|f:0|u:0|f:0.2
+        [   6] germines_post                    type=1 cols=1   rows=32    type=u:OBJ  //  mesh=germines_post
+        [   7] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [   8] rusmines_post                    type=1 cols=1   rows=32    type=u:OBJ  //  mesh=rusmines_post
+        [   9] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [  10] fpost1                           type=1 cols=1   rows=34    type=u:OBJ  //  mesh=fpost1
+        [  11] col_bounds                       type=2 cols=4   rows=1     d_post|f:0|u:0|f:0.2
+        [  12] fpost2                           type=1 cols=1   rows=34    type=u:OBJ  //  mesh=fpost2
+        [  13] col_bounds                       type=2 cols=4   rows=1     d_post|f:0|u:0|f:0.2
+        [  14] fpost3                           type=1 cols=1   rows=34    type=u:OBJ  //  mesh=fpost3
+        [  15] col_bounds                       type=2 cols=4   rows=1     d_post|f:0|u:0|f:0.2
+        [  16] fpost4                           type=1 cols=1   rows=34    type=u:OBJ  //  mesh=fpost4
+        [  17] col_bounds                       type=2 cols=4   rows=1     d_post|f:0|u:0|f:0.2
+        [  18] p330_2t                          type=1 cols=1   rows=27    type=u:BLD  //  mesh=p330_2t
+        [  19] col_bounds                       type=2 cols=4   rows=1     d_coll_01|f:0|u:0|f:0.5
+        [  20] cplx                             type=2 cols=2   rows=1     |p330_2t_c1
+        [  21] addins                           type=2 cols=3   rows=6     EL_ISO01|s_iso_01|u:ISOL  //  EL_ISO01|s_iso_02|u:ISOL
+        [  22] lines                            type=2 cols=2   rows=8     light_proof|s_lpf_01  //  light_proof|s_lpf_02
+        [  23] p330_2t_c1                       type=1 cols=1   rows=6     type=u:CPLX  //  mesh=el_pillar01
+>> TerminatingError(): "The pipeline has been stopped."
+  ai_plans : 16283 bytes, 6 nodes exported -> samples\tabs\ai_plans\
+      C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Mius-Front\users\modwork\_orig\3598\tabs\ai_plans.config.loc_def.bin : 7 nodes
+        [   0]                                  type=0 cols=0   rows=0
+        [   1] op_movement                      type=2 cols=7   rows=12    u:FOOT|v:3;2.5;2.5;1.5|v:1.5;1.5;1;1|v:1;1.7|v:0|op_foot  //  u:SKI|v:6;5;4.5;3.5|v:2.5;2;2;1.5|v:0.7;1.5|v:0|op_ski
+        [   2] op_sup_strat                     type=2 cols=10  rows=5     u:HOLD|u:0|u:2|u:10|u:10|u:5  //  u:DEF|u:0|u:5|u:5|u:10|u:10
+        [   3] group_plans                      type=2 cols=16  rows=4     u:0|v:0.3;0.5;0.7;0.3|v:0;0.2;0;0.4|v:0;0.6;0;0.4|u:UNI|u:SUP  //  u:6|v:0.3;0.5;0.7;0.2|v:0.1;0.5;0;0.6|v:0;0.7;0;0.6|u:SUP|u:SUPM
+        [   4] tac_orders                       type=2 cols=15  rows=10    move|b:0|b:0|b:0|b:0|u:COL  //  march|b:1|b:1|b:0|b:1|u:COL
+        [   5] tac_decode                       type=2 cols=12  rows=9     hmove|recon|recon|recon|hmove|hmove  //  march|hmove|recon|recon|hmove|hmove
+        [   6] tac_rules                        type=2 cols=8   rows=1     advance|u:0|u:3|u:7|u:3|u:0
+  mil_fences : 44677 bytes, 24 nodes exported -> samples\tabs\mil_fences\
+      C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Mius-Front\users\modwork\_orig\3598\tabs\mil_fences.config.loc_def.bin : 25 nodes
+        [   0]                                  type=0 cols=0   rows=0
+        [   1] wire0                            type=1 cols=1   rows=35    type=u:APFE  //  mesh=wire0
+        [   2] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [   3] wire1                            type=1 cols=1   rows=35    type=u:APFE  //  mesh=wire1
+        [   4] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [   5] ez0                              type=1 cols=1   rows=34    type=u:ATFE  //  mesh=ez
+        [   6] col_bounds                       type=2 cols=4   rows=3     d_coll_01|f:0|u:0|f:0.2  //  d_coll_02|f:0|u:0|f:0.2
+        [   7] nadolb0                          type=1 cols=1   rows=32    type=u:ATFE  //  mesh=nadolb0
+        [   8] col_bounds                       type=2 cols=4   rows=2     d_coll_01|f:0|u:0|f:0.2  //  d_coll_02|f:0|u:0|f:0.2
+        [   9] nadolb1                          type=1 cols=1   rows=32    type=u:ATFE  //  mesh=nadolb1
+        [  10] col_bounds                       type=2 cols=4   rows=2     d_coll_01|f:0|u:0|f:0.2  //  d_coll_02|f:0|u:0|f:0.2
+        [  11] nadolb2                          type=1 cols=1   rows=32    type=u:ATFE  //  mesh=nadolb2
+        [  12] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [  13] block                            type=1 cols=1   rows=31    type=u:ATFE  //  mesh=block
+        [  14] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [  15] slab                             type=1 cols=1   rows=31    type=u:OBJ  //  mesh=slab
+        [  16] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [  17] at_mine                          type=1 cols=1   rows=33    type=u:ATMI  //  mesh=atmine
+        [  18] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.1
+        [  19] ap_mine                          type=1 cols=1   rows=33    type=u:APMI  //  mesh=apmine
+        [  20] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.2
+        [  21] wood_obst                        type=1 cols=1   rows=37    type=u:ATFE  //  mesh=wood_obst
+        [  22] col_bounds                       type=2 cols=4   rows=1     d_coll|f:0|u:0|f:0.4
+        [  23] wood_obst_s02                    type=1 cols=1   rows=34    type=u:FENC  //  mesh=wood_obst
+>> TerminatingError(): "The pipeline has been stopped."
+  builds_wood : 82632 bytes, 76 nodes exported -> samples\tabs\builds_wood\
+      C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Mius-Front\users\modwork\_orig\3598\tabs_oprum\builds_wood.config.loc_def.bin : 77 nodes
+        [   0]                                  type=0 cols=0   rows=0
+        [   1] barn1                            type=1 cols=1   rows=27    type=u:BLD  //  mesh=barn_01
+        [   2] col_bounds                       type=2 cols=4   rows=1     d_coll_01|f:0|u:0|f:0.2
+        [   3] enters                           type=2 cols=2   rows=1     s_enterhb_01|s_enterh_01
+        [   4] places                           type=2 cols=4   rows=6     s_placeh_01|s_shoth_01|v:60;4|u:0  //  s_placeh_02|s_shoth_02|v:60;4|u:0
+        [   5] flames                           type=2 cols=2   rows=2     s_flame_01|f:1  //  s_flame_02|f:0.5
+        [   6] barn1_s2                         type=1 cols=1   rows=27    type=u:BLD  //  mesh=barn_01_s01
+        [   7] col_bounds                       type=2 cols=4   rows=1     d_coll_01|f:0|u:0|f:0.2
+        [   8] enters                           type=2 cols=2   rows=1     s_enterhb_01|s_enterh_01
+        [   9] places                           type=2 cols=4   rows=6     s_placeh_01|s_shoth_01|v:60;4|u:0  //  s_placeh_02|s_shoth_02|v:60;4|u:0
+        [  10] flames                           type=2 cols=2   rows=3     s_flame_01|f:1  //  s_flame_02|f:0.5
+        [  11] barn1_s3                         type=1 cols=1   rows=27    type=u:BLD  //  mesh=barn_01_s02
+        [  12] col_bounds                       type=2 cols=4   rows=1     d_coll_01|f:0|u:0|f:0.2
+        [  13] enters                           type=2 cols=2   rows=1     s_enterhb_01|s_enterh_01
+        [  14] places                           type=2 cols=4   rows=3     s_placeh_04|s_shoth_04|v:60;4|u:0  //  s_placeh_05||v:0;1|u:0
+        [  15] flames                           type=2 cols=2   rows=2     s_flame_01|f:1  //  s_flame_02|f:0.5
+        [  16] barn1_s4                         type=1 cols=1   rows=27    type=u:BLD  //  mesh=barn_01_s03
+        [  17] col_bounds                       type=2 cols=4   rows=1     d_coll_01|f:0|u:0|f:0.2
+        [  18] flames                           type=2 cols=2   rows=2     s_flame_01|f:1  //  s_flame_02|f:1
+        [  19] barn1_s5                         type=1 cols=1   rows=27    type=u:BLD  //  mesh=barn_01_s04
+        [  20] col_bounds                       type=2 cols=4   rows=1     d_coll_01|f:0|u:0|f:0.2
+        [  21] flames                           type=2 cols=2   rows=3     s_flame_01|f:1  //  s_flame_02|f:0.5
+        [  22] barn1_s6                         type=1 cols=1   rows=27    type=u:BLD  //  mesh=barn_01_s05
+        [  23] col_bounds                       type=2 cols=4   rows=1     d_coll_01|f:0|u:0|f:0.2
+>> TerminatingError(): "The pipeline has been stopped."
+  copied aomap
+done
+**********************
+Windows PowerShell transcript end
+End time: 20261022163234
+**********************

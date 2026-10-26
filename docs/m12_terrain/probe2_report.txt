@@ -1,0 +1,92 @@
+﻿# M12 terrain probe 2  2026-10-22T15:39:22
+polygon folder = C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Mius-Front\data\oprum\shared\polygons\6m_mius
+
+## MgG3 : 24 entries, sig 'GRAVITECH3 pack system v3.0'
+    0 cell_desc                cell       loc_def         1 206  AZCF....@.......   copied
+    1 hei_map                  cell       loc_def     8 389 680  AZHP....PHA6....   copied
+    2 vars_map                 cell       loc_def     1 048 576  ................   copied
+    3 mat_map                  cell       loc_def     4 194 304  ????????????????   copied
+    4 det_map                  cell       loc_def     5 600 624  ATF1DXT5puU.....   copied
+    5 land_ambient_col         cell       loc_def        95 600  ATF1DXT5pu......   copied
+    6 nor_map                  cell       loc_def     2 804 400  ATF1DXT1??*.....   copied
+    7 flora_quads              cell       loc_def       782 532  M?..Q??C@r?=??RD   copied
+    8 obj_quads                cell       loc_def        32 244  t.......tabs\bui   copied
+    9 trench_pos               cell       loc_def         7 204  ,...INF.?-?D.??D   copied
+   10 op_pos                   cell       loc_def         1 068  ....AMB..`?D. ?D   copied
+   11 grass_map                cell       loc_def     4 194 304  .?...?.???????..   copied
+   12 opmap                    cell       loc_def        65 536  AZG2....?.......   copied
+   13 back                     cell       loc_def       139 264  ATF1DXT1. ......   copied
+   14 opmap_tri                cell       loc_def         3 948  P.......well....   copied
+   15 spr_map_side             cell       loc_def             4  ................   copied
+   16 pen_tanks                cell       loc_def     1 077 440  ?...........???.   copied
+   17 pen_hums                 cell       loc_def       919 360  ?...........???.   copied
+   18 pen_cars                 cell       loc_def     1 327 360  ?...........???.   copied
+   19 pen_apcs                 cell       loc_def     1 077 440  ?...........???.   copied
+   20 landchar                 cell       loc_def       196 608  ????????????????   copied
+   21 aiplaces                 cell       loc_def       622 804  ................   copied
+   22 ambients                 cell       loc_def             4  ................   copied
+   23 class_map                cell       loc_def         4 096  ................   copied
+
+## MxD1 : 26 entries, sig 'GRAVITECH3 pack system v3.0'
+    0 cell_desc                cell       loc_def         1 206  AZCF....@.......   copied
+    1 hei_map                  cell       loc_def     8 389 680  AZHP....PHA6....   copied
+    2 vars_map                 cell       loc_def     1 048 576  ................   copied
+    3 mat_map                  cell       loc_def     4 194 304  ????????????????   copied
+    4 det_map                  cell       loc_def     5 600 624  ATF1DXT5puU.....   copied
+    5 land_ambient_col         cell       loc_def        95 600  ATF1DXT5pu......   copied
+    6 nor_map                  cell       loc_def     2 804 400  ATF1DXT1??*.....   copied
+    7 water_map                cell       loc_def       357 744  ATF1DXT5pu......   copied
+    8 water_pal                cell       loc_def           516  @...............   copied
+    9 water_levels             cell       loc_def       262 144  ................   copied
+   10 flora_quads              cell       loc_def     1 487 804  .!..???Dbsu???.D   copied
+   11 obj_quads                cell       loc_def         4 071  ?.......tabs\fen   copied
+   12 op_pos                   cell       loc_def             4  ................   copied
+   13 grass_map                cell       loc_def     4 194 304  ...?.?.????????m   copied
+   14 opmap                    cell       loc_def       114 688  AZG2.?..?.......   copied
+   15 back                     cell       loc_def       139 264  ATF1DXT1. ......   copied
+   16 opmap_tri                cell       loc_def           822  ........bushes..   copied
+   17 spr_map_side             cell       loc_def             4  ................   copied
+   18 pen_tanks                cell       loc_def     1 015 520  ?...........???.   copied
+   19 pen_hums                 cell       loc_def       765 440  ?...........???.   copied
+   20 pen_cars                 cell       loc_def     1 265 440  ?...........???.   copied
+   21 pen_apcs                 cell       loc_def     1 015 520  ?...........???.   copied
+   22 landchar                 cell       loc_def       196 608  ????????????????   copied
+   23 aiplaces                 cell       loc_def       622 804  ................   copied
+   24 ambients                 cell       loc_def             4  ................   copied
+   25 class_map                cell       loc_def         4 096  ................   copied
+
+## 6m_mius_a descriptor decoded -> C:\Users\konid\Documents\GitHub\gtmf-overhaul\docs\m12_terrain\samples\6m_mius_a.cfgpack.azcf.txt
+    [0]   type=0 cols=0 rows=0 types=''
+    [1] i_polygen:polygen  type=1 cols=1 rows=155 types='bsuuuuuvssssssasusssssssssssssssffuuuuffvufffbfuuffuaaaaavvffuvfbvubuuuuuvfuuufbuufuuuufvvuaauuufffuuufufffffuaffusauvvsasfsfufuuuuuuuuuuuuuuuuuuuuuuuuuuuu'
+          is_dist_cfg      = b:1
+          out_path         = polygons\6M_Mius_a
+          dist_width       = u:2816
+          dist_height      = u:1792
+          cell_size        = u:256
+          size             = u:2048
+          dis_step         = u:1
+          lat_lon_tz       = v:47.55;38.48;2
+          src_hei_map      = MAPS\6M_Mius_a_hei.raw
+          src_rou_map      = MAPS\6M_Mius_a_rou.tga
+          src_grass_map    = MAPS\6M_Mius_a_gra.tga
+          src_flora_map    = MAPS\6M_Mius_a_flo.tga
+          src_ext_flora_map = MAPS\6M_Mius_a_eflo.tga
+          src_det_map      = MAPS\6M_Mius_a_det.tga
+          det_offs         = a:3;1
+          season           = tabs\season_ua_autumn.cfgpack
+          land_type        = u:1
+          hei_map          = hei_map
+          max_map          = max_map
+          var_map          = vars_map
+          mat_map          = mat_map
+          detail_map       = det_map
+          water_map        = water_map
+          normal_map       = nor_map
+          grass_map        = grass_map
+          veg_map          = flora_quads
+          map_vec          = opmap
+          map_tri          = opmap_tri
+
+## aomap header (mgg3): 41 5a 4c 4d 03 00 00 00 00 08 00 08 04 18 01 00 9b f1 a3 b3 d6 53 66 3f 8e 8d df 3e 00 00 00 00 74 70 e7 3d d6 53 66 3f 82 ef d7 3e 00 00 00 00 2a de be 3e ba 99 2a 3f db 4b 25 3f 00 00 00 00
+
+done

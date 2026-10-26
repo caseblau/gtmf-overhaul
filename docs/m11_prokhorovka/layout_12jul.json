@@ -1,0 +1,2587 @@
+{
+ "_comment": "12 July 1943 layout for the Prokh block. Coordinates are block metres: x east from the west edge (lon 36.4903), y north from the south edge (lat 50.904605); 1 op square = 1024 m, cells 2048 m. Sources and reasoning: docs/m11_prokhorovka/positions_12jul.md. 'units' maps platoon-name prefixes of the 12 July OOB (tools/oob_12jul.ps1) to the positions their HQs and battle groups take (round-robin over the list; HQs are then pushed back from the nearest enemy).",
+ "heights": [
+  {
+   "name": "252.2",
+   "xy": [
+    13120,
+    12768
+   ],
+   "value": 9
+  },
+  {
+   "name": "241.6",
+   "xy": [
+    9600,
+    10288
+   ],
+   "value": 4
+  },
+  {
+   "name": "245.8",
+   "xy": [
+    13280,
+    11264
+   ],
+   "value": 3
+  },
+  {
+   "name": "230.5",
+   "xy": [
+    17600,
+    12992
+   ],
+   "value": 3
+  },
+  {
+   "name": "252.4",
+   "xy": [
+    16800,
+    16416
+   ],
+   "value": 4
+  },
+  {
+   "name": "226.6",
+   "xy": [
+    6720,
+    15136
+   ],
+   "value": 8
+  },
+  {
+   "name": "236.7",
+   "xy": [
+    6880,
+    19376
+   ],
+   "value": 2
+  },
+  {
+   "name": "243.5",
+   "xy": [
+    9600,
+    22016
+   ],
+   "value": 1
+  },
+  {
+   "name": "224.5",
+   "xy": [
+    4320,
+    8656
+   ],
+   "value": 2
+  },
+  {
+   "name": "258.2",
+   "xy": [
+    6640,
+    7216
+   ],
+   "value": 3
+  },
+  {
+   "name": "236.5",
+   "xy": [
+    9440,
+    4736
+   ],
+   "value": 2
+  },
+  {
+   "name": "243.9",
+   "xy": [
+    6720,
+    3216
+   ],
+   "value": 2
+  },
+  {
+   "name": "247.7",
+   "xy": [
+    16880,
+    2736
+   ],
+   "value": 2
+  },
+  {
+   "name": "242.7",
+   "xy": [
+    20960,
+    8016
+   ],
+   "value": 3
+  },
+  {
+   "name": "249.2",
+   "xy": [
+    20000,
+    6496
+   ],
+   "value": 2
+  },
+  {
+   "name": "234.9",
+   "xy": [
+    12640,
+    3296
+   ],
+   "value": 2
+  },
+  {
+   "name": "228.9",
+   "xy": [
+    15200,
+    1136
+   ],
+   "value": 1
+  },
+  {
+   "name": "220.3",
+   "xy": [
+    9280,
+    2816
+   ],
+   "value": 1
+  },
+  {
+   "name": "237.5",
+   "xy": [
+    21760,
+    21136
+   ],
+   "value": 1
+  },
+  {
+   "name": "232.7",
+   "xy": [
+    17600,
+    18656
+   ],
+   "value": 1
+  },
+  {
+   "name": "248.4",
+   "xy": [
+    21280,
+    15456
+   ],
+   "value": 1
+  },
+  {
+   "name": "246.4",
+   "xy": [
+    960,
+    22816
+   ],
+   "value": 1
+  },
+  {
+   "name": "253.9",
+   "xy": [
+    22080,
+    11376
+   ],
+   "value": 1
+  }
+ ],
+ "places": [
+  {
+   "name": "svkh. Oktyabrsky",
+   "rus": "свх. Октябрьский",
+   "xy": [
+    11900,
+    13100
+   ],
+   "value": 8
+  },
+  {
+   "name": "svkh. Komsomolets",
+   "rus": "свх. Комсомолец",
+   "xy": [
+    8468,
+    8939
+   ],
+   "value": 4
+  },
+  {
+   "name": "svkh. Stalinskoye otd.",
+   "rus": "свх. Сталинское отд.",
+   "xy": [
+    12640,
+    11056
+   ],
+   "value": 3
+  },
+  {
+   "name": "Lutovo",
+   "rus": "Лутово",
+   "xy": [
+    14400,
+    13136
+   ],
+   "value": 2
+  },
+  {
+   "name": "Klyuchi",
+   "rus": "Ключи",
+   "xy": [
+    4000,
+    15376
+   ],
+   "value": 4
+  },
+  {
+   "name": "Polezhayev",
+   "rus": "Полежаев",
+   "xy": [
+    8320,
+    16656
+   ],
+   "value": 4
+  },
+  {
+   "name": "Kozlovka",
+   "rus": "Козловка",
+   "xy": [
+    4800,
+    12416
+   ],
+   "value": 2
+  },
+  {
+   "name": "Krasny Oktyabr",
+   "rus": "Красный Октябрь",
+   "xy": [
+    3406,
+    13975
+   ],
+   "value": 4
+  },
+  {
+   "name": "Bogoroditskoye",
+   "rus": "Богородицкое",
+   "xy": [
+    5400,
+    12900
+   ],
+   "value": 2
+  },
+  {
+   "name": "Barchevka",
+   "rus": "Барчевка",
+   "xy": [
+    16640,
+    15936
+   ],
+   "value": 1
+  },
+  {
+   "name": "Kusty",
+   "rus": "Кусты",
+   "xy": [
+    18880,
+    17536
+   ],
+   "value": 1
+  },
+  {
+   "name": "Ivanovsky Vyselok",
+   "rus": "Ивановский Выселок",
+   "xy": [
+    8640,
+    8256
+   ],
+   "value": 3
+  },
+  {
+   "name": "Belenikhino",
+   "rus": "Беленихино",
+   "xy": [
+    9600,
+    3424
+   ],
+   "value": 6
+  },
+  {
+   "name": "Ivanovka",
+   "rus": "Ивановка",
+   "xy": [
+    11520,
+    3136
+   ],
+   "value": 2
+  },
+  {
+   "name": "Leski",
+   "rus": "Лески",
+   "xy": [
+    11520,
+    896
+   ],
+   "value": 2
+  },
+  {
+   "name": "Mal. Yablonovo",
+   "rus": "Мал. Яблоново",
+   "xy": [
+    14400,
+    1584
+   ],
+   "value": 2
+  },
+  {
+   "name": "Teterevino",
+   "rus": "Тетеревино",
+   "xy": [
+    7040,
+    6336
+   ],
+   "value": 4
+  },
+  {
+   "name": "Kalinin",
+   "rus": "Калинин",
+   "xy": [
+    2400,
+    4300
+   ],
+   "value": 3
+  },
+  {
+   "name": "Plota",
+   "rus": "Плота",
+   "xy": [
+    18880,
+    896
+   ],
+   "value": 2
+  },
+  {
+   "name": "Storozhevoye wood",
+   "rus": "лес Сторожевое",
+   "xy": [
+    11873,
+    9931
+   ],
+   "value": 4
+  },
+  {
+   "name": "brick works",
+   "rus": "кирп. завод",
+   "xy": [
+    16000,
+    15216
+   ],
+   "value": 1
+  }
+ ],
+ "units": [
+  {
+   "form": [
+    "we_lah_2mir"
+   ],
+   "role": "LSSAH 2 SS-PzGr Rgt: Komsomolets - 241.6, attack axis the sovkhoz and 252.2",
+   "side": "GER",
+   "pos": [
+    [
+     8468,
+     8939
+    ],
+    [
+     9000,
+     9600
+    ],
+    [
+     9600,
+     10288
+    ],
+    [
+     8900,
+     10400
+    ]
+   ]
+  },
+  {
+   "form": [
+    "we_lah_1mir"
+   ],
+   "role": "LSSAH 1 SS-PzGr Rgt: Teterevino - Ivanovsky Vyselok, right of the railway",
+   "side": "GER",
+   "pos": [
+    [
+     7040,
+     6336
+    ],
+    [
+     8640,
+     8256
+    ],
+    [
+     7800,
+     7300
+    ],
+    [
+     8200,
+     6500
+    ]
+   ]
+  },
+  {
+   "form": [
+    "we_lah_tr",
+    "we_lah_stug"
+   ],
+   "role": "LSSAH 1 SS-Pz Rgt and StuG bn: Komsomolets, behind 241.6",
+   "side": "GER",
+   "pos": [
+    [
+     8300,
+     9400
+    ],
+    [
+     7900,
+     8800
+    ],
+    [
+     8800,
+     8300
+    ],
+    [
+     9100,
+     9000
+    ],
+    [
+     7600,
+     9600
+    ]
+   ]
+  },
+  {
+   "form": [
+    "we_lah_1at",
+    "we_lah_ar",
+    "we_lah"
+   ],
+   "role": "LSSAH division troops: artillery and AT bn W of Komsomolets, recon bn on the Psel bank at Kozlovka, CP Teterevino",
+   "side": "GER",
+   "pos": [
+    [
+     6800,
+     9200
+    ],
+    [
+     7200,
+     8400
+    ],
+    [
+     6200,
+     10800
+    ],
+    [
+     6000,
+     12300
+    ],
+    [
+     7200,
+     7000
+    ],
+    [
+     5800,
+     8000
+    ],
+    [
+     6600,
+     11800
+    ]
+   ]
+  },
+  {
+   "form": [
+    "we_dr"
+   ],
+   "role": "Das Reich: Deutschland Yasnaya Polyana - Ivanovsky Vyselok, Der Fuehrer Kalinin - Yasnaya Polyana, Pz Rgt Teterevino, artillery W of Teterevino",
+   "side": "GER",
+   "pos": [
+    [
+     7594,
+     5083
+    ],
+    [
+     8200,
+     6000
+    ],
+    [
+     2400,
+     4300
+    ],
+    [
+     4300,
+     4600
+    ],
+    [
+     6000,
+     6600
+    ],
+    [
+     5000,
+     5500
+    ],
+    [
+     6300,
+     4300
+    ],
+    [
+     3600,
+     6300
+    ],
+    [
+     4900,
+     3400
+    ],
+    [
+     7900,
+     7300
+    ],
+    [
+     5800,
+     8200
+    ],
+    [
+     9100,
+     3300
+    ],
+    [
+     6400,
+     2900
+    ],
+    [
+     3200,
+     4600
+    ],
+    [
+     8700,
+     4100
+    ],
+    [
+     4300,
+     7300
+    ],
+    [
+     7200,
+     9400
+    ],
+    [
+     8200,
+     2600
+    ],
+    [
+     9700,
+     5300
+    ],
+    [
+     9400,
+     7200
+    ],
+    [
+     10000,
+     6700
+    ],
+    [
+     6600,
+     7700
+    ]
+   ]
+  },
+  {
+   "form": [
+    "we_tk"
+   ],
+   "role": "Totenkopf: crossings at Krasny Oktyabr and Bogoroditskoye, small bridgehead at Klyuchi, panzer regiment and artillery on the S bank",
+   "side": "GER",
+   "pos": [
+    [
+     3406,
+     13975
+    ],
+    [
+     4800,
+     12416
+    ],
+    [
+     5400,
+     12900
+    ],
+    [
+     4000,
+     15376
+    ],
+    [
+     4200,
+     12200
+    ],
+    [
+     5500,
+     11800
+    ],
+    [
+     4600,
+     13300
+    ],
+    [
+     3900,
+     12900
+    ],
+    [
+     4800,
+     11500
+    ],
+    [
+     3000,
+     15200
+    ],
+    [
+     5800,
+     13100
+    ],
+    [
+     2800,
+     14300
+    ],
+    [
+     6000,
+     12400
+    ],
+    [
+     2600,
+     12700
+    ],
+    [
+     4800,
+     10800
+    ],
+    [
+     4300,
+     14800
+    ],
+    [
+     5200,
+     15100
+    ],
+    [
+     6400,
+     14600
+    ],
+    [
+     5900,
+     14400
+    ],
+    [
+     4100,
+     16100
+    ],
+    [
+     6900,
+     14900
+    ]
+   ]
+  },
+  {
+   "form": [
+    "we_2tc"
+   ],
+   "role": "II SS-Pz Corps HQ (rear SW)",
+   "side": "GER",
+   "pos": [
+    [
+     2600,
+     9600
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_285"
+   ],
+   "role": "183 RD: 285 RR - driven from the Komsomolets trenches on 11 July; remnants with 227 AR behind them, one company at Storozhevoye (Zamulin); kept together on the Psel bank Andreyevka - Mikhaylovka as the player asked",
+   "side": "USSR",
+   "pos": [
+    [
+     6600,
+     13250
+    ],
+    [
+     7250,
+     13450
+    ],
+    [
+     7900,
+     13850
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_227"
+   ],
+   "role": "183 RD: 227 RR, Belenikhino - Ivanovka",
+   "side": "USSR",
+   "pos": [
+    [
+     10000,
+     3800
+    ],
+    [
+     11520,
+     3136
+    ],
+    [
+     10700,
+     2400
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_295"
+   ],
+   "role": "183 RD: 295 RR, Leski - Mal. Yablonovo",
+   "side": "USSR",
+   "pos": [
+    [
+     11520,
+     896
+    ],
+    [
+     14400,
+     1584
+    ],
+    [
+     12900,
+     1300
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_183rd"
+   ],
+   "role": "183 RD troops; division CP S outskirts of Krasnoye (Zamulin)",
+   "side": "USSR",
+   "pos": [
+    [
+     13800,
+     2500
+    ],
+    [
+     14500,
+     3000
+    ]
+   ],
+   "hq": [
+    21400,
+    11300
+   ]
+  },
+  {
+   "form": [
+    "ra_623ar"
+   ],
+   "role": "623 AR",
+   "side": "USSR",
+   "pos": [
+    [
+     12500,
+     2200
+    ],
+    [
+     13500,
+     3600
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_99tbr"
+   ],
+   "role": "2 TC: 99 TBr (19 tanks) fighting off encirclement at Vasilyevka - Andreyevka on 11 July, ordered back to Pravorot at dawn (Zamulin)",
+   "side": "USSR",
+   "pos": [
+    [
+     6500,
+     13100
+    ],
+    [
+     7000,
+     13350
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_26tbr"
+   ],
+   "role": "2 TC: 26 TBr regrouping at Grushki after four days of fighting (Zamulin: 2 TC op. summary No. 138, HQ SW outskirts of Grushki)",
+   "side": "USSR",
+   "pos": [
+    [
+     18030,
+     11954
+    ],
+    [
+     17600,
+     11600
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_169tbr"
+   ],
+   "role": "2 TC: 169 TBr dug in at Storozhevoye with a company of 285 RR and 2/58 MRBr (Zamulin; brigade HQ in the ravine 0.7 km E of Storozhevoye)",
+   "side": "USSR",
+   "pos": [
+    [
+     11674,
+     9147
+    ],
+    [
+     12000,
+     9800
+    ],
+    [
+     12400,
+     9300
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_58mrbr"
+   ],
+   "role": "2 TC: 58 MRBr - 1 bn at Yamki, 1 bn on the S outskirts of Prokhorovka, 2 bn with 169 TBr at Storozhevoye (Zamulin; HQ ravine 0.5 km SW of Grushki)",
+   "side": "USSR",
+   "pos": [
+    [
+     13926,
+     11771
+    ],
+    [
+     16300,
+     13800
+    ],
+    [
+     12200,
+     9500
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_2tc"
+   ],
+   "role": "2 TC corps troops; corps HQ W outskirts of Pravorot (Zamulin, dispatch No. 104)",
+   "side": "USSR",
+   "pos": [
+    [
+     17000,
+     8300
+    ],
+    [
+     17469,
+     8268
+    ]
+   ],
+   "hq": [
+    17000,
+    8300
+   ]
+  },
+  {
+   "form": [
+    "ra_26gab"
+   ],
+   "role": "9 gds AB Div: 26 gds AB Rgt at svkh. Oktyabrsky and the ravine E of Yamki",
+   "side": "USSR",
+   "pos": [
+    [
+     11900,
+     13100
+    ],
+    [
+     12600,
+     13000
+    ],
+    [
+     13100,
+     12750
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_28gab"
+   ],
+   "role": "9 gds AB Div: 28 gds AB Rgt on the division left, left (SE) of the railway between 252.2 / Stalinskoye and Lutovo - Yamki (Zamulin)",
+   "side": "USSR",
+   "pos": [
+    [
+     13926,
+     11771
+    ],
+    [
+     14400,
+     13136
+    ],
+    [
+     13300,
+     12000
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_23gab"
+   ],
+   "role": "9 gds AB Div: 23 gds AB Rgt second echelon along the Kartashevka - Prokhorovka road, SW outskirts of the station and slopes of 252.4 (Zamulin)",
+   "side": "USSR",
+   "pos": [
+    [
+     16800,
+     16416
+    ],
+    [
+     16500,
+     15000
+    ],
+    [
+     16640,
+     15936
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_9gabd"
+   ],
+   "role": "9 gds AB Div troops at Prokhorovka",
+   "side": "USSR",
+   "pos": [
+    [
+     17300,
+     14300
+    ],
+    [
+     17900,
+     14700
+    ],
+    [
+     17600,
+     15100
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_7gabar"
+   ],
+   "role": "7 gds AB AR: S outskirts of Prokhorovka and 252.4",
+   "side": "USSR",
+   "pos": [
+    [
+     17200,
+     13600
+    ],
+    [
+     16800,
+     16400
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_151"
+   ],
+   "role": "52 gds RD: 151 gds RR at Vesyoly",
+   "side": "USSR",
+   "pos": [
+    [
+     3456,
+     17539
+    ],
+    [
+     3000,
+     18200
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_153"
+   ],
+   "role": "52 gds RD: 153 gds RR on 226.6",
+   "side": "USSR",
+   "pos": [
+    [
+     6720,
+     15136
+    ],
+    [
+     6000,
+     16300
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_155"
+   ],
+   "role": "52 gds RD: 155 gds RR at Polezhayev",
+   "side": "USSR",
+   "pos": [
+    [
+     8320,
+     16656
+    ],
+    [
+     7400,
+     16000
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_52grd"
+   ],
+   "role": "52 gds RD troops",
+   "side": "USSR",
+   "pos": [
+    [
+     5300,
+     21500
+    ],
+    [
+     4800,
+     22000
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_124ar"
+   ],
+   "role": "124 gds AR N of 226.6",
+   "side": "USSR",
+   "pos": [
+    [
+     4500,
+     19500
+    ],
+    [
+     5600,
+     20000
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_4gtbr"
+   ],
+   "role": "2 gds TC: 4 gds TBr at Belenikhino",
+   "side": "USSR",
+   "pos": [
+    [
+     9800,
+     3600
+    ],
+    [
+     10200,
+     2900
+    ],
+    [
+     9400,
+     4200
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_25gtbr"
+   ],
+   "role": "2 gds TC: 25 gds TBr at Vinogradovka",
+   "side": "USSR",
+   "pos": [
+    [
+     11255,
+     5662
+    ],
+    [
+     10800,
+     5000
+    ],
+    [
+     11600,
+     6100
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_26gtbr"
+   ],
+   "role": "2 gds TC: 26 gds TBr Leski - Mal. Yablonovo",
+   "side": "USSR",
+   "pos": [
+    [
+     12900,
+     1300
+    ],
+    [
+     14400,
+     1584
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_4gmrbr"
+   ],
+   "role": "2 gds TC: 4 gds MRBr Belenikhino - Vinogradovka",
+   "side": "USSR",
+   "pos": [
+    [
+     10500,
+     4700
+    ],
+    [
+     11000,
+     4000
+    ],
+    [
+     10000,
+     5300
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_47gtr"
+   ],
+   "role": "2 gds TC: 47 gds hvy TR (Churchill)",
+   "side": "USSR",
+   "pos": [
+    [
+     12500,
+     3800
+    ],
+    [
+     12000,
+     4400
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_2gtc"
+   ],
+   "role": "2 gds TC corps troops",
+   "side": "USSR",
+   "pos": [
+    [
+     13500,
+     4500
+    ],
+    [
+     14000,
+     5000
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_10iptabr"
+   ],
+   "role": "10 AT Bde: AT strongpoints 252.4, 230.5, SW slopes of Prokhorovka",
+   "side": "USSR",
+   "pos": [
+    [
+     16200,
+     14000
+    ],
+    [
+     16800,
+     16400
+    ],
+    [
+     17600,
+     12992
+    ],
+    [
+     15900,
+     14600
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_48rc"
+   ],
+   "role": "48 RC HQ at Pravorot",
+   "side": "USSR",
+   "pos": [
+    [
+     17900,
+     8900
+    ],
+    [
+     18400,
+     9300
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_rgk",
+    "ra_airsup"
+   ],
+   "role": "air liaison / RGK",
+   "side": "USSR",
+   "pos": [
+    [
+     20200,
+     19000
+    ]
+   ]
+  },
+  {
+   "form": [
+    "ra_33grc"
+   ],
+   "role": "33 gds RC HQ (N edge, Kartashevka road - on the map from turn 1)",
+   "side": "USSR",
+   "pos": [
+    [
+     12405,
+     23500
+    ]
+   ],
+   "turn": 1
+  },
+  {
+   "form": [
+    "ra_284"
+   ],
+   "role": "95 gds RD: 284 gds RR arrives from the north (11 July 10:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     7200,
+     24000
+    ],
+    [
+     8000,
+     24000
+    ],
+    [
+     6400,
+     24000
+    ]
+   ],
+   "turn": 2,
+   "edge": "N"
+  },
+  {
+   "form": [
+    "ra_290"
+   ],
+   "role": "95 gds RD: 290 gds RR arrives from the north (11 July 10:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     4000,
+     24000
+    ],
+    [
+     3200,
+     24000
+    ],
+    [
+     4800,
+     24000
+    ]
+   ],
+   "turn": 2,
+   "edge": "N"
+  },
+  {
+   "form": [
+    "ra_287"
+   ],
+   "role": "95 gds RD: 287 gds RR arrives from the north (11 July 14:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     8300,
+     24000
+    ],
+    [
+     9100,
+     24000
+    ],
+    [
+     9900,
+     24000
+    ]
+   ],
+   "turn": 3,
+   "edge": "N"
+  },
+  {
+   "form": [
+    "ra_95grd",
+    "ra_233ar"
+   ],
+   "role": "95 gds RD troops and 233 gds AR (11 July 14:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     7000,
+     24000
+    ],
+    [
+     5600,
+     24000
+    ],
+    [
+     8800,
+     24000
+    ]
+   ],
+   "turn": 3,
+   "edge": "N"
+  },
+  {
+   "form": [
+    "ra_127"
+   ],
+   "role": "42 gds RD: 127 gds RR arrives on the Kartashevka road (11 July 14:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     10700,
+     24000
+    ],
+    [
+     11500,
+     24000
+    ],
+    [
+     9900,
+     24000
+    ]
+   ],
+   "turn": 3,
+   "edge": "N"
+  },
+  {
+   "form": [
+    "ra_132",
+    "ra_136",
+    "ra_42grd",
+    "ra_91ar"
+   ],
+   "role": "42 gds RD: 132 and 136 gds RR, division troops, 91 gds AR (11 July 18:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     11500,
+     24000
+    ],
+    [
+     12300,
+     24000
+    ],
+    [
+     13100,
+     24000
+    ],
+    [
+     10700,
+     24000
+    ]
+   ],
+   "turn": 4,
+   "edge": "N"
+  },
+  {
+   "form": [
+    "ra_5ga"
+   ],
+   "role": "5 gds A HQ (N edge, Kartashevka road - on the map from turn 1)",
+   "side": "USSR",
+   "pos": [
+    [
+     17000,
+     23500
+    ]
+   ],
+   "turn": 1
+  },
+  {
+   "form": [
+    "ra_181tbr",
+    "ra_170tbr",
+    "ra_18tc"
+   ],
+   "role": "18 TC: 181 and 170 TBr, corps troops arrive via Prokhorovka from the east (11 July 18:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     22000,
+     16500
+    ],
+    [
+     22000,
+     17500
+    ],
+    [
+     22000,
+     15500
+    ]
+   ],
+   "turn": 4,
+   "edge": "E"
+  },
+  {
+   "form": [
+    "ra_110tbr",
+    "ra_32mrbr",
+    "ra_36gtr"
+   ],
+   "role": "18 TC: 110 TBr, 32 MRBr, 36 gds hvy TR (11 July 22:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     22000,
+     17000
+    ],
+    [
+     22000,
+     18000
+    ],
+    [
+     22000,
+     19000
+    ]
+   ],
+   "turn": 5,
+   "edge": "E"
+  },
+  {
+   "form": [
+    "ra_32tbr",
+    "ra_31tbr",
+    "ra_1446sap",
+    "ra_29tc"
+   ],
+   "role": "29 TC: 32 and 31 TBr, 1446 SAP, corps troops (11 July 18:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     22000,
+     14500
+    ],
+    [
+     22000,
+     13500
+    ],
+    [
+     22000,
+     15000
+    ],
+    [
+     22000,
+     12500
+    ]
+   ],
+   "turn": 4,
+   "edge": "E"
+  },
+  {
+   "form": [
+    "ra_25tbr",
+    "ra_53mrbr"
+   ],
+   "role": "29 TC: 25 TBr and 53 MRBr (11 July 22:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     22000,
+     12000
+    ],
+    [
+     22000,
+     11000
+    ]
+   ],
+   "turn": 5,
+   "edge": "E"
+  },
+  {
+   "form": [
+    "ra_5gta"
+   ],
+   "role": "5 gds TA HQ at Skorovka NE of Prokhorovka (Zamulin; on the map from turn 1)",
+   "side": "USSR",
+   "pos": [
+    [
+     20000,
+     19000
+    ]
+   ],
+   "turn": 1,
+   "hq": [
+    21500,
+    19500
+   ]
+  },
+  {
+   "form": [
+    "ra_10gmbr",
+    "ra_24gtbr",
+    "ra_5gmc",
+    "ra_51gtr"
+   ],
+   "role": "5 gds MC: 10 gds MBr (51 gds TR), 24 gds TBr, corps troops on the Pravorot road (12 July 02:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     22000,
+     9500
+    ],
+    [
+     22000,
+     8500
+    ],
+    [
+     22000,
+     10500
+    ],
+    [
+     22000,
+     9000
+    ]
+   ],
+   "turn": 6,
+   "edge": "E"
+  },
+  {
+   "form": [
+    "ra_11gmbr",
+    "ra_12gmbr",
+    "ra_54gtr",
+    "ra_55gtr"
+   ],
+   "role": "5 gds MC: 11 and 12 gds MBr (54, 55 gds TR) (12 July 06:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     22000,
+     7000
+    ],
+    [
+     22000,
+     6000
+    ],
+    [
+     22000,
+     7500
+    ],
+    [
+     22000,
+     5500
+    ]
+   ],
+   "turn": 7,
+   "edge": "E"
+  },
+  {
+   "form": [
+    "ra_1529sap"
+   ],
+   "role": "1529 hvy SAP (SU-152) from 7 gds A (12 July 10:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     22000,
+     15200
+    ]
+   ],
+   "turn": 8,
+   "edge": "E"
+  },
+  {
+   "form": [
+    "ra_289",
+    "ra_294"
+   ],
+   "role": "97 gds RD: 289 and 294 gds RR arrive north of the Psel (11 July 14:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     2400,
+     24000
+    ],
+    [
+     1600,
+     24000
+    ],
+    [
+     3200,
+     24000
+    ]
+   ],
+   "turn": 3,
+   "edge": "N"
+  },
+  {
+   "form": [
+    "ra_292",
+    "ra_97grd",
+    "ra_232ar"
+   ],
+   "role": "97 gds RD: 292 gds RR, division troops, 232 gds AR (11 July 18:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     2000,
+     24000
+    ],
+    [
+     1200,
+     24000
+    ],
+    [
+     2800,
+     24000
+    ]
+   ],
+   "turn": 4,
+   "edge": "N"
+  },
+  {
+   "form": [
+    "ra_301iptap"
+   ],
+   "role": "301 AT Rgt, 5 gds A (11 July 14:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     6000,
+     24000
+    ]
+   ],
+   "turn": 3,
+   "edge": "N"
+  },
+  {
+   "form": [
+    "ra_34",
+    "ra_39",
+    "ra_42",
+    "ra_13grd",
+    "ra_32ar"
+   ],
+   "role": "13 gds RD (33 gds RC second echelon) on the Kartashevka road (11 July 22:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     13900,
+     24000
+    ],
+    [
+     14700,
+     24000
+    ],
+    [
+     15500,
+     24000
+    ],
+    [
+     13100,
+     24000
+    ],
+    [
+     16300,
+     24000
+    ]
+   ],
+   "turn": 5,
+   "edge": "N"
+  },
+  {
+   "form": [
+    "ra_1510iptap",
+    "ra_148gtr",
+    "ra_29iptabr"
+   ],
+   "role": "1510 AT Rgt, 148 gds TR and 29 AT Bde, 5 gds A (11 July 18:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     9500,
+     24000
+    ],
+    [
+     10300,
+     24000
+    ],
+    [
+     8700,
+     24000
+    ]
+   ],
+   "turn": 4,
+   "edge": "N"
+  },
+  {
+   "form": [
+    "ra_93gtr"
+   ],
+   "role": "93 gds TR, 5 gds A (12 July 02:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     12000,
+     24000
+    ]
+   ],
+   "turn": 6,
+   "edge": "N"
+  },
+  {
+   "form": [
+    "ra_53gtr"
+   ],
+   "role": "5 gds TA army troops: 53 gds TR via Prokhorovka (11 July 22:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     22000,
+     14000
+    ]
+   ],
+   "turn": 5,
+   "edge": "E"
+  },
+  {
+   "form": [
+    "ra_1549sap"
+   ],
+   "role": "1549 SAP, 5 gds TA (12 July 02:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     22000,
+     15700
+    ]
+   ],
+   "turn": 6,
+   "edge": "E"
+  },
+  {
+   "form": [
+    "ra_1447sap"
+   ],
+   "role": "1447 SAP, 5 gds MC (12 July 06:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     22000,
+     8000
+    ]
+   ],
+   "turn": 7,
+   "edge": "E"
+  },
+  {
+   "form": [
+    "ra_678har",
+    "ra_689iptap",
+    "ra_76gmr"
+   ],
+   "role": "5 gds TA artillery group: 678 HAR, 689 AT Rgt, 76 gds MR behind Prokhorovka (11 July 22:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     22000,
+     12500
+    ],
+    [
+     22000,
+     13500
+    ],
+    [
+     22000,
+     11500
+    ]
+   ],
+   "turn": 5,
+   "edge": "E"
+  },
+  {
+   "form": [
+    "ra_27gabr",
+    "ra_522har",
+    "ra_1148har",
+    "ra_16gmr",
+    "ra_80gmr"
+   ],
+   "role": "Front artillery attached to 5 gds TA: 27 GABr, 522 and 1148 HAR (hvy), 16 and 80 gds MR (12 July 02:00)",
+   "side": "USSR",
+   "pos": [
+    [
+     22000,
+     16800
+    ],
+    [
+     22000,
+     17800
+    ],
+    [
+     22000,
+     18800
+    ],
+    [
+     22000,
+     19800
+    ],
+    [
+     22000,
+     20800
+    ]
+   ],
+   "turn": 6,
+   "edge": "E"
+  }
+ ],
+ "works": [
+  {
+   "type": "at_ditch",
+   "side": "USSR",
+   "name": "army rear belt anti-tank ditch: railway embankment SW of 252.2 - foot of 252.2 - Psel valley (4.5 m deep; Luftwaffe photos GX-3734-SK-61 / Wheatley 2019)",
+   "pts": [
+    [
+     12300,
+     12000
+    ],
+    [
+     11800,
+     12700
+    ],
+    [
+     11250,
+     13300
+    ],
+    [
+     10600,
+     13900
+    ],
+    [
+     9950,
+     14450
+    ],
+    [
+     9450,
+     14850
+    ]
+   ],
+   "gaps": [
+    [
+     12090,
+     12290
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "26 gds AB Rgt: main trench line over the crest of 252.2 (taken by III/2 SS-PzGr on 11 July), with a second line and communication trenches",
+   "pts": [
+    [
+     12980,
+     12230
+    ],
+    [
+     12700,
+     12580
+    ],
+    [
+     12400,
+     12960
+    ],
+    [
+     12050,
+     13350
+    ]
+   ],
+   "system": true
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "26 gds AB Rgt: second line NE of 252.2 towards the sovkhoz road",
+   "pts": [
+    [
+     13250,
+     12450
+    ],
+    [
+     12960,
+     12800
+    ],
+    [
+     12650,
+     13180
+    ],
+    [
+     12300,
+     13560
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "23 Gds AB Rgt, 252.4 - Barchevka",
+   "pts": [
+    [
+     16600,
+     16600
+    ],
+    [
+     16900,
+     16000
+    ],
+    [
+     17000,
+     15400
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "28 Gds AB Rgt, railway - N edge of Lutovo - ravine NW of Grushki",
+   "pts": [
+    [
+     16500,
+     13100
+    ],
+    [
+     16900,
+     12600
+    ],
+    [
+     17500,
+     12200
+    ],
+    [
+     18000,
+     12350
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "95 Gds RD first trench, Vesyoly - Polezhayev",
+   "pts": [
+    [
+     3700,
+     17000
+    ],
+    [
+     5200,
+     16500
+    ],
+    [
+     6700,
+     16000
+    ],
+    [
+     8300,
+     16400
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "287 Gds RR, Psel S bank Andreyevka - Petrovka",
+   "pts": [
+    [
+     7000,
+     13600
+    ],
+    [
+     8300,
+     14100
+    ],
+    [
+     9500,
+     15000
+    ],
+    [
+     10600,
+     15800
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "183 RD at Vasilyevka - Andreyevka",
+   "pts": [
+    [
+     6300,
+     13300
+    ],
+    [
+     7200,
+     13000
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "183 RD / 2 TC, W edge of the Storozhevoye wood",
+   "pts": [
+    [
+     11300,
+     10800
+    ],
+    [
+     11500,
+     9800
+    ],
+    [
+     11800,
+     9000
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "183 RD / 2 Gds TC, Belenikhino - Vinogradovka",
+   "pts": [
+    [
+     9800,
+     3600
+    ],
+    [
+     10400,
+     4600
+    ],
+    [
+     10900,
+     5500
+    ],
+    [
+     11600,
+     6200
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "AT line 243.8 - 242.7 W of Podolkhi",
+   "pts": [
+    [
+     20200,
+     8800
+    ],
+    [
+     20960,
+     8016
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "GER",
+   "name": "svkh. Oktyabrsky - 252.2 strongpoint (former 285 RR battalion position)",
+   "pts": [
+    [
+     11600,
+     13400
+    ],
+    [
+     12200,
+     13000
+    ],
+    [
+     13100,
+     12700
+    ],
+    [
+     13400,
+     12300
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "GER",
+   "name": "trench system E of 241.6 / Komsomolets (dug by 32 MRBr 18 TC, taken 10 July)",
+   "pts": [
+    [
+     9000,
+     9000
+    ],
+    [
+     9600,
+     10300
+    ],
+    [
+     10300,
+     10900
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "GER",
+   "name": "1 SS-PzGr Rgt, NW edge of the Storozhevoye wood - Stalinskoye otd.",
+   "pts": [
+    [
+     11600,
+     11200
+    ],
+    [
+     12600,
+     11100
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "GER",
+   "name": "Das Reich, Yasnaya Polyana - Belenikhino W",
+   "pts": [
+    [
+     7000,
+     5400
+    ],
+    [
+     7800,
+     4600
+    ],
+    [
+     8600,
+     4000
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "GER",
+   "name": "Das Reich (Deutschland), Ivanovsky Vyselok",
+   "pts": [
+    [
+     8300,
+     8000
+    ],
+    [
+     9200,
+     8600
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "GER",
+   "name": "Totenkopf bridgehead, Klyuchi - S slopes of 226.6 (former 52 Gds RD trenches)",
+   "pts": [
+    [
+     3800,
+     15600
+    ],
+    [
+     5000,
+     15200
+    ],
+    [
+     6300,
+     14800
+    ],
+    [
+     7000,
+     14200
+    ]
+   ]
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "firing positions behind the anti-tank ditch (stubs on the NE side, Luftwaffe photo 7 Aug)",
+   "pts": [
+    [
+     12480,
+     12160
+    ],
+    [
+     12080,
+     12700
+    ],
+    [
+     11600,
+     13250
+    ],
+    [
+     11000,
+     13800
+    ]
+   ],
+   "behind_ditch": true
+  },
+  {
+   "type": "trench",
+   "side": "USSR",
+   "name": "svkh. Oktyabrsky: trench line on the SW edge of the farm",
+   "pts": [
+    [
+     11500,
+     12850
+    ],
+    [
+     11900,
+     12800
+    ],
+    [
+     12250,
+     12900
+    ]
+   ],
+   "system": true
+  }
+ ],
+ "strongpoints": [
+  {
+   "name": "svkh. Komsomolets / 241.6",
+   "rus": "ПТОП свх. Комсомолец",
+   "side": "GER",
+   "xy": [
+    9000,
+    9600
+   ],
+   "r": 300
+  },
+  {
+   "name": "Storozhevoye wood",
+   "rus": "опорный пункт лес Сторожевое",
+   "side": "GER",
+   "xy": [
+    11900,
+    10600
+   ],
+   "r": 250
+  },
+  {
+   "name": "Klyuchi / 226.6",
+   "rus": "плацдарм Ключи",
+   "side": "GER",
+   "xy": [
+    5000,
+    15100
+   ],
+   "r": 300
+  },
+  {
+   "name": "Yasnaya Polyana",
+   "rus": "опорный пункт Ясная Поляна",
+   "side": "GER",
+   "xy": [
+    7594,
+    5083
+   ],
+   "r": 250
+  },
+  {
+   "name": "AT strongpoint 252.4",
+   "rus": "ПТОП выс. 252.4",
+   "side": "USSR",
+   "xy": [
+    16800,
+    16416
+   ],
+   "r": 300
+  },
+  {
+   "name": "AT strongpoint 230.5",
+   "rus": "ПТОП выс. 230.6",
+   "side": "USSR",
+   "xy": [
+    17600,
+    12992
+   ],
+   "r": 300
+  },
+  {
+   "name": "Prokhorovka SW (AT guns dug in)",
+   "rus": "ПТОП Прохоровка",
+   "side": "USSR",
+   "xy": [
+    16200,
+    14000
+   ],
+   "r": 300
+  },
+  {
+   "name": "Vasilyevka",
+   "rus": "опорный пункт Васильевка",
+   "side": "USSR",
+   "xy": [
+    6800,
+    13200
+   ],
+   "r": 250
+  },
+  {
+   "name": "Belenikhino",
+   "rus": "ПТОП Беленихино",
+   "side": "USSR",
+   "xy": [
+    9800,
+    3600
+   ],
+   "r": 300
+  },
+  {
+   "name": "Polezhayev",
+   "rus": "ПТОП Полежаев",
+   "side": "USSR",
+   "xy": [
+    8000,
+    16500
+   ],
+   "r": 250
+  }
+ ],
+ "minefields": [
+  {
+   "name": "mines in front of 26/23 Gds AB Rgt (lanes cleared for 29 TC)",
+   "rus": "минное поле",
+   "side": "USSR",
+   "pts": [
+    [
+     14900,
+     14900
+    ],
+    [
+     15500,
+     14100
+    ],
+    [
+     15900,
+     14400
+    ],
+    [
+     15300,
+     15200
+    ]
+   ]
+  },
+  {
+   "name": "mines in the ravine E of Petrovka (42 Gds RD / 18 TC junction)",
+   "rus": "минное поле",
+   "side": "USSR",
+   "pts": [
+    [
+     11300,
+     15700
+    ],
+    [
+     11900,
+     15700
+    ],
+    [
+     11900,
+     16300
+    ],
+    [
+     11300,
+     16300
+    ]
+   ]
+  },
+  {
+   "name": "German mines on the approaches from Prokhorovka, E of 252.2",
+   "rus": "минное поле",
+   "side": "GER",
+   "pts": [
+    [
+     13600,
+     12400
+    ],
+    [
+     14200,
+     12500
+    ],
+    [
+     14100,
+     13100
+    ],
+    [
+     13500,
+     13000
+    ]
+   ]
+  },
+  {
+   "name": "Psel bend, Vesyoly - Klyuchi (both sides)",
+   "rus": "минное поле",
+   "side": "USSR",
+   "pts": [
+    [
+     3500,
+     16200
+    ],
+    [
+     4400,
+     16100
+    ],
+    [
+     4500,
+     16800
+    ],
+    [
+     3600,
+     16900
+    ]
+   ]
+  },
+  {
+   "name": "S of Storozhevoye (Das Reich / 2 Gds TC junction)",
+   "rus": "минное поле",
+   "side": "GER",
+   "pts": [
+    [
+     11300,
+     8300
+    ],
+    [
+     12100,
+     8300
+    ],
+    [
+     12100,
+     8900
+    ],
+    [
+     11300,
+     8900
+    ]
+   ]
+  },
+  {
+   "name": "Belenikhino W (183 RD)",
+   "rus": "минное поле",
+   "side": "USSR",
+   "pts": [
+    [
+     9000,
+     3600
+    ],
+    [
+     9500,
+     3300
+    ],
+    [
+     9700,
+     4000
+    ],
+    [
+     9200,
+     4200
+    ]
+   ]
+  }
+ ],
+ "briefing": {
+  "op_name": "Prokhorovka\n\u0006July 11 - 14, 1943\n\u00045 gds TA, 5 gds A",
+  "op_name1": "Prokhorovka\n\u0006July 11 - 14, 1943\n\u00072 TC SS",
+  "op_chap": "Kursk\n\u0006July, 1943\n\u0006USSR - Germany",
+  "op_canvas": [
+   "06:00, 11 July. II SS-Panzerkorps resumed its attack on 10 July: LSSAH took svkh. Komsomolets and height 241.6, Totenkopf has crossings over the Psel at Krasny Oktyabr and Bogoroditskoye and a foothold at Klyuchi, Das Reich stands at Yasnaya Polyana facing Belenikhino. On our side 183 RD (285 RR with a battalion strongpoint at svkh. Oktyabrsky - 252.2), 2 TC (99 TBr at Vasilyevka, 26 and 169 TBr at Storozhevoye), 9 gds AB Div (26 gds AB Rgt at the sovkhoz, 28 at Yamki, 23 at 252.4) and 52 gds RD in the Psel bend hold the army rear belt in front of Prokhorovka; 2 gds TC at Belenikhino - Vinogradovka. 5 gds A (95, 42 gds RD) is marching in from the north, 5 gds TA (18, 29 TC, 5 gds MC) from the east; both arrive during the day and night. Combat mission: hold the sovkhoz, 252.2, Storozhevoye and the Psel bend until the army arrives.",
+   "10:00. LSSAH attacks along the railway from Komsomolets towards the sovkhoz with tanks and air support; Totenkopf pushes out of the Klyuchi bridgehead against 52 gds RD. 95 gds RD (284, 290 gds RR) reaches the Kartashevka road. Combat mission: 26 gds AB Rgt and 285 RR hold the sovkhoz - 252.2 line, 2 TC counter-attacks from Storozhevoye into the flank of the attack; 95 gds RD takes over the Psel bend from Vesyoly to Polezhayev.",
+   "14:00. The sovkhoz is under direct attack; the anti-tank ditch SW of 252.2 is the last obstacle before the hill. 287 gds RR, 95 gds RD troops and 127 gds RR (42 gds RD) arrive from the north; 5 gds A HQ opens at Tikhaya Padina. Combat mission: hold 252.2 and the station approaches; 127 gds RR relieves the Psel south bank at Prelestnoye - Petrovka.",
+   "18:00. LSSAH has crossed the ditch and is on 252.2; the sovkhoz is lost. 18 TC (181, 170 TBr) and 29 TC (32, 31 TBr, 1446 SAP) arrive through Prokhorovka from the east; the rest of 42 gds RD arrives on the Kartashevka road. Combat mission: 9 gds AB Div digs in on the SW outskirts of the station and 252.4; the tank corps move to their assembly areas (18 TC Petrovka - 252.4, 29 TC the brick works - Barchevka - Lutovo) without engaging.",
+   "22:00. 110 TBr, 32 MRBr, 36 gds hvy TR, 25 TBr, 53 MRBr and the 5 gds TA HQ arrive. Totenkopf holds Klyuchi and the south slopes of 226.6. Combat mission: assembly for the counter-attack at 08:30 on 12 July; sappers clear lanes through the minefields in front of 26 and 23 gds AB Rgts.",
+   "02:00, 12 July. 5 gds MC (10 gds MBr, 24 gds TBr) arrives on the Pravorot road as army reserve. Artillery registers on the sovkhoz and 252.2. Combat mission: 29 TC attacks along the railway on the sovkhoz and 252.2 at 08:30, 18 TC along the Psel on Prelestnoye - Mikhaylovka - Vasilyevka, 2 gds TC on Yasnaya Polyana and Kalinin; 9 gds AB Div and 95 gds RD follow the tanks.",
+   "06:00, 12 July. 11 and 12 gds MBr arrive; the reconnaissance reports LSSAH tanks on 252.2 and in the sovkhoz, anti-tank guns on the road between them. Artillery preparation 08:00-08:15, then the attack. Minefield lanes are narrow - keep to them.",
+   "10:00. The first echelon of 29 TC drove into the anti-tank ditch at the foot of 252.2 under fire from the sovkhoz; 32 TBr has lost most of its tanks. 181 TBr reached Mikhaylovka, 170 TBr the north edge of the sovkhoz. 1529 hvy SAP arrives. Combat mission: take the sovkhoz and 252.2 with 31 and 25 TBr, 9 gds AB Div and 287 gds RR; 2 gds TC attacks at 11:45.",
+   "14:00. The sovkhoz has changed hands several times; Totenkopf's panzer regiment crossed at Klyuchi, took 226.6 and is attacking along the north bank towards Polezhayev and the Kartashevka road. Combat mission: 95 gds RD, 24 gds TBr and 10 gds MBr stop the bridgehead attack; hold Petrovka - Prelestnoye - Mikhaylovka.",
+   "18:00. LSSAH holds the sovkhoz and 252.2 again; 29 TC withdraws to the ravine west of the station, 18 TC to Petrovka - Prelestnoye. Totenkopf reached the Kartashevka road and was stopped at Polezhayev. Combat mission for the night: dig in on the reached line, prepare to repel the attack on Prokhorovka.",
+   "22:00. 5 gds TA lost about 350 tanks and SP guns during the day. Combat mission: hold the line Petrovka - brick works - SW outskirts of Prokhorovka - Yamki - Storozhevoye; 11 and 12 gds MBr go south to Trufanov's group at Rzhavets.",
+   "02:00, 13 July. Regrouping; German reconnaissance in the Psel bend. Combat mission: hold.",
+   "06:00, 13 July. Totenkopf attacks again towards Polezhayev and Vesyoly; LSSAH stays on the defensive at the sovkhoz; Das Reich attacks Belenikhino and Storozhevoye. Combat mission: 18 TC counter-attacks on Andreyevka - Vasilyevka, everything else holds.",
+   "10:00. Das Reich takes Belenikhino and the Storozhevoye wood; 2 gds TC and 183 RD withdraw to Vinogradovka - Zhimolostnoye. Combat mission: 29 TC and 9 gds AB Div hold the station; 2 TC covers Pravorot.",
+   "14:00. The German attacks are halted; Totenkopf withdraws from the Kartashevka road to 226.6. Combat mission: hold, repair tanks.",
+   "18:00. The front stabilises: Petrovka - Prelestnoye - sovkhoz (German) - Yamki - Storozhevoye (German) - Vinogradovka. Combat mission: hold the line, reconnaissance towards the sovkhoz and 241.6.",
+   "22:00. Night. Combat mission: hold.",
+   "02:00, 14 July. Das Reich prepares an attack on Vinogradovka and Ivanovka towards Pravorot to meet 3 PzK from the south. Combat mission: 2 gds TC and 2 TC hold Zhimolostnoye - Pravorot at all costs.",
+   "06:00, 14 July. Das Reich attacks Vinogradovka and Ivanovka; Totenkopf gives up the north bank. Combat mission: hold Pravorot.",
+   "10:00. Local attacks on both sides; 5 gds A infantry retakes the trenches north of the sovkhoz. Combat mission: hold the line.",
+   "14:00, 14 July. The German offensive is at its end. Combat mission: hold and prepare to pursue."
+  ],
+  "op_canvas1": [
+   "06:00, 11 July. On 10 July LSSAH took svkh. Komsomolets and height 241.6, Totenkopf crossed the Psel at Krasny Oktyabr and Bogoroditskoye and holds a foothold at Klyuchi, Das Reich stands at Yasnaya Polyana facing Belenikhino. Reconnaissance reports fresh Soviet infantry (9 gds AB Div) at the sovkhoz Oktyabrsky and Prokhorovka and tank columns east of the station. Combat mission: LSSAH attacks along the railway and takes svkh. Oktyabrsky and 252.2, then Prokhorovka; Totenkopf widens the Psel bridgehead towards 226.6 and the Kartashevka road; Das Reich covers the right flank towards Belenikhino - Storozhevoye.",
+   "10:00. 2 SS-PzGr Rgt with the panzer regiment attacks the sovkhoz from Komsomolets; Stukas on the sovkhoz and 252.2. Soviet tanks (2 TC) counter-attack from Storozhevoye into the flank. Combat mission: 1 SS-PzGr Rgt takes the Storozhevoye wood and covers the flank, 2 SS-PzGr takes the sovkhoz.",
+   "14:00. The sovkhoz is being cleared house by house; the anti-tank ditch SW of 252.2 must be crossed by the panzers. Totenkopf fights for Klyuchi against 52 gds RD. Combat mission: cross the ditch along the railway and take 252.2 before dark.",
+   "18:00. 252.2 taken; the sovkhoz is ours. Soviet tank columns are entering Prokhorovka from the east (5 gds TA). Combat mission: dig in on 252.2 and in the sovkhoz, anti-tank guns on the road between them, panzers behind the ditch; Totenkopf brings its panzer regiment into the bridgehead overnight.",
+   "22:00. More Soviet armour reported east and north of the station. Combat mission: hold the sovkhoz - 252.2 line; Totenkopf attacks 226.6 at dawn; Das Reich holds Yasnaya Polyana - Ivanovsky Vyselok.",
+   "02:00, 12 July. Night. Combat mission: Totenkopf's panzer regiment crosses at Klyuchi; LSSAH holds and attacks the station only once Totenkopf is on the Kartashevka road.",
+   "06:00, 12 July. Soviet artillery is registering on the sovkhoz and 252.2; an attack is expected. Combat mission: hold the sovkhoz and 252.2, destroy the attacking tanks in front of the ditch.",
+   "10:00. At 08:30 some 500 tanks attacked from Prokhorovka along the railway and from Petrovka along the Psel; the first wave was destroyed in front of the sovkhoz and in the ditch; parts of 18 TC broke through along the Psel to Mikhaylovka. 2 gds TC is attacking Das Reich at Yasnaya Polyana. Combat mission: II/2 SS-PzGr retakes the sovkhoz, 1 SS-PzGr holds Storozhevoye, Totenkopf takes 226.6.",
+   "14:00. Totenkopf took 226.6 and is attacking along the north bank towards Polezhayev and the Kartashevka road; Soviet infantry and tanks counter-attack from Vesyoly. LSSAH holds the sovkhoz. Combat mission: Totenkopf reaches the Kartashevka road, LSSAH restores the line sovkhoz - 252.2 - Storozhevoye.",
+   "18:00. LSSAH holds the sovkhoz and 252.2, Das Reich Yasnaya Polyana and Ivanovsky Vyselok, Totenkopf stands at Polezhayev. About 90 Soviet tanks knocked out in front of LSSAH alone. Combat mission for the night: secure the line, repair tanks, prepare the attack on Prokhorovka for 13 July.",
+   "22:00. 5 gds TA is reported to have lost half its tanks. Combat mission: hold, reconnaissance towards Petrovka and Yamki.",
+   "02:00, 13 July. Night. Combat mission: Totenkopf attacks Polezhayev and Vesyoly at dawn, Das Reich attacks Belenikhino.",
+   "06:00, 13 July. Totenkopf attacks Polezhayev; strong resistance. Das Reich attacks Belenikhino and the Storozhevoye wood. Combat mission: LSSAH holds and supports with artillery, Das Reich takes Belenikhino.",
+   "10:00. Das Reich took Belenikhino and the Storozhevoye wood and attacks Vinogradovka. Combat mission: Das Reich continues on Pravorot to meet 3 PzK, LSSAH holds.",
+   "14:00. Totenkopf withdraws from the Kartashevka road to 226.6 under heavy artillery fire; the attack on Prokhorovka is postponed. Combat mission: hold the bridgehead and the sovkhoz.",
+   "18:00. Orders from 4 PzA: Citadel is halted; II SS-PzK destroys the enemy between the Psel and the Lipovy Donets together with 3 PzK, then goes over to the defensive. Combat mission: Das Reich and 3 PzK close the pocket at Pravorot - Shakhovo.",
+   "22:00. Night. Combat mission: hold.",
+   "02:00, 14 July. Das Reich prepares the attack on Vinogradovka and Ivanovka. Combat mission: take Pravorot.",
+   "06:00, 14 July. Das Reich attacks Vinogradovka and Ivanovka; Totenkopf gives up the north bank of the Psel. Combat mission: take Pravorot.",
+   "10:00. Pravorot not taken; the pocket is not closed. Combat mission: hold the reached line.",
+   "14:00, 14 July. The corps goes over to the defensive on the line Kozlovka - svkh. Oktyabrsky - Storozhevoye - Belenikhino - Leski. Combat mission: dig in, mine the approaches."
+  ],
+  "op_name_rus": "Прохоровка\n\u000611 - 14 июля 1943\n\u00045 гв. ТА, 5 гв. А",
+  "op_name1_rus": "Прохоровка\n\u000611 - 14 июля 1943\n\u00072 тк СС",
+  "op_chap_rus": "Курск\n\u0006июль 1943\n\u0006СССР - Германия"
+ },
+ "air": {
+  "we_air_01": 2,
+  "we_air_02": 3,
+  "we_air_03": 7,
+  "we_air_04": 9,
+  "we_air_05": 2,
+  "we_air_06": 8,
+  "we_air_07": 13,
+  "ra_air_01": 3,
+  "ra_air_02": 8,
+  "ra_air_03": 9,
+  "ra_air_04": 12,
+  "ra_air_05": 5,
+  "ra_air_06": 11
+ },
+ "_comment_air": "air: platoon name -> turn the squadron becomes available (turn = 4 h from 06:00 11 July). VIII Fliegerkorps (Ju 87, Fw 190) over the LSSAH sector from the morning of 11 July and massed on 12 July; 2 VA Il-2 regiments from the afternoon of 11 July and on 12/13 July, Po-2 night bombers at night.",
+ "_comment_works": "works/strongpoints: the 252.2 - Oktyabrsky positions are the Soviet trench systems (26 gds AB Rgt, 9 gds AB Div), which LSSAH occupied after taking the hill on 11 July - no separate German ring there. AT ditch trace, gaps and the trench stubs behind it from the Luftwaffe photographs in Wheatley 2019.",
+ "_comment_sources": "Positions 11 July evening: Zamulin, Demolishing the Myth (Helion 2011) ch. 7, 9, 10, 12 and Tables 14, 17, 18; Lawrence, The Battle of Prokhorovka (Stackpole 2019) ch. 7, 9; Wheatley 2019 (Journal of Intelligence History) 16 July 1943 photographs for the earthworks and fields. Tank numbers in tools/oob_12jul.ps1 from Zamulin Table 18 (5 gds TA 1700 11 July) and Table 17 (II SS Pz Corps 1835 11 July). A unit entry may carry \"hq\": [x, y] - the formation HQ node (nearest free node) instead of the automatic placement."
+}

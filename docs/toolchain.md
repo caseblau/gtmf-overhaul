@@ -163,7 +163,7 @@ taken from `-VanillaRoot` (default `GTMF_VANILLA`, else `<GameRoot>\users\modwor
 `tabs\`, `tabs_oprum\`, `text_loc\` as unpacked in milestone 0). Each delta is applied with `gt3.ps1 apply`; every
 intermediate table is kept as `build\merge\_steps\<archive>\<name>.<kind>.<loc>.<n>_<module>.bin`, the final entries are
 staged in `build\merge\<archive>\` with a generated `!flatlist`, and `gt3.ps1 pack` packs from there. Entry order inside
-an archive = order of first appearance over the modules in merge order. A full build takes ~30 s (the 15 applies).
+an archive = order of first appearance over the modules in merge order. A full build takes ~30 s for the tables (the 15 applies) plus the four operation packs; since 2026-10-19 `apply` caches each node's column-0 row texts (`Row-Base`, kept in step by the row ops) so the 1 200 anchored `plat_pos` inserts of an OOB delta no longer recompute every key, ~30 s per Stepanovka side instead of ~9 min. A machine without `_orig\3598` gets it from `tools\build_install_here.cmd`, which unpacks `tabs`, `tabs_oprum` and `text_loc` there before building. Float cells are written by `Fmt-Single` (the .NET Framework 'R' text: 7 significant digits if they round-trip, else 9, ties away from zero) computed from the bits, so `#md5` row keys are the same under Windows PowerShell 5.1 and PowerShell 7; `Single.ToString('R')` itself differs between the runtimes and must not be used for anything that lands in a delta.
 `-BuildDir <dir>` builds somewhere else, for verification builds that must not touch `build\`.
 
 **Verified 2026-10-15:** the first delta build was compared with the last whole-table build (0.3.2 sources, staged

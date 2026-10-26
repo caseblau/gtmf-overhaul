@@ -193,6 +193,42 @@ function Azcf-CStr([byte[]]$b, [int]$off) { $e = [Array]::IndexOf($b, [byte]0, $
 # The node's type string (one char per column, see `nodes`) tells the column type; a cell is
 # decoded from its own kind field, so the type string is only informational.
 $Inv = [Globalization.CultureInfo]::InvariantCulture
+function Fmt-Digits([single]$x, [int]$prec) {
+    # The decimal text .NET Framework's "G<prec>" gives for a single: the exact binary value rounded to $prec significant
+    # digits with ties away from zero (6.103515625E-05 -> 6.10351563E-05), trailing zeros dropped, scientific notation
+    # when the exponent is >= $prec or <= -5. .NET Core 3+ rounds ties to even and 'R' prints the shortest round trip
+    # instead, so Single.ToString differs between the two runtimes; this is runtime-independent.
+    $bits = [BitConverter]::ToInt32([BitConverter]::GetBytes($x), 0)
+    $neg = $bits -lt 0; $ex = ($bits -shr 23) -band 0xff; $man = $bits -band 0x7fffff
+    if ($ex -eq 0) { $e2 = -149 } else { $man = $man -bor 0x800000; $e2 = $ex - 150 }
+    # value = man * 2^e2 = N / 10^k exactly
+    if ($e2 -ge 0) { $N = [Numerics.BigInteger]::Pow(2, $e2) * $man; $k = 0 }
+    else { $N = [Numerics.BigInteger]::Pow(5, -$e2) * $man; $k = -$e2 }
+    $d = $N.ToString()
+    $exp10 = $d.Length - 1 - $k            # value = d.ddd * 10^exp10
+    if ($d.Length -gt $prec) {
+        $head = [Numerics.BigInteger]::Parse($d.Substring(0, $prec))
+        if ([int][string]$d[$prec] -ge 5) { $head += 1 }
+        $d = $head.ToString()
+        if ($d.Length -gt $prec) { $d = $d.Substring(0, $prec); $exp10++ }   # 999.. rounded up to 1000..
+    }
+    $d = $d.TrimEnd('0'); if ($d -eq '') { $d = '0' }
+    if ($exp10 -ge $prec -or $exp10 -le -5) {
+        $m = $d.Substring(0, 1); if ($d.Length -gt 1) { $m += '.' + $d.Substring(1) }
+        $t = $m + 'E' + $(if ($exp10 -lt 0) { '-' } else { '+' }) + ([Math]::Abs($exp10)).ToString('00')
+    } elseif ($exp10 -lt 0) { $t = '0.' + ('0' * (-$exp10 - 1)) + $d }
+    elseif ($d.Length -le $exp10 + 1) { $t = $d + ('0' * ($exp10 + 1 - $d.Length)) }
+    else { $t = $d.Substring(0, $exp10 + 1) + '.' + $d.Substring($exp10 + 1) }
+    if ($neg) { '-' + $t } else { $t }
+}
+function Fmt-Single([single]$x) {
+    # Windows PowerShell 5.1 (.NET Framework) text of a single with 'R': 7 significant digits if that round-trips, else 9;
+    # negative zero prints as 0. Computed by Fmt-Digits so PowerShell 7 writes and reads the same '#md5' row keys.
+    if ($x -eq 0) { return '0' }
+    $t = Fmt-Digits $x 7
+    if ([single]::Parse($t, $Inv) -eq $x) { return $t }
+    Fmt-Digits $x 9
+}
 function Azcf-Fourcc([uint32]$v) {
     # 3 or 4 printable ASCII bytes, little-endian, NUL-padded: 'INF' = 0x00464E49.
     # Two-letter codes ('MT' mortar, 'MG', 'SS', 'MR') are accepted only when both bytes are capital letters.
@@ -223,8 +259,8 @@ function Azcf-Decode([byte[]]$b, [int]$off) {
             else { [string]$s[0] }
         }
         6 { $n = 3; while ($n -gt 0 -and $s[$n] -eq 0) { $n-- }; (0..$n | ForEach-Object { [string][BitConverter]::ToInt32($b, $off + $_ * 4) }) -join ';' }
-        1 { $n = 3; while ($n -gt 0 -and $s[$n] -eq 0) { $n-- }; (0..$n | ForEach-Object { [BitConverter]::ToSingle($b, $off + $_ * 4).ToString('R', $Inv) }) -join ';' }
-        0 { [BitConverter]::ToSingle($b, $off).ToString('R', $Inv) }
+        1 { $n = 3; while ($n -gt 0 -and $s[$n] -eq 0) { $n-- }; (0..$n | ForEach-Object { (Fmt-Single ([BitConverter]::ToSingle($b, $off + $_ * 4))) }) -join ';' }
+        0 { (Fmt-Single ([BitConverter]::ToSingle($b, $off))) }
         5 { if ($s[0]) { '1' } else { '0' } }
         default { 'kind{0}:{1:x8};{2:x8};{3:x8};{4:x8}' -f $kind, $s[0], $s[1], $s[2], $s[3] }
     }
@@ -243,7 +279,7 @@ function Cmd-Csv([string]$path, [string]$which, [string]$out) {
     # repeated 'pool' nodes apart and next to the p_<pool> struct they belong to.
     $c = Read-Azcf ([IO.File]::ReadAllBytes($path))
     $targets = @()
-    if ($which -eq '*') { $targets = $c.nodes | Where-Object { $_.type -eq 1 -or $_.type -eq 2 } }
+    if ($which -eq '*') { $targets = @($c.nodes | Where-Object { $_.type -eq 1 -or $_.type -eq 2 }) }
     elseif ($which -match '^#(\d+)$') { $targets = @($c.nodes[[int]$Matches[1]]) }
     else { $targets = @($c.nodes | Where-Object { $_.name -eq $which }) }
     if ($targets.Count -eq 0) { throw "node '$which' not found in $path" }
@@ -603,7 +639,9 @@ function Azcf-Save([object]$doc, [string]$out) {
 # <cell> = s:text | u:123 | u:'FCC' | u:0x19430801 | a:1;2;3;4 | v:0.5;1 | f:0.5 | b:1 | k<kind>:hex;hex;hex;hex
 function Delta-Esc([string]$s) { $s.Replace('\', '\\').Replace('|', '\|').Replace("`n", '\n').Replace("`r", '\r') }
 function Delta-Split([string]$line) {
-    $out = New-Object Collections.Generic.List[string]; $sb = New-Object Text.StringBuilder
+    $out = New-Object Collections.Generic.List[string]
+    if ($line.IndexOf('\') -lt 0) { $out.AddRange([string[]]$line.Split('|')); return ,$out }   # no escapes: plain split
+    $sb = New-Object Text.StringBuilder
     for ($i = 0; $i -lt $line.Length; $i++) {
         $ch = $line[$i]
         if ($ch -eq '\' -and $i + 1 -lt $line.Length) {
@@ -624,29 +662,32 @@ function Cell-Encode([hashtable]$cell) {
             else { $fc = Azcf-Fourcc $x; if ($fc) { "u:'$fc'" } else { "u:$x" } }
         }
         6 { $n = 3; while ($n -gt 0 -and $v[$n] -eq 0) { $n-- }; 'a:' + ((0..$n | ForEach-Object { [string][BitConverter]::ToInt32([BitConverter]::GetBytes([uint32]$v[$_]), 0) }) -join ';') }
-        1 { $n = 3; while ($n -gt 0 -and $v[$n] -eq 0) { $n-- }; 'v:' + ((0..$n | ForEach-Object { [BitConverter]::ToSingle([BitConverter]::GetBytes([uint32]$v[$_]), 0).ToString('R', $Inv) }) -join ';') }
-        0 { 'f:' + [BitConverter]::ToSingle([BitConverter]::GetBytes([uint32]$v[0]), 0).ToString('R', $Inv) }
+        1 { $n = 3; while ($n -gt 0 -and $v[$n] -eq 0) { $n-- }; 'v:' + ((0..$n | ForEach-Object { (Fmt-Single ([BitConverter]::ToSingle([BitConverter]::GetBytes([uint32]$v[$_]), 0))) }) -join ';') }
+        0 { 'f:' + (Fmt-Single ([BitConverter]::ToSingle([BitConverter]::GetBytes([uint32]$v[0]), 0))) }
         5 { 'b:' + $(if ($v[0]) { '1' } else { '0' }) }
         default { 'k{0}:{1:x8};{2:x8};{3:x8};{4:x8}' -f $cell.k, $v[0], $v[1], $v[2], $v[3] }
     }
 }
 function Cell-Decode([string]$text) {
     $v = New-Object uint32[] 4
-    if ($text -notmatch '^(s|u|a|v|f|b|k\d+):(.*)$') { throw "bad cell '$text'" }
-    $t = $Matches[1]; $rest = $Matches[2]
-    switch -Regex ($t) {
-        '^s$' { return @{ k = 2; v = $v; s = $rest } }
-        '^u$' {
+    $ix = $text.IndexOf(':'); if ($ix -lt 1) { throw "bad cell '$text'" }
+    $t = $text.Substring(0, $ix); $rest = $text.Substring($ix + 1)
+    switch ($t) {   # plain string switch (the regex switch cost ~7 regex evaluations per cell)
+        's' { return @{ k = 2; v = $v; s = $rest } }
+        'u' {
             if ($rest -match "^'(.{2,4})'$") { $fc = $Matches[1]; for ($i = 0; $i -lt $fc.Length; $i++) { $v[0] = $v[0] -bor ([uint32][byte][char]$fc[$i] -shl (8 * $i)) } }
             elseif ($rest -match '^0x([0-9a-fA-F]+)$') { $v[0] = [Convert]::ToUInt32($Matches[1], 16) }
             else { $v[0] = [uint32]$rest }
             return @{ k = 4; v = $v; s = $null }
         }
-        '^a$' { $p = $rest.Split(';'); for ($i = 0; $i -lt $p.Count; $i++) { $v[$i] = [BitConverter]::ToUInt32([BitConverter]::GetBytes([int32]$p[$i]), 0) }; return @{ k = 6; v = $v; s = $null } }
-        '^v$' { $p = $rest.Split(';'); for ($i = 0; $i -lt $p.Count; $i++) { $v[$i] = [BitConverter]::ToUInt32([BitConverter]::GetBytes([single]::Parse($p[$i], $Inv)), 0) }; return @{ k = 1; v = $v; s = $null } }
-        '^f$' { $v[0] = [BitConverter]::ToUInt32([BitConverter]::GetBytes([single]::Parse($rest, $Inv)), 0); return @{ k = 0; v = $v; s = $null } }
-        '^b$' { $v[0] = [uint32]$rest; return @{ k = 5; v = $v; s = $null } }
-        '^k(\d+)$' { $k = [uint32]$Matches[1]; $p = $rest.Split(';'); for ($i = 0; $i -lt 4; $i++) { $v[$i] = [Convert]::ToUInt32($p[$i], 16) }; return @{ k = $k; v = $v; s = $null } }
+        'a' { $p = $rest.Split(';'); for ($i = 0; $i -lt $p.Count; $i++) { $v[$i] = [BitConverter]::ToUInt32([BitConverter]::GetBytes([int32]$p[$i]), 0) }; return @{ k = 6; v = $v; s = $null } }
+        'v' { $p = $rest.Split(';'); for ($i = 0; $i -lt $p.Count; $i++) { $v[$i] = [BitConverter]::ToUInt32([BitConverter]::GetBytes([single]::Parse($p[$i], $Inv)), 0) }; return @{ k = 1; v = $v; s = $null } }
+        'f' { $v[0] = [BitConverter]::ToUInt32([BitConverter]::GetBytes([single]::Parse($rest, $Inv)), 0); return @{ k = 0; v = $v; s = $null } }
+        'b' { $v[0] = [uint32]$rest; return @{ k = 5; v = $v; s = $null } }
+        default {
+            if ($t -notmatch '^k(\d+)$') { throw "bad cell '$text'" }
+            $k = [uint32]$Matches[1]; $p = $rest.Split(';'); for ($i = 0; $i -lt 4; $i++) { $v[$i] = [Convert]::ToUInt32($p[$i], 16) }; return @{ k = $k; v = $v; s = $null }
+        }
     }
 }
 function Azcf-Paths([object]$root) {
@@ -659,12 +700,12 @@ function Azcf-Paths([object]$root) {
         $n = $e.node; $counts = @{}
         foreach ($k in $n.kids) { if ($counts.ContainsKey($k.name)) { $counts[$k.name]++ } else { $counts[$k.name] = 1 } }
         $seen = @{}
-        $kidEntries = @()
+        $kidEntries = New-Object Collections.Generic.List[object]
         foreach ($k in $n.kids) {
             $nm = $k.name
             # first occurrence keeps the bare name, later ones get #1, #2 ... (stable when later duplicates come or go)
             if ($counts[$nm] -gt 1) { $ix = if ($seen.ContainsKey($nm)) { $seen[$nm] } else { 0 }; $seen[$nm] = $ix + 1; if ($ix) { $nm = "$nm#$ix" } }
-            $kidEntries += @{ node = $k; parent = $n; path = $(if ($e.path) { $e.path + '/' + $nm } else { $nm }) }
+            $kidEntries.Add(@{ node = $k; parent = $n; path = $(if ($e.path) { $e.path + '/' + $nm } else { $nm }) })
         }
         for ($i = $kidEntries.Count - 1; $i -ge 0; $i--) { $stack.Push($kidEntries[$i]) }
     }
@@ -693,20 +734,50 @@ function Azcf-RowKeys([object]$node) {
     ,$keys
 }
 function Row-Hash([object]$node, [object]$row) { $h = $Md5.ComputeHash([Text.Encoding]::UTF8.GetBytes((Row-Line $node $row))); ($h[0..3] | ForEach-Object { '{0:x2}' -f $_ }) -join '' }
+function Row-Text([object]$node, [object]$row) {
+    # column-0 text of a row (field name for structs): the bare part of its delta key
+    if ($node.type -eq 1) { [string]$row.name } elseif ($row.c.Count -gt 0) { $c0 = $row.c[0]; if ($c0.k -eq 2) { $c0.s } else { Cell-Encode $c0 } } else { '' }
+}
+function Row-Base([object]$node) {
+    # cached list of column-0 texts, one per row, kept in step by Cmd-Apply's row ops (Row-BaseDrop forces a rebuild).
+    # Resolve-RowIndex used to recompute every key of the node (with MD5s) on every call; on a 2 000-row table hit by
+    # 1 200 anchored inserts that was ~2 minutes per apply.
+    $bc = $node.PSObject.Properties['_bc']
+    if ($bc -and $bc.Value -and $bc.Value.Count -eq $node.rows.Count) { return ,$bc.Value }
+    $list = New-Object Collections.Generic.List[string]
+    foreach ($row in $node.rows) { $list.Add((Row-Text $node $row)) }
+    $node | Add-Member -NotePropertyName _bc -NotePropertyValue $list -Force
+    ,$list
+}
+function Row-BaseDrop([object]$node) { if ($node.PSObject.Properties['_bc']) { $node._bc = $null } }
 function Resolve-RowIndex([object]$node, [string]$key) {
     # Index of the row a delta line names, or -1. A key is matched exactly first; otherwise its bare text is matched
     # against column 0 (field name for structs): one candidate wins, several are told apart by the MD5 in the key.
     # Needed because the '#md5' suffix exists only while the text repeats, and a delta is applied step by step.
-    $keys = Azcf-RowKeys $node
-    $ix = $keys.IndexOf($key); if ($ix -ge 0) { return $ix }
+    # Same result as matching against Azcf-RowKeys, computed from the cached column-0 texts: a row's full key is its
+    # text when that text is unique in the node, else text#md5 (#n for identical rows), so only the rows sharing the
+    # key's bare text ever need hashing.
+    $base = Row-Base $node
     $bare = $key; $hash = ''
     if ($key -match '^(.*?)#([0-9a-f]{8})(#\d+)?$') { $bare = $Matches[1]; $hash = $Matches[2] }
+    # 1. exact match of the full key
+    $lit = @(); for ($i = 0; $i -lt $base.Count; $i++) { if ($base[$i] -ceq $key) { $lit += $i } }
+    $exact = if ($lit.Count -eq 1) { $lit[0] } else { -1 }
     $cand = @()
-    for ($i = 0; $i -lt $node.rows.Count; $i++) {
-        $row = $node.rows[$i]
-        $t = if ($node.type -eq 1) { [string]$row.name } elseif ($row.c.Count -gt 0) { $c0 = $row.c[0]; if ($c0.k -eq 2) { $c0.s } else { Cell-Encode $c0 } } else { '' }
-        if ($t -eq $bare) { $cand += $i }
+    if ($hash) {
+        for ($i = 0; $i -lt $base.Count; $i++) { if ($base[$i] -ceq $bare) { $cand += $i } }
+        if ($cand.Count -gt 1) {
+            $seen = @{}
+            foreach ($i in $cand) {
+                $k = $bare + '#' + (Row-Hash $node $node.rows[$i])
+                if ($seen.ContainsKey($k)) { $m = $seen[$k]; $seen[$k] = $m + 1; $k = "$k#$m" } else { $seen[$k] = 1 }
+                if ($k -ceq $key) { if ($exact -lt 0 -or $i -lt $exact) { $exact = $i }; break }
+            }
+        }
     }
+    if ($exact -ge 0) { return $exact }
+    # 2. fallback on the bare text
+    if (-not $hash) { $cand = $lit }
     if ($cand.Count -eq 1) { return $cand[0] }
     if ($cand.Count -gt 1 -and $hash) { foreach ($i in $cand) { if ((Row-Hash $node $node.rows[$i]) -eq $hash) { return $i } } }
     -1
@@ -826,7 +897,7 @@ function Cmd-Apply([string]$basePath, [string]$deltaPath, [string]$out) {
                 for ($j = 2; $j -lt $f.Count; $j++) { $ix = Resolve-RowIndex $node $f[$j]; if ($ix -ge 0) { $rank[$ix] = $j } }
                 $rows = New-Object Collections.Generic.List[object]
                 foreach ($j in (0..($rank.Count - 1) | Sort-Object { $rank[$_] })) { $rows.Add($node.rows[$j]) }
-                $node.rows = $rows
+                $node.rows = $rows; Row-BaseDrop $node
             }
             'node+' {
                 $parentPath = if ($p.Contains('/')) { $p.Substring(0, $p.LastIndexOf('/')) } else { '' }
@@ -838,11 +909,16 @@ function Cmd-Apply([string]$basePath, [string]$deltaPath, [string]$out) {
                 if ($after -eq '@top') { $parent.kids.Insert(0, $node) }
                 elseif ($after -eq '@end') { $parent.kids.Add($node) }
                 else { if (-not $paths.Contains($after)) { throw "sibling '$after' not found" }; $parent.kids.Insert($parent.kids.IndexOf($paths[$after].node) + 1, $node) }
-                $paths = Azcf-Paths $doc.root
+                # Fast path: a new node whose name no sibling shares gets its own path entry; a rebuild of the whole map
+                # (thousands of nodes, once per node+) is only needed when sibling names repeat and the '#n' keys may shift.
+                $dup = 0; foreach ($k in $parent.kids) { if ($k.name -ceq $leaf) { $dup++ } }
+                $expect = if ($parentPath) { $parentPath + '/' + $leaf } else { $leaf }
+                if ($dup -eq 1 -and $p -ceq $expect) { $paths.Add($p, @{ node = $node; parent = $parent; path = $p }) }
+                else { $paths = Azcf-Paths $doc.root }
             }
             'node-' { $e = $paths[$p]; [void]$e.parent.kids.Remove($e.node); $paths = Azcf-Paths $doc.root }
             'types~' { $paths[$p].node.types = $f[2] }
-            'shape~' { $node = $paths[$p].node; $node.type = [int]$f[2]; $node.cols = [int]$f[3]; $node.types = $f[4]; $node.rows.Clear() }
+            'shape~' { $node = $paths[$p].node; $node.type = [int]$f[2]; $node.cols = [int]$f[3]; $node.types = $f[4]; $node.rows.Clear(); Row-BaseDrop $node }
             'row+' {
                 $node = $paths[$p].node; $after = $f[2]; $key = $f[3]
                 $cells = @(); for ($j = 4; $j -lt $f.Count; $j++) { $cells += $f[$j] }
@@ -851,11 +927,12 @@ function Cmd-Apply([string]$basePath, [string]$deltaPath, [string]$out) {
                     if ($cells.Count -ne $node.cols) { throw "line $($n + 1): $($cells.Count) cells for a $($node.cols)-column table" }
                     $row = @{ name = $null; c = @($cells | ForEach-Object { Cell-Decode $_ }) }
                 }
-                if ($after -eq '@end') { $node.rows.Add($row) }
-                elseif ($after -eq '@top') { $node.rows.Insert(0, $row) }
-                else { $ix = Resolve-RowIndex $node $after; if ($ix -lt 0) { throw "line $($n + 1): row '$after' not found in $p" }; $node.rows.Insert($ix + 1, $row) }
+                $base = Row-Base $node
+                if ($after -eq '@end') { $node.rows.Add($row); $base.Add((Row-Text $node $row)) }
+                elseif ($after -eq '@top') { $node.rows.Insert(0, $row); $base.Insert(0, (Row-Text $node $row)) }
+                else { $ix = Resolve-RowIndex $node $after; if ($ix -lt 0) { throw "line $($n + 1): row '$after' not found in $p" }; $node.rows.Insert($ix + 1, $row); $base.Insert($ix + 1, (Row-Text $node $row)) }
             }
-            'row-' { $node = $paths[$p].node; $ix = Resolve-RowIndex $node $f[2]; if ($ix -lt 0) { throw "line $($n + 1): row '$($f[2])' not found in $p" }; $node.rows.RemoveAt($ix) }
+            'row-' { $node = $paths[$p].node; $ix = Resolve-RowIndex $node $f[2]; if ($ix -lt 0) { throw "line $($n + 1): row '$($f[2])' not found in $p" }; $base = Row-Base $node; $node.rows.RemoveAt($ix); $base.RemoveAt($ix) }
             'row~' {
                 $node = $paths[$p].node; $ix = Resolve-RowIndex $node $f[2]; if ($ix -lt 0) { throw "line $($n + 1): row '$($f[2])' not found in $p" }
                 $row = $node.rows[$ix]
@@ -863,6 +940,7 @@ function Cmd-Apply([string]$basePath, [string]$deltaPath, [string]$out) {
                     if ($f[$j] -notmatch '^c(\d+)=(.*)$') { throw "line $($n + 1): bad change '$($f[$j])'" }
                     $row.c[[int]$Matches[1]] = Cell-Decode $Matches[2]
                 }
+                (Row-Base $node)[$ix] = Row-Text $node $row
             }
             default { throw "line $($n + 1): unknown op '$op'" }
         }

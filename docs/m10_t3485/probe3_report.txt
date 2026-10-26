@@ -1,0 +1,102 @@
+﻿# M10 probe 3  2026-10-21T19:00:43
+GtosRoot = C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Operation Star
+GameRoot = C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Mius-Front
+
+## top level
+  [dir] !STEAM_CACHE
+  [dir] bin
+  [dir] data
+  [dir] docs
+  [dir] out
+  [dir] root
+  [dir] users
+             74  encycl.cmd
+             41  novideo.cmd
+         20 480  starter.exe
+              6  steam_appid.txt
+             42  update.cmd
+data\ folders: k43t
+
+## packs
+- data\k43t\loc_eng\packed_data\data_loc.flatdata  (3 801 088 bytes) sig 'GRAVITECH2 pack system v3.0': 20 entries: texture=10, fontmap=9, image=1
+- data\k43t\loc_eng\packed_data\text_loc.flatdata  (720 896 bytes) sig 'GRAVITECH2 pack system v3.0': 15 entries: text=15
+- data\k43t\loc_eng\packed_data\text_loc_upd.flatdata  (131 072 bytes) sig 'GRAVITECH2 pack system v3.0': 1 entries: text=1
+- data\k43t\shared\packed_data\effects.flatdata  (2 686 976 bytes) sig 'GRAVITECH2 pack system v3.0': 105 entries: shader=105
+- data\k43t\shared\packed_data\gos_main.flatdata  (198 705 152 bytes) sig 'GRAVITECH2 pack system v3.0': 340 entries: mesh=340
+- data\k43t\shared\packed_data\gos_main_01.flatdata  (10 813 440 bytes) sig 'GRAVITECH2 pack system v3.0': 51 entries: mesh=51
+- data\k43t\shared\packed_data\gos_misc.flatdata  (7 929 856 bytes) sig 'GRAVITECH2 pack system v3.0': 92 entries: mesh=92
+- data\k43t\shared\packed_data\gos_objects.flatdata  (99 155 968 bytes) sig 'GRAVITECH2 pack system v3.0': 287 entries: mesh=287
+- data\k43t\shared\packed_data\music.flatdata  (30 277 632 bytes) sig 'GRAVITECH2 pack system v3.0': 17 entries: sound=17
+- data\k43t\shared\packed_data\phys_maps.flatdata  (3 670 016 bytes) sig 'GRAVITECH2 pack system v3.0': 89 entries: armor=85, dig_map=4
+- data\k43t\shared\packed_data\sounds.flatdata  (55 967 744 bytes) sig 'GRAVITECH2 pack system v3.0': 212 entries: sound=212
+- data\k43t\shared\packed_data\speech.flatdata  (9 699 328 bytes) sig 'GRAVITECH2 pack system v3.0': 319 entries: sound=319
+- data\k43t\shared\packed_data\tabs.flatdata  (15 335 424 bytes) sig 'GRAVITECH2 pack system v3.0': 48 entries: config=48
+- data\k43t\shared\packed_data\tex_main.flatdata  (202 768 384 bytes) sig 'GRAVITECH2 pack system v3.0': 340 entries: texture=340
+- data\k43t\shared\packed_data\tex_main_01.flatdata  (162 463 744 bytes) sig 'GRAVITECH2 pack system v3.0': 151 entries: texture=151
+- data\k43t\shared\packed_data\tex_misc.flatdata  (146 472 960 bytes) sig 'GRAVITECH2 pack system v3.0': 151 entries: texture=151
+- data\k43t\shared\packed_data\tex_objects.flatdata  (96 534 528 bytes) sig 'GRAVITECH2 pack system v3.0': 100 entries: texture=100
+- root\programs.flatdata  (327 680 bytes) sig 'GRAVITECH2 pack system v3.0': 24 entries: program=23, progdesc=1
+
+## entries named like t34 / 85 (20)
+  arm_t34_41_stz_dift                armor    loc_def      24 576  data\k43t\shared\packed_data\phys_maps.flatdata
+  arm_t34_42_utz_dift                armor    loc_def      24 576  data\k43t\shared\packed_data\phys_maps.flatdata
+  br_t34_fueltank                    mesh     loc_def     262 144  data\k43t\shared\packed_data\gos_main_01.flatdata
+  bump_t34_41_stz_norsp              texture  loc_def   1 406 320  data\k43t\shared\packed_data\tex_main_01.flatdata
+  bump_t34_41_stz_norsp_wint         texture  loc_def   1 406 320  data\k43t\shared\packed_data\tex_main_01.flatdata
+  bump_t34_42_utz_norsp              texture  loc_def   1 406 320  data\k43t\shared\packed_data\tex_main_01.flatdata
+  bump_t34_42_utz_norsp_wint         texture  loc_def   1 406 320  data\k43t\shared\packed_data\tex_main_01.flatdata
+  klin_t34                           sound    loc_def      18 882  data\k43t\shared\packed_data\sounds.flatdata
+  ot34_41_stz                        mesh     loc_def   1 507 328  data\k43t\shared\packed_data\gos_main.flatdata
+  reg_t34_41_stz_dift                texture  loc_def     707 256  data\k43t\shared\packed_data\tex_main_01.flatdata
+  reg_t34_41_stz_dift_wint           texture  loc_def     707 256  data\k43t\shared\packed_data\tex_main_01.flatdata
+  reg_t34_42_utz_dift                texture  loc_def     707 256  data\k43t\shared\packed_data\tex_main_01.flatdata
+  reg_t34_42_utz_dift_wint           texture  loc_def     707 256  data\k43t\shared\packed_data\tex_main_01.flatdata
+  shot_m85                           sound    loc_def      69 358  data\k43t\shared\packed_data\sounds.flatdata
+  t34_41_stz                         mesh     loc_def   1 507 328  data\k43t\shared\packed_data\gos_main.flatdata
+  t34_42_utz                         mesh     loc_def   1 245 184  data\k43t\shared\packed_data\gos_main.flatdata
+  tr_t34_02_500                      mesh     loc_def     131 072  data\k43t\shared\packed_data\gos_main.flatdata
+  tr_t34_02_550                      mesh     loc_def     131 072  data\k43t\shared\packed_data\gos_main.flatdata
+  tr_t34_500                         mesh     loc_def     131 072  data\k43t\shared\packed_data\gos_main.flatdata
+  tr_t34_550                         mesh     loc_def     131 072  data\k43t\shared\packed_data\gos_main.flatdata
+
+## techn_base vehicle nodes mentioning t34 (and 85 mm)
+  data\k43t\shared\packed_data\tabs.flatdata: common_res_mod -> C:\Users\konid\Documents\GitHub\gtmf-overhaul\docs\m10_t3485\gtos_samples\tabs\common_res_mod.config.loc_def.bin
+  data\k43t\shared\packed_data\tabs.flatdata: div_units_ussr -> C:\Users\konid\Documents\GitHub\gtmf-overhaul\docs\m10_t3485\gtos_samples\tabs\div_units_ussr.config.loc_def.bin
+  data\k43t\shared\packed_data\tabs.flatdata: techn_base -> C:\Users\konid\Documents\GitHub\gtmf-overhaul\docs\m10_t3485\gtos_samples\tabs\techn_base.config.loc_def.bin
+    [1] t34_stz_m41  type=1 rows=0
+    [35] t34_utz_m42  type=1 rows=0
+    [885] ot34_stz_m41  type=1 rows=0
+    'br_365' @0x3fc7cd: ffssbsfs.52K.su.52K_BR_365.52K_BR_365P.52K_OF_365.ssuubsffss
+    'br_365' @0x3fc7d8: K.su.52K_BR_365.52K_BR_365P.52K_OF_365.ssuubsffss.sssfffffff
+  data\k43t\shared\packed_data\tabs.flatdata: ui_params -> C:\Users\konid\Documents\GitHub\gtmf-overhaul\docs\m10_t3485\gtos_samples\tabs\ui_params.config.loc_def.bin
+
+## text entries mentioning T-34-85
+
+## mesh headers: Operation Star vs Mius-Front
+  GTOS t34_41_stz (1507328 bytes) from C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Operation Star\data\k43t\shared\packed_data\gos_main.flatdata
+    0000  41 5a 47 32 00 00 17 00 90 00 00 00 88 00 00 00 a0 aa 00 00 02 00 00 00 70 ab 00 00 be 00 00 00  AZG2....?...?...??......p?..?...
+    0020  00 00 00 00 00 00 00 00 d0 ed 00 00 04 00 00 00 10 eb 00 00 03 00 00 00 00 00 00 00 00 00 00 00  ........??.......?..............
+    0040  00 db 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  .?..............................
+    0060  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+    0080  5b 43 48 55 4e 4b 53 5d 00 00 00 00 00 00 00 00 73 5f 72 6f 6f 74 00 00 00 00 00 00 00 00 00 00  [CHUNKS]........s_root..........
+    00a0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 ff ff ff ff 01 00 00 00  ................????....????....
+  MF t34_42_utz (1696400 bytes)
+    0000  41 5a 47 32 90 e2 19 00 90 00 00 00 8e 00 00 00 20 b2 00 00 02 00 00 00 f0 b2 00 00 83 00 00 00  AZG2??..?...?... ?......??..?...
+    0020  00 00 00 00 00 00 00 00 00 e6 00 00 04 00 00 00 d0 e3 00 00 03 00 00 00 00 00 00 00 00 00 00 00  .........?......??..............
+    0040  c0 d3 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ??..............................
+    0060  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+    0080  5b 43 48 55 4e 4b 53 5d 00 00 00 00 00 00 00 00 73 5f 72 6f 6f 74 00 00 00 00 00 00 00 00 00 00  [CHUNKS]........s_root..........
+    00a0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 ff ff ff ff 01 00 00 00  ................????....????....
+  saved MF t34utz_wheel_va
+  MF texture reg_t34_42_utz_dift (707256 bytes)
+    0000  41 54 46 31 44 58 54 31 b8 ca 0a 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ATF1DXT1??......................
+    0020  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+  MF texture bump_t34_42_utz_norsp (1406320 bytes)
+    0000  41 54 46 31 44 58 54 35 70 75 15 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ATF1DXT5pu......................
+    0020  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+  MF armor arm_t34_42_utz_dift (24576 bytes) from C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Mius-Front\data\common\shared\packed_data\phys_maps.flatdata
+    0000  41 54 46 31 41 52 54 38 00 60 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ATF1ART8.`......................
+    0020  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+    0040  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+
+done

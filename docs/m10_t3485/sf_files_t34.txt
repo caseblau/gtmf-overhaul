@@ -1,0 +1,2 @@
+     323 200  data\k42\loc_rus\sounds\speech\ger\gazim_285.wav
+     323 200  data\k42\loc_rus\sounds\speech\tank\gazim_285.wav

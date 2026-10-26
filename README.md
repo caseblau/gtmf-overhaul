@@ -183,6 +183,19 @@ if two modules ship the same entry whole, or any MiusPlayer-owned file. Details:
   (`basic_game.codelib`), so wetness is a global engine value, not a table. The only per-particle candidate is `parts_desc` c26:
   -1 on smoke and flashes, 0.5 on burst dust, wheel dirt/water and burning fragments, 0.2–0.7 on clods. Its meaning is unverified
   (a wetness gate fits dust and burning fragments but not wheel mud at 0.5), so an A/B in a rain battle is needed first.
+- (tools, 2026-10-19) First build on the new PC. `tools\build_install_here.cmd`: double-click launcher that unpacks the pristine
+  vanilla tables into `<game>\users\modwork\_orig\3598\` when missing (`tabs`, `tabs_oprum`, `text_loc`) and runs `build.cmd install`,
+  logging to `tools\build_log.txt`. `gt3.ps1 apply` sped up ~10x on the operation files (Stepanovka desc delta 4m43 -> 29 s, Saur
+  26 s -> 13 s in PowerShell 7; the PC's 5.1 took ~9 min per Stepanovka side): `Resolve-RowIndex` recomputed every row key of the
+  node (with MD5s) for each of the 1 237 anchored `plat_pos` inserts, now a per-node cache of column-0 texts kept in step by the row
+  ops; `node+` adds its own path entry instead of re-walking the tree when no sibling shares the name; `Azcf-Paths` builds kid lists
+  with a List; `Cell-Decode` uses a string switch; `Delta-Split` splits escape-free lines directly. Verified byte-identical against
+  the old code on the Stepanovka and Saur deltas, and a diff/apply round trip reproduces the PC-built tables exactly. Also made
+  runtime-independent: PowerShell 7 (.NET Core) prints singles differently from 5.1 (.NET Framework: 7 significant digits if
+  they round-trip, else 9, ties away from zero: 6.10351563E-05 where Core writes 6.10351562E-05 or 6.1035156E-05), which broke
+  every `#md5` row key with a float (`mg_nodes`); `Fmt-Single` now computes the 5.1 text exactly from the bits, so `gt3.ps1`
+  reads and writes the same deltas under 5.1 and 7 (both OOB deltas applied under pwsh 7 = the 5.1-built tables byte for byte;
+  `diff` under 7 regenerates the shipped deltas line for line). 0.5.13 built and installed from this PC (fingerprint DC3774).
 - (repo, 2026-10-19) Published to https://github.com/caseblau/gtmf-overhaul (public, user's choice, third-party-derived modules
   included with credits in `docs\third_party.md`; permission requests in `docs\permission_requests.md` still to be posted).
   `build\` is git-ignored; regenerate with `tools\build.ps1`.

@@ -1,0 +1,220 @@
+﻿# M10 probe  2026-10-21T17:45:20
+GameRoot = C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Mius-Front
+SfRoot   = C:\Program Files (x86)\Steam\steamapps\common\Steel Fury Kharkov 1942
+
+## A. Steel Fury - Kharkov 1942
+exe: JSGME.exe, starter.exe, unins000.exe
+top-level folders: bin, data, docs, MODS, redist, root, url, users
+loose files under C:\Program Files (x86)\Steam\steamapps\common\Steel Fury Kharkov 1942\data : 586
+  .wav             446    150 848 728 bytes
+  .raw              38    159 383 552 bytes
+  .polypack         28    939 047 267 bytes
+  .ogg              26    154 029 984 bytes
+  .datapack         18    589 747 872 bytes
+  .ico              10        182 748 bytes
+  .text              9        360 027 bytes
+  .engcfg            7         16 907 bytes
+  .dds               2      1 485 792 bytes
+  .tga               1      3 194 924 bytes
+  .engscr            1         11 589 bytes
+files named like t34 / 85: 2 (full list in sf_files_t34.txt)
+       323 200  data\k42\loc_rus\sounds\speech\ger\gazim_285.wav
+       323 200  data\k42\loc_rus\sounds\speech\tank\gazim_285.wav
+
+### packs
+pack-like files: 1
+- unins000.dat  (97 617 bytes)  magic: Inno Setup Uninstall Log (b)....................
+    gt3 list FAILED: C:\Program Files (x86)\Steam\steamapps\common\Steel Fury Kharkov 1942\unins000.dat is not an AZP3 pack
+
+### .engcfg / text files mentioning t34_85 / t-34-85 (first 60)
+text files mentioning the T-34-85: 0
+
+## B. Mius-Front reference: t34_42_utz
+### gos_techn.flatdata
+  336 t34_stz_ostov01                mesh       loc_def  off=0xeb4a000 size=461472 hi=0x024ad2f4
+### gos_techn_01.flatdata
+  123 ot34_41_stz                    mesh       loc_def  off=0x4570000 size=1919712 hi=0x09281c59
+  125 t34_41_stz                     mesh       loc_def  off=0x4785000 size=1930992 hi=0x09313a06
+  126 t34stz_lbal                    mesh       loc_def  off=0x495d000 size=262144 hi=0x001cba70
+  127 t34stz_lbal2                   mesh       loc_def  off=0x499d000 size=262144 hi=0x0021df06
+  128 t34stz_rbal                    mesh       loc_def  off=0x49dd000 size=262144 hi=0x001b83d5
+  129 t34stz_rbal2                   mesh       loc_def  off=0x4a1d000 size=262144 hi=0x0020a9b4
+  130 t34stz_track1                  mesh       loc_def  off=0x4a5d000 size=393216 hi=0x01314939
+  131 t34stz_track2                  mesh       loc_def  off=0x4abd000 size=327680 hi=0x00a97a1e
+  132 t34stz_lazy                    mesh       loc_def  off=0x4b0d000 size=327680 hi=0x0062d1a2
+  133 t34stz_star                    mesh       loc_def  off=0x4b5d000 size=327680 hi=0x005ffe54
+  134 t34stz_wheel                   mesh       loc_def  off=0x4bad000 size=327680 hi=0x0081aff7
+  135 t34_41ea_stz                   mesh       loc_def  off=0x4bfd000 size=2287312 hi=0x0af1ea62
+  136 t34stz_wheel2                  mesh       loc_def  off=0x4e2c000 size=327680 hi=0x00bd3b7b
+  137 t34_42_utz                     mesh       loc_def  off=0x4e7c000 size=1696400 hi=0x084ef802
+  138 t34utz_lbal                    mesh       loc_def  off=0x501b000 size=262144 hi=0x0018a571
+  139 t34utz_lbal2                   mesh       loc_def  off=0x505b000 size=262144 hi=0x00227cd7
+  140 t34utz_rbal                    mesh       loc_def  off=0x509b000 size=262144 hi=0x0017d633
+  141 t34utz_rbal2                   mesh       loc_def  off=0x50db000 size=262144 hi=0x00214ece
+  142 t34utz_lazy                    mesh       loc_def  off=0x511b000 size=262144 hi=0x0039fd47
+  143 t34utz_star                    mesh       loc_def  off=0x515b000 size=262144 hi=0x004d093e
+  144 t34utz_wheel_lit               mesh       loc_def  off=0x519b000 size=262144 hi=0x003dba99
+  145 t34utz_wheel_va                mesh       loc_def  off=0x51db000 size=262144 hi=0x00397534
+  174 tr_t34_02_500                  mesh       loc_def  off=0x59cb000 size=131072 hi=0x000132a1
+  175 tr_t34_02_550                  mesh       loc_def  off=0x59eb000 size=131072 hi=0x0001a306
+  176 tr_t34_500                     mesh       loc_def  off=0x5a0b000 size=131072 hi=0x00018aee
+  177 tr_t34_550                     mesh       loc_def  off=0x5a2b000 size=131072 hi=0x000206d7
+  189 tr_t34_stz_02_550              mesh       loc_def  off=0x5c2b000 size=131072 hi=0x0002ba27
+  190 tr_t34_stz_550                 mesh       loc_def  off=0x5c4b000 size=131072 hi=0x00031bb6
+### gos_techn_02.flatdata
+  19 t34_183_m41                    mesh       loc_def  off=0xdd0000 size=2405296 hi=0x0b896705
+  20 t34_183_skatka                 mesh       loc_def  off=0x101c000 size=327680 hi=0x00eccf6c
+  21 t34_183_tross                  mesh       loc_def  off=0x106c000 size=262144 hi=0x00a9efb9
+  22 t34_183_wheel                  mesh       loc_def  off=0x10ac000 size=327680 hi=0x00ee7bc0
+  23 t34_183_wh_lazy                mesh       loc_def  off=0x10fc000 size=327680 hi=0x00ba1c80
+  24 t34_183_wh_star                mesh       loc_def  off=0x114c000 size=720896 hi=0x026cb90e
+### tex_techn_01.flatdata
+  27 bump_t34_stz_ostov_norsp       texture    loc_def  off=0x3220000 size=1406320 hi=0x0bd6f10c
+  39 reg_t34_stz_ostov_dift         texture    loc_def  off=0x39e7000 size=707256 hi=0x04bc1c8d
+  104 bump_t34_41ea_stz_norsp        texture    loc_def  off=0xec14000 size=1406320 hi=0x0b8e7ec6
+  105 reg_t34_41ea_stz_dift          texture    loc_def  off=0xed6c000 size=707256 hi=0x04fcf201
+  106 bump_t34_41_stz_norsp          texture    loc_def  off=0xee19000 size=1406320 hi=0x0af51338
+  107 reg_t34_41_stz_dift            texture    loc_def  off=0xef71000 size=707256 hi=0x04fd0c1c
+  108 bump_t34_42_utz_norsp          texture    loc_def  off=0xf01e000 size=1406320 hi=0x0a63a430
+  109 reg_t34_42_utz_dift            texture    loc_def  off=0xf176000 size=707256 hi=0x0510ca82
+  318 bump_t34_41ea_stz_norsp_wint   texture    loc_def  off=0x2da78000 size=1406320 hi=0x0b3756c6
+  319 reg_t34_41ea_stz_dift_wint     texture    loc_def  off=0x2dbd0000 size=707256 hi=0x050e58eb
+  320 bump_t34_41_stz_norsp_wint     texture    loc_def  off=0x2dc7d000 size=1406320 hi=0x0aff78b2
+  321 reg_t34_41_stz_dift_wint       texture    loc_def  off=0x2ddd5000 size=707256 hi=0x0531d85d
+  322 bump_t34_42_utz_norsp_wint     texture    loc_def  off=0x2de82000 size=1406320 hi=0x0ab58a1c
+  323 reg_t34_42_utz_dift_wint       texture    loc_def  off=0x2dfda000 size=707256 hi=0x0510107e
+### tex_techn_02.flatdata
+  8 bump_t34_41_183_norsp_pat3     texture    loc_def  off=0x2024000 size=5600624 hi=0x2b364bda
+  9 bump_t34_wheel_norsp_pat3      texture    loc_def  off=0x257c000 size=5600624 hi=0x2a372f66
+  10 reg_t34_41_183_dift_pat3       texture    loc_def  off=0x2ad4000 size=2804408 hi=0x1435229a
+  11 reg_t34_wheel_dift_pat3        texture    loc_def  off=0x2d81000 size=2804408 hi=0x13a8ebb4
+  12 bump_t34_41_183_norsp          texture    loc_def  off=0x302e000 size=5600624 hi=0x2b2fe9dc
+  13 bump_t34_tross_norsp           texture    loc_def  off=0x3586000 size=1406320 hi=0x0a002253
+  14 bump_t34_wheel_norsp           texture    loc_def  off=0x36de000 size=5600624 hi=0x2a5e419a
+  15 reg_t34_41_183_dift            texture    loc_def  off=0x3c36000 size=2804408 hi=0x142a7d12
+  16 reg_t34_tross_dift             texture    loc_def  off=0x3ee3000 size=707256 hi=0x0534214d
+  17 reg_t34_wheel_dift             texture    loc_def  off=0x3f90000 size=2804408 hi=0x13e04a4e
+  18 bump_t34_41_183_norsp_wint     texture    loc_def  off=0x423d000 size=5600624 hi=0x2e05b5c5
+  19 reg_t34_41_183_dift_wint       texture    loc_def  off=0x4795000 size=2804408 hi=0x15959361
+  20 reg_t34_wheel_dift_wint        texture    loc_def  off=0x4a42000 size=2804408 hi=0x141f9562
+
+### config tables under C:\Program Files (x86)\Steam\steamapps\common\Graviteam Tactics Mius-Front\users\modwork\_orig\3598 containing 't34_42_utz' / 'arm_t34' / 't34_42'
+- common_res.config.loc_def.bin: t34_42
+    node 0015_tm_remap: 1+ rows
+      
+    node 0016_tm_remap_bg: 1+ rows
+      
+- common_res_mod.config.loc_def.bin: t34_42_utz, t34_42
+    node 0003_addins: 8+ rows
+      
+      
+      
+      
+      
+      
+      
+      
+- div_units_ger.config.loc_def.bin: t34_42
+    node 0002_squads: 3+ rows
+      
+      
+      
+- div_units_ussr.config.loc_def.bin: t34_42
+    node 0001_units: 3+ rows
+      
+      
+      
+    node 0002_squads: 12+ rows
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    node 0003_randoms: 6+ rows
+      
+      
+      
+      
+      
+      
+- qbattle.config.loc_def.bin: t34_42
+    node 0030_pool: 1+ rows
+      
+    node 0205_pool: 1+ rows
+      
+    node 0207_pool: 1+ rows
+      
+    node 0208_ra_tbr_42_bn1_t34_plat: 1+ rows
+      
+    node 0209_pool: 2+ rows
+      
+      
+    node 0210_ra_tbr_42_bn1_t34_coy: 1+ rows
+      
+    node 0211_pool: 7+ rows
+      
+      
+      
+      
+      
+      
+      
+    node 0244_ra_tbrt34_42_bn_hq: 1+ rows
+      
+    node 0246_ra_tbrt34_42_bn_t34_cc: 1+ rows
+      
+    node 0247_pool: 1+ rows
+      
+    node 0248_ra_tbrt34_42_bn_t34_plat: 2+ rows
+      
+      
+    node 0250_ra_tbrt34_42_bn_t34_coy: 2+ rows
+      
+      
+    node 0251_pool: 1+ rows
+      
+    node 0252_ra_tbrt34_42_bn_sm_cc: 1+ rows
+      
+    node 0254_ra_tbrt34_42_bn_sm_plat: 1+ rows
+      
+    node 0256_ra_tbrt34_42_bn_sm_coy: 1+ rows
+      
+    node 0317_pool: 1+ rows
+      
+    node 0319_pool: 1+ rows
+      
+- sb_tms_def.config.loc_def.bin: t34_42
+    node 0002_sprites: 1+ rows
+      
+- techn_base.config.loc_def.bin: t34_42_utz, arm_t34, t34_42
+    node 0002_props: 1+ rows
+      
+    node 0038_props: 2+ rows
+      
+      
+    node 0938_props: 1+ rows
+      
+    node 2846_props: 2+ rows
+      
+      
+    node 2882_props: 2+ rows
+      
+      
+    node 2990_props: 1+ rows
+      
+    node 3026_props: 1+ rows
+      
+    node 3062_props: 1+ rows
+      
+- ui_params.config.loc_def.bin: t34_42_utz, t34_42
+    node 0001_techns: 3+ rows
+      
+      
+      

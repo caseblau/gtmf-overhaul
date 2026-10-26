@@ -1,0 +1,15 @@
+# Prokh polygon descriptor: 6M_Mius generator config renamed and resized to 11x12 cells (15x14 dist grid)
+name~|Prokh
+row~|i_polygen:polygen|out_path|c0=s:polygons\\Prokh
+row~|i_polygen:polygen|dist_width|c0=u:3840
+row~|i_polygen:polygen|dist_height|c0=u:3584
+row~|i_polygen:polygen|lat_lon_tz|c0=v:51.015;36.6512;3
+row~|i_polygen:polygen|src_hei_map|c0=s:MAPS\\Prokh_hei.raw
+row~|i_polygen:polygen|src_rou_map|c0=s:MAPS\\Prokh_rou.tga
+row~|i_polygen:polygen|src_grass_map|c0=s:MAPS\\Prokh_gra.tga
+row~|i_polygen:polygen|src_flora_map|c0=s:MAPS\\Prokh_flo.tga
+row~|i_polygen:polygen|src_ext_flora_map|c0=s:MAPS\\Prokh_eflo.tga
+row~|i_polygen:polygen|src_det_map|c0=s:MAPS\\Prokh_det.tga
+row~|i_polygen:polygen|src_er_map|c0=s:MAPS\\Prokh_er.tga
+row~|i_polygen:polygen|cell_map|c0=s:Prokh_cells.cfgpack
+row~|i_polygen:polygen|text_desc|c0=s:Prokh_text.textpack

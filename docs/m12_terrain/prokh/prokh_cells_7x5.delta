@@ -1,0 +1,10 @@
+# Prokh cells table: 11 x 7 grid as the Mius one, cells at columns 3..9 rows 1..5
+name~|Prokh_cells
+shape~|i_polygen:polygen|2|11|sssssssssss
+row+|i_polygen:polygen|@end|r0|s:|s:|s:|s:|s:|s:|s:|s:|s:|s:|s:
+row+|i_polygen:polygen|@end|r1|s:|s:|s:|s:MxD1_Prokh.polypack2|s:MxE1_Prokh.polypack2|s:MxF1_Prokh.polypack2|s:MxG1_Prokh.polypack2|s:MxH1_Prokh.polypack2|s:MxI1_Prokh.polypack2|s:MxJ1_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r2|s:|s:|s:|s:MxD2_Prokh.polypack2|s:MgE2_Prokh.polypack2|s:MgF2_Prokh.polypack2|s:MgG2_Prokh.polypack2|s:MgH2_Prokh.polypack2|s:MgI2_Prokh.polypack2|s:MxJ2_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r3|s:|s:|s:|s:MxD3_Prokh.polypack2|s:MgE3_Prokh.polypack2|s:MgF3_Prokh.polypack2|s:MgG3_Prokh.polypack2|s:MgH3_Prokh.polypack2|s:MgI3_Prokh.polypack2|s:MxJ3_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r4|s:|s:|s:|s:MxD4_Prokh.polypack2|s:MgE4_Prokh.polypack2|s:MgF4_Prokh.polypack2|s:MgG4_Prokh.polypack2|s:MgH4_Prokh.polypack2|s:MgI4_Prokh.polypack2|s:MxJ4_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r5|s:|s:|s:|s:MxD5_Prokh.polypack2|s:MxE5_Prokh.polypack2|s:MxF5_Prokh.polypack2|s:MxG5_Prokh.polypack2|s:MxH5_Prokh.polypack2|s:MxI5_Prokh.polypack2|s:MxJ5_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r6|s:|s:|s:|s:|s:|s:|s:|s:|s:|s:|s:
