@@ -34,7 +34,8 @@ CROP, PLOUGH, STEPPE = 1, 3, 4
 CLASS_SPEC = {
     CROP:   ({0, 6, 7},               {6: 0.55}, {11: 0.02, 3: 0.02, 10: 0.02, 15: 0.02, 13: 0.02, 1: 0.02, 5: 0.02}),
     PLOUGH: ({0, 1, 3, 5, 13, 15},    {15: 0.6}, {11: 0.03, 10: 0.03, 6: 0.03, 7: 0.03}),
-    STEPPE: ({0, 1, 3, 5, 13, 15},    {0: 0.55}, {6: 0.01, 7: 0.01, 10: 0.01, 11: 0.01, 12: 0.01}),
+    # (26 Oct, user: brown blotches all over the meadows) steppe windows with big clay / sand / ploughed patches are left out
+    STEPPE: ({0, 1, 3, 5, 13, 15},    {0: 0.60}, {3: 0.20, 5: 0.14, 15: 0.02, 6: 0.01, 7: 0.01, 10: 0.01, 11: 0.01, 12: 0.01}),
 }
 CLASS_SOIL = {CROP: 6, PLOUGH: 15, STEPPE: 0}   # what a copied pixel falls back to when the source pixel is of a soil outside the class
 
@@ -75,6 +76,15 @@ class Ref:
         self.cand = {}
         for cls, (allowed, need, forbid) in CLASS_SPEC.items():
             self.cand[cls] = self._select(fr, allowed, need, forbid, classes_only=True)
+        # crop windows with the rows running east - west only (26 Oct, user: 'weird textures on the fields'): Petropolye has
+        # fields ploughed along and across the slope, and neighbouring regions taking windows of different row directions
+        # made a patchwork of rectangles; one row direction per block reads as one field
+        keep = []
+        for (ci, sy, sx) in self.cand[CROP]:
+            f6 = (self.cells[ci]['soil'][sy:sy + WIN, sx:sx + WIN] == 6).astype(np.int8)
+            dy = np.abs(np.diff(f6, axis=0)).mean(); dx = np.abs(np.diff(f6, axis=1)).mean()
+            if dy > 3.5 * dx: keep.append((ci, sy, sx))
+        if len(keep) >= 200: self.cand[CROP] = keep
         # per-soil pools
         self.pool = {}
         for s in range(SOILS):
@@ -149,11 +159,25 @@ class Ref:
                     win = cell['soil'][sy:sy + WIN, sx:sx + WIN] == v
                     if win.all():
                         hi[py, px] = cell['hi'][qy, qx]; grass[py, px] = cell['grass'][qy, qx]; det[py, px] = cell['det'][qy, qx]
-                    else:   # nearest valid pixel of the wanted soil inside the window
-                        _, idx = ndi.distance_transform_edt(~win, return_indices=True)
+                    else:
+                        # pixels whose source is of another soil (26 Oct, user: 'weird textures' - dark angular shards):
+                        # the old nearest-valid-pixel fill copied ONE source pixel over a whole Voronoi cell of the
+                        # distance transform, i.e. flat polygons of detail / micro tile / grass. The detail and grass
+                        # layers are fine noise in the game's cells, so the gaps take random valid pixels of the same
+                        # soil from the window (noise again), and the micro-tile weight its most common value there.
                         ly, lx = qy - sy, qx - sx
-                        vy = sy + idx[0][ly, lx]; vx = sx + idx[1][ly, lx]
-                        hi[py, px] = cell['hi'][vy, vx]; grass[py, px] = cell['grass'][vy, vx]; det[py, px] = cell['det'][vy, vx]
+                        ok = win[ly, lx]
+                        vy = qy.copy(); vx = qx.copy()
+                        wy, wx = np.nonzero(win)
+                        if len(wy) == 0: ok = np.ones_like(ok); wy, wx = np.array([0]), np.array([0])   # fallback pool of another soil: copy as is
+                        if (~ok).any():
+                            rr = np.random.default_rng(_hash(gy, gx, v + 101))
+                            k = rr.integers(0, len(wy), int((~ok).sum()))
+                            vy[~ok] = sy + wy[k]; vx[~ok] = sx + wx[k]
+                        hh = cell['hi'][vy, vx]
+                        if (~ok).any():
+                            hm_ = np.bincount(cell['hi'][sy + wy, sx + wx], minlength=16).argmax(); hh = hh.copy(); hh[~ok] = hm_
+                        hi[py, px] = hh; grass[py, px] = cell['grass'][vy, vx]; det[py, px] = cell['det'][vy, vx]
                 if key == dom:   # coarse layers from the same place: ambient colour (8 m) and vars (2 m), block centres mapped like the pixels
                     l_sl = (slice(y0 // 8, (ys.stop + 7) // 8), slice(x0 // 8, (xs.stop + 7) // 8))
                     ly, lx = np.nonzero(~lac_done[l_sl])
@@ -176,11 +200,13 @@ class Ref:
     def _pick(self, kind, v, gy, gx):
         """source window for (class / soil) in the region of global seed (gy, gx): deterministic in the seed"""
         lst = self.cand[v] if kind == 'c' else self.pool.get(v, [])
+        if kind == 'c' and not lst: lst = self.pool.get(CLASS_SOIL[v], [])   # never leave a class without layers (no grass, no detail)
         if not lst:
             if kind == 'c': return None
             for alt in FALLBACK.get(v, []):
                 if self.pool.get(alt): lst = self.pool[alt]; break
             if not lst: return None
+        if kind == 's': gy, gx = gy // 6, gx // 6   # plain soils: one source window per ~400 m (26 Oct: 60 m blobs of different detail on the green fields)
         return lst[_hash(gy, gx, (v + 1) * (7 if kind == 'c' else 13)) % len(lst)]
 
     @staticmethod
@@ -193,7 +219,12 @@ class Ref:
         jy = (_hash_arr(GY, GX, 1) / 2 ** 32 - 0.5) * 2 * JIT * step; jx = (_hash_arr(GY, GX, 2) / 2 ** 32 - 0.5) * 2 * JIT * step
         sy = GY * step + step / 2 + jy - oy0; sx = GX * step + step / 2 + jx - ox0   # seed positions in cell pixels
         yy, xx = np.mgrid[0:n, 0:n]
-        by = np.clip((yy + oy0) // step - gy0, 1, k - 2); bx = np.clip((xx + ox0) // step - gx0, 1, k - 2)
+        # region borders warped by 12-16 m of smooth noise (26 Oct: the straight Voronoi edges cut the copied crop rows and
+        # clay patches into the rectangles and wedges of the user's screenshots); block coordinates, so seamless
+        import texsynth as TX
+        yy = yy + 14.0 * TX.gnoise((n, n), (ox0, oy0), 23.0, 91) + 6.0 * TX.gnoise((n, n), (ox0, oy0), 7.0, 92)
+        xx = xx + 14.0 * TX.gnoise((n, n), (ox0, oy0), 23.0, 93) + 6.0 * TX.gnoise((n, n), (ox0, oy0), 7.0, 94)
+        by = np.clip(np.floor((yy + oy0) / step).astype(np.int64) - gy0, 1, k - 2); bx = np.clip(np.floor((xx + ox0) / step).astype(np.int64) - gx0, 1, k - 2)
         best = None; blab = None
         for dy in (-1, 0, 1):
             for dx in (-1, 0, 1):

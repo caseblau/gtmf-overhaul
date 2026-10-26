@@ -195,16 +195,21 @@ def write_water(dir_path, levels_idx, pal_levels, water_h=23.0, wm1=None):
     # whole 0..255 range used, RGB a mottled dark green (84, 105, 74) that lightens towards the shore; a hard 4 m alpha
     # edge is what drew the stair-stepped black river of 25 Oct. wm1 = the 1 m water mask (2048 x 2048) if given.
     from scipy import ndimage as ndi
+    # 26 Oct (user's screenshot: bright white slabs on a reach of the Psel): wherever the level zone lets the engine draw the
+    # water plane (terrain below the level), the map must be opaque - pixels of the zone outside the 1 m water mask had
+    # alpha 0 and the 'empty' colour (255, 255, 255) and were drawn white. Alpha is now full over the whole level zone;
+    # the shoreline is the terrain contour at the level, as in the vanilla cells.
+    zone = ndi.binary_dilation(levels_idx > 0, iterations=1).astype(np.float32)
+    alpha = np.clip(ndi.gaussian_filter(zone, 0.6) * 1.6, 0, 1)
     if wm1 is not None:
         cov = wm1.reshape(512, 4, 512, 4).mean((1, 3)).astype(np.float32)
-        cov = ndi.gaussian_filter(cov, 0.8)
-        alpha = np.clip(cov * 1.25, 0, 1)
+        tone = np.clip(ndi.gaussian_filter(cov, 0.8) * 1.25, 0, 1)
     else:
-        alpha = ndi.gaussian_filter((levels_idx > 0).astype(np.float32), 1.0)
+        tone = alpha
     rng = np.random.default_rng(7)
     noise = ndi.gaussian_filter(rng.standard_normal((512, 512)).astype(np.float32), 1.2); noise /= max(1e-6, noise.std())
     deep = np.array((84, 105, 74), np.float32); shore = np.array((150, 170, 140), np.float32)
-    t = np.clip(alpha, 0, 1)[..., None]
+    t = np.clip(0.35 + 0.65 * tone, 0, 1)[..., None]
     rgb = shore + (deep - shore) * t + noise[..., None] * 12.0
     img = np.empty((512, 512, 4), np.uint8); img[..., :3] = np.clip(rgb, 0, 255); img[..., 3] = np.clip(alpha * 250, 0, 250)
     img[alpha <= 0.002] = (255, 255, 255, 0)

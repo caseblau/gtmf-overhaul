@@ -177,10 +177,107 @@ def line_style(t):
     if hw in ('track',): return (TRACK, 3.5, C.COL_TRACK, True)
     if hw in ('path', 'footway', 'bridleway', 'cycleway'): return (TRACK, 1.5, None, True)
     ww = t.get('waterway')
-    if ww in ('river',): return (WATER, 14.0, 0xff8a5a2a, False)
+    if ww in ('river',): return (WATER, 16.0, 0xff8a5a2a, False)
     if ww in ('stream', 'canal', 'drain', 'ditch'): return (MARSH, 5.0, 0xff8a5a2a, False)
     if t.get('natural') == 'tree_row': return (WOOD, 8.0, None, False)
     return None
+
+class MplPath:
+    """point-in-polygon (even-odd rule), numpy only - the PC that runs the generator has no matplotlib"""
+    def __init__(self, pts):
+        self.p = np.asarray(pts, np.float64)
+    def contains_points(self, q):
+        q = np.asarray(q, np.float64).reshape(-1, 2); x, y = q[:, 0][:, None], q[:, 1][:, None]
+        a = self.p; b = np.roll(a, -1, 0)
+        ax, ay, bx, by = a[:, 0][None], a[:, 1][None], b[:, 0][None], b[:, 1][None]
+        cross = ((ay > y) != (by > y)) & (x < (bx - ax) * (y - ay) / np.where(by - ay == 0, 1e-12, by - ay) + ax)
+        return (cross.sum(1) % 2) == 1
+
+def drop_modern(feats, layout_path):
+    """layout 'exclude_1943' (user, 26 Oct: 'weird street layout which should be absent' - the post-war memorial park at
+    the station): OSM features lying mostly inside these polygons are dropped - paths, service roads, buildings, parks,
+    orchards, grass, small woods, tree rows. Railways, main roads (primary / secondary / tertiary), farmland and the
+    railway snow-protection belts stay."""
+    lay = json.load(open(layout_path, encoding='utf-8')) if layout_path and os.path.exists(layout_path) else {}
+    polys = [MplPath(e['pts']) for e in lay.get('exclude_1943', [])]
+    if not polys: return feats
+    out = []; n = 0
+    for f in feats:
+        kind, t, p, closed = f
+        keep = True
+        if 'railway' in t or t.get('highway') in ('primary', 'secondary', 'tertiary', 'trunk') or t.get('landuse') in ('farmland',) or 'power' in t:
+            keep = True
+        elif kind == 'area' and area_cover(t) == WOOD and strip_width(p) < 45.0 and near_rail(p, feats, 120.0) and not any(pl.contains_points(p).mean() > 0.8 for pl in polys):
+            keep = True
+        elif any(pl.contains_points(p).mean() > 0.5 for pl in polys):
+            keep = False
+        if keep: out.append(f)
+        else: n += 1
+    print('exclude_1943: %d modern features dropped' % n, flush=True)
+    return out
+
+# ------------------------------------------------------------------ natural river courses
+# 26 Oct (user: 'the curvature is rigid and unnatural'): the OSM Psel here has a vertex every 110-160 m, so the river was
+# a chain of straight 14 m bands with sharp corners. Every river / stream line is smoothed (Chaikin) and given meanders -
+# three incommensurate waves of lateral offset with a slowly varying amplitude (tight bends and calm reaches), phases
+# hashed from the way's first point, tapered to zero at both ends so consecutive OSM ways still join - and the river
+# band gets a width that varies along its length. Done once on the features, so the water levels and every cell agree.
+MEANDER = {'river': (20.0, (420.0, 210.0, 120.0), 16.0, 5.0), 'stream': (4.0, (130.0, 70.0, 37.0), 5.0, 1.2),
+           'canal': (0.0, (1.0, 1.0, 1.0), 5.0, 0.0), 'drain': (1.5, (90.0, 50.0, 27.0), 4.0, 0.8), 'ditch': (1.5, (90.0, 50.0, 27.0), 4.0, 0.8)}
+RIPARIAN = [None]   # set per cell: (belt mask, distance to the water m, noise) for the bank flora
+
+def _meander(pts, amp, lams, salt=0):
+    import works as W
+    sm = W._chaikin(pts, 4)
+    sm = [p for k, p in enumerate(sm) if k == 0 or math.hypot(p[0] - sm[k - 1][0], p[1] - sm[k - 1][1]) > 1e-6]
+    if len(sm) < 2 or amp <= 0: return [tuple(p) for p in sm]
+    seg = [(x2 - x1, y2 - y1) for (x1, y1), (x2, y2) in zip(sm, sm[1:])]
+    L = sum(math.hypot(dx, dy) for dx, dy in seg)
+    ph = [(W._hash(round(pts[0][0]), round(pts[0][1]), 31 + k + salt) % 1000) / 1000.0 * 2 * math.pi for k in range(5)]
+    taper = min(90.0, L / 3.0)
+    out = []; s = 0.0; i = 0; t = 0.0; step = 3.0
+    while True:
+        while i < len(seg) and t > math.hypot(*seg[i]): t -= math.hypot(*seg[i]); i += 1
+        if i >= len(seg): break
+        dx, dy = seg[i]; ln = math.hypot(dx, dy); ux, uy = dx / ln, dy / ln
+        x, y = sm[i][0] + ux * t, sm[i][1] + uy * t
+        w = min(1.0, s / taper, (L - s) / taper) if taper > 0 else 1.0
+        a = amp * (0.65 + 0.35 * math.sin(2 * math.pi * s / 1100.0 + ph[3]))
+        off = w * a * (math.sin(2 * math.pi * s / lams[0] + ph[0]) + 0.6 * math.sin(2 * math.pi * s / lams[1] + ph[1]) + 0.2 * math.sin(2 * math.pi * s / lams[2] + ph[2]))
+        out.append((x - uy * off, y + ux * off)); s += step; t += step
+    out.append(tuple(sm[-1]))
+    return out
+
+def meander_water(feats):
+    out = []; n = 0
+    for (kind, t, p, closed) in feats:
+        ww = t.get('waterway') if kind == 'line' else None
+        if ww in MEANDER:
+            amp, lams, w0, dw = MEANDER[ww]
+            q = _meander(p, amp, lams)
+            if ww == 'river':   # half-width along the line: w0/2 +- dw/2, a ~400 m wave plus a ~120 m one
+                import works as W
+                ph = (W._hash(round(p[0][0]), round(p[0][1]), 41) % 1000) / 1000.0 * 2 * math.pi
+                hw = [0.5 * (w0 + dw * (0.7 * math.sin(k * 3.0 * 2 * math.pi / 410.0 + ph) + 0.3 * math.sin(k * 3.0 * 2 * math.pi / 117.0 + 2 * ph))) for k in range(len(q))]
+                t = dict(t); t['_hw'] = hw
+            out.append((kind, t, q, closed)); n += 1
+        elif kind == 'area' and area_cover(t) == WATER and len(p) >= 4:
+            import works as W
+            q = W._chaikin(list(p) + [p[0]] if p[0] != p[-1] else list(p), 3)   # rounded pond / oxbow outlines
+            out.append((kind, t, q, closed)); n += 1
+        else: out.append((kind, t, p, closed))
+    print('water courses smoothed / meandered:', n, flush=True)
+    return out
+
+def _band(pp, hw):
+    """polygon of a line with a half-width per vertex (cell px)"""
+    L, R = [], []
+    for k, (x, y) in enumerate(pp):
+        (x1, y1) = pp[max(0, k - 1)]; (x2, y2) = pp[min(len(pp) - 1, k + 1)]
+        ux, uy = x2 - x1, y2 - y1; ln = math.hypot(ux, uy) or 1.0; nx, ny = -uy / ln, ux / ln
+        w = hw[k] if k < len(hw) else hw[-1]
+        L.append((x + nx * w, y + ny * w)); R.append((x - nx * w, y - ny * w))
+    return L + R[::-1]
 
 # ------------------------------------------------------------------ rasterising one cell
 def clip_poly(p, x0, y0, margin=50):
@@ -195,6 +292,7 @@ VIL_PAD = [None]     # set by rasterise: village / building cover of the cell wi
 PAD = 96
 FARMS = []           # layout 'farms': sovkhoz yards of 1943 (polygons, DEM-lattice metres) drawn as village cover + farm mask
 FIELDS43 = []        # layout 'fields_1943': field blocks traced from the Luftwaffe photographs (polygon, crop pattern, strip width / axis)
+WOODS43 = []         # layout 'woods_1943': woods drawn over everything (polygons, DEM-lattice metres)
 VILLAGES43 = []      # layout 'villages_1943': villages of 1943 that modern OSM no longer has (polygons, DEM-lattice metres; e.g. Teterevino from the RKKA 1:100 000 sheet)
 ROADS43 = []         # layout 'roads_1943': lanes / tracks of 1943 missing from OSM ({'pts', 'kind': 'track' | 'road'}), streets for the 1943 villages
 PONDS = True         # layout 'ponds_1943': False drops the OSM standing water (the gully reservoirs are post-war; the 1941 sheet has none) - rivers and streams stay
@@ -264,13 +362,14 @@ def rasterise(feats, i, j, rng, steep=None):
     fid = Image.new('I', (2048, 2048), 0); df = ImageDraw.Draw(fid)
     farm = Image.new('L', (2048, 2048), 0); dfarm = ImageDraw.Draw(farm)   # state farm / collective farm yards: barns, no homestead fences
     order = {GRASS: 0, FIELD: 1, VILLAGE: 2, ORCHARD: 3, SCRUB: 4, WOOD: 5, MARSH: 6, WATER: 7}
-    areas = []
+    areas = []; rail_belts = []
     for k, (kind, t, p, closed) in enumerate(feats):
         if kind != 'area' or not clip_poly(p, x0, y0): continue
         c = area_cover(t)
         if c is None: continue
         if c == WATER and not PONDS and t.get('water') not in ('river', 'stream', 'canal', 'oxbow'): continue   # post-war gully reservoirs
-        if c == WOOD and strip_width(p) < 45.0 and not near_rail(p, feats, 120.0): continue   # modern field shelterbelts (post-1948) go; the railway snow-protection belts stay (user, 25 Oct: the tree line along the railway was missing - they were planted from the 1930s)
+        if c == WOOD and strip_width(p) < 45.0 and not near_rail(p, feats, 120.0): continue
+        if c == WOOD and strip_width(p) < 70.0 and near_rail(p, feats, 120.0): rail_belts.append(p)   # drawn again over the 1943 villages / farms below   # modern field shelterbelts (post-1948) go; the railway snow-protection belts stay (user, 25 Oct: the tree line along the railway was missing - they were planted from the 1930s)
         areas.append((order[c], c, p, k))
     areas.sort(key=lambda a: a[0])
     field_polys = []
@@ -287,7 +386,24 @@ def rasterise(feats, i, j, rng, steep=None):
     for vl_ in VILLAGES43:   # 1943 villages missing from OSM (Teterevino): village cover, homesteads along the streets inside (tools/settle.py)
         if clip_poly(vl_, x0, y0):
             d.polygon(to_px(vl_, x0, y0), fill=VILLAGE); dv43.polygon(to_px(vl_, x0, y0), fill=255)
-    lines = []; buildings = []
+    # the railway snow-protection belts run unbroken past the 1943 villages (user, 26 Oct: the wood along the line
+    # vanished at Ivanovsky Vyselok - the village polygon of the layout was painted over it)
+    for p in rail_belts:
+        if clip_poly(p, x0, y0): d.polygon(to_px(p, x0, y0), fill=WOOD)
+    for w_ in WOODS43:
+        p = w_['pts']
+        if not clip_poly(p, x0, y0): continue
+        if w_.get('rail_belt'):   # only the belt along the railway inside the polygon
+            pm = Image.new('L', (2048, 2048), 0); ImageDraw.Draw(pm).polygon(to_px(p, x0, y0), fill=255)
+            bm = Image.new('L', (2048, 2048), 0); dbm = ImageDraw.Draw(bm)
+            for (kind_, t_, q_, c_) in feats:
+                if kind_ == 'line' and line_style(t_) is not None and line_style(t_)[0] == RAIL and clip_poly(q_, x0, y0, margin=200):
+                    dbm.line(to_px(q_, x0, y0), fill=255, width=int(2 * w_['rail_belt']), joint='curve')
+            m_ = Image.fromarray(((np.asarray(pm) > 0) & (np.asarray(bm) > 0)).astype(np.uint8) * 255)
+            d.bitmap((0, 0), m_, fill=WOOD)
+        else: d.polygon(to_px(p, x0, y0), fill=WOOD)
+
+    lines = []; buildings = []; water_lines = []
     rail_ways = dedupe_rails([to_px(p, x0, y0) for (kind, t, p, closed) in feats if kind == 'line' and line_style(t) is not None and line_style(t)[0] == RAIL and clip_poly(p, x0, y0)])
     for rd_ in ROADS43:   # 1943 lanes missing from OSM: drawn like OSM tracks / minor roads (the village walk needs a street)
         if clip_poly(rd_['pts'], x0, y0):
@@ -302,11 +418,30 @@ def rasterise(feats, i, j, rng, steep=None):
             c, w, col, dash = st
             pp = to_px(p, x0, y0)
             if c == RAIL and pp not in rail_ways: continue   # the second way of the OSM double track
+            if c in (WATER, MARSH) and t.get('waterway'):
+                water_lines.append((pp, c, w, t.get('_hw'))); lines.append((pp, col, dash, c)); continue
             d.line(pp, fill=c, width=max(1, int(round(w))), joint='curve')
             lines.append((pp, col, dash, c))
         elif kind == 'building' and closed:
             pp = to_px(p, x0, y0); d.polygon(pp, fill=BUILDING); buildings.append(pp)
+    # rivers and streams last, over the roads and tracks that cross them (26 Oct: a track drawn over the Psel left a
+    # raised grass strip across the water - the bed is not carved under non-water pixels)
+    for (pp, c, w, hw) in water_lines:
+        if hw: d.polygon(_band(pp, hw), fill=c)
+        else: d.line(pp, fill=c, width=max(1, int(round(w))), joint='curve')
+    for (_, c, p, k) in areas:
+        if c == WATER: d.polygon(to_px(p, x0, y0), fill=WATER)
     cov = np.asarray(cov).copy(); fid = np.asarray(fid).copy(); FARM_MASK[0] = np.asarray(farm) > 0
+    if WOODS43:   # inside a woods_1943 polygon the 21 m track bed is open grass (the rail itself is drawn on it)
+        bed = np.zeros((2048, 2048), bool)
+        wi = Image.new('L', (2048, 2048), 0); dwi = ImageDraw.Draw(wi)
+        for w_ in WOODS43:
+            if clip_poly(w_['pts'], x0, y0): dwi.polygon(to_px(w_['pts'], x0, y0), fill=255)
+        if (np.asarray(wi) > 0).any():
+            bi = Image.new('L', (2048, 2048), 0); dbi = ImageDraw.Draw(bi)
+            for pp in rail_ways: dbi.line(pp, fill=255, width=21, joint='curve')
+            bed = (np.asarray(wi) > 0) & (np.asarray(bi) > 0) & (cov == WOOD)
+            cov[bed] = GRASS
     # villages (incl. those up to 1.6 km outside the cell) dilated by 1.5 km, at 8 m on a padded canvas: strip-field share near the villages
     M8 = 200; vn = Image.new('L', (256 + 2 * M8, 256 + 2 * M8), 0); dvn = ImageDraw.Draw(vn)
     for (kind, t, p, closed) in feats:
@@ -625,13 +760,13 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
     soil[(cov == FIELD) & (fid == 4)] = 15                  # ploughed (the vanilla 'bump' soil is the furrowed field texture, see Petropolye PgD5)
     # tracks and streets the vanilla way (tools/tracks.py): pave strips with a second strip beside them, trampled village streets
     import tracks as TKS
-    n_strip, n_second, n_zone = TKS.paint(soil, cov, lines, to_block(x0, y0), dict(ROAD=ROAD, TRACK=TRACK, FIELD=FIELD, WATER=WATER, MARSH=MARSH, RAIL=RAIL, BUILDING=BUILDING), vil_mask=MO.dilate(cov == VILLAGE, 61))
+    n_strip, n_second, n_zone = TKS.paint(soil, cov, lines, to_block(x0, y0), dict(ROAD=ROAD, TRACK=TRACK, FIELD=FIELD, WATER=WATER, MARSH=MARSH, RAIL=RAIL, BUILDING=BUILDING, VILLAGE=VILLAGE), vil_mask=MO.dilate(cov == VILLAGE, 21))
     # texture classes for tools/texref.py (copied with their soil pattern from the Petropolye cells); 0 = keep the soil
     tcls = np.zeros_like(cov)
     tcls[(cov == FIELD) & (fid == 1)] = TR.CROP; tcls[(cov == FIELD) & (fid == 4)] = TR.PLOUGH
     # field margins: a broken 4-7 m band of bare dark earth (road_back 11) round every field block, as in Petropolye
     fm = cov == FIELD
-    ring = MO.dilate(fm, 5) & ~fm & (cov == GRASS)   # 2 m and broken (user, 25 Oct: the field blocks were outlined like a drawing)
+    ring = MO.dilate(fm, 5) & ~fm & np.isin(cov, (GRASS, TRACK)) & (soil != 10)   # also on the road corridor side, never over the pave lines   # 2 m and broken (user, 25 Oct: the field blocks were outlined like a drawing)
     soil[ring & (TX.gnoise(cov.shape, to_block(x0, y0), 5.0, 21) > 0.25)] = 11
     del fm, ring
     # railway: ballast strip (soil 8 between road_back shoulders, as in the vanilla Korotich cells) on a ~1.5 m embankment
@@ -676,15 +811,18 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
         lvl_ext = WL.sample(WL.LEVEL, gx_, gy_).astype(np.float32)
         d_out = ndi.distance_transform_edt(~wm)
         d_in = ndi.distance_transform_edt(wm)
-        zone = d_out <= 12.0
-        # terrain: bed inside, 1:4 bank outside (only lowering), nothing in the shore zone below level + 0.2 (no puddles)
+        zone = d_out <= 40.0
+        # terrain: bed inside, a bank outside whose slope varies along the river (1:5 slip-off banks to 1:1.6 cut banks,
+        # seam-free noise) out to 40 m (26 Oct, user: the old 12 m / 1:4 zone met the valley side in a dark vertical wall
+        # where the bed had to be cut 4 m down), only lowering; nothing in the shore zone below level + 0.2 (no puddles)
         bed = lvl_ext - np.minimum(1.6, 0.15 + 0.35 * d_in)
-        bank = lvl_ext + 0.2 + 0.25 * d_out
+        bslope = 0.42 + 0.22 * TX.gnoise(wm.shape, to_block(x0, y0), 140.0, 57) + 0.06 * TX.gnoise(wm.shape, to_block(x0, y0), 31.0, 58)
+        bank = lvl_ext + 0.25 + bslope * d_out
         target = np.where(wm, bed, np.where(zone, np.minimum(h2w, bank), h2w))
         target = np.where(zone & ~wm, np.maximum(target, lvl_ext + 0.2), target)
         delta = (target - h2w).astype(np.float32)
-        delta = np.clip(delta, -4.0, 1.5)
-        delta = smooth(delta, 1).astype(np.float32)
+        delta = np.clip(delta, -8.0, 1.5)
+        delta = smooth(delta, 2).astype(np.float32)
         h += np.repeat(np.repeat(delta, 2, 0), 2, 1)
         # the level index (4 m): the polygon dilated by 8 m, level quantised to 0.25 m (<= 63 levels, else 0.5 m)
         zone4 = (d_out <= 8.0).reshape(512, 4, 512, 4).max((1, 3))
@@ -697,6 +835,28 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
         for k, v in enumerate(vals): idx[lq == v] = k + 1
         del h2w, lvl_ext, d_out, d_in, zone, bed, bank, target, delta, zone4, l4, lq
     del yy_, xx_, gx_, gy_
+    # natural banks (26 Oct, user: 'the bank should be natural, here it is grass'). Measured on the vanilla Mius river cell
+    # MxD1: the ground within ~20 m of the water is a mix of marsh (1) ~20 %, forest ground (12) ~20 %, leaves (13) ~30 %
+    # and grass ~20 %, with willow bushes, bushes and reeds thick along the water. A riparian belt 6-24 m wide (seam-free
+    # noise) is painted that way; flora for it is scattered below (RIPARIAN).
+    RIPARIAN[0] = None
+    wmb = (cov == WATER)
+    if wmb.sum() > 400:
+        from scipy import ndimage as ndi
+        d_o = ndi.distance_transform_edt(~wmb)
+        org = to_block(x0, y0)
+        wr = 6.0 + 18.0 * (0.5 + 0.5 * TX.gnoise(wmb.shape, org, 170.0, 61)) + 4.0 * TX.gnoise(wmb.shape, org, 37.0, 62)
+        rz = (d_o > 0) & (d_o <= wr) & np.isin(cov, (GRASS, MARSH, FIELD, SCRUB))
+        cov[rz & (cov == FIELD)] = GRASS
+        n1 = TX.gnoise(wmb.shape, org, 7.0, 63) + 0.5 * TX.gnoise(wmb.shape, org, 2.0, 64)
+        rs = np.where(n1 > 0.45, 13, np.where(n1 > 0.0, 12, np.where(n1 > -0.4, 1, 0))).astype(soil.dtype)
+        edge = rz & (d_o <= 1.5 + 1.5 * (TX.gnoise(wmb.shape, org, 5.0, 65) + 1.0))   # the waterline: wet mud and leaves
+        rs = np.where(edge, np.where(n1 > 0.2, 13, 1), rs).astype(soil.dtype)
+        soil[rz] = rs[rz]; tcls[rz] = 0
+        soil[wmb] = np.where(n1[wmb] > 0.3, 13, 1).astype(soil.dtype)   # the bed under the water: dark mud / leaves (vanilla 1 and 13)
+        tcls[wmb] = 0
+        RIPARIAN[0] = (rz, d_o, n1)
+        del d_o, wr, rs, edge
     lap('water')
     # micro-relief (25 Oct, user: the vanilla ground is never flat - bumps of 5-20 cm at 2-30 m everywhere, more in the villages)
     import relief as RL
@@ -723,7 +883,16 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
         shutil.copy(hp, path('hei_map'))
     del h
     # steep balka sides: bumps/clay
-    slope = np.hypot(*np.gradient(h2)); soil[(slope > 0.4) & (cov == GRASS) & (soil != 14)] = 15
+    # steep balka sides (26 Oct, user: 'the ravines should look natural'): the uniform ploughed-texture band (soil 15) on every
+    # slope over 0.4 read as a pale stripe along each ravine; the sides are now steppe grass with eroded clay / sand
+    # scars and dark earth where the slope is steepest, in noise patches
+    slope = np.hypot(*np.gradient(h2))
+    st_ = (slope > 0.4) & (cov == GRASS) & (soil != 14)
+    if st_.any():
+        n2 = np.repeat(np.repeat(TX.gnoise(slope.shape, (to_block(x0, y0)[0] / 2, to_block(x0, y0)[1] / 2), 6.0, 71), 2, 0), 2, 1)[:2048, :2048] if slope.shape[0] != 2048 else TX.gnoise(slope.shape, to_block(x0, y0), 12.0, 71)
+        s2 = np.repeat(np.repeat(slope, 2, 0), 2, 1)[:2048, :2048] if slope.shape[0] != 2048 else slope
+        st2 = np.repeat(np.repeat(st_, 2, 0), 2, 1)[:2048, :2048] if st_.shape[0] != 2048 else st_
+        soil[st2 & (n2 > 0.45)] = 3; soil[st2 & (n2 < -0.55)] = 5; soil[st2 & (s2 > 0.8) & (n2 > 0.1) & (n2 <= 0.45)] = 2
     slope2 = np.repeat(np.repeat(slope, 2, 0), 2, 1)[:2048, :2048] if slope.shape[0] != 2048 else slope
     # leaves / forest ground mixed under the trees (both are Petropolye hedge / wood soils)
     wood = (cov == WOOD) & (soil == 12)
@@ -800,8 +969,21 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
     steep = (slope2 > 0.12) & (cov == GRASS) & ~dug; scatter(steep, DENSITY['BALKA'], FLORA['BALKA'])
     scatter((cov == GRASS) & ~steep & ~dug, DENSITY['STEPPE'], FLORA['STEPPE'])
     scatter(cov == MARSH, DENSITY['MARSH'], FLORA['MARSH'])
-    wmask = (cov == WATER); bank = wmask & ~MO.erode(wmask, 13)   # 6 m band inside the water edge
-    scatter(bank, DENSITY['WATER'], [(6, 4), (16, 1)]); scatter(cov == MARSH, DENSITY['WATER'] / 2, FLORA['WATER'])   # reeds / willows on the banks only: open water stays open
+    wmask = (cov == WATER)
+    if RIPARIAN[0] is not None:
+        # the bank vegetation (vanilla MxD1: verba willow bushes 16, bushes 7 / 8, reeds 6, small trees 3 / 4 along the water,
+        # in clumps): reed beds 0-2.5 m inside the water edge and on the waterline, willow / bush thickets on the belt
+        rz, d_o, n1 = RIPARIAN[0]
+        d_i = ndi.distance_transform_edt(wmask) if wmask.any() else None
+        clump = TX.gnoise(cov.shape, to_block(x0, y0), 19.0, 66)
+        reed = ((wmask & (d_i <= 2.5)) | (rz & (d_o <= 2.5))) & (clump > -0.1) if d_i is not None else rz & (d_o <= 2.5)
+        scatter(reed & ~dug, 1 / 7.0, [(6, 1)])
+        thick = rz & (d_o > 1.0) & (clump > 0.15) & ~dug
+        scatter(thick & (d_o <= 8.0), 1 / 22.0, [(16, 5), (7, 3), (8, 2), (12, 1)])
+        scatter(thick & (d_o > 8.0), 1 / 45.0, [(16, 3), (7, 2), (8, 2), (3, 2), (4, 1), (12, 1)])
+        scatter(rz & (clump <= 0.15) & ~dug, 1 / 160.0, [(16, 2), (7, 2), (8, 1)])   # single bushes between the thickets
+        RIPARIAN[0] = None
+    scatter(cov == MARSH, DENSITY['WATER'] / 2, FLORA['WATER'])   # wet meadow: reeds / willows; open water stays open
     # settlements: street villages generated along the OSM streets inside the 1941 built-up extent (tools/settle.py),
     # the OSM footprints kept; yards, garden plots and clay margins are painted into the soil here
     lap('flora')
@@ -814,7 +996,10 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
     # micro tiles, detail, grass and ambient colour from windows of the Petropolye cells; every other soil its micro layers
     if works_snap is not None:   # the works' soil wins over anything painted after them (yards, plots, farm ground)
         soil[works_changed] = works_snap[works_changed]
-    tcls[(cov == GRASS) & (soil == 0)] = TR.STEPPE
+    # 26 Oct (user: 'light green blob where the village supposedly is'): the open ground inside village / farm / orchard /
+    # scrub polygons (soil 0 between the yards and plots) took the plain per-soil grass pool and showed up as flat light-green
+    # shapes of the polygons; it is meadow like the steppe round it, so it takes the steppe class too
+    tcls[np.isin(cov, (GRASS, VILLAGE, ORCHARD, SCRUB)) & (soil == 0)] = TR.STEPPE
     tcls[soil == 14] = 0; tcls[works_changed] = 0
     t1 = time.time()
     lay = REF.apply(soil, tcls, rng, origin=to_block(x0, y0))
@@ -916,12 +1101,13 @@ def main():
     ap.add_argument('--ref', default=os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'build', 'prokhorovka', 'ref'),
                     help='directory with the unpacked reference cells (pgd5, pge4, pgf6 of the Petropolye DLC terrain, see gen_prokh.cmd)')
     a = ap.parse_args()
-    global WORKS, REF, FARMS, FIELDS43, VILLAGES43, ROADS43, PONDS, SINGLE_TRACK
+    global WORKS, REF, FARMS, FIELDS43, VILLAGES43, WOODS43, ROADS43, PONDS, SINGLE_TRACK
     if os.path.exists(a.layout):
         lay_ = json.load(open(a.layout, encoding='utf-8'))
         FARMS = [[tuple(q) for q in f['pts']] for f in lay_.get('farms', [])]
         FIELDS43 = [dict(f, pts=[tuple(q) for q in f['pts']]) for f in lay_.get('fields_1943', [])]
         VILLAGES43 = [[tuple(q) for q in v['pts']] for v in lay_.get('villages_1943', [])]
+        WOODS43 = [dict(v, pts=[tuple(q) for q in v['pts']]) for v in lay_.get('woods_1943', [])]
         ROADS43 = [dict(r, pts=[tuple(q) for q in r['pts']]) for r in lay_.get('roads_1943', [])]
         PONDS = bool(lay_.get('ponds_1943', True))
         SINGLE_TRACK = bool(lay_.get('single_track', False))
@@ -942,6 +1128,8 @@ def main():
         def flush(self): sys.__stdout__.flush(); log.flush()
     sys.stdout = Tee(); print('# prokh_gen', time.strftime('%Y-%m-%d %H:%M:%S'), sys.argv[1:])
     feats, places = load_osm(a.osm); print('osm features', len(feats), 'places', len(places), flush=True)
+    feats = drop_modern(feats, a.layout)
+    feats = meander_water(feats)
     places = places_1943(places, a.layout)
     build_water_levels(feats, a.cells)
     syms = ['0123456789!"#$%^&*()_+|\t=-~`[]{}:;"\'<>,.?/ \u2116ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz']

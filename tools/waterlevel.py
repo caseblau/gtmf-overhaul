@@ -36,12 +36,13 @@ def build(feats, water_of, heights, x0, y0, w, h):
     global LEVEL, DRY
     nx, ny = int(math.ceil(w / G)), int(math.ceil(h / G))
     img = Image.new('L', (nx, ny), 0); d = ImageDraw.Draw(img)
+    riv = Image.new('L', (nx, ny), 0); dr_ = ImageDraw.Draw(riv)   # the river / stream lines themselves: never 'dry'
     def px(p): return [((x - x0) / G, ny - 1 - (y - y0) / G) for x, y in p]
     for kind, t, p, closed in feats:
         r = water_of(kind, t)
         if not r: continue
         if kind == 'area': d.polygon(px(p), fill=1)
-        else: d.line(px(p), fill=1, width=max(1, int(round(r / G))))
+        else: d.line(px(p), fill=1, width=max(1, int(round(r / G)))); dr_.line(px(p), fill=1, width=max(1, int(round(r / G))))
     wm = np.asarray(img)[::-1] > 0                    # row 0 = south
     if not wm.any(): LEVEL = None; return 0
     yy, xx = np.mgrid[0:ny, 0:nx]
@@ -80,7 +81,10 @@ def build(feats, water_of, heights, x0, y0, w, h):
         lv = np.empty(len(ys), np.float32); lv[order] = run
         lvl[ys, xs] = lv
     lvl = np.floor((lvl + FREEBOARD) / STEP) * STEP        # quantised; floor keeps the surface at or under the bank
-    dry = wd & (m - lvl > LIFT_MAX)
+    # 26 Oct (user: a stretch of the Psel was a dry trench): the dry test is for OSM water POLYGONS climbing a gully side;
+    # the river line itself always carries water (prokh_gen carves the bed down to the level)
+    rv = ndi.binary_dilation(np.asarray(riv)[::-1] > 0, iterations=1)
+    dry = wd & (m - lvl > LIFT_MAX) & ~rv
     # extend the level field 400 m beyond the water (nearest water pixel), so the cells can look it up at any bank pixel
     filled = ~np.isnan(lvl)
     _, (iy, ix) = ndi.distance_transform_edt(~filled, return_indices=True)

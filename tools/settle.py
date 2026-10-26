@@ -74,7 +74,7 @@ def build(cov, soil, lines, buildings, slope2, rng, VIL, WATER_C, MARSH_C, ROAD_
         if c in (ROAD_C, TRACK_C):
             dr.line(pp, fill=255, width=9 if c == ROAD_C else 5, joint='curve')
             if c == ROAD_C or True: streets.append((pp, c))
-        elif c == RAIL_C: dr.line(pp, fill=255, width=30, joint='curve')
+        elif c == RAIL_C: dr.line(pp, fill=255, width=56, joint='curve')   # 26 Oct (user: a garden plot on the embankment): no yard, plot or hedge within ~33 m of a track
     road = np.asarray(road_img) > 0
     near_road = MO.dilate(np.asarray(road_img) > 0, 11)
     wet = (cov == WATER_C) | (cov == MARSH_C)
@@ -143,6 +143,9 @@ def build(cov, soil, lines, buildings, slope2, rng, VIL, WATER_C, MARSH_C, ROAD_
                     # yard: clay ~30 x 30 m with trampled ground round the house
                     dy.polygon(_rect(x, y, ux * side, uy * side, half - 1.0, 7.5, 44.0), fill=1)   # the yard fills the street front (vanilla: clay / trampled ground ~40 % of the village)
                     dy.ellipse([hx - 9, hy - 9, hx + 9, hy + 9], fill=2)
+                    # the trodden path from the street through the gate to the door (26 Oct, user: the yards must connect to the road)
+                    gx_, gy_ = x + nx * 9.5 + ux * (hr.random() - 0.5) * 6, y + ny * 9.5 + uy * (hr.random() - 0.5) * 6
+                    dy.line([(x + nx * 3, y + ny * 3), (gx_, gy_), (hx, hy)], fill=3, width=4)
                     dtk.polygon(_rect(x, y, ux * side, uy * side, half + 6, 0.0, 44.0), fill=255)
                     # 1-3 sheds in an L, 16-24 m from the house
                     for q in range(int(hr.integers(2, 5))):
@@ -155,7 +158,7 @@ def build(cov, soil, lines, buildings, slope2, rng, VIL, WATER_C, MARSH_C, ROAD_
                     f0 = (x + nx * 9.5 - ux * half, y + ny * 9.5 - uy * half); f1 = (x + nx * 9.5 + ux * half, y + ny * 9.5 + uy * half)
                     run.append((f0, f1, half + 6.0))
                     pd = 40.0 + hr.random() * 20
-                    if hr.random() < 0.8: _fence(objs, f0, (f0[0] + nx * pd, f0[1] + ny * pd), f_side, blocked)
+                    if hr.random() < 0.95: _fence(objs, f0, (f0[0] + nx * pd, f0[1] + ny * pd), f_side, blocked)
                     if hr.random() < 0.15: _fence(objs, (f0[0] + nx * pd, f0[1] + ny * pd), (f1[0] + nx * pd, f1[1] + ny * pd), f_side, blocked, posts=False)
                     # garden plot behind the yard: pattern 1 sunflower (7), 2 maize / potato rows (15), 4 orchard (13)
                     pdepth = depth * (0.75 + 0.5 * hr.random())
@@ -193,9 +196,13 @@ def build(cov, soil, lines, buildings, slope2, rng, VIL, WATER_C, MARSH_C, ROAD_
     if works_mask is not None: free &= ~works_mask
     import texsynth as TX
     yn = TX.gnoise(soil.shape, origin, 6.0, 43)
-    y1 = (ym == 1) & free; y2 = (ym == 2) & free
-    soil[y1] = np.where(yn[y1] > 0.45, CLAY, np.where(yn[y1] < -0.3, 0, 11)).astype(soil.dtype)   # yard: dark trodden earth, some clay, grass corners (no pale pave)
-    soil[y2] = np.where(yn[y2] > 0.3, 11, VILLAGE_SOIL).astype(soil.dtype)
+    y1 = (ym == 1) & free; y2 = (ym == 2) & free; y3 = (ym == 3) & ~wet & ~bmask
+    if works_mask is not None: y3 &= ~works_mask
+    # yards the Petropolye way (26 Oct, user: the brown blotches round the houses): grass with a trodden pale patch by the
+    # house (pave 10) and a few dark specks - the old dark-earth / clay mix filled whole yards with brown
+    soil[y1] = np.where(yn[y1] > 0.25, 10, np.where(yn[y1] < -0.6, 11, 0)).astype(soil.dtype)
+    soil[y2] = np.where(yn[y2] > -0.2, VILLAGE_SOIL, 0).astype(soil.dtype)   # round the house: mostly trodden
+    soil[y3] = VILLAGE_SOIL
     gmask = (gm > 0) & plot_ok & free & (ym == 0) & ~hm
     yy, xx = np.nonzero(gmask)
     if len(yy):

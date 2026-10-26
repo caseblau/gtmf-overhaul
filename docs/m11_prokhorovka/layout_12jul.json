@@ -704,7 +704,7 @@
    "form": [
     "ra_285"
    ],
-   "role": "183 RD: 285 RR - driven from the Komsomolets trenches on 11 July; remnants with 227 AR behind them, one company at Storozhevoye (Zamulin); kept together on the Psel bank Andreyevka - Mikhaylovka as the player asked",
+   "role": "183 RD: 285 RR on the Psel bank, Vasilyevka - Andreyevka - Mikhaylovka (all three battalions together)",
    "side": "USSR",
    "pos": [
     [
@@ -767,7 +767,7 @@
    "form": [
     "ra_183rd"
    ],
-   "role": "183 RD troops; division CP S outskirts of Krasnoye (Zamulin)",
+   "role": "183 RD troops",
    "side": "USSR",
    "pos": [
     [
@@ -778,10 +778,6 @@
      14500,
      3000
     ]
-   ],
-   "hq": [
-    21400,
-    11300
    ]
   },
   {
@@ -805,7 +801,7 @@
    "form": [
     "ra_99tbr"
    ],
-   "role": "2 TC: 99 TBr (19 tanks) fighting off encirclement at Vasilyevka - Andreyevka on 11 July, ordered back to Pravorot at dawn (Zamulin)",
+   "role": "2 TC: 99 TBr at Vasilyevka - 241.6",
    "side": "USSR",
    "pos": [
     [
@@ -813,8 +809,8 @@
      13100
     ],
     [
-     7000,
-     13350
+     7600,
+     13700
     ]
    ]
   },
@@ -822,16 +818,16 @@
    "form": [
     "ra_26tbr"
    ],
-   "role": "2 TC: 26 TBr regrouping at Grushki after four days of fighting (Zamulin: 2 TC op. summary No. 138, HQ SW outskirts of Grushki)",
+   "role": "2 TC: 26 TBr at Storozhevoye",
    "side": "USSR",
    "pos": [
     [
-     18030,
-     11954
+     12000,
+     9800
     ],
     [
-     17600,
-     11600
+     12500,
+     8700
     ]
    ]
   },
@@ -839,20 +835,16 @@
    "form": [
     "ra_169tbr"
    ],
-   "role": "2 TC: 169 TBr dug in at Storozhevoye with a company of 285 RR and 2/58 MRBr (Zamulin; brigade HQ in the ravine 0.7 km E of Storozhevoye)",
+   "role": "2 TC: 169 TBr, wood E of Ivanovsky Vyselok",
    "side": "USSR",
    "pos": [
     [
-     11674,
-     9147
+     10500,
+     8300
     ],
     [
-     12000,
-     9800
-    ],
-    [
-     12400,
-     9300
+     11000,
+     7500
     ]
    ]
   },
@@ -860,20 +852,16 @@
    "form": [
     "ra_58mrbr"
    ],
-   "role": "2 TC: 58 MRBr - 1 bn at Yamki, 1 bn on the S outskirts of Prokhorovka, 2 bn with 169 TBr at Storozhevoye (Zamulin; HQ ravine 0.5 km SW of Grushki)",
+   "role": "2 TC: 58 MRBr Andreyevka - Mikhaylovka",
    "side": "USSR",
    "pos": [
     [
-     13926,
-     11771
+     7000,
+     13300
     ],
     [
-     16300,
-     13800
-    ],
-    [
-     12200,
-     9500
+     7600,
+     13900
     ]
    ]
   },
@@ -881,21 +869,17 @@
    "form": [
     "ra_2tc"
    ],
-   "role": "2 TC corps troops; corps HQ W outskirts of Pravorot (Zamulin, dispatch No. 104)",
+   "role": "2 TC corps troops",
    "side": "USSR",
    "pos": [
     [
-     17000,
-     8300
+     13000,
+     7800
     ],
     [
-     17469,
-     8268
+     13500,
+     8300
     ]
-   ],
-   "hq": [
-    17000,
-    8300
    ]
   },
   {
@@ -923,7 +907,7 @@
    "form": [
     "ra_28gab"
    ],
-   "role": "9 gds AB Div: 28 gds AB Rgt on the division left, left (SE) of the railway between 252.2 / Stalinskoye and Lutovo - Yamki (Zamulin)",
+   "role": "9 gds AB Div: 28 gds AB Rgt, ravine E of Yamki - Grushki",
    "side": "USSR",
    "pos": [
     [
@@ -935,8 +919,8 @@
      13136
     ],
     [
-     13300,
-     12000
+     15500,
+     12300
     ]
    ]
   },
@@ -944,7 +928,7 @@
    "form": [
     "ra_23gab"
    ],
-   "role": "9 gds AB Div: 23 gds AB Rgt second echelon along the Kartashevka - Prokhorovka road, SW outskirts of the station and slopes of 252.4 (Zamulin)",
+   "role": "9 gds AB Div: 23 gds AB Rgt second echelon 252.4 - Barchevka",
    "side": "USSR",
    "pos": [
     [
@@ -1532,19 +1516,15 @@
    "form": [
     "ra_5gta"
    ],
-   "role": "5 gds TA HQ at Skorovka NE of Prokhorovka (Zamulin; on the map from turn 1)",
+   "role": "5 gds TA HQ (Skorovka, E of Prokhorovka - on the map from turn 1 so the corps already in the area are under command)",
    "side": "USSR",
    "pos": [
     [
-     20000,
-     19000
+     21500,
+     16000
     ]
    ],
-   "turn": 1,
-   "hq": [
-    21500,
-    19500
-   ]
+   "turn": 1
   },
   {
    "form": [
@@ -2228,30 +2208,6 @@
   {
    "type": "trench",
    "side": "USSR",
-   "name": "firing positions behind the anti-tank ditch (stubs on the NE side, Luftwaffe photo 7 Aug)",
-   "pts": [
-    [
-     12480,
-     12160
-    ],
-    [
-     12080,
-     12700
-    ],
-    [
-     11600,
-     13250
-    ],
-    [
-     11000,
-     13800
-    ]
-   ],
-   "behind_ditch": true
-  },
-  {
-   "type": "trench",
-   "side": "USSR",
    "name": "svkh. Oktyabrsky: trench line on the SW edge of the farm",
    "pts": [
     [
@@ -2582,6 +2538,5 @@
   "ra_air_06": 11
  },
  "_comment_air": "air: platoon name -> turn the squadron becomes available (turn = 4 h from 06:00 11 July). VIII Fliegerkorps (Ju 87, Fw 190) over the LSSAH sector from the morning of 11 July and massed on 12 July; 2 VA Il-2 regiments from the afternoon of 11 July and on 12/13 July, Po-2 night bombers at night.",
- "_comment_works": "works/strongpoints: the 252.2 - Oktyabrsky positions are the Soviet trench systems (26 gds AB Rgt, 9 gds AB Div), which LSSAH occupied after taking the hill on 11 July - no separate German ring there. AT ditch trace, gaps and the trench stubs behind it from the Luftwaffe photographs in Wheatley 2019.",
- "_comment_sources": "Positions 11 July evening: Zamulin, Demolishing the Myth (Helion 2011) ch. 7, 9, 10, 12 and Tables 14, 17, 18; Lawrence, The Battle of Prokhorovka (Stackpole 2019) ch. 7, 9; Wheatley 2019 (Journal of Intelligence History) 16 July 1943 photographs for the earthworks and fields. Tank numbers in tools/oob_12jul.ps1 from Zamulin Table 18 (5 gds TA 1700 11 July) and Table 17 (II SS Pz Corps 1835 11 July). A unit entry may carry \"hq\": [x, y] - the formation HQ node (nearest free node) instead of the automatic placement."
+ "_comment_works": "works/strongpoints: the 252.2 - Oktyabrsky positions are the Soviet trench systems (26 gds AB Rgt, 9 gds AB Div), which LSSAH occupied after taking the hill on 11 July - no separate German ring there. AT ditch trace, gaps and the trench stubs behind it from the Luftwaffe photographs in Wheatley 2019."
 }

@@ -1,11 +1,12 @@
-"""Field tracks and village streets painted the vanilla way (25 Oct, user: "some roads can be like in vanilla, just 2 tracks").
+"""Roads, field tracks and village streets painted the vanilla way.
 
-Measured on Petropolye PgD5 (tools/cell_preview.py + mat_map cross-sections): a field track is NOT a 3.5 m clay band but a
-2-3 m wide strip of PAVE (soil 10 - packed bare earth) with ragged edges, running in the grass; where carts avoided ruts
-a second strip runs 3-6 m beside it for a stretch; clay (3) and sand (5) patches speckle it.  A village street is a wide
-trampled zone (clay / pave / dark earth, 15-30 m) crossed by two or three parallel pave tracks 1-2 m wide that wander
-3-8 m from the axis.  The graded main roads keep their 4-6 m road_back (11) band, with a "summer track" of pave beside
-them on a quarter of their length.
+26 Oct (user: 'the roads look bad'), measured again on the whole of Petropolye PgD5 (tools/cell_preview.py): EVERY road
+there - the main road, the field tracks and the village street alike - is one to three thin lines of pave (soil 10,
+2 m wide) with smooth, gentle curves, lying in a grass corridor 10-20 m wide between the fields; the dark road_back
+(11) bands are the field margins, not the roads. Where the traffic is heavier the lines run in parallel 3-5 m apart and
+split and rejoin. The earlier versions painted a 6 m road_back band (main roads), 1 m black-earth ruts (tracks) and a
+14 m trampled band (village streets); the engine blends the soils over a couple of metres, so all of them came out
+as the brown blotches of the screenshots.
 """
 import math
 import numpy as np
@@ -38,50 +39,42 @@ def _segments(pts, seg_len, frac, salt):
 def paint(soil, cov, lines, origin, codes, vil_mask=None):
     """soil / cov: (2048, 2048) 1 m; lines: (pp, col, dash, cover) in cell px; origin: block metres of the cell (seam-free noise)."""
     ROAD, TRACK = codes['ROAD'], codes['TRACK']
-    tramp = Image.new('L', (2048, 2048), 0); dt = ImageDraw.Draw(tramp)
-    ruts = Image.new('L', (2048, 2048), 0); dr = ImageDraw.Draw(ruts)        # the wheel ruts: dark earth, 1 m
-    corr = Image.new('L', (2048, 2048), 0); dc = ImageDraw.Draw(corr)        # the track corridor: kept free of crops
-    def two_ruts(line, gauge, salt):
-        for sgn in (-1.0, 1.0):
-            r = W._offset(line, sgn * gauge / 2.0)
-            r = W.wavy(r, amp=(0.15, 0.25), lam=(9.0 + salt, 27.0 + salt), step=2.0, taper=4.0)
-            dr.line(_local(r, origin), fill=255, width=1, joint='curve')
+    pave = Image.new('L', (2048, 2048), 0); dp = ImageDraw.Draw(pave)       # the pave lines, 2 m
+    trod = Image.new('L', (2048, 2048), 0); dt = ImageDraw.Draw(trod)       # trodden village street ground
+    corr = Image.new('L', (2048, 2048), 0); dc = ImageDraw.Draw(corr)        # the grass corridor: kept free of crops
+    def lane(line, off, salt, lam=(61.0, 173.0)):
+        r = W._offset(line, off) if off else line
+        r = W.wavy(r, amp=(0.25, 0.4), lam=(lam[0] + salt, lam[1] + 3 * salt), step=2.0, taper=4.0)
+        dp.line(_local(r, origin), fill=255, width=2, joint='curve')
     for (pp, col, dash, c) in lines:
         if c not in (ROAD, TRACK) or len(pp) < 2: continue
         g = _global(pp, origin)
+        main = W.wavy(g, amp=(0.5, 0.8), lam=(53.0, 151.0), step=2.0, taper=6.0)   # the trace: smooth, long curves
+        side = 1.0 if W._hash(round(g[0][0]), round(g[0][1]), 5) % 2 else -1.0
         if c == TRACK:
-            # field track (25 Oct, user: the pale 4 m strips read as broken concrete): two dark wheel ruts 1.6 m apart
-            # with grass between them, in a 4 m corridor the crops do not cross; a second pair beside it where carts
-            # went round a wet spot (~25 % of the length)
-            main = W.wavy(g, amp=(1.0, 1.4), lam=(23.0, 71.0), step=2.0, taper=6.0)
-            two_ruts(main, 1.6, 0); dc.line(_local(main, origin), fill=255, width=4, joint='curve')
-            side = 1.0 if W._hash(round(g[0][0]), round(g[0][1]), 5) % 2 else -1.0
-            for seg in _segments(main, 110.0, 0.25, 6):
-                off = W._offset(seg, side * (3.5 + (W._hash(round(seg[0][0]), round(seg[0][1]), 7) % 15) / 10.0))
-                two_ruts(off, 1.6, 3); dc.line(_local(off, origin), fill=255, width=3, joint='curve')
+            # field track: one line; a second beside it 3-4 m off on a quarter of the length (carts round a wet spot)
+            lane(main, 0.0, 0); dc.line(_local(main, origin), fill=255, width=8, joint='curve')
+            for seg in _segments(main, 120.0, 0.12, 6):
+                lane(seg, side * (3.0 + (W._hash(round(seg[0][0]), round(seg[0][1]), 7) % 10) / 10.0), 3)
         else:
-            invil = vil_mask is not None and any(0 <= x < 2048 and 0 <= y < 2048 and vil_mask[int(y), int(x)] for x, y in pp[::max(1, len(pp) // 12)])
-            smooth = W.wavy(g, amp=(0.6, 0.8), lam=(31.0, 97.0), step=2.0, taper=6.0)
-            if invil:
-                # village street: a 14 m trampled band of dark earth with grass islands, two worn rut pairs in it
-                dt.line(_local(smooth, origin), fill=255, width=14, joint='curve')
-                two_ruts(W._offset(smooth, -1.8), 1.6, 1); two_ruts(W._offset(smooth, 2.2), 1.6, 2)
-            else:
-                # graded road: the 6 m band of dark road earth (soil 11) with one rut pair in the middle
-                two_ruts(smooth, 1.8, 4)
-    rm = np.asarray(ruts) > 0; cm = np.asarray(corr) > 0; tm = np.asarray(tramp) > 0
-    n_patch = TX.gnoise(soil.shape, origin, 2.0, 62); n_tr = TX.gnoise(soil.shape, origin, 3.0, 63)
+            # main road / village street: the two wheel tracks 2.2 m apart (26 Oct, user: the three-pronged roads look bad)
+            lane(main, -1.1, 1); lane(main, 1.1, 2)
+            dc.line(_local(main, origin), fill=255, width=12, joint='curve')
+            if vil_mask is not None:   # in the villages: a trodden street 12-16 m wide (pale earth with grass islands) the yards open onto
+                dt.line(_local(main, origin), fill=255, width=14, joint='curve')
+    pm = np.asarray(pave) > 0; cm = np.asarray(corr) > 0
     keep = ~np.isin(cov, (codes['WATER'], codes['MARSH'], codes['RAIL'], codes['BUILDING']))
-    rm &= keep; cm &= keep; tm &= keep & (cov != ROAD)
-    # the track corridor: no crop texture across it (ragged field edges had pushed the crops over the tracks - the gaps)
-    tr_ = cm & np.isin(cov, (codes.get('FIELD', 1), GRASS))
+    pm &= keep; cm &= keep
+    # the corridor: no crop texture across it (ragged field edges had pushed the crops over the tracks)
+    tr_ = cm & (cov == codes.get('FIELD', 1))
     cov[tr_] = TRACK
-    soil[(cov == TRACK) & np.isin(soil, (CLAY, PAVE, 6, 7, 15))] = GRASS
-    # village street band: dark earth (11) with grass islands where the noise is high, no pale pave / clay patches
-    zone = tm & (soil == GRASS)
-    soil[zone & (n_tr < 0.35)] = 11
-    # the ruts: black earth (2), a few clay specks
-    soil[rm] = 2
-    soil[rm & (n_patch > 0.75)] = CLAY
-    strip = rm; p2 = cm
-    return int(strip.sum()), int(p2.sum()), int(zone.sum())
+    # road and track ground is grass (the old road_back band / clay strip go), then the pave lines on it
+    soil[np.isin(cov, (ROAD, TRACK)) & keep] = GRASS
+    n_patch = TX.gnoise(soil.shape, origin, 2.0, 62)
+    if vil_mask is not None:
+        tz = (np.asarray(trod) > 0) & vil_mask & keep & np.isin(cov, (ROAD, TRACK, GRASS, codes.get('VILLAGE', 5)))
+        nt = TX.gnoise(soil.shape, origin, 4.0, 67) + 0.5 * TX.gnoise(soil.shape, origin, 1.5, 68)
+        soil[tz & (nt > -0.15)] = PAVE
+    soil[pm] = PAVE
+    soil[pm & (n_patch > 0.8)] = CLAY   # a few clay specks in the lines, as in the vanilla cells
+    return int(pm.sum()), int(cm.sum()), 0
