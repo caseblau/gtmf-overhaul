@@ -46,6 +46,7 @@ COLS_SQ, ROWS_SQ = G.COLS * 2, G.ROWS * 2   # 14 x 10 squares (7 x 5 cells)
 CELL_X0, CELL_Y0 = 3, 1                     # camp_area origin in the cells table (3;1;9;5, as the vanilla Mius block)
 USSR = 1381192533; GDR = 5391687
 HQ_STACK = 1   # HQ-type units per border node at turn 1 (layout 'hq_stack')
+PINS = {}      # layout 'pin': battle-group platoon name -> [X, Y] op-map squares
 OLD_COLS, OLD_ROWS = 14, 10                 # Stepanovka square grid
 F_HAMLET, F_HEIGHT, F_WOODS, F_VILLAGE = 1, 2, 16, 32
 QUARTERS = ((256, 256), (-256, -256), (-256, 256), (256, -256))   # NE, SW (interior); + NW, SE on border squares
@@ -194,7 +195,8 @@ def main():
     if layout and layout.get('front'):   # old-frame metres, west/north end first -> block squares (x from the west, y from the north edge)
         front = [(x / SQ, (H_BLOCK - y) / SQ) for x, y in layout['front']]
     terr = Territory(front)
-    global HQ_STACK; HQ_STACK = int(layout.get('hq_stack', 1)) if layout else 1
+    global HQ_STACK, PINS; HQ_STACK = int(layout.get('hq_stack', 1)) if layout else 1
+    PINS = {k: tuple(v) for k, v in (layout.get('pin', {}) if layout else {}).items()}
     old_nodes = read_csv(os.path.join(a.opdir, 'mg_nodes.csv')); plat = read_csv(os.path.join(a.opdir, 'plat_pos.csv'))
     old_markers = read_csv(os.path.join(a.opdir, 'tac_markers.csv'))
     uid_names = {}; uid_code = {}; uid_bg = {}
@@ -379,6 +381,15 @@ def main():
             if idx + 1 == len(jobs) or jobs[idx + 1][0][0] >= 2:
                 # last turn-1 battle group: place them all, the one closest to a free node of its own ground first, so a unit whose
                 # position is a node gets that node whatever the pool order (the pool lists Das Reich before the LSSAH)
+                # layout 'pin': {battle-group platoon name: [X, Y]} (op-map squares) puts that battle group on the node nearest
+                # the point, edge nodes included, before the greedy pass (user, 26 Oct: swap III/3 and I/2, move II/3)
+                for i_ in [i for i, b in enumerate(bg_jobs) if b[1] in PINS][::-1]:
+                    uid_, name_, sd_, _, _ = bg_jobs.pop(i_); X_, Y_ = PINS[name_]
+                    c_ = [((n['mx'] - X_ * SQ) ** 2 + (n['my'] - Y_ * SQ) ** 2, jj) for jj, n in enumerate(g.nodes) if n['uid'] == -1 and n['side'] == sd_]
+                    if not c_: print('  pin: no free node for', name_); continue
+                    d2, j = min(c_); n = g.nodes[j]; n['uid'] = uid_; n['hq'] = False
+                    if d2 > 300 ** 2: print(f'  pin {name_}: nearest free own node is {d2 ** 0.5:.0f} m from ({X_}, {Y_})')
+                    placement[uid_] = (f"{uid_};{n['x']};{n['y']};{j}", '1'); placed += 1
                 while bg_jobs:
                     best = min(((bg_node(sd_, mx_, my_), i) for i, (_, _, sd_, mx_, my_) in enumerate(bg_jobs)), key=lambda t: t[0][1])
                     (j, d), i = best; uid_, name_, sd_, mx_, my_ = bg_jobs.pop(i)

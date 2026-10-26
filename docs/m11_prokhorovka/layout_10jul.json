@@ -54,7 +54,11 @@
    7680
   ],
   [
-   8192,
+   8806,
+   7270
+  ],
+  [
+   8806,
    6144
   ]
  ],
@@ -9630,5 +9634,40 @@
  "_comment_villages_1943": "villages_1943 / roads_1943: settlements and lanes of 1943 drawn as village cover exempt from the period trim; tools/settle.py places the homesteads along the streets inside. Teterevino traced by hand; the other 48 polygons are the built-up blocks of the RKKA 1:100 000 sheet (docs/m12_terrain/period/rkka100k_block.png, 4 m/px, row 0 = north: square X = (4 px - 4096) / 1024, Y = (16384 - (24576 - 4 py)) / 1024) detected as black-ink density blobs (tools/period_villages.py), reviewed tile by tile on 25 Oct and cleaned of the staff overprint (blue / red pencil bands, black smudges), labels and the railway; eroded 40 m to undo the symbol exaggeration. Prokhorovka town is left to OSM + the period trim. ponds_1943 false: none of the OSM ponds (dammed gully reservoirs) exists on the 1941 sheet, so standing water is dropped; the Psel and the streams stay.",
  "ponds_1943": false,
  "hq_stack": 3,
- "_comment_hq_stack": "HQ-type units per border node at turn 1 (user, 25 Oct: the HQ elements bunch up, several on one node). The mg_nodes occupant field has four slots; vanilla uses one. If the game crashes on a stacked node, set 1."
+ "_comment_hq_stack": "HQ-type units per border node at turn 1 (user, 25 Oct: the HQ elements bunch up, several on one node). The mg_nodes occupant field has four slots; vanilla uses one. If the game crashes on a stacked node, set 1.",
+ "pin": {
+  "we_dr_3mir_3b": [
+   3.75,
+   8.75
+  ],
+  "we_lah_2mir_1b": [
+   3.25,
+   8.25
+  ],
+  "we_dr_3mir_2b": [
+   4.25,
+   9.25
+  ],
+  "ra_285_1b": [
+   3.75,
+   4.75
+  ],
+  "ra_285_2": [
+   4.75,
+   6.75
+  ],
+  "ra_285_2b": [
+   4.25,
+   7.25
+  ],
+  "ra_295_1": [
+   4.75,
+   7.75
+  ],
+  "ra_295_2": [
+   4.75,
+   8.75
+  ]
+ },
+ "_comment_pin": "battle groups put on a given node (op-map squares X east, Y south; the node nearest the point). 26 Oct (user): III/3 SS (Deutschland) and I/2 SS (LSSAH) swap places, II/3 SS to the square east of Teterevino; the front there moved 0.6 km east so that node is German ground | 26 Oct (user): 183 RD line - 1/285 (2c) north under 216, 2/285 forward toward 241.6, 2/285 (5c) into svkh. Komsomolets, 1/295 and 2/295 take their old places at the sovkhoz and Ivanovsky Vyselok; 285 / 295 RR get no AI orders on 10 July (they hold)"
 }

@@ -122,8 +122,10 @@ def sectionise(w):
         if style == 'dug':
             out.append(dict(w, pts=pp, pitchain=False, sp_pits=bool(w.get('strongpoint')) and first)); first = False
             if _hash(h0, k, 3) % 100 < 45:   # slit trench to the rear, 6-14 m
+                # parallel to the line, 10-14 m behind it (user, 25 Oct: the slits standing across the line looked wrong)
                 x, y, nx, ny = piece[len(piece) // 2]; sg = _rear_sign(pts, w.get('side', 'USSR')); sl = 6 + _hash(h0, k, 4) % 9
-                out.append(dict(w, pts=[[x, y], [x + sg * nx * sl, y + sg * ny * sl]], comm=True, stub=True, strongpoint=False))
+                cx, cy = x + sg * nx * (10 + _hash(h0, k, 5) % 5), y + sg * ny * (10 + _hash(h0, k, 5) % 5); tx, ty = ny, -nx
+                out.append(dict(w, pts=[[cx - tx * sl / 2, cy - ty * sl / 2], [cx + tx * sl / 2, cy + ty * sl / 2]], comm=True, stub=True, strongpoint=False))
         else:
             out.append(dict(w, pts=pp, pitchain=True, strongpoint=False, sp_pits=bool(w.get('strongpoint')) and first)); first = False
     return out or [dict(w, sp_pits=bool(w.get('strongpoint')))]
@@ -137,8 +139,9 @@ def expand_systems(works):
             out.append(w); continue
         pts = w['pts']
         if w.get('behind_ditch'):
-            for (x, y, nx, ny) in _positions(pts, 160.0):
-                out.append(dict(w, pts=[[x, y], [x + nx * 14, y + ny * 14]], stub=True, behind_ditch=False))
+            for (x, y, nx, ny) in _positions(pts, 160.0):   # firing pits along the line behind the ditch, 12 m long, PARALLEL to it
+                tx, ty = ny, -nx
+                out.append(dict(w, pts=[[x - tx * 6, y - ty * 6], [x + tx * 6, y + ty * 6]], stub=True, behind_ditch=False))
             continue
         out.append(dict(w, pts=wavy(pts, amp=(1.5, 2.0)) if w.get('comm') else wavy(pts)))
         if w.get('system') and not w.get('strongpoint'):

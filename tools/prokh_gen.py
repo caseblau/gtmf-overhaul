@@ -270,7 +270,7 @@ def rasterise(feats, i, j, rng, steep=None):
         c = area_cover(t)
         if c is None: continue
         if c == WATER and not PONDS and t.get('water') not in ('river', 'stream', 'canal', 'oxbow'): continue   # post-war gully reservoirs
-        if c == WOOD and (strip_width(p) < 45.0 or (strip_width(p) < 110.0 and near_rail(p, feats, 60.0))): continue   # modern shelterbelts (post-1948): the 16 July 1943 photographs show the railway embankment bare too
+        if c == WOOD and strip_width(p) < 45.0 and not near_rail(p, feats, 120.0): continue   # modern field shelterbelts (post-1948) go; the railway snow-protection belts stay (user, 25 Oct: the tree line along the railway was missing - they were planted from the 1930s)
         areas.append((order[c], c, p, k))
     areas.sort(key=lambda a: a[0])
     field_polys = []
@@ -580,6 +580,29 @@ def round_relief(h, i, j, hei_dir, radius_m):
         a = (c[k:, k:] - c[:-k, k:] - c[k:, :-k] + c[:-k, :-k]) / (k * k)
     return a[r:r + n, r:r + n].astype(np.float32)
 
+def build_water_levels(feats, hei_dir):
+    """one monotone water surface for the Psel over the whole block (tools/waterlevel.py)"""
+    import waterlevel as WL
+    n = int(CELL / WL.G); dem = np.zeros((ROWS * n, COLS * n), np.float32)   # block DEM at 16 m, row 0 = south
+    for j in range(ROWS):
+        for i in range(COLS):
+            fp = hei_path(hei_dir, i, j)
+            if fp is None: continue
+            hu, _ = pha6_decode(fp); f = hu.shape[0] // n
+            r0 = (ROWS - 1 - j) * n
+            dem[r0:r0 + n, i * n:(i + 1) * n] = (hu * (MAXH / 65535.0)).reshape(n, f, n, f).mean((1, 3)); del hu
+    def heights(x, y):
+        c = np.clip(((x - BLOCK_X0) / WL.G).astype(np.int64), 0, dem.shape[1] - 1); r = np.clip(((y - BLOCK_Y0) / WL.G).astype(np.int64), 0, dem.shape[0] - 1)
+        return dem[r, c]
+    def water_of(kind, t):
+        if kind == 'area':
+            return area_cover(t) == WATER and (PONDS or t.get('water') in ('river', 'stream', 'canal', 'oxbow'))
+        if kind == 'line':
+            st = line_style(t); return st[1] if st is not None and st[0] == WATER else 0
+        return 0
+    nlev = WL.build(feats, water_of, heights, BLOCK_X0, BLOCK_Y0, COLS * CELL, ROWS * CELL)
+    print('water levels: one surface for the block,', nlev, 'levels in steps of %.1f m' % WL.STEP, flush=True)
+
 def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, seed=0):
     name = cell_name(i, j); x0, y0 = cell_origin(i, j)
     rng = np.random.default_rng(seed + i * 100 + j)
@@ -602,14 +625,14 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
     soil[(cov == FIELD) & (fid == 4)] = 15                  # ploughed (the vanilla 'bump' soil is the furrowed field texture, see Petropolye PgD5)
     # tracks and streets the vanilla way (tools/tracks.py): pave strips with a second strip beside them, trampled village streets
     import tracks as TKS
-    n_strip, n_second, n_zone = TKS.paint(soil, cov, lines, to_block(x0, y0), dict(ROAD=ROAD, TRACK=TRACK, WATER=WATER, MARSH=MARSH, RAIL=RAIL, BUILDING=BUILDING), vil_mask=MO.dilate(cov == VILLAGE, 61))
+    n_strip, n_second, n_zone = TKS.paint(soil, cov, lines, to_block(x0, y0), dict(ROAD=ROAD, TRACK=TRACK, FIELD=FIELD, WATER=WATER, MARSH=MARSH, RAIL=RAIL, BUILDING=BUILDING), vil_mask=MO.dilate(cov == VILLAGE, 61))
     # texture classes for tools/texref.py (copied with their soil pattern from the Petropolye cells); 0 = keep the soil
     tcls = np.zeros_like(cov)
     tcls[(cov == FIELD) & (fid == 1)] = TR.CROP; tcls[(cov == FIELD) & (fid == 4)] = TR.PLOUGH
     # field margins: a broken 4-7 m band of bare dark earth (road_back 11) round every field block, as in Petropolye
     fm = cov == FIELD
-    ring = MO.dilate(fm, 13) & ~fm & (cov == GRASS)
-    soil[ring & (TX.gnoise(cov.shape, to_block(x0, y0), 5.0, 21) > -0.35)] = 11
+    ring = MO.dilate(fm, 5) & ~fm & (cov == GRASS)   # 2 m and broken (user, 25 Oct: the field blocks were outlined like a drawing)
+    soil[ring & (TX.gnoise(cov.shape, to_block(x0, y0), 5.0, 21) > 0.25)] = 11
     del fm, ring
     # railway: ballast strip (soil 8 between road_back shoulders, as in the vanilla Korotich cells) on a ~1.5 m embankment
     rail_lines = [pp for (pp, col, dash, c) in lines if c == RAIL]
@@ -637,21 +660,21 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
     # gently from the shore (1:3 to 1.6 m), banks outside lowered to a 1:4 slope and never left below the level, and the
     # index set 8 m beyond the polygon.  (The first version mixed a 1 m mask with a 4 m level grid: pixels without a
     # level got target height -1.2 m ABSOLUTE and dug 3-7 m craters along every shore - the 'canyons' of 25 Oct.)
+    import waterlevel as WL
     wm = (cov == WATER)
+    yy_, xx_ = np.mgrid[0:2048, 0:2048]; gx_ = xx_ + x0 + 0.5; gy_ = yy_ + y0 + 0.5   # old-frame metres of every pixel (cover row 0 = south)
+    if WL.LEVEL is not None and wm.any():
+        dry = WL.sample(WL.DRY, gx_, gy_) & wm
+        cov[dry] = MARSH; wm &= ~dry   # branches of the OSM water polygon that climb the gully sides: wet meadow, not water
     has_water = wm.sum() > 2500   # ponds under 0.25 ha are dropped (the 30 m DEM does not resolve their hollows)
     idx = vals = None
     if has_water:
         from scipy import ndimage as ndi
         h2w = h.reshape(2048, 2, 2048, 2).mean((1, 3)).astype(np.float32)
-        hw = np.where(MO.dilate(wm, 41), h2w, np.inf).astype(np.float32)        # the water and 20 m of bank: the level never stands above the rim
-        mn = ndi.minimum_filter(hw, size=25, mode='nearest')                      # 100 m running minimum along the water
-        mn = np.where(np.isfinite(mn), mn, h2w)
-        den = smooth(wm.astype(np.float32), 7); num = smooth(np.where(wm, mn, 0.0).astype(np.float32), 7)
-        lvl1 = (np.where(den > 1e-3, num / np.maximum(den, 1e-3), mn) + 0.3).astype(np.float32)   # smooth level field, water pixels only
-        del den, num
-        # extend the level to the shore zone: nearest water pixel's level
-        d_out, (iy, ix) = ndi.distance_transform_edt(~wm, return_distances=True, return_indices=True)
-        lvl_ext = lvl1[iy, ix]
+        # the level: the block-wide monotone surface (tools/waterlevel.py), so neighbouring cells agree and the river
+        # falls in a few 0.5 m steps instead of the 39 slabs per cell the per-cell running minimum gave (user, 25 Oct)
+        lvl_ext = WL.sample(WL.LEVEL, gx_, gy_).astype(np.float32)
+        d_out = ndi.distance_transform_edt(~wm)
         d_in = ndi.distance_transform_edt(wm)
         zone = d_out <= 12.0
         # terrain: bed inside, 1:4 bank outside (only lowering), nothing in the shore zone below level + 0.2 (no puddles)
@@ -660,19 +683,20 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
         target = np.where(wm, bed, np.where(zone, np.minimum(h2w, bank), h2w))
         target = np.where(zone & ~wm, np.maximum(target, lvl_ext + 0.2), target)
         delta = (target - h2w).astype(np.float32)
-        delta = np.clip(delta, -3.0, 1.0)
+        delta = np.clip(delta, -4.0, 1.5)
         delta = smooth(delta, 1).astype(np.float32)
         h += np.repeat(np.repeat(delta, 2, 0), 2, 1)
         # the level index (4 m): the polygon dilated by 8 m, level quantised to 0.25 m (<= 63 levels, else 0.5 m)
         zone4 = (d_out <= 8.0).reshape(512, 4, 512, 4).max((1, 3))
-        l4 = lvl_ext.reshape(512, 4, 512, 4).mean((1, 3))
+        l4 = lvl_ext[2::4, 2::4]   # the surface is already in 0.5 m steps: sample, do not average (averaging made in-between levels)
         for q in (4.0, 2.0, 1.0):
             lq = np.where(zone4, np.round(l4 * q) / q, 0); vals = np.unique(lq[zone4])
             if len(vals) <= 63: break
         vals = vals[:63]
         idx = np.zeros((512, 512), np.uint8)
         for k, v in enumerate(vals): idx[lq == v] = k + 1
-        del h2w, hw, mn, lvl1, lvl_ext, d_out, d_in, zone, bed, bank, target, delta, zone4, l4, lq
+        del h2w, lvl_ext, d_out, d_in, zone, bed, bank, target, delta, zone4, l4, lq
+    del yy_, xx_, gx_, gy_
     lap('water')
     # micro-relief (25 Oct, user: the vanilla ground is never flat - bumps of 5-20 cm at 2-30 m everywhere, more in the villages)
     import relief as RL
@@ -794,7 +818,23 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
     tcls[soil == 14] = 0; tcls[works_changed] = 0
     t1 = time.time()
     lay = REF.apply(soil, tcls, rng, origin=to_block(x0, y0))
+    if rail_strip is not None and rail_strip.any():
+        # the track bed the way the vanilla railway cells (Korotich KgC3 / KgD3) paint it - measured 26 Oct after the user's
+        # screenshot of green hatching over the sleepers: the Petropolye reference windows had put the GRASS detail layer
+        # (det_map R ~40, micro-tile weight 8) on the ballast; vanilla ballast (soil 8) is det (2, 91, 39, 3) with micro
+        # weight 0, the shoulders (soil 11) det (7, 60, 99, 11) weight 4, ambient a dry brown (70, 63, 42)
+        bal = rail_strip & (soil == 8); shd = rail_strip & (soil != 8)
+        lay['hi'][bal] = 0; lay['hi'][shd] = 4
+        nz = (TX.gnoise(soil.shape, to_block(x0, y0), 3.0, 77) * 6).astype(np.int16)
+        det = lay['det']
+        for msk, base in ((bal, (2, 91, 39, 3)), (shd, (7, 60, 99, 11))):
+            for c in range(4): det[..., c][msk] = np.clip(base[c] + nz[msk], 0, 255).astype(np.uint8)
+        lac = lay['lac']; f = 2048 // lac.shape[0]
+        rs = rail_strip.reshape(lac.shape[0], f, lac.shape[1], f).mean((1, 3)) > 0.3
+        lac[rs] = (70, 63, 42, 60)
     C.write_grid(path('mat_map'), (soil | (lay['hi'] << 4)).astype(np.uint8))
+    no_grass = (cov == WATER) if rail_strip is None else ((cov == WATER) | rail_strip)   # no grass billboards standing in the river (user, 25 Oct) or on the track bed
+    rail_strip = no_grass
     if rail_strip is not None:   # bare ballast and shoulders: the Petropolye pools put grass on soil 8 / 11
         g_ = lay['grass']; f_ = g_.shape[0] // 2048 if g_.shape[0] >= 2048 else None
         if f_: g_[np.repeat(np.repeat(rail_strip, f_, 0), f_, 1)[:g_.shape[0], :g_.shape[1]]] = 0
@@ -903,6 +943,7 @@ def main():
     sys.stdout = Tee(); print('# prokh_gen', time.strftime('%Y-%m-%d %H:%M:%S'), sys.argv[1:])
     feats, places = load_osm(a.osm); print('osm features', len(feats), 'places', len(places), flush=True)
     places = places_1943(places, a.layout)
+    build_water_levels(feats, a.cells)
     syms = ['0123456789!"#$%^&*()_+|\t=-~`[]{}:;"\'<>,.?/ \u2116ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz']
     eng = [('spec_syms_freq', syms), ('pe_poly_name', ['Prokhorovka']), ('pe_poly_country', ['USSR KURSK REG.'])]
     rus = [('spec_syms_freq', syms), ('pe_poly_name', ['\u041f\u0440\u043e\u0445\u043e\u0440\u043e\u0432\u043a\u0430']), ('pe_poly_country', ['\u0421\u0421\u0421\u0420 \u041a\u0423\u0420\u0421\u041a\u0410\u042f \u041e\u0411\u041b.'])]

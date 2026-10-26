@@ -194,7 +194,7 @@ def build(cov, soil, lines, buildings, slope2, rng, VIL, WATER_C, MARSH_C, ROAD_
     import texsynth as TX
     yn = TX.gnoise(soil.shape, origin, 6.0, 43)
     y1 = (ym == 1) & free; y2 = (ym == 2) & free
-    soil[y1] = np.where(yn[y1] > 0.45, 11, np.where(yn[y1] < -0.5, VILLAGE_SOIL, CLAY)).astype(soil.dtype)   # yard: clay with patches of dark earth and packed ground
+    soil[y1] = np.where(yn[y1] > 0.45, CLAY, np.where(yn[y1] < -0.3, 0, 11)).astype(soil.dtype)   # yard: dark trodden earth, some clay, grass corners (no pale pave)
     soil[y2] = np.where(yn[y2] > 0.3, 11, VILLAGE_SOIL).astype(soil.dtype)
     gmask = (gm > 0) & plot_ok & free & (ym == 0) & ~hm
     yy, xx = np.nonzero(gmask)
@@ -250,10 +250,11 @@ def kolkhoz(objs, soil, farm_mask, cov, rng, WATER_C, MARSH_C, BUILDING_C, road_
         import texsynth as TX
         yn = TX.gnoise(soil.shape, origin, 5.0, 44); yn2 = TX.gnoise(soil.shape, origin, 2.0, 45)
         ym = m & (cov != WATER_C) & (cov != MARSH_C) & (soil == 0)
-        soil[ym & (yn > -0.15)] = CLAY
-        soil[ym & (yn > 0.55)] = 2                                   # black earth (dung / dark soil) patches - never soil 1, the engine draws it as water
-        soil[ym & (yn < -0.15) & (yn2 > 0.4)] = VILLAGE_SOIL          # packed pave patches on the grass
-        soil[ym & (yn2 < -0.8)] = SAND
+        # 25 Oct (user: the yards were a pale camouflage of sand / pave / clay blotches): mostly trodden grass with dark
+        # earth round the buildings, clay only in a few patches, no pale pave or sand
+        soil[ym & (yn > 0.15)] = 11
+        soil[ym & (yn > 0.5) & (yn2 > 0.0)] = CLAY
+        soil[ym & (yn > 0.7)] = 2                                    # black earth (dung) - never soil 1, the engine draws it as water
         n_rows = 2 if len(ys) > 6000 else 1
         for r in range(n_rows):
             off = (r - (n_rows - 1) / 2) * 45

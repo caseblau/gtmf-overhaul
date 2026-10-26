@@ -19,7 +19,7 @@ DL, DF, DRT, ST2 = 'DL', 'DF', 'DRT', 'ST2'                                   # 
 EIC, TUL, TKT, ST3 = 'EIC', 'TUL', 'TKT', 'ST3'                               # TK 6 MIR Eicke, 5 MIR Thule, Pz Rgt, StuG
 # ---- Soviet ids
 B99, B26, B169, M58, M11, R15 = 'B99', 'B26', 'B169', 'M58', 'M11', 'R15'     # 2 TC
-R227, R285, R295 = 'R227', 'R285', 'R295'                                     # 183 RD
+R227, R285, R295 = 'R227', 'R285', 'R295'                                     # 183 RD (285 / 295 RR get no orders on 10 July: the standing HOLD keeps them in their trenches - user, 26 Oct)
 R151, R153, R155, R245 = 'R151', 'R153', 'R155', 'R245'                       # 52 gds RD, 245 TR
 R23, R26, R28 = 'R23', 'R26', 'R28'                                           # 9 gds AB Div
 R284, R287, R290 = 'R284', 'R287', 'R290'                                     # 95 gds RD
@@ -36,17 +36,17 @@ ORDERS = {
     # ---------------- 10 July
     1: [  # 06:00 LSSAH on Komsomolets, Deutschland on Ivanovsky Vyselok, Totenkopf at Kozlovka
         (A, L2, 4, 7), (A, LT, 4, 7), (A, LS, 4, 6), (A, DL, 4, 9), (A, ST2, 4, 9), (A, EIC, 2, 3), (A, TKT, 2, 4), (A, TUL, 1, 2),
-        (R, R285, 3, 6), (R, R295, 4, 8), (A, B99, 2, 3), (R, B26, 6, 5), (R, B169, 7, 6), (R, R151, 1, 1), (R, R153, 2, 1), (R, M11, 4, 1)],
+        (A, B99, 2, 3), (R, B26, 6, 5), (R, B169, 7, 6), (R, R151, 1, 1), (R, R153, 2, 1), (R, M11, 4, 1)],
     2: [  # 10:00 the Komsomolets attack (10:45), Kozlovka assault group thrown back by 99 TBde
         (A, L2, 5, 6), (A, LT, 5, 6), (A, LS, 5, 7), (A, DL, 5, 8), (A, DRT, 5, 9), (A, EIC, 2, 3), (A, TKT, 2, 3), (A, TUL, 1, 2),
-        (A, B99, 2, 3), (R, R285, 4, 7), (R, R295, 4, 8), (A, B169, 5, 7), (R, B26, 6, 5)],
+        (A, B99, 2, 3), (A, B169, 5, 7), (R, B26, 6, 5)],
     3: [  # 14:00 Komsomolets taken, 285 RR back to Ivanovsky Vyselok - Storozhevoye wood, 169 TBde counter-attacks
         (A, L2, 6, 5), (A, LT, 6, 5), (A, LS, 5, 6), (A, DL, 5, 8), (A, DRT, 6, 8), (A, EIC, 2, 2), (A, TKT, 2, 3), (A, TUL, 1, 1),
-        (A, B169, 5, 7), (A, B26, 6, 5), (R, R285, 5, 8), (R, R295, 6, 7), (R, B99, 2, 3), (R, R151, 1, 1)],
+        (A, B169, 5, 7), (A, B26, 6, 5), (R, B99, 2, 3), (R, R151, 1, 1)],
     4: [  # 18:00 LSSAH at 241.6, Totenkopf bridgehead at Klyuchi
         (A, L2, 6, 4), (A, LT, 6, 5), (A, LS, 6, 5), (A, DL, 6, 7), (A, DRT, 6, 8), (A, EIC, 3, 2), (A, TKT, 2, 2), (A, TUL, 2, 1),
-        (R, B169, 7, 6), (R, B26, 7, 5), (R, R285, 6, 8), (R, R295, 6, 7), (A, B99, 2, 2), (R, R151, 2, 1), (R, R153, 3, 1)],
-    5: [(R, L2, 6, 4), (R, DL, 6, 7), (R, TUL, 2, 1), (R, EIC, 3, 2), (R, B169, 7, 6), (R, R285, 6, 8), (M, R227, 7, 7)],   # 22:00
+        (R, B169, 7, 6), (R, B26, 7, 5), (A, B99, 2, 2), (R, R151, 2, 1), (R, R153, 3, 1)],
+    5: [(R, L2, 6, 4), (R, DL, 6, 7), (R, TUL, 2, 1), (R, EIC, 3, 2), (R, B169, 7, 6), (M, R227, 7, 7)],   # 22:00
     6: [(R, L2, 6, 4), (R, DL, 6, 7), (R, TUL, 2, 1), (R, EIC, 3, 2), (R, R227, 7, 7), (R, R23, 9, 3), (R, R26, 9, 4), (R, R28, 8, 5)],   # 02:00
     # ---------------- 11 July
     7: [  # 06:00 LSSAH on Oktyabrsky and 252.2 (9 gds AB Div), DR on Storozhevoye, Totenkopf on 226.6
