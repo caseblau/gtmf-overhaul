@@ -221,8 +221,17 @@ def main():
         for j in g.by_sq.get((x, y), []): g.nodes[j]['flags'] |= low
         j = g.nearest(mx, my)
         if j is not None: g.nodes[j]['flags'] |= (value << 11)
+    # OSM settlement names are modern (Politotdelskiy, Komsomolskiy, Storozhevoye-Pervoye ...): one within 500 m of a 1943
+    # layout place is dropped (the layout place carries the 1943 name), the rest renamed by prokh_gen.RENAME_1943
+    # (27 Oct check of the release: both the modern and the 1943 names stood on the op map)
+    lay_pl = [pl['xy'] for pl in (layout or {}).get('places', [])]
     for (px, py), t, key in places:
         if not (0 <= px < G.COLS * G.CELL and 0 <= py < H_BLOCK): continue
+        if any(math.hypot(px - q[0], py - q[1]) < 500 for q in lay_pl): continue
+        nm43 = G.RENAME_1943.get(t['name'], t['name'])
+        if nm43 is None: continue
+        if nm43 != t['name']: key = 'pe_mm_' + ''.join(ch for ch in textpack.translit(nm43).lower() if ch.isalnum())[:24]   # a new text key, so no stale modern name survives in the pack
+        t = dict(t, name=nm43)
         kind = t.get('place', ''); name = textpack.translit(t['name'])
         if kind == 'town': low, value, level = F_VILLAGE, 8, 3
         elif kind == 'village': low, value, level = F_VILLAGE, 4, 3
