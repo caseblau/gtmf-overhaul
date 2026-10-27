@@ -15,13 +15,16 @@ OpenStreetMap carries almost no footprints for them (Andreyevka: 1), so the home
 inside the residential polygons (trimmed to the 1941 built-up extent by prokh_gen); OSM footprints are kept.
 Coordinates: cell pixels (1 px = 1 m), row 0 = south.
 """
-import math, numpy as np
+import math, os, numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 import morph as MO
 
 TAB_B = 'tabs\\builds.cfgpack'; TAB_BC = 'tabs\\builds_cap.cfgpack'; TAB_O = 'tabs\\objects.cfgpack'; TAB_F = 'tabs\\fences.cfgpack'; TAB_S = 'tabs\\structs.cfgpack'; TAB_P = 'tabs\\posts.cfgpack'
 VILLAGE_SOIL = 10; CLAY = 3; FIELD = 6; FIELD_GREEN = 7; SAND = 5; LEAVES = 13; PLOUGH = 15
 FL_SUNFL = 17; FL_CORN = 13; FL_BUSH = 7; FL_BUSH2 = 8; FL_GARDEN = 10; FL_CULTBUSH = 15
+
+LIB = None   # vstamps.Library (set by prokh_gen): homesteads copied from the Petropolye villages
+BUF = {}     # per cell: the copied ground layers (mask, hi, det, grass) - prokh_gen writes them over texref's
 
 def _resample(pp, step):
     out = []; carry = 0.0
@@ -60,7 +63,7 @@ def _fence(objs, a, b, node, blocked, gates=(), posts=True):
 def build(cov, soil, lines, buildings, slope2, rng, VIL, WATER_C, MARSH_C, ROAD_C, TRACK_C, RAIL_C, BUILDING_C, farm_mask=None, cell_seed=0, origin=(0.0, 0.0), vil_pad=None, pad=0, works_mask=None):
     """returns (objs, flora) and paints yards / gardens / hedges into `soil` in place.
     objs: (table, node, x, y, angle); flora: list of (x, y, flora_type)"""
-    objs = []; flora = []
+    objs = []; flora = []; BUF.clear()
     vil = cov == VIL; bmask = cov == BUILDING_C
     if vil_pad is not None and pad > 0:   # village cover with a margin: the extent is the same on both sides of a cell border
         ext = MO.dilate(vil_pad, 41)[pad:-pad, pad:-pad] | MO.dilate(bmask, 41)
@@ -108,6 +111,42 @@ def build(cov, soil, lines, buildings, slope2, rng, VIL, WATER_C, MARSH_C, ROAD_
         return (h ^ (h >> 15)) & 0x7fffffff
     def in_ext(x, y):   # village extent is known inside this cell only; outside it the walk assumes the street is built up
         return (ext[int(y), int(x)] > 0) if _inside(x, y) else True
+    if LIB is not None:   # 27 Oct: homesteads copied from the Petropolye villages (tools/vstamps.py)
+        import vstamps as VS
+        n = 2048
+        BUF.clear(); BUF.update(mask=np.zeros((n, n), bool), hi=np.zeros((n, n), np.uint8), det=np.zeros((n, n, 4), np.uint8), grass=np.zeros((n, n), np.uint8))
+        if vil_pad is not None and pad > 0:
+            ext_pad = MO.dilate(vil_pad, 41)
+            def in_ext2(x, y):
+                X, Y = int(x) + pad, int(y) + pad
+                return bool(ext_pad[Y, X]) if 0 <= X < ext_pad.shape[1] and 0 <= Y < ext_pad.shape[0] else True
+        else: in_ext2 = in_ext
+        def house_ok(x, y): return (not blocked[int(y), int(x)]) if _inside(x, y) else True
+        allowed = plot_ok & ~wet & ~road & ~bmask
+        import tracks as TK_
+        if TK_.BUF.get('mask') is not None: allowed &= ~TK_.BUF['mask']   # the copied yards never paint over a road strip
+        if works_mask is not None: allowed &= ~works_mask
+        if farm_mask is not None: allowed &= ~farm_mask
+        so, sf = [], []; taken = []
+        for (pp, c) in sorted(streets, key=lambda q: (q[1] != ROAD_C, -len(q[0]))):   # the main streets first, side lanes fill in
+            VS.place_street(LIB, pp, origin, in_ext2, house_ok, allowed, soil, BUF, so, sf, taken=taken, min_front=10.0 if c == ROAD_C else 7.5)
+        if os.environ.get('VS_DUMP'):
+            import pickle; pickle.dump((so, road), open(os.environ['VS_DUMP'], 'wb'))
+        roadw = MO.dilate(road, 3); from scipy import ndimage as _ndi; rd_ = _ndi.distance_transform_edt(~road); road_f = rd_ < 4.0; road_s = rd_ < 9.0   # side / yard fences of the copied homesteads stay 9 m off any street   # front fences of one street stop 4 m short of a crossing street
+        for o in so:
+            x, y = o[2], o[3]
+            if not _inside(x, y): continue
+            if o[1].startswith(('build', 'saray')) and blocked[int(y), int(x)]: continue
+            if wet[int(y), int(x)] or bmask[int(y), int(x)]: continue
+            if roadw[int(y), int(x)] and not o[1].startswith(VS.FENCE): continue
+            if o[1].startswith(VS.FENCE) and (road_f if (len(o) > 5 and o[5] == 'front') else road_s)[int(y), int(x)]: continue
+            o = o[:5]
+            if works_mask is not None and works_mask[int(y), int(x)]: continue
+            objs.append(o)
+        for f in sf:
+            x, y = f[0], f[1]
+            if _inside(x, y) and not (wet[int(y), int(x)] or road[int(y), int(x)]) and (works_mask is None or not works_mask[int(y), int(x)]): flora.append(f)
+        streets = []   # the rule-based homesteads below are not drawn
     for (pp, c) in streets:
         pts = _resample(pp, 2.0)
         inside = [k for k, (x, y, ux, uy) in enumerate(pts) if _inside(x, y) and ext[int(y), int(x)]]

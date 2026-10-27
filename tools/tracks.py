@@ -78,3 +78,93 @@ def paint(soil, cov, lines, origin, codes, vil_mask=None):
     soil[pm] = PAVE
     soil[pm & (n_patch > 0.8)] = CLAY   # a few clay specks in the lines, as in the vanilla cells
     return int(pm.sum()), int(cm.sum()), 0
+
+
+# ------------------------------------------------------------------------------------------------ roads by example
+LIB = None        # vstamps.Library (set by prokh_gen): road strips unrolled from the Petropolye roads
+BUF = {}          # per cell: mask / hi / det / grass of the painted road strips (written over texref's layers)
+CORE_MASK = None  # per cell: the road cores (wheel-track zone), whatever soil the strip copied there
+LOWER = None      # per cell: (2048, 2048) float32 m - how much the ground is lowered under the wheel tracks
+CORE = {'track': 3.5, 'main': 6.0}
+NOGO_SOILS = (4, 6, 7, 8, 9, 12, 13, 14, 15)   # crops, leaves, forest ground, concrete, trench: never copied with a road
+
+
+def paint_strips(soil, cov, lines, origin, codes, vil_mask=None):
+    """every OSM road / track is painted with a strip of a real Petropolye road bent along it (27 Oct, user: 'same with
+    roads'): a piece of 120-220 m of one strip after another, the strips chosen by global coordinates so that a road is
+    painted the same way in both cells of a border. Returns the number of road pixels painted."""
+    from scipy.spatial import cKDTree
+    ROAD, TRACK = codes['ROAD'], codes['TRACK']
+    kinds = {k: [r for r in LIB.roads if r['kind'] == k and len(r['soil']) >= 60] for k in ('track', 'main', 'street')}
+    kinds['main'] = kinds['main'] + kinds['street']
+    if not kinds['track']: kinds['track'] = kinds['main']
+    if not kinds['main']: kinds['main'] = kinds['track']
+    corr = Image.new('L', (2048, 2048), 0); dc = ImageDraw.Draw(corr)
+    S_xy, S_t, S_info = [], [], []   # samples (cell px), tangents, (strip id, strip row, core half width)
+    strips = []
+    for (pp, col, dash, c) in lines:
+        if c not in (ROAD, TRACK) or len(pp) < 2: continue
+        kind = 'track' if c == TRACK else 'main'
+        g = W._chaikin(_global(pp, origin), 3)
+        P = np.array(g, np.float64); seg = np.hypot(*np.diff(P, axis=0).T); Sx = np.concatenate([[0], np.cumsum(seg)])
+        if Sx[-1] < 5: continue
+        s = np.arange(0.0, Sx[-1], 1.0)
+        X = np.interp(s, Sx, P[:, 0]); Y = np.interp(s, Sx, P[:, 1])
+        T = np.stack([np.gradient(X), np.gradient(Y)], 1); T /= np.maximum(np.hypot(T[:, 0], T[:, 1]), 1e-6)[:, None]
+        lx, ly = X - origin[0], Y - origin[1]
+        # keep the samples near the cell only
+        near = (lx > -40) & (lx < 2088) & (ly > -40) & (ly < 2088)
+        if not near.any(): continue
+        # strip pieces along the line
+        rows = np.zeros(len(s), np.int64); sid = np.zeros(len(s), np.int64)
+        h0 = W._hash(round(g[0][0]), round(g[0][1]), 11); k = 0; i = 0
+        lst = kinds[kind]
+        while i < len(s):
+            r = lst[W._hash(h0, k, 1) % len(lst)]; n_r = len(r['soil'])
+            ln = min(n_r - 1, 120 + W._hash(h0, k, 2) % 100)
+            o = W._hash(h0, k, 3) % max(1, n_r - ln)
+            j = min(len(s), i + ln)
+            sid[i:j] = len(strips); rows[i:j] = o + np.arange(j - i)
+            strips.append(r); i = j; k += 1
+        core = CORE[kind]
+        sel = np.flatnonzero(near)
+        S_xy.append(np.stack([lx[sel], ly[sel]], 1)); S_t.append(T[sel]); S_info.append(np.stack([sid[sel], rows[sel], np.full(len(sel), int(core * 10))], 1))
+        dc.line(list(zip(lx[::4].tolist() + [lx[-1]], ly[::4].tolist() + [ly[-1]])), fill=255, width=int(2 * (core + 3)) + 1, joint='curve')
+    BUF.clear()
+    global LOWER, CORE_MASK
+    LOWER = None; CORE_MASK = None
+    if not S_xy: return 0
+    S_xy = np.concatenate(S_xy); S_t = np.concatenate(S_t); S_info = np.concatenate(S_info)
+    cm = np.asarray(corr) > 0
+    keep = ~np.isin(cov, (codes['WATER'], codes['MARSH'], codes['RAIL'], codes['BUILDING']))
+    cm &= keep
+    # the corridor stays free of crops (ragged field edges had pushed the crops over the tracks)
+    cov[cm & (cov == codes.get('FIELD', 1))] = TRACK
+    yy, xx = np.nonzero(cm)
+    if not len(yy): return 0
+    tree = cKDTree(S_xy)
+    _, j = tree.query(np.stack([xx + 0.5, yy + 0.5], 1))
+    d = np.stack([xx + 0.5, yy + 0.5], 1) - S_xy[j]; t = S_t[j]
+    n = d[:, 0] * -t[:, 1] + d[:, 1] * t[:, 0]   # signed offset across the road
+    core = S_info[j, 2] / 10.0
+    an = np.abs(n)
+    noise = ((xx.astype(np.int64) * 73856093) ^ (yy.astype(np.int64) * 19349663)) % 1000 / 1000.0
+    CORE_MASK = np.zeros((2048, 2048), bool); CORE_MASK[yy[an <= core - 1.0], xx[an <= core - 1.0]] = True
+    take = (an <= core) | ((an <= core + 3) & (noise * 3 > an - core))
+    xx, yy, n, j = xx[take], yy[take], n[take], j[take]
+    col = np.clip(np.rint(n).astype(int) + 12, 0, 24)
+    sidv = S_info[j, 0]; rowv = S_info[j, 1]
+    n2 = 2048
+    BUF.update(mask=np.zeros((n2, n2), bool), hi=np.zeros((n2, n2), np.uint8), det=np.zeros((n2, n2, 4), np.uint8), grass=np.zeros((n2, n2), np.uint8))
+    lower = np.zeros((n2, n2), np.float32)
+    for q in np.unique(sidv):
+        m = sidv == q; r = strips[q]
+        rr = np.clip(rowv[m], 0, len(r['soil']) - 1); cc = col[m]
+        ss = r['soil'][rr, cc].copy()
+        ss[np.isin(ss, NOGO_SOILS)] = 0
+        ty, tx = yy[m], xx[m]
+        soil[ty, tx] = ss
+        BUF['mask'][ty, tx] = True; BUF['hi'][ty, tx] = r['hi'][rr, cc]; BUF['det'][ty, tx] = r['det'][rr, cc]; BUF['grass'][ty, tx] = r['grass'][rr, cc]
+        lower[ty, tx] = np.where(ss == 10, 0.14, np.where(ss == 11, 0.06, 0.0))
+    LOWER = ndi.uniform_filter(lower, 3)
+    return int(BUF['mask'].sum())

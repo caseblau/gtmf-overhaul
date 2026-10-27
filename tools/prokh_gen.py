@@ -16,6 +16,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pha6 import decode as pha6_decode
 import atf1, cellfmt as C, pen, textpack
 import texsynth as TX, texref as TR, morph as MO
+VLIB = [None]   # vstamps.Library, set by main()
 REF = None      # texref.Ref: the Petropolye / Mius reference cells, set by main() from --ref
 
 # ------------------------------------------------------------------ block geometry (docs/m12_terrain/prokh_layout.md)
@@ -215,6 +216,82 @@ def drop_modern(feats, layout_path):
         else: n += 1
     print('exclude_1943: %d modern features dropped' % n, flush=True)
     return out
+
+def prune_roads(feats):
+    """27 Oct (user: 'some roads lead to nowhere ... keep everything historically accurate'). OSM is today's network:
+    farm tracks to modern silos, field-access stubs, footpaths and service lanes. The 1943 network is kept by dropping
+      * paths / footways / cycleways / bridleways and service lanes outside the villages (none of them on the 1941 sheet),
+      * every minor road or track with an end that leads nowhere: not within 25 m of another road, not inside a village,
+        farm yard or 1943 village of the layout, not at the railway (crossing, station) or the river (ford), and not at
+        the edge of the block - repeated until no such dead end is left, so chains of stubs go too.
+    The graded roads (primary / secondary / tertiary) and the layout's roads_1943 are never dropped."""
+    MINOR = ('track', 'unclassified', 'residential', 'service', 'living_street', 'road')
+    DROP = ('path', 'footway', 'cycleway', 'bridleway', 'steps', 'pedestrian')
+    places = [MplPath(p) for (k, t, p, c) in feats if k == 'area' and area_cover(t) == VILLAGE]
+    places += [MplPath(p) for p in FARMS] + [MplPath(p) for p in VILLAGES43]
+    anchors = []   # railway and river points
+    for (k, t, p, c) in feats:
+        if k == 'line' and (('railway' in t and line_style(t) is not None) or t.get('waterway') in ('river', 'stream')):
+            anchors += [tuple(q) for q in p]
+    from scipy.spatial import cKDTree
+    TA = cKDTree(np.array(anchors)) if anchors else None
+    bx0, by0, bx1, by1 = BLOCK_X0 + 60, BLOCK_Y0 + 60, BLOCK_X0 + COLS * CELL - 60, BLOCK_Y0 + ROWS * CELL - 60
+    def in_place(q): return any(pl.contains_points([q])[0] for pl in places)
+    def dense(p, step=10.0):
+        out = []
+        for (ax, ay), (bx, by) in zip(p, p[1:]):
+            n = max(1, int(math.hypot(bx - ax, by - ay) / step))
+            out += [(ax + (bx - ax) * k / n, ay + (by - ay) * k / n) for k in range(n)]
+        return out + [tuple(p[-1])]
+    roads = []; other = []; n_drop = 0
+    for f in feats:
+        k, t, p, c = f
+        hw = t.get('highway') if k == 'line' else None
+        if hw in DROP: n_drop += 1; continue
+        if hw == 'service' and not in_place(p[len(p) // 2]): n_drop += 1; continue
+        if hw is not None: roads.append(f)
+        else: other.append(f)
+    # combs of parallel field tracks 50-100 m apart (post-war orchard / allotment rows, e.g. W of Ivanovsky Vyselok):
+    # a track under 800 m with two or more others of the same direction and length within 250 m goes, with them
+    tr = [(n, f) for n, f in enumerate(roads) if f[1].get('highway') == 'track']
+    info = {}
+    for n, (k, t, p, c) in tr:
+        L = sum(math.hypot(b[0] - a[0], b[1] - a[1]) for a, b in zip(p, p[1:]))
+        if L > 800: continue
+        ang = math.atan2(p[-1][1] - p[0][1], p[-1][0] - p[0][0]) % math.pi
+        info[n] = (ang, ((p[0][0] + p[-1][0]) / 2, (p[0][1] + p[-1][1]) / 2), L)
+    comb = set()
+    for n, (a, m, L) in info.items():
+        mates = [q for q, (a2, m2, L2) in info.items() if q != n and min(abs(a - a2), math.pi - abs(a - a2)) < math.radians(10)
+                 and math.hypot(m[0] - m2[0], m[1] - m2[1]) < 250 and 0.6 < L / L2 < 1.6]
+        if len(mates) >= 2: comb.add(n); comb.update(mates)
+    roads = [f for n, f in enumerate(roads) if n not in comb]
+    fixed = [dense(r['pts']) for r in ROADS43]
+    changed = True; n_dead = 0
+    while changed:
+        changed = False
+        pts, own = [], []
+        for n, (k, t, p, c) in enumerate(roads):
+            d = dense(p); pts += d; own += [n] * len(d)
+        for d in fixed: pts += d; own += [-1] * len(d)
+        if not pts: break
+        T = cKDTree(np.array(pts)); own = np.array(own)
+        keep = []
+        for n, f in enumerate(roads):
+            k, t, p, c = f
+            if t.get('highway') not in MINOR: keep.append(f); continue
+            dead = False
+            for q in (p[0], p[-1]):
+                if not (bx0 < q[0] < bx1 and by0 < q[1] < by1): continue
+                if any(own[j] != n for j in T.query_ball_point(q, 25.0)): continue
+                if TA is not None and TA.query(q)[0] < 40.0: continue
+                if in_place(q): continue
+                dead = True; break
+            if dead: n_dead += 1; changed = True
+            else: keep.append(f)
+        roads = keep
+    print('roads 1943: %d paths / service lanes, %d parallel comb tracks and %d dead-end tracks dropped, %d roads kept' % (n_drop, len(comb), n_dead, len(roads)), flush=True)
+    return other + roads
 
 # ------------------------------------------------------------------ natural river courses
 # 26 Oct (user: 'the curvature is rigid and unnatural'): the OSM Psel here has a vertex every 110-160 m, so the river was
@@ -760,7 +837,11 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
     soil[(cov == FIELD) & (fid == 4)] = 15                  # ploughed (the vanilla 'bump' soil is the furrowed field texture, see Petropolye PgD5)
     # tracks and streets the vanilla way (tools/tracks.py): pave strips with a second strip beside them, trampled village streets
     import tracks as TKS
-    n_strip, n_second, n_zone = TKS.paint(soil, cov, lines, to_block(x0, y0), dict(ROAD=ROAD, TRACK=TRACK, FIELD=FIELD, WATER=WATER, MARSH=MARSH, RAIL=RAIL, BUILDING=BUILDING, VILLAGE=VILLAGE), vil_mask=MO.dilate(cov == VILLAGE, 21))
+    if TKS.LIB is not None:   # 27 Oct: real Petropolye road strips bent along the OSM lines (tools/tracks.py paint_strips)
+        TKS.paint_strips(soil, cov, lines, to_block(x0, y0), dict(ROAD=ROAD, TRACK=TRACK, FIELD=FIELD, WATER=WATER, MARSH=MARSH, RAIL=RAIL, BUILDING=BUILDING, VILLAGE=VILLAGE))
+        if TKS.LOWER is not None: h -= np.repeat(np.repeat(TKS.LOWER, 2, 0), 2, 1)   # the wheel tracks lie 10-15 cm below the verge
+    else:
+        TKS.paint(soil, cov, lines, to_block(x0, y0), dict(ROAD=ROAD, TRACK=TRACK, FIELD=FIELD, WATER=WATER, MARSH=MARSH, RAIL=RAIL, BUILDING=BUILDING, VILLAGE=VILLAGE), vil_mask=MO.dilate(cov == VILLAGE, 21))
     # texture classes for tools/texref.py (copied with their soil pattern from the Petropolye cells); 0 = keep the soil
     tcls = np.zeros_like(cov)
     tcls[(cov == FIELD) & (fid == 1)] = TR.CROP; tcls[(cov == FIELD) & (fid == 4)] = TR.PLOUGH
@@ -991,6 +1072,11 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
     objs, vtrees = SE.build(cov, soil, lines, buildings, slope2, rng, VILLAGE, WATER, MARSH, ROAD, TRACK, RAIL, BUILDING, FARM_MASK[0], cell_seed=i * 131 + j * 17, origin=(x0, y0), vil_pad=VIL_PAD[0], pad=PAD, works_mask=works_bld)
     gx = [t[0] for t in vtrees]; gy = [t[1] for t in vtrees]; gtyp = np.array([t[2] for t in vtrees], np.uint8)
     SE.kolkhoz(objs, soil, FARM_MASK[0], cov, rng, WATER, MARSH, BUILDING, road_mask=MO.dilate(np.isin(cov, (ROAD, TRACK, RAIL)), 13), origin=to_block(x0, y0), works_mask=works_bld)   # sovkhoz yards: long barns (builds_cap farm0 / farm1) round a clay yard, off the roads
+    if SE.BUF.get('mask') is not None and SE.BUF['mask'].any():   # copied homesteads bring their own trees: the scattered ones under them go
+        sm = SE.BUF['mask']
+        for q in range(len(fx)):
+            xi_ = np.clip(fx[q].astype(int), 0, 2047); yi_ = np.clip(fy[q].astype(int), 0, 2047); kp = ~sm[yi_, xi_]
+            fx[q], fy[q], fr[q], ft[q] = fx[q][kp], fy[q][kp], fr[q][kp], ft[q][kp]
     lap('settle')
     # ground texture layers by example (tools/texref.py): fields, ploughed land and open steppe take their soil pattern,
     # micro tiles, detail, grass and ambient colour from windows of the Petropolye cells; every other soil its micro layers
@@ -1001,8 +1087,19 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
     # shapes of the polygons; it is meadow like the steppe round it, so it takes the steppe class too
     tcls[np.isin(cov, (GRASS, VILLAGE, ORCHARD, SCRUB)) & (soil == 0)] = TR.STEPPE
     tcls[soil == 14] = 0; tcls[works_changed] = 0
+    sbuf = SE.BUF if SE.BUF.get('mask') is not None else None
+    rbuf = TKS.BUF if TKS.BUF.get('mask') is not None else None
+    if sbuf is not None: tcls[sbuf['mask']] = 0
+    if rbuf is not None: tcls[rbuf['mask']] = 0
     t1 = time.time()
     lay = REF.apply(soil, tcls, rng, origin=to_block(x0, y0))
+    if rbuf is not None and rbuf['mask'].any():   # the road strips keep their own micro tiles, detail and grass (homesteads painted later win)
+        m_ = rbuf['mask'] & (soil != 14)
+        if sbuf is not None: m_ &= ~sbuf['mask']
+        lay['hi'][m_] = rbuf['hi'][m_]; lay['det'][m_] = rbuf['det'][m_]; lay['grass'][m_] = rbuf['grass'][m_]
+    if sbuf is not None and sbuf['mask'].any():   # the copied homesteads keep the micro tiles, detail and grass they came with
+        m_ = sbuf['mask'] & (soil != 14)
+        lay['hi'][m_] = sbuf['hi'][m_]; lay['det'][m_] = sbuf['det'][m_]; lay['grass'][m_] = sbuf['grass'][m_]
     if rail_strip is not None and rail_strip.any():
         # the track bed the way the vanilla railway cells (Korotich KgC3 / KgD3) paint it - measured 26 Oct after the user's
         # screenshot of green hatching over the sleepers: the Petropolye reference windows had put the GRASS detail layer
@@ -1055,6 +1152,25 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
             ok = ~works_obj[np.clip(Y.astype(int), 0, 2047), np.clip(X.astype(int), 0, 2047)]
             fx, fy, fr, ft = [X[ok]], [Y[ok]], [R[ok]], [Tt[ok]]
         print('  works clearance: %d objects dropped' % (n0 - len(objs)), flush=True)
+    # 27 Oct (user: objects, plants and fences must not stand on the roads): nothing within 1.5 m of a road strip
+    # (houses, sheds and barns 4 m); the rail sections, gates in the front fences and telegraph posts are not affected
+    if TKS.BUF.get('mask') is not None and TKS.BUF['mask'].any():
+        rm = TKS.BUF['mask'] & np.isin(soil, (10, 11, 2, 3))   # the worn ground of the road, not the grass verge copied with it
+        rm = MO.dilate(rm, 3) | MO.dilate(TKS.CORE_MASK, 3) if getattr(TKS, 'CORE_MASK', None) is not None else MO.dilate(rm, 3)
+        rbig = MO.dilate(rm, 7)
+        def _off(o):
+            if o[1] in ('rail',) or o[1].startswith(('gates', 'kalitka')): return True
+            xi, yi = int(min(2047, max(0, o[2]))), int(min(2047, max(0, o[3])))
+            if o[1].startswith(('fence', 'fpost')):   # fences only off the wheel tracks themselves (the front fences line the street)
+                return TKS.CORE_MASK is None or not TKS.CORE_MASK[yi, xi]
+            return not (rbig if o[1].startswith(('build', 'saray', 'farm')) else rm)[yi, xi]
+        n0 = len(objs); objs = [o for o in objs if _off(o)]
+        nf0 = 0
+        if fx:
+            X = np.concatenate(fx); Y = np.concatenate(fy); R = np.concatenate(fr); Tt = np.concatenate(ft)
+            ok = ~rm[np.clip(Y.astype(int), 0, 2047), np.clip(X.astype(int), 0, 2047)]
+            nf0 = int((~ok).sum()); fx, fy, fr, ft = [X[ok]], [Y[ok]], [R[ok]], [Tt[ok]]
+        print('  road clearance: %d objects, %d plants dropped' % (n0 - len(objs), nf0), flush=True)
     if fx:
         C.write_flora(path('flora_quads'), np.concatenate(fx), np.concatenate(fy), np.concatenate(fr), np.concatenate(ft))
     else:
@@ -1114,6 +1230,10 @@ def main():
     refs = [os.path.join(a.ref, d) for d in ('pgd5', 'pge4', 'pgf6', 'pgf2', 'pgg1') if os.path.exists(os.path.join(a.ref, d, 'mat_map.cell.loc_def.bin'))]
     if not refs: sys.exit('no reference cells under %s - gen_prokh.cmd unpacks pgd5/pge4/pgf6 of the Petropolye terrain (Stalingrad-Donets DLC) there' % a.ref)
     REF = TR.Ref(refs, mius_dir=a.template)
+    # villages and roads by example (tools/vstamps.py): homesteads and road strips cut from the same Petropolye cells
+    import vstamps as VS, settle as SE_
+    VLIB[0] = VS.Library(refs); VS.trim_wet(VLIB[0]); SE_.LIB = VLIB[0]
+    import tracks as TKS_; TKS_.LIB = VLIB[0]
     if os.path.exists(a.layout):
         if not a.no_works:
             import works as W; WORKS = W.load(a.layout); print('field works loaded:', len(WORKS), 'trench / ditch pieces')
@@ -1129,6 +1249,7 @@ def main():
     sys.stdout = Tee(); print('# prokh_gen', time.strftime('%Y-%m-%d %H:%M:%S'), sys.argv[1:])
     feats, places = load_osm(a.osm); print('osm features', len(feats), 'places', len(places), flush=True)
     feats = drop_modern(feats, a.layout)
+    feats = prune_roads(feats)
     feats = meander_water(feats)
     places = places_1943(places, a.layout)
     build_water_levels(feats, a.cells)
