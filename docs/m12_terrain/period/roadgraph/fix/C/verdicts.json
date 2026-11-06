@@ -1,0 +1,267 @@
+[
+ {
+  "id": "S0001",
+  "verdict": "gap",
+  "reason": "Olkhovatka: street in the light lane along the house rows; reference has no centre there (builtup mask misses this part)"
+ },
+ {
+  "id": "S0002",
+  "verdict": "gap",
+  "reason": "Olkhovatka: through road between house rows, on the lane/line; reference lacks it among the house blocks"
+ },
+ {
+  "id": "S0003",
+  "verdict": "gap",
+  "reason": "Olkhovatka: centre of the light lane between two house rows, up to the grid line; reference lacks it"
+ },
+ {
+  "id": "S0004",
+  "verdict": "gap",
+  "reason": "retraced onto the solid line along the N side of the valley; ink present, reference skeleton missing"
+ },
+ {
+  "id": "S0005",
+  "verdict": "fixed",
+  "reason": "trace crossed open paper; retraced onto the thin solid line S of it to the star symbol"
+ },
+ {
+  "id": "S0006",
+  "verdict": "gap",
+  "reason": "Veselyi: street on the open side of the house row, to the junction; builtup mask misses this row"
+ },
+ {
+  "id": "S0007",
+  "verdict": "deleted",
+  "reason": "open paper for 200 m, no line drawn; ves_n now ends at the Vn village streets on both sides"
+ },
+ {
+  "id": "S0008",
+  "verdict": "deleted",
+  "reason": "open paper between the path dashes and the street junction, no symbol; ves_path now ends at the village edge"
+ },
+ {
+  "id": "S0009",
+  "verdict": "gap",
+  "reason": "dashed path: gap between two drawn dashes, bridged straight on the drawn direction"
+ },
+ {
+  "id": "S0010",
+  "verdict": "gap",
+  "reason": "dashed path: retraced on the dash centres, the dash gap is bridged straight"
+ },
+ {
+  "id": "S0011",
+  "verdict": "gap",
+  "reason": "dashed path under lettering, straight on the drawn direction of the dashes"
+ },
+ {
+  "id": "S0012",
+  "verdict": "gap",
+  "reason": "dashed path under lettering, straight on the drawn direction"
+ },
+ {
+  "id": "S0013",
+  "verdict": "gap",
+  "reason": "Kurasovka: street in the light lane between house blocks; builtup mask misses them"
+ },
+ {
+  "id": "S0014",
+  "verdict": "gap",
+  "reason": "dashed path, dashes visible; retraced on the dash, reference lost it at the contour crossing"
+ },
+ {
+  "id": "S0015",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap, dashes visible on both sides"
+ },
+ {
+  "id": "S0016",
+  "verdict": "gap",
+  "reason": "dashed path, dashes visible, across the 2 km grid line; lettering-box filter removed them from the reference"
+ },
+ {
+  "id": "S0017",
+  "verdict": "gap",
+  "reason": "dashed path, retraced on the drawn dashes; lettering-box filter removed them from the reference"
+ },
+ {
+  "id": "S0018",
+  "verdict": "gap",
+  "reason": "retraced along the drawn line SW to the klu_rd band; last part is the junction knot, not in the reference"
+ },
+ {
+  "id": "S0019",
+  "verdict": "fixed",
+  "reason": "retraced onto the drawn line of the band (reference) from the junction"
+ },
+ {
+  "id": "S0020",
+  "verdict": "gap",
+  "reason": "dashed path: retraced on the top dash, then the dash gap bridged; reference lacks the dash"
+ },
+ {
+  "id": "S0021",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap, dashes visible on both sides"
+ },
+ {
+  "id": "S0022",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap, dashes visible on both sides"
+ },
+ {
+  "id": "S0023",
+  "verdict": "gap",
+  "reason": "double-line road: centre through the junction knot with ko_st; reference lacks the centre there"
+ },
+ {
+  "id": "S0024",
+  "verdict": "gap",
+  "reason": "Ko...: street leaving the main road between the house blocks; builtup mask misses them"
+ },
+ {
+  "id": "S0025",
+  "verdict": "fixed",
+  "reason": "retraced onto the drawn street line"
+ },
+ {
+  "id": "S0026",
+  "verdict": "gap",
+  "reason": "village lane between two drawn lines at the river junction; reference lacks a centre"
+ },
+ {
+  "id": "S0027",
+  "verdict": "gap",
+  "reason": "village lane in the dense junction at the block edge; reference lacks a centre"
+ },
+ {
+  "id": "S0028",
+  "verdict": "fixed",
+  "reason": "retraced onto the drawn line"
+ },
+ {
+  "id": "S0029",
+  "verdict": "gap",
+  "reason": "street to the star (church) symbol through the lettering box"
+ },
+ {
+  "id": "S0030",
+  "verdict": "gap",
+  "reason": "double line: moved off the SW edge line to the centre; reference lacks dbl centre (lettering box)"
+ },
+ {
+  "id": "S0031",
+  "verdict": "gap",
+  "reason": "under lettering 12.0"
+ },
+ {
+  "id": "S0032",
+  "verdict": "gap",
+  "reason": "retraced onto the drawn line in the village; reference lacks it"
+ },
+ {
+  "id": "S0033",
+  "verdict": "gap",
+  "reason": "double line: moved off the SW edge line to the centre between the two lines; reference lacks the centre"
+ },
+ {
+  "id": "S0034",
+  "verdict": "gap",
+  "reason": "road crosses the river; line under the blue water wash"
+ },
+ {
+  "id": "S0035",
+  "verdict": "gap",
+  "reason": "solid track under the village-name lettering, straight on the drawn direction"
+ },
+ {
+  "id": "S0036",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap, dashes visible"
+ },
+ {
+  "id": "S0037",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap, dashes visible"
+ },
+ {
+  "id": "S0038",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap, dashes visible"
+ },
+ {
+  "id": "S0039",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap, dashes visible"
+ },
+ {
+  "id": "S0040",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap from the last dash to the line it meets"
+ },
+ {
+  "id": "S0041",
+  "verdict": "gap",
+  "reason": "village street in the lane between house blocks; builtup mask misses them"
+ },
+ {
+  "id": "S0042",
+  "verdict": "gap",
+  "reason": "retraced onto the drawn line at the village junction"
+ },
+ {
+  "id": "S0087",
+  "verdict": "gap",
+  "reason": "double-line road crosses the river; centre under the blue water wash"
+ },
+ {
+  "id": "S0088",
+  "verdict": "gap",
+  "reason": "under lettering 10.0"
+ },
+ {
+  "id": "S0089",
+  "verdict": "gap",
+  "reason": "under red pencil"
+ },
+ {
+  "id": "S0090",
+  "verdict": "gap",
+  "reason": "dashed path, retraced on the dashes; partly under red pencil"
+ },
+ {
+  "id": "S0091",
+  "verdict": "gap",
+  "reason": "road under lettering, straight between the drawn ends"
+ },
+ {
+  "id": "S0092",
+  "verdict": "gap",
+  "reason": "road beside the railway; reference removed it with the railway symbol"
+ },
+ {
+  "id": "S0093",
+  "verdict": "gap",
+  "reason": "road beside the railway (NW line of its symbol); reference removed it with the railway symbol"
+ },
+ {
+  "id": "S0094",
+  "verdict": "gap",
+  "reason": "road beside the railway at the town edge, straight between drawn ends; removed with the railway symbol / lettering box"
+ },
+ {
+  "id": "S0095",
+  "verdict": "gap",
+  "reason": "faint dashed path, dashes visible; retraced on the dash centres via the trig point; colour filter removed the dashes"
+ },
+ {
+  "id": "S0096",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap, dashes visible"
+ },
+ {
+  "id": "ily_path@1694,16170",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap (~56 m) that reaches 60 m only through resampling after the edits; not in red.json"
+ }
+]

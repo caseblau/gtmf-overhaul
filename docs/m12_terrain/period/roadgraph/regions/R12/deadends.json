@@ -1,0 +1,4 @@
+{"deadends": [
+ {"road": "R12_pl2", "end": "start", "x": 9156.0, "y": 15860.0, "r": 6.0, "why": "the solid line along the S edge of the orchard N of 272.9 starts here at a point symbol; no line continues W (the c1 centre line starts at x~9150)", "crop": "review/deadend_pl2_west.png"},
+ {"road": "R12_pre2", "end": "end", "x": 10600.0, "y": 15736.0, "r": 6.0, "why": "the single line along the SE side of Prelestnoye ends at the 'klkh.' lettering; no continuation drawn E of x~10600", "crop": "review/deadend_pre2_east.png"}
+]}

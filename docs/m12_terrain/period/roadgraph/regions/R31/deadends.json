@@ -1,0 +1,31 @@
+{
+ "deadends": [
+  {
+   "road": "R31_s_m1",
+   "end": "end",
+   "x": 540.0,
+   "y": 5596.0,
+   "r": 5.0,
+   "why": "The double-line main street of Mal. Mayachki runs S between the sheet frame line (x~128 px) and the hatched house row and stops at the ravine (brown) at ~135,4745 px, where a small structure (bridge/dam symbol) stands; no road line continues S or W of it on the sheet (the straight lines further S are the frame and grid lines).",
+   "crop": "review/deadend_s_m1_south.png"
+  },
+  {
+   "road": "R31_p66",
+   "end": "end",
+   "x": 1276.0,
+   "y": 4516.0,
+   "r": 5.0,
+   "why": "The dashed field track from Mal. Mayachki (past 224) ends in open field at the brown contour ~320,5015 px; no dashes continue towards the 9.0 road.",
+   "crop": "review/deadend_p66_south.png"
+  },
+  {
+   "road": "R31_t_shk2",
+   "end": "end",
+   "x": 5492.0,
+   "y": 6540.0,
+   "r": 5.0,
+   "why": "Short solid spur NE from the track at the SW end of the ШК village; it stops at the lettering \"ШК\" (school) ~1373,4509 px; nothing continues beyond the label.",
+   "crop": "review/deadend_t_shk2.png"
+  }
+ ]
+}

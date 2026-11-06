@@ -1,0 +1,6 @@
+# Prokh polygon descriptor for the 9 x 9 block: 11 x 11 cells table (dist 2816 x 2816), cells at 1..9, centre of x 0..18432 / y 2048..18432 of the DEM lattice
+name~|Prokh
+row~|i_polygen:polygen|dist_width|c0=u:2816
+row~|i_polygen:polygen|dist_height|c0=u:2816
+row~|i_polygen:polygen|det_offs|c0=a:1;1
+row~|i_polygen:polygen|lat_lon_tz|c0=v:50.9966;36.6219;3

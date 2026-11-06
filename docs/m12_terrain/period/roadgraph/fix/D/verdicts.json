@@ -1,0 +1,407 @@
+[
+ {
+  "id": "S0043",
+  "verdict": "gap",
+  "reason": "junction knot of h12 and dnw under a lettering box; trace crosses the solid knot between the two double-line bands, reference erased by the lettering filter",
+  "review": "review/S0043.png"
+ },
+ {
+  "id": "S0044",
+  "verdict": "gap",
+  "reason": "under lettering \"12\" (road number) on the double line; trace continues the drawn direction between the band ends",
+  "review": "review/S0044.png"
+ },
+ {
+  "id": "S0045",
+  "verdict": "gap",
+  "reason": "double line through red village tint; blurred-band centre (sigma 12 m) agrees with trace within 4 m; dbl-centre filter missed it",
+  "review": "review/S0045.png"
+ },
+ {
+  "id": "S0046",
+  "verdict": "gap",
+  "reason": "under lettering box on double line; trace on the drawn line, reference cut by the lettering box",
+  "review": "review/S0046.png"
+ },
+ {
+  "id": "S0047",
+  "verdict": "gap",
+  "reason": "h12 through Prokhorovka: light lane between house blocks (outside builtup mask); trace in the lane",
+  "review": "review/S0047.png"
+ },
+ {
+  "id": "S0048",
+  "verdict": "gap",
+  "reason": "dnw entering the h12 junction knot under a lettering box; trace joins the shared junction vertex across the solid knot",
+  "review": "review/S0048.png"
+ },
+ {
+  "id": "S0049",
+  "verdict": "gap",
+  "reason": "village street on the open side of the house row (light strip between black blocks and red village tint)",
+  "review": "review/S0049.png"
+ },
+ {
+  "id": "S0050",
+  "verdict": "gap",
+  "reason": "track broken for lettering (lettering box); trace continues straight between the two visible ends",
+  "review": "review/S0050.png"
+ },
+ {
+  "id": "S0051",
+  "verdict": "gap",
+  "reason": "single line widening into a double band (solid knot); trace runs from the single line into the band centre",
+  "review": "review/S0051.png"
+ },
+ {
+  "id": "S0052",
+  "verdict": "gap",
+  "reason": "faint grey double line (both lines visible, removed by the ink filter); trace on the centre between them, joins the reference east",
+  "review": "review/S0052.png"
+ },
+ {
+  "id": "S0053",
+  "verdict": "gap",
+  "reason": "under lettering box (letter glyph); trace continues the drawn direction to the reference",
+  "review": "review/S0053.png"
+ },
+ {
+  "id": "S0054",
+  "verdict": "fixed",
+  "reason": "trace cut through the wood corner; retraced on the dark line SW of it (still off the reference: ink filter lost the line in the village tint)",
+  "review": null
+ },
+ {
+  "id": "S0055",
+  "verdict": "fixed",
+  "reason": "trace ran 20-30 m E of the black line; retraced on the black line (least-cost on sheet darkness, checked visually)",
+  "review": null
+ },
+ {
+  "id": "S0056",
+  "verdict": "fixed",
+  "reason": "trace ran W of the black line; retraced on it into the knot",
+  "review": null
+ },
+ {
+  "id": "S0057",
+  "verdict": "fixed",
+  "reason": "trace ran across open paper along contour; retraced on the black track line from the R12_r30 border end, through the solid wood fill, to where the line re-emerges",
+  "review": null
+ },
+ {
+  "id": "S0058",
+  "verdict": "fixed",
+  "reason": "trace ran along the tops of the letters \"Прохоровка\"; retraced on the drawn direction of the black line through the lettering to the region border",
+  "review": null
+ },
+ {
+  "id": "S0059",
+  "verdict": "fixed",
+  "reason": "as S0058 (same retrace)",
+  "review": null
+ },
+ {
+  "id": "S0060",
+  "verdict": "gap",
+  "reason": "path crossing a lettering box (letter strokes); trace on the visible horizontal stroke joining the N-S line",
+  "review": "review/S0060.png"
+ },
+ {
+  "id": "S0061",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap, trace bridges straight between dash ends",
+  "review": "review/S0061.png"
+ },
+ {
+  "id": "S0062",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap, trace bridges straight between dash ends",
+  "review": "review/S0062.png"
+ },
+ {
+  "id": "S0063",
+  "verdict": "deleted",
+  "reason": "no street drawn: open light patch at the town edge, no lane edges; vo_a now ends at vertex (14524,20316)",
+  "review": null
+ },
+ {
+  "id": "S0064",
+  "verdict": "gap",
+  "reason": "street = light lane between house blocks, under lettering box; trace in the lane centre",
+  "review": "review/S0064.png"
+ },
+ {
+  "id": "S0065",
+  "verdict": "deleted",
+  "reason": "no street drawn: trace followed the edge of the blue water wash to the block edge; vo_d now ends at (14648,20303.5)",
+  "review": null
+ },
+ {
+  "id": "S0066",
+  "verdict": "gap",
+  "reason": "street on the open side of a house row in Prokhorovka (light lane), outside builtup mask",
+  "review": "review/S0066.png"
+ },
+ {
+  "id": "S0067",
+  "verdict": "gap",
+  "reason": "street along light lanes between house blocks in Prokhorovka, under lettering box",
+  "review": "review/S0067.png"
+ },
+ {
+  "id": "S0214",
+  "verdict": "gap",
+  "reason": "junction knot inside the r46 double band (town); trace continues the reference line straight across the knot",
+  "review": "review/S0214.png"
+ },
+ {
+  "id": "S0215",
+  "verdict": "fixed",
+  "reason": "trace ran on the outer edge line of the double line; retraced on the centre between the two lines down to the knot",
+  "review": null
+ },
+ {
+  "id": "S0218",
+  "verdict": "gap",
+  "reason": "straight track crossing a grid line; grid filter removed it; trace on the visible line",
+  "review": "review/S0218.png"
+ },
+ {
+  "id": "S0219",
+  "verdict": "fixed",
+  "reason": "trace ran N of the thick black line through the house row; retraced on the line (blurred least-cost, checked visually)",
+  "review": null
+ },
+ {
+  "id": "S0220",
+  "verdict": "fixed",
+  "reason": "trace ran along the top edge of the dash; retraced through the dash centre to the d01 junction",
+  "review": null
+ },
+ {
+  "id": "S0221",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap where a brown line crosses; trace bridges straight between dash ends",
+  "review": "review/S0221.png"
+ },
+ {
+  "id": "S0222",
+  "verdict": "fixed",
+  "reason": "trace ran horizontally ~40 m N of the dash chain; retraced straight through the dashes (dash chain is straight from 13324 to 14284)",
+  "review": null
+ },
+ {
+  "id": "S0223",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap, trace bridges straight between dash ends",
+  "review": "review/S0223.png"
+ },
+ {
+  "id": "S0224",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap, trace bridges straight between dash ends",
+  "review": "review/S0224.png"
+ },
+ {
+  "id": "S0225",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap, trace bridges straight between dash ends",
+  "review": "review/S0225.png"
+ },
+ {
+  "id": "S0226",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap; bridge straightened between the dash ends",
+  "review": "review/S0226.png"
+ },
+ {
+  "id": "S0227",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap before the r61 junction, trace bridges straight",
+  "review": "review/S0227.png"
+ },
+ {
+  "id": "S0228",
+  "verdict": "gap",
+  "reason": "dashed path d01: dash gap from the r59 junction; trace bridges straight between aligned dashes",
+  "review": "review/S0228.png"
+ },
+ {
+  "id": "S0229",
+  "verdict": "fixed",
+  "reason": "trace bridged above the drawn dash; retraced onto the reference line",
+  "review": null
+ },
+ {
+  "id": "S0230",
+  "verdict": "gap",
+  "reason": "junction knot where the track leaves the r46 double band; trace crosses the band edge to the shared junction",
+  "review": "review/S0230.png"
+ },
+ {
+  "id": "S0231",
+  "verdict": "fixed",
+  "reason": "trace ran ~15 m N of the faint dash; start moved onto the dash",
+  "review": null
+ },
+ {
+  "id": "S0232",
+  "verdict": "gap",
+  "reason": "faint dashed path, dashes visible; trace on them / bridging gaps",
+  "review": "review/S0232.png"
+ },
+ {
+  "id": "S0233",
+  "verdict": "gap",
+  "reason": "dashed path crossing a 2 km grid line; grid filter removed it",
+  "review": "review/S0233.png"
+ },
+ {
+  "id": "S0234",
+  "verdict": "gap",
+  "reason": "dashed path crossing a 2 km grid line, faint dashes visible",
+  "review": "review/S0234.png"
+ },
+ {
+  "id": "S0235",
+  "verdict": "gap",
+  "reason": "dashed path: dash gap, trace bridges straight",
+  "review": "review/S0235.png"
+ },
+ {
+  "id": "S0236",
+  "verdict": "fixed",
+  "reason": "trace dog-legged S of the line; retraced on the black diagonal into the r46 junction",
+  "review": null
+ },
+ {
+  "id": "S0237",
+  "verdict": "gap",
+  "reason": "trace on the thick black line (sheet darkness peak within 3 m); lettering boxes removed it from the reference",
+  "review": "review/S0237.png"
+ },
+ {
+  "id": "S0238",
+  "verdict": "fixed",
+  "reason": "trace cut straight across the grey wash; retraced on the faint dark strip visible on a contrast stretch (low confidence)",
+  "review": null
+ },
+ {
+  "id": "S0239",
+  "verdict": "fixed",
+  "reason": "trace ~10 m S of the reference line; retraced onto it",
+  "review": null
+ },
+ {
+  "id": "S0240",
+  "verdict": "gap",
+  "reason": "track under lettering boxes in the village; trace on the visible black line to the block edge",
+  "review": "review/S0240.png"
+ },
+ {
+  "id": "after:S0012",
+  "verdict": "gap",
+  "reason": "retraced t_kus on the black line through the village tint; reference lacks it (ink filter)",
+  "of": "S0054",
+  "review": "review/after_S0012.png"
+ },
+ {
+  "id": "after:S0013",
+  "verdict": "gap",
+  "reason": "retraced t_kus on the black line through the village tint; reference lacks it",
+  "of": "S0055",
+  "review": "review/after_S0013.png"
+ },
+ {
+  "id": "after:S0014",
+  "verdict": "gap",
+  "reason": "retraced t_kus on the black line into the knot; reference lacks it",
+  "of": "S0056",
+  "review": "review/after_S0014.png"
+ },
+ {
+  "id": "after:S0015",
+  "verdict": "gap",
+  "reason": "t_sw continued on the drawn direction under lettering \"Прохоровка\" (black line ends at the letters)",
+  "of": "S0058",
+  "review": "review/after_S0015.png"
+ },
+ {
+  "id": "after:S0016",
+  "verdict": "gap",
+  "reason": "as S0015, under lettering \"Прохоровка\" to the region border",
+  "of": "S0059",
+  "review": "review/after_S0016.png"
+ },
+ {
+  "id": "after:S0024",
+  "verdict": "gap",
+  "reason": "r46 double-line centre between the two lines near the junction knot; reference follows the edge line here",
+  "of": "S0215",
+  "review": "review/after_S0024.png"
+ },
+ {
+  "id": "after:S0029",
+  "verdict": "gap",
+  "reason": "r61 on the thick black line along the village edge; reference took the house-row skeleton instead",
+  "of": "S0219",
+  "review": "review/after_S0029.png"
+ },
+ {
+  "id": "after:S0030",
+  "verdict": "gap",
+  "reason": "r59 through the dash centre where the dash merges with a dark knot at the d01 junction",
+  "of": "S0220",
+  "review": "review/after_S0030.png"
+ },
+ {
+  "id": "after:S0032",
+  "verdict": "gap",
+  "reason": "r59 dashed path: straight dash chain, dashes visible, gaps 60-150 m bridged; also crosses spot height 230 lettering zone and a grid line",
+  "of": "S0222",
+  "review": "review/after_S0032.png"
+ },
+ {
+  "id": "after:S0040",
+  "verdict": "gap",
+  "reason": "r85 faint dashed path: on the visible faint dash, then bridges to the next dash",
+  "of": "S0231",
+  "review": "review/after_S0040.png"
+ },
+ {
+  "id": "after:S0045",
+  "verdict": "gap",
+  "reason": "r84 on the black diagonal into the r46 junction knot (double band edge)",
+  "of": "S0236",
+  "review": "review/after_S0045.png"
+ },
+ {
+  "id": "after:S0047",
+  "verdict": "gap",
+  "reason": "r87 on a faint dark strip under the grey wash (contrast stretch); LOW CONFIDENCE, lead please check",
+  "of": "S0238",
+  "review": "review/after_S0047.png"
+ },
+ {
+  "id": "after:S0025",
+  "verdict": "gap",
+  "reason": "r46 junction knot on the double line (E-W line joins); geometry unchanged, stretch was <60 m in red.json and grew to 64 m only by resampling after the S0215 edit upstream",
+  "of": null,
+  "review": "review/after_S0025.png"
+ },
+ {
+  "id": "after:S0026",
+  "verdict": "none",
+  "reason": "r78, not in D red.json (not touched per spec); not reviewed",
+  "of": null,
+  "review": null
+ },
+ {
+  "id": "after:S0027",
+  "verdict": "none",
+  "reason": "r78, not in D red.json (not touched per spec); looks off the black line by ~15 m, needs a fix by the lead",
+  "of": null,
+  "review": null
+ }
+]

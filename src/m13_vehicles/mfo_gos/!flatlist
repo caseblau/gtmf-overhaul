@@ -1,0 +1,12 @@
+i_unflat:unflat()
+{
+	su122                         , mesh            , loc_def ;
+	su122_barrel                  , mesh            , loc_def ;
+	su122_breech                  , mesh            , loc_def ;
+	m3lee                         , mesh            , loc_def ;
+	su76m                         , mesh            , loc_def ;
+	su76m_barrel                  , mesh            , loc_def ;
+	su76m_breech                  , mesh            , loc_def ;
+	reg_su76m_dift                , texture         , loc_def ;
+	bump_su76m_norsp              , texture         , loc_def ;
+}

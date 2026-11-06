@@ -18,3 +18,5 @@ docs/m12_terrain/period/tiles_rkka100k/
 docs/m12_terrain/period/Zrzut ekranu*
 docs/m12_terrain/period/rkka100k_block.jpg
 *.pyc
+# vehicle meshes assembled from game parts (Graviteam geometry, not ours to publish) - rebuild with tools\m13\*_mesh.py
+src/m13_vehicles/mfo_gos/*.mesh.loc_def.bin

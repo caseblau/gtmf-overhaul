@@ -1,0 +1,44 @@
+{
+ "deadends": [
+  {
+   "road": "r84",
+   "end": "start",
+   "x": 16242.0,
+   "y": 4550.0,
+   "why": "track ends at the W edge of the Zhimolostnoye house blocks (village edge); no continuation drawn W of it",
+   "crop": "review/deadend_r84_start.png"
+  },
+  {
+   "road": "r85",
+   "end": "start",
+   "x": 15576.0,
+   "y": 3396.0,
+   "why": "dashed path begins on open field W of the N-S grid line; the first dash is at x~830 px, nothing drawn further W",
+   "crop": "review/deadend_r85_start.png"
+  },
+  {
+   "road": "r86",
+   "end": "start",
+   "x": 16194.0,
+   "y": 3094.0,
+   "why": "track begins at a short fork W of the x~968 grid line on the 234.9 slope; no continuation drawn",
+   "crop": "review/deadend_r86_start.png"
+  },
+  {
+   "road": "r78",
+   "end": "end",
+   "x": 14848.0,
+   "y": 2484.0,
+   "why": "track runs E into the coloured ravine / stream wash S of Zhimolostnoye; the line is not readable inside the wash",
+   "crop": "review/deadend_r78_end.png"
+  },
+  {
+   "road": "r87",
+   "end": "start",
+   "x": 14402.0,
+   "y": 2686.0,
+   "why": "track begins where it meets the straight sheet grid line at y~1390 px; W of that point only the grid line is drawn",
+   "crop": "review/deadend_r87_start.png"
+  }
+ ]
+}

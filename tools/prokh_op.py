@@ -36,16 +36,24 @@ west edge of camp_area, y from its NORTH edge; the cells table rows also run nor
        a:cell_col;cell_row;level;1 (cells table coordinates, level 0..5 = label importance) | s:text key (op text pack)
        The bnd_* rows are the sector boundary symbols that tac_limits names.
 """
-import sys, os, csv, math, argparse, shutil, json
+import sys, os, csv, math, argparse, shutil, json, re
 import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import prokh_gen as G, textpack
 
 SQ = 1024.0
-COLS_SQ, ROWS_SQ = G.COLS * 2, G.ROWS * 2   # 14 x 10 squares (7 x 5 cells)
-CELL_X0, CELL_Y0 = 3, 1                     # camp_area origin in the cells table (3;1;9;5, as the vanilla Mius block)
+COLS_SQ, ROWS_SQ = G.COLS * 2, G.ROWS * 2   # 18 x 18 squares (9 x 9 cells)
+CELL_X0, CELL_Y0 = G.CELL_X0, G.CELL_Y0     # camp_area origin in the cells table (1;1;9;9)
 USSR = 1381192533; GDR = 5391687
 HQ_STACK = 1   # HQ-type units per border node at turn 1 (layout 'hq_stack')
+HQ_MIN_FRONT, HQ_MIN_FRONT_DIV, ART_MIN_FRONT = 3000.0, 5000.0, 2500.0
+DIV_HQ_RE = r'^(ra_(\d+g?rd|\d+gabd|\d+g?tc|\d+gmc|\d+g?rc|5gta|5ga)|we_(lah|dr|tk)|we_2tc_ss)_(hq|spam|cons)\d*$'   # layout 'hq_min_front' / 'art_min_front': metres a command post / a battery keeps behind the front in hq_field mode
+HIGHER_HQ_RE = r'^(ra_(\d+g?tc|\d+g?mc|\d+g?rc|\d+g?sk|\d+g?ta|\d+g?a)|we_\d+tc_ss|we_\d+pzk)_(hq|spam|cons)\d*$'
+# 5 Nov (user: "the higher unit HQ should be placed on the cells on the edges of maps like army, corps - they shouldn't be on
+# the battlefield itself but on cells in reserve"): army and corps command posts with their supply / construction elements
+# (II SS-PzK, 2 / 2 gds / 18 / 29 TC, 5 gds MC, 33 gds / 48 RC, any army HQ) always go to the own rear map edge, also in
+# hq_field mode; divisions, brigades, regiments and below keep their field positions
+HQ_FIELD = False   # layout 'hq_field': HQ-type elements (HQs, supply, construction, artillery) stand in the field at their 'hq' position instead of on the map edge
 PINS = {}      # layout 'pin': battle-group platoon name -> [X, Y] op-map squares
 OLD_COLS, OLD_ROWS = 14, 10                 # Stepanovka square grid
 F_HAMLET, F_HEIGHT, F_WOODS, F_VILLAGE = 1, 2, 16, 32
@@ -77,6 +85,14 @@ class Territory:
         sx, sy = poly[0]
         if sy <= 1e-6 and sx > 1e-6: poly.append((0.0, 0.0))                                  # starts on the north edge
         self.poly = poly
+    def dist(self, x, y):
+        """distance (squares) from a point to the front polyline"""
+        best = 1e9
+        for (x0, y0), (x1, y1) in zip(self.front, self.front[1:]):
+            dx, dy = x1 - x0, y1 - y0; L2 = dx * dx + dy * dy or 1e-9
+            t = max(0.0, min(1.0, ((x - x0) * dx + (y - y0) * dy) / L2))
+            best = min(best, math.hypot(x - (x0 + t * dx), y - (y0 + t * dy)))
+        return best
     def ger(self, x, y):
         """square coordinates (x from the west, y from the north) -> True where the Germans hold the ground"""
         return _inside(self.poly, x, y)
@@ -195,8 +211,9 @@ def main():
     if layout and layout.get('front'):   # old-frame metres, west/north end first -> block squares (x from the west, y from the north edge)
         front = [(x / SQ, (H_BLOCK - y) / SQ) for x, y in layout['front']]
     terr = Territory(front)
-    global HQ_STACK, PINS; HQ_STACK = int(layout.get('hq_stack', 1)) if layout else 1
-    PINS = {k: tuple(v) for k, v in (layout.get('pin', {}) if layout else {}).items()}
+    global HQ_STACK, HQ_FIELD, HQ_MIN_FRONT, HQ_MIN_FRONT_DIV, ART_MIN_FRONT, PINS; HQ_STACK = int(layout.get('hq_stack', 1)) if layout else 1; HQ_FIELD = bool(layout.get('hq_field', False)) if layout else False
+    if layout: HQ_MIN_FRONT = float(layout.get('hq_min_front', HQ_MIN_FRONT)); HQ_MIN_FRONT_DIV = float(layout.get('hq_min_front_div', HQ_MIN_FRONT_DIV)); ART_MIN_FRONT = float(layout.get('art_min_front', ART_MIN_FRONT))
+    PINS = {k: (v[0] + G.SQ_DX, v[1] + G.SQ_DY) for k, v in (layout.get('pin', {}) if layout else {}).items()}   # pins are authored in the 7 x 5 frame
     old_nodes = read_csv(os.path.join(a.opdir, 'mg_nodes.csv')); plat = read_csv(os.path.join(a.opdir, 'plat_pos.csv'))
     old_markers = read_csv(os.path.join(a.opdir, 'tac_markers.csv'))
     uid_names = {}; uid_code = {}; uid_bg = {}
@@ -216,11 +233,12 @@ def main():
         col = CELL_X0 + int(px // G.CELL); row = CELL_Y0 + int((H_BLOCK - py) // G.CELL)
         markers.append([f'v:{px % G.CELL:.1f};0;{(H_BLOCK - py) % G.CELL:.1f}', f'v:{w or 40 + 14 * len(eng)};0;110', f'a:{col};{row};{level};1', 's:' + esc(key)])
         add_e.append((key, [eng])); add_r.append((key, [rus]))
+    kp = {}   # node -> key-point value (3 Nov: the highest one wins - OR-ing two values gave nonsense such as 8 | 4 = 12)
     def keypoint(px, py, low, value):
         x, y, mx, my = to_sq(px, py)
         for j in g.by_sq.get((x, y), []): g.nodes[j]['flags'] |= low
         j = g.nearest(mx, my)
-        if j is not None: g.nodes[j]['flags'] |= (value << 11)
+        if j is not None: kp[j] = max(kp.get(j, 0), value)
     # OSM settlement names are modern (Politotdelskiy, Komsomolskiy, Storozhevoye-Pervoye ...): one within 500 m of a 1943
     # layout place is dropped (the layout place carries the 1943 name), the rest renamed by prokh_gen.RENAME_1943
     # (27 Oct check of the release: both the modern and the 1943 names stood on the op map)
@@ -254,6 +272,19 @@ def main():
         for n, (h, px, py) in enumerate(hilltops(H)):
             keypoint(px, py, F_HEIGHT, 4 if n < 6 else 2)
             marker(px, py, 2, 'op_tm_h%d_%d' % (int(h), int(round(h * 10)) % 10), 'h. %.1f' % h, 'выс. %.1f' % h, w=130)
+    # 3 Nov (user: "give each operation its own objective"): the layout's 'objectives' are the operation's key points at their
+    # own values (vanilla scale, up to 9); every other key point (OSM settlements, spot heights, layout places) is capped
+    # at 'kp_cap' so the objectives decide the outcome. Without 'objectives' the old values stand.
+    objs = (layout or {}).get('objectives', [])
+    if objs:
+        cap = int(layout.get('kp_cap', 2))
+        for j in list(kp): kp[j] = min(kp[j], cap)
+        for o in objs:
+            _, _, mx_, my_ = to_sq(*o['xy'])   # 'xy' is already in block metres (shift_layout)
+            j = g.nearest(mx_, my_)
+            if j is not None: kp[j] = max(kp.get(j, 0) if kp.get(j, 0) > cap else 0, int(o['value']))
+        print('  objectives:', ', '.join(f"{o['name']} {o['value']}" for o in objs), f'(other key points capped at {cap})')
+    for j, v in kp.items(): g.nodes[j]['flags'] = (g.nodes[j]['flags'] & 0x7ff) | (min(int(v), 15) << 11)
     # woods: squares whose centre lies in an OSM wood get the woods bit (op-map terrain hint only)
     for kind, t, p, closed in feats:
         if kind == 'area' and G.area_cover(t) == G.WOOD and len(p) > 3:
@@ -290,7 +321,7 @@ def main():
         # their own ground, the edge as a last resort), then the reinforcements in turn order, whole formation or nothing
         # (an orphan battle group without its HQ, or a formation cut in half, is worse than one left off the map); what
         # finds no node is listed in op_unassigned.txt.
-        def is_hqtype(uid, name): return uid_code.get(uid) == 0 or name.endswith('_hq') or name.endswith('_spam') or name.endswith('_cons') or uid_code.get(uid) == 7
+        def is_hqtype(uid, name): return uid_code.get(uid) == 0 or bool(re.search(r'_(hq|spam|cons)\d*$', name)) or uid_code.get(uid) == 7
         def edge_of(n): return 'N' if n['y'] == 0 else 'S' if n['y'] == ROWS_SQ - 1 else 'W' if n['x'] == 0 else 'E'
         def free_edge(side):   # free border nodes on the side's own ground
             sd = GDR if side == 'GER' else USSR
@@ -330,7 +361,9 @@ def main():
             # reinforcements: tank / mechanised brigades and regiments before the artillery of the same turn (the edge nodes run out at turns 12-13)
             tok_ = f.split('_')[-1].lstrip('0123456789')   # ra_24gtbr -> gtbr, ra_27gabr -> gabr, we_tk_tr -> tr
             prio = 0 if tok_ in ('tbr', 'gtbr', 'mrbr', 'gmbr', 'gtr', 'tr', 'tc', 'gtc', 'mc', 'gmc', 'grd', 'rd', 'gab', 'gabd', 'mir', 'ir', 'stug', 'otp') else 1
-            order = (0 if (turn == 1 and is_hqtype(uid, name)) else 1 if turn == 1 else 2 + prio, turn, len(jobs))   # combat formations of every turn before the reinforcement artillery
+            # HQ-type elements: before the battle groups when they go to the edge (they must get edge nodes), after them when the
+            # layout puts them in the field ('hq_field' - 2 Nov, user: HQs, supply and artillery at their historical positions)
+            order = ((1.5 if HQ_FIELD else 0) if (turn == 1 and is_hqtype(uid, name)) else 1 if turn == 1 else 2 + prio, turn, len(jobs))   # combat formations of every turn before the reinforcement artillery
             jobs.append((order, uid, name, u, f))
         jobs.sort(key=lambda j: j[0])
         # reinforcements grouped per layout unit so a formation is placed whole or not at all
@@ -360,17 +393,42 @@ def main():
                     n = g.nodes[j]; n['uid'] = uid2; n['hq'] = True; n['late'] = True
                     placement[uid2] = (f"{uid2};{n['x']};{n['y']};{j}", f"{u['turn']}"); placed += 1
                 continue
-            k = counter.get(f, 0); counter[f] = k + 1
+            # 2 Nov: only battle groups count in the round-robin over 'pos' (HQ-type elements go to the edge anyway; before,
+            # each HQ / supply / construction platoon of a formation consumed a 'pos' entry, so the battle groups started
+            # one or two entries late and the layout positions did not mean what they said)
+            hqtype = is_hqtype(uid, name)
+            if not hqtype: k = counter.get(f, 0); counter[f] = k + 1
+            else: k = 0
             px, py = u['pos'][k % len(u['pos'])]
-            if is_hqtype(uid, name):   # HQ-type: rear edge node nearest to the formation (the layout's hq position, if any, only picks the edge)
+            if hqtype:   # HQ-type: rear edge node nearest to the formation (the layout's hq position, if any, only picks the edge)
                 cx_ = sum(q[0] for q in u['pos']) / len(u['pos']); cy_ = sum(q[1] for q in u['pos']) / len(u['pos'])
                 hx, hy = u.get('hq', (cx_, cy_))
+                if HQ_FIELD and not u.get('hq_edge') and not re.search(r'_(hq|spam|cons)\d*$', name):
+                    # artillery batteries and other support elements (HQ-type by code): round-robin over 'pos' like battle groups
+                    ka = counter.get(f + '#art', 0); counter[f + '#art'] = ka + 1; hx, hy = u['pos'][ka % len(u['pos'])]
                 # 25 Oct (user): the HQ elements bunch up - up to HQ_STACK of them share one border node (the occupant field of
                 # mg_nodes has four slots).  A node that already holds HQs of this side within 3 km of the formation is
                 # taken before a fresh one; vanilla never stacks, so layout 'hq_stack' 1 restores one unit per node.
                 j = None
-                if u.get('hq_interior'):   # the layout puts this HQ in the field (285 RR in the Storozhevoye wood - user, 25 Oct)
-                    j = g.nearest(hx, H_BLOCK - hy, interior=True, free=True, side=sd)
+                higher = bool(re.match(HIGHER_HQ_RE, name))
+                if (u.get('hq_interior') or (HQ_FIELD and not u.get('hq_edge'))) and not higher:   # the layout puts this HQ in the field (285 RR in the Storozhevoye wood - user, 25 Oct; every HQ-type element with 'hq_field')
+                    # 2 Nov (user): "in the vicinity but not in immediate danger" - a command post / supply / battery stays at least
+                    # hq_min_front (artillery: art_min_front) metres behind the front: the free own-side movement node nearest to
+                    # the layout position among those far enough back
+                    # 2 Nov (user: "HQ elements of some units are close to the frontline"): echelon-dependent distances -
+                    # battalion / regiment / brigade command posts hq_min_front (3 km), division and corps command posts
+                    # hq_min_front_div (5 km), batteries art_min_front (2.5 km); _hq2 etc. count as command posts too
+                    is_cp = bool(re.search(r'_(hq|spam|cons)\d*$', name))
+                    is_div = is_cp and bool(re.match(DIV_HQ_RE, name))
+                    dmin = (HQ_MIN_FRONT_DIV if is_div else HQ_MIN_FRONT if is_cp else ART_MIN_FRONT) / SQ
+                    cands = [(((n['mx'] - hx) ** 2 + (n['my'] - (H_BLOCK - hy)) ** 2), jj) for jj, n in enumerate(g.nodes)
+                             if not n['edge'] and n['uid'] == -1 and n['side'] == sd and terr.dist(n['mx'] / SQ, n['my'] / SQ) >= dmin]
+                    j = min(cands)[1] if cands else g.nearest(hx, H_BLOCK - hy, interior=True, free=True, side=sd)
+                    if HQ_FIELD and HQ_STACK > 1:   # a node already holding this side's HQ elements nearer than the free node: stack there (within 1.5 km)
+                        cands = [(((n['mx'] - hx) ** 2 + (n['my'] - (H_BLOCK - hy)) ** 2), jj) for jj, n in enumerate(g.nodes)
+                                 if not n['edge'] and n['uid'] != -1 and n.get('hq') and not n.get('late') and n['side'] == sd and 1 + len(n['more']) < HQ_STACK and terr.dist(n['mx'] / SQ, n['my'] / SQ) >= dmin]
+                        cands = [c for c in cands if c[0] < 1500.0 ** 2]
+                        if cands and (j is None or min(cands)[0] < (g.nodes[j]['mx'] - hx) ** 2 + (g.nodes[j]['my'] - (H_BLOCK - hy)) ** 2): j = min(cands)[1]
                 if j is None and HQ_STACK > 1:
                     cands = [(((n['mx'] - hx) ** 2 + (n['my'] - (H_BLOCK - hy)) ** 2), jj) for jj, n in enumerate(g.nodes)
                              if n['edge'] and n['uid'] != -1 and n.get('hq') and not n.get('late') and n['side'] == sd and 1 + len(n['more']) < HQ_STACK and outer(n)]
@@ -387,7 +445,7 @@ def main():
             if not terr.ger(mx / SQ, my / SQ) == (side == 'GER'):
                 print(f'  WARNING {name}: layout position ({px / SQ:.2f}, {my / SQ:.2f}) lies on the enemy side of the front line')
             bg_jobs.append((uid, name, sd, mx, my))
-            if idx + 1 == len(jobs) or jobs[idx + 1][0][0] >= 2:
+            if idx + 1 == len(jobs) or jobs[idx + 1][0][0] > 1:
                 # last turn-1 battle group: place them all, the one closest to a free node of its own ground first, so a unit whose
                 # position is a node gets that node whatever the pool order (the pool lists Das Reich before the LSSAH)
                 # layout 'pin': {battle-group platoon name: [X, Y]} (op-map squares) puts that battle group on the node nearest
@@ -488,7 +546,7 @@ def main():
         import briefing
         sp = os.path.join(a.opdir, 'scripts.script.loc_def.bin')
         if os.path.exists(sp) and not os.path.exists(sp + '.orig30'): shutil.copy(sp, sp + '.orig30')
-        ni, nf = briefing.write_scripts(sp, [f.get('brief', '') for f in layout['frames']])
+        ni, nf = briefing.write_scripts(sp, [f.get('brief', '') for f in layout['frames']], int(layout.get('turns', 24)), int(layout.get('turn_offset', 0)))
         print(f'  briefing script pack: {nf} functions, {ni} instructions -> {sp}')
     print(f'nodes {len(g.nodes)} links {len(g.links)} key points {sum(1 for n in g.nodes if n["flags"] >> 11)} platoons {len(plat)} ({placed} on map) markers {len(markers)} -> {out}; text packs: {", ".join(packs) or "none found"}')
 

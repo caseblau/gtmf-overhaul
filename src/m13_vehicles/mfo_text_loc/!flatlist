@@ -1,0 +1,4 @@
+i_unflat:unflat()
+{
+	00_loc_kit_weaps              , text            , loc_eng ;
+}

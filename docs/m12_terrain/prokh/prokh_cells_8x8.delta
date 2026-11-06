@@ -1,0 +1,13 @@
+# Prokh cells table: 10 x 10 grid (one empty ring, as Kalach), the 8 x 8 block at columns 1..8 rows 1..8 (2026-11-01)
+name~|Prokh_cells
+shape~|i_polygen:polygen|2|10|ssssssssss
+row+|i_polygen:polygen|@end|r0|s:|s:|s:|s:|s:|s:|s:|s:|s:|s:
+row+|i_polygen:polygen|@end|r1|s:|s:MxD1_Prokh.polypack2|s:MxE1_Prokh.polypack2|s:MxF1_Prokh.polypack2|s:MxG1_Prokh.polypack2|s:MxH1_Prokh.polypack2|s:MxI1_Prokh.polypack2|s:MxJ1_Prokh.polypack2|s:MxK1_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r2|s:|s:MxD2_Prokh.polypack2|s:MgE2_Prokh.polypack2|s:MgF2_Prokh.polypack2|s:MgG2_Prokh.polypack2|s:MgH2_Prokh.polypack2|s:MgI2_Prokh.polypack2|s:MgJ2_Prokh.polypack2|s:MxK2_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r3|s:|s:MxD3_Prokh.polypack2|s:MgE3_Prokh.polypack2|s:MgF3_Prokh.polypack2|s:MgG3_Prokh.polypack2|s:MgH3_Prokh.polypack2|s:MgI3_Prokh.polypack2|s:MgJ3_Prokh.polypack2|s:MxK3_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r4|s:|s:MxD4_Prokh.polypack2|s:MgE4_Prokh.polypack2|s:MgF4_Prokh.polypack2|s:MgG4_Prokh.polypack2|s:MgH4_Prokh.polypack2|s:MgI4_Prokh.polypack2|s:MgJ4_Prokh.polypack2|s:MxK4_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r5|s:|s:MxD5_Prokh.polypack2|s:MgE5_Prokh.polypack2|s:MgF5_Prokh.polypack2|s:MgG5_Prokh.polypack2|s:MgH5_Prokh.polypack2|s:MgI5_Prokh.polypack2|s:MgJ5_Prokh.polypack2|s:MxK5_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r6|s:|s:MxD6_Prokh.polypack2|s:MgE6_Prokh.polypack2|s:MgF6_Prokh.polypack2|s:MgG6_Prokh.polypack2|s:MgH6_Prokh.polypack2|s:MgI6_Prokh.polypack2|s:MgJ6_Prokh.polypack2|s:MxK6_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r7|s:|s:MxD7_Prokh.polypack2|s:MgE7_Prokh.polypack2|s:MgF7_Prokh.polypack2|s:MgG7_Prokh.polypack2|s:MgH7_Prokh.polypack2|s:MgI7_Prokh.polypack2|s:MgJ7_Prokh.polypack2|s:MxK7_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r8|s:|s:MxD8_Prokh.polypack2|s:MxE8_Prokh.polypack2|s:MxF8_Prokh.polypack2|s:MxG8_Prokh.polypack2|s:MxH8_Prokh.polypack2|s:MxI8_Prokh.polypack2|s:MxJ8_Prokh.polypack2|s:MxK8_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r9|s:|s:|s:|s:|s:|s:|s:|s:|s:|s:

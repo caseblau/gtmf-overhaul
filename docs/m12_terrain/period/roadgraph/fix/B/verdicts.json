@@ -1,0 +1,549 @@
+[
+ {
+  "id": "S0068",
+  "verdict": "deleted",
+  "reason": "no road: the trace ran down the brown gully contour SE of the main road; main_s now leaves ko_street at (3500,13460) along the drawn black line (see S0069)"
+ },
+ {
+  "id": "S0069",
+  "verdict": "fixed",
+  "reason": "main_s retraced on the black line along the NW bank of the stream from ko_street (3500,13460) S to the Prokhorovka lettering, then straight through the lettering to (3168,12552); the trace had followed the brown gully and a vertical through the letters 90 m E"
+ },
+ {
+  "id": "S0070",
+  "verdict": "gap",
+  "reason": "Gryaznoye: through-road on the light lane between the house rows, beside the builtup mask edge"
+ },
+ {
+  "id": "S0071",
+  "verdict": "fixed",
+  "reason": "re-centred on the solid line (up to 10 m); the reference lost this line under the lettering mask"
+ },
+ {
+  "id": "S0072",
+  "verdict": "gap",
+  "reason": "Gryaznoye: through-road on the light lane (village square) between the house rows, more than 8 m from the builtup mask"
+ },
+ {
+  "id": "S0073",
+  "verdict": "fixed",
+  "reason": "Kozlovka S street: the dip over open paper and the tail duplicating kozl_s removed; kz1 now runs straight E along the S edge of the village to the kozl_s junction (5800,12608)"
+ },
+ {
+  "id": "S0074",
+  "verdict": "gap",
+  "reason": "track crosses the W sheet-frame line (frame removed from the reference), in line on both sides"
+ },
+ {
+  "id": "S0075",
+  "verdict": "gap",
+  "reason": "faint dashed path W of the sheet frame, dashes visible, too pale for ink_clean"
+ },
+ {
+  "id": "S0076",
+  "verdict": "fixed",
+  "reason": "klkh path retraced on its dashes (SW of the KLKh lettering) and up between K and L to w_track (716,10076); the trace was up to 100 m W of the dashes"
+ },
+ {
+  "id": "S0077",
+  "verdict": "gap",
+  "reason": "Gryaznoye: street on the light lane between the house blocks at the S edge, outside the builtup mask"
+ },
+ {
+  "id": "S0078",
+  "verdict": "gap",
+  "reason": "Gryaznoye: lane between the house blocks, outside the builtup mask"
+ },
+ {
+  "id": "S0079",
+  "verdict": "gap",
+  "reason": "on the bold solid line below spot height 224.5 (re-centred by up to 13 m); the reference dropped it under the lettering mask"
+ },
+ {
+  "id": "S0080",
+  "verdict": "fixed",
+  "reason": "retraced onto the E part of the bold line (it sits 40 m N of the trace) and bridged straight across the lettering gap"
+ },
+ {
+  "id": "S0081",
+  "verdict": "fixed",
+  "reason": "retraced on the dashes S of the CC lettering (trace was up to 30 m W)"
+ },
+ {
+  "id": "S0082",
+  "verdict": "gap",
+  "reason": "dash gap where the brown contour crosses the dashed path; dashes in line on both sides"
+ },
+ {
+  "id": "S0083",
+  "verdict": "fixed",
+  "reason": "straight through the 1.0 spot-height lettering on the line of the dashes (trace was up to 44 m off)"
+ },
+ {
+  "id": "S0084",
+  "verdict": "fixed",
+  "reason": "retraced on the dashes (trace ran 30-60 m N of them)"
+ },
+ {
+  "id": "S0085",
+  "verdict": "gap",
+  "reason": "dash gap on a clear dashed path, bridged straight"
+ },
+ {
+  "id": "S0086",
+  "verdict": "gap",
+  "reason": "dash gap on a clear dashed path, bridged straight"
+ },
+ {
+  "id": "S0152",
+  "verdict": "gap",
+  "reason": "under lettering 9.0 (spot height), straight in line with the double line on both sides"
+ },
+ {
+  "id": "S0153",
+  "verdict": "gap",
+  "reason": "double line crosses the vertical line; reference broken at the crossing knot, in line on both sides"
+ },
+ {
+  "id": "S0154",
+  "verdict": "gap",
+  "reason": "village: through-road on the light lane between the house rows, outside the builtup mask"
+ },
+ {
+  "id": "S0155",
+  "verdict": "gap",
+  "reason": "village: through-road on the light lane between house blocks, just outside the mask"
+ },
+ {
+  "id": "S0156",
+  "verdict": "gap",
+  "reason": "village: through-road on the light lane between house blocks, just outside the mask"
+ },
+ {
+  "id": "S0157",
+  "verdict": "deleted",
+  "reason": "no road: blank paper E of the W sheet-frame ladder; s_m1 now ends at (600,5956)"
+ },
+ {
+  "id": "S0158",
+  "verdict": "gap",
+  "reason": "centre of the double line where a contour crosses the band"
+ },
+ {
+  "id": "S0159",
+  "verdict": "fixed",
+  "reason": "straightened through the 80 lettering on the drawn direction (trace kinked up to 36 m)"
+ },
+ {
+  "id": "S0160",
+  "verdict": "fixed",
+  "reason": "s_loop moved onto the double line NW of the trace (reference), up to 69 m"
+ },
+ {
+  "id": "S0161",
+  "verdict": "fixed",
+  "reason": "rerouted with S0160: from the end of the double line straight S along the house-block edge to the s80 junction"
+ },
+ {
+  "id": "S0162",
+  "verdict": "gap",
+  "reason": "track crosses the W sheet-frame line (frame removed from the reference), in line on both sides"
+ },
+ {
+  "id": "S0163",
+  "verdict": "gap",
+  "reason": "village street on the light lane between house blocks, outside the builtup mask"
+ },
+ {
+  "id": "S0164",
+  "verdict": "gap",
+  "reason": "on the solid line from the block edge to the junction (re-centred up to 14 m); reference lacks it"
+ },
+ {
+  "id": "S0165",
+  "verdict": "gap",
+  "reason": "on the short N-S curved line joining the two E-W lines (re-centred up to 11 m)"
+ },
+ {
+  "id": "S0166",
+  "verdict": "gap",
+  "reason": "on the solid line under the \"pr\" lettering mask"
+ },
+ {
+  "id": "S0167",
+  "verdict": "gap",
+  "reason": "centre between the two lines of the double symbol from the junction NE; reference lacks it"
+ },
+ {
+  "id": "S0168",
+  "verdict": "fixed",
+  "reason": "retraced on the brown-filled double band up to t51 (4575,7569); trace had followed the dotted boundary 30-60 m S"
+ },
+ {
+  "id": "S0169",
+  "verdict": "fixed",
+  "reason": "straight through the 243.0 lettering on the drawn direction (trace was up to 37 m off)"
+ },
+ {
+  "id": "S0170",
+  "verdict": "gap",
+  "reason": "on the solid line from the block edge (re-centred up to 11 m); reference lost it in the contour mask"
+ },
+ {
+  "id": "S0171",
+  "verdict": "gap",
+  "reason": "under the lettering/mill symbol at 247, straight in line on both sides"
+ },
+ {
+  "id": "S0172",
+  "verdict": "fixed",
+  "reason": "the ENE line runs straight on to t_lsw (621.4,2175.7); the trace dipped S and doubled back along t_lsw"
+ },
+ {
+  "id": "S0173",
+  "verdict": "gap",
+  "reason": "on the bold solid line; the reference dropped it under the lettering mask"
+ },
+ {
+  "id": "S0174",
+  "verdict": "fixed",
+  "reason": "p66 now leaves s80 at (1872,6772) S along the faint dotted line; the trace ran out along s80 and back on paper"
+ },
+ {
+  "id": "S0175",
+  "verdict": "fixed",
+  "reason": "straight between the dashes through the \"M. Mayach\" lettering"
+ },
+ {
+  "id": "S0176",
+  "verdict": "fixed",
+  "reason": "straight between the dashes through the 224 lettering"
+ },
+ {
+  "id": "S0177",
+  "verdict": "gap",
+  "reason": "dash gap on a clear dashed path, bridged straight"
+ },
+ {
+  "id": "S0178",
+  "verdict": "gap",
+  "reason": "dash gap on a clear dashed path, bridged straight"
+ },
+ {
+  "id": "S0179",
+  "verdict": "gap",
+  "reason": "dash gap where the brown line crosses the dashed path"
+ },
+ {
+  "id": "S0180",
+  "verdict": "gap",
+  "reason": "on the drawn line from the junction SE; reference removed it as contour-tinted"
+ },
+ {
+  "id": "S0181",
+  "verdict": "gap",
+  "reason": "dash gap on a clear dashed path, bridged straight"
+ },
+ {
+  "id": "S0182",
+  "verdict": "gap",
+  "reason": "dash gap on a clear dashed path, bridged straight"
+ },
+ {
+  "id": "S0183",
+  "verdict": "gap",
+  "reason": "dash gap on a clear dashed path, bridged straight"
+ },
+ {
+  "id": "S0184",
+  "verdict": "gap",
+  "reason": "dash gap on a clear dashed path, bridged straight"
+ },
+ {
+  "id": "S0185",
+  "verdict": "gap",
+  "reason": "last dash gap of the path to the junction with the solid line"
+ },
+ {
+  "id": "S0186",
+  "verdict": "fixed",
+  "reason": "street moved onto the drawn lane centre (reference)"
+ },
+ {
+  "id": "S0187",
+  "verdict": "fixed",
+  "reason": "street moved onto the drawn lane centre (reference)"
+ },
+ {
+  "id": "red_after/S0001",
+  "verdict": "gap",
+  "reason": "the straight part through the Prokhorovka lettering (no reference under the letters)",
+  "origin": "S0069",
+  "road": "n5_main_s",
+  "from_m": [
+   3215.4,
+   12991.4
+  ],
+  "to_m": [
+   3168.6,
+   12565.0
+  ],
+  "length_m": 440
+ },
+ {
+  "id": "red_after/S0003",
+  "verdict": "gap",
+  "reason": "solid line under the lettering mask",
+  "origin": "S0071",
+  "road": "n5_main_s",
+  "from_m": [
+   1960.6,
+   9683.6
+  ],
+  "to_m": [
+   1979.3,
+   9537.6
+  ],
+  "length_m": 176
+ },
+ {
+  "id": "red_after/S0005",
+  "verdict": "gap",
+  "reason": "village S-edge lane to the kozl_s junction, outside the builtup mask",
+  "origin": "S0073",
+  "road": "n5_kz1",
+  "from_m": [
+   5674.7,
+   12582.2
+  ],
+  "to_m": [
+   5800.0,
+   12608.0
+  ],
+  "length_m": 130
+ },
+ {
+  "id": "red_after/S0008",
+  "verdict": "gap",
+  "reason": "faint dashes, too pale for the reference",
+  "origin": "S0076",
+  "road": "n5_klkh_path",
+  "from_m": [
+   716.0,
+   10018.7
+  ],
+  "to_m": [
+   340.0,
+   9592.0
+  ],
+  "length_m": 626
+ },
+ {
+  "id": "red_after/S0012",
+  "verdict": "gap",
+  "reason": "bold line under the lettering mask / lettering gap",
+  "origin": "S0080",
+  "road": "n5_r50",
+  "from_m": [
+   4732.0,
+   8440.0
+  ],
+  "to_m": [
+   4959.1,
+   8470.2
+  ],
+  "length_m": 244
+ },
+ {
+  "id": "red_after/S0013",
+  "verdict": "gap",
+  "reason": "faint dashes",
+  "origin": "S0081",
+  "road": "n5_r52",
+  "from_m": [
+   3814.0,
+   9678.0
+  ],
+  "to_m": [
+   3868.0,
+   9308.8
+  ],
+  "length_m": 389
+ },
+ {
+  "id": "red_after/S0015",
+  "verdict": "gap",
+  "reason": "through the 1.0 lettering",
+  "origin": "S0083",
+  "road": "n5_r52",
+  "from_m": [
+   3892.7,
+   8911.6
+  ],
+  "to_m": [
+   3946.0,
+   8580.4
+  ],
+  "length_m": 340
+ },
+ {
+  "id": "red_after/S0016",
+  "verdict": "gap",
+  "reason": "faint dashes (too pale for the reference)",
+  "origin": "S0084",
+  "road": "n5_r54",
+  "from_m": [
+   3850.3,
+   9401.9
+  ],
+  "to_m": [
+   4484.6,
+   9267.4
+  ],
+  "length_m": 685
+ },
+ {
+  "id": "red_after/S0025",
+  "verdict": "gap",
+  "reason": "through the 80 lettering",
+  "origin": "S0159",
+  "road": "R31_s80",
+  "from_m": [
+   2957.3,
+   5708.0
+  ],
+  "to_m": [
+   3104.3,
+   5518.5
+  ],
+  "length_m": 244
+ },
+ {
+  "id": "red_after/S0026",
+  "verdict": "gap",
+  "reason": "village: along the house-block edge to the junction",
+  "origin": "S0161",
+  "road": "R31_s_loop",
+  "from_m": [
+   1604.0,
+   7206.1
+  ],
+  "to_m": [
+   1600.0,
+   7064.0
+  ],
+  "length_m": 146
+ },
+ {
+  "id": "red_after/S0033",
+  "verdict": "gap",
+  "reason": "brown-filled band, removed from the reference as brown line work",
+  "origin": "S0168",
+  "road": "R31_t_e2",
+  "from_m": [
+   4145.1,
+   7377.8
+  ],
+  "to_m": [
+   4547.3,
+   7585.5
+  ],
+  "length_m": 483
+ },
+ {
+  "id": "red_after/S0034",
+  "verdict": "gap",
+  "reason": "through the 243.0 lettering",
+  "origin": "S0169",
+  "road": "R31_t68",
+  "from_m": [
+   5971.9,
+   3195.0
+  ],
+  "to_m": [
+   6029.5,
+   3012.0
+  ],
+  "length_m": 196
+ },
+ {
+  "id": "red_after/S0037",
+  "verdict": "gap",
+  "reason": "solid line, reference broken near the junction",
+  "origin": "S0172",
+  "road": "R31_t_lsw2",
+  "from_m": [
+   613.5,
+   2187.8
+  ],
+  "to_m": [
+   476.9,
+   2140.0
+  ],
+  "length_m": 156
+ },
+ {
+  "id": "red_after/S0039",
+  "verdict": "gap",
+  "reason": "dash gap on the dashed path below the retraced part (sampling shift)",
+  "origin": "S0174",
+  "road": "R31_p66",
+  "from_m": [
+   1876.7,
+   6748.7
+  ],
+  "to_m": [
+   1817.8,
+   6534.5
+  ],
+  "length_m": 244
+ },
+ {
+  "id": "red_after/S0040",
+  "verdict": "gap",
+  "reason": "faint dotted path",
+  "origin": "S0174",
+  "road": "R31_p66",
+  "from_m": [
+   1816.0,
+   6425.2
+  ],
+  "to_m": [
+   1817.9,
+   6366.1
+  ],
+  "length_m": 64
+ },
+ {
+  "id": "red_after/S0041",
+  "verdict": "gap",
+  "reason": "through lettering",
+  "origin": "S0175",
+  "road": "R31_p66",
+  "from_m": [
+   1771.7,
+   6221.6
+  ],
+  "to_m": [
+   1664.4,
+   6087.5
+  ],
+  "length_m": 176
+ },
+ {
+  "id": "red_after/S0042",
+  "verdict": "gap",
+  "reason": "through the 224 lettering",
+  "origin": "S0176",
+  "road": "R31_p66",
+  "from_m": [
+   1676.1,
+   5930.2
+  ],
+  "to_m": [
+   1616.1,
+   5714.7
+  ],
+  "length_m": 228
+ }
+]

@@ -1,0 +1,4 @@
+# SU-122 unit and squads (tools\m13\su122_tables.py); crew squads of the SU-152 (5 men) reused
+row+|units|@end|rkkau_su122|s:rkkau_su122|s:ui_su122|s:i_techn|s:tabs\\techn_base_oprum.cfgpack|s:su122|u:5|u:16|v:0|s:|s:|s:|s:|b:0|s:|s:|s:|s:122L22
+row+|squads|@end|rkka_su122|s:rkka_su122|s:|s:sq_spg|s:|u:0|s:rkka_su122|u:'SPG'|s:rus_lnk_std|a:1000;18;48;33|u:'TECH'|u:'SUPM'|u:'SPG'|v:3.5;4|u:0x19421201|u:0x19430901|u:'USSR'|v:0.5|u:0|s:rkkau_su122|u:1|s:rkka_crew_su152|u:1|s:|u:0|s:|u:0|s:|u:0|s:|u:0
+row+|squads|@end|rkka_su122_com|s:rkka_su122_com|s:|s:sq_spg|s:|u:0|s:rkka_su122_com|u:'COM'|s:rus_lnk_std|a:1050;19;48;33|u:'TECH'|u:'SUPM'|u:'SPG'|v:3.5;4|u:0x19421201|u:0x19430901|u:'USSR'|v:0.5|u:0|s:rkkau_su122|u:1|s:rkka_crew_su152_com|u:1|s:|u:0|s:|u:0|s:|u:0|s:|u:0

@@ -1,0 +1,46 @@
+{
+ "deadends": [
+  {
+   "road": "n5_ko_farm",
+   "end": "end",
+   "why": "the single line from the Krasny Oktyabr junction stops at the farmstead by the small pond W of the stream; beyond it only the farmstead / orchard outline is drawn",
+   "crop": "review/deadend_ko_farm.png"
+  },
+  {
+   "road": "n5_w_path",
+   "end": "end",
+   "why": "the dashed line from the W block edge stops at the sheet frame line (joint of two sheets, x ~ 470 m); nothing matching continues E of the frame",
+   "crop": "review/deadend_w_path.png"
+  },
+  {
+   "road": "n5_gw_street",
+   "end": "start",
+   "why": "the street along the W house row of Gryaznoye starts at the joint between the upper and the lower sheet (y ~ 10730 m); the upper sheet is offset there and shows no matching line",
+   "crop": "review/deadend_gw_street_seam.png"
+  },
+  {
+   "road": "n5_klkh_path",
+   "end": "end",
+   "why": "the dashes SW of the klkh. lettering stop W of the sheet frame line; only a brown contour follows",
+   "crop": "review/deadend_klkh_path.png"
+  },
+  {
+   "road": "n5_w_track",
+   "end": "end",
+   "why": "the single line from the W block edge ends at the kolkhoz farm buildings W of Gryaznoye (house block at the end of the line)",
+   "crop": "review/deadend_w_track.png"
+  },
+  {
+   "road": "n5_r52",
+   "end": "start",
+   "why": "the dashed field track N from the 224.5 track starts at the lettering '267 CC' (Gryaznoye); no dashes continue N of the lettering",
+   "crop": "review/deadend_r52_lettering.png"
+  },
+  {
+   "road": "n5_r50",
+   "end": "start",
+   "why": "the track W of 224.5 ends at the kolkhoz farm building S of Gryaznoye (black house square at its W end)",
+   "crop": "review/deadend_r50_farm.png"
+  }
+ ]
+}

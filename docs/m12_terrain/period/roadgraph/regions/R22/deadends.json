@@ -1,0 +1,12 @@
+{
+ "deadends": [
+  {
+   "road": "woods_trk",
+   "end": "start",
+   "x": 10808.0,
+   "y": 9272.0,
+   "why": "the solid track from Ivanovsky Vyselok runs NW and stops at the SE corner of the wood (the wood outline is not a road); genuine dead end on the sheet",
+   "crop": "review/deadend_woods_trk_start.png"
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+# SU-76M unit and squads (tools\m13\su76_tables.py); 4-man SPG crews
+row+|units|@end|rkkau_su76m|s:rkkau_su76m|s:ui_su76m|s:i_techn|s:tabs\\techn_base_oprum.cfgpack|s:su76m|u:4|u:12|v:0|s:|s:|s:|s:|b:0|s:|s:|s:|s:76L42
+row+|squads|@end|rkka_su76m|s:rkka_su76m|s:|s:sq_spg|s:|u:0|s:rkka_su76m|u:'SPG'|s:rus_lnk_std|a:600;18;33;9|u:'TECH'|u:'SUPM'|u:'SPG'|v:3.5;4|u:0x19430601|u:0x19451201|u:'USSR'|v:0.5|u:0|s:rkkau_su76m|u:1|s:rkka_crew_stug3|u:1|s:|u:0|s:|u:0|s:|u:0|s:|u:0
+row+|squads|@end|rkka_su76m_com|s:rkka_su76m_com|s:|s:sq_spg|s:|u:0|s:rkka_su76m_com|u:'COM'|s:rus_lnk_std|a:650;19;33;9|u:'TECH'|u:'SUPM'|u:'SPG'|v:3.5;4|u:0x19430601|u:0x19451201|u:'USSR'|v:0.5|u:0|s:rkkau_su76m|u:1|s:rkka_crew_pcom4|u:1|s:|u:0|s:|u:0|s:|u:0|s:|u:0
+row+|squads|@end|rkka_su76m_ccom|s:rkka_su76m_ccom|s:|s:sq_spg|s:|u:0|s:rkka_su76m_ccom|u:'COMC'|s:rus_lnk_std|a:700;19;33;9|u:'TECH'|u:'COM'|u:'SPG'|v:3.5;4|u:0x19430601|u:0x19451201|u:'USSR'|v:0.3|u:0|s:rkkau_su76m|u:1|s:rkka_crew_ccom4|u:1|s:|u:0|s:|u:0|s:|u:0|s:|u:0

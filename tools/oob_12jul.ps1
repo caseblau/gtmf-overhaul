@@ -19,7 +19,7 @@
   tools\oob_12jul.ps1 -OpDir build\prokhorovka\op_GER        # in place: desc.config.loc_def.bin, text packs, uids.csv,
                                                               # oob_12jul.delta (against the 30 July desc kept as *.orig30)
 #>
-param([Parameter(Mandatory = $true)][string]$OpDir, [switch]$Quiet)
+param([Parameter(Mandatory = $true)][string]$OpDir, [switch]$Quiet, [ValidateSet('10', '12')][string]$Date = '10')   # -Date 12: the 12-13 July operation's start (06:00 12 July) strengths
 . (Join-Path $PSScriptRoot 'gt3.ps1') lib
 Set-StrictMode -Off
 $ErrorActionPreference = 'Stop'
@@ -181,12 +181,16 @@ function Delete-Family([string]$root) {
 # ---------------------------------------------------------------- strengths and vehicle numbers (12 July 1943 states)
 $VEH = @{   # class -> line squad regex, command suffixes are the same name + _com/_ccom/_bcom
     t34 = 'rn_rkka_t34_42'; t70 = 'rkka_t70_42'; kv = 'rn_rkka_kv1a'; su152 = 'rkka_su152'
+    su122 = 'rkka_su122'   # M13 (MF Overhaul): SU-122 squads added by src\m13_vehicles (div_units_ussr)
+    su76m = 'rkka_su76m'; lee = 'rkka_m3lee'   # M13: SU-76M (squads _com / _ccom) and M3 Lee (_com / _ccom / _bcom), 3 Nov
     church = 'rkka_church3'; stuart = 'rkka_m3a1_stuart'   # Churchill III (6-pdr) and M3A1 Stuart squads of the game's div_units (Stalingrad-Donets DLC models)
     pz4 = 'wer_pz4gl'; pz3 = '(rn_wer_pz3late|rn_wer_pz3lg)'; tiger = 'rn_wer_pz6e'; t34g = 'wer_pz747r'; stug = 'wer_stug3f8'
 }
 $CONV = @{ t70 = @{ to = 't34'; line = 'rn_rkka_t34_42'; sprite = 'pl_t34_42' }; t34g = @{ to = 'pz4'; line = 'wer_pz4gl'; sprite = 'pl_pz4g' }
            kv = @{ to = 'church'; line = 'rkka_church3'; sprite = 'pl_mk4'; sfx = @{ _bcom = '_rcom' } }   # the Churchill regiments: KV-1 template sections -> Churchill III (its battalion command squad is _rcom)
-           stuart = @{ to = 'stuart'; line = 'rkka_m3a1_stuart'; sprite = 'pl_stuart' } }               # 245 TR: T-70 sections -> M3A1 Stuart (value '>stuart' in the targets)
+           stuart = @{ to = 'stuart'; line = 'rkka_m3a1_stuart'; sprite = 'pl_stuart' }
+           su122 = @{ to = 'su122'; line = 'rkka_su122'; sprite = 'pl_su152' }
+           lee = @{ to = 'lee'; line = 'rkka_m3lee'; sprite = 'pl_t34_42' } }                        # 245 TR: T-34 template sections -> M3 Lee (value '>lee'); medium-tank map symbol                        # SAP sections: SU-152 template -> SU-122 (value '>su122')               # 245 TR: T-70 sections -> M3A1 Stuart (value '>stuart' in the targets)
 function Set-Strength([string]$form, [string]$params) {
     # params = "v:a;b;c;d" for every platoon of the formation that has a strength (battle-group nodes carry 0)
     $n = 0
@@ -196,6 +200,24 @@ function Set-Strength([string]$form, [string]$params) {
         $r.c[0] = Cell-Decode $params; $n++
     }
     $n
+}
+function Split-Class([string]$form, [string]$from, [string]$to, [double]$share) {
+    # 3 Nov (mixed SAP regiments: SU-76 and SU-122 batteries): converts the first `share` of the formation's line platoons
+    # of class `from` (sections holding only line / _com squads of it) to class `to` - line squad -> $VEH[to], _com ->
+    # $VEH[to]_com. Command platoons keep the `from` vehicle. Set-Vehicles then sets the numbers per class.
+    $rx = '^' + $VEH[$from] + '(_com)?$'; $lp = @()
+    foreach ($p in $act.kids) {
+        if ((FS $p 'pool') -ne $form) { continue }; $pk = Kid $p 'pool'; if (-not $pk -or $pk.rows.Count -eq 0) { continue }
+        $all = $true; $line = $false
+        foreach ($r in $pk.rows) { if ($r.c[0].s -match $rx) { if (-not $Matches[1]) { $line = $true } } else { $all = $false } }
+        if ($all -and $line) { $lp += $p }
+    }
+    $lp = @($lp | Sort-Object { $_.name }); $n = [Math]::Max(1, [Math]::Round($lp.Count * $share)); $k = 0
+    foreach ($p in $lp[0..($n - 1)]) {
+        foreach ($r in (Kid $p 'pool').rows) { if ($r.c[0].s -match $rx) { $r.c[0] = @{ k = 2; v = (New-Object uint32[] 4); s = ($VEH[$to] + $Matches[1]) } } }
+        $k++
+    }
+    "$k of $($lp.Count) $from sections -> $to"
 }
 function Set-Vehicles([string]$form, [hashtable]$targets) {
     # targets: class -> number of vehicles in the formation (0 = convert the class, see $CONV, or leave it). Command
@@ -253,7 +275,7 @@ function Set-Vehicles([string]$form, [hashtable]$targets) {
             $G = & $Gather; [int]$cmd = $G.cmd; $lines = $G.lines; $linePlats = $G.plats
             if ($guard++ -gt 60) { break }
         }
-        $per = [Math]::Round(($want - $cmd) / $lines.Count); if ($per -lt 1) { $per = 1 }; if ($per -gt 3) { $per = 3 }
+        $per = [Math]::Ceiling(($want - $cmd) / $lines.Count); if ($per -lt 1) { $per = 1 }; if ($per -gt 3) { $per = 3 }   # 3 Nov: Ceiling (Round gave 8 of 10 with four sections)
         $tot = $cmd; $left = $want - $cmd
         foreach ($r in $lines) { $q = [Math]::Min($per, [Math]::Max(1, $left)); $v = New-Object uint32[] 4; $v[0] = [uint32]$q; $r.c[1] = @{ k = 6; v = $v; s = $null }; $tot += $q; $left -= $q }
         $report += "$cls $tot/$want"
@@ -298,8 +320,10 @@ New-Formation 'p_ra_13mbde' 'p_ra_11mrbr' 'p_ra_2tc' 11 '11 MRBde' '11 МСБр'
 New-Formation 'p_ra_7tr' 'p_ra_15gtr' 'p_ra_2tc' 15 '15 gds hvy TR' '15 гв.ТТП' 'ra_7tr_' 'ra_15gtr_' @(@('2 gds A, 7 gds det BTR', '2 TC, 15 gds hvy TR'), @('7 BTR', '15 gds TR')) @(@('2 гв.А, 7 гв.оТПП', '2 ТК, 15 гв.оТТП'), @('7 ТПП', '15 гв.ТТП')) 0x15
 # 5 gds MC
 New-Formation 'p_ra_4mc' 'p_ra_5gmc' 'p_ra_5gta' 5 '5 gds MC' '5 гв.МК' 'ra_4mc_' 'ra_5gmc_' @(@('4 MC', '5 gds MC'), @('4 gds MC', '5 gds MC'), @('138 gds sap bn', '68 gds sap bn')) @(@('4 МК', '5 гв.МК'), @('4 гв.МК', '5 гв.МК'), @('138 гв.сапбн', '68 гв.сапбн')) 0xc50
-foreach ($b in 10, 11, 12) { New-Formation 'p_ra_13mbde' "p_ra_${b}gmbr" 'p_ra_5gmc' $b "$b gds MBde" "$b гв.МБр" 'ra_13mbde_' "ra_${b}gmbr_" (& $mbE $b '5 gds MC' 'gds MBde') (& $mbR $b '5 гв.МК' 'гв.МБр') ([uint32]('0xb' + $b + '0')) }
-foreach ($pair in @(@(10, 51), @(11, 54), @(12, 55))) { $b = $pair[0]; $t = $pair[1]
+# 2 Nov: only 10 gds MBde and 24 gds TBde fought at Prokhorovka; 11 / 12 gds MBde (54 / 55 gds TR) went south to Rzhavets on 12 July and are left out
+foreach ($b in 10) { New-Formation 'p_ra_13mbde' "p_ra_${b}gmbr" 'p_ra_5gmc' $b "$b gds MBde" "$b гв.МБр" 'ra_13mbde_' "ra_${b}gmbr_" (& $mbE $b '5 gds MC' 'gds MBde') (& $mbR $b '5 гв.МК' 'гв.МБр') ([uint32]('0xb' + $b + '0')) }
+# 3 Nov: unary comma - @(@(10, 51)) flattened to 10, 51 and built two junk 'p_ra_gtr' formations (51 gds TR missing)
+foreach ($pair in @(, @(10, 51))) { $b = $pair[0]; $t = $pair[1]
     New-Formation 'p_ra_36tbde' "p_ra_${t}gtr" "p_ra_${b}gmbr" $t "$t gds TR" "$t гв.ТП" 'ra_36tbde_' "ra_${t}gtr_" @(@('4 gds MC, 1/36 gds TBde', "$b gds MBde, 1/$t gds TR"), @('4 gds MC, 2/36 gds TBde', "$b gds MBde, 2/$t gds TR"), @('4 gds MC, MRBn/36 gds TBde', "$b gds MBde, $t gds TR"), @('36 gds TBde', "$t gds TR"), @('36 TBde', "$t gds TR")) @(@('4 гв.МК, 1/36 гв.ТБр', "$b гв.МБр, 1/$t гв.ТП"), @('4 гв.МК, 2/36 гв.ТБр', "$b гв.МБр, 2/$t гв.ТП"), @('4 гв.МК, МСБн/36 гв.ТБр', "$b гв.МБр, $t гв.ТП"), @('36 гв.ТБр', "$t гв.ТП"), @('36 ТБр', "$t гв.ТП")) ([uint32]('0x' + $t + '00')) '^ra_36tbde_(mr|mrbn)' }
 New-Formation 'p_ra_36tbde' 'p_ra_24gtbr' 'p_ra_5gmc' 24 '24 gds TBde' '24 гв.ТБр' 'ra_36tbde_' 'ra_24gtbr_' (& $gtbE 24 '5 gds MC') (& $gtbR 24 '5 гв.МК') 0xb240
 New-Formation 'p_ra_1543tsap' 'p_ra_1529sap' 'p_ra_5gta' 1529 '1529 hvy SPGR' '1529 ТСАП' 'ra_1543(tsap|spgr)_' 'ra_1529sap_' @(@('2 gds A', '5 gds TA'), @('1543', '1529')) @(@('2 гв.А', '5 гв.ТА'), @('1543', '1529')) 0x1529
@@ -351,7 +375,7 @@ New-Formation 'p_ra_3rd' 'p_ra_52grd' 'p_ra_5ga' 52 '52 gds RD' '52 гв.СД' '
 foreach ($pair in @(@(5, 151), @(9, 153), @(13, 155))) { $o = $pair[0]; $n = $pair[1]
     New-Formation "p_ra_${o}rr" "p_ra_${n}grr" 'p_ra_52grd' $n "$n gds RR" "$n гв.СП" "ra_${o}_" "ra_${n}_" @(@("3 gds RD", "52 gds RD"), @("$o gds RR", "$n gds RR"), @("$o RR", "$n RR"), @("/$o ", "/$n "), @("/$o", "/$n")) @(@("3 гв.СД", "52 гв.СД"), @("$o гв.СП", "$n гв.СП"), @("$o СП", "$n СП"), @("/$o", "/$n")) ([uint32]('0x' + $n)) }
 New-Formation 'p_ra_22ar' 'p_ra_124gar' 'p_ra_52grd' 124 '124 gds AR' '124 гв.АП' 'ra_22ar_' 'ra_124ar_' @(@('22 gds AR', '124 gds AR'), @('22 AR', '124 AR'), @('/22', '/124')) @(@('22 гв.АП', '124 гв.АП'), @('22 АП', '124 АП'), @('/22', '/124')) 0xa124
-# 245 separate TR (M3 Lee / Stuart: T-34 / T-70 sections stand in) - the tank company with 52 gds RD on 10 July
+# 245 separate TR (M3 Lee - M13 model, from the T-34 template sections; M3A1 Stuart from the T-70 ones) - the tank company with 52 gds RD on 10 July
 New-Formation 'p_ra_36tbde' 'p_ra_245otp' 'p_ra_52grd' 245 '245 TR' '245 оТП' 'ra_36tbde_' 'ra_245otp_' @(@('4 gds MC, 1/36 gds TBde', '52 gds RD, 1/245 TR'), @('4 gds MC, 2/36 gds TBde', '52 gds RD, 2/245 TR'), @('4 gds MC, MRBn/36 gds TBde', '52 gds RD, 245 TR'), @('36 gds TBde', '245 TR'), @('36 TBde', '245 TR')) @(@('4 гв.МК, 1/36 гв.ТБр', '52 гв.СД, 1/245 ТП'), @('4 гв.МК, 2/36 гв.ТБр', '52 гв.СД, 2/245 ТП'), @('4 гв.МК, МСБн/36 гв.ТБр', '52 гв.СД, 245 ТП'), @('36 гв.ТБр', '245 ТП'), @('36 ТБр', '245 ТП')) 0x245 '^ra_36tbde_(mr|mrbn)'
 # 183 RD (315 RD pattern) under 48 RC
 New-Formation 'p_ra_31rc' 'p_ra_48rc' 'p_ra_5ga' 48 '48 RC' '48 СК' 'ra_31rc_' 'ra_48rc_' @(@('31 gds RC', '48 RC'), @('31 RC', '48 RC')) @(@('31 гв.СК', '48 СК'), @('31 СК', '48 СК')) 0xc48
@@ -368,11 +392,12 @@ New-Formation 'p_ra_96rd' 'p_ra_97grd' 'p_ra_33grc' 97 '97 gds RD' '97 гв.СД
 foreach ($pair in @(@(291, 289), @(293, 292), @(295, 294))) { $o = $pair[0]; $n = $pair[1]
     New-Formation "p_ra_${o}rr" "p_ra_${n}grr" 'p_ra_97grd' $n "$n gds RR" "$n гв.СП" "ra_${o}_" "ra_${n}_" @(@("96 gds RD", "97 gds RD"), @("$o gds RR", "$n gds RR"), @("$o RR", "$n RR"), @("/$o", "/$n")) @(@("96 гв.СД", "97 гв.СД"), @("$o гв.СП", "$n гв.СП"), @("$o СП", "$n СП"), @("/$o", "/$n")) ([uint32]('0x' + $n)) }
 New-Formation 'p_ra_234ar' 'p_ra_232gar' 'p_ra_97grd' 232 '232 gds AR' '232 гв.АП' 'ra_234ar_' 'ra_232ar_' @(@('234 gds AR', '232 gds AR'), @('234 AR', '232 AR'), @('234', '232')) @(@('234 гв.АП', '232 гв.АП'), @('234 АП', '232 АП'), @('234', '232')) 0xa232
-# 13 gds RD (34 gds RD pattern) - 33 gds RC second echelon
-New-Formation 'p_ra_34rd' 'p_ra_13grd' 'p_ra_33grc' 13 '13 gds RD' '13 гв.СД' 'ra_34rd_' 'ra_13grd_' @(@('34 gds RD', '13 gds RD'), @('34 RD', '13 RD')) @(@('34 гв.СД', '13 гв.СД'), @('34 СД', '13 СД')) 0x13
-foreach ($pair in @(@(103, 34), @(105, 39), @(107, 42))) { $o = $pair[0]; $n = $pair[1]
-    New-Formation "p_ra_${o}rr" "p_ra_${n}grr" 'p_ra_13grd' $n "$n gds RR" "$n гв.СП" "ra_${o}_" "ra_${n}_" @(@("34 gds RD", "13 gds RD"), @("$o gds RR", "$n gds RR"), @("$o RR", "$n RR"), @("/$o", "/$n")) @(@("34 гв.СД", "13 гв.СД"), @("$o гв.СП", "$n гв.СП"), @("$o СП", "$n СП"), @("/$o", "/$n")) ([uint32]('0x' + $n)) }
-New-Formation 'p_ra_84ar' 'p_ra_32gar' 'p_ra_13grd' 32 '32 gds AR' '32 гв.АП' 'ra_84ar_' 'ra_32ar_' @(@('84 gds AR', '32 gds AR'), @('84 AR', '32 AR'), @('84', '32')) @(@('84 гв.АП', '32 гв.АП'), @('84 АП', '32 АП'), @('84', '32')) 0xa032
+# 93 gds RD (96 gds RD pattern) - 69 A (35 gds RC), took over the Leski - Shakhovo sector on the south edge on 11-12 July;
+# its 285 gds RR gets the prefix ra_285g_ (183 RD's 285 RR is ra_285_). 2 Nov: replaces 13 gds RD, which fought on the Oboyan axis (32 gds RC), west of the map
+New-Formation 'p_ra_96rd' 'p_ra_93grd' 'p_ra_48rc' 93 '93 gds RD' '93 гв.СД' 'ra_96rd_' 'ra_93grd_' @(@('96 gds RD', '93 gds RD'), @('96 RD', '93 RD')) @(@('96 гв.СД', '93 гв.СД'), @('96 СД', '93 СД')) 0x930
+foreach ($pair in @(@(291, 278, 'ra_278_', 0x278), @(293, 281, 'ra_281_', 0x281), @(295, 285, 'ra_285g_', 0x2851))) { $o = $pair[0]; $n = $pair[1]
+    New-Formation "p_ra_${o}rr" "p_ra_${n}grr" 'p_ra_93grd' $n "$n gds RR" "$n гв.СП" "ra_${o}_" $pair[2] @(@("96 gds RD", "93 gds RD"), @("$o gds RR", "$n gds RR"), @("$o RR", "$n RR"), @("/$o", "/$n")) @(@("96 гв.СД", "93 гв.СД"), @("$o гв.СП", "$n гв.СП"), @("$o СП", "$n СП"), @("/$o", "/$n")) ([uint32]$pair[3]) }
+New-Formation 'p_ra_234ar' 'p_ra_197gar' 'p_ra_93grd' 197 '197 gds AR' '197 гв.АП' 'ra_234ar_' 'ra_197ar_' @(@('234 gds AR', '197 gds AR'), @('234 AR', '197 AR'), @('234', '197')) @(@('234 гв.АП', '197 гв.АП'), @('234 АП', '197 АП'), @('234', '197')) 0xa197
 # 5 gds A army troops: 301 and 1510 IPTAP (HQ and the 76 mm gun companies of the 1 destr Bde pattern), 148 and 93 gds TR (Churchills - no such squads, KV sections stand in)
 $iptapX = '^ra_1destr_(smgc|atbn|engbn|atr_|mt_|1mt|2mt|ac82|[123]$)'   # keep the HQ and the four 76 mm gun companies (the atr_* companies are AT rifles)
 New-Formation 'p_ra_1destr' 'p_ra_301iptap' 'p_ra_5ga' 301 '301 AT Rgt' '301 ИПТАП' 'ra_1destr_' 'ra_301iptap_' @(@('1 gds det AT Bde', '301 AT Rgt'), @('1 IBr', '301 IPTAP'), @('2 gds A', '5 gds A')) @(@('1 гв.оИБр', '301 ИПТАП'), @('1 ИБр', '301 ИПТАП'), @('2 гв.А', '5 гв.А')) 0x301 $iptapX
@@ -393,10 +418,28 @@ New-Formation 'p_we_dr_ar' 'p_we_lah_ar' 'p_we_lah' 1 '1 AR SS' '1 АП СС' 'w
 Say '# strengths and vehicle numbers (morning 10 July 1943 for the units on the map, 11 July states for 5 gds TA: Zamulin / Lawrence tables)'
 $fresh = 'v:0.5;0.5;1;0.1'; $worn = 'v:0.5;0.5;0.6;0.2'; $ger = 'v:0.5;0.6;0.8;0.2'; $gerTk = 'v:0.5;0.6;0.85;0.15'
 $strength = @{}
-foreach ($f in $forms.Keys) { if ($f -match '^p_ra_(5gta|18tc|29tc|2gtc|5gmc|\d+tbr|\d+gtbr|\d+mrbr|\d+gmrbr|\d+gmbr|\d+gtr|\d+sap|9gabd|\d+gabr|\d+gabar|95grd|97grd|13grd|\d+grr|\d+gar|33grc|5ga|\d+iptabr|\d+iptap|\d+har|\d+gabr|\d+gmr)$') { $strength[$f] = $fresh } }
+foreach ($f in $forms.Keys) { if ($f -match '^p_ra_(5gta|18tc|29tc|2gtc|5gmc|\d+tbr|\d+gtbr|\d+mrbr|\d+gmrbr|\d+gmbr|\d+gtr|\d+sap|9gabd|\d+gabr|\d+gabar|95grd|97grd|93grd|\d+grr|\d+gar|33grc|5ga|\d+iptabr|\d+iptap|\d+har|\d+gabr|\d+gmr)$') { $strength[$f] = $fresh } }
 foreach ($f in 'p_ra_2tc', 'p_ra_26tbr', 'p_ra_99tbr', 'p_ra_169tbr', 'p_ra_58mrbr', 'p_ra_11mrbr', 'p_ra_15gtr', 'p_ra_52grd', 'p_ra_151grr', 'p_ra_153grr', 'p_ra_155grr', 'p_ra_124gar', 'p_ra_245otp', 'p_ra_48rc', 'p_ra_183rd', 'p_ra_227rr', 'p_ra_285rr', 'p_ra_295rr', 'p_ra_623ar') { $strength[$f] = $worn }
 foreach ($f in 'p_ra_27iptabr', 'p_ra_2gtc', 'p_ra_4gtbr', 'p_ra_25gtbr', 'p_ra_26gtbr', 'p_ra_4gmrbr', 'p_ra_47gtr') { $strength[$f] = $fresh }
 foreach ($f in $forms.Keys) { if ($f -match '^p_we_(lah|dr)') { $strength[$f] = $ger } elseif ($f -match '^p_we_tk') { $strength[$f] = $gerTk } }
+if ($Date -eq '12') {
+    # 3 Nov: the 12-13 July operation starts after two more days of fighting. Personnel (third value = manning) from the
+    # reported losses: LSSAH 337, Totenkopf 461, Das Reich 211 killed / wounded on 11 July alone (Lawrence ch. 8) on top of
+    # 10 July; 52 gds RD down to 3,380 men on 12 July (Lawrence ch. 9, from ~8,000); 285 RR driven out of its positions at
+    # Komsomolets / Oktyabrsky on 10-11 July (Zamulin ch. 7); 11 MRBr and 2 TC's motor riflemen in the 10-11 July fighting;
+    # 26 gds AB Rgt lost Oktyabrsky / 252.2 on 11 July. The rest of 9 gds AB Div, 95 / 42 gds RD and 5 gds TA as before.
+    foreach ($f in $forms.Keys) {
+        if ($f -match '^p_we_lah') { $strength[$f] = 'v:0.5;0.6;0.74;0.25' }
+        elseif ($f -match '^p_we_dr') { $strength[$f] = 'v:0.5;0.6;0.77;0.22' }
+        elseif ($f -match '^p_we_tk') { $strength[$f] = 'v:0.5;0.6;0.76;0.22' }
+    }
+    foreach ($f in 'p_ra_52grd', 'p_ra_151grr', 'p_ra_153grr', 'p_ra_155grr', 'p_ra_124gar', 'p_ra_245otp') { $strength[$f] = 'v:0.5;0.5;0.42;0.3' }
+    foreach ($f in 'p_ra_285rr') { $strength[$f] = 'v:0.5;0.5;0.38;0.3' }
+    foreach ($f in 'p_ra_227rr', 'p_ra_295rr', 'p_ra_183rd', 'p_ra_623ar', 'p_ra_11mrbr', 'p_ra_58mrbr') { $strength[$f] = 'v:0.5;0.5;0.5;0.25' }
+    foreach ($f in 'p_ra_26gabr') { $strength[$f] = 'v:0.5;0.5;0.75;0.2' }
+    foreach ($f in 'p_ra_2gtc', 'p_ra_4gtbr', 'p_ra_25gtbr', 'p_ra_26gtbr', 'p_ra_4gmrbr', 'p_ra_47gtr', 'p_ra_27iptabr') { $strength[$f] = 'v:0.5;0.5;0.8;0.15' }
+    Say '  -Date 12: strengths of 06:00 12 July (II SS Pz Corps, 52 gds RD, 183 RD, 2 TC, 2 gds TC, 26 gds AB Rgt worn down)'
+}
 $ns = 0; $na = 0
 foreach ($p in $act.kids) {
     $f = FS $p 'pool'; if (-not $strength.ContainsKey($f)) { continue }
@@ -414,11 +457,11 @@ Say "  strength parameters set on $ns platoons ($na armoured platoons kept at fu
 $tanks = [ordered]@{
     # Soviet: Zamulin, Demolishing the Myth, Table 18 (5 gds TA at 17:00 11 July 1943, runners; TsAMO f. 332 / 18 tk / 29 tk)
     p_ra_110tbr = @{ t34 = 22; t70 = 21 }; p_ra_170tbr = @{ t34 = 22; t70 = 17 }; p_ra_181tbr = @{ t34 = 24; t70 = 20 }; p_ra_36gtr = @{ kv = 0; church = 18 }   # 18 TC: 36 gds hvy TR = 18 Churchill III
-    p_ra_25tbr = @{ t34 = 31; t70 = 36 }; p_ra_31tbr = @{ t34 = 29; t70 = 38 }; p_ra_32tbr = @{ t70 = 0; t34 = 63 }; p_ra_1446sap = @{ su152 = 21 }   # 29 TC; 1446 SAP = 10 SU-76 + 11 SU-122 (SU-152 stands in)
+    p_ra_25tbr = @{ t34 = 31; t70 = 36 }; p_ra_31tbr = @{ t34 = 29; t70 = 38 }; p_ra_32tbr = @{ t70 = 0; t34 = 63 }; p_ra_1446sap = @{ su152 = '>su122' }   # 29 TC; 1446 SAP = 10 SU-76 + 11 SU-122: converted below, then split (3 Nov: SU-76M and SU-122 models of M13)
     p_ra_4gtbr = @{ t34 = 28; t70 = 17 }; p_ra_25gtbr = @{ t34 = 28; t70 = 17 }; p_ra_26gtbr = @{ t34 = 27; t70 = 16 }; p_ra_47gtr = @{ kv = 0; church = 8 }   # 2 gds TC at 0800 10 July: 141 operational tanks, brigades at 88-89 % (Zamulin); 47 gds hvy TR Churchills
     p_ra_26tbr = @{ t34 = 16; t70 = 15 }; p_ra_99tbr = @{ t34 = 14; t70 = 15 }; p_ra_169tbr = @{ t34 = 16; t70 = 13 }; p_ra_15gtr = @{ kv = 0; church = 12 }   # 2 TC at 0800 10 July: 89 tanks in the three brigades (43 T-70), 58 / 55 / 55 % of 53 (Zamulin); 15 gds hvy TR 12 Churchill
-    p_ra_245otp = @{ t34 = 6; t70 = '>stuart'; stuart = 4 }   # the tank company of 245 sep. TR with 52 gds RD: M3 Lee (T-34 stands in - no Lee in the game) and M3A1 Stuart
-    p_ra_24gtbr = @{ t34 = 48; t70 = 0 }; p_ra_51gtr = @{ t34 = 30; t70 = 14 }; p_ra_54gtr = @{ t34 = 16; t70 = 15 }; p_ra_55gtr = @{ t34 = 20; t70 = 15 }; p_ra_1447sap = @{ su152 = 11 }   # 5 gds MC (0200 12 July): 10 / 11 / 12 gds MBde tank regiments; 1447 SAP = 4 SU-76 + 7 SU-122
+    p_ra_245otp = @{ t34 = '>lee'; lee = 6; t70 = '>stuart'; stuart = 4 }   # the tank company of 245 sep. TR with 52 gds RD: M3 Lee (M13 model, 3 Nov) and M3A1 Stuart
+    p_ra_24gtbr = @{ t34 = 48; t70 = 0 }; p_ra_51gtr = @{ t34 = 30; t70 = 14 }; p_ra_1447sap = @{ su152 = '>su122' }   # 5 gds MC (0200 12 July): 10 gds MBde tank regiment; 1447 SAP = 4 SU-76 + 7 SU-122 (split below)
     p_ra_53gtr = @{ t34 = 39; t70 = 1 }; p_ra_1529sap = @{ su152 = 11 }; p_ra_1549sap = @{ su152 = 11 }   # army troops; 1529 = 11 SU-152 + 1 KV; 1549 not in the table - same size assumed
     p_ra_148gtr = @{ kv = 0; church = 15 }; p_ra_93gtr = @{ kv = 0; church = 15 }   # 5 gds A separate tank regiments, Churchills (no 11 July return found - unchanged)
     # German: Zetterling / Frankson via Zamulin Table 17 (II SS Pz Corps, 18:35 11 July 1943, operational)
@@ -427,7 +470,24 @@ $tanks = [ordered]@{
     p_we_dr_tr = @{ pz4 = 13; pz3 = 31; t34g = 7; tiger = 1 }; p_we_dr_stug = @{ stug = 26 }   # DR: 31 Pz III, 13 Pz IV, 1 Tiger, 7 T-34, 7 command, 26 StuG = 85
     p_we_tk_tr = @{ pz4 = 27; pz3 = 47; tiger = 2 }; p_we_tk_stug = @{ stug = 12 }   # T: 47 Pz III, 20 Pz IV L43/48 + 7 L24, 2 Tiger, 5 command, 12 StuG = 93
 }
+if ($Date -eq '12') {
+    # 06:00 12 July: II SS Pz Corps operational at 18:35 11 July (Zetterling / Frankson via Zamulin Table 17): LSSAH 4 Pz II,
+    # 5 Pz III, 47 Pz IV, 4 Tiger, 10 StuG; DR 34 Pz III, 18 Pz IV, 1 Tiger, 8 T-34, 27 StuG; T 54 Pz III, 30 Pz IV, 10 Tiger,
+    # 21 StuG (Pz II with the Pz III). 2 TC / 2 gds TC runners at 17:00 11 July (Zamulin Table 18): 26 TBr 6 + 8, 99 TBr 10 +
+    # 10, 169 TBr 14 + 4, 15 gds TR 3 Churchill; 4 / 25 / 26 gds TBr 28 + 19, 28 + 19, 30 + 14, 47 gds TR 3 Churchill.
+    $tanks['p_we_lah_tr'] = @{ t34g = 0; pz4 = 47; pz3 = 9; tiger = 4 }; $tanks['p_we_lah_stug'] = @{ stug = 10 }
+    $tanks['p_we_dr_tr'] = @{ pz4 = 18; pz3 = 34; t34g = 8; tiger = 1 }; $tanks['p_we_dr_stug'] = @{ stug = 27 }
+    $tanks['p_we_tk_tr'] = @{ pz4 = 30; pz3 = 54; tiger = 10 }; $tanks['p_we_tk_stug'] = @{ stug = 21 }
+    $tanks['p_ra_26tbr'] = @{ t34 = 6; t70 = 8 }; $tanks['p_ra_99tbr'] = @{ t34 = 10; t70 = 10 }; $tanks['p_ra_169tbr'] = @{ t34 = 14; t70 = 4 }; $tanks['p_ra_15gtr'] = @{ kv = 0; church = 3 }
+    $tanks['p_ra_4gtbr'] = @{ t34 = 28; t70 = 19 }; $tanks['p_ra_25gtbr'] = @{ t34 = 28; t70 = 19 }; $tanks['p_ra_26gtbr'] = @{ t34 = 30; t70 = 14 }; $tanks['p_ra_47gtr'] = @{ kv = 0; church = 3 }
+}
 foreach ($f in $tanks.Keys) { Say ("  {0,-14} {1}" -f $f, (Set-Vehicles $f $tanks[$f])) }
+# mixed SAP regiments (Zamulin Table 18, 17:00 11 July): 1446 SAP 10 SU-76 + 11 SU-122, 1447 SAP 4 SU-76 + 7 SU-122 - half the
+# batteries become SU-76M (M13 model), then the numbers per class
+foreach ($sap in @(@('p_ra_1446sap', 0.5, 10, 11), @('p_ra_1447sap', 0.4, 4, 7))) {
+    Say ("  {0,-14} {1}" -f $sap[0], (Split-Class $sap[0] 'su122' 'su76m' $sap[1]))
+    Say ("  {0,-14} {1}" -f $sap[0], (Set-Vehicles $sap[0] @{ su76m = $sap[2]; su122 = $sap[3] }))
+}
 
 Say '# removing the Mius formations'
 
@@ -452,13 +512,13 @@ $AI = @{
     p_ra_29tc = 'T29'; p_ra_25tbr = 'B25'; p_ra_31tbr = 'B31'; p_ra_32tbr = 'B32'; p_ra_53mrbr = 'M53'; p_ra_1446sap = 'S146'
     p_ra_2gtc = 'T2G'; p_ra_4gtbr = 'B4G'; p_ra_25gtbr = 'B25G'; p_ra_26gtbr = 'B26G'; p_ra_4gmrbr = 'M4G'; p_ra_47gtr = 'R47'
     p_ra_2tc = 'T2'; p_ra_26tbr = 'B26'; p_ra_99tbr = 'B99'; p_ra_169tbr = 'B169'; p_ra_58mrbr = 'M58'; p_ra_11mrbr = 'M11'; p_ra_15gtr = 'R15'
-    p_ra_5gmc = 'M5G'; p_ra_10gmbr = 'B10G'; p_ra_11gmbr = 'B11G'; p_ra_12gmbr = 'B12G'; p_ra_51gtr = 'R51'; p_ra_54gtr = 'R54'; p_ra_55gtr = 'R55'; p_ra_24gtbr = 'B24G'
+    p_ra_5gmc = 'M5G'; p_ra_10gmbr = 'B10G'; p_ra_51gtr = 'R51'; p_ra_24gtbr = 'B24G'
     p_ra_1529sap = 'S152'; p_ra_1549sap = 'S154'; p_ra_1447sap = 'S147'; p_ra_10iptabr = 'A10'; p_ra_53gtr = 'R53'; p_ra_689iptap = 'A689'
     p_ra_678har = 'H678'; p_ra_27gabr = 'H27'; p_ra_522har = 'H522'; p_ra_1148har = 'H114'; p_ra_76gmr = 'H76'; p_ra_16gmr = 'H16'; p_ra_80gmr = 'H80'
     p_ra_5ga = 'U5GA'; p_ra_33grc = 'C33'; p_ra_9gabd = 'D9'; p_ra_23gabr = 'R23'; p_ra_26gabr = 'R26'; p_ra_28gabr = 'R28'; p_ra_7gabar = 'H7'
     p_ra_95grd = 'D95'; p_ra_284grr = 'R284'; p_ra_287grr = 'R287'; p_ra_290grr = 'R290'; p_ra_233gar = 'H233'
     p_ra_42grd = 'D42'; p_ra_127grr = 'R127'; p_ra_132grr = 'R132'; p_ra_136grr = 'R136'; p_ra_91gar = 'H91'
-    p_ra_97grd = 'D97'; p_ra_13grd = 'D13'; p_ra_32gar = 'H32'; p_ra_232gar = 'H232'; p_ra_148gtr = 'R148'; p_ra_93gtr = 'R93'; p_ra_1510iptap = 'A151'; p_ra_301iptap = 'A301'
+    p_ra_97grd = 'D97'; p_ra_93grd = 'D93'; p_ra_278grr = 'R278'; p_ra_281grr = 'R281'; p_ra_285grr = 'R28G'; p_ra_197gar = 'H197'; p_ra_232gar = 'H232'; p_ra_148gtr = 'R148'; p_ra_93gtr = 'R93'; p_ra_1510iptap = 'A151'; p_ra_301iptap = 'A301'
     p_ra_52grd = 'D52'; p_ra_151grr = 'R151'; p_ra_153grr = 'R153'; p_ra_155grr = 'R155'; p_ra_124gar = 'H124'; p_ra_245otp = 'R245'
     p_ra_48rc = 'C48'; p_ra_183rd = 'D183'; p_ra_227rr = 'R227'; p_ra_285rr = 'R285'; p_ra_295rr_183 = 'R295'; p_ra_623ar = 'H623'; p_ra_27iptabr = 'A27'; p_ra_29iptabr = 'A29'
 }

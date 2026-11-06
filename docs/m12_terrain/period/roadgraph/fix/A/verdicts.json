@@ -1,0 +1,538 @@
+[
+ {
+  "id": "S0097",
+  "verdict": "gap",
+  "reason": "double-line road beside the railway: the reference has only the edge lines there (no double-line centre); trace nudged ~8 m onto the centre of the white strip",
+  "red_after": [
+   "S0001"
+  ],
+  "review": "review/S0097.png"
+ },
+ {
+  "id": "S0098",
+  "verdict": "gap",
+  "reason": "double-line road beside the railway: the reference has only the edge lines there (no double-line centre); w1/s1 junction; trace (and the shared s1 vertices) moved onto the centre",
+  "red_after": [
+   "S0002"
+  ],
+  "review": "review/S0098.png"
+ },
+ {
+  "id": "S0099",
+  "verdict": "gap",
+  "reason": "double-line road beside the railway: the reference has only the edge lines there (no double-line centre); retraced from the SE edge line ~30 m NW onto the centre",
+  "red_after": [
+   "S0003"
+  ],
+  "review": "review/S0099.png"
+ },
+ {
+  "id": "S0100",
+  "verdict": "gap",
+  "reason": "double-line road beside the railway: the reference has only the edge lines there (no double-line centre); retraced: the trace cut across paper NW of the band at 252.2; now on the centre; okt junction vertex moved onto the centre (okt end moved identically)",
+  "red_after": [
+   "S0004"
+  ],
+  "review": "review/S0100.png"
+ },
+ {
+  "id": "S0101",
+  "verdict": "gap",
+  "reason": "double-line road beside the railway: the reference has only the edge lines there (no double-line centre); retraced on the centre between the okt and p_yamki_n junctions",
+  "red_after": [
+   "S0005"
+  ],
+  "review": "review/S0101.png"
+ },
+ {
+  "id": "S0102",
+  "verdict": "gap",
+  "reason": "double-line road beside the railway: the reference has only the edge lines there (no double-line centre); retraced ~25 m NW from the SE edge line onto the centre (S0102+S0103 are one stretch now)",
+  "red_after": [
+   "S0006"
+  ],
+  "review": "review/S0102.png"
+ },
+ {
+  "id": "S0103",
+  "verdict": "gap",
+  "reason": "double-line road beside the railway: the reference has only the edge lines there (no double-line centre); retraced onto the centre, merged with S0102",
+  "red_after": [
+   "S0006"
+  ],
+  "review": "review/S0103.png"
+ },
+ {
+  "id": "S0104",
+  "verdict": "gap",
+  "reason": "double-line road beside the railway: the reference has only the edge lines there (no double-line centre); retraced ~20 m NW onto the centre",
+  "red_after": [
+   "S0008"
+  ],
+  "review": "review/S0104.png"
+ },
+ {
+  "id": "S0105",
+  "verdict": "gap",
+  "reason": "double-line road beside the railway: the reference has only the edge lines there (no double-line centre); retraced ~30 m NW onto the centre",
+  "red_after": [
+   "S0009"
+  ],
+  "review": "review/S0105.png"
+ },
+ {
+  "id": "S0106",
+  "verdict": "gap",
+  "reason": "double-line road beside the railway: the reference has only the edge lines there (no double-line centre); retraced ~30 m NW onto the centre",
+  "red_after": [
+   "S0010"
+  ],
+  "review": "review/S0106.png"
+ },
+ {
+  "id": "S0107",
+  "verdict": "gap",
+  "reason": "under red/yellow pencil (770 RIK area); trace continues the drawn direction, unchanged",
+  "red_after": [
+   "S0011"
+  ],
+  "review": "review/S0107.png"
+ },
+ {
+  "id": "S0108",
+  "verdict": "gap",
+  "reason": "light lane between house blocks at the Prokhorovka edge, outside the built-up mask; unchanged",
+  "red_after": [
+   "S0012"
+  ],
+  "review": "review/S0108.png"
+ },
+ {
+  "id": "S0109",
+  "verdict": "gap",
+  "reason": "same geometry as band_rd S0098 (shared vertices), moved with it onto the double-line centre",
+  "red_after": [
+   "S0002",
+   "S0014"
+  ],
+  "review": "review/S0109.png"
+ },
+ {
+  "id": "S0110",
+  "verdict": "gap",
+  "reason": "level crossing X1: road drawn across the railway symbol, railway masked out of the reference; unchanged (now under 60 m)",
+  "red_after": [],
+  "review": "review/S0110.png"
+ },
+ {
+  "id": "S0111",
+  "verdict": "gap",
+  "reason": "crossing X3 over the railway symbol (railway masked out of the reference); unchanged",
+  "red_after": [
+   "S0015"
+  ],
+  "review": "review/S0111.png"
+ },
+ {
+  "id": "S0112",
+  "verdict": "gap",
+  "reason": "faint dashed path, dash gap ~85 m, re-bridged straight between the dash ends",
+  "red_after": [
+   "S0016"
+  ],
+  "review": "review/S0112.png"
+ },
+ {
+  "id": "S0113",
+  "verdict": "gap",
+  "reason": "dashed path, dash gap ~60 m, bridged straight between the dash ends",
+  "red_after": [
+   "S0017"
+  ],
+  "review": "review/S0113.png"
+ },
+ {
+  "id": "S0114",
+  "verdict": "gap",
+  "reason": "dashes visible, removed by the lettering filter (next to 245.8); trace on the dashes",
+  "red_after": [
+   "S0018"
+  ],
+  "review": "review/S0114.png"
+ },
+ {
+  "id": "S0115",
+  "verdict": "gap",
+  "reason": "dashed path, dash gap ~65 m (over the 40 m bridge), straight between the dashes",
+  "red_after": [
+   "S0019"
+  ],
+  "review": "review/S0115.png"
+ },
+ {
+  "id": "S0116",
+  "verdict": "gap",
+  "reason": "dashed path, dash gap ~65 m, straight between the dashes",
+  "red_after": [
+   "S0020"
+  ],
+  "review": "review/S0116.png"
+ },
+ {
+  "id": "S0117",
+  "verdict": "gap",
+  "reason": "dashed path interrupted by a letter; re-bridged straight between the dash ends (old trace detoured)",
+  "red_after": [
+   "S0021"
+  ],
+  "review": "review/S0117.png"
+ },
+ {
+  "id": "S0118",
+  "verdict": "gap",
+  "reason": "retraced: the trace crossed blank paper; now on the drawn dash leading to the Yamki road; the dash is in the lettering mask",
+  "red_after": [
+   "S0022"
+  ],
+  "review": "review/S0118.png"
+ },
+ {
+  "id": "S0119",
+  "verdict": "gap",
+  "reason": "road through Lutovo between two village blobs under yellow/red pencil, past the church symbol; unchanged",
+  "red_after": [
+   "S0023"
+  ],
+  "review": "review/S0119.png"
+ },
+ {
+  "id": "S0120",
+  "verdict": "gap",
+  "reason": "track under the MTS lettering and blue pencil, continues the drawn direction to the MTS symbol; unchanged",
+  "red_after": [
+   "S0024"
+  ],
+  "review": "review/S0120.png"
+ },
+ {
+  "id": "S0121",
+  "verdict": "gap",
+  "reason": "straight N-S track the grid filter removed (bold line, not a grid line); recentred on the line",
+  "red_after": [
+   "S0025"
+  ],
+  "review": "review/S0121.png"
+ },
+ {
+  "id": "S0122",
+  "verdict": "gap",
+  "reason": "map sheet join: the track is offset across the seam (grid lines jog the same way); joined along the seam",
+  "red_after": [
+   "S0026"
+  ],
+  "review": "review/S0122.png"
+ },
+ {
+  "id": "S0123",
+  "verdict": "gap",
+  "reason": "under red pencil, black line visible beneath; trace on it",
+  "red_after": [
+   "S0027"
+  ],
+  "review": "review/S0123.png"
+ },
+ {
+  "id": "S0124",
+  "verdict": "gap",
+  "reason": "straight track under red pencil and the Pravorot / 228 lettering (grid filter + pencil); recentred on the line",
+  "red_after": [
+   "S0028"
+  ],
+  "review": "review/S0124.png"
+ },
+ {
+  "id": "S0125",
+  "verdict": "gap",
+  "reason": "light lane through the town at the town_s junction, outside the built-up mask; slightly recentred",
+  "red_after": [
+   "S0029"
+  ],
+  "review": "review/S0125.png"
+ },
+ {
+  "id": "S0126",
+  "verdict": "gap",
+  "reason": "double-line road: reference has only edge lines; retraced ~12 m S onto the centre",
+  "red_after": [
+   "S0030"
+  ],
+  "review": "review/S0126.png"
+ },
+ {
+  "id": "S0127",
+  "verdict": "gap",
+  "reason": "track end at the T-bar by the grid line; filtered as lettering; trace on the symbol",
+  "red_after": [
+   "S0031"
+  ],
+  "review": "review/S0127.png"
+ },
+ {
+  "id": "S0128",
+  "verdict": "gap",
+  "reason": "retraced onto the first dash (removed by the lettering filter); old trace ran above it",
+  "red_after": [
+   "S0032"
+  ],
+  "review": "review/S0128.png"
+ },
+ {
+  "id": "S0129",
+  "verdict": "gap",
+  "reason": "dashed path, dash gap ~100 m, bridged straight",
+  "red_after": [
+   "S0033"
+  ],
+  "review": "review/S0129.png"
+ },
+ {
+  "id": "S0130",
+  "verdict": "gap",
+  "reason": "last dash to the village junction, re-bridged straight (old trace kinked)",
+  "red_after": [
+   "S0034"
+  ],
+  "review": "review/S0130.png"
+ },
+ {
+  "id": "S0131",
+  "verdict": "gap",
+  "reason": "main road through the village drawn as the light lane between house blocks (blocks outside the mask); unchanged",
+  "red_after": [
+   "S0035"
+  ],
+  "review": "review/S0131.png"
+ },
+ {
+  "id": "S0132",
+  "verdict": "fixed",
+  "reason": "snapped onto the drawn double-line centre (reference)",
+  "red_after": []
+ },
+ {
+  "id": "S0133",
+  "verdict": "fixed",
+  "reason": "snapped onto the drawn double-line centre (reference)",
+  "red_after": []
+ },
+ {
+  "id": "S0134",
+  "verdict": "fixed",
+  "reason": "r46 spike to the pv_st1/pv_st5 junction removed; junction moved onto the r46 centre (identically in pv_st1, pv_st5)",
+  "red_after": []
+ },
+ {
+  "id": "S0135",
+  "verdict": "fixed",
+  "reason": "r46 spike to the pv_st2/pv_st6 junction removed; junction moved onto the r46 centre (identically in pv_st2, pv_st6)",
+  "red_after": []
+ },
+ {
+  "id": "S0136",
+  "verdict": "gap",
+  "reason": "dashes visible, one removed by the lettering filter (next to the double-tick marks); trace on the dashes",
+  "red_after": [
+   "S0037"
+  ],
+  "review": "review/S0136.png"
+ },
+ {
+  "id": "S0137",
+  "verdict": "gap",
+  "reason": "dashed path, dash gap, bridged straight",
+  "red_after": [
+   "S0038"
+  ],
+  "review": "review/S0137.png"
+ },
+ {
+  "id": "S0138",
+  "verdict": "gap",
+  "reason": "dashed path, dash gap across a contour, bridged straight",
+  "red_after": [
+   "S0039"
+  ],
+  "review": "review/S0138.png"
+ },
+ {
+  "id": "S0139",
+  "verdict": "gap",
+  "reason": "dashed path, dash gap, bridged straight",
+  "red_after": [
+   "S0040"
+  ],
+  "review": "review/S0139.png"
+ },
+ {
+  "id": "S0140",
+  "verdict": "gap",
+  "reason": "dashed path, dash gap, bridged straight",
+  "red_after": [
+   "S0041"
+  ],
+  "review": "review/S0140.png"
+ },
+ {
+  "id": "S0141",
+  "verdict": "gap",
+  "reason": "dashed path, dash gap, bridged straight",
+  "red_after": [
+   "S0042"
+  ],
+  "review": "review/S0141.png"
+ },
+ {
+  "id": "S0142",
+  "verdict": "gap",
+  "reason": "under red pencil, dark path visible beneath; unchanged",
+  "red_after": [
+   "S0043"
+  ],
+  "review": "review/S0142.png"
+ },
+ {
+  "id": "S0143",
+  "verdict": "gap",
+  "reason": "village street on the light lane between house rows; lane wider than the 8 m house-block margin; unchanged",
+  "red_after": [
+   "S0045"
+  ],
+  "review": "review/S0143.png"
+ },
+ {
+  "id": "S0144",
+  "verdict": "gap",
+  "reason": "village street on the light lane between house rows; unchanged",
+  "red_after": [
+   "S0047"
+  ],
+  "review": "review/S0144.png"
+ },
+ {
+  "id": "S0145",
+  "verdict": "gap",
+  "reason": "village street through the open lane between house blocks in Pravorot; unchanged",
+  "red_after": [
+   "S0049"
+  ],
+  "review": "review/S0145.png"
+ },
+ {
+  "id": "S0146",
+  "verdict": "deleted",
+  "reason": "no street drawn: open paper; the curved line is a brown contour. pv_st4 now starts at the drawn road junction (17920, 9072)",
+  "red_after": []
+ },
+ {
+  "id": "S0147",
+  "verdict": "deleted",
+  "reason": "hook of pv_st5 west of r46 inside the road band duplicated pv_st1; pv_st5 now starts at the new r46 junction",
+  "red_after": []
+ },
+ {
+  "id": "S0148",
+  "verdict": "gap",
+  "reason": "dashed path, dash gap, bridged straight",
+  "red_after": [
+   "S0050"
+  ],
+  "review": "review/S0148.png"
+ },
+ {
+  "id": "S0149",
+  "verdict": "gap",
+  "reason": "dashed path turns NE; faint dashes, gap ~150 m bridged straight",
+  "red_after": [
+   "S0051"
+  ],
+  "review": "review/S0149.png"
+ },
+ {
+  "id": "S0150",
+  "verdict": "gap",
+  "reason": "dashed path, dash gap, bridged straight (old trace stepped)",
+  "red_after": [
+   "S0052"
+  ],
+  "review": "review/S0150.png"
+ },
+ {
+  "id": "S0151",
+  "verdict": "gap",
+  "reason": "dashed path, dash gap across the grid line, bridged straight",
+  "red_after": [
+   "S0053"
+  ],
+  "review": "review/S0151.png"
+ },
+ {
+  "id": "A-N1",
+  "verdict": "gap",
+  "reason": "band_rd new red stretch (was under 60 m): retraced ~25 m NW onto the double-line centre; reference has only the edge lines",
+  "red_after": [
+   "S0007"
+  ],
+  "review": "review/A-N1.png",
+  "note": "new red stretch caused by or revealed after the fixes"
+ },
+ {
+  "id": "A-N2",
+  "verdict": "gap",
+  "reason": "okt end segment across the 252.2 junction knot to the moved junction on the band road centre",
+  "red_after": [
+   "S0013"
+  ],
+  "review": "review/A-N2.png",
+  "note": "new red stretch caused by or revealed after the fixes"
+ },
+ {
+  "id": "A-N3",
+  "verdict": "gap",
+  "reason": "r46 on the white centre strip of the double line; the reference centre has a 70 m gap here (was under 60 m before)",
+  "red_after": [
+   "S0036"
+  ],
+  "review": "review/A-N3.png",
+  "note": "new red stretch caused by or revealed after the fixes"
+ },
+ {
+  "id": "A-N4",
+  "verdict": "gap",
+  "reason": "pv_st1 end across the r46 band edge to the moved junction on the r46 centre (replaces the r46 spike)",
+  "red_after": [
+   "S0044"
+  ],
+  "review": "review/A-N4.png",
+  "note": "new red stretch caused by or revealed after the fixes"
+ },
+ {
+  "id": "A-N5",
+  "verdict": "gap",
+  "reason": "pv_st2 end across the r46 band edge to the moved junction on the r46 centre (replaces the r46 spike)",
+  "red_after": [
+   "S0046"
+  ],
+  "review": "review/A-N5.png",
+  "note": "new red stretch caused by or revealed after the fixes"
+ },
+ {
+  "id": "A-N6",
+  "verdict": "gap",
+  "reason": "pv_st6 end, same segment as pv_st2 (shared), to the moved junction on the r46 centre",
+  "red_after": [
+   "S0048"
+  ],
+  "review": "review/A-N6.png",
+  "note": "new red stretch caused by or revealed after the fixes"
+ }
+]

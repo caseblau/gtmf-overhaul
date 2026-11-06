@@ -1,0 +1,9 @@
+# MF Overhaul 0.5.33: user on 0.5.32 (screenshots, Prokhorovka): wheel / track dust still a charcoal-grey cloud.
+#   Correction of 76_terrain_dust: parts_desc c26 is the ground-wetness gate (docs\particle_columns.md), not a terrain
+#   tint. The darkness is the sprite: dust_wh draws cell v 0.5 of sfx_01_dift (vanilla and RBVFX alike), mid-grey puffs
+#   of ~90/255, which the patched sh_dust shader renders near black whatever the birth colour.
+#   Now dust_wh draws our own generated sheet trans_mfo_dust_dift (tools\m8_dust_texture.py, light neutral puffs ~220/255,
+#   same 4 x 4 layout) and takes a dry-chernozem summer dust tan (178;165;135 -> 196;184;156); autumn a damper,
+#   darker tan. Sizes, drift, spin and the patch's wetness gate unchanged.
+row~|parts_desc|dust_wh|c3=s:mfo_dust_dift|c11=a:-1062034041;-1866813806|c12=a:12892316
+row~|parts_desc_aut|dust_wh|c3=s:mfo_dust_dift|c11=a:-1332311440;-2136959878|c12=a:11313286

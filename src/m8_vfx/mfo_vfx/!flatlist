@@ -2,4 +2,5 @@ i_unflat:unflat()
 {
 	parts                         , config          , loc_def ;
 	sfx                           , config          , loc_def ;
+	trans_mfo_dust_dift           , texture         , loc_def ;
 }

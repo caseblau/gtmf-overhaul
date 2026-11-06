@@ -22,14 +22,21 @@ REF = None      # texref.Ref: the Petropolye / Mius reference cells, set by main
 # ------------------------------------------------------------------ block geometry (docs/m12_terrain/prokh_layout.md)
 # The DEM lattice ("old frame", 11 x 12 cells, metres from its west / south edge) stays the coordinate system of the
 # OSM data, the layout files, the period mask and the heightmap files in build\prokhorovka\cells.  The polygon built
-# from it is the 7 x 5 core block (2026-10-24, user): old columns 2..8 (x 4096..18432) and old rows 4..8
-# (y 6144..16384) = Vasilyevka / the Psel bend - Prokhorovka station / Grushki, Belenikhino - Hill 226.6, with the
-# vanilla Mius geometry (cells table 11 x 7, cells at cell_x 3..9 / cell_y 1..5, camp_area 3;1;9;5).
+# from it was the 7 x 5 core block (2026-10-24: old columns 2..8, rows 4..8, the vanilla Mius geometry - cells table
+# 11 x 7, cells at cell_x 3..9 / cell_y 1..5, camp_area 3;1;9;5).  2026-11-01 (user): enlarge it to 9 x 9 - old columns
+# 0..8 (x 0..18432) and old rows 2..10 (y 2048..20480) = two cells west (Kozlovka / the Psel bend / Bogoroditskoye),
+# north (Polezhayev / Veselyi / the Kartashevka road) and south (Belenikhino / Yasnaya Polyana / Leski); cells table
+# 11 x 11 with an empty ring as the vanilla Kalach table (9 x 10 for 7 x 8 cells, camp_area 1;1;7;8), cells at cell_x
+# 1..9 / cell_y 1..9, camp_area 1;1;9;9.  Larger than any vanilla map (Kalach 7 x 8 = 14 x 16 squares); 8 x 8 loads
+# (test 1 Nov, placeholder cells); the first 9 x 9 and 8 x 8 crashes were a stale camp_area in the reused descriptor.
+# The op-map squares authored for the 7 x 5 frame (ai_orders.py, briefing.py, layout 'pin') are shifted by SQ_DX / SQ_DY.
 LATS, LATN, LONW, LONE = 50.904605, 51.1254, 36.4903, 36.8120   # DEM lattice (2026-10-23: two more rows south)
 OLD_COLS, OLD_ROWS, CELL = 11, 12, 2048.0
 OLD_LETTERS = [chr(ord('D') + i) for i in range(OLD_COLS)]
-COLS, ROWS = 7, 5
-BLOCK_I0, BLOCK_J0 = 2, 4                                   # old lattice indices of the block's north-west cell
+COLS, ROWS = 9, 9
+BLOCK_I0, BLOCK_J0 = 0, 2                                   # old lattice indices of the block's north-west cell
+SQ_DX, SQ_DY = 2 * (2 - BLOCK_I0), 2 * (4 - BLOCK_J0)       # op-map squares: 7 x 5-frame coordinates + these = this block's
+CELL_X0, CELL_Y0 = 1, 1                                     # cells table coordinates of the block's north-west cell (camp_area origin)
 BLOCK_X0 = BLOCK_I0 * CELL                                  # old-frame metres of the block's west edge
 BLOCK_Y0 = (OLD_ROWS - BLOCK_J0 - ROWS) * CELL              # old-frame metres of the block's south edge
 LAT_C = 51.0334; M_LAT = 111320.0; M_LON = 111320.0 * math.cos(math.radians(LAT_C))
@@ -176,6 +183,7 @@ def line_style(t):
     if hw in ('motorway', 'trunk', 'primary', 'secondary', 'tertiary'): return (ROAD, 6.0, C.COL_ROAD, False)   # 1943: unpaved 'grade' roads; Petropolye main roads 4-6 m of road_back
     if hw in ('unclassified', 'residential', 'service', 'living_street', 'road'): return (ROAD, 5.0, C.COL_ROAD_DARK, False)
     if hw in ('track',): return (TRACK, 3.5, C.COL_TRACK, True)
+    if hw == 'path' and str(t.get('source', '')).startswith('rkka1941'): return (TRACK, 2.5, C.COL_TRACK, True)   # the sheet's dashed field / forest tracks
     if hw in ('path', 'footway', 'bridleway', 'cycleway'): return (TRACK, 1.5, None, True)
     ww = t.get('waterway')
     if ww in ('river',): return (WATER, 16.0, 0xff8a5a2a, False)
@@ -293,6 +301,35 @@ def prune_roads(feats):
     print('roads 1943: %d paths / service lanes, %d parallel comb tracks and %d dead-end tracks dropped, %d roads kept' % (n_drop, len(comb), n_dead, len(roads)), flush=True)
     return other + roads
 
+ROADS1941 = None   # the road network traced from the RKKA 1:100 000 sheet of 1941 (docs/m12_terrain/period/roads_1941.json,
+                   # tools/roads_1941.py): list of {'highway', 'pts' (DEM-lattice metres), 'source', 'length_m'}. Set by main().
+
+def period_roads(feats):
+    """4 Nov (user: "Just match all the roads from the 1941 map don't take into account the modern"): the roads, cart
+    tracks, field paths and village streets come from the 1941 sheet itself, not from OpenStreetMap. Every OSM highway is
+    dropped (rivers, streams, woods, railway and the rest of OSM stay); the traced network (tools/roads_1941.py ->
+    docs/m12_terrain/period/roads_1941.json) is inserted as OSM-style lines tagged by symbol - 'secondary' (double line:
+    improved / main road), 'track' (single solid line: dirt road), 'path' (dashed: field / forest track), 'residential'
+    (village street) - so line_style, tools/tracks.py, tools/settle.py and the op map treat them as before. The layout's
+    roads_1943 (hand-added lanes) are separate and always drawn."""
+    if ROADS1941 is None:
+        print('roads 1941: no traced network (docs/m12_terrain/period/roads_1941.json) - the OSM roads are kept', flush=True)
+        return feats
+    out = []; n_drop = 0; L_drop = 0.0
+    for f in feats:
+        k, t, p, c = f
+        if k == 'line' and 'highway' in t:
+            n_drop += 1; L_drop += sum(math.hypot(b[0] - a[0], b[1] - a[1]) for a, b in zip(p, p[1:])); continue
+        out.append(f)
+    n = {}
+    for r in ROADS1941:
+        pts = [tuple(q) for q in r['pts']]
+        if len(pts) < 2: continue
+        out.append(('line', {'highway': r['highway'], 'source': 'rkka1941_' + r.get('source', 'sheet')}, pts, False))
+        n[r['highway']] = n.get(r['highway'], 0) + 1
+    print('roads 1941 (RKKA sheet): %d OSM highways dropped (%.0f km), %s traced roads inserted' % (n_drop, L_drop / 1000.0, ', '.join('%d %s' % (v, k) for k, v in sorted(n.items()))), flush=True)
+    return out
+
 # ------------------------------------------------------------------ natural river courses
 # 26 Oct (user: 'the curvature is rigid and unnatural'): the OSM Psel here has a vertex every 110-160 m, so the river was
 # a chain of straight 14 m bands with sharp corners. Every river / stream line is smoothed (Chaikin) and given meanders -
@@ -301,7 +338,9 @@ def prune_roads(feats):
 # band gets a width that varies along its length. Done once on the features, so the water levels and every cell agree.
 MEANDER = {'river': (20.0, (420.0, 210.0, 120.0), 16.0, 5.0), 'stream': (4.0, (130.0, 70.0, 37.0), 5.0, 1.2),
            'canal': (0.0, (1.0, 1.0, 1.0), 5.0, 0.0), 'drain': (1.5, (90.0, 50.0, 27.0), 4.0, 0.8), 'ditch': (1.5, (90.0, 50.0, 27.0), 4.0, 0.8)}
-RIPARIAN = [None]   # set per cell: (belt mask, distance to the water m, noise) for the bank flora
+RIPARIAN = [None]   # set per cell: (belt mask, distance to the water m, noise, mud band, wet meadow) for the bank flora
+FLOOD = [None]      # set per cell: the low floodplain next to the river (wet meadow)
+MUD = [None]        # set per cell: the bare mud band at the waterline (no grass billboards)
 
 def _meander(pts, amp, lams, salt=0):
     import works as W
@@ -381,6 +420,20 @@ FIELD_TYPES = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 4, 4]   # 25 Oct 
 FIELD_KEEP_PCT = 90   # share of the OSM farmland polygons that stay crops; the rest is grassland
 WORKS = []      # field works from docs/m11_prokhorovka/layout_12jul.json (tools/works.py), set by main()
 PERIOD = None   # (H,W) uint8 mask on the 4 m block grid, row 0 = north; set by main() when docs/m12_terrain/period/builtup_1941.png exists
+
+OSM_BUILDINGS = False   # layout 'osm_buildings': True puts the OSM building footprints back as houses / sheds (the old way)
+OSM_BUILDINGS_IN = []   # layout 'osm_buildings_1943': polygons (DEM-lattice metres) inside which the OSM footprints are kept
+def osm_building_ok(p):
+    """4 Nov (user: big villages had houses on a grid with sheds round them and no fences, 'take a look at the Korotich
+    layouts'): the OSM footprints are today's houses and outbuildings - every one became a house or a shed with a pale yard,
+    and the street homesteads (fences, gates, yards, plots) were kept 20 m away from them, so the villages with many
+    footprints (Belenikhino 1100, Prokhorovka 900) had no homesteads at all. By default they are dropped and every village
+    is built from the street homesteads like the Psel villages (and like vanilla Korotich: a fenced plot per house along
+    every street); the layout can keep them inside given polygons."""
+    if OSM_BUILDINGS: return True
+    if not OSM_BUILDINGS_IN: return False
+    cx = sum(q[0] for q in p) / len(p); cy = sum(q[1] for q in p) / len(p)
+    return any(pl.contains_points([(cx, cy)])[0] for pl in OSM_BUILDINGS_IN)
 
 def period_mask_cell(i, j, margin=0):
     """1 m boolean mask of the 1941 built-up area inside cell (i, j) (+ margin px on every side), row 0 = south; None without a period mask."""
@@ -499,7 +552,7 @@ def rasterise(feats, i, j, rng, steep=None):
                 water_lines.append((pp, c, w, t.get('_hw'))); lines.append((pp, col, dash, c)); continue
             d.line(pp, fill=c, width=max(1, int(round(w))), joint='curve')
             lines.append((pp, col, dash, c))
-        elif kind == 'building' and closed:
+        elif kind == 'building' and closed and osm_building_ok(p):
             pp = to_px(p, x0, y0); d.polygon(pp, fill=BUILDING); buildings.append(pp)
     # rivers and streams last, over the roads and tracks that cross them (26 Oct: a track drawn over the Psel left a
     # raised grass strip across the water - the bed is not carved under non-water pixels)
@@ -537,7 +590,7 @@ def rasterise(feats, i, j, rng, steep=None):
     for vl_ in VILLAGES43:
         if clip_poly(vl_, x0, y0, margin=PAD): dvp.polygon([(x + PAD, y + PAD) for x, y in to_px(vl_, x0, y0)], fill=255)
     for (kind, t, p, closed) in feats:
-        if kind == 'building' and closed and clip_poly(p, x0, y0, margin=PAD + 50): dvp.polygon([(x + PAD, y + PAD) for x, y in to_px(p, x0, y0)], fill=255)
+        if kind == 'building' and closed and clip_poly(p, x0, y0, margin=PAD + 50) and osm_building_ok(p): dvp.polygon([(x + PAD, y + PAD) for x, y in to_px(p, x0, y0)], fill=255)
     VIL_PAD[0] = np.asarray(vp) > 0
     # 1943 kolkhoz blocks on the open land round the villages (Wheatley Fig. 35, 14 July: a dense patchwork of brigade strips between the
     # Psel villages and the plateau, where OSM has pasture today): irregular blocks (jittered 400 m lattice in block coordinates, so the
@@ -634,6 +687,9 @@ def rasterise(feats, i, j, rng, steep=None):
         cov[(cov == BUILDING) & ~pmd] = GRASS
         cov[np.asarray(farm43) > 0] = VILLAGE   # the 1943 state-farm yards are not subject to the trim
         cov[(np.asarray(vil43) > 0) & (cov == GRASS)] = VILLAGE   # nor the 1943 villages (they come from the period sheet itself)
+        # 4 Nov: the OSM farmyard / industrial yards outside the 1941 built-up area are post-war livestock and machine
+        # yards - their cover went back to grass above, but the farm mask still put barns, sheds and haystacks on them
+        FARM_MASK[0] &= (pmd | (np.asarray(farm43) > 0))
         pmp = MO.dilate(period_mask_cell(i, j, PAD), 51); vpf = np.pad((np.asarray(farm43) > 0) | (np.asarray(vil43) > 0), PAD)
         VIL_PAD[0] &= (pmp | vpf)
         buildings = [pp for pp in buildings if 0 <= pp[0][0] < 2048 and 0 <= pp[0][1] < 2048 and pmd[int(pp[0][1]), int(pp[0][0])]]
@@ -812,8 +868,8 @@ def build_water_levels(feats, hei_dir):
         if kind == 'line':
             st = line_style(t); return st[1] if st is not None and st[0] == WATER else 0
         return 0
-    nlev = WL.build(feats, water_of, heights, BLOCK_X0, BLOCK_Y0, COLS * CELL, ROWS * CELL)
-    print('water levels: one surface for the block,', nlev, 'levels in steps of %.1f m' % WL.STEP, flush=True)
+    nlev = WL.build(feats, water_of, heights, BLOCK_X0, BLOCK_Y0, COLS * CELL, ROWS * CELL, CELL)
+    print('water levels: one surface for the block,', nlev, 'levels in steps of %.2f m' % WL.STEP, flush=True)
 
 def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, seed=0):
     name = cell_name(i, j); x0, y0 = cell_origin(i, j)
@@ -882,8 +938,10 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
     if WL.LEVEL is not None and wm.any():
         dry = WL.sample(WL.DRY, gx_, gy_) & wm
         cov[dry] = MARSH; wm &= ~dry   # branches of the OSM water polygon that climb the gully sides: wet meadow, not water
-    has_water = wm.sum() > 2500   # ponds under 0.25 ha are dropped (the 30 m DEM does not resolve their hollows)
-    idx = vals = None
+    # ponds under 0.25 ha are dropped (the 30 m DEM does not resolve their hollows) - but not a river reach that only clips
+    # the cell: without it the neighbour's water stopped in a wall at the seam
+    has_water = wm.sum() > 2500 or (wm.sum() > 0 and (wm[0].any() or wm[-1].any() or wm[:, 0].any() or wm[:, -1].any()))
+    idx = vals = None; FLOOD[0] = None
     if has_water:
         from scipy import ndimage as ndi
         h2w = h.reshape(2048, 2, 2048, 2).mean((1, 3)).astype(np.float32)
@@ -908,19 +966,25 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
         # the level index (4 m): the polygon dilated by 8 m, level quantised to 0.25 m (<= 63 levels, else 0.5 m)
         zone4 = (d_out <= 8.0).reshape(512, 4, 512, 4).max((1, 3))
         l4 = lvl_ext[2::4, 2::4]   # the surface is already in 0.5 m steps: sample, do not average (averaging made in-between levels)
-        for q in (4.0, 2.0, 1.0):
-            lq = np.where(zone4, np.round(l4 * q) / q, 0); vals = np.unique(lq[zone4])
-            if len(vals) <= 63: break
+        # 4 Nov: the levels are already quantised once for the whole block (waterlevel.STEP, <= 63 per cell); re-rounding
+        # them per cell could give two neighbouring cells different quanta - a step in the water at the seam
+        lq = np.where(zone4, np.round(l4, 3), 0); vals = np.unique(lq[zone4])
+        if len(vals) > 63:
+            print('  WARNING: %d water levels in the cell, re-quantised to 0.5 m' % len(vals), flush=True)
+            lq = np.where(zone4, np.round(l4 * 2.0) / 2.0, 0); vals = np.unique(lq[zone4])
         vals = vals[:63]
         idx = np.zeros((512, 512), np.uint8)
         for k, v in enumerate(vals): idx[lq == v] = k + 1
+        # the low floodplain (4 Nov, user: 'a very marshy land because of the river'): ground less than ~0.6-1.4 m above
+        # the river level within 150 m of the water (before the bank carve), for the wet meadow painted below
+        FLOOD[0] = (d_out > 0) & (d_out <= 150.0) & ((h2w - lvl_ext) < 1.0 + 0.4 * TX.gnoise(wm.shape, to_block(x0, y0), 60.0, 59))
         del h2w, lvl_ext, d_out, d_in, zone, bed, bank, target, delta, zone4, l4, lq
     del yy_, xx_, gx_, gy_
     # natural banks (26 Oct, user: 'the bank should be natural, here it is grass'). Measured on the vanilla Mius river cell
     # MxD1: the ground within ~20 m of the water is a mix of marsh (1) ~20 %, forest ground (12) ~20 %, leaves (13) ~30 %
     # and grass ~20 %, with willow bushes, bushes and reeds thick along the water. A riparian belt 6-24 m wide (seam-free
     # noise) is painted that way; flora for it is scattered below (RIPARIAN).
-    RIPARIAN[0] = None
+    RIPARIAN[0] = None; MUD[0] = None
     wmb = (cov == WATER)
     if wmb.sum() > 400:
         from scipy import ndimage as ndi
@@ -928,16 +992,33 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
         org = to_block(x0, y0)
         wr = 6.0 + 18.0 * (0.5 + 0.5 * TX.gnoise(wmb.shape, org, 170.0, 61)) + 4.0 * TX.gnoise(wmb.shape, org, 37.0, 62)
         rz = (d_o > 0) & (d_o <= wr) & np.isin(cov, (GRASS, MARSH, FIELD, SCRUB))
+        # 4 Nov (user: 'the Psel has no mud around its edges, it is a very marshy land ... the grass grows right on the edge of
+        # the water'; Zamulin's photo of the Psel bend: 'the swampy river basin', Wheatley: 'the riverbank was boggy'): the low
+        # floodplain within 150 m becomes wet meadow, the belt is painted over it too
+        wet_m = FLOOD[0] & np.isin(cov, (GRASS, MARSH, FIELD, SCRUB)) if FLOOD[0] is not None else np.zeros_like(rz)
+        wet_m &= ~MO.dilate(np.isin(cov, (ROAD, TRACK, RAIL, VILLAGE, BUILDING)), 9)
+        rz |= wet_m
         cov[rz & (cov == FIELD)] = GRASS
         n1 = TX.gnoise(wmb.shape, org, 7.0, 63) + 0.5 * TX.gnoise(wmb.shape, org, 2.0, 64)
+        # the wet meadow / bank belt as measured on the vanilla Mius river cell MxD1: marsh ~20 %, forest ground ~20 %,
+        # leaves ~30 %, grass ~20 % (here grass a little more on the outer floodplain)
         rs = np.where(n1 > 0.45, 13, np.where(n1 > 0.0, 12, np.where(n1 > -0.4, 1, 0))).astype(soil.dtype)
-        edge = rz & (d_o <= 1.5 + 1.5 * (TX.gnoise(wmb.shape, org, 5.0, 65) + 1.0))   # the waterline: wet mud and leaves
-        rs = np.where(edge, np.where(n1 > 0.2, 13, 1), rs).astype(soil.dtype)
+        outer_fp = wet_m & (d_o > wr)
+        rs = np.where(outer_fp & (n1 < -0.15), 0, rs).astype(soil.dtype)
+        # the waterline: a 2-5 m band of BARE wet mud (vanilla Korotich KgD3 0-2 m: clay 36 %, marsh 11 %, grass soil 48 % but
+        # grass billboards on only 23 %; Petropolye PgG1: sand 99 %, no grass within 5 m) - clay / marsh / black earth / leaves
+        # in patches, no grass billboards on it (MUD), the reeds start at its outer edge
+        mud_w = 2.0 + 3.0 * (0.5 + 0.5 * TX.gnoise(wmb.shape, org, 29.0, 65)) + 0.7 * TX.gnoise(wmb.shape, org, 4.0, 66)
+        mud = rz & (d_o <= mud_w)
+        n2 = TX.gnoise(wmb.shape, org, 3.5, 67)
+        ms = np.where(n2 > 0.35, 2, np.where(n2 > -0.1, 3, np.where(n2 > -0.45, 1, 13))).astype(soil.dtype)
+        rs = np.where(mud, ms, rs).astype(soil.dtype)
         soil[rz] = rs[rz]; tcls[rz] = 0
         soil[wmb] = np.where(n1[wmb] > 0.3, 13, 1).astype(soil.dtype)   # the bed under the water: dark mud / leaves (vanilla 1 and 13)
         tcls[wmb] = 0
-        RIPARIAN[0] = (rz, d_o, n1)
-        del d_o, wr, rs, edge
+        RIPARIAN[0] = (rz, d_o, n1, mud, mud_w, wet_m)
+        MUD[0] = mud | (rz & (d_o <= mud_w + 2.0) & (n2 > 0.0))   # the grass starts thin: the next 2 m half bare
+        del wr, rs, ms, n2
     lap('water')
     # micro-relief (25 Oct, user: the vanilla ground is never flat - bumps of 5-20 cm at 2-30 m everywhere, more in the villages)
     import relief as RL
@@ -1028,7 +1109,6 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
     for pp in buildings[:400]:
         cx = sum(p[0] for p in pp) / len(pp); cy = sum(p[1] for p in pp) / len(pp)
         if 0 <= cx < 2048 and 0 <= cy < 2048: sprites.append(dict(name='build', col=0xff694320, x=cx, y=cy, scale=0.4, kind=1, flag=0))
-    C.write_sprites(path('opmap_tri'), sprites)
     lap('opmap')
     # vegetation
     fx, fy, fr, ft = [], [], [], []
@@ -1053,16 +1133,19 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
     wmask = (cov == WATER)
     if RIPARIAN[0] is not None:
         # the bank vegetation (vanilla MxD1: verba willow bushes 16, bushes 7 / 8, reeds 6, small trees 3 / 4 along the water,
-        # in clumps): reed beds 0-2.5 m inside the water edge and on the waterline, willow / bush thickets on the belt
-        rz, d_o, n1 = RIPARIAN[0]
-        d_i = ndi.distance_transform_edt(wmask) if wmask.any() else None
+        # in clumps; vanilla puts no plants IN the water). 4 Nov: the waterline mud stays bare; reed beds (rogoz 6) stand from
+        # the outer edge of the mud band out to ~10 m and in patches over the wet meadow, willows behind them
+        rz, d_o, n1, mud, mud_w, wet_m = RIPARIAN[0]
         clump = TX.gnoise(cov.shape, to_block(x0, y0), 19.0, 66)
-        reed = ((wmask & (d_i <= 2.5)) | (rz & (d_o <= 2.5))) & (clump > -0.1) if d_i is not None else rz & (d_o <= 2.5)
-        scatter(reed & ~dug, 1 / 7.0, [(6, 1)])
-        thick = rz & (d_o > 1.0) & (clump > 0.15) & ~dug
-        scatter(thick & (d_o <= 8.0), 1 / 22.0, [(16, 5), (7, 3), (8, 2), (12, 1)])
-        scatter(thick & (d_o > 8.0), 1 / 45.0, [(16, 3), (7, 2), (8, 2), (3, 2), (4, 1), (12, 1)])
-        scatter(rz & (clump <= 0.15) & ~dug, 1 / 160.0, [(16, 2), (7, 2), (8, 1)])   # single bushes between the thickets
+        reed = rz & ~mud & (d_o <= mud_w + 8.0) & (clump > -0.25)
+        scatter(reed & ~dug, 1 / 6.0, [(6, 1)])
+        scatter(rz & ~mud & (d_o <= mud_w + 1.5) & (clump <= -0.25) & ~dug, 1 / 25.0, [(6, 1)])   # a thin fringe between the beds
+        scatter(wet_m & ~mud & (d_o > mud_w + 8.0) & (clump > 0.3) & ~dug, 1 / 14.0, [(6, 1)])   # reed patches in the wet meadow
+        thick = rz & ~mud & (d_o > mud_w + 2.0) & (clump > 0.15) & ~dug
+        scatter(thick & (d_o <= 12.0), 1 / 26.0, [(16, 5), (7, 3), (8, 2), (12, 1)])
+        scatter(thick & (d_o > 12.0) & ~wet_m, 1 / 45.0, [(16, 3), (7, 2), (8, 2), (3, 2), (4, 1), (12, 1)])
+        scatter(thick & (d_o > 12.0) & wet_m, 1 / 90.0, [(16, 4), (12, 1), (7, 1)])   # willow clumps on the wet meadow
+        scatter(rz & ~mud & (clump <= 0.15) & ~dug, 1 / 160.0, [(16, 2), (7, 2), (8, 1)])   # single bushes between the thickets
         RIPARIAN[0] = None
     scatter(cov == MARSH, DENSITY['WATER'] / 2, FLORA['WATER'])   # wet meadow: reeds / willows; open water stays open
     # settlements: street villages generated along the OSM streets inside the 1941 built-up extent (tools/settle.py),
@@ -1077,6 +1160,13 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
         for q in range(len(fx)):
             xi_ = np.clip(fx[q].astype(int), 0, 2047); yi_ = np.clip(fy[q].astype(int), 0, 2047); kp = ~sm[yi_, xi_]
             fx[q], fy[q], fr[q], ft[q] = fx[q][kp], fy[q][kp], fr[q][kp], ft[q][kp]
+    # op-map house symbols: the OSM footprints are gone (osm_building_ok), so the generated houses carry them
+    nb_ = sum(1 for sp in sprites if sp['name'] == 'build')
+    for o in objs:
+        if nb_ >= 400: break
+        if o[1].startswith('build') and 0 <= o[2] < 2048 and 0 <= o[3] < 2048:
+            sprites.append(dict(name='build', col=0xff694320, x=float(o[2]), y=float(o[3]), scale=0.4, kind=1, flag=0)); nb_ += 1
+    C.write_sprites(path('opmap_tri'), sprites)
     lap('settle')
     # ground texture layers by example (tools/texref.py): fields, ploughed land and open steppe take their soil pattern,
     # micro tiles, detail, grass and ambient colour from windows of the Petropolye cells; every other soil its micro layers
@@ -1116,6 +1206,7 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
         lac[rs] = (70, 63, 42, 60)
     C.write_grid(path('mat_map'), (soil | (lay['hi'] << 4)).astype(np.uint8))
     no_grass = (cov == WATER) if rail_strip is None else ((cov == WATER) | rail_strip)   # no grass billboards standing in the river (user, 25 Oct) or on the track bed
+    if MUD[0] is not None: no_grass = no_grass | MUD[0]   # nor on the waterline mud (user, 4 Nov: the grass grew right to the water)
     rail_strip = no_grass
     if rail_strip is not None:   # bare ballast and shoulders: the Petropolye pools put grass on soil 8 / 11
         g_ = lay['grass']; f_ = g_.shape[0] // 2048 if g_.shape[0] >= 2048 else None
@@ -1192,7 +1283,16 @@ def gen_cell(i, j, feats, places, hei_dir, tpl, out_dir, style, no_ai=False, see
                'trench_pos', 'op_pos', 'grass_map', 'opmap', 'back', 'opmap_tri', 'spr_map_side']
     if not no_ai:
         pm = pen.load_model(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'prokh_pen_model.json'))
-        pnodes = pen.tree(soil, slope)
+        # what stands on the ground (plants, buildings, fences) for the passability trees: vanilla marks those 4 m nodes
+        # blocked and keeps the open ground between them free for the infantry to deploy on
+        obst = np.zeros(soil.shape, bool); bld = np.zeros(soil.shape, bool)
+        if fx:
+            X_ = np.clip(np.concatenate(fx).astype(int), 0, 2047); Y_ = np.clip(np.concatenate(fy).astype(int), 0, 2047); obst[Y_, X_] = True
+        for o in objs:
+            xi, yi = int(min(2047, max(0, o[2]))), int(min(2047, max(0, o[3])))
+            (bld if 'build' in o[0] else obst)[yi, xi] = True
+        bld = MO.dilate(bld, 11); obst = MO.dilate(obst, 3) | bld   # houses ~ 10 m, plants / fences ~ 3 m
+        pnodes = pen.tree(soil, slope, obst=obst, bld=bld)
         for cls in ['tanks', 'hums', 'cars', 'apcs']:
             open(path('pen_' + cls), 'wb').write(pen.build(soil, slope, pm[cls], rng, nodes=pnodes)); entries.append('pen_' + cls)
         del pnodes
@@ -1213,11 +1313,13 @@ def main():
     ap.add_argument('--works', action='store_true', help='(default) carve the trenches painted by the user and the anti-tank ditches of the layout')
     ap.add_argument('--no-works', action='store_true', help='leave the field works out (bare terrain)')
     ap.add_argument('--period', default=os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'docs', 'm12_terrain', 'period', 'builtup_1941.png'))
+    ap.add_argument('--roads1941', default=os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'docs', 'm12_terrain', 'period', 'roads_1941.json'),
+                    help='road network traced from the 1941 sheet (tools/roads_1941.py); replaces every OSM highway')
     ap.add_argument('--layout', default=os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'docs', 'm11_prokhorovka', 'layout_10jul.json'))
     ap.add_argument('--ref', default=os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'build', 'prokhorovka', 'ref'),
                     help='directory with the unpacked reference cells (pgd5, pge4, pgf6 of the Petropolye DLC terrain, see gen_prokh.cmd)')
     a = ap.parse_args()
-    global WORKS, REF, FARMS, FIELDS43, VILLAGES43, WOODS43, ROADS43, PONDS, SINGLE_TRACK
+    global WORKS, REF, FARMS, FIELDS43, VILLAGES43, WOODS43, ROADS43, PONDS, SINGLE_TRACK, OSM_BUILDINGS, OSM_BUILDINGS_IN
     if os.path.exists(a.layout):
         lay_ = json.load(open(a.layout, encoding='utf-8'))
         FARMS = [[tuple(q) for q in f['pts']] for f in lay_.get('farms', [])]
@@ -1227,6 +1329,8 @@ def main():
         ROADS43 = [dict(r, pts=[tuple(q) for q in r['pts']]) for r in lay_.get('roads_1943', [])]
         PONDS = bool(lay_.get('ponds_1943', True))
         SINGLE_TRACK = bool(lay_.get('single_track', False))
+        OSM_BUILDINGS = bool(lay_.get('osm_buildings', False))
+        OSM_BUILDINGS_IN = [MplPath(v['pts']) for v in lay_.get('osm_buildings_1943', [])]
     refs = [os.path.join(a.ref, d) for d in ('pgd5', 'pge4', 'pgf6', 'pgf2', 'pgg1') if os.path.exists(os.path.join(a.ref, d, 'mat_map.cell.loc_def.bin'))]
     if not refs: sys.exit('no reference cells under %s - gen_prokh.cmd unpacks pgd5/pge4/pgf6 of the Petropolye terrain (Stalingrad-Donets DLC) there' % a.ref)
     REF = TR.Ref(refs, mius_dir=a.template)
@@ -1239,9 +1343,11 @@ def main():
             import works as W; WORKS = W.load(a.layout); print('field works loaded:', len(WORKS), 'trench / ditch pieces')
         else: WORKS = []
     style = json.load(open(a.style)); t0 = time.time()
-    global PERIOD
+    global PERIOD, ROADS1941
     if os.path.exists(a.period):
         PERIOD = np.asarray(Image.open(a.period).convert('L')); print('period built-up mask loaded:', PERIOD.shape, 'fraction %.3f' % (PERIOD > 0).mean())
+    if os.path.exists(a.roads1941):
+        ROADS1941 = json.load(open(a.roads1941, encoding='utf-8'))['roads']; print('1941 road network loaded:', len(ROADS1941), 'roads')
     os.makedirs(a.out, exist_ok=True); log = open(os.path.join(a.out, 'gen_prokh_log.txt'), 'a')
     class Tee:
         def write(self, s): sys.__stdout__.write(s); log.write(s)
@@ -1249,7 +1355,7 @@ def main():
     sys.stdout = Tee(); print('# prokh_gen', time.strftime('%Y-%m-%d %H:%M:%S'), sys.argv[1:])
     feats, places = load_osm(a.osm); print('osm features', len(feats), 'places', len(places), flush=True)
     feats = drop_modern(feats, a.layout)
-    feats = prune_roads(feats)
+    feats = period_roads(feats) if ROADS1941 is not None else prune_roads(feats)   # 4 Nov: the roads of the 1941 sheet replace OSM's
     feats = meander_water(feats)
     places = places_1943(places, a.layout)
     build_water_levels(feats, a.cells)

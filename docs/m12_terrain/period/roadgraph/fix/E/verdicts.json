@@ -1,0 +1,176 @@
+[
+ {
+  "id": "S0188",
+  "verdict": "gap",
+  "reason": "under lettering '9.0' (road-width label) on the n_r53 double line; trace continues the drawn direction between the band ends",
+  "review": "review/S0188.png"
+ },
+ {
+  "id": "S0189",
+  "verdict": "gap",
+  "reason": "crossing knot where n_r53 crosses the stream/marsh lines; skeleton breaks in the knot. Staircase hop replaced by the straight drawn direction (retraced, still off-reference)",
+  "review": "review/S0189.png",
+  "retraced": true
+ },
+ {
+  "id": "S0190",
+  "verdict": "gap",
+  "reason": "n_r50 crosses the n_r53 double-line band (offset X crossing); reference breaks inside the crossing knot, trace runs from the NW arm across the band to the SE arm",
+  "review": "review/S0190.png"
+ },
+ {
+  "id": "S0191",
+  "verdict": "gap",
+  "reason": "under lettering 'х. Тетеревино' (between 'р' and 'е'); trace continues the drawn direction to the junction S of the name",
+  "review": "review/S0191.png"
+ },
+ {
+  "id": "S0192",
+  "verdict": "fixed",
+  "reason": "bel N stub at x 8540 ran over blank marsh to a border point no neighbour uses; retraced on the drawn line E along y 8040 and N along x ~8645 to the border at 8645.9 where the R22 line starts",
+  "retraced": true
+ },
+ {
+  "id": "S0193",
+  "verdict": "gap",
+  "reason": "double line W of the railway (edges x ~9296/9332, dbl_centre 9312 at y 5760); its ink is erased by the lettering box of 'Ясная Поляна'",
+  "review": "review/S0193.png"
+ },
+ {
+  "id": "S0194",
+  "verdict": "gap",
+  "reason": "single dark line W of the railway at x ~9306-9312; old trace bulged E onto the railway edge, retraced onto the line (ink present, no skeleton, so still off-reference)",
+  "review": "review/S0194.png",
+  "retraced": true
+ },
+ {
+  "id": "S0195",
+  "verdict": "gap",
+  "reason": "faint grey road line (below the ink threshold) at x ~9278 between the MTS and Belenikhino; trace moved 10 m W onto it",
+  "review": "review/S0195.png",
+  "retraced": true
+ },
+ {
+  "id": "S0196",
+  "verdict": "deleted",
+  "reason": "spur NE through the black ravine hachures to a dead end; no road drawn. n_r56 now ends at the ravine edge E of the railway booth (N9 notes: stops on the E side)"
+ },
+ {
+  "id": "S0197",
+  "verdict": "gap",
+  "reason": "under the black hand-drawn overprint blot at Ivanovsky Vyselok; straight continuation into the ivv_n junction",
+  "review": "review/S0197.png"
+ },
+ {
+  "id": "S0198",
+  "verdict": "deleted",
+  "reason": "hook at the E end of n_r56 inside the ink blot / hatched house blocks; no readable road. Line now ends at x 11800 inside the village"
+ },
+ {
+  "id": "S0199",
+  "verdict": "gap",
+  "reason": "broad dark band (doubled track) whose skeleton is broken; trace moved ~10 m S onto the band centre between the two reference pieces",
+  "review": "review/S0199.png",
+  "retraced": true
+ },
+ {
+  "id": "S0200",
+  "verdict": "gap",
+  "reason": "the drawn line runs SSE from the corner at (8832,4088) to the ravine band at (8864,4008), not straight S over blank; retraced on it (dark ink, absent from ink_clean)",
+  "review": "review/S0200.png",
+  "retraced": true
+ },
+ {
+  "id": "S0201",
+  "verdict": "gap",
+  "reason": "junction under lettering/building symbol (lettering box 8892-8980 x 4104-4140); trace follows the drawn L-turn into the N-S line",
+  "review": "review/S0201.png",
+  "retraced": true
+ },
+ {
+  "id": "S0202",
+  "verdict": "gap",
+  "reason": "Belenikhino street in the light lane E of the house block; old trace hugged the block edge, retraced straight on x 9188 (lane, no reference line)",
+  "review": "review/S0202.png",
+  "retraced": true
+ },
+ {
+  "id": "S0203",
+  "verdict": "gap",
+  "reason": "under lettering 'Беленихино' and 'Р.С.'; straightened along the drawn direction (the zig to the old bel_sw junction is gone)",
+  "review": "review/S0203.png",
+  "retraced": true
+ },
+ {
+  "id": "S0204",
+  "verdict": "gap",
+  "reason": "double line beside the railway S of Belenikhino (edges ~8866/8912); trace moved from the E edge to the centre between them",
+  "review": "review/S0204.png",
+  "retraced": true
+ },
+ {
+  "id": "S0205",
+  "verdict": "gap",
+  "reason": "se_dbl crosses the oblique black hatch strokes E of Belenikhino; the reference pieces on both sides lie in different stroke gaps and the 64 m link crosses one stroke. LOW confidence, see notes",
+  "review": "review/S0205.png"
+ },
+ {
+  "id": "S0206",
+  "verdict": "gap",
+  "reason": "under lettering '...ино' (Беленихино) incl. its white margin; trace continues the drawn direction to the double line SE of the name",
+  "review": "review/S0206.png"
+ },
+ {
+  "id": "S0207",
+  "verdict": "gap",
+  "reason": "Ivanovka lane between dark house blocks (not in the builtup mask); trace moved ~12 m S from the block edge to the lane centre",
+  "review": "review/S0207.png",
+  "retraced": true
+ },
+ {
+  "id": "S0208",
+  "verdict": "gap",
+  "reason": "Ivanovka street in the lane between house blocks (not in the builtup mask); small shift to the lane centre",
+  "review": "review/S0208.png",
+  "retraced": true
+ },
+ {
+  "id": "S0209",
+  "verdict": "deleted",
+  "reason": "n_e2 link NE across blank to the n_e1 stub; nothing drawn. n_e2 split: W part ends where its line runs under the red pencil band (11276,7437); E part (n_e2_e) starts at the bottom of the drawn stub (11383,7496)"
+ },
+ {
+  "id": "S0210",
+  "verdict": "deleted",
+  "reason": "tail S over blank pink paper to the red pencil; nothing drawn. n_e2_e now ends at its junction with n_e1 (11581.4,7429.7)"
+ },
+ {
+  "id": "S0211",
+  "verdict": "gap",
+  "reason": "faint grey line W at y ~4075 into the vertical line at x ~10188 (old trace cut SW over blank); retraced on it, below the ink threshold",
+  "review": "review/S0211.png",
+  "retraced": true
+ },
+ {
+  "id": "S0212",
+  "verdict": "gap",
+  "reason": "old link ran E over blank paper to bel_s; removed. bel_sw now continues its drawn NNE direction under the 'Беленихино' lettering to bl01's end (8988,3600), shared vertex. The remaining red is that under-lettering link",
+  "review": "review/S0212.png",
+  "retraced": true
+ },
+ {
+  "id": "S0213",
+  "verdict": "deleted",
+  "reason": "~70 m of blank between the crossing with the thick ENE line and the top of the lower line; nothing drawn. Split: bel_sw N part ends at the thick line (8168,2268), bel_sw_s starts at the lower line's top (8206.6,2164) and keeps the border end"
+ },
+ {
+  "id": "S0216",
+  "verdict": "out_of_scope",
+  "reason": "stretch lies on R33's r78 (x 14266-14372), a different line with the same name as R32's r78. It is in group D's in.json, not in E's, so it was not reviewed or edited here"
+ },
+ {
+  "id": "S0217",
+  "verdict": "out_of_scope",
+  "reason": "stretch lies on R33's r78 (x 14563-14848), a different line with the same name as R32's r78. It is in group D's in.json, not in E's, so it was not reviewed or edited here"
+ }
+]
