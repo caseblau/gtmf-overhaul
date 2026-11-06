@@ -1,0 +1,10 @@
+# MF Overhaul 0.5.32: user on 0.5.31: vehicle dust very dark grey, almost black; "in mfo the dust was based on terrain".
+#   Patch 3598/2 turned on terrain tinting of wheel / track dust (last column -1 -> 0.83 on dust_wh, 0.073 on the dirt rows):
+#   the particle colour is now multiplied by the ground colour. Our realism colours (tan dust 168;156;126, dark-brown dirt
+#   74;60;48) were absolute colours for the old untinted dust; multiplied by the ground they came out near black.
+#   Back to the patch's neutral greys so the ground colour shows through; our size / gravity / spread tuning is kept.
+#   The autumn dust_wh row (ours, not in vanilla) gets the patch's terrain columns as well.
+row~|parts_desc|dust_wh|c11=a:-1057951504;1085321392|c12=a:13684944
+row~|parts_desc|dirt_wh|c11=a:-528449408|c12=a:12632256
+row~|parts_desc|ext_dirt_wh|c11=a:-8355712|c12=a:-7303024
+row~|parts_desc_aut|dust_wh|c11=a:-1057951504;1085321392|c12=a:13684944|c13=v:20;0.5;0.2;0.7|c22=f:0.6|c26=f:0.83

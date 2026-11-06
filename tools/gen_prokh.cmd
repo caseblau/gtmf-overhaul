@@ -25,7 +25,7 @@ for %%C in (pgd5 pge4 pgf6 pgf2 pgg1) do (
     powershell -NoProfile -ExecutionPolicy Bypass -File "%HERE%gt3.ps1" unpack "%PETRO%\%%C_petropolye.polypack2" "%REPO%\build\prokhorovka\ref\%%C"
   )
 )
-echo --- generating all cell layers (about 1-2 min per cell, 35 cells) -- log: %LOG%
+echo --- generating all cell layers (about 1-2 min per cell, 81 cells) -- log: %LOG%
 %PY% "%HERE%prokh_gen.py" --osm "%REPO%\docs\m12_terrain\osm\prokh.osm.json" --cells "%REPO%\build\prokhorovka\cells" --template "%REPO%\build\prokhorovka\template" --out "%REPO%\build\prokhorovka\cellsrc" --ref "%REPO%\build\prokhorovka\ref" %*
 echo EXIT CODE %errorlevel%
 pause

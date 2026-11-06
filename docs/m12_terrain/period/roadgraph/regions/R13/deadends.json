@@ -1,0 +1,36 @@
+{
+ "deadends": [
+  {
+   "road": "p_n",
+   "end": "end",
+   "x": 13724.0,
+   "y": 20336.0,
+   "why": "the dashed track ends at the outline of the first house block of Vyshnyaya Olshanka; the sheet draws no continuation into the village",
+   "crop": "review/deadend_p_n_end.png"
+  },
+  {
+   "road": "t_stw",
+   "end": "start",
+   "x": 17048.0,
+   "y": 17496.0,
+   "why": "the road (grey double line W of 17240 m) ends at the dotted boundary W of the station; nothing continues on the sheet",
+   "crop": "review/deadend_t_stw_start.png"
+  },
+  {
+   "road": "t_ns",
+   "end": "end",
+   "x": 18068.0,
+   "y": 17912.0,
+   "why": "the N-S road ends at the N end of the station building (L.) W of the railway",
+   "crop": "review/deadend_t_ns_end.png"
+  },
+  {
+   "road": "t_stw",
+   "end": "end",
+   "x": 17912.0,
+   "y": 17560.0,
+   "why": "the road ends at the station building (L.) W of the railway; the station block is drawn solid, no lane through it",
+   "crop": "review/deadend_t_stw_end.png"
+  }
+ ]
+}

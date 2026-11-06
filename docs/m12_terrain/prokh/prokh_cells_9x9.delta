@@ -1,0 +1,14 @@
+# Prokh cells table: 11 x 11 grid (one empty ring), the 9 x 9 block at columns 1..9 rows 1..9 (2026-11-01: two cells further west, north and south than the 7 x 5 core block)
+name~|Prokh_cells
+shape~|i_polygen:polygen|2|11|sssssssssss
+row+|i_polygen:polygen|@end|r0|s:|s:|s:|s:|s:|s:|s:|s:|s:|s:|s:
+row+|i_polygen:polygen|@end|r1|s:|s:MxD1_Prokh.polypack2|s:MxE1_Prokh.polypack2|s:MxF1_Prokh.polypack2|s:MxG1_Prokh.polypack2|s:MxH1_Prokh.polypack2|s:MxI1_Prokh.polypack2|s:MxJ1_Prokh.polypack2|s:MxK1_Prokh.polypack2|s:MxL1_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r2|s:|s:MxD2_Prokh.polypack2|s:MgE2_Prokh.polypack2|s:MgF2_Prokh.polypack2|s:MgG2_Prokh.polypack2|s:MgH2_Prokh.polypack2|s:MgI2_Prokh.polypack2|s:MgJ2_Prokh.polypack2|s:MgK2_Prokh.polypack2|s:MxL2_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r3|s:|s:MxD3_Prokh.polypack2|s:MgE3_Prokh.polypack2|s:MgF3_Prokh.polypack2|s:MgG3_Prokh.polypack2|s:MgH3_Prokh.polypack2|s:MgI3_Prokh.polypack2|s:MgJ3_Prokh.polypack2|s:MgK3_Prokh.polypack2|s:MxL3_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r4|s:|s:MxD4_Prokh.polypack2|s:MgE4_Prokh.polypack2|s:MgF4_Prokh.polypack2|s:MgG4_Prokh.polypack2|s:MgH4_Prokh.polypack2|s:MgI4_Prokh.polypack2|s:MgJ4_Prokh.polypack2|s:MgK4_Prokh.polypack2|s:MxL4_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r5|s:|s:MxD5_Prokh.polypack2|s:MgE5_Prokh.polypack2|s:MgF5_Prokh.polypack2|s:MgG5_Prokh.polypack2|s:MgH5_Prokh.polypack2|s:MgI5_Prokh.polypack2|s:MgJ5_Prokh.polypack2|s:MgK5_Prokh.polypack2|s:MxL5_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r6|s:|s:MxD6_Prokh.polypack2|s:MgE6_Prokh.polypack2|s:MgF6_Prokh.polypack2|s:MgG6_Prokh.polypack2|s:MgH6_Prokh.polypack2|s:MgI6_Prokh.polypack2|s:MgJ6_Prokh.polypack2|s:MgK6_Prokh.polypack2|s:MxL6_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r7|s:|s:MxD7_Prokh.polypack2|s:MgE7_Prokh.polypack2|s:MgF7_Prokh.polypack2|s:MgG7_Prokh.polypack2|s:MgH7_Prokh.polypack2|s:MgI7_Prokh.polypack2|s:MgJ7_Prokh.polypack2|s:MgK7_Prokh.polypack2|s:MxL7_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r8|s:|s:MxD8_Prokh.polypack2|s:MgE8_Prokh.polypack2|s:MgF8_Prokh.polypack2|s:MgG8_Prokh.polypack2|s:MgH8_Prokh.polypack2|s:MgI8_Prokh.polypack2|s:MgJ8_Prokh.polypack2|s:MgK8_Prokh.polypack2|s:MxL8_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r9|s:|s:MxD9_Prokh.polypack2|s:MxE9_Prokh.polypack2|s:MxF9_Prokh.polypack2|s:MxG9_Prokh.polypack2|s:MxH9_Prokh.polypack2|s:MxI9_Prokh.polypack2|s:MxJ9_Prokh.polypack2|s:MxK9_Prokh.polypack2|s:MxL9_Prokh.polypack2|s:
+row+|i_polygen:polygen|@end|r10|s:|s:|s:|s:|s:|s:|s:|s:|s:|s:|s:

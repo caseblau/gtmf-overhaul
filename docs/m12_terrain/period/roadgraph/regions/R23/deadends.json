@@ -1,0 +1,8 @@
+{"deadends": [
+ {"road": "R23_park_s2", "end": "end", "x": 17288.0, "y": 12732.0,
+  "why": "the single-line track running S from the park at 230.5 ends at a small point symbol (bar with two strokes) just S of the 2 km grid line; nothing is drawn beyond it",
+  "crop": "review/deadend_park_s2_end.jpg"},
+ {"road": "R23_p_se_village", "end": "start", "x": 17244.0, "y": 12464.0,
+  "why": "the dashed track to the village SE of 230.5 begins in the open field; the 260 m between it and the end of R23_park_s2 is blank paper with only brown contours, too long for a dash gap (dash gaps here are 60-80 m)",
+  "crop": "review/deadend_p_se_village_start.jpg"}
+]}

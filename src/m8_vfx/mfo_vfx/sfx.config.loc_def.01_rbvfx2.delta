@@ -2,16 +2,18 @@
 #   tools\gt3.ps1 diff <vanilla sfx> <rvfxmod sfx>, 2026-10-15. Third-party content, dependency until permission (docs\third_party.md 2, 3.2).
 #   expl_desc (27 cells) and expl_dect (9 cells) only. His 19 expl_snds rows are DROPPED: each vanilla "pattern, group" cell is
 #   split over two columns in his table, which unbinds the mixer group (docs\third_party.md 3.2, docs\sources.md). expl_snds stays vanilla.
+#   2026-11-02 (game patch 3598/2): his c7 cells (stone surface) on LHE / AHE / EXPL are left out - they only mirrored the old
+#   vanilla air_* values and the patch gives that column its own stone_low/med effects.
 # 37 operations
 row~|expl_dect|u:'AP'|c1=s:dirt_low|c8=s:dirt_gren|c9=s:dirt_low
-row~|expl_dect|u:'LHE'|c3=s:air_can|c7=s:air_can|c9=s:dirt_lhe
-row~|expl_dect|u:'AHE'|c3=s:air_med|c7=s:air_med|c8=s:air_med
+row~|expl_dect|u:'LHE'|c3=s:air_can|c9=s:dirt_lhe
+row~|expl_dect|u:'AHE'|c3=s:air_med|c8=s:air_med
 row~|expl_dect|u:'HE'|c9=s:under_med
 row~|expl_dect|u:'UHE'|c9=s:under_hi
 row~|expl_dect|u:'CAN'|c9=s:dirt_lhe
 row~|expl_dect|u:'HEAT'|c1=s:dirt_med|c8=s:over_med|c9=s:dirt_med
 row~|expl_dect|u:'HEAL'|c1=s:dirt_med|c8=s:over_med|c9=s:dirt_med
-row~|expl_dect|u:'EXPL'|c1=s:dirt_can|c3=s:air_can|c7=s:air_can|c8=s:dirt_can|c9=s:dirt_can
+row~|expl_dect|u:'EXPL'|c1=s:dirt_can|c3=s:air_can|c8=s:dirt_can|c9=s:dirt_can
 row~|expl_desc|dirt_gren|c1=s:flash_sm|c2=s:smoke_hit_obj_m|c4=s:
 row~|expl_desc|dirt_low|c2=s:smoke_hit_obj_sm
 row~|expl_desc|dirt_ign|c1=s:flash_med|c2=s:smoke_gray

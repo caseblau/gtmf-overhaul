@@ -1,0 +1,6 @@
+# Prokh polygon descriptor for the 8 x 8 block: 10 x 10 cells table (dist 2560 x 2560), cells at 1..8, centre of x 2048..18432 / y 4096..20480 of the DEM lattice
+name~|Prokh
+row~|i_polygen:polygen|dist_width|c0=u:2560
+row~|i_polygen:polygen|dist_height|c0=u:2560
+row~|i_polygen:polygen|det_offs|c0=a:1;1
+row~|i_polygen:polygen|lat_lon_tz|c0=v:51.0150;36.6366;3

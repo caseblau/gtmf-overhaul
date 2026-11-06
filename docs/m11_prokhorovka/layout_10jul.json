@@ -1,17 +1,49 @@
 {
- "_comment": "10 July 1943 layout for the Prokh block (operation 10-13 July). Coordinates are DEM-lattice metres: x east from lon 36.4903, y north from lat 50.904605 (tools/prokh_op.py shifts them into the 7 x 5 block: x - 4096, y - 6144). 'units' maps platoon-name prefixes of the OOB (tools/oob_12jul.ps1) to the positions their HQs and battle groups take on turn 1 (round-robin; HQ-type units - HQs, supply, construction - stand on a border node of their own ground instead, as in the vanilla operations), or - with 'turn' > 1 - to the map edge and turn they arrive on. Turn = 4 h from 06:00 10 July: 1 = 06-10 10 Jul, 5 = 22-02, 7 = 06-10 11 Jul, 13 = 06-10 12 Jul, 19 = 06-10 13 Jul. Sources: docs/m11_prokhorovka/sources_11_14jul.md and sources_10jul.md (Zamulin ch. 5-7, Lawrence ch. 7-9, Wheatley 2019).",
+ "_comment": "10 July 1943 layout for the Prokh block (operation 10-13 July). Coordinates are DEM-lattice metres: x east from lon 36.4903, y north from lat 50.904605 (tools/prokh_op.py shifts them into the 9 x 9 block (prokh_gen.to_block: x - 0, y - 2048; block x 0..18432, y 2048..20480)). 'units' maps platoon-name prefixes of the OOB (tools/oob_12jul.ps1) to the positions their HQs and battle groups take on turn 1 (round-robin; HQ-type units - HQs, supply, construction - stand on a border node of their own ground instead, as in the vanilla operations), or - with 'turn' > 1 - to the map edge and turn they arrive on. Turn = 4 h from 06:00 10 July: 1 = 06-10 10 Jul, 5 = 22-02, 7 = 06-10 11 Jul, 13 = 06-10 12 Jul, 19 = 06-10 13 Jul. Sources: docs/m11_prokhorovka/sources_11_14jul.md and sources_10jul.md (Zamulin ch. 5-7, Lawrence ch. 7-9, Wheatley 2019).",
  "date_beg": "0x19430710",
  "time_beg": 1536,
  "turns": 24,
  "hours_per_turn": 4,
  "front": [
   [
-   4096,
-   14131
+   0,
+   18000
   ],
   [
-   4659,
-   13619
+   1500,
+   17650
+  ],
+  [
+   2312,
+   18158
+  ],
+  [
+   2408,
+   17573
+  ],
+  [
+   2255,
+   16375
+  ],
+  [
+   2303,
+   15705
+  ],
+  [
+   3000,
+   15400
+  ],
+  [
+   3800,
+   15250
+  ],
+  [
+   4300,
+   14600
+  ],
+  [
+   4400,
+   13950
   ],
   [
    5120,
@@ -60,9 +92,25 @@
   [
    8806,
    6144
+  ],
+  [
+   8700,
+   5000
+  ],
+  [
+   8900,
+   3600
+  ],
+  [
+   9400,
+   2900
+  ],
+  [
+   10200,
+   2048
   ]
  ],
- "_comment_front": "German line on the morning of 10 July (06:00), west/north end first, Germans west / south of it - drawn by the user on the op map (25 Oct) and checked against Zamulin Map 5: the Psel at the west edge (Krasny Oktyabr and the south bank taken on 9 July) - Yudinka and Kozlovka German (taken 18:45 9 July), Bogoroditskoye on the line - south of Vasilyevka (Soviet: 99 TBr) - south along the western edge of the Komsomolets wood (1/285 RR in the svkh. Komsomolets works) - 258.2 German - east of Teterevino to the south edge, Ivanovsky Vyselok Soviet. No bridgehead north of the Psel yet: Totenkopf crossed at Krasny Oktyabr / Klyuchi in the afternoon of 10 July (bridgehead reported 20:00). prokh_op.py treats the line as a polygon (Territory): each side uses only the border nodes on its own ground as HQ / reinforcement slots - Germans: west edge south of the Psel and the south edge west of the line (41 nodes), Soviets: the rest (139).",
+ "_comment_front": "German line on the morning of 10 July (06:00), west/north end first, Germans west / south of it. 9 x 9 block (2 Nov): the line enters at the west edge on the Psel (0, 18000) and follows the river round the Psel bend - Olkhovsky, Ilyinsky and the whole west bank down to Krasny Oktyabr German (Totenkopf, 9 July), Veselyi - Klyuchi - 226.6 inside the bend Soviet (52 gds RD, 11 MRBr); Krasny Oktyabr, Kostroma, Kozlovka and Yudinka German on the south bank (taken 18:45 9 July), Bogoroditskoye on the line; a small Totenkopf bridgehead on the north bank at Krasny Oktyabr (panzergrenadiers crossed before dawn, Zamulin p. 181); the attack out of it on Klyuchi and 226.6 came only at 16:00 (bridgehead Krasny Oktyabr - Klyuchi - S slopes of 226.6 reported 20:00). Then as drawn by the user on the op map (25 Oct) and checked against Zamulin Map 5: south of Vasilyevka (Soviet: 99 TBr) - along the western edge of the Komsomolets wood (1/285 RR in the svkh. Komsomolets works) - 258.2 German - east of Teterevino - Ivanovsky Vyselok Soviet - south along the railway: Yasnaya Polyana (German strongpoint) - Belenikhino and the Belenikhino W minefield Soviet (295 RR, 2 gds TC) - between Kalinin (Der Fuehrer) and Leski (227 RR) to the south edge at (10200, 2048). prokh_op.py treats the line as a polygon (Territory): each side uses only the border nodes on its own ground as HQ / reinforcement slots - Germans: the west edge south of the Psel and the south edge west of the line, Soviets: the rest.",
  "heights": [
   {
    "name": "252.2",
@@ -245,6 +293,46 @@
    "xy": [
     22080,
     11376
+   ],
+   "value": 1
+  },
+  {
+   "name": "227.8",
+   "xy": [
+    1100,
+    12300
+   ],
+   "value": 2
+  },
+  {
+   "name": "243.0",
+   "xy": [
+    6100,
+    3300
+   ],
+   "value": 2
+  },
+  {
+   "name": "220.4",
+   "xy": [
+    2000,
+    7100
+   ],
+   "value": 1
+  },
+  {
+   "name": "217.2",
+   "xy": [
+    3600,
+    11300
+   ],
+   "value": 1
+  },
+  {
+   "name": "254.0",
+   "xy": [
+    16200,
+    20000
    ],
    "value": 1
   }
@@ -446,6 +534,168 @@
    "xy": [
     16000,
     15216
+   ],
+   "value": 1
+  },
+  {
+   "name": "Veselyi",
+   "rus": "Весёлый",
+   "xy": [
+    3456,
+    17539
+   ],
+   "value": 2
+  },
+  {
+   "name": "Ilyinsky",
+   "rus": "Ильинский",
+   "xy": [
+    1500,
+    17100
+   ],
+   "value": 1
+  },
+  {
+   "name": "Petrovka",
+   "rus": "Петровка",
+   "xy": [
+    10700,
+    16200
+   ],
+   "value": 3
+  },
+  {
+   "name": "Prelestnoye",
+   "rus": "Прелестное",
+   "xy": [
+    10100,
+    15600
+   ],
+   "value": 3
+  },
+  {
+   "name": "svkh. im. Voroshilova",
+   "rus": "свх. им. Ворошилова",
+   "xy": [
+    11000,
+    18800
+   ],
+   "value": 2
+  },
+  {
+   "name": "Beregovoye",
+   "rus": "Береговое",
+   "xy": [
+    12405,
+    18412
+   ],
+   "value": 2
+  },
+  {
+   "name": "Yamki",
+   "rus": "Ямки",
+   "xy": [
+    13926,
+    11771
+   ],
+   "value": 3
+  },
+  {
+   "name": "Pravorot",
+   "rus": "Правороть",
+   "xy": [
+    17469,
+    8268
+   ],
+   "value": 3
+  },
+  {
+   "name": "Vinogradovka",
+   "rus": "Виноградовка",
+   "xy": [
+    11255,
+    5662
+   ],
+   "value": 3
+  },
+  {
+   "name": "Yasnaya Polyana",
+   "rus": "Ясная Поляна",
+   "xy": [
+    7594,
+    5083
+   ],
+   "value": 3
+  },
+  {
+   "name": "Zhimolostnoye",
+   "rus": "Жимолостное",
+   "xy": [
+    16614,
+    4550
+   ],
+   "value": 2
+  },
+  {
+   "name": "Gryaznoye",
+   "rus": "Грязное",
+   "xy": [
+    1634,
+    9992
+   ],
+   "value": 2
+  },
+  {
+   "name": "Mal. Mayachki",
+   "rus": "Мал. Маячки",
+   "xy": [
+    1137,
+    7207
+   ],
+   "value": 1
+  },
+  {
+   "name": "Vasilyevka",
+   "rus": "Васильевка",
+   "xy": [
+    6236,
+    13132
+   ],
+   "value": 3
+  },
+  {
+   "name": "Andreyevka",
+   "rus": "Андреевка",
+   "xy": [
+    6880,
+    13108
+   ],
+   "value": 2
+  },
+  {
+   "name": "Mikhailovka",
+   "rus": "Михайловка",
+   "xy": [
+    7368,
+    13154
+   ],
+   "value": 2
+  },
+  {
+   "name": "Prokhorovka",
+   "rus": "Прохоровка",
+   "xy": [
+    16953,
+    14465
+   ],
+   "value": 5
+  },
+  {
+   "name": "Yudinka",
+   "rus": "Юдинка",
+   "xy": [
+    4264,
+    13171
    ],
    "value": 1
   }
@@ -688,6 +938,16 @@
    "xy": [
     8000,
     16500
+   ],
+   "r": 250
+  },
+  {
+   "name": "Krasny Oktyabr crossing (Totenkopf bridgehead site)",
+   "rus": "переправа Красный Октябрь",
+   "side": "GER",
+   "xy": [
+    3300,
+    14650
    ],
    "r": 250
   }
@@ -6259,10 +6519,11 @@
    ],
    "name": "2 SS-PzGr Rgt (I, II bns) at 258.2 - Teterevino road; III bn follows",
    "hq": [
-    6656,
-    6246
+    6900,
+    7000
    ],
-   "note": "2 SS PzGr Rgt (Krass), 10 July 06:00: I Bn (Becker) facing the SW outskirts of svkh. Komsomolets, II Bn (Sandig) on the Teterevino - Ivanovsky Vyselok road, III Bn in Teterevino on halftracks in reserve; the attack starts 10:45 (Zamulin ch. 6, II SS PzK order of 9 July)"
+   "note": "2 SS PzGr Rgt (Krass), 10 July 06:00: I Bn (Becker) facing the SW outskirts of svkh. Komsomolets, II Bn (Sandig) on the Teterevino - Ivanovsky Vyselok road, III Bn in Teterevino on halftracks in reserve; the attack starts 10:45 (Zamulin ch. 6, II SS PzK order of 9 July)",
+   "hq_note": "2 SS-PzGr Rgt CP Teterevino (north) on 10 July"
   },
   {
    "side": "GER",
@@ -6278,8 +6539,8 @@
    ],
    "name": "StuG bn with the 2 SS-PzGr Rgt",
    "hq": [
-    5939,
-    6246
+    6000,
+    7200
    ],
    "note": "assault gun battalion and the Tiger company, attached to 2 SS PzGr Rgt for the attack"
   },
@@ -6296,8 +6557,8 @@
     ]
    ],
    "hq": [
-    5632,
-    6246
+    5800,
+    6400
    ],
    "note": "AT battalion: one company with the reconnaissance battalion on the left flank, the rest at Teterevino (HQ with its platoons on the edge)"
   },
@@ -6318,8 +6579,8 @@
    ],
    "name": "LSSAH recon bn: covers the left (Psel) flank, exploits after the breakthrough",
    "hq": [
-    4403,
-    9728
+    6300,
+    9800
    ],
    "note": "reconnaissance battalion covering the left flank between Vasilyevka and the Komsomolets wood (order of 06:45 10 July); after the breakthrough it is to round the northern tip of the wood to svkh. Oktyabrsky and 252.4"
   },
@@ -6337,8 +6598,8 @@
     ]
    ],
    "hq": [
-    4403,
-    10035
+    5900,
+    9000
    ],
    "note": "pioneer battalion (one company with 2 SS PzGr Rgt); eb / aab (escort, AA) have no battle groups"
   },
@@ -6358,10 +6619,11 @@
    ],
    "name": "1 SS-AR and Werfer Rgt 55 firing positions S of 258.2",
    "hq": [
-    6144,
-    6246
+    6300,
+    6600
    ],
-   "note": "artillery regiment at Teterevino with Werfer-Rgt 55 (minus one battalion); HQ with the battalions on the south edge"
+   "note": "artillery regiment at Teterevino with Werfer-Rgt 55 (minus one battalion); HQ with the battalions on the south edge",
+   "hq_note": "1 SS-AR firing positions south of 258.2 / Teterevino"
   },
   {
    "side": "GER",
@@ -6371,14 +6633,15 @@
    "pos": [
     [
      5120,
-     6246
+     2300
     ]
    ],
    "hq": [
-    5120,
-    6246
+    5500,
+    5800
    ],
-   "note": "LSSAH division HQ (Luchki, S of the map)"
+   "note": "LSSAH division HQ (Luchki, S of the map)",
+   "hq_note": "LSSAH division CP south of Teterevino (Luchki road)"
   },
   {
    "side": "GER",
@@ -6401,10 +6664,11 @@
    ],
    "name": "Das Reich, SS-PzGr Rgt Deutschland: Yasnaya Polyana - Ivanovsky Vyselok",
    "hq": [
-    7680,
-    6246
+    7600,
+    6300
    ],
-   "note": "'Deutschland' Rgt south-east of Teterevino (Yasnaya Polyana, S of the map): to take the heights 2 km SE of Ivanovsky Vyselok with the LSSAH on 10 July, attacks from Teterevino along the railway on 11 July (Zamulin ch. 6-7)"
+   "note": "'Deutschland' Rgt south-east of Teterevino (Yasnaya Polyana, S of the map): to take the heights 2 km SE of Ivanovsky Vyselok with the LSSAH on 10 July, attacks from Teterevino along the railway on 11 July (Zamulin ch. 6-7)",
+   "hq_note": "Deutschland CP east of Teterevino"
   },
   {
    "side": "GER",
@@ -6413,14 +6677,15 @@
    ],
    "pos": [
     [
-     7475,
-     6451
+     8300,
+     6300
     ]
    ],
    "hq": [
-    7475,
-    6246
-   ]
+    7800,
+    6300
+   ],
+   "name": "Das Reich StuG bn behind Deutschland at Ivanovsky Vyselok"
   },
   {
    "side": "GER",
@@ -6429,15 +6694,16 @@
    ],
    "pos": [
     [
-     7168,
-     6246
+     8500,
+     4200
     ]
    ],
    "hq": [
-    7168,
-    6246
+    8300,
+    4400
    ],
-   "note": "AT battalion HQ on the south edge; the reconnaissance, escort, AA and pioneer battalions (we_dr_rb / eb / aab / eng) stay off the map - southern flank Kalinin - Ozerovsky, no room on the German edge"
+   "note": "AT battalion HQ on the south edge; the reconnaissance, escort, AA and pioneer battalions (we_dr_rb / eb / aab / eng) stay off the map - southern flank Kalinin - Ozerovsky, no room on the German edge",
+   "name": "Das Reich AT bn west of Belenikhino"
   },
   {
    "side": "GER",
@@ -6454,10 +6720,11 @@
     ]
    ],
    "hq": [
-    7987,
-    6246
+    4800,
+    6200
    ],
-   "note": "artillery regiment HQ with its battalions on the south edge"
+   "note": "artillery regiment HQ with its battalions on the south edge",
+   "hq_note": "2 SS-AR west of Teterevino"
   },
   {
    "side": "GER",
@@ -6467,13 +6734,14 @@
    "pos": [
     [
      6963,
-     6246
+     2300
     ]
    ],
    "hq": [
-    6963,
-    6246
-   ]
+    5683,
+    6195
+   ],
+   "hq_note": "Das Reich division CP Teterevino"
   },
   {
    "side": "GER",
@@ -6496,10 +6764,11 @@
    ],
    "name": "Totenkopf, SS-PzGr Rgt Eicke: Klyuchi bridgehead on the north bank",
    "hq": [
-    4403,
-    11981
+    5500,
+    11800
    ],
-   "note": "6 SS PzGr Rgt 'Theodor Eicke': assault group at Yudinka - Kozlovka - W outskirts of Vasilyevka (taken 18:45 9 July); the 99 TBr / 11 MRBr counterattack drove it out of Yudinka and Kozlovka by 11:00 10 July, its attack at Kozlovka - Vasilyevka started 10:45 (Zamulin ch. 6)"
+   "note": "6 SS PzGr Rgt 'Theodor Eicke': assault group at Yudinka - Kozlovka - W outskirts of Vasilyevka (taken 18:45 9 July); the 99 TBr / 11 MRBr counterattack drove it out of Yudinka and Kozlovka by 11:00 10 July, its attack at Kozlovka - Vasilyevka started 10:45 (Zamulin ch. 6)",
+   "hq_note": "Eicke CP south of Kozlovka"
   },
   {
    "side": "GER",
@@ -6508,18 +6777,25 @@
    ],
    "pos": [
     [
-     4403,
-     12800
+     3600,
+     14900
     ],
     [
-     4403,
-     12083
+     1500,
+     14200
+    ],
+    [
+     2400,
+     14900
     ]
    ],
-   "name": "Totenkopf, SS-PzGr Rgt Thule: Kozlovka - Bogoroditskoye on the south bank",
-   "turn": 2,
-   "edge": "W",
-   "note": "5 SS PzGr Rgt 'Thule' from Krasny Oktyabr (W of the map): joins the crossing at Kozlovka - Klyuchi from midday 10 July (bridgehead reported 20:00)"
+   "name": "Totenkopf, SS-PzGr Rgt Thule: one bn in the bridgehead formed before dawn on the north bank at Krasny Oktyabr, the rest on the west bank Krasny Oktyabr - Kostroma (Zamulin p. 181)",
+   "note": "5 SS PzGr Rgt 'Thule' from Krasny Oktyabr (W of the map): joins the crossing at Kozlovka - Klyuchi from midday 10 July (bridgehead reported 20:00)",
+   "hq": [
+    2000,
+    14600
+   ],
+   "hq_note": "Thule CP Krasny Oktyabr (west bank)"
   },
   {
    "side": "GER",
@@ -6528,14 +6804,20 @@
    ],
    "pos": [
     [
-     4403,
-     13005
+     2900,
+     14700
+    ],
+    [
+     1600,
+     17000
     ]
    ],
-   "name": "T recon bn in the bridgehead; pioneers at the Krasny Oktyabr crossing",
-   "turn": 2,
-   "edge": "W",
-   "note": "pioneer battalion: the Psel crossings at Krasny Oktyabr / N of Bogoroditskoye (two bridges found by Soviet reconnaissance 14:20 11 July); rb / eb have no battle groups"
+   "name": "Totenkopf recon bn and pioneers: the Krasny Oktyabr crossing and the west bank at Ilyinsky",
+   "note": "pioneer battalion: the Psel crossings at Krasny Oktyabr / N of Bogoroditskoye (two bridges found by Soviet reconnaissance 14:20 11 July); rb / eb have no battle groups",
+   "hq": [
+    3000,
+    14500
+   ]
   },
   {
    "side": "GER",
@@ -6545,15 +6827,17 @@
    ],
    "pos": [
     [
-     4403,
-     11469
+     1500,
+     12300
     ]
    ],
    "hq": [
-    4403,
-    11469
+    1800,
+    12600
    ],
-   "note": "artillery regiment firing from the south bank; HQ with the battalions on the west edge. SS-PzJg-Abt 3 (we_tk_3at, wer_3at) stays off the map - no room on the German edge"
+   "note": "artillery regiment firing from the south bank; HQ with the battalions on the west edge. SS-PzJg-Abt 3 (we_tk_3at, wer_3at) stays off the map - no room on the German edge",
+   "name": "Totenkopf artillery on the west-bank heights (227.8) over Krasny Oktyabr",
+   "hq_note": "Totenkopf artillery on 227.8"
   },
   {
    "side": "GER",
@@ -6562,14 +6846,15 @@
    ],
    "pos": [
     [
-     4403,
+     300,
      11264
     ]
    ],
    "hq": [
-    4403,
-    11264
-   ]
+    1634,
+    9992
+   ],
+   "hq_note": "Totenkopf division CP Gryaznoye"
   },
   {
    "side": "GER",
@@ -6580,23 +6865,24 @@
    ],
    "pos": [
     [
+     4600,
+     2300
+    ],
+    [
      5200,
-     6500
+     2300
     ],
     [
      5800,
-     6300
-    ],
-    [
-     4600,
-     6400
+     2300
     ]
    ],
    "name": "II SS-Pz Corps HQ (Luchki) and corps werfer battalions",
    "hq": [
     4403,
-    6656
-   ]
+    2100
+   ],
+   "hq_edge": true
   },
   {
    "side": "USSR",
@@ -6617,21 +6903,22 @@
      8448
     ],
     [
-     6912,
-     11008
+     7400,
+     11100
     ],
     [
-     8960,
-     7936
+     11674,
+     9147
     ]
    ],
-   "name": "285 RR: 1 bn Vasilyevka - Molozhavaya gully, 2 bn svkh. Komsomolets - 258.2 - Ivanovsky Vyselok, 3 bn Storozhevoye",
+   "name": "285 RR: 1 bn Vasilyevka - Molozhavaya gully, 2 bn svkh. Komsomolets (pinned by the user, 26 Oct), 3 bn with 169 TBr at Storozhevoye (Zamulin pp. 175-177)",
    "hq": [
-    11899,
-    10598
+    11500,
+    9300
    ],
    "hq_interior": true,
-   "note": "285 RR of 183 RD: 1st bn Vasilyevka - Molozhavaya gully - W of svkh. Komsomolets (two battle groups side by side), 2nd bn svkh. Komsomolets - Ivanovsky Vyselok (two battle groups); 3rd bn is with 169 TBr at Storozhevoye; the regiment HQ in the Storozhevoye wood (user, 25 Oct) (pos: the first entry is consumed by the regiment HQ, then 1/285, 2/285, 1/285 (2 coy), 2/285 (5 coy) in platoon-table order)"
+   "note": "285 RR of 183 RD: 1st bn Vasilyevka - Molozhavaya gully - W of svkh. Komsomolets (two battle groups side by side), 2nd bn svkh. Komsomolets - Ivanovsky Vyselok (two battle groups); 3rd bn is with 169 TBr at Storozhevoye; the regiment HQ in the Storozhevoye wood (user, 25 Oct) (pos: the first entry is consumed by the regiment HQ, then 1/285, 2/285, 1/285 (2 coy), 2/285 (5 coy) in platoon-table order)",
+   "hq_note": "285 RR CP Storozhevoye (hq_interior, user 25 Oct)"
   },
   {
    "side": "USSR",
@@ -6650,9 +6937,10 @@
    ],
    "name": "II/623 AR behind the sovkhoz",
    "hq": [
-    11571,
-    6246
-   ]
+    9000,
+    10300
+   ],
+   "hq_note": "II/623 AR behind svkh. Komsomolets"
   },
   {
    "side": "USSR",
@@ -6669,7 +6957,11 @@
      6700
     ]
    ],
-   "name": "295 RR: Ivanovsky Vyselok - Belenikhino approaches"
+   "name": "295 RR: Ivanovsky Vyselok - Belenikhino approaches",
+   "hq": [
+    9900,
+    6900
+   ]
   },
   {
    "side": "USSR",
@@ -6678,18 +6970,24 @@
    ],
    "pos": [
     [
-     13824,
-     6144
+     11000,
+     5300
     ],
     [
-     14848,
-     6144
+     11400,
+     3200
+    ],
+    [
+     11700,
+     2300
     ]
    ],
-   "name": "227 RR: Vinogradovka - Leski (left flank of 183 RD)",
-   "turn": 6,
-   "edge": "S",
-   "note": "227 RR of 183 RD: on 10 July in the division's second echelon far to the south (Volobuyevka - Sazhnoye, Lawrence); night march Sazhnoye - Shakhovo - Plota - Novoselovka, in position astride the railway at the Stalinskoye branch by 05:00 11 July (Zamulin ch. 7, Sazhinov) - arrives turn 6 from the south-east"
+   "name": "227 RR: Vinogradovka - Ivanovka - Leski (left flank of 183 RD)",
+   "note": "227 RR of 183 RD: on 10 July in the division's second echelon far to the south (Volobuyevka - Sazhnoye, Lawrence); night march Sazhnoye - Shakhovo - Plota - Novoselovka, in position astride the railway at the Stalinskoye branch by 05:00 11 July (Zamulin ch. 7, Sazhinov) - arrives turn 6 from the south-east",
+   "hq": [
+    11200,
+    4500
+   ]
   },
   {
    "side": "USSR",
@@ -6703,10 +7001,12 @@
     ]
    ],
    "hq": [
-    11878,
-    6246
+    18432,
+    11500
    ],
-   "name": "183 RD HQ Krasnoye"
+   "name": "183 RD HQ Krasnoye",
+   "hq_edge": true,
+   "hq_note": "183 RD CP south outskirts of Krasnoye (OSM 21717,11521), 3.3 km east of the map: east edge node opposite it"
   },
   {
    "side": "USSR",
@@ -6729,8 +7029,8 @@
    ],
    "name": "99 TBr dug in at Vasilyevka, Andreyevka, Mikhailovka",
    "hq": [
-    4403,
-    14746
+    7000,
+    13500
    ]
   },
   {
@@ -6740,19 +7040,22 @@
    ],
    "pos": [
     [
-     8300,
-     13900
+     12000,
+     20400
     ],
     [
-     9400,
-     14900
-    ],
-    [
-     10400,
-     15900
+     12500,
+     20400
     ]
    ],
-   "note": "32 MRBr of 18 TC: second echelon Prelestnoye - Petrovka on the south bank (Zamulin Map 5, 10 July); the corps' tank brigades follow on 11 July evening"
+   "note": "32 MRBr of 18 TC: second echelon Prelestnoye - Petrovka on the south bank (Zamulin Map 5, 10 July); the corps' tank brigades follow on 11 July evening",
+   "turn": 10,
+   "edge": "N",
+   "name": "32 MRBr (18 TC) with the corps (evening 11 July)",
+   "hq": [
+    12500,
+    20400
+   ]
   },
   {
    "side": "USSR",
@@ -6765,7 +7068,11 @@
      11500
     ]
    ],
-   "note": "80 gds mortar regiment (M-13) of 5 gds TA at Yamki (Zamulin Map 5, 10 July)"
+   "note": "80 gds mortar regiment (M-13) of 5 gds TA at Yamki (Zamulin Map 5, 10 July)",
+   "hq": [
+    14300,
+    11500
+   ]
   },
   {
    "side": "USSR",
@@ -6788,8 +7095,8 @@
    ],
    "name": "11 MRBr (10 TC): 1 and 2 bns Vasilyevka, 3 bn on 226.6",
    "hq": [
-    4403,
-    14541
+    6500,
+    13700
    ]
   },
   {
@@ -6799,19 +7106,23 @@
    ],
    "pos": [
     [
-     9400,
-     12000
+     8600,
+     13300
     ],
     [
-     11000,
-     11500
+     10200,
+     13400
     ],
     [
-     12000,
-     11150
+     11800,
+     12300
     ]
    ],
-   "name": "26 TBr dug in Mikhailovka - Stalinskoye otd."
+   "name": "26 TBr dug in since 8 July on the rear belt Mikhailovka - Stalinskoye otd., 500 m from the embankment (along the anti-tank ditch)",
+   "hq": [
+    11000,
+    11600
+   ]
   },
   {
    "side": "USSR",
@@ -6836,7 +7147,11 @@
      9900
     ]
    ],
-   "name": "169 TBr: Storozhevoye; 370 TB in the grove at Ivanovsky Vyselok, 371 TB in the wood N of the sovkhoz"
+   "name": "169 TBr: Storozhevoye; 370 TB in the grove at Ivanovsky Vyselok, 371 TB in the wood N of the sovkhoz",
+   "hq": [
+    12000,
+    9500
+   ]
   },
   {
    "side": "USSR",
@@ -6857,7 +7172,11 @@
      10200
     ]
    ],
-   "name": "58 MRBr: Storozhevoye-2 - Yamki"
+   "name": "58 MRBr: Storozhevoye-2 - Yamki",
+   "hq": [
+    13000,
+    11000
+   ]
   },
   {
    "side": "USSR",
@@ -6870,7 +7189,11 @@
      9400
     ]
    ],
-   "name": "15 gds sep. hvy TR (12 Churchill; KV-1 stands in) at Storozhevoye"
+   "name": "15 gds sep. hvy TR (12 Churchill; KV-1 stands in) at Storozhevoye",
+   "hq": [
+    12200,
+    9400
+   ]
   },
   {
    "side": "USSR",
@@ -6891,7 +7214,12 @@
      13100
     ]
    ],
-   "name": "2 TC HQ and corps troops: 1502 det AT bn batteries at Ivanovsky Vyselok and Vasilyevka, 269 MTR"
+   "name": "2 TC HQ and corps troops: 1502 det AT bn batteries at Ivanovsky Vyselok and Vasilyevka, 269 MTR",
+   "hq": [
+    11000,
+    10600
+   ],
+   "hq_note": "2 TC CP Prokhorovka - Yamki road (10 July)"
   },
   {
    "side": "USSR",
@@ -6916,7 +7244,12 @@
      9147
     ]
    ],
-   "name": "27 AT Bde (Front reserve): batteries at Prokhorovka station, Yamki, Grushki, Storozhevoye"
+   "name": "27 AT Bde (Front reserve): batteries at Prokhorovka station, Yamki, Grushki, Storozhevoye",
+   "hq": [
+    16000,
+    14000
+   ],
+   "hq_note": "27 AT Bde CP Prokhorovka station"
   },
   {
    "side": "USSR",
@@ -6935,8 +7268,8 @@
    ],
    "name": "151 gds RR: 500 m N of Klyuchi - 1.5 km SW of 226.6",
    "hq": [
-    4403,
-    15104
+    4700,
+    16200
    ]
   },
   {
@@ -6956,8 +7289,8 @@
    ],
    "name": "155 gds RR: 226.6 - the grove SE of Klyuchi",
    "hq": [
-    4403,
-    14899
+    6000,
+    15300
    ]
   },
   {
@@ -6975,7 +7308,11 @@
      15900
     ]
    ],
-   "name": "153 gds RR: 1.5 km E of 226.6 - Polezhayev"
+   "name": "153 gds RR: 1.5 km E of 226.6 - Polezhayev",
+   "hq": [
+    8600,
+    15900
+   ]
   },
   {
    "side": "USSR",
@@ -6994,9 +7331,10 @@
    ],
    "name": "124 gds AR: 1 km SW of Polezhayev",
    "hq": [
-    4403,
-    14234
-   ]
+    8000,
+    16300
+   ],
+   "hq_note": "124 gds AR 1 km SW of Polezhayev"
   },
   {
    "side": "USSR",
@@ -7011,8 +7349,8 @@
    ],
    "name": "tank company of 245 sep. TR with 52 gds RD",
    "hq": [
-    4403,
-    15258
+    7000,
+    15800
    ]
   },
   {
@@ -7027,9 +7365,10 @@
     ]
    ],
    "hq": [
-    4403,
-    14131
-   ]
+    7000,
+    16800
+   ],
+   "hq_note": "52 gds RD CP north of 226.6 (Polezhayev)"
   },
   {
    "side": "USSR",
@@ -7038,15 +7377,19 @@
    ],
    "pos": [
     [
-     10200,
-     6500
+     9900,
+     3600
     ],
     [
-     10600,
-     6900
+     10200,
+     4100
     ]
    ],
-   "name": "2 gds TC moved to Belenikhino - Leski - Shakhovo on the night of 10 July"
+   "name": "2 gds TC (Burdeyny) on the Belenikhino - Ivanovka - Leski line, 4 gds TBr at Belenikhino station",
+   "hq": [
+    10000,
+    3800
+   ]
   },
   {
    "side": "USSR",
@@ -7055,13 +7398,17 @@
    ],
    "pos": [
     [
-     11200,
-     6600
+     10600,
+     4600
     ],
     [
-     11600,
-     7000
+     11000,
+     5000
     ]
+   ],
+   "hq": [
+    10800,
+    4800
    ]
   },
   {
@@ -7071,13 +7418,17 @@
    ],
    "pos": [
     [
-     12300,
-     6500
+     11600,
+     3100
     ],
     [
-     12700,
-     6900
+     11800,
+     2600
     ]
+   ],
+   "hq": [
+    11800,
+    2800
    ]
   },
   {
@@ -7087,13 +7438,17 @@
    ],
    "pos": [
     [
-     10800,
-     7300
+     10300,
+     5300
     ],
     [
-     11800,
-     7400
+     10900,
+     5800
     ]
+   ],
+   "hq": [
+    11000,
+    7400
    ]
   },
   {
@@ -7103,9 +7458,13 @@
    ],
    "pos": [
     [
-     12000,
-     7800
+     10100,
+     4800
     ]
+   ],
+   "hq": [
+    12000,
+    7800
    ]
   },
   {
@@ -7116,14 +7475,15 @@
    "pos": [
     [
      12500,
-     7200
+     3200
     ]
    ],
    "hq": [
-    14000,
-    6700
+    18000,
+    1300
    ],
-   "name": "2 gds TC HQ Plota (S edge)"
+   "name": "2 gds TC HQ Plota (S edge)",
+   "hq_note": "2 gds TC CP Plota"
   },
   {
    "side": "USSR",
@@ -7139,7 +7499,8 @@
    "hq": [
     18000,
     9000
-   ]
+   ],
+   "hq_edge": true
   },
   {
    "side": "USSR",
@@ -7152,7 +7513,8 @@
      18000,
      15500
     ]
-   ]
+   ],
+   "hq_edge": true
   },
   {
    "side": "USSR",
@@ -7169,7 +7531,8 @@
     18200,
     15800
    ],
-   "name": "5 gds TA HQ Skorovka (NE of Prokhorovka)"
+   "name": "5 gds TA HQ Skorovka (NE of Prokhorovka)",
+   "hq_edge": true
   },
   {
    "side": "GER",
@@ -7196,8 +7559,8 @@
    ],
    "name": "1 SS-Pz Rgt (minus the Tiger company) from the area S of the Teterevino - Luchki road",
    "hq": [
-    6349,
-    6246
+    6000,
+    8200
    ],
    "note": "1 SS Pz Rgt (minus the Tigers) standing ready behind 2 SS PzGr Rgt north of Teterevino, to be moved up after the breakthrough (II SS PzK order of 9 July); subordinated to the regiment from 11 July"
   },
@@ -7208,18 +7571,20 @@
    ],
    "pos": [
     [
-     6195,
-     6144
+     5100,
+     4300
     ],
     [
-     6799,
-     6144
+     5900,
+     3900
     ]
    ],
-   "turn": 8,
-   "edge": "S",
-   "name": "1 SS-PzGr Rgt from Luchki / Teterevino (attacks svkh. Oktyabrsky on 11 July)",
-   "note": "1 SS PzGr Rgt at Bolshiye Mayachki on 10 July; ordered to Luchki (north) at 06:30 11 July, at Teterevino by the evening (Zamulin ch. 7)"
+   "name": "1 SS-PzGr Rgt in reserve on the Luchki - Teterevino road (attacks svkh. Oktyabrsky on 11 July)",
+   "note": "1 SS PzGr Rgt at Bolshiye Mayachki on 10 July; ordered to Luchki (north) at 06:30 11 July, at Teterevino by the evening (Zamulin ch. 7)",
+   "hq": [
+    5500,
+    4100
+   ]
   },
   {
    "side": "GER",
@@ -7228,14 +7593,20 @@
    ],
    "pos": [
     [
-     7475,
-     6144
+     4800,
+     5300
+    ],
+    [
+     7500,
+     4600
     ]
    ],
-   "turn": 2,
-   "edge": "S",
-   "name": "2 SS-Pz Rgt from Luchki / Ozerovsky",
-   "note": "Das Reich panzer regiment: moves up from Yasnaya Polyana on 10 July, attacks along the railway on 11 July"
+   "name": "2 SS-Pz Rgt: Teterevino and behind Yasnaya Polyana (Luchki / Ozerovsky)",
+   "note": "Das Reich panzer regiment: moves up from Yasnaya Polyana on 10 July, attacks along the railway on 11 July",
+   "hq": [
+    5000,
+    5000
+   ]
   },
   {
    "side": "GER",
@@ -7244,18 +7615,25 @@
    ],
    "pos": [
     [
-     6554,
-     6144
+     8100,
+     5100
     ],
     [
-     7270,
-     6144
+     6800,
+     4300
+    ],
+    [
+     3200,
+     4000
     ]
    ],
-   "turn": 4,
-   "edge": "S",
-   "name": "SS-PzGr Rgt Der Fuehrer from Kalinin (toward Belenikhino / Vinogradovka on 11 July)",
-   "note": "'Der Fuehrer' Rgt from the Kalinin - Yasnaya Polyana line (S of the map), arrives for the 11-12 July attacks on Storozhevoye / Belenikhino"
+   "name": "SS-PzGr Rgt Der Fuehrer: I bn at the east edge of Yasnaya Polyana facing Belenikhino, II bn between Yasnaya Polyana and Kalinin, III bn at Kalinin",
+   "note": "'Der Fuehrer' Rgt from the Kalinin - Yasnaya Polyana line (S of the map), arrives for the 11-12 July attacks on Storozhevoye / Belenikhino",
+   "hq": [
+    6800,
+    4300
+   ],
+   "hq_note": "Der Fuehrer CP between Yasnaya Polyana and Kalinin"
   },
   {
    "side": "GER",
@@ -7282,8 +7660,8 @@
    ],
    "name": "3 SS-Pz Rgt over the pontoon bridge at Krasny Oktyabr (11 July)",
    "hq": [
-    4403,
-    10752
+    5800,
+    10700
    ],
    "note": "3 SS Pz Rgt on the south bank south of Kozlovka (Zamulin Map 5); the Psel bridges were ready only in the night of 11/12 July, so it fights south of the river and crosses in the game"
   },
@@ -7294,13 +7672,16 @@
    ],
    "pos": [
     [
-     4403,
-     12800
+     1800,
+     13000
     ]
    ],
-   "turn": 11,
-   "edge": "W",
-   "note": "assault gun battalion crosses with the panzers in the night of 11/12 July (turn 11 = 02-06 12 July)"
+   "note": "assault gun battalion crosses with the panzers in the night of 11/12 July (turn 11 = 02-06 12 July)",
+   "hq": [
+    2000,
+    13100
+   ],
+   "name": "Totenkopf StuG bn on the west bank"
   },
   {
    "side": "USSR",
@@ -7361,11 +7742,11 @@
    "pos": [
     [
      18000,
-     6144
+     2100
     ],
     [
      17500,
-     6144
+     2100
     ]
    ],
    "turn": 5,
@@ -7481,15 +7862,15 @@
    "pos": [
     [
      8500,
-     16384
+     20400
     ],
     [
      6500,
-     16384
+     20400
     ],
     [
      7500,
-     16384
+     20400
     ]
    ],
    "turn": 6,
@@ -7506,15 +7887,15 @@
    "pos": [
     [
      10000,
-     16384
+     20400
     ],
     [
      9000,
-     16384
+     20400
     ],
     [
      9500,
-     16384
+     20400
     ]
    ],
    "turn": 6,
@@ -7529,19 +7910,20 @@
    "pos": [
     [
      7500,
-     16384
+     20400
     ],
     [
      11000,
-     16384
+     20400
     ],
     [
      10500,
-     16384
+     20400
     ]
    ],
    "turn": 6,
-   "edge": "N"
+   "edge": "N",
+   "hq_edge": true
   },
   {
    "side": "USSR",
@@ -7551,11 +7933,11 @@
    "pos": [
     [
      10500,
-     16384
+     20400
     ],
     [
      9000,
-     16384
+     20400
     ]
    ],
    "turn": 7,
@@ -7573,15 +7955,15 @@
    "pos": [
     [
      11500,
-     16384
+     20400
     ],
     [
      12500,
-     16384
+     20400
     ],
     [
      13000,
-     16384
+     20400
     ]
    ],
    "turn": 8,
@@ -7612,15 +7994,15 @@
    "pos": [
     [
      11500,
-     16384
+     20400
     ],
     [
      12500,
-     16384
+     20400
     ],
     [
      13500,
-     16384
+     20400
     ]
    ],
    "turn": 10,
@@ -7636,15 +8018,15 @@
    "pos": [
     [
      12000,
-     16384
+     20400
     ],
     [
      13000,
-     16384
+     20400
     ],
     [
      14000,
-     16384
+     20400
     ]
    ],
    "turn": 11,
@@ -7658,11 +8040,11 @@
    "pos": [
     [
      13000,
-     16384
+     20400
     ],
     [
      12500,
-     16384
+     20400
     ]
    ],
    "turn": 11,
@@ -7679,15 +8061,15 @@
    "pos": [
     [
      15000,
-     6144
+     2100
     ],
     [
      16000,
-     6144
+     2100
     ],
     [
      17000,
-     6144
+     2100
     ]
    ],
    "turn": 12,
@@ -7703,11 +8085,11 @@
    "pos": [
     [
      17500,
-     6144
+     2100
     ],
     [
      16500,
-     6144
+     2100
     ]
    ],
    "turn": 12,
@@ -7721,7 +8103,7 @@
    "pos": [
     [
      16000,
-     6144
+     2100
     ]
    ],
    "turn": 13,
@@ -7735,7 +8117,7 @@
    "pos": [
     [
      17000,
-     6144
+     2100
     ]
    ],
    "turn": 5,
@@ -7749,11 +8131,190 @@
    "pos": [
     [
      13000,
-     6144
+     2100
     ]
    ],
    "turn": 6,
    "edge": "S"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_tk_3at",
+    "wer_3at"
+   ],
+   "pos": [
+    [
+     1300,
+     13600
+    ],
+    [
+     2000,
+     12400
+    ]
+   ],
+   "hq": [
+    2500,
+    12700
+   ],
+   "name": "Totenkopf SS-PzJg-Abt 3 covering the south bank (Kozlovka) and the crossing",
+   "note": "9 x 9 block (2 Nov): the west bank and Kozlovka are on the map, so the AT battalion is placed"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_dr_rb"
+   ],
+   "pos": [
+    [
+     8300,
+     3400
+    ],
+    [
+     2600,
+     4800
+    ]
+   ],
+   "hq": [
+    2800,
+    4700
+   ],
+   "name": "Das Reich recon bn: one company screening south of Belenikhino towards Leski, the rest on the right flank at Kalinin",
+   "note": "9 x 9 block: Kalinin - Sobachevsky are on the map"
+  },
+  {
+   "side": "GER",
+   "form": [
+    "we_dr_eng"
+   ],
+   "pos": [
+    [
+     8500,
+     2600
+    ]
+   ],
+   "hq": [
+    8300,
+    2800
+   ],
+   "name": "Das Reich pioneer bn south of Yasnaya Polyana (the Leski road)"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_289",
+    "ra_292",
+    "ra_294",
+    "ra_232ar",
+    "ra_97grd"
+   ],
+   "pos": [
+    [
+     3000,
+     20400
+    ],
+    [
+     4000,
+     20400
+    ],
+    [
+     5000,
+     20400
+    ],
+    [
+     6000,
+     20400
+    ],
+    [
+     3500,
+     20400
+    ]
+   ],
+   "turn": 7,
+   "edge": "N",
+   "name": "97 gds RD (33 gds RC second echelon) into the Psel bend behind 95 gds RD (11 July)",
+   "note": "deployed Srednyaya Olshanka - Veselyi on 11 July; the north edge north of the bend is its entry"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_148gtr",
+    "ra_1510iptap"
+   ],
+   "pos": [
+    [
+     8000,
+     20400
+    ],
+    [
+     9000,
+     20400
+    ]
+   ],
+   "turn": 8,
+   "edge": "N",
+   "name": "5 gds A troops: 148 gds TR and 1510 IPTAP to 95 gds RD (11 July)"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_1549sap",
+    "ra_522har",
+    "ra_1148har"
+   ],
+   "pos": [
+    [
+     18432,
+     11000
+    ],
+    [
+     18432,
+     10500
+    ],
+    [
+     18432,
+     10000
+    ]
+   ],
+   "turn": 12,
+   "edge": "E",
+   "name": "5 gds TA army artillery: 1549 SAP, 522 and 1148 HAR of high power (12 July)"
+  },
+  {
+   "side": "USSR",
+   "form": [
+    "ra_278",
+    "ra_281",
+    "ra_285g",
+    "ra_197ar",
+    "ra_93grd"
+   ],
+   "pos": [
+    [
+     12000,
+     2100
+    ],
+    [
+     13000,
+     2100
+    ],
+    [
+     14000,
+     2100
+    ],
+    [
+     12500,
+     2100
+    ],
+    [
+     13500,
+     2100
+    ]
+   ],
+   "turn": 10,
+   "edge": "S",
+   "name": "93 gds RD (69 A, 35 gds RC) takes over the Leski - Shakhovo sector south of 2 gds TC (night 11/12 July)",
+   "note": "2 Nov: replaces 13 gds RD (Oboyan axis, off the map); 11 / 12 gds MBde of 5 gds MC dropped (sent south to Rzhavets on 12 July)"
   }
  ],
  "air": {
@@ -8004,7 +8565,7 @@
    "13 июля. Удерживать занятое; ЛАГ и Мёртвая голова перегруппировываются, Рейх продвигается на правом фланге. Утром дождь."
   ]
  },
- "_comment_edges": "border-node capacity (one unit per node, own ground only): Soviets N 56 + E 32 + S east of the line 40 + W north of the Psel 11 = 139 for 28 turn-1 HQ-type units and 102 reinforcement platoons; Germans W south of the Psel 25 + S west of the line 16 = 41 for 16 turn-1 HQ-type units and 24 reinforcement platoons. Off the map for lack of room or because they fought outside the block: 97 and 13 gds RD (33 gds RC second echelon), 148 gds TR, 1510 IPTAP, 1549 SAP, 522 / 1148 HAR, 11 / 12 gds MBde with 54 / 55 gds TR; Totenkopf SS-PzJg-Abt 3, Das Reich reconnaissance / escort / AA / pioneer battalions",
+ "_comment_edges": "border-node capacity (one unit per node, own ground only) on the 9 x 9 block: Soviets N 72 + E 64 + S east of the line 34 + W north of the Psel 6; Germans W south of the Psel 58 + S west of the line 38. 2 Nov: every formation of the OOB is now placed (97 / 93 gds RD, 148 gds TR, 1510 IPTAP, 1549 SAP, 522 / 1148 HAR, Totenkopf SS-PzJg-Abt 3, Das Reich reconnaissance and pioneer battalions) and the formations that stood on the enlarged ground at 06:00 10 July start in the field (1 SS-PzGr Rgt, 2 SS-Pz Rgt, Der Fuehrer at Kalinin, Thule / Totenkopf pioneers / StuG / PzJg on the west bank, 227 RR, 2 gds TC).",
  "farms": [
   {
    "name": "svkh. Oktyabrsky (central yard: barns, workshops, the brick buildings N of the railway)",
@@ -12973,6 +13534,8365 @@
      7680
     ]
    ]
+  },
+  {
+   "name": "houses at the N edge (W) (RKKA 1:100 000 sheet, outer blob 1)",
+   "pts": [
+    [
+     2192,
+     20270
+    ],
+    [
+     2072,
+     20270
+    ],
+    [
+     2054,
+     20288
+    ],
+    [
+     2054,
+     20316
+    ],
+    [
+     2026,
+     20368
+    ],
+    [
+     2034,
+     20416
+    ],
+    [
+     2208,
+     20418
+    ],
+    [
+     2206,
+     20300
+    ],
+    [
+     2192,
+     20270
+    ]
+   ]
+  },
+  {
+   "name": "houses at the N edge (W) (RKKA 1:100 000 sheet, outer blob 2)",
+   "pts": [
+    [
+     2644,
+     20214
+    ],
+    [
+     2540,
+     20214
+    ],
+    [
+     2460,
+     20230
+    ],
+    [
+     2450,
+     20332
+    ],
+    [
+     2470,
+     20360
+    ],
+    [
+     2466,
+     20380
+    ],
+    [
+     2488,
+     20382
+    ],
+    [
+     2524,
+     20418
+    ],
+    [
+     2616,
+     20418
+    ],
+    [
+     2666,
+     20332
+    ],
+    [
+     2662,
+     20236
+    ],
+    [
+     2644,
+     20214
+    ]
+   ]
+  },
+  {
+   "name": "Olkhovsky (N) (RKKA 1:100 000 sheet, outer blob 3)",
+   "pts": [
+    [
+     3772,
+     20022
+    ],
+    [
+     3676,
+     20022
+    ],
+    [
+     3648,
+     20030
+    ],
+    [
+     3612,
+     20062
+    ],
+    [
+     3562,
+     20064
+    ],
+    [
+     3562,
+     20140
+    ],
+    [
+     3596,
+     20150
+    ],
+    [
+     3662,
+     20216
+    ],
+    [
+     3596,
+     20282
+    ],
+    [
+     3556,
+     20294
+    ],
+    [
+     3532,
+     20318
+    ],
+    [
+     3516,
+     20306
+    ],
+    [
+     3432,
+     20310
+    ],
+    [
+     3424,
+     20378
+    ],
+    [
+     3516,
+     20378
+    ],
+    [
+     3548,
+     20346
+    ],
+    [
+     3580,
+     20370
+    ],
+    [
+     3652,
+     20378
+    ],
+    [
+     3692,
+     20418
+    ],
+    [
+     3922,
+     20416
+    ],
+    [
+     3922,
+     20404
+    ],
+    [
+     3846,
+     20336
+    ],
+    [
+     3874,
+     20308
+    ],
+    [
+     3874,
+     20264
+    ],
+    [
+     3910,
+     20228
+    ],
+    [
+     3910,
+     20100
+    ],
+    [
+     3852,
+     20058
+    ],
+    [
+     3772,
+     20022
+    ]
+   ]
+  },
+  {
+   "name": "Vyshnyaya Olshanka (RKKA 1:100 000 sheet, outer blob 5)",
+   "pts": [
+    [
+     13436,
+     19486
+    ],
+    [
+     13434,
+     19524
+    ],
+    [
+     13454,
+     19544
+    ],
+    [
+     13430,
+     19576
+    ],
+    [
+     13446,
+     19612
+    ],
+    [
+     13446,
+     19684
+    ],
+    [
+     13536,
+     19682
+    ],
+    [
+     13602,
+     19748
+    ],
+    [
+     13604,
+     19818
+    ],
+    [
+     13672,
+     19822
+    ],
+    [
+     13738,
+     19888
+    ],
+    [
+     13740,
+     19906
+    ],
+    [
+     13828,
+     19910
+    ],
+    [
+     13902,
+     19988
+    ],
+    [
+     13862,
+     20032
+    ],
+    [
+     13862,
+     20132
+    ],
+    [
+     13922,
+     20204
+    ],
+    [
+     13856,
+     20270
+    ],
+    [
+     13818,
+     20272
+    ],
+    [
+     13782,
+     20340
+    ],
+    [
+     13782,
+     20416
+    ],
+    [
+     14012,
+     20418
+    ],
+    [
+     14220,
+     20198
+    ],
+    [
+     14270,
+     20196
+    ],
+    [
+     14266,
+     20092
+    ],
+    [
+     14148,
+     20046
+    ],
+    [
+     14072,
+     19966
+    ],
+    [
+     14048,
+     19966
+    ],
+    [
+     13972,
+     19882
+    ],
+    [
+     13904,
+     19882
+    ],
+    [
+     13834,
+     19812
+    ],
+    [
+     13834,
+     19740
+    ],
+    [
+     13804,
+     19698
+    ],
+    [
+     13700,
+     19690
+    ],
+    [
+     13652,
+     19670
+    ],
+    [
+     13608,
+     19714
+    ],
+    [
+     13542,
+     19648
+    ],
+    [
+     13546,
+     19564
+    ],
+    [
+     13506,
+     19500
+    ],
+    [
+     13436,
+     19486
+    ]
+   ]
+  },
+  {
+   "name": "Vyshnyaya Olshanka (E) (RKKA 1:100 000 sheet, outer blob 6)",
+   "pts": [
+    [
+     14288,
+     19226
+    ],
+    [
+     14212,
+     19226
+    ],
+    [
+     14158,
+     19284
+    ],
+    [
+     14194,
+     19340
+    ],
+    [
+     14154,
+     19384
+    ],
+    [
+     14162,
+     19512
+    ],
+    [
+     14224,
+     19514
+    ],
+    [
+     14264,
+     19530
+    ],
+    [
+     14342,
+     19612
+    ],
+    [
+     14282,
+     19680
+    ],
+    [
+     14270,
+     19812
+    ],
+    [
+     14372,
+     19822
+    ],
+    [
+     14660,
+     19554
+    ],
+    [
+     14716,
+     19526
+    ],
+    [
+     14782,
+     19592
+    ],
+    [
+     14782,
+     19712
+    ],
+    [
+     14716,
+     19778
+    ],
+    [
+     14702,
+     19776
+    ],
+    [
+     14702,
+     19808
+    ],
+    [
+     14636,
+     19874
+    ],
+    [
+     14592,
+     19838
+    ],
+    [
+     14548,
+     19838
+    ],
+    [
+     14528,
+     19854
+    ],
+    [
+     14488,
+     19858
+    ],
+    [
+     14494,
+     19960
+    ],
+    [
+     14566,
+     20060
+    ],
+    [
+     14582,
+     20184
+    ],
+    [
+     14624,
+     20186
+    ],
+    [
+     14690,
+     20252
+    ],
+    [
+     14696,
+     20298
+    ],
+    [
+     14764,
+     20318
+    ],
+    [
+     14868,
+     20418
+    ],
+    [
+     15012,
+     20418
+    ],
+    [
+     15022,
+     20372
+    ],
+    [
+     15010,
+     20332
+    ],
+    [
+     15018,
+     20220
+    ],
+    [
+     14982,
+     20184
+    ],
+    [
+     14978,
+     20116
+    ],
+    [
+     14942,
+     20068
+    ],
+    [
+     15030,
+     19992
+    ],
+    [
+     15042,
+     19916
+    ],
+    [
+     15106,
+     19848
+    ],
+    [
+     15106,
+     19812
+    ],
+    [
+     15176,
+     19742
+    ],
+    [
+     15236,
+     19742
+    ],
+    [
+     15238,
+     19712
+    ],
+    [
+     15266,
+     19676
+    ],
+    [
+     15252,
+     19686
+    ],
+    [
+     15192,
+     19682
+    ],
+    [
+     15116,
+     19754
+    ],
+    [
+     15060,
+     19750
+    ],
+    [
+     14982,
+     19676
+    ],
+    [
+     14986,
+     19652
+    ],
+    [
+     14936,
+     19618
+    ],
+    [
+     14870,
+     19552
+    ],
+    [
+     14868,
+     19534
+    ],
+    [
+     14824,
+     19518
+    ],
+    [
+     14712,
+     19390
+    ],
+    [
+     14596,
+     19394
+    ],
+    [
+     14528,
+     19462
+    ],
+    [
+     14484,
+     19490
+    ],
+    [
+     14464,
+     19490
+    ],
+    [
+     14362,
+     19396
+    ],
+    [
+     14346,
+     19356
+    ],
+    [
+     14346,
+     19276
+    ],
+    [
+     14316,
+     19234
+    ],
+    [
+     14288,
+     19226
+    ]
+   ]
+  },
+  {
+   "name": "Vyshnyaya Olshanka (E) (RKKA 1:100 000 sheet, outer blob 6)",
+   "pts": [
+    [
+     14834,
+     19704
+    ],
+    [
+     14898,
+     19768
+    ],
+    [
+     14838,
+     19828
+    ],
+    [
+     14870,
+     19864
+    ],
+    [
+     14870,
+     19916
+    ],
+    [
+     14954,
+     19996
+    ],
+    [
+     14958,
+     20028
+    ],
+    [
+     14898,
+     20088
+    ],
+    [
+     14894,
+     20140
+    ],
+    [
+     14828,
+     20206
+    ],
+    [
+     14760,
+     20202
+    ],
+    [
+     14694,
+     20136
+    ],
+    [
+     14682,
+     20024
+    ],
+    [
+     14690,
+     19984
+    ],
+    [
+     14678,
+     19964
+    ],
+    [
+     14710,
+     19932
+    ],
+    [
+     14710,
+     19864
+    ],
+    [
+     14776,
+     19798
+    ],
+    [
+     14794,
+     19796
+    ],
+    [
+     14766,
+     19768
+    ],
+    [
+     14834,
+     19704
+    ]
+   ]
+  },
+  {
+   "name": "Veselyi (E) (RKKA 1:100 000 sheet, outer blob 17)",
+   "pts": [
+    [
+     4492,
+     19610
+    ],
+    [
+     4410,
+     19616
+    ],
+    [
+     4402,
+     19712
+    ],
+    [
+     4414,
+     19832
+    ],
+    [
+     4450,
+     19872
+    ],
+    [
+     4442,
+     20004
+    ],
+    [
+     4544,
+     20006
+    ],
+    [
+     4562,
+     19936
+    ],
+    [
+     4562,
+     19824
+    ],
+    [
+     4546,
+     19772
+    ],
+    [
+     4506,
+     19720
+    ],
+    [
+     4492,
+     19610
+    ]
+   ]
+  },
+  {
+   "name": "svkh. im. Voroshilova (N) (RKKA 1:100 000 sheet, outer blob 18)",
+   "pts": [
+    [
+     11204,
+     19742
+    ],
+    [
+     11124,
+     19742
+    ],
+    [
+     11076,
+     19790
+    ],
+    [
+     11060,
+     19790
+    ],
+    [
+     11058,
+     19832
+    ],
+    [
+     10992,
+     19898
+    ],
+    [
+     10962,
+     19904
+    ],
+    [
+     10962,
+     19976
+    ],
+    [
+     11044,
+     19974
+    ],
+    [
+     11050,
+     19936
+    ],
+    [
+     11116,
+     19870
+    ],
+    [
+     11132,
+     19870
+    ],
+    [
+     11198,
+     19936
+    ],
+    [
+     11208,
+     19970
+    ],
+    [
+     11252,
+     19974
+    ],
+    [
+     11280,
+     19994
+    ],
+    [
+     11448,
+     19994
+    ],
+    [
+     11478,
+     19924
+    ],
+    [
+     11478,
+     19868
+    ],
+    [
+     11466,
+     19856
+    ],
+    [
+     11498,
+     19816
+    ],
+    [
+     11468,
+     19806
+    ],
+    [
+     11408,
+     19830
+    ],
+    [
+     11340,
+     19910
+    ],
+    [
+     11272,
+     19898
+    ],
+    [
+     11206,
+     19832
+    ],
+    [
+     11204,
+     19742
+    ]
+   ]
+  },
+  {
+   "name": "Olkhovsky (NE) (RKKA 1:100 000 sheet, outer blob 19)",
+   "pts": [
+    [
+     3540,
+     19498
+    ],
+    [
+     3434,
+     19500
+    ],
+    [
+     3438,
+     19604
+    ],
+    [
+     3518,
+     19688
+    ],
+    [
+     3520,
+     19730
+    ],
+    [
+     3604,
+     19734
+    ],
+    [
+     3672,
+     19810
+    ],
+    [
+     3732,
+     19810
+    ],
+    [
+     3800,
+     19746
+    ],
+    [
+     3884,
+     19758
+    ],
+    [
+     3954,
+     19828
+    ],
+    [
+     3956,
+     19874
+    ],
+    [
+     4040,
+     19878
+    ],
+    [
+     4078,
+     19868
+    ],
+    [
+     4082,
+     19784
+    ],
+    [
+     4008,
+     19782
+    ],
+    [
+     3942,
+     19716
+    ],
+    [
+     3940,
+     19662
+    ],
+    [
+     3788,
+     19638
+    ],
+    [
+     3588,
+     19546
+    ],
+    [
+     3540,
+     19498
+    ]
+   ]
+  },
+  {
+   "name": "Vyshnyaya Olshanka (E) (RKKA 1:100 000 sheet, outer blob 6)",
+   "pts": [
+    [
+     15348,
+     19486
+    ],
+    [
+     15282,
+     19488
+    ],
+    [
+     15290,
+     19592
+    ],
+    [
+     15304,
+     19606
+    ],
+    [
+     15332,
+     19578
+    ],
+    [
+     15374,
+     19576
+    ],
+    [
+     15374,
+     19540
+    ],
+    [
+     15348,
+     19486
+    ]
+   ]
+  },
+  {
+   "name": "svkh. im. Voroshilova (RKKA 1:100 000 sheet, outer blob 29)",
+   "pts": [
+    [
+     9820,
+     19490
+    ],
+    [
+     9738,
+     19496
+    ],
+    [
+     9740,
+     19586
+    ],
+    [
+     9818,
+     19584
+    ],
+    [
+     9820,
+     19490
+    ]
+   ]
+  },
+  {
+   "name": "Veselyi (E) (RKKA 1:100 000 sheet, outer blob 32)",
+   "pts": [
+    [
+     4392,
+     19286
+    ],
+    [
+     4382,
+     19332
+    ],
+    [
+     4398,
+     19364
+    ],
+    [
+     4390,
+     19396
+    ],
+    [
+     4448,
+     19398
+    ],
+    [
+     4470,
+     19376
+    ],
+    [
+     4470,
+     19340
+    ],
+    [
+     4444,
+     19338
+    ],
+    [
+     4392,
+     19286
+    ]
+   ]
+  },
+  {
+   "name": "Vyshnyaya Olshanka (E) (RKKA 1:100 000 sheet, outer blob 6)",
+   "pts": [
+    [
+     13876,
+     19034
+    ],
+    [
+     13814,
+     19036
+    ],
+    [
+     13814,
+     19108
+    ],
+    [
+     13898,
+     19220
+    ],
+    [
+     13952,
+     19270
+    ],
+    [
+     14096,
+     19282
+    ],
+    [
+     14102,
+     19276
+    ],
+    [
+     14066,
+     19240
+    ],
+    [
+     14062,
+     19164
+    ],
+    [
+     13976,
+     19114
+    ],
+    [
+     13876,
+     19034
+    ]
+   ]
+  },
+  {
+   "name": "Veselyi (E) (RKKA 1:100 000 sheet, outer blob 32)",
+   "pts": [
+    [
+     4324,
+     18986
+    ],
+    [
+     4288,
+     19022
+    ],
+    [
+     4240,
+     18990
+    ],
+    [
+     4238,
+     19048
+    ],
+    [
+     4360,
+     19158
+    ],
+    [
+     4378,
+     19136
+    ],
+    [
+     4318,
+     19076
+    ],
+    [
+     4366,
+     19028
+    ],
+    [
+     4324,
+     18986
+    ]
+   ]
+  },
+  {
+   "name": "Petrovka (N) - Beregovoye (RKKA 1:100 000 sheet, outer blob 40)",
+   "pts": [
+    [
+     11220,
+     18046
+    ],
+    [
+     11018,
+     18056
+    ],
+    [
+     11022,
+     18144
+    ],
+    [
+     11068,
+     18154
+    ],
+    [
+     11138,
+     18224
+    ],
+    [
+     11134,
+     18332
+    ],
+    [
+     11064,
+     18406
+    ],
+    [
+     11008,
+     18410
+    ],
+    [
+     10958,
+     18432
+    ],
+    [
+     10958,
+     18512
+    ],
+    [
+     11078,
+     18616
+    ],
+    [
+     11084,
+     18650
+    ],
+    [
+     11140,
+     18674
+    ],
+    [
+     11248,
+     18670
+    ],
+    [
+     11250,
+     18628
+    ],
+    [
+     11316,
+     18562
+    ],
+    [
+     11400,
+     18566
+    ],
+    [
+     11470,
+     18636
+    ],
+    [
+     11474,
+     18704
+    ],
+    [
+     11500,
+     18714
+    ],
+    [
+     11570,
+     18784
+    ],
+    [
+     11504,
+     18850
+    ],
+    [
+     11470,
+     18852
+    ],
+    [
+     11462,
+     18904
+    ],
+    [
+     11474,
+     18980
+    ],
+    [
+     11458,
+     19008
+    ],
+    [
+     11458,
+     19044
+    ],
+    [
+     11410,
+     19100
+    ],
+    [
+     11424,
+     19114
+    ],
+    [
+     11724,
+     19106
+    ],
+    [
+     11730,
+     19100
+    ],
+    [
+     11696,
+     19066
+    ],
+    [
+     11652,
+     19098
+    ],
+    [
+     11542,
+     18980
+    ],
+    [
+     11554,
+     18952
+    ],
+    [
+     11550,
+     18840
+    ],
+    [
+     11554,
+     18820
+    ],
+    [
+     11620,
+     18754
+    ],
+    [
+     11648,
+     18758
+    ],
+    [
+     11716,
+     18686
+    ],
+    [
+     11768,
+     18734
+    ],
+    [
+     11782,
+     18720
+    ],
+    [
+     11770,
+     18656
+    ],
+    [
+     11802,
+     18596
+    ],
+    [
+     11802,
+     18476
+    ],
+    [
+     11676,
+     18334
+    ],
+    [
+     11616,
+     18330
+    ],
+    [
+     11540,
+     18398
+    ],
+    [
+     11520,
+     18378
+    ],
+    [
+     11472,
+     18386
+    ],
+    [
+     11406,
+     18320
+    ],
+    [
+     11442,
+     18272
+    ],
+    [
+     11438,
+     18140
+    ],
+    [
+     11320,
+     18134
+    ],
+    [
+     11296,
+     18150
+    ],
+    [
+     11230,
+     18084
+    ],
+    [
+     11238,
+     18064
+    ],
+    [
+     11220,
+     18046
+    ]
+   ]
+  },
+  {
+   "name": "Petrovka (N) - Beregovoye (RKKA 1:100 000 sheet, outer blob 40)",
+   "pts": [
+    [
+     11266,
+     18380
+    ],
+    [
+     11330,
+     18452
+    ],
+    [
+     11326,
+     18488
+    ],
+    [
+     11260,
+     18554
+    ],
+    [
+     11194,
+     18488
+    ],
+    [
+     11190,
+     18452
+    ],
+    [
+     11266,
+     18380
+    ]
+   ]
+  },
+  {
+   "name": "Petrovka (N) - Beregovoye (RKKA 1:100 000 sheet, outer blob 40)",
+   "pts": [
+    [
+     11346,
+     18284
+    ],
+    [
+     11410,
+     18356
+    ],
+    [
+     11332,
+     18422
+    ],
+    [
+     11266,
+     18356
+    ],
+    [
+     11346,
+     18284
+    ]
+   ]
+  },
+  {
+   "name": "Petrovka (N) - Beregovoye (RKKA 1:100 000 sheet, outer blob 40)",
+   "pts": [
+    [
+     11776,
+     18778
+    ],
+    [
+     11718,
+     18832
+    ],
+    [
+     11730,
+     18852
+    ],
+    [
+     11730,
+     18928
+    ],
+    [
+     11768,
+     18950
+    ],
+    [
+     11864,
+     18950
+    ],
+    [
+     11862,
+     18844
+    ],
+    [
+     11776,
+     18778
+    ]
+   ]
+  },
+  {
+   "name": "Beregovoye (RKKA 1:100 000 sheet, outer blob 47)",
+   "pts": [
+    [
+     11864,
+     17822
+    ],
+    [
+     11844,
+     17822
+    ],
+    [
+     11744,
+     17930
+    ],
+    [
+     11702,
+     17932
+    ],
+    [
+     11690,
+     18020
+    ],
+    [
+     11716,
+     18030
+    ],
+    [
+     11808,
+     18122
+    ],
+    [
+     11928,
+     18126
+    ],
+    [
+     11994,
+     18192
+    ],
+    [
+     12000,
+     18242
+    ],
+    [
+     12084,
+     18250
+    ],
+    [
+     12132,
+     18202
+    ],
+    [
+     12184,
+     18206
+    ],
+    [
+     12296,
+     18314
+    ],
+    [
+     12356,
+     18350
+    ],
+    [
+     12384,
+     18362
+    ],
+    [
+     12484,
+     18362
+    ],
+    [
+     12550,
+     18428
+    ],
+    [
+     12552,
+     18462
+    ],
+    [
+     12652,
+     18526
+    ],
+    [
+     12752,
+     18562
+    ],
+    [
+     12836,
+     18562
+    ],
+    [
+     12864,
+     18550
+    ],
+    [
+     12912,
+     18598
+    ],
+    [
+     13028,
+     18602
+    ],
+    [
+     13094,
+     18668
+    ],
+    [
+     13094,
+     18736
+    ],
+    [
+     13160,
+     18786
+    ],
+    [
+     13216,
+     18814
+    ],
+    [
+     13308,
+     18814
+    ],
+    [
+     13368,
+     18870
+    ],
+    [
+     13468,
+     18862
+    ],
+    [
+     13492,
+     18886
+    ],
+    [
+     13508,
+     18878
+    ],
+    [
+     13576,
+     18950
+    ],
+    [
+     13672,
+     18950
+    ],
+    [
+     13732,
+     18890
+    ],
+    [
+     13772,
+     18890
+    ],
+    [
+     13824,
+     18838
+    ],
+    [
+     13854,
+     18832
+    ],
+    [
+     13856,
+     18714
+    ],
+    [
+     13820,
+     18714
+    ],
+    [
+     13772,
+     18762
+    ],
+    [
+     13720,
+     18770
+    ],
+    [
+     13672,
+     18742
+    ],
+    [
+     13508,
+     18734
+    ],
+    [
+     13440,
+     18702
+    ],
+    [
+     13396,
+     18698
+    ],
+    [
+     13328,
+     18630
+    ],
+    [
+     13080,
+     18634
+    ],
+    [
+     13014,
+     18568
+    ],
+    [
+     13014,
+     18524
+    ],
+    [
+     12968,
+     18522
+    ],
+    [
+     12902,
+     18456
+    ],
+    [
+     12914,
+     18376
+    ],
+    [
+     12878,
+     18336
+    ],
+    [
+     12876,
+     18302
+    ],
+    [
+     12800,
+     18310
+    ],
+    [
+     12756,
+     18266
+    ],
+    [
+     12688,
+     18246
+    ],
+    [
+     12564,
+     18118
+    ],
+    [
+     12520,
+     18118
+    ],
+    [
+     12444,
+     18086
+    ],
+    [
+     12384,
+     18086
+    ],
+    [
+     12356,
+     18074
+    ],
+    [
+     12284,
+     18070
+    ],
+    [
+     12272,
+     18082
+    ],
+    [
+     12180,
+     18002
+    ],
+    [
+     12020,
+     17954
+    ],
+    [
+     11988,
+     17922
+    ],
+    [
+     11952,
+     17910
+    ],
+    [
+     11864,
+     17822
+    ]
+   ]
+  },
+  {
+   "name": "Olkhovsky - Veselyi (RKKA 1:100 000 sheet, outer blob 48)",
+   "pts": [
+    [
+     3848,
+     18778
+    ],
+    [
+     3838,
+     18800
+    ],
+    [
+     3840,
+     18890
+    ],
+    [
+     3896,
+     18914
+    ],
+    [
+     4010,
+     18912
+    ],
+    [
+     3990,
+     18876
+    ],
+    [
+     3988,
+     18826
+    ],
+    [
+     3948,
+     18802
+    ],
+    [
+     3872,
+     18802
+    ],
+    [
+     3848,
+     18778
+    ]
+   ]
+  },
+  {
+   "name": "Olkhovsky (S) (RKKA 1:100 000 sheet, outer blob 56)",
+   "pts": [
+    [
+     2580,
+     18278
+    ],
+    [
+     2528,
+     18290
+    ],
+    [
+     2472,
+     18286
+    ],
+    [
+     2466,
+     18296
+    ],
+    [
+     2486,
+     18592
+    ],
+    [
+     2492,
+     18602
+    ],
+    [
+     2560,
+     18602
+    ],
+    [
+     2584,
+     18614
+    ],
+    [
+     2644,
+     18602
+    ],
+    [
+     2714,
+     18672
+    ],
+    [
+     2744,
+     18746
+    ],
+    [
+     2804,
+     18746
+    ],
+    [
+     2806,
+     18648
+    ],
+    [
+     2786,
+     18588
+    ],
+    [
+     2702,
+     18516
+    ],
+    [
+     2686,
+     18456
+    ],
+    [
+     2686,
+     18296
+    ],
+    [
+     2616,
+     18294
+    ],
+    [
+     2580,
+     18278
+    ]
+   ]
+  },
+  {
+   "name": "Olkhovsky - Veselyi (RKKA 1:100 000 sheet, outer blob 48)",
+   "pts": [
+    [
+     3220,
+     17810
+    ],
+    [
+     3120,
+     17810
+    ],
+    [
+     3106,
+     17908
+    ],
+    [
+     3094,
+     17924
+    ],
+    [
+     2988,
+     18018
+    ],
+    [
+     2946,
+     18020
+    ],
+    [
+     2954,
+     18132
+    ],
+    [
+     2984,
+     18154
+    ],
+    [
+     3040,
+     18154
+    ],
+    [
+     3120,
+     18202
+    ],
+    [
+     3192,
+     18202
+    ],
+    [
+     3258,
+     18268
+    ],
+    [
+     3264,
+     18290
+    ],
+    [
+     3276,
+     18286
+    ],
+    [
+     3364,
+     18338
+    ],
+    [
+     3432,
+     18342
+    ],
+    [
+     3498,
+     18408
+    ],
+    [
+     3504,
+     18486
+    ],
+    [
+     3548,
+     18518
+    ],
+    [
+     3632,
+     18518
+    ],
+    [
+     3698,
+     18584
+    ],
+    [
+     3698,
+     18664
+    ],
+    [
+     3724,
+     18706
+    ],
+    [
+     3784,
+     18702
+    ],
+    [
+     3814,
+     18728
+    ],
+    [
+     3818,
+     18604
+    ],
+    [
+     3790,
+     18560
+    ],
+    [
+     3856,
+     18494
+    ],
+    [
+     3888,
+     18510
+    ],
+    [
+     3972,
+     18498
+    ],
+    [
+     3988,
+     18514
+    ],
+    [
+     4068,
+     18502
+    ],
+    [
+     4104,
+     18518
+    ],
+    [
+     4174,
+     18448
+    ],
+    [
+     4132,
+     18406
+    ],
+    [
+     4076,
+     18458
+    ],
+    [
+     4032,
+     18414
+    ],
+    [
+     3988,
+     18414
+    ],
+    [
+     3972,
+     18426
+    ],
+    [
+     3892,
+     18422
+    ],
+    [
+     3826,
+     18356
+    ],
+    [
+     3830,
+     18240
+    ],
+    [
+     3732,
+     18238
+    ],
+    [
+     3658,
+     18164
+    ],
+    [
+     3740,
+     18082
+    ],
+    [
+     3786,
+     18080
+    ],
+    [
+     3784,
+     18026
+    ],
+    [
+     3676,
+     18034
+    ],
+    [
+     3678,
+     18068
+    ],
+    [
+     3706,
+     18096
+    ],
+    [
+     3640,
+     18162
+    ],
+    [
+     3564,
+     18166
+    ],
+    [
+     3562,
+     18188
+    ],
+    [
+     3492,
+     18258
+    ],
+    [
+     3460,
+     18246
+    ],
+    [
+     3408,
+     18198
+    ],
+    [
+     3284,
+     18198
+    ],
+    [
+     3268,
+     18214
+    ],
+    [
+     3202,
+     18148
+    ],
+    [
+     3194,
+     18008
+    ],
+    [
+     3306,
+     17880
+    ],
+    [
+     3220,
+     17810
+    ]
+   ]
+  },
+  {
+   "name": "Olkhovsky - Veselyi (RKKA 1:100 000 sheet, outer blob 48)",
+   "pts": [
+    [
+     3774,
+     18420
+    ],
+    [
+     3842,
+     18492
+    ],
+    [
+     3776,
+     18558
+    ],
+    [
+     3720,
+     18566
+    ],
+    [
+     3642,
+     18488
+    ],
+    [
+     3712,
+     18418
+    ],
+    [
+     3774,
+     18420
+    ]
+   ]
+  },
+  {
+   "name": "Olkhovsky - Veselyi (RKKA 1:100 000 sheet, outer blob 48)",
+   "pts": [
+    [
+     3666,
+     18268
+    ],
+    [
+     3730,
+     18332
+    ],
+    [
+     3734,
+     18376
+    ],
+    [
+     3668,
+     18446
+    ],
+    [
+     3554,
+     18332
+    ],
+    [
+     3620,
+     18266
+    ],
+    [
+     3666,
+     18268
+    ]
+   ]
+  },
+  {
+   "name": "Olkhovsky (W street) (RKKA 1:100 000 sheet, outer blob 61)",
+   "pts": [
+    [
+     1200,
+     18402
+    ],
+    [
+     1056,
+     18454
+    ],
+    [
+     1012,
+     18490
+    ],
+    [
+     968,
+     18478
+    ],
+    [
+     844,
+     18478
+    ],
+    [
+     716,
+     18506
+    ],
+    [
+     718,
+     18592
+    ],
+    [
+     736,
+     18594
+    ],
+    [
+     764,
+     18570
+    ],
+    [
+     848,
+     18578
+    ],
+    [
+     872,
+     18554
+    ],
+    [
+     984,
+     18566
+    ],
+    [
+     1012,
+     18546
+    ],
+    [
+     1092,
+     18554
+    ],
+    [
+     1116,
+     18542
+    ],
+    [
+     1188,
+     18542
+    ],
+    [
+     1288,
+     18502
+    ],
+    [
+     1294,
+     18408
+    ],
+    [
+     1200,
+     18402
+    ]
+   ]
+  },
+  {
+   "name": "hamlet S of svkh. im. Voroshilova (RKKA 1:100 000 sheet, outer blob 62)",
+   "pts": [
+    [
+     9724,
+     18402
+    ],
+    [
+     9568,
+     18414
+    ],
+    [
+     9566,
+     18440
+    ],
+    [
+     9522,
+     18504
+    ],
+    [
+     9522,
+     18580
+    ],
+    [
+     9604,
+     18582
+    ],
+    [
+     9672,
+     18518
+    ],
+    [
+     9760,
+     18518
+    ],
+    [
+     9778,
+     18408
+    ],
+    [
+     9724,
+     18402
+    ]
+   ]
+  },
+  {
+   "name": "Olkhovsky (river street) (RKKA 1:100 000 sheet, outer blob 67)",
+   "pts": [
+    [
+     908,
+     17882
+    ],
+    [
+     792,
+     17882
+    ],
+    [
+     712,
+     17954
+    ],
+    [
+     548,
+     17962
+    ],
+    [
+     550,
+     18072
+    ],
+    [
+     676,
+     18214
+    ],
+    [
+     836,
+     18218
+    ],
+    [
+     884,
+     18230
+    ],
+    [
+     948,
+     18198
+    ],
+    [
+     988,
+     18230
+    ],
+    [
+     1020,
+     18210
+    ],
+    [
+     1148,
+     18218
+    ],
+    [
+     1180,
+     18190
+    ],
+    [
+     1212,
+     18222
+    ],
+    [
+     1232,
+     18210
+    ],
+    [
+     1308,
+     18282
+    ],
+    [
+     1404,
+     18282
+    ],
+    [
+     1464,
+     18342
+    ],
+    [
+     1496,
+     18342
+    ],
+    [
+     1524,
+     18314
+    ],
+    [
+     1552,
+     18342
+    ],
+    [
+     1624,
+     18346
+    ],
+    [
+     1688,
+     18406
+    ],
+    [
+     1708,
+     18406
+    ],
+    [
+     1770,
+     18348
+    ],
+    [
+     1778,
+     18236
+    ],
+    [
+     1766,
+     18204
+    ],
+    [
+     1784,
+     18178
+    ],
+    [
+     1708,
+     18178
+    ],
+    [
+     1644,
+     18242
+    ],
+    [
+     1620,
+     18242
+    ],
+    [
+     1556,
+     18178
+    ],
+    [
+     1512,
+     18186
+    ],
+    [
+     1480,
+     18170
+    ],
+    [
+     1414,
+     18104
+    ],
+    [
+     1414,
+     18064
+    ],
+    [
+     1368,
+     18006
+    ],
+    [
+     1304,
+     17994
+    ],
+    [
+     1240,
+     18002
+    ],
+    [
+     1172,
+     17926
+    ],
+    [
+     1140,
+     17930
+    ],
+    [
+     1124,
+     17946
+    ],
+    [
+     1060,
+     17926
+    ],
+    [
+     960,
+     17926
+    ],
+    [
+     908,
+     17882
+    ]
+   ]
+  },
+  {
+   "name": "Olkhovsky (river street) (RKKA 1:100 000 sheet, outer blob 67)",
+   "pts": [
+    [
+     1214,
+     17984
+    ],
+    [
+     1286,
+     18056
+    ],
+    [
+     1286,
+     18096
+    ],
+    [
+     1208,
+     18174
+    ],
+    [
+     1138,
+     18104
+    ],
+    [
+     1134,
+     18056
+    ],
+    [
+     1214,
+     17984
+    ]
+   ]
+  },
+  {
+   "name": "hamlet S of svkh. im. Voroshilova (RKKA 1:100 000 sheet, outer blob 68)",
+   "pts": [
+    [
+     10188,
+     18010
+    ],
+    [
+     10092,
+     18010
+    ],
+    [
+     10048,
+     18046
+    ],
+    [
+     9904,
+     18050
+    ],
+    [
+     9772,
+     18078
+    ],
+    [
+     9750,
+     18164
+    ],
+    [
+     9684,
+     18230
+    ],
+    [
+     9636,
+     18186
+    ],
+    [
+     9596,
+     18186
+    ],
+    [
+     9586,
+     18252
+    ],
+    [
+     9640,
+     18266
+    ],
+    [
+     9720,
+     18246
+    ],
+    [
+     9792,
+     18254
+    ],
+    [
+     9852,
+     18230
+    ],
+    [
+     9858,
+     18204
+    ],
+    [
+     9924,
+     18138
+    ],
+    [
+     10048,
+     18150
+    ],
+    [
+     10220,
+     18146
+    ],
+    [
+     10222,
+     18040
+    ],
+    [
+     10188,
+     18010
+    ]
+   ]
+  },
+  {
+   "name": "Barchevka (N) (RKKA 1:100 000 sheet, outer blob 71)",
+   "pts": [
+    [
+     17920,
+     16978
+    ],
+    [
+     17914,
+     17016
+    ],
+    [
+     17926,
+     17056
+    ],
+    [
+     17962,
+     17100
+    ],
+    [
+     17914,
+     17148
+    ],
+    [
+     17910,
+     17280
+    ],
+    [
+     17926,
+     17320
+    ],
+    [
+     17898,
+     17348
+    ],
+    [
+     17890,
+     17396
+    ],
+    [
+     17826,
+     17460
+    ],
+    [
+     17826,
+     17516
+    ],
+    [
+     17856,
+     17518
+    ],
+    [
+     17922,
+     17584
+    ],
+    [
+     17930,
+     17664
+    ],
+    [
+     17990,
+     17728
+    ],
+    [
+     17982,
+     17952
+    ],
+    [
+     18044,
+     18022
+    ],
+    [
+     18132,
+     18022
+    ],
+    [
+     18154,
+     17948
+    ],
+    [
+     18166,
+     17752
+    ],
+    [
+     18094,
+     17684
+    ],
+    [
+     18094,
+     17668
+    ],
+    [
+     18160,
+     17602
+    ],
+    [
+     18194,
+     17628
+    ],
+    [
+     17920,
+     16978
+    ]
+   ]
+  },
+  {
+   "name": "Veselyi (RKKA 1:100 000 sheet, outer blob 72)",
+   "pts": [
+    [
+     4012,
+     17798
+    ],
+    [
+     3966,
+     17856
+    ],
+    [
+     3968,
+     17954
+    ],
+    [
+     4050,
+     17952
+    ],
+    [
+     4046,
+     17900
+    ],
+    [
+     4062,
+     17848
+    ],
+    [
+     4012,
+     17798
+    ]
+   ]
+  },
+  {
+   "name": "Kurlov (RKKA 1:100 000 sheet, outer blob 73)",
+   "pts": [
+    [
+     4680,
+     17854
+    ],
+    [
+     4618,
+     17856
+    ],
+    [
+     4612,
+     17938
+    ],
+    [
+     4686,
+     17928
+    ],
+    [
+     4680,
+     17854
+    ]
+   ]
+  },
+  {
+   "name": "Beregovoye (W) (RKKA 1:100 000 sheet, outer blob 74)",
+   "pts": [
+    [
+     11656,
+     17646
+    ],
+    [
+     11546,
+     17648
+    ],
+    [
+     11546,
+     17756
+    ],
+    [
+     11480,
+     17822
+    ],
+    [
+     11446,
+     17824
+    ],
+    [
+     11456,
+     17914
+    ],
+    [
+     11536,
+     17918
+    ],
+    [
+     11534,
+     17832
+    ],
+    [
+     11600,
+     17766
+    ],
+    [
+     11666,
+     17760
+    ],
+    [
+     11666,
+     17664
+    ],
+    [
+     11656,
+     17646
+    ]
+   ]
+  },
+  {
+   "name": "Veselyi (RKKA 1:100 000 sheet, outer blob 72)",
+   "pts": [
+    [
+     3532,
+     17402
+    ],
+    [
+     3392,
+     17406
+    ],
+    [
+     3382,
+     17436
+    ],
+    [
+     3316,
+     17502
+    ],
+    [
+     3280,
+     17506
+    ],
+    [
+     3248,
+     17534
+    ],
+    [
+     3224,
+     17530
+    ],
+    [
+     3214,
+     17544
+    ],
+    [
+     3230,
+     17560
+    ],
+    [
+     3234,
+     17660
+    ],
+    [
+     3316,
+     17674
+    ],
+    [
+     3384,
+     17602
+    ],
+    [
+     3564,
+     17602
+    ],
+    [
+     3820,
+     17630
+    ],
+    [
+     3884,
+     17626
+    ],
+    [
+     3954,
+     17696
+    ],
+    [
+     3954,
+     17744
+    ],
+    [
+     4008,
+     17798
+    ],
+    [
+     4034,
+     17772
+    ],
+    [
+     4038,
+     17732
+    ],
+    [
+     4018,
+     17708
+    ],
+    [
+     4018,
+     17660
+    ],
+    [
+     3938,
+     17588
+    ],
+    [
+     3962,
+     17560
+    ],
+    [
+     3948,
+     17470
+    ],
+    [
+     3896,
+     17522
+    ],
+    [
+     3748,
+     17522
+    ],
+    [
+     3666,
+     17448
+    ],
+    [
+     3660,
+     17422
+    ],
+    [
+     3532,
+     17402
+    ]
+   ]
+  },
+  {
+   "name": "Ilyinsky (RKKA 1:100 000 sheet, outer blob 77)",
+   "pts": [
+    [
+     696,
+     17274
+    ],
+    [
+     584,
+     17290
+    ],
+    [
+     488,
+     17390
+    ],
+    [
+     456,
+     17390
+    ],
+    [
+     434,
+     17404
+    ],
+    [
+     434,
+     17488
+    ],
+    [
+     462,
+     17548
+    ],
+    [
+     450,
+     17620
+    ],
+    [
+     466,
+     17656
+    ],
+    [
+     466,
+     17700
+    ],
+    [
+     548,
+     17774
+    ],
+    [
+     602,
+     17776
+    ],
+    [
+     586,
+     17704
+    ],
+    [
+     530,
+     17648
+    ],
+    [
+     550,
+     17580
+    ],
+    [
+     550,
+     17472
+    ],
+    [
+     620,
+     17402
+    ],
+    [
+     660,
+     17402
+    ],
+    [
+     682,
+     17384
+    ],
+    [
+     698,
+     17344
+    ],
+    [
+     696,
+     17274
+    ]
+   ]
+  },
+  {
+   "name": "Kusty (RKKA 1:100 000 sheet, outer blob 75)",
+   "pts": [
+    [
+     15736,
+     17158
+    ],
+    [
+     15676,
+     17166
+    ],
+    [
+     15644,
+     17198
+    ],
+    [
+     15608,
+     17202
+    ],
+    [
+     15558,
+     17236
+    ],
+    [
+     15560,
+     17670
+    ],
+    [
+     15636,
+     17670
+    ],
+    [
+     15652,
+     17654
+    ],
+    [
+     15696,
+     17682
+    ],
+    [
+     15810,
+     17680
+    ],
+    [
+     15810,
+     17320
+    ],
+    [
+     15852,
+     17278
+    ],
+    [
+     15900,
+     17278
+    ],
+    [
+     15958,
+     17260
+    ],
+    [
+     15960,
+     17182
+    ],
+    [
+     15760,
+     17182
+    ],
+    [
+     15736,
+     17158
+    ]
+   ]
+  },
+  {
+   "name": "Kurlov (RKKA 1:100 000 sheet, outer blob 84)",
+   "pts": [
+    [
+     4636,
+     17442
+    ],
+    [
+     4172,
+     17498
+    ],
+    [
+     4126,
+     17520
+    ],
+    [
+     4126,
+     17572
+    ],
+    [
+     4140,
+     17602
+    ],
+    [
+     4236,
+     17602
+    ],
+    [
+     4424,
+     17558
+    ],
+    [
+     4576,
+     17546
+    ],
+    [
+     4632,
+     17574
+    ],
+    [
+     4732,
+     17574
+    ],
+    [
+     4738,
+     17484
+    ],
+    [
+     4688,
+     17450
+    ],
+    [
+     4636,
+     17442
+    ]
+   ]
+  },
+  {
+   "name": "Veselyi (RKKA 1:100 000 sheet, outer blob 72)",
+   "pts": [
+    [
+     2832,
+     17006
+    ],
+    [
+     2724,
+     17094
+    ],
+    [
+     2670,
+     17096
+    ],
+    [
+     2670,
+     17200
+    ],
+    [
+     2690,
+     17272
+    ],
+    [
+     2634,
+     17328
+    ],
+    [
+     2634,
+     17428
+    ],
+    [
+     2720,
+     17434
+    ],
+    [
+     2804,
+     17474
+    ],
+    [
+     2968,
+     17522
+    ],
+    [
+     3112,
+     17526
+    ],
+    [
+     3106,
+     17508
+    ],
+    [
+     3158,
+     17456
+    ],
+    [
+     3150,
+     17348
+    ],
+    [
+     3132,
+     17338
+    ],
+    [
+     3024,
+     17338
+    ],
+    [
+     2958,
+     17272
+    ],
+    [
+     2958,
+     17252
+    ],
+    [
+     2878,
+     17184
+    ],
+    [
+     2874,
+     17064
+    ],
+    [
+     2832,
+     17006
+    ]
+   ]
+  },
+  {
+   "name": "Ilyinsky (W) (RKKA 1:100 000 sheet, outer blob 86)",
+   "pts": [
+    [
+     88,
+     17246
+    ],
+    [
+     62,
+     17248
+    ],
+    [
+     62,
+     17468
+    ],
+    [
+     120,
+     17470
+    ],
+    [
+     152,
+     17438
+    ],
+    [
+     200,
+     17486
+    ],
+    [
+     276,
+     17494
+    ],
+    [
+     278,
+     17428
+    ],
+    [
+     200,
+     17418
+    ],
+    [
+     130,
+     17348
+    ],
+    [
+     130,
+     17292
+    ],
+    [
+     88,
+     17246
+    ]
+   ]
+  },
+  {
+   "name": "Veselyi (RKKA 1:100 000 sheet, outer blob 72)",
+   "pts": [
+    [
+     2548,
+     16682
+    ],
+    [
+     2452,
+     16682
+    ],
+    [
+     2450,
+     16768
+    ],
+    [
+     2518,
+     16836
+    ],
+    [
+     2518,
+     16856
+    ],
+    [
+     2554,
+     16892
+    ],
+    [
+     2560,
+     16922
+    ],
+    [
+     2652,
+     16922
+    ],
+    [
+     2712,
+     16862
+    ],
+    [
+     2728,
+     16862
+    ],
+    [
+     2806,
+     16936
+    ],
+    [
+     2806,
+     16956
+    ],
+    [
+     2836,
+     16986
+    ],
+    [
+     2910,
+     16928
+    ],
+    [
+     2908,
+     16846
+    ],
+    [
+     2804,
+     16846
+    ],
+    [
+     2780,
+     16858
+    ],
+    [
+     2714,
+     16792
+    ],
+    [
+     2684,
+     16698
+    ],
+    [
+     2608,
+     16710
+    ],
+    [
+     2576,
+     16686
+    ],
+    [
+     2548,
+     16682
+    ]
+   ]
+  },
+  {
+   "name": "Petrovka (NE) (RKKA 1:100 000 sheet, outer blob 89)",
+   "pts": [
+    [
+     11540,
+     16762
+    ],
+    [
+     11534,
+     16792
+    ],
+    [
+     11546,
+     16836
+    ],
+    [
+     11486,
+     16896
+    ],
+    [
+     11474,
+     16928
+    ],
+    [
+     11476,
+     16986
+    ],
+    [
+     11544,
+     16986
+    ],
+    [
+     11546,
+     16940
+    ],
+    [
+     11626,
+     16856
+    ],
+    [
+     11626,
+     16772
+    ],
+    [
+     11540,
+     16762
+    ]
+   ]
+  },
+  {
+   "name": "Petrovka (N, single house) (RKKA 1:100 000 sheet, outer blob 90)",
+   "pts": [
+    [
+     8792,
+     16806
+    ],
+    [
+     8766,
+     16808
+    ],
+    [
+     8766,
+     16892
+    ],
+    [
+     8788,
+     16914
+    ],
+    [
+     8856,
+     16914
+    ],
+    [
+     8858,
+     16844
+    ],
+    [
+     8792,
+     16806
+    ]
+   ]
+  },
+  {
+   "name": "Petrovka (RKKA 1:100 000 sheet, outer blob 91)",
+   "pts": [
+    [
+     11104,
+     16426
+    ],
+    [
+     10650,
+     16428
+    ],
+    [
+     10702,
+     16492
+    ],
+    [
+     10718,
+     16560
+    ],
+    [
+     10874,
+     16720
+    ],
+    [
+     10920,
+     16794
+    ],
+    [
+     10988,
+     16838
+    ],
+    [
+     11096,
+     16846
+    ],
+    [
+     11090,
+     16800
+    ],
+    [
+     11106,
+     16772
+    ],
+    [
+     11106,
+     16732
+    ],
+    [
+     11094,
+     16720
+    ],
+    [
+     11142,
+     16672
+    ],
+    [
+     11142,
+     16652
+    ],
+    [
+     11066,
+     16584
+    ],
+    [
+     11066,
+     16568
+    ],
+    [
+     11102,
+     16524
+    ],
+    [
+     11104,
+     16426
+    ]
+   ]
+  },
+  {
+   "name": "Petrovka (NE) (RKKA 1:100 000 sheet, outer blob 89)",
+   "pts": [
+    [
+     11380,
+     16634
+    ],
+    [
+     11334,
+     16668
+    ],
+    [
+     11380,
+     16714
+    ],
+    [
+     11414,
+     16668
+    ],
+    [
+     11380,
+     16634
+    ]
+   ]
+  },
+  {
+   "name": "Barchevka (N) (RKKA 1:100 000 sheet, outer blob 71)",
+   "pts": [
+    [
+     17956,
+     16426
+    ],
+    [
+     17902,
+     16432
+    ],
+    [
+     17992,
+     16646
+    ],
+    [
+     17994,
+     16592
+    ],
+    [
+     17974,
+     16548
+    ],
+    [
+     17978,
+     16472
+    ],
+    [
+     17956,
+     16426
+    ]
+   ]
+  },
+  {
+   "name": "Polezhayev (E) (RKKA 1:100 000 sheet, outer blob 99)",
+   "pts": [
+    [
+     9084,
+     16426
+    ],
+    [
+     8994,
+     16428
+    ],
+    [
+     8990,
+     16496
+    ],
+    [
+     8950,
+     16536
+    ],
+    [
+     8960,
+     16638
+    ],
+    [
+     9018,
+     16636
+    ],
+    [
+     9018,
+     16576
+    ],
+    [
+     9086,
+     16508
+    ],
+    [
+     9084,
+     16426
+    ]
+   ]
+  },
+  {
+   "name": "Krasny Oktyabr (N) (RKKA 1:100 000 sheet, outer blob 114)",
+   "pts": [
+    [
+     2336,
+     15046
+    ],
+    [
+     2232,
+     15054
+    ],
+    [
+     2140,
+     15134
+    ],
+    [
+     2084,
+     15122
+    ],
+    [
+     1980,
+     15122
+    ],
+    [
+     1958,
+     15132
+    ],
+    [
+     1958,
+     15196
+    ],
+    [
+     1888,
+     15266
+    ],
+    [
+     1848,
+     15266
+    ],
+    [
+     1814,
+     15332
+    ],
+    [
+     1818,
+     15452
+    ],
+    [
+     1874,
+     15508
+    ],
+    [
+     1876,
+     15526
+    ],
+    [
+     1964,
+     15538
+    ],
+    [
+     2028,
+     15514
+    ],
+    [
+     2094,
+     15580
+    ],
+    [
+     2096,
+     15622
+    ],
+    [
+     2202,
+     15624
+    ],
+    [
+     2210,
+     15512
+    ],
+    [
+     2154,
+     15444
+    ],
+    [
+     2222,
+     15376
+    ],
+    [
+     2194,
+     15348
+    ],
+    [
+     2268,
+     15274
+    ],
+    [
+     2312,
+     15250
+    ],
+    [
+     2366,
+     15248
+    ],
+    [
+     2362,
+     15140
+    ],
+    [
+     2338,
+     15104
+    ],
+    [
+     2336,
+     15046
+    ]
+   ]
+  },
+  {
+   "name": "Klyuchi (RKKA 1:100 000 sheet, outer blob 127)",
+   "pts": [
+    [
+     3792,
+     14846
+    ],
+    [
+     3698,
+     14848
+    ],
+    [
+     3702,
+     14872
+    ],
+    [
+     3682,
+     14904
+    ],
+    [
+     3678,
+     14952
+    ],
+    [
+     3698,
+     14980
+    ],
+    [
+     3700,
+     15014
+    ],
+    [
+     3836,
+     15022
+    ],
+    [
+     3900,
+     14958
+    ],
+    [
+     3958,
+     14960
+    ],
+    [
+     3956,
+     14874
+    ],
+    [
+     3892,
+     14882
+    ],
+    [
+     3848,
+     14854
+    ],
+    [
+     3816,
+     14858
+    ],
+    [
+     3792,
+     14846
+    ]
+   ]
+  },
+  {
+   "name": "Krasny Oktyabr (RKKA 1:100 000 sheet, outer blob 130)",
+   "pts": [
+    [
+     3368,
+     13574
+    ],
+    [
+     3312,
+     13630
+    ],
+    [
+     3278,
+     13632
+    ],
+    [
+     3282,
+     13728
+    ],
+    [
+     3324,
+     13730
+    ],
+    [
+     3390,
+     13796
+    ],
+    [
+     3268,
+     13938
+    ],
+    [
+     3112,
+     13930
+    ],
+    [
+     3006,
+     14060
+    ],
+    [
+     3006,
+     14112
+    ],
+    [
+     2936,
+     14182
+    ],
+    [
+     2904,
+     14182
+    ],
+    [
+     2898,
+     14204
+    ],
+    [
+     2832,
+     14270
+    ],
+    [
+     2810,
+     14272
+    ],
+    [
+     2806,
+     14388
+    ],
+    [
+     2826,
+     14432
+    ],
+    [
+     2746,
+     14540
+    ],
+    [
+     2550,
+     14748
+    ],
+    [
+     2548,
+     14862
+    ],
+    [
+     2676,
+     14862
+    ],
+    [
+     2702,
+     14816
+    ],
+    [
+     2836,
+     14674
+    ],
+    [
+     2868,
+     14702
+    ],
+    [
+     2920,
+     14650
+    ],
+    [
+     2960,
+     14650
+    ],
+    [
+     2922,
+     14608
+    ],
+    [
+     2970,
+     14560
+    ],
+    [
+     2994,
+     14492
+    ],
+    [
+     3062,
+     14420
+    ],
+    [
+     3062,
+     14404
+    ],
+    [
+     3128,
+     14338
+    ],
+    [
+     3164,
+     14334
+    ],
+    [
+     3196,
+     14302
+    ],
+    [
+     3262,
+     14300
+    ],
+    [
+     3246,
+     14252
+    ],
+    [
+     3262,
+     14216
+    ],
+    [
+     3342,
+     14088
+    ],
+    [
+     3466,
+     13964
+    ],
+    [
+     3534,
+     13800
+    ],
+    [
+     3534,
+     13704
+    ],
+    [
+     3508,
+     13702
+    ],
+    [
+     3492,
+     13686
+    ],
+    [
+     3440,
+     13686
+    ],
+    [
+     3374,
+     13620
+    ],
+    [
+     3368,
+     13574
+    ]
+   ]
+  },
+  {
+   "name": "Klyuchi (S) (RKKA 1:100 000 sheet, outer blob 143)",
+   "pts": [
+    [
+     3880,
+     13934
+    ],
+    [
+     3818,
+     13944
+    ],
+    [
+     3820,
+     14054
+    ],
+    [
+     3906,
+     14056
+    ],
+    [
+     3914,
+     13940
+    ],
+    [
+     3880,
+     13934
+    ]
+   ]
+  },
+  {
+   "name": "Krasny Oktyabr - Prokhorovka (W bank) (RKKA 1:100 000 sheet, outer blob 154)",
+   "pts": [
+    [
+     4052,
+     13138
+    ],
+    [
+     3824,
+     13294
+    ],
+    [
+     3740,
+     13210
+    ],
+    [
+     3640,
+     13210
+    ],
+    [
+     3594,
+     13240
+    ],
+    [
+     3590,
+     13328
+    ],
+    [
+     3628,
+     13330
+    ],
+    [
+     3664,
+     13350
+    ],
+    [
+     3692,
+     13346
+    ],
+    [
+     3758,
+     13412
+    ],
+    [
+     3722,
+     13472
+    ],
+    [
+     3728,
+     13574
+    ],
+    [
+     3848,
+     13566
+    ],
+    [
+     3960,
+     13486
+    ],
+    [
+     4036,
+     13398
+    ],
+    [
+     4054,
+     13396
+    ],
+    [
+     4052,
+     13138
+    ]
+   ]
+  },
+  {
+   "name": "Gryaznoye (N) (RKKA 1:100 000 sheet, outer blob 183)",
+   "pts": [
+    [
+     2632,
+     11530
+    ],
+    [
+     2538,
+     11532
+    ],
+    [
+     2538,
+     11636
+    ],
+    [
+     2652,
+     11766
+    ],
+    [
+     2748,
+     11778
+    ],
+    [
+     2742,
+     11644
+    ],
+    [
+     2698,
+     11576
+    ],
+    [
+     2632,
+     11530
+    ]
+   ]
+  },
+  {
+   "name": "Gryaznoye (N) (RKKA 1:100 000 sheet, outer blob 185)",
+   "pts": [
+    [
+     2000,
+     11386
+    ],
+    [
+     1898,
+     11392
+    ],
+    [
+     1906,
+     11512
+    ],
+    [
+     1966,
+     11572
+    ],
+    [
+     1968,
+     11606
+    ],
+    [
+     2030,
+     11604
+    ],
+    [
+     2034,
+     11516
+    ],
+    [
+     2010,
+     11476
+    ],
+    [
+     2000,
+     11386
+    ]
+   ]
+  },
+  {
+   "name": "Gryaznoye (RKKA 1:100 000 sheet, outer blob 190)",
+   "pts": [
+    [
+     2144,
+     10626
+    ],
+    [
+     2040,
+     10730
+    ],
+    [
+     2024,
+     10718
+    ],
+    [
+     1924,
+     10718
+    ],
+    [
+     1848,
+     10802
+    ],
+    [
+     1834,
+     10804
+    ],
+    [
+     1810,
+     10912
+    ],
+    [
+     1814,
+     11032
+    ],
+    [
+     1820,
+     11042
+    ],
+    [
+     1904,
+     11042
+    ],
+    [
+     1914,
+     10864
+    ],
+    [
+     1980,
+     10798
+    ],
+    [
+     2012,
+     10810
+    ],
+    [
+     2072,
+     10750
+    ],
+    [
+     2104,
+     10746
+    ],
+    [
+     2230,
+     10860
+    ],
+    [
+     2226,
+     10892
+    ],
+    [
+     2202,
+     10928
+    ],
+    [
+     2206,
+     11048
+    ],
+    [
+     2222,
+     11096
+    ],
+    [
+     2156,
+     11162
+    ],
+    [
+     2104,
+     11154
+    ],
+    [
+     2080,
+     11170
+    ],
+    [
+     2032,
+     11170
+    ],
+    [
+     2030,
+     11228
+    ],
+    [
+     2136,
+     11242
+    ],
+    [
+     2142,
+     11232
+    ],
+    [
+     2126,
+     11212
+    ],
+    [
+     2192,
+     11146
+    ],
+    [
+     2260,
+     11218
+    ],
+    [
+     2364,
+     11214
+    ],
+    [
+     2362,
+     11036
+    ],
+    [
+     2342,
+     10932
+    ],
+    [
+     2318,
+     10908
+    ],
+    [
+     2338,
+     10888
+    ],
+    [
+     2338,
+     10768
+    ],
+    [
+     2240,
+     10762
+    ],
+    [
+     2162,
+     10684
+    ],
+    [
+     2158,
+     10640
+    ],
+    [
+     2144,
+     10626
+    ]
+   ]
+  },
+  {
+   "name": "Gryaznoye (RKKA 1:100 000 sheet, outer blob 190)",
+   "pts": [
+    [
+     1964,
+     9878
+    ],
+    [
+     1882,
+     9880
+    ],
+    [
+     1882,
+     9972
+    ],
+    [
+     1928,
+     10026
+    ],
+    [
+     1972,
+     10026
+    ],
+    [
+     2050,
+     10104
+    ],
+    [
+     2054,
+     10176
+    ],
+    [
+     2130,
+     10252
+    ],
+    [
+     2106,
+     10300
+    ],
+    [
+     2114,
+     10560
+    ],
+    [
+     2148,
+     10602
+    ],
+    [
+     2198,
+     10552
+    ],
+    [
+     2210,
+     10484
+    ],
+    [
+     2206,
+     10352
+    ],
+    [
+     2182,
+     10260
+    ],
+    [
+     2166,
+     10244
+    ],
+    [
+     2174,
+     10224
+    ],
+    [
+     2154,
+     10196
+    ],
+    [
+     2150,
+     10080
+    ],
+    [
+     2084,
+     10070
+    ],
+    [
+     2018,
+     10004
+    ],
+    [
+     2018,
+     9936
+    ],
+    [
+     1964,
+     9878
+    ]
+   ]
+  },
+  {
+   "name": "Gryaznoye (RKKA 1:100 000 sheet, outer blob 204)",
+   "pts": [
+    [
+     1480,
+     9830
+    ],
+    [
+     1466,
+     9832
+    ],
+    [
+     1470,
+     9924
+    ],
+    [
+     1498,
+     9996
+    ],
+    [
+     1414,
+     10068
+    ],
+    [
+     1414,
+     10128
+    ],
+    [
+     1468,
+     10130
+    ],
+    [
+     1582,
+     10248
+    ],
+    [
+     1578,
+     10372
+    ],
+    [
+     1606,
+     10424
+    ],
+    [
+     1606,
+     10480
+    ],
+    [
+     1626,
+     10548
+    ],
+    [
+     1704,
+     10554
+    ],
+    [
+     1706,
+     10444
+    ],
+    [
+     1670,
+     10316
+    ],
+    [
+     1674,
+     10228
+    ],
+    [
+     1638,
+     10192
+    ],
+    [
+     1704,
+     10126
+    ],
+    [
+     1734,
+     10124
+    ],
+    [
+     1730,
+     10052
+    ],
+    [
+     1648,
+     10042
+    ],
+    [
+     1578,
+     9972
+    ],
+    [
+     1578,
+     9908
+    ],
+    [
+     1554,
+     9840
+    ],
+    [
+     1480,
+     9830
+    ]
+   ]
+  },
+  {
+   "name": "Gryaznoye (E) (RKKA 1:100 000 sheet, outer blob 213)",
+   "pts": [
+    [
+     2332,
+     9698
+    ],
+    [
+     2250,
+     9704
+    ],
+    [
+     2250,
+     9720
+    ],
+    [
+     2286,
+     9756
+    ],
+    [
+     2276,
+     9790
+    ],
+    [
+     2376,
+     9790
+    ],
+    [
+     2426,
+     9772
+    ],
+    [
+     2426,
+     9720
+    ],
+    [
+     2416,
+     9710
+    ],
+    [
+     2332,
+     9698
+    ]
+   ]
+  },
+  {
+   "name": "Gryaznoye (S) (RKKA 1:100 000 sheet, outer blob 215)",
+   "pts": [
+    [
+     1556,
+     9462
+    ],
+    [
+     1526,
+     9464
+    ],
+    [
+     1526,
+     9520
+    ],
+    [
+     1530,
+     9580
+    ],
+    [
+     1558,
+     9652
+    ],
+    [
+     1564,
+     9662
+    ],
+    [
+     1648,
+     9662
+    ],
+    [
+     1650,
+     9572
+    ],
+    [
+     1626,
+     9468
+    ],
+    [
+     1556,
+     9462
+    ]
+   ]
+  },
+  {
+   "name": "Gryaznoye (S) (RKKA 1:100 000 sheet, outer blob 218)",
+   "pts": [
+    [
+     1860,
+     8870
+    ],
+    [
+     1758,
+     8880
+    ],
+    [
+     1760,
+     8934
+    ],
+    [
+     1816,
+     8934
+    ],
+    [
+     1882,
+     9000
+    ],
+    [
+     1926,
+     9120
+    ],
+    [
+     1926,
+     9136
+    ],
+    [
+     1846,
+     9204
+    ],
+    [
+     1846,
+     9292
+    ],
+    [
+     1852,
+     9302
+    ],
+    [
+     1908,
+     9302
+    ],
+    [
+     1974,
+     9368
+    ],
+    [
+     2006,
+     9416
+    ],
+    [
+     2016,
+     9458
+    ],
+    [
+     2104,
+     9462
+    ],
+    [
+     2102,
+     9352
+    ],
+    [
+     2062,
+     9300
+    ],
+    [
+     2058,
+     9244
+    ],
+    [
+     2022,
+     9192
+    ],
+    [
+     2022,
+     9088
+    ],
+    [
+     1986,
+     9012
+    ],
+    [
+     1974,
+     8924
+    ],
+    [
+     1964,
+     8906
+    ],
+    [
+     1900,
+     8910
+    ],
+    [
+     1860,
+     8870
+    ]
+   ]
+  },
+  {
+   "name": "Gryaznoye (SE) (RKKA 1:100 000 sheet, outer blob 219)",
+   "pts": [
+    [
+     2324,
+     9182
+    ],
+    [
+     2266,
+     9192
+    ],
+    [
+     2278,
+     9288
+    ],
+    [
+     2302,
+     9312
+    ],
+    [
+     2306,
+     9368
+    ],
+    [
+     2360,
+     9422
+    ],
+    [
+     2404,
+     9422
+    ],
+    [
+     2468,
+     9402
+    ],
+    [
+     2474,
+     9324
+    ],
+    [
+     2456,
+     9322
+    ],
+    [
+     2324,
+     9182
+    ]
+   ]
+  },
+  {
+   "name": "Gryaznoye (S) (RKKA 1:100 000 sheet, outer blob 224)",
+   "pts": [
+    [
+     1544,
+     9150
+    ],
+    [
+     1466,
+     9152
+    ],
+    [
+     1462,
+     9228
+    ],
+    [
+     1472,
+     9246
+    ],
+    [
+     1550,
+     9240
+    ],
+    [
+     1544,
+     9150
+    ]
+   ]
+  },
+  {
+   "name": "Gryaznoye - Mal. Mayachki (RKKA 1:100 000 sheet, outer blob 233)",
+   "pts": [
+    [
+     1480,
+     8574
+    ],
+    [
+     1392,
+     8574
+    ],
+    [
+     1386,
+     8584
+    ],
+    [
+     1394,
+     8720
+    ],
+    [
+     1450,
+     8812
+    ],
+    [
+     1438,
+     8840
+    ],
+    [
+     1440,
+     8942
+    ],
+    [
+     1520,
+     8942
+    ],
+    [
+     1526,
+     8904
+    ],
+    [
+     1526,
+     8812
+    ],
+    [
+     1502,
+     8720
+    ],
+    [
+     1502,
+     8644
+    ],
+    [
+     1480,
+     8574
+    ]
+   ]
+  },
+  {
+   "name": "Gryaznoye - Mal. Mayachki (RKKA 1:100 000 sheet, outer blob 236)",
+   "pts": [
+    [
+     1772,
+     8186
+    ],
+    [
+     1688,
+     8186
+    ],
+    [
+     1686,
+     8268
+    ],
+    [
+     1750,
+     8436
+    ],
+    [
+     1810,
+     8496
+    ],
+    [
+     1818,
+     8644
+    ],
+    [
+     1904,
+     8646
+    ],
+    [
+     1902,
+     8548
+    ],
+    [
+     1826,
+     8468
+    ],
+    [
+     1830,
+     8344
+    ],
+    [
+     1772,
+     8186
+    ]
+   ]
+  },
+  {
+   "name": "Gryaznoye - Mal. Mayachki (RKKA 1:100 000 sheet, outer blob 243)",
+   "pts": [
+    [
+     1340,
+     8230
+    ],
+    [
+     1276,
+     8230
+    ],
+    [
+     1274,
+     8292
+    ],
+    [
+     1306,
+     8324
+    ],
+    [
+     1320,
+     8386
+    ],
+    [
+     1392,
+     8386
+    ],
+    [
+     1394,
+     8296
+    ],
+    [
+     1340,
+     8230
+    ]
+   ]
+  },
+  {
+   "name": "Mal. Mayachki (N) (RKKA 1:100 000 sheet, outer blob 248)",
+   "pts": [
+    [
+     1440,
+     7514
+    ],
+    [
+     1442,
+     7640
+    ],
+    [
+     1520,
+     7734
+    ],
+    [
+     1668,
+     7746
+    ],
+    [
+     1690,
+     7732
+    ],
+    [
+     1690,
+     7692
+    ],
+    [
+     1664,
+     7666
+    ],
+    [
+     1632,
+     7658
+    ],
+    [
+     1558,
+     7584
+    ],
+    [
+     1536,
+     7542
+    ],
+    [
+     1464,
+     7538
+    ],
+    [
+     1440,
+     7514
+    ]
+   ]
+  },
+  {
+   "name": "Mal. Mayachki (N) (RKKA 1:100 000 sheet, outer blob 251)",
+   "pts": [
+    [
+     984,
+     7450
+    ],
+    [
+     898,
+     7452
+    ],
+    [
+     904,
+     7558
+    ],
+    [
+     980,
+     7558
+    ],
+    [
+     1016,
+     7590
+    ],
+    [
+     1060,
+     7586
+    ],
+    [
+     1120,
+     7646
+    ],
+    [
+     1214,
+     7644
+    ],
+    [
+     1212,
+     7558
+    ],
+    [
+     1148,
+     7510
+    ],
+    [
+     1044,
+     7510
+    ],
+    [
+     984,
+     7450
+    ]
+   ]
+  },
+  {
+   "name": "Mal. Mayachki (N) (RKKA 1:100 000 sheet, outer blob 251)",
+   "pts": [
+    [
+     680,
+     7302
+    ],
+    [
+     652,
+     7310
+    ],
+    [
+     616,
+     7342
+    ],
+    [
+     584,
+     7342
+    ],
+    [
+     534,
+     7368
+    ],
+    [
+     536,
+     7478
+    ],
+    [
+     644,
+     7478
+    ],
+    [
+     684,
+     7438
+    ],
+    [
+     728,
+     7438
+    ],
+    [
+     760,
+     7414
+    ],
+    [
+     802,
+     7408
+    ],
+    [
+     790,
+     7392
+    ],
+    [
+     788,
+     7310
+    ],
+    [
+     680,
+     7302
+    ]
+   ]
+  },
+  {
+   "name": "Mal. Mayachki (N) (RKKA 1:100 000 sheet, outer blob 248)",
+   "pts": [
+    [
+     1236,
+     7242
+    ],
+    [
+     1202,
+     7244
+    ],
+    [
+     1202,
+     7328
+    ],
+    [
+     1214,
+     7352
+    ],
+    [
+     1292,
+     7422
+    ],
+    [
+     1336,
+     7446
+    ],
+    [
+     1372,
+     7450
+    ],
+    [
+     1396,
+     7474
+    ],
+    [
+     1394,
+     7424
+    ],
+    [
+     1374,
+     7404
+    ],
+    [
+     1374,
+     7364
+    ],
+    [
+     1342,
+     7308
+    ],
+    [
+     1296,
+     7246
+    ],
+    [
+     1236,
+     7242
+    ]
+   ]
+  },
+  {
+   "name": "Mal. Mayachki (NE) (RKKA 1:100 000 sheet, outer blob 256)",
+   "pts": [
+    [
+     1940,
+     7330
+    ],
+    [
+     1840,
+     7338
+    ],
+    [
+     1786,
+     7392
+    ],
+    [
+     1786,
+     7464
+    ],
+    [
+     1868,
+     7466
+    ],
+    [
+     1936,
+     7410
+    ],
+    [
+     1940,
+     7330
+    ]
+   ]
+  },
+  {
+   "name": "Mal. Mayachki (RKKA 1:100 000 sheet, outer blob 260)",
+   "pts": [
+    [
+     552,
+     6590
+    ],
+    [
+     486,
+     6656
+    ],
+    [
+     490,
+     6780
+    ],
+    [
+     592,
+     6874
+    ],
+    [
+     628,
+     6874
+    ],
+    [
+     694,
+     6940
+    ],
+    [
+     698,
+     7020
+    ],
+    [
+     770,
+     7164
+    ],
+    [
+     856,
+     7170
+    ],
+    [
+     858,
+     7080
+    ],
+    [
+     782,
+     6916
+    ],
+    [
+     760,
+     6914
+    ],
+    [
+     694,
+     6848
+    ],
+    [
+     690,
+     6776
+    ],
+    [
+     630,
+     6704
+    ],
+    [
+     598,
+     6632
+    ],
+    [
+     552,
+     6590
+    ]
+   ]
+  },
+  {
+   "name": "Mal. Mayachki (RKKA 1:100 000 sheet, outer blob 262)",
+   "pts": [
+    [
+     1084,
+     6938
+    ],
+    [
+     1062,
+     6940
+    ],
+    [
+     1062,
+     7048
+    ],
+    [
+     1074,
+     7072
+    ],
+    [
+     1084,
+     7082
+    ],
+    [
+     1168,
+     7082
+    ],
+    [
+     1170,
+     7032
+    ],
+    [
+     1154,
+     7000
+    ],
+    [
+     1150,
+     6944
+    ],
+    [
+     1084,
+     6938
+    ]
+   ]
+  },
+  {
+   "name": "Mal. Mayachki (RKKA 1:100 000 sheet, outer blob 267)",
+   "pts": [
+    [
+     848,
+     6290
+    ],
+    [
+     754,
+     6300
+    ],
+    [
+     754,
+     6380
+    ],
+    [
+     722,
+     6428
+    ],
+    [
+     714,
+     6532
+    ],
+    [
+     780,
+     6554
+    ],
+    [
+     846,
+     6620
+    ],
+    [
+     858,
+     6728
+    ],
+    [
+     924,
+     6798
+    ],
+    [
+     1008,
+     6798
+    ],
+    [
+     1002,
+     6696
+    ],
+    [
+     958,
+     6652
+    ],
+    [
+     958,
+     6628
+    ],
+    [
+     880,
+     6606
+    ],
+    [
+     814,
+     6540
+    ],
+    [
+     802,
+     6508
+    ],
+    [
+     798,
+     6440
+    ],
+    [
+     838,
+     6400
+    ],
+    [
+     848,
+     6290
+    ]
+   ]
+  },
+  {
+   "name": "Mal. Mayachki (RKKA 1:100 000 sheet, outer blob 260)",
+   "pts": [
+    [
+     204,
+     5850
+    ],
+    [
+     106,
+     5852
+    ],
+    [
+     118,
+     5996
+    ],
+    [
+     166,
+     6084
+    ],
+    [
+     214,
+     6264
+    ],
+    [
+     250,
+     6308
+    ],
+    [
+     202,
+     6360
+    ],
+    [
+     202,
+     6452
+    ],
+    [
+     308,
+     6458
+    ],
+    [
+     332,
+     6434
+    ],
+    [
+     404,
+     6518
+    ],
+    [
+     484,
+     6522
+    ],
+    [
+     516,
+     6554
+    ],
+    [
+     494,
+     6512
+    ],
+    [
+     498,
+     6444
+    ],
+    [
+     478,
+     6416
+    ],
+    [
+     544,
+     6350
+    ],
+    [
+     618,
+     6340
+    ],
+    [
+     618,
+     6248
+    ],
+    [
+     598,
+     6192
+    ],
+    [
+     494,
+     6188
+    ],
+    [
+     494,
+     6292
+    ],
+    [
+     530,
+     6352
+    ],
+    [
+     464,
+     6418
+    ],
+    [
+     396,
+     6426
+    ],
+    [
+     368,
+     6406
+    ],
+    [
+     298,
+     6336
+    ],
+    [
+     326,
+     6280
+    ],
+    [
+     314,
+     6160
+    ],
+    [
+     282,
+     6100
+    ],
+    [
+     204,
+     5850
+    ]
+   ]
+  },
+  {
+   "name": "Teterevino (S) (RKKA 1:100 000 sheet, outer blob 272)",
+   "pts": [
+    [
+     5448,
+     5834
+    ],
+    [
+     5368,
+     5834
+    ],
+    [
+     5366,
+     5916
+    ],
+    [
+     5564,
+     6070
+    ],
+    [
+     5620,
+     6070
+    ],
+    [
+     5656,
+     6106
+    ],
+    [
+     5870,
+     6104
+    ],
+    [
+     5796,
+     6062
+    ],
+    [
+     5716,
+     6054
+    ],
+    [
+     5650,
+     5988
+    ],
+    [
+     5648,
+     5966
+    ],
+    [
+     5448,
+     5834
+    ]
+   ]
+  },
+  {
+   "name": "Vinogradovka (S) (RKKA 1:100 000 sheet, outer blob 278)",
+   "pts": [
+    [
+     11048,
+     5442
+    ],
+    [
+     10976,
+     5442
+    ],
+    [
+     10978,
+     5504
+    ],
+    [
+     11056,
+     5514
+    ],
+    [
+     11136,
+     5598
+    ],
+    [
+     11196,
+     5598
+    ],
+    [
+     11262,
+     5664
+    ],
+    [
+     11266,
+     5744
+    ],
+    [
+     11314,
+     5824
+    ],
+    [
+     11396,
+     5842
+    ],
+    [
+     11466,
+     5912
+    ],
+    [
+     11482,
+     6004
+    ],
+    [
+     11482,
+     6104
+    ],
+    [
+     11640,
+     6106
+    ],
+    [
+     11650,
+     6068
+    ],
+    [
+     11646,
+     5944
+    ],
+    [
+     11548,
+     5838
+    ],
+    [
+     11476,
+     5838
+    ],
+    [
+     11410,
+     5772
+    ],
+    [
+     11410,
+     5744
+    ],
+    [
+     11322,
+     5612
+    ],
+    [
+     11334,
+     5568
+    ],
+    [
+     11334,
+     5472
+    ],
+    [
+     11236,
+     5466
+    ],
+    [
+     11192,
+     5510
+    ],
+    [
+     11120,
+     5514
+    ],
+    [
+     11048,
+     5442
+    ]
+   ]
+  },
+  {
+   "name": "Dalny (RKKA 1:100 000 sheet, outer blob 284)",
+   "pts": [
+    [
+     18104,
+     5166
+    ],
+    [
+     18054,
+     5172
+    ],
+    [
+     18046,
+     5296
+    ],
+    [
+     17980,
+     5362
+    ],
+    [
+     17936,
+     5338
+    ],
+    [
+     17934,
+     5368
+    ],
+    [
+     17864,
+     5438
+    ],
+    [
+     17832,
+     5426
+    ],
+    [
+     17782,
+     5476
+    ],
+    [
+     17810,
+     5512
+    ],
+    [
+     17716,
+     5602
+    ],
+    [
+     17692,
+     5614
+    ],
+    [
+     17626,
+     5548
+    ],
+    [
+     17624,
+     5522
+    ],
+    [
+     17552,
+     5522
+    ],
+    [
+     17554,
+     5620
+    ],
+    [
+     17488,
+     5686
+    ],
+    [
+     17452,
+     5694
+    ],
+    [
+     17416,
+     5658
+    ],
+    [
+     17324,
+     5658
+    ],
+    [
+     17230,
+     5740
+    ],
+    [
+     17242,
+     5860
+    ],
+    [
+     17356,
+     5870
+    ],
+    [
+     17380,
+     5846
+    ],
+    [
+     17504,
+     5822
+    ],
+    [
+     17644,
+     5770
+    ],
+    [
+     17700,
+     5714
+    ],
+    [
+     17804,
+     5714
+    ],
+    [
+     17904,
+     5630
+    ],
+    [
+     17964,
+     5630
+    ],
+    [
+     17974,
+     5552
+    ],
+    [
+     18034,
+     5488
+    ],
+    [
+     18030,
+     5444
+    ],
+    [
+     18096,
+     5378
+    ],
+    [
+     18172,
+     5378
+    ],
+    [
+     18190,
+     5336
+    ],
+    [
+     18218,
+     5308
+    ],
+    [
+     18218,
+     5292
+    ],
+    [
+     18204,
+     5294
+    ],
+    [
+     18138,
+     5228
+    ],
+    [
+     18138,
+     5172
+    ],
+    [
+     18104,
+     5166
+    ]
+   ]
+  },
+  {
+   "name": "Yasnaya Polyana (RKKA 1:100 000 sheet, outer blob 294)",
+   "pts": [
+    [
+     7656,
+     4502
+    ],
+    [
+     7616,
+     4534
+    ],
+    [
+     7580,
+     4506
+    ],
+    [
+     7548,
+     4506
+    ],
+    [
+     7542,
+     4544
+    ],
+    [
+     7482,
+     4604
+    ],
+    [
+     7502,
+     4700
+    ],
+    [
+     7470,
+     4752
+    ],
+    [
+     7470,
+     4864
+    ],
+    [
+     7344,
+     4994
+    ],
+    [
+     7232,
+     5026
+    ],
+    [
+     7152,
+     5102
+    ],
+    [
+     7084,
+     5134
+    ],
+    [
+     6972,
+     5154
+    ],
+    [
+     6972,
+     5238
+    ],
+    [
+     7048,
+     5242
+    ],
+    [
+     7114,
+     5308
+    ],
+    [
+     7116,
+     5326
+    ],
+    [
+     7204,
+     5326
+    ],
+    [
+     7380,
+     5206
+    ],
+    [
+     7436,
+     5150
+    ],
+    [
+     7532,
+     5090
+    ],
+    [
+     7596,
+     5070
+    ],
+    [
+     7662,
+     5136
+    ],
+    [
+     7702,
+     5260
+    ],
+    [
+     7742,
+     5304
+    ],
+    [
+     7746,
+     5344
+    ],
+    [
+     7778,
+     5420
+    ],
+    [
+     7878,
+     5416
+    ],
+    [
+     7878,
+     5312
+    ],
+    [
+     7842,
+     5268
+    ],
+    [
+     7830,
+     5208
+    ],
+    [
+     7790,
+     5144
+    ],
+    [
+     7746,
+     5012
+    ],
+    [
+     7686,
+     4952
+    ],
+    [
+     7666,
+     4852
+    ],
+    [
+     7608,
+     4842
+    ],
+    [
+     7542,
+     4776
+    ],
+    [
+     7578,
+     4732
+    ],
+    [
+     7578,
+     4704
+    ],
+    [
+     7652,
+     4630
+    ],
+    [
+     7700,
+     4630
+    ],
+    [
+     7720,
+     4610
+    ],
+    [
+     7758,
+     4608
+    ],
+    [
+     7762,
+     4544
+    ],
+    [
+     7696,
+     4542
+    ],
+    [
+     7656,
+     4502
+    ]
+   ]
+  },
+  {
+   "name": "Zhimolostnoye (RKKA 1:100 000 sheet, outer blob 295)",
+   "pts": [
+    [
+     15592,
+     4642
+    ],
+    [
+     15476,
+     4646
+    ],
+    [
+     15416,
+     4706
+    ],
+    [
+     15394,
+     4708
+    ],
+    [
+     15394,
+     4780
+    ],
+    [
+     15444,
+     4782
+    ],
+    [
+     15476,
+     4750
+    ],
+    [
+     15568,
+     4750
+    ],
+    [
+     15634,
+     4816
+    ],
+    [
+     15642,
+     4956
+    ],
+    [
+     15576,
+     5022
+    ],
+    [
+     15522,
+     5028
+    ],
+    [
+     15522,
+     5120
+    ],
+    [
+     15566,
+     5164
+    ],
+    [
+     15568,
+     5182
+    ],
+    [
+     15632,
+     5214
+    ],
+    [
+     15660,
+     5214
+    ],
+    [
+     15712,
+     5266
+    ],
+    [
+     15878,
+     5244
+    ],
+    [
+     15874,
+     5128
+    ],
+    [
+     15754,
+     4920
+    ],
+    [
+     15824,
+     4854
+    ],
+    [
+     15920,
+     4910
+    ],
+    [
+     15980,
+     4910
+    ],
+    [
+     16036,
+     4966
+    ],
+    [
+     16084,
+     4990
+    ],
+    [
+     16200,
+     4994
+    ],
+    [
+     16252,
+     4958
+    ],
+    [
+     16320,
+     5026
+    ],
+    [
+     16388,
+     5042
+    ],
+    [
+     16476,
+     5042
+    ],
+    [
+     16542,
+     5108
+    ],
+    [
+     16558,
+     5140
+    ],
+    [
+     16558,
+     5200
+    ],
+    [
+     16514,
+     5244
+    ],
+    [
+     16530,
+     5264
+    ],
+    [
+     16530,
+     5360
+    ],
+    [
+     16548,
+     5374
+    ],
+    [
+     16676,
+     5390
+    ],
+    [
+     16792,
+     5382
+    ],
+    [
+     16858,
+     5320
+    ],
+    [
+     16870,
+     5240
+    ],
+    [
+     16842,
+     5164
+    ],
+    [
+     16770,
+     5096
+    ],
+    [
+     16774,
+     5024
+    ],
+    [
+     16728,
+     5022
+    ],
+    [
+     16676,
+     4990
+    ],
+    [
+     16572,
+     4998
+    ],
+    [
+     16482,
+     4900
+    ],
+    [
+     16496,
+     4814
+    ],
+    [
+     16456,
+     4842
+    ],
+    [
+     16428,
+     4822
+    ],
+    [
+     16430,
+     4868
+    ],
+    [
+     16364,
+     4934
+    ],
+    [
+     16316,
+     4934
+    ],
+    [
+     16276,
+     4954
+    ],
+    [
+     16210,
+     4888
+    ],
+    [
+     16210,
+     4820
+    ],
+    [
+     16238,
+     4792
+    ],
+    [
+     16228,
+     4778
+    ],
+    [
+     16196,
+     4786
+    ],
+    [
+     16144,
+     4838
+    ],
+    [
+     16096,
+     4790
+    ],
+    [
+     16068,
+     4818
+    ],
+    [
+     15998,
+     4748
+    ],
+    [
+     15996,
+     4686
+    ],
+    [
+     15768,
+     4690
+    ],
+    [
+     15704,
+     4738
+    ],
+    [
+     15632,
+     4662
+    ],
+    [
+     15592,
+     4642
+    ]
+   ]
+  },
+  {
+   "name": "Vinogradovka (S) (RKKA 1:100 000 sheet, outer blob 296)",
+   "pts": [
+    [
+     10972,
+     4878
+    ],
+    [
+     10894,
+     4880
+    ],
+    [
+     10894,
+     4956
+    ],
+    [
+     10918,
+     5024
+    ],
+    [
+     11016,
+     5030
+    ],
+    [
+     11082,
+     5096
+    ],
+    [
+     11088,
+     5210
+    ],
+    [
+     11104,
+     5194
+    ],
+    [
+     11176,
+     5194
+    ],
+    [
+     11170,
+     5068
+    ],
+    [
+     11194,
+     5040
+    ],
+    [
+     11186,
+     4956
+    ],
+    [
+     11154,
+     4956
+    ],
+    [
+     11150,
+     5012
+    ],
+    [
+     11080,
+     5078
+    ],
+    [
+     11014,
+     5012
+    ],
+    [
+     11014,
+     4952
+    ],
+    [
+     10972,
+     4878
+    ]
+   ]
+  },
+  {
+   "name": "Zhimolostnoye (RKKA 1:100 000 sheet, outer blob 303)",
+   "pts": [
+    [
+     16784,
+     4014
+    ],
+    [
+     16712,
+     4014
+    ],
+    [
+     16644,
+     4086
+    ],
+    [
+     16628,
+     4086
+    ],
+    [
+     16626,
+     4148
+    ],
+    [
+     16552,
+     4226
+    ],
+    [
+     16432,
+     4218
+    ],
+    [
+     16434,
+     4260
+    ],
+    [
+     16368,
+     4326
+    ],
+    [
+     16300,
+     4298
+    ],
+    [
+     16234,
+     4232
+    ],
+    [
+     16228,
+     4158
+    ],
+    [
+     16160,
+     4158
+    ],
+    [
+     16150,
+     4260
+    ],
+    [
+     16162,
+     4292
+    ],
+    [
+     16162,
+     4392
+    ],
+    [
+     16364,
+     4446
+    ],
+    [
+     16400,
+     4466
+    ],
+    [
+     16496,
+     4570
+    ],
+    [
+     16544,
+     4570
+    ],
+    [
+     16610,
+     4636
+    ],
+    [
+     16602,
+     4664
+    ],
+    [
+     16650,
+     4736
+    ],
+    [
+     16656,
+     4778
+    ],
+    [
+     16772,
+     4782
+    ],
+    [
+     16824,
+     4770
+    ],
+    [
+     16976,
+     4790
+    ],
+    [
+     17108,
+     4786
+    ],
+    [
+     17110,
+     4724
+    ],
+    [
+     17042,
+     4656
+    ],
+    [
+     17036,
+     4606
+    ],
+    [
+     16972,
+     4606
+    ],
+    [
+     16944,
+     4594
+    ],
+    [
+     16950,
+     4636
+    ],
+    [
+     16884,
+     4702
+    ],
+    [
+     16868,
+     4690
+    ],
+    [
+     16820,
+     4690
+    ],
+    [
+     16698,
+     4552
+    ],
+    [
+     16694,
+     4524
+    ],
+    [
+     16722,
+     4464
+    ],
+    [
+     16706,
+     4448
+    ],
+    [
+     16710,
+     4368
+    ],
+    [
+     16698,
+     4348
+    ],
+    [
+     16698,
+     4160
+    ],
+    [
+     16786,
+     4080
+    ],
+    [
+     16784,
+     4014
+    ]
+   ]
+  },
+  {
+   "name": "Yasnaya Polyana (balka) (RKKA 1:100 000 sheet, outer blob 305)",
+   "pts": [
+    [
+     6804,
+     4590
+    ],
+    [
+     6718,
+     4592
+    ],
+    [
+     6712,
+     4694
+    ],
+    [
+     6802,
+     4688
+    ],
+    [
+     6804,
+     4590
+    ]
+   ]
+  },
+  {
+   "name": "Ivanovka (N) (RKKA 1:100 000 sheet, outer blob 306)",
+   "pts": [
+    [
+     10660,
+     4522
+    ],
+    [
+     10632,
+     4522
+    ],
+    [
+     10614,
+     4552
+    ],
+    [
+     10614,
+     4608
+    ],
+    [
+     10628,
+     4630
+    ],
+    [
+     10672,
+     4630
+    ],
+    [
+     10714,
+     4588
+    ],
+    [
+     10714,
+     4544
+    ],
+    [
+     10680,
+     4542
+    ],
+    [
+     10660,
+     4522
+    ]
+   ]
+  },
+  {
+   "name": "Belenikhino MTS (RKKA 1:100 000 sheet, outer blob 307)",
+   "pts": [
+    [
+     9072,
+     4386
+    ],
+    [
+     9050,
+     4448
+    ],
+    [
+     9054,
+     4556
+    ],
+    [
+     9236,
+     4578
+    ],
+    [
+     9206,
+     4420
+    ],
+    [
+     9180,
+     4442
+    ],
+    [
+     9164,
+     4430
+    ],
+    [
+     9116,
+     4430
+    ],
+    [
+     9072,
+     4386
+    ]
+   ]
+  },
+  {
+   "name": "Yasnaya Polyana (balka) (RKKA 1:100 000 sheet, outer blob 305)",
+   "pts": [
+    [
+     7028,
+     4414
+    ],
+    [
+     6908,
+     4422
+    ],
+    [
+     6906,
+     4496
+    ],
+    [
+     6920,
+     4506
+    ],
+    [
+     7000,
+     4498
+    ],
+    [
+     7030,
+     4452
+    ],
+    [
+     7028,
+     4414
+    ]
+   ]
+  },
+  {
+   "name": "Ivanovka (N) (RKKA 1:100 000 sheet, outer blob 314)",
+   "pts": [
+    [
+     10688,
+     4206
+    ],
+    [
+     10662,
+     4212
+    ],
+    [
+     10666,
+     4372
+    ],
+    [
+     10756,
+     4362
+    ],
+    [
+     10754,
+     4212
+    ],
+    [
+     10688,
+     4206
+    ]
+   ]
+  },
+  {
+   "name": "houses in the balka N of Ozerovsky (RKKA 1:100 000 sheet, outer blob 313)",
+   "pts": [
+    [
+     4756,
+     4138
+    ],
+    [
+     4680,
+     4138
+    ],
+    [
+     4670,
+     4164
+    ],
+    [
+     4674,
+     4252
+    ],
+    [
+     4690,
+     4276
+    ],
+    [
+     4678,
+     4288
+    ],
+    [
+     4722,
+     4332
+    ],
+    [
+     4724,
+     4350
+    ],
+    [
+     4726,
+     4332
+    ],
+    [
+     4754,
+     4304
+    ],
+    [
+     4738,
+     4272
+    ],
+    [
+     4758,
+     4232
+    ],
+    [
+     4756,
+     4138
+    ]
+   ]
+  },
+  {
+   "name": "Belenikhino (RKKA 1:100 000 sheet, outer blob 316)",
+   "pts": [
+    [
+     9632,
+     4226
+    ],
+    [
+     9570,
+     4228
+    ],
+    [
+     9572,
+     4290
+    ],
+    [
+     9634,
+     4288
+    ],
+    [
+     9632,
+     4226
+    ]
+   ]
+  },
+  {
+   "name": "Yasnaya Polyana (E) (RKKA 1:100 000 sheet, outer blob 317)",
+   "pts": [
+    [
+     7748,
+     4042
+    ],
+    [
+     7648,
+     4046
+    ],
+    [
+     7560,
+     4066
+    ],
+    [
+     7460,
+     4126
+    ],
+    [
+     7300,
+     4166
+    ],
+    [
+     7242,
+     4204
+    ],
+    [
+     7238,
+     4280
+    ],
+    [
+     7320,
+     4282
+    ],
+    [
+     7376,
+     4242
+    ],
+    [
+     7428,
+     4234
+    ],
+    [
+     7508,
+     4198
+    ],
+    [
+     7552,
+     4158
+    ],
+    [
+     7740,
+     4126
+    ],
+    [
+     7758,
+     4116
+    ],
+    [
+     7758,
+     4048
+    ],
+    [
+     7748,
+     4042
+    ]
+   ]
+  },
+  {
+   "name": "Belenikhino (RKKA 1:100 000 sheet, outer blob 318)",
+   "pts": [
+    [
+     10020,
+     4122
+    ],
+    [
+     9938,
+     4128
+    ],
+    [
+     9944,
+     4210
+    ],
+    [
+     10026,
+     4212
+    ],
+    [
+     10020,
+     4122
+    ]
+   ]
+  },
+  {
+   "name": "Belenikhino (RKKA 1:100 000 sheet, outer blob 319)",
+   "pts": [
+    [
+     9144,
+     4062
+    ],
+    [
+     9080,
+     4062
+    ],
+    [
+     9078,
+     4124
+    ],
+    [
+     9144,
+     4130
+    ],
+    [
+     9144,
+     4062
+    ]
+   ]
+  },
+  {
+   "name": "Yasnaya Polyana (S) (RKKA 1:100 000 sheet, outer blob 320)",
+   "pts": [
+    [
+     8424,
+     3766
+    ],
+    [
+     8348,
+     3766
+    ],
+    [
+     8346,
+     3792
+    ],
+    [
+     8280,
+     3858
+    ],
+    [
+     8052,
+     3906
+    ],
+    [
+     8000,
+     3950
+    ],
+    [
+     7936,
+     3966
+    ],
+    [
+     7922,
+     3980
+    ],
+    [
+     7922,
+     4040
+    ],
+    [
+     8052,
+     4026
+    ],
+    [
+     8092,
+     4006
+    ],
+    [
+     8140,
+     4054
+    ],
+    [
+     8200,
+     4054
+    ],
+    [
+     8222,
+     4016
+    ],
+    [
+     8296,
+     3942
+    ],
+    [
+     8368,
+     3930
+    ],
+    [
+     8446,
+     3864
+    ],
+    [
+     8442,
+     3796
+    ],
+    [
+     8424,
+     3766
+    ]
+   ]
+  },
+  {
+   "name": "Ivanovka (N) (RKKA 1:100 000 sheet, outer blob 321)",
+   "pts": [
+    [
+     10720,
+     3954
+    ],
+    [
+     10634,
+     3956
+    ],
+    [
+     10632,
+     4054
+    ],
+    [
+     10722,
+     4052
+    ],
+    [
+     10720,
+     3954
+    ]
+   ]
+  },
+  {
+   "name": "Belenikhino (RKKA 1:100 000 sheet, outer blob 322)",
+   "pts": [
+    [
+     9652,
+     3942
+    ],
+    [
+     9586,
+     3944
+    ],
+    [
+     9588,
+     4022
+    ],
+    [
+     9658,
+     4020
+    ],
+    [
+     9652,
+     3942
+    ]
+   ]
+  },
+  {
+   "name": "Ivanovka (RKKA 1:100 000 sheet, outer blob 324)",
+   "pts": [
+    [
+     10248,
+     3770
+    ],
+    [
+     10166,
+     3772
+    ],
+    [
+     10148,
+     3990
+    ],
+    [
+     10174,
+     3980
+    ],
+    [
+     10174,
+     3964
+    ],
+    [
+     10150,
+     3940
+    ],
+    [
+     10216,
+     3874
+    ],
+    [
+     10250,
+     3868
+    ],
+    [
+     10248,
+     3770
+    ]
+   ]
+  },
+  {
+   "name": "Belenikhino (RKKA 1:100 000 sheet, outer blob 319)",
+   "pts": [
+    [
+     9416,
+     3622
+    ],
+    [
+     9286,
+     3628
+    ],
+    [
+     9334,
+     3948
+    ],
+    [
+     9348,
+     3970
+    ],
+    [
+     9438,
+     3968
+    ],
+    [
+     9442,
+     3880
+    ],
+    [
+     9426,
+     3792
+    ],
+    [
+     9494,
+     3724
+    ],
+    [
+     9494,
+     3656
+    ],
+    [
+     9448,
+     3654
+    ],
+    [
+     9416,
+     3622
+    ]
+   ]
+  },
+  {
+   "name": "Ivanovka (RKKA 1:100 000 sheet, outer blob 327)",
+   "pts": [
+    [
+     10248,
+     3214
+    ],
+    [
+     10220,
+     3242
+    ],
+    [
+     10146,
+     3232
+    ],
+    [
+     10150,
+     3348
+    ],
+    [
+     10182,
+     3392
+    ],
+    [
+     10170,
+     3504
+    ],
+    [
+     10176,
+     3578
+    ],
+    [
+     10276,
+     3570
+    ],
+    [
+     10286,
+     3500
+    ],
+    [
+     10352,
+     3434
+    ],
+    [
+     10374,
+     3428
+    ],
+    [
+     10362,
+     3416
+    ],
+    [
+     10362,
+     3352
+    ],
+    [
+     10304,
+     3350
+    ],
+    [
+     10238,
+     3284
+    ],
+    [
+     10250,
+     3272
+    ],
+    [
+     10248,
+     3214
+    ]
+   ]
+  },
+  {
+   "name": "Ivanovka (RKKA 1:100 000 sheet, outer blob 327)",
+   "pts": [
+    [
+     10564,
+     3434
+    ],
+    [
+     10496,
+     3434
+    ],
+    [
+     10466,
+     3456
+    ],
+    [
+     10482,
+     3472
+    ],
+    [
+     10492,
+     3562
+    ],
+    [
+     10570,
+     3560
+    ],
+    [
+     10564,
+     3434
+    ]
+   ]
+  },
+  {
+   "name": "Ivanovka - Belenikhino station (RKKA 1:100 000 sheet, outer blob 332)",
+   "pts": [
+    [
+     10000,
+     3198
+    ],
+    [
+     9900,
+     3198
+    ],
+    [
+     9894,
+     3296
+    ],
+    [
+     10012,
+     3302
+    ],
+    [
+     10014,
+     3204
+    ],
+    [
+     10000,
+     3198
+    ]
+   ]
+  },
+  {
+   "name": "Ivanovka (S) (RKKA 1:100 000 sheet, outer blob 338)",
+   "pts": [
+    [
+     10048,
+     2378
+    ],
+    [
+     9958,
+     2380
+    ],
+    [
+     9958,
+     2492
+    ],
+    [
+     10018,
+     2700
+    ],
+    [
+     10038,
+     2860
+    ],
+    [
+     10062,
+     2928
+    ],
+    [
+     10066,
+     3012
+    ],
+    [
+     10148,
+     3018
+    ],
+    [
+     10150,
+     2912
+    ],
+    [
+     10134,
+     2780
+    ],
+    [
+     10048,
+     2378
+    ]
+   ]
+  },
+  {
+   "name": "Plota (W) (RKKA 1:100 000 sheet, outer blob 340)",
+   "pts": [
+    [
+     16012,
+     2114
+    ],
+    [
+     15944,
+     2114
+    ],
+    [
+     15812,
+     2226
+    ],
+    [
+     15788,
+     2222
+    ],
+    [
+     15684,
+     2114
+    ],
+    [
+     15578,
+     2116
+    ],
+    [
+     15578,
+     2140
+    ],
+    [
+     15622,
+     2184
+    ],
+    [
+     15622,
+     2284
+    ],
+    [
+     15700,
+     2306
+    ],
+    [
+     15748,
+     2342
+    ],
+    [
+     15756,
+     2334
+    ],
+    [
+     15808,
+     2354
+    ],
+    [
+     15906,
+     2444
+    ],
+    [
+     15882,
+     2476
+    ],
+    [
+     15882,
+     2540
+    ],
+    [
+     15816,
+     2606
+    ],
+    [
+     15792,
+     2610
+    ],
+    [
+     15762,
+     2652
+    ],
+    [
+     15762,
+     2756
+    ],
+    [
+     15848,
+     2758
+    ],
+    [
+     15914,
+     2824
+    ],
+    [
+     15882,
+     2880
+    ],
+    [
+     15868,
+     2946
+    ],
+    [
+     15896,
+     2930
+    ],
+    [
+     15916,
+     2946
+    ],
+    [
+     15932,
+     2942
+    ],
+    [
+     15966,
+     2896
+    ],
+    [
+     15958,
+     2880
+    ],
+    [
+     16024,
+     2814
+    ],
+    [
+     16044,
+     2798
+    ],
+    [
+     16088,
+     2798
+    ],
+    [
+     16094,
+     2764
+    ],
+    [
+     16142,
+     2716
+    ],
+    [
+     16142,
+     2684
+    ],
+    [
+     16208,
+     2618
+    ],
+    [
+     16290,
+     2696
+    ],
+    [
+     16296,
+     2758
+    ],
+    [
+     16336,
+     2758
+    ],
+    [
+     16372,
+     2778
+    ],
+    [
+     16462,
+     2772
+    ],
+    [
+     16460,
+     2702
+    ],
+    [
+     16380,
+     2694
+    ],
+    [
+     16314,
+     2628
+    ],
+    [
+     16310,
+     2488
+    ],
+    [
+     16272,
+     2482
+    ],
+    [
+     16196,
+     2394
+    ],
+    [
+     16004,
+     2314
+    ],
+    [
+     15938,
+     2248
+    ],
+    [
+     16014,
+     2164
+    ],
+    [
+     16012,
+     2114
+    ]
+   ]
+  },
+  {
+   "name": "Plota (W) (RKKA 1:100 000 sheet, outer blob 340)",
+   "pts": [
+    [
+     16158,
+     2488
+    ],
+    [
+     16226,
+     2560
+    ],
+    [
+     16160,
+     2626
+    ],
+    [
+     16128,
+     2626
+    ],
+    [
+     16062,
+     2552
+    ],
+    [
+     16128,
+     2486
+    ],
+    [
+     16158,
+     2488
+    ]
+   ]
+  },
+  {
+   "name": "Zhimolostnoye (W) (RKKA 1:100 000 sheet, outer blob 341)",
+   "pts": [
+    [
+     14588,
+     2486
+    ],
+    [
+     14528,
+     2498
+    ],
+    [
+     14510,
+     2520
+    ],
+    [
+     14510,
+     2540
+    ],
+    [
+     14554,
+     2584
+    ],
+    [
+     14550,
+     2612
+    ],
+    [
+     14576,
+     2638
+    ],
+    [
+     14620,
+     2626
+    ],
+    [
+     14724,
+     2710
+    ],
+    [
+     14880,
+     2722
+    ],
+    [
+     14946,
+     2788
+    ],
+    [
+     14930,
+     2812
+    ],
+    [
+     14930,
+     2908
+    ],
+    [
+     15008,
+     2910
+    ],
+    [
+     15010,
+     2816
+    ],
+    [
+     14950,
+     2756
+    ],
+    [
+     14958,
+     2656
+    ],
+    [
+     14872,
+     2642
+    ],
+    [
+     14820,
+     2654
+    ],
+    [
+     14800,
+     2638
+    ],
+    [
+     14736,
+     2638
+    ],
+    [
+     14590,
+     2512
+    ],
+    [
+     14588,
+     2486
+    ]
+   ]
+  },
+  {
+   "name": "Plota (W) (RKKA 1:100 000 sheet, outer blob 343)",
+   "pts": [
+    [
+     15312,
+     2682
+    ],
+    [
+     15208,
+     2690
+    ],
+    [
+     15202,
+     2780
+    ],
+    [
+     15252,
+     2786
+    ],
+    [
+     15292,
+     2826
+    ],
+    [
+     15404,
+     2822
+    ],
+    [
+     15430,
+     2796
+    ],
+    [
+     15434,
+     2728
+    ],
+    [
+     15312,
+     2682
+    ]
+   ]
+  },
+  {
+   "name": "houses at 247.7 (RKKA 1:100 000 sheet, outer blob 344)",
+   "pts": [
+    [
+     16936,
+     2574
+    ],
+    [
+     16824,
+     2582
+    ],
+    [
+     16818,
+     2628
+    ],
+    [
+     16790,
+     2656
+    ],
+    [
+     16790,
+     2680
+    ],
+    [
+     16870,
+     2748
+    ],
+    [
+     16872,
+     2782
+    ],
+    [
+     16992,
+     2794
+    ],
+    [
+     16994,
+     2732
+    ],
+    [
+     17018,
+     2708
+    ],
+    [
+     16950,
+     2632
+    ],
+    [
+     16954,
+     2608
+    ],
+    [
+     16936,
+     2574
+    ]
+   ]
+  },
+  {
+   "name": "Luchki (RKKA 1:100 000 sheet, outer blob 345)",
+   "pts": [
+    [
+     1092,
+     2114
+    ],
+    [
+     1012,
+     2114
+    ],
+    [
+     1006,
+     2124
+    ],
+    [
+     1006,
+     2252
+    ],
+    [
+     1026,
+     2308
+    ],
+    [
+     1030,
+     2388
+    ],
+    [
+     964,
+     2454
+    ],
+    [
+     874,
+     2456
+    ],
+    [
+     878,
+     2512
+    ],
+    [
+     858,
+     2552
+    ],
+    [
+     862,
+     2680
+    ],
+    [
+     888,
+     2710
+    ],
+    [
+     924,
+     2722
+    ],
+    [
+     1024,
+     2722
+    ],
+    [
+     1056,
+     2690
+    ],
+    [
+     1098,
+     2676
+    ],
+    [
+     1094,
+     2584
+    ],
+    [
+     1068,
+     2578
+    ],
+    [
+     1002,
+     2512
+    ],
+    [
+     1006,
+     2488
+    ],
+    [
+     1076,
+     2418
+    ],
+    [
+     1114,
+     2416
+    ],
+    [
+     1114,
+     2348
+    ],
+    [
+     1090,
+     2264
+    ],
+    [
+     1092,
+     2114
+    ]
+   ]
+  },
+  {
+   "name": "Plota (W) (RKKA 1:100 000 sheet, outer blob 340)",
+   "pts": [
+    [
+     15712,
+     2454
+    ],
+    [
+     15604,
+     2458
+    ],
+    [
+     15524,
+     2486
+    ],
+    [
+     15522,
+     2604
+    ],
+    [
+     15572,
+     2614
+    ],
+    [
+     15620,
+     2662
+    ],
+    [
+     15626,
+     2632
+    ],
+    [
+     15714,
+     2552
+    ],
+    [
+     15712,
+     2454
+    ]
+   ]
+  },
+  {
+   "name": "Ivanovka (E) (RKKA 1:100 000 sheet, outer blob 349)",
+   "pts": [
+    [
+     11292,
+     2542
+    ],
+    [
+     11196,
+     2542
+    ],
+    [
+     11176,
+     2558
+    ],
+    [
+     11140,
+     2562
+    ],
+    [
+     11138,
+     2652
+    ],
+    [
+     11272,
+     2650
+    ],
+    [
+     11292,
+     2542
+    ]
+   ]
+  },
+  {
+   "name": "Ozerovsky (RKKA 1:100 000 sheet, outer blob 350)",
+   "pts": [
+    [
+     5036,
+     2342
+    ],
+    [
+     4996,
+     2342
+    ],
+    [
+     4966,
+     2388
+    ],
+    [
+     4962,
+     2452
+    ],
+    [
+     4934,
+     2484
+    ],
+    [
+     4940,
+     2606
+    ],
+    [
+     5038,
+     2608
+    ],
+    [
+     5042,
+     2508
+    ],
+    [
+     5018,
+     2468
+    ],
+    [
+     5050,
+     2420
+    ],
+    [
+     5058,
+     2348
+    ],
+    [
+     5036,
+     2342
+    ]
+   ]
+  },
+  {
+   "name": "Zhimolostnoye (W) (RKKA 1:100 000 sheet, outer blob 354)",
+   "pts": [
+    [
+     15028,
+     2238
+    ],
+    [
+     14940,
+     2242
+    ],
+    [
+     14926,
+     2268
+    ],
+    [
+     14926,
+     2312
+    ],
+    [
+     14860,
+     2378
+    ],
+    [
+     14832,
+     2370
+    ],
+    [
+     14730,
+     2448
+    ],
+    [
+     14784,
+     2498
+    ],
+    [
+     14816,
+     2494
+    ],
+    [
+     14852,
+     2462
+    ],
+    [
+     14912,
+     2454
+    ],
+    [
+     15038,
+     2336
+    ],
+    [
+     15046,
+     2268
+    ],
+    [
+     15028,
+     2238
+    ]
+   ]
+  },
+  {
+   "name": "Plota (RKKA 1:100 000 sheet, outer blob 357)",
+   "pts": [
+    [
+     18196,
+     2114
+    ],
+    [
+     18180,
+     2114
+    ],
+    [
+     18152,
+     2142
+    ],
+    [
+     18124,
+     2142
+    ],
+    [
+     18096,
+     2114
+    ],
+    [
+     17880,
+     2114
+    ],
+    [
+     17816,
+     2178
+    ],
+    [
+     17700,
+     2134
+    ],
+    [
+     17592,
+     2134
+    ],
+    [
+     17590,
+     2228
+    ],
+    [
+     17744,
+     2290
+    ],
+    [
+     17884,
+     2294
+    ],
+    [
+     18052,
+     2322
+    ],
+    [
+     18140,
+     2234
+    ],
+    [
+     18208,
+     2230
+    ],
+    [
+     18226,
+     2212
+    ],
+    [
+     18230,
+     2144
+    ],
+    [
+     18196,
+     2114
+    ]
+   ]
+  },
+  {
+   "name": "Ozerovsky (S) (RKKA 1:100 000 sheet, outer blob 362)",
+   "pts": [
+    [
+     5044,
+     2114
+    ],
+    [
+     4924,
+     2114
+    ],
+    [
+     4922,
+     2148
+    ],
+    [
+     4948,
+     2182
+    ],
+    [
+     5044,
+     2182
+    ],
+    [
+     5044,
+     2114
+    ]
+   ]
   }
  ],
  "roads_1943": [
@@ -15036,5 +23956,83 @@
    "rail_belt": 32
   }
  ],
- "_comment_woods_1943": "woods_1943: wood polygons (DEM-lattice metres) drawn over everything else; with rail_belt: W only the part within W m of the railway is wooded (the snow-protection belt), and a 10 m bed either side of the track stays clear."
+ "_comment_woods_1943": "woods_1943: wood polygons (DEM-lattice metres) drawn over everything else; with rail_belt: W only the part within W m of the railway is wooded (the snow-protection belt), and a 10 m bed either side of the track stays clear.",
+ "hq_field": true,
+ "_comment_hq_field": "hq_field (2 Nov, user): HQ-type elements - formation HQs, supply, construction, artillery batteries - stand in the field: the formation's _hq / _spam / _cons platoons on the node nearest 'hq' (hq_note = the source), artillery batteries round-robin over 'pos' like battle groups; 'hq_edge' true keeps a formation whose command post lay off the map on the edge. Stacking (hq_stack) applies in the field too.",
+ "objectives": [
+  {
+   "name": "Prokhorovka station",
+   "xy": [
+    15667,
+    14131
+   ],
+   "value": 9
+  },
+  {
+   "name": "height 252.2",
+   "xy": [
+    13120,
+    12768
+   ],
+   "value": 9
+  },
+  {
+   "name": "svkh. Oktyabrsky",
+   "xy": [
+    11900,
+    13100
+   ],
+   "value": 8
+  },
+  {
+   "name": "height 226.6",
+   "xy": [
+    6720,
+    15136
+   ],
+   "value": 8
+  },
+  {
+   "name": "svkh. Komsomolets",
+   "xy": [
+    8468,
+    8939
+   ],
+   "value": 6
+  },
+  {
+   "name": "height 241.6",
+   "xy": [
+    9600,
+    10288
+   ],
+   "value": 6
+  },
+  {
+   "name": "Storozhevoye",
+   "xy": [
+    11674,
+    9147
+   ],
+   "value": 6
+  },
+  {
+   "name": "Polezhayev",
+   "xy": [
+    8320,
+    16656
+   ],
+   "value": 5
+  },
+  {
+   "name": "Belenikhino",
+   "xy": [
+    9600,
+    3424
+   ],
+   "value": 5
+  }
+ ],
+ "kp_cap": 2,
+ "_comment_objectives": "key points of this operation (prokh_op.py: the node nearest each gets the value, every other key point - OSM villages, spot heights, layout places - is capped at kp_cap). Campaign 10-13 July: II SS-Panzerkorps' objective was Prokhorovka station (Hausser's orders of 9 / 11 July) via svkh. Oktyabrsky and 252.2, with Totenkopf's Psel bridgehead / 226.6 on the left and Das Reich's Storozhevoye - Belenikhino on the right; 5 gds TA's counter-stroke aimed at the same ground."
 }

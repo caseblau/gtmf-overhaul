@@ -1,0 +1,103 @@
+{
+ "meta": {
+  "note": "reviewed genuine dead ends of region R32 (node N9); crop = sheet at 4/3 m per px with all traced lines, red circle = the end"
+ },
+ "deadends": [
+  {
+   "road": "n_r56",
+   "end": "start",
+   "x": 8900.0,
+   "y": 7215.0,
+   "why": "the track from the E reaches the railway at the booth (\u0411.) N of Teterevino; the sheet draws no crossing here that is in crossings.json, so the line stops on the E side of the railway",
+   "crop": "review/deadend_n_r56_start.png"
+  },
+  {
+   "road": "n_e1",
+   "end": "start",
+   "x": 10800.0,
+   "y": 7720.0,
+   "why": "runs W into the pencil-hatched (void) patch SW of Ivanovsky Vyselok; its continuation under the overprint is unreadable",
+   "crop": "review/deadend_n_e1_start.png"
+  },
+  {
+   "road": "n_e2",
+   "end": "start",
+   "x": 10850.0,
+   "y": 7570.0,
+   "why": "runs W into the pencil-hatched (void) patch; continuation unreadable",
+   "crop": "review/deadend_n_e2_start.png"
+  },
+  {
+   "road": "ivv_n",
+   "end": "start",
+   "x": 11408.0,
+   "y": 7188.0,
+   "why": "street of Ivanovsky Vyselok continues NW under the black pencil overprint; unreadable",
+   "crop": "review/deadend_ivv_n_start.png"
+  },
+  {
+   "road": "n_e1",
+   "end": "end",
+   "x": 11700.0,
+   "y": 7468.0,
+   "why": "runs E into the red pencil band SW of Prokhorovka; continuation unreadable",
+   "crop": "review/deadend_n_e1_end.png"
+  },
+  {
+   "road": "n_e2",
+   "end": "end",
+   "x": 11600.0,
+   "y": 7360.0,
+   "why": "runs E into the red pencil band SW of Prokhorovka; continuation unreadable",
+   "crop": "review/deadend_n_e2_end.png"
+  },
+  {
+   "road": "n_r58",
+   "end": "end",
+   "x": 11880.0,
+   "y": 7290.0,
+   "why": "the track from the N merges with the 2 km grid line under the red pencil; its continuation S is not separable from the grid line",
+   "crop": "review/deadend_n_r58_end.png"
+  },
+  {
+   "road": "n_r56",
+   "end": "end",
+   "x": 11888.0,
+   "y": 6616.0,
+   "why": "the line ends E of the Ivanovsky Vyselok house blocks in open field (drawn so on the sheet)",
+   "crop": "review/deadend_n_r56_end.png"
+  },
+  {
+   "road": "n_yp_n",
+   "end": "end",
+   "x": 8464.0,
+   "y": 5680.0,
+   "why": "the track from the Teterevino road ends at the Yasnaya Polyana lettering; nothing continues below the label",
+   "crop": "review/deadend_n_yp_n_end.png"
+  },
+  {
+   "road": "r76",
+   "end": "start",
+   "x": 9784.0,
+   "y": 4156.0,
+   "why": "the track to Ivanovka starts at the station houses at \u0440\u0430\u0437. (Belenikhino); the link to the crossing road (x5_e) through the houses is not drawn readably",
+   "crop": "review/deadend_r76_start.png"
+  },
+  {
+   "road": "x5_e",
+   "end": "end",
+   "x": 9520.0,
+   "y": 4312.0,
+   "why": "the road across the railway at X5 ends at the station houses at \u0440\u0430\u0437.; link to r76 not readable",
+   "crop": "review/deadend_x5_e_end.png"
+  },
+  {
+   "road": "bl01",
+   "end": "end",
+   "x": 8988.0,
+   "y": 3600.0,
+   "why": "the street W of the station ends at the Belenikhino lettering",
+   "crop": "review/deadend_bl01_end.png"
+  }
+ ]
+}

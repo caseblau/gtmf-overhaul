@@ -1,0 +1,65 @@
+{
+ "meta": {
+  "source": "read off the RKKA sheet along the railway (N1); C4 accepts a road crossing the railway within 25 m of a crossing point; railway through Prokhorovka = the band with the hatched (black / white) railway symbol, E of the solid main street band",
+  "crs": "DEM-lattice metres"
+ },
+ "crossings": [
+  {
+   "id": "X1",
+   "x": 12611.8,
+   "y": 12063.1,
+   "confidence": "certain",
+   "note": "level crossing at the railway booth (Б.) S of 252.2: the 10.0 road from Oktyabrsky continues across the railway as the double-line road S to 245.8 / Sovkhoz Stalinskoe",
+   "crop": "review/crossing_X1.jpg"
+  },
+  {
+   "id": "X2",
+   "x": 13136.9,
+   "y": 12691.4,
+   "confidence": "probable",
+   "note": "the double-line road from Oktyabrsky (252.2) meets the railway; the field track to Yamki leaves the far side ~200 m NE (X3): crossing drawn in this stretch, exact point unclear",
+   "crop": "review/crossing_X2.jpg"
+  },
+  {
+   "id": "X3",
+   "x": 13307.2,
+   "y": 12793.9,
+   "confidence": "probable",
+   "note": "the dashed field track to Yamki starts at the SE side of the railway, opposite the road along its NW side",
+   "crop": "review/crossing_X3.jpg"
+  },
+  {
+   "id": "X4",
+   "x": 15243.6,
+   "y": 13811.7,
+   "confidence": "probable",
+   "note": "road from Prokhorovka (SE side) reaches the railway W of the station opposite the road along the NW side",
+   "crop": "review/crossing_X4.jpg"
+  },
+  {
+   "id": "X6",
+   "x": 16626.5,
+   "y": 14469.9,
+   "confidence": "probable",
+   "note": "Prokhorovka station: the main road from the W (Prelestnoye / Oktyabrsky side) crosses the hatched railway band at the station square",
+   "crop": "review/crossing_X6.jpg"
+  },
+  {
+   "id": "X7",
+   "x": 17299.8,
+   "y": 14932.9,
+   "confidence": "probable",
+   "note": "Prokhorovka: the E-W main street crosses the hatched railway band (NE of the station)",
+   "crop": "review/crossing_X7.jpg"
+  },
+  {
+   "id": "X5",
+   "x": 9291.8,
+   "y": 4324.2,
+   "confidence": "probable",
+   "note": "X-shaped line work at the siding (раз.) N of Belenikhino: road from the MTS / Yasnaya Polyana side crosses to the Belenikhino side",
+   "crop": "review/crossing_X5.jpg"
+  }
+ ],
+ "zones": []
+}

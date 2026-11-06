@@ -1,0 +1,5 @@
+# US 75 / 76 mm gun shot sounds: vanilla's shot_m3 and shot_m7gun are the only shot samples recorded at 48 kHz (every other is 44.1 kHz)
+#   and play as a stuttering burst in game; add-on packs cannot replace vanilla sample names, so the weapons rows (col 18 = shot sound)
+#   point at the 44.1 kHz 75 mm KwK 40 / 76 mm ZiS-3 samples instead. Used by the M4A2 Sherman and the M3 Lee (M3), the M10 / M4 76 (M7).
+row~|weapons|M3|c18=s:shot_kwk40
+row~|weapons|M7|c18=s:shot_zis3

@@ -15,6 +15,7 @@ Levels 1..5 are always fully subdivided; deeper nodes are split while their area
 import json, numpy as np
 
 MAXLEVEL = 8
+OBSTLEVEL = 8   # split mixed open / blocked ground down to 8 m (vanilla goes to 4 m in places; 8 m keeps the packs small)
 
 class _Sampler:
     """cached categorical sampler for one histogram {value: count}"""
@@ -24,7 +25,7 @@ class _Sampler:
     def draw(self, rng, n):
         return self.keys[np.minimum(np.searchsorted(self.cum, rng.random(n)), len(self.keys) - 1)]
 
-def tree(soil, slope, maxlevel=MAXLEVEL):
+def tree(soil, slope, maxlevel=MAXLEVEL, obst=None, bld=None):
     """the quadtree (shared by the four mover classes): list of dicts level, cx, cy, parent, children, soil, slope"""
     H = soil.shape[0]
     onehot = np.stack([(soil == s) for s in range(16)], 0).astype(np.int32)
@@ -34,14 +35,22 @@ def tree(soil, slope, maxlevel=MAXLEVEL):
         return sat[:, y0 + s, x0 + s] - sat[:, y0, x0 + s] - sat[:, y0 + s, x0] + sat[:, y0, x0]
     def smean(x0, y0, s):
         return (ssat[y0 + s, x0 + s] - ssat[y0, x0 + s] - ssat[y0 + s, x0] + ssat[y0, x0]) / (s * s)
+    def _sat(m):
+        return None if m is None else np.pad(m.astype(np.int32).cumsum(0).cumsum(1), ((1, 0), (1, 0)))
+    osat, bsat = _sat(obst), _sat(bld)
+    def frac(S, x0, y0, s):
+        return 0.0 if S is None else (S[y0 + s, x0 + s] - S[y0, x0 + s] - S[y0 + s, x0] + S[y0, x0]) / (s * s)
     def _slope_var(x0, y0, s):
         blk = slope[y0:y0 + s:4, x0:x0 + s:4]; return float(blk.var())
     nodes = []
     def add(level, cx, cy, parent):
         s = H >> level; x0, y0 = cx - s // 2, cy - s // 2
         hh = hist(x0, y0, s); dom = int(hh.argmax()); uni = hh[dom] / (s * s)
-        i = len(nodes); nodes.append(dict(level=level, cx=cx, cy=cy, parent=parent, children=None, soil=dom, slope=smean(x0, y0, s)))
-        split = level < 5 or (level < maxlevel and (uni < (0.8 if level < 7 else 0.6) or (level < 7 and _slope_var(x0, y0, s) > 0.01)))
+        of, bf = frac(osat, x0, y0, s), frac(bsat, x0, y0, s)
+        i = len(nodes); nodes.append(dict(level=level, cx=cx, cy=cy, parent=parent, children=None, soil=dom, slope=smean(x0, y0, s), obst=of, bld=bf))
+        mixed = 0.1 < of < 0.9 or 0.1 < bf < 0.9   # part open, part blocked: split so the open part stays usable
+        split = level < 5 or (level < maxlevel and (uni < (0.8 if level < 7 else 0.6) or (level < 7 and _slope_var(x0, y0, s) > 0.01))) \
+            or (level < OBSTLEVEL and mixed)
         if split:
             q = s // 4
             kids = [add(level + 1, cx + q, cy + q, i), add(level + 1, cx - q, cy + q, i), add(level + 1, cx + q, cy - q, i), add(level + 1, cx - q, cy - q, i)]
@@ -69,11 +78,34 @@ def encode(nodes, model, rng):
     soil_of = np.asarray([nd['soil'] for nd in nodes]); lvl = np.asarray([nd['level'] for nd in nodes])
     slope = np.asarray([nd['slope'] for nd in nodes]); has_kids = np.asarray([nd['children'] is not None for nd in nodes])
     cost = np.zeros(n); b0 = np.zeros(n, np.int64); b1 = np.zeros(n, np.int64); b3 = np.zeros(n, np.int64); b11 = np.zeros(n, np.int64)
+    obst = np.asarray([nd.get('obst', 0.0) for nd in nodes]); bld = np.asarray([nd.get('bld', 0.0) for nd in nodes])
+    # 27 Oct: the flags used to be drawn at random from the vanilla histograms, which scattered "blocked" nodes (b3
+    # high nibble 15) and building / trench flags over open ground at every level of the tree and broke infantry
+    # deployment (squads stacked on one spot).  Vanilla MgG3: a parent's flags are the OR of its children and its b3
+    # high nibble the max of its children on levels 5..8 (the floored mean on 2..4, zero on 1); leaves with 15 hold the plants / buildings / hedges (38 plants per 1000 m2,
+    # 49 objects per ha) while open ground has 0..14.  So: per-soil modes, 15 only where something stands, then
+    # propagate up the tree.
+    def mode(h, drop=None):
+        items = [(int(k), v) for k, v in h.items() if drop is None or not drop(int(k))]
+        return max(items, key=lambda kv: kv[1])[0] if items else 0
     for sv in np.unique(soil_of):
         m = model.get(str(int(sv))) or model['0']; sel = soil_of == sv; k = int(sel.sum())
         cost[sel] = m['base'] + max(0.0, min(500.0, m['slope_k'])) * slope[sel] + rng.normal(0, 3, k)
-        b0[sel] = _Sampler(m['b0']).draw(rng, k) & 0x7f; b1[sel] = _Sampler(m['b1']).draw(rng, k)
-        b3[sel] = _Sampler(m['b3']).draw(rng, k); b11[sel] = _Sampler(m['b11']).draw(rng, k)
+        b0[sel] = mode(m['b0']) & 0x7f; b1[sel] = mode(m['b1']); b11[sel] = mode(m['b11'])
+        b3[sel] = (15 << 4) if sv in (12, 13) else (mode(m['b3'], lambda v: (v >> 4) == 15) & 0xf0)
+    blocked = (obst > 0.15) | (bld > 0.15)   # vanilla MgG3: ~13 % of the leaf area
+    b3[blocked] = 15 << 4
+    b0[bld > 0.15] |= 34
+    # bottom-up: deepest levels first
+    for i in np.argsort(-lvl, kind='stable'):
+        kids = nodes[i]['children']
+        if kids:
+            f = 0; hn = 0; c = 0.0
+            for k_ in kids: f |= int(b0[k_]) & 0x7f; hn = max(hn, int(b3[k_]) >> 4); c = max(c, cost[k_])
+            L_ = int(lvl[i])   # vanilla: levels 5..8 take the max of the children, 2..4 the floored mean, 1 zero
+            if L_ <= 1: hn = 0
+            elif L_ <= 4: hn = sum(int(b3[k_]) >> 4 for k_ in kids) // 4
+            b0[i] = f; b3[i] = hn << 4; cost[i] = c
     b0[has_kids] |= 0x80
     out[:, 0] = b0; out[:, 1] = b1; out[:, 2] = lvl; out[:, 3] = b3
     cx = np.asarray([nd['cx'] for nd in nodes]); cy = np.asarray([nd['cy'] for nd in nodes])

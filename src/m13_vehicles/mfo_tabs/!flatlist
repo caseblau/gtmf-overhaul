@@ -1,0 +1,6 @@
+i_unflat:unflat()
+{
+	techn_base_oprum              , config          , loc_def ;
+	ui_params                     , config          , loc_def ;
+	common_res_mod                , config          , loc_def ;
+}

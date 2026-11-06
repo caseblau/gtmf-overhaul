@@ -1,0 +1,3 @@
+# M3 Lee UI rows (tools\m13\m3lee_tables.py): M4A2 Sherman layout, the Lee's own figures
+row+|techns|@end|m3lee|s:m3lee|s:ui_m3_lee|v:51;38;38;13|v:51;38;38;13|v:51;51;51;22|s:tcl_harmor|v:0|v:56;0;10|v:30;5|s:med_tank|s:m3lee|u:1|u:100|f:27.2|a:1941;1942;1942;6258|u:'USA'|a:5639;2718;3124;435|a:6|u:'ROLL'|s:M3|v:-9;20;-15;15|s:M6|s:M1919A4|a:1;1;4|a:46;178;9200|s:sight_m4|s:sight_m40a2|s:|a:5;1|a:340;193;105;662|a:39;20;420;96|v:30;0.6;1.9;1|s:scr_528|u:0|s:m4_sherman|s:|s:|s:|b:0|s:|s:|s:tabs\\techn_base_oprum.cfgpack|s:m3lee
+row+|managed|@end|m3lee|s:m3lee|u:'LL'|u:'USSR'|s:expl_rkka|s:egr020_med_tank|s:tcl_harmor|s:rkka_marks_01

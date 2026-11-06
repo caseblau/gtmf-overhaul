@@ -1,0 +1,12 @@
+{
+ "deadends": [
+  {
+   "road": "ily_path",
+   "end": "start",
+   "x": 1176.0,
+   "y": 17040.0,
+   "why": "the dashed field track to Krasny Oktyabr begins at its first dash just S of the lettering \"\u0418\u043b\u044c\u0438\u043d\u0441\u043a\u0438\u0439\"; continued along its direction through the lettering there is no further dash, track or village (orchard and marsh symbols only)",
+   "crop": "review/deadend_ily_path_start.png"
+  }
+ ]
+}

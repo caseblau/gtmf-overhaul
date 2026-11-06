@@ -1,0 +1,291 @@
+{
+ "deadends": [
+  {
+   "road": "ily_path",
+   "end": "start",
+   "x": 1176.0,
+   "y": 17040.0,
+   "why": "the dashed field track to Krasny Oktyabr begins at its first dash just S of the lettering \"\u0418\u043b\u044c\u0438\u043d\u0441\u043a\u0438\u0439\"; continued along its direction through the lettering there is no further dash, track or village (orchard and marsh symbols only)",
+   "crop": "review/deadend_ily_path_start.png"
+  },
+  {
+   "road": "R12_pl2",
+   "end": "start",
+   "x": 9156.0,
+   "y": 15860.0,
+   "r": 6.0,
+   "why": "the solid line along the S edge of the orchard N of 272.9 starts here at a point symbol; no line continues W (the c1 centre line starts at x~9150)",
+   "crop": "review/deadend_pl2_west.png"
+  },
+  {
+   "road": "R12_pre2",
+   "end": "end",
+   "x": 10600.0,
+   "y": 15736.0,
+   "r": 6.0,
+   "why": "the single line along the SE side of Prelestnoye ends at the 'klkh.' lettering; no continuation drawn E of x~10600",
+   "crop": "review/deadend_pre2_east.png"
+  },
+  {
+   "road": "p_n",
+   "end": "end",
+   "x": 13724.0,
+   "y": 20336.0,
+   "why": "the dashed track ends at the outline of the first house block of Vyshnyaya Olshanka; the sheet draws no continuation into the village",
+   "crop": "review/deadend_p_n_end.png"
+  },
+  {
+   "road": "t_stw",
+   "end": "start",
+   "x": 17048.0,
+   "y": 17496.0,
+   "why": "the road (grey double line W of 17240 m) ends at the dotted boundary W of the station; nothing continues on the sheet",
+   "crop": "review/deadend_t_stw_start.png"
+  },
+  {
+   "road": "t_ns",
+   "end": "end",
+   "x": 18068.0,
+   "y": 17912.0,
+   "why": "the N-S road ends at the N end of the station building (L.) W of the railway",
+   "crop": "review/deadend_t_ns_end.png"
+  },
+  {
+   "road": "t_stw",
+   "end": "end",
+   "x": 17912.0,
+   "y": 17560.0,
+   "why": "the road ends at the station building (L.) W of the railway; the station block is drawn solid, no lane through it",
+   "crop": "review/deadend_t_stw_end.png"
+  },
+  {
+   "road": "n5_ko_farm",
+   "end": "end",
+   "why": "the single line from the Krasny Oktyabr junction stops at the farmstead by the small pond W of the stream; beyond it only the farmstead / orchard outline is drawn",
+   "crop": "review/deadend_ko_farm.png"
+  },
+  {
+   "road": "n5_w_path",
+   "end": "end",
+   "why": "the dashed line from the W block edge stops at the sheet frame line (joint of two sheets, x ~ 470 m); nothing matching continues E of the frame",
+   "crop": "review/deadend_w_path.png"
+  },
+  {
+   "road": "n5_gw_street",
+   "end": "start",
+   "why": "the street along the W house row of Gryaznoye starts at the joint between the upper and the lower sheet (y ~ 10730 m); the upper sheet is offset there and shows no matching line",
+   "crop": "review/deadend_gw_street_seam.png"
+  },
+  {
+   "road": "n5_klkh_path",
+   "end": "end",
+   "why": "the dashes SW of the klkh. lettering stop W of the sheet frame line; only a brown contour follows",
+   "crop": "review/deadend_klkh_path.png"
+  },
+  {
+   "road": "n5_w_track",
+   "end": "end",
+   "why": "the single line from the W block edge ends at the kolkhoz farm buildings W of Gryaznoye (house block at the end of the line)",
+   "crop": "review/deadend_w_track.png"
+  },
+  {
+   "road": "n5_r52",
+   "end": "start",
+   "why": "the dashed field track N from the 224.5 track starts at the lettering '267 CC' (Gryaznoye); no dashes continue N of the lettering",
+   "crop": "review/deadend_r52_lettering.png"
+  },
+  {
+   "road": "n5_r50",
+   "end": "start",
+   "why": "the track W of 224.5 ends at the kolkhoz farm building S of Gryaznoye (black house square at its W end)",
+   "crop": "review/deadend_r50_farm.png"
+  },
+  {
+   "road": "woods_trk",
+   "end": "start",
+   "x": 10808.0,
+   "y": 9272.0,
+   "why": "the solid track from Ivanovsky Vyselok runs NW and stops at the SE corner of the wood (the wood outline is not a road); genuine dead end on the sheet",
+   "crop": "review/deadend_woods_trk_start.png"
+  },
+  {
+   "road": "R23_park_s2",
+   "end": "end",
+   "x": 17288.0,
+   "y": 12732.0,
+   "why": "the single-line track running S from the park at 230.5 ends at a small point symbol (bar with two strokes) just S of the 2 km grid line; nothing is drawn beyond it",
+   "crop": "review/deadend_park_s2_end.jpg"
+  },
+  {
+   "road": "R23_p_se_village",
+   "end": "start",
+   "x": 17244.0,
+   "y": 12464.0,
+   "why": "the dashed track to the village SE of 230.5 begins in the open field; the 260 m between it and the end of R23_park_s2 is blank paper with only brown contours, too long for a dash gap (dash gaps here are 60-80 m)",
+   "crop": "review/deadend_p_se_village_start.jpg"
+  },
+  {
+   "road": "R31_s_m1",
+   "end": "end",
+   "x": 540.0,
+   "y": 5596.0,
+   "r": 5.0,
+   "why": "The double-line main street of Mal. Mayachki runs S between the sheet frame line (x~128 px) and the hatched house row and stops at the ravine (brown) at ~135,4745 px, where a small structure (bridge/dam symbol) stands; no road line continues S or W of it on the sheet (the straight lines further S are the frame and grid lines).",
+   "crop": "review/deadend_s_m1_south.png"
+  },
+  {
+   "road": "R31_p66",
+   "end": "end",
+   "x": 1276.0,
+   "y": 4516.0,
+   "r": 5.0,
+   "why": "The dashed field track from Mal. Mayachki (past 224) ends in open field at the brown contour ~320,5015 px; no dashes continue towards the 9.0 road.",
+   "crop": "review/deadend_p66_south.png"
+  },
+  {
+   "road": "R31_t_shk2",
+   "end": "end",
+   "x": 5492.0,
+   "y": 6540.0,
+   "r": 5.0,
+   "why": "Short solid spur NE from the track at the SW end of the \u0428\u041a village; it stops at the lettering \"\u0428\u041a\" (school) ~1373,4509 px; nothing continues beyond the label.",
+   "crop": "review/deadend_t_shk2.png"
+  },
+  {
+   "road": "n_r56",
+   "end": "start",
+   "x": 8900.0,
+   "y": 7215.0,
+   "why": "the track from the E reaches the railway at the booth (\u0411.) N of Teterevino; the sheet draws no crossing here that is in crossings.json, so the line stops on the E side of the railway",
+   "crop": "review/deadend_n_r56_start.png"
+  },
+  {
+   "road": "n_e1",
+   "end": "start",
+   "x": 10800.0,
+   "y": 7720.0,
+   "why": "runs W into the pencil-hatched (void) patch SW of Ivanovsky Vyselok; its continuation under the overprint is unreadable",
+   "crop": "review/deadend_n_e1_start.png"
+  },
+  {
+   "road": "n_e2",
+   "end": "start",
+   "x": 10850.0,
+   "y": 7570.0,
+   "why": "runs W into the pencil-hatched (void) patch; continuation unreadable",
+   "crop": "review/deadend_n_e2_start.png"
+  },
+  {
+   "road": "ivv_n",
+   "end": "start",
+   "x": 11408.0,
+   "y": 7188.0,
+   "why": "street of Ivanovsky Vyselok continues NW under the black pencil overprint; unreadable",
+   "crop": "review/deadend_ivv_n_start.png"
+  },
+  {
+   "road": "n_e1",
+   "end": "end",
+   "x": 11700.0,
+   "y": 7468.0,
+   "why": "runs E into the red pencil band SW of Prokhorovka; continuation unreadable",
+   "crop": "review/deadend_n_e1_end.png"
+  },
+  {
+   "road": "n_e2",
+   "end": "end",
+   "x": 11600.0,
+   "y": 7360.0,
+   "why": "runs E into the red pencil band SW of Prokhorovka; continuation unreadable",
+   "crop": "review/deadend_n_e2_end.png"
+  },
+  {
+   "road": "n_r58",
+   "end": "end",
+   "x": 11880.0,
+   "y": 7290.0,
+   "why": "the track from the N merges with the 2 km grid line under the red pencil; its continuation S is not separable from the grid line",
+   "crop": "review/deadend_n_r58_end.png"
+  },
+  {
+   "road": "n_r56",
+   "end": "end",
+   "x": 11888.0,
+   "y": 6616.0,
+   "why": "the line ends E of the Ivanovsky Vyselok house blocks in open field (drawn so on the sheet)",
+   "crop": "review/deadend_n_r56_end.png"
+  },
+  {
+   "road": "n_yp_n",
+   "end": "end",
+   "x": 8464.0,
+   "y": 5680.0,
+   "why": "the track from the Teterevino road ends at the Yasnaya Polyana lettering; nothing continues below the label",
+   "crop": "review/deadend_n_yp_n_end.png"
+  },
+  {
+   "road": "r76",
+   "end": "start",
+   "x": 9784.0,
+   "y": 4156.0,
+   "why": "the track to Ivanovka starts at the station houses at \u0440\u0430\u0437. (Belenikhino); the link to the crossing road (x5_e) through the houses is not drawn readably",
+   "crop": "review/deadend_r76_start.png"
+  },
+  {
+   "road": "x5_e",
+   "end": "end",
+   "x": 9520.0,
+   "y": 4312.0,
+   "why": "the road across the railway at X5 ends at the station houses at \u0440\u0430\u0437.; link to r76 not readable",
+   "crop": "review/deadend_x5_e_end.png"
+  },
+  {
+   "road": "bl01",
+   "end": "end",
+   "x": 8988.0,
+   "y": 3600.0,
+   "why": "the street W of the station ends at the Belenikhino lettering",
+   "crop": "review/deadend_bl01_end.png"
+  },
+  {
+   "road": "r84",
+   "end": "start",
+   "x": 16242.0,
+   "y": 4550.0,
+   "why": "track ends at the W edge of the Zhimolostnoye house blocks (village edge); no continuation drawn W of it",
+   "crop": "review/deadend_r84_start.png"
+  },
+  {
+   "road": "r85",
+   "end": "start",
+   "x": 15576.0,
+   "y": 3396.0,
+   "why": "dashed path begins on open field W of the N-S grid line; the first dash is at x~830 px, nothing drawn further W",
+   "crop": "review/deadend_r85_start.png"
+  },
+  {
+   "road": "r86",
+   "end": "start",
+   "x": 16194.0,
+   "y": 3094.0,
+   "why": "track begins at a short fork W of the x~968 grid line on the 234.9 slope; no continuation drawn",
+   "crop": "review/deadend_r86_start.png"
+  },
+  {
+   "road": "r78",
+   "end": "end",
+   "x": 14848.0,
+   "y": 2484.0,
+   "why": "track runs E into the coloured ravine / stream wash S of Zhimolostnoye; the line is not readable inside the wash",
+   "crop": "review/deadend_r78_end.png"
+  },
+  {
+   "road": "r87",
+   "end": "start",
+   "x": 14402.0,
+   "y": 2686.0,
+   "why": "track begins where it meets the straight sheet grid line at y~1390 px; W of that point only the grid line is drawn",
+   "crop": "review/deadend_r87_start.png"
+  }
+ ]
+}
