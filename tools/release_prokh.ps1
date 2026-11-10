@@ -23,9 +23,10 @@ $src = Join-Path $GameRoot 'data\common\mfo_overhaul\shared'
 $poly = Join-Path $src 'polygons\Prokh'; $camps = Join-Path $src 'camps\1943_07_Kursk'
 if (-not (Test-Path (Join-Path $poly 'Prokh.cfgpack'))) { throw "no installed polygon at $poly - run tools\build_prokh_cells.cmd first" }
 $packs = @(Get-ChildItem $poly -Filter '*_Prokh.polypack2')
-if ($packs.Count -ne 35) { throw "expected 35 cell packs in $poly, found $($packs.Count) - run tools\gen_prokh_fresh.cmd + build_prokh_cells.cmd" }
-$ops = @(Get-ChildItem $camps -Filter '07_10_Prokhorovka_*.campack2')
-if ($ops.Count -ne 2) { throw "expected 07_10_Prokhorovka_GER and _RUS campack2 in $camps, found $($ops.Count) - run tools\build_prokh_op.cmd" }
+if ($packs.Count -ne 81) { throw "expected 81 cell packs (the 9 x 9 block) in $poly, found $($packs.Count) - run tools\build_prokh.ps1" }
+# the three operations, each side: 07_10_Prokhorovka (10-13 July), 07_10_Komsomolets (10-11 July), 07_12_Prokhorovka (12-13 July)
+$ops = @(Get-ChildItem $camps -Filter '07_1*_*.campack2')
+if ($ops.Count -ne 6) { throw "expected 6 operation campack2 (3 operations x GER / RUS) in $camps, found $($ops.Count) - run tools\build_prokh.ps1" }
 
 $rel = Join-Path $repo 'build\release'; $core = Join-Path $rel 'core'
 if (Test-Path $core) { Remove-Item $core -Recurse -Force }

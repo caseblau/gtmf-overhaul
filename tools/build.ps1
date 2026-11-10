@@ -26,7 +26,9 @@ param(
     [string]$BuildDir = '',
     [switch]$Install,
     [switch]$WithIS2,    # include the optional IS-2 module (m14_is2): built from a paid model, keep it out of builds shared with others until its licence allows that
-    [switch]$WithT3485   # include the optional T-34-85 module (m15_t3485): its turret is from a paid model, same rule
+    [switch]$WithT3485,  # include the optional T-34-85 module (m15_t3485): its turret is from a paid model, same rule
+    [switch]$Public      # a build for others: leaves out the third-party modules (m8_vfx = Toni's RBVFX, m9_ap_port = night_postman's
+                         # bindings) until their authors' written permission is recorded in docs\third_party.md section 2
 )
 $ErrorActionPreference = 'Stop'
 $repo = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
@@ -46,6 +48,7 @@ $separate = @(); if ($m['separate_modules']) { $separate = @($m['separate_module
 # conflict check + merge plan (one line per contribution, in application order)
 if (-not $WithIS2) { $separate = @($separate) + 'm14_is2' }
 if (-not $WithT3485) { $separate = @($separate) + 'm15_t3485' }
+if ($Public) { $separate = @($separate) + 'm8_vfx' + 'm9_ap_port'; '-Public: m8_vfx and m9_ap_port left out (third-party, no permission yet)' }
 $plan = @(& (Join-Path $PSScriptRoot 'check_conflicts.ps1') -SrcRoot (Join-Path $repo 'src') -MergeOrder $m['table_merge_order'] -Skip $separate -Prefix $m['prefix'] -Plan)
 if ($LASTEXITCODE -ne 0) { throw 'conflict check failed' }
 foreach ($s in $separate) { "[$s] built separately (see tools\build_sounds.ps1)" }
