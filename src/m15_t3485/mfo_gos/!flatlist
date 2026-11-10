@@ -3,4 +3,6 @@ i_unflat:unflat()
 	t3485                         , mesh            , loc_def ;
 	reg_t3485__utz_dift           , texture         , loc_def ;
 	bump_t3485__utz_norsp         , texture         , loc_def ;
+	t3485_ostov01                 , mesh            , loc_def ;
+	arm_t3485_dift                , armor           , loc_def ;
 }

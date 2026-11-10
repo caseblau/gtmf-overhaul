@@ -24,7 +24,11 @@ def vehicle(tb, tbo, mesh):
         n = t['name']; t = dict(t)
         if n == 'props':
             set_ = {'name': 's:ui_t3485', 'mesh': 's:t3485', 'mass': 'f:32000', 'j': 'v:72000;72000;48000', 'engine_pow': 'f:500',
-                    'vis_factor': 'f:1.45', 'boekomplekt': 's:t3485'}
+                    'vis_factor': 'f:1.45', 'boekomplekt': 's:t3485',
+                    # 11 Nov (user: real T-34-85 values): the turret's own armour map (t3485.armour_map: 90 / 75 / 52 / 20 mm turret plates,
+                    # the T-34's hull), the thickest plate, and the AI's front / side / rear / top estimate; its own wreck
+                    'armor_map': 's:arm_t3485_dift', 'armor_thick': 'f:90', 'arm': 'v:90;60;45;20',
+                    'ostov_type': 's:tabs\\\\ostovs.cfgpack, t3485_ostov*'}   # written escaped, as the IS-2's row
             rs = []
             for k, c in t['rows']:
                 if k in set_:
@@ -40,24 +44,34 @@ def vehicle(tb, tbo, mesh):
             rs = []
             for r in rows(n):
                 k = vehcfg.text(r[0])
-                if k in ('wp_gunner', 'wp_loader'): r[11] = S(''); r[13] = S('')     # the turret hatches stay shut: no head-out
+                if k == 'wp_gunner': r[11] = S(''); r[13] = S('')                    # the T-34-85 gunner has no hatch of his own
+                if k == 'wp_loader': r[11] = S('loader'); r[13] = S('s_loader_out')  # 11 Nov (user): head out of his own hatch
                 rs.append(r)
             c = list(next(r for r in KV.table('work_places')['rows'] if vehcfg.text(r[0]) == 'wp_commander'))
-            c[9] = S(''); c[11] = S(''); c[13] = S('')                                  # no weapon of his own, no hatch
+            c[9] = S(''); c[11] = S('commander'); c[13] = S('s_commander_out')        # no weapon of his own; head out of the cupola (11 Nov)
             rs.append(c); t['rows'] = [r for r in rs if ok(r)]
         elif n == 'sights':
             rs = []
             for r in rows(n):
-                if vehcfg.text(r[1]) == 's_camera_pt4_7': r[5] = S('')                 # the old turret's turning PT4 node is gone
+                if vehcfg.text(r[1]) == 's_camera_pt4_7':
+                    r[5] = S('d_sight_01'); rs.append(r)                               # the gunner's periscope turns (t3485.py cuts it out)
+                    l2 = list(r); l2[0] = S('sig_loader_mk4'); l2[1] = S('s_camera_loader_02'); l2[2] = S('mk4'); l2[4] = S('sig_loader'); l2[5] = S('d_sight_02')
+                    rs.append(l2); continue                                            # the loader's own turning MK-4
                 rs.append(r)
             kv = [list(r) for r in KV.table('sights')['rows'] if vehcfg.text(r[0]).startswith('sig_comh_')]
             for i, r in enumerate(kv[:1] + kv[1:] + [list(kv[-1])]):
                 r[0] = S('sig_comh_%02d' % (i + 1)); r[1] = S('s_camera_mk4_%02d' % (i + 1)); r[7] = S('')
                 if i: r[2] = S('hole')                                                  # the cupola's vision slits
+                else: r[5] = S('d_sight_03')                                            # the MK-4 in the cupola lid turns
                 rs.append(r)
             t['rows'] = [r for r in rs if ok(r)]
+        elif n == 'heads':   # ZiS-S-53 elevation -5 / +22 deg
+            rs = rows(n); h = fnd(rs, 'head1'); h[5] = 'f:22'; t['rows'] = [h] + [r for r in rs if vehcfg.text(r[0]) != 'head1' and ok(r)]
         elif n == 'hatchs':
-            t['rows'] = [r for r in rows(n) if vehcfg.text(r[0]) in ('driver', 'drv_cap_01', 'drv_cap_02') and ok(r)]
+            rs = [r for r in rows(n) if vehcfg.text(r[0]) in ('driver', 'drv_cap_01', 'drv_cap_02')]
+            ld = fnd(rows(n), 'loader'); ld[1] = S('d_hatch_03'); ld[3] = 'f:100'; ld[7] = 'u:2'; rs.append(ld)   # the loader's hatch, front hinge (t3485.LIDS)
+            cm = list(ld); cm[0] = S('commander'); cm[1] = S('d_hatch_04'); rs.append(cm)                    # the cupola lid / its front leaf
+            t['rows'] = [r for r in rs if ok(r)]
         else:
             t['rows'] = [r for r in rows(n) if ok(r)]
         out.append(t)
@@ -84,6 +98,19 @@ def main(root, mesh, mod):
     t[25] = S('sight_tmdf7'); t[36] = S(''); t[41] = S('tabs\\\\techn_base_oprum.cfgpack'); t[42] = S('t3485')
     m_ = find(table(ui, 'managed'), 't34_utz_m42'); m_[0] = S('t3485')
     w(os.path.join(tabs, 'ui_params.config.loc_def.15_t3485.delta'), ['# T-34-85 UI rows (tools\\m13\\t3485_tables.py)', row('techns', t), row('managed', m_)])
+    # the wreck: the generic T-34 wreck's rows on the T-34-85 wreck mesh (t3485.wreck)
+    import azcf
+    ost = os.path.join(root, 'tabs', 'ostovs.config.loc_def.bin'); b, ns = azcf.read(ost); nn = next(x for x in ns if x['name'] == 'rtank_ostov0')
+    O_ = ["# T-34-85 wreck (tools/m13/t3485_tables.py): the T-34 wreck's rows, its own mesh", 'node+|t3485_ostov0|%d|%d|%s|@end' % (nn['type'], nn['cols'], nn['types'])]
+    for r_ in range(nn['rows']):
+        o = nn['data'] + r_ * 0x40; k = b[o + 0x20:o + 0x40].split(bytes(1))[0].decode('cp1251'); v = vehcfg.cell(b, o)
+        O_.append('row+|t3485_ostov0|@end|%s|%s|%s' % (k, k, 's:t3485_ostov01' if k == 'mesh' else 'f:24000' if k == 'mass' else v))
+    kids = [x for x in ns if x['index'] > nn['index'] and x['name'].startswith('rtank_ostov0/')] if 'index' in nn else []
+    for c in kids:
+        O_.append('node+|t3485_ostov0/%s|%d|%d|%s|@top' % (c['name'].split('/', 1)[1], c['type'], c['cols'], c['types']))
+        for r_ in range(c['rows']):
+            cells = [vehcfg.cell(b, c['data'] + r_ * 0x20 * c['cols'] + k * 0x20) for k in range(c['cols'])]; O_.append('row+|t3485_ostov0/%s|@end|%s|%s' % (c['name'].split('/', 1)[1], vehcfg.text(cells[0]), '|'.join(cells)))
+    w(os.path.join(tabs, 'ostovs.config.loc_def.15_t3485.delta'), O_)
     # unit and squads: the T-34's, with the KV-1S's 5-man crews; 1 July 1943 on, so it can join the summer-1943 skirmishes like the IS-2
     D = ['# T-34-85 unit and squads (tools\\m13\\t3485_tables.py)']
     u = find(table(div, 'units'), 'rkkau_t34_42_uztm'); u[0] = S('rkkau_t3485'); u[1] = S('ui_t3485'); u[3] = S('tabs\\\\techn_base_oprum.cfgpack'); u[4] = S('t3485'); u[5] = 'u:5'
@@ -98,9 +125,9 @@ def main(root, mesh, mod):
     new = [('ui_t3485', ['T-34-85', 'T-34-85']), ('gun_zis_s53', ['85 mm ZiS-S-53'])]
     items = [x for x in items if x[0] not in {k for k, _ in new}] + new; textpack.write(tp, loc, items)
     fl = lambda names: 'i_unflat:unflat()\n{\n' + ''.join('\t%-30s, %-16s, loc_def ;\n' % n for n in names) + '}\n'
-    open(os.path.join(tabs, '!flatlist'), 'w', newline='\n').write(fl([('common_res_mod', 'config'), ('techn_base_oprum', 'config'), ('ui_params', 'config')]))
+    open(os.path.join(tabs, '!flatlist'), 'w', newline='\n').write(fl([('common_res_mod', 'config'), ('ostovs', 'config'), ('techn_base_oprum', 'config'), ('ui_params', 'config')]))
     open(os.path.join(ap, '!flatlist'), 'w', newline='\n').write(fl([('div_units_ussr', 'config')]))
-    open(os.path.join(gos, '!flatlist'), 'w', newline='\n').write(fl([('t3485', 'mesh'), ('reg_t3485__utz_dift', 'texture'), ('bump_t3485__utz_norsp', 'texture')]))
+    open(os.path.join(gos, '!flatlist'), 'w', newline='\n').write(fl([('t3485', 'mesh'), ('reg_t3485__utz_dift', 'texture'), ('bump_t3485__utz_norsp', 'texture'), ('t3485_ostov01', 'mesh'), ('arm_t3485_dift', 'armor')]))
 
 
 if __name__ == '__main__':

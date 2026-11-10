@@ -11,7 +11,7 @@ Penetration, from the engine (basic_physic.codelib 0x180022b30), at a normal hit
 k shell col 6, d calibre (m), m col 12, v the speed at the target, S the target's armor_str (2000 KV-1S, 2200 Panther).  Speed falls off as v0 / (1 + c t), that is
 v(x) = v0 * exp(-c x / v0), with c col 14 (0x180015230).  Against Soviet plate the Soviet table gives 152 / 142 / 133 / 122 mm at 500 / 1000 / 1500 / 2000 m, so k 0.79 and c 0.09.
 Col 10 is the shell's blast, not its penetration: by mass between the game's 100 mm BR-412D and 152 mm BR-540.
-Estimate, to check in game: the armour uses the KV-1S's map with armor_thick 160, so its 75 mm front reads 120 and its 60 mm plates 96 (assuming the map is a fraction of armor_thick).
+Armour: its own map arm_is2_dift (is2_lp.py, armour.py): hull 120 / 90 / 60 / 30 mm, turret and mantlet 100 / 90 / 90 / 30 mm.
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); sys.path.insert(1, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
@@ -34,7 +34,8 @@ def vehicle(tbo, mesh):
         n = t['name']; t = dict(t)
         if n == 'props':
             set_ = {'name': 's:ui_is2', 'mesh': 's:is2', 'mass': 'f:46000', 'j': 'v:125000;125000;57000', 'engine_pow': 'f:520', 'fuel_tank': 'f:520',
-                    'arm': 'v:120;90;60;30', 'arm_week': 'v:60;60;40;20', 'armor_thick': 'f:160', 'vis_factor': 'f:1.35'}
+                    'arm': 'v:120;90;60;30', 'arm_week': 'v:60;60;40;20', 'armor_thick': 'f:120', 'vis_factor': 'f:1.35',
+                    'armor_map': 's:arm_is2_dift'}   # 11 Nov: its own map (is2_lp + armour.py), values are 2 x mm; armor_thick is the thickest plate
             set_['boekomplekt'] = 's:is2'   # 10 Nov (user: aims, never fires): it named the KV-1S's loadout - 76 mm rounds the D-25T cannot take
             set_['ostov_type'] = next(c for k, c in t['rows'] if k == 'ostov_type').replace('kv1s_ostov', 'is2_ostov')
             rs = []
@@ -160,7 +161,7 @@ def main(root, mesh, mod):
     fl = lambda names: 'i_unflat:unflat()\n{\n' + ''.join('\t%-30s, %-16s, loc_def ;\n' % n for n in names) + '}\n'
     open(os.path.join(tabs, '!flatlist'), 'w', newline='\n').write(fl([('common_res_mod', 'config'), ('ostovs', 'config'), ('techn_base_oprum', 'config'), ('ui_params', 'config')]))
     open(os.path.join(ap, '!flatlist'), 'w', newline='\n').write(fl([('div_units_ussr', 'config')]))
-    open(os.path.join(mod, 'mfo_gos', '!flatlist'), 'w', newline='\n').write(fl([('is2', 'mesh'), ('reg_is2_dift', 'texture'), ('bump_is2_norsp', 'texture'), ('is2_ostov01', 'mesh'), ('reg_is2_ostov_dift', 'texture'), ('bump_is2_ostov_norsp', 'texture')]))
+    open(os.path.join(mod, 'mfo_gos', '!flatlist'), 'w', newline='\n').write(fl([('is2', 'mesh'), ('reg_is2_dift', 'texture'), ('bump_is2_norsp', 'texture'), ('is2_ostov01', 'mesh'), ('reg_is2_ostov_dift', 'texture'), ('bump_is2_ostov_norsp', 'texture'), ('arm_is2_dift', 'armor')]))
 
 if __name__ == '__main__':
     main(*sys.argv[1:4])

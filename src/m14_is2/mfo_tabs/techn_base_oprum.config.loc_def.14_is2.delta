@@ -49,8 +49,8 @@ row+|is2/props|@end|gen_power|gen_power|f:3
 row+|is2/props|@end|steer_wheel|steer_wheel|b:0
 row+|is2/props|@end|arm|arm|v:120;90;60;30
 row+|is2/props|@end|arm_week|arm_week|v:60;60;40;20
-row+|is2/props|@end|armor_thick|armor_thick|f:160
-row+|is2/props|@end|armor_map|armor_map|s:arm_kv1s_dift
+row+|is2/props|@end|armor_thick|armor_thick|f:120
+row+|is2/props|@end|armor_map|armor_map|s:arm_is2_dift
 row+|is2/props|@end|armor_qual|armor_qual|f:0.9
 row+|is2/props|@end|armor_frail|armor_frail|f:0.4
 row+|is2/props|@end|armor_str|armor_str|f:2000

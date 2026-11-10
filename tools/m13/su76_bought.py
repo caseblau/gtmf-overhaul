@@ -1,7 +1,7 @@
 """SU-76M game mesh from the user's purchased model (Downloads\\wwii-soviet-su76-..., obj.rar and the textures inside fbx.glb), on the
 game's T-70M running gear, re-laid at the model's own wheel positions.
 
-  python su76_bought.py <t70 mesh> <obj.obj> <textures dir> <out dir> [game diffuse, for the paint]
+  python su76_bought.py <t70 mesh> <obj.obj> <textures dir> <out dir> <zis3 mesh> [game diffuse, for the paint]
 
 Frame: game = (-x, y - 0.868, z), metres (the OBJ is in centimetres).  From the model: hull, open casemate, interior,
 fenders, fittings, spare parts, gun, gun housing and mantle.  From the game: road wheels, sprocket, idler, rollers, arms and

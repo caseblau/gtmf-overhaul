@@ -6,12 +6,13 @@ wedges the 536 000-triangle model left.  Running gear, crew stations, damage box
 """
 import sys, os, re, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import bought as B, azg2, geom, su122_mesh as SM, m3lee_mesh as OLD, is2_bought as I
+import bought as B, azg2, geom, su122_mesh as SM, m3lee_mesh as OLD, is2_bought as I, armour
 
 OFF = np.array([0.0, -1.079, -0.293])      # model -> game: road wheel axles on the KV-1S's (y -0.721), road wheel span on the old IS-2's
 MATERIAL = I.MATERIAL
 UVS = []
 DARK_UV = np.array((0.5, 0.5))
+ARM_BLOCKS = []
 
 def find_dark_uv(lp_tex, parts):
     from PIL import Image, ImageDraw
@@ -138,7 +139,13 @@ def build(kv_path, obj_path):
     TRUN = np.array([BORE[0], BORE[1], gm.lo()[2] + 0.10]); MUZ = np.array([BORE[0], BORE[1], bar.hi()[2]])
     nodes = []
     def add(name, kind, parent, M, geo=None): nodes.append(dict(name=name, kind=kind, parent=parent, M=M, geo=geo or {}))
-    def hit(p, cls=None): return OLD.hit(*p.plain(), arm, cls)
+    # 11 Nov (user: real values): the IS-2's own armour map (armour.py) - hull 120 mm front, 90 sides, 60 rear, 30 roof; turret and
+    # mantlet 100 front, 90 sides and rear, 30 roof.  The KV-1S spots it used read 37 / 4 / 29 / 22 mm (arm_points picks odd faces).
+    ARM_UV, blocks = armour.plates(os.path.join(os.path.dirname(os.path.abspath(kv_path)), 'arm_kv1s_dift.armor.loc_def.bin'), K,
+                                   {'front': 120, 'side': 90, 'rear': 60, 'roof': 30, 'tfront': 100})
+    ARM_BLOCKS[:] = blocks
+    AH = {k: ARM_UV[k] for k in ('front', 'side', 'rear', 'roof')}; AT = dict(front=ARM_UV['tfront'], side=ARM_UV['side'], rear=ARM_UV['side'], roof=ARM_UV['roof'])
+    def hit(p, cls=None, a=None): return OLD.hit(*p.plain(), a or AH, cls)
     def g3(p): g = p.gxt(); return {1: g, 2: g, 3: g}
     far = B.join([q for q in hull_pcs if float(np.max(q.hi() - q.lo())) > 0.5])
     add('d_hull', 4, None, np.eye(4), {0: hit(shell), 1: hull.gxt(), 2: hull.gxt(), 3: far.gxt()})
@@ -167,21 +174,21 @@ def build(kv_path, obj_path):
         add(name, K.node(name)['kind'], 'd_hull', M, g)
     # ---- turret, gun, lids, machine guns
     PW = {'d_hull': np.zeros(3), 'd_head': RING, 'd_gunmask': TRUN}
-    add('d_head', 4, 'd_hull', tr(RING), {0: hit(body.moved(RING), 'side'), **g3(tur.moved(RING))})
+    add('d_head', 4, 'd_hull', tr(RING), {0: hit(body.moved(RING), None, AT), **g3(tur.moved(RING))})
     # 10 Nov (user): the gunner's sight port in the mantlet, left of the gun (mirrors the DT stub on the right): cut, dark behind
     SP = np.array([2 * BORE[0] - 0.287, 1.031, 0.0]); ff = sorted(set(B.ray_faces(gm, (SP[0] + dx, SP[1] + dy, 9.0), (0, 0, -1.0), 0, 9)[0][0] for dx in (-0.02, 0, 0.02) for dy in (-0.03, 0, 0.03) if len(B.ray_faces(gm, (SP[0] + dx, SP[1] + dy, 9.0), (0, 0, -1.0), 0, 9)[0])))
     SP[2] = 9.0 - float(min(B.ray_faces(gm, (SP[0], SP[1], 9.0), (0, 0, -1.0), 0, 9)[1]))
     gm, ncut = B.cut_rect(gm, SP, (0, 0, 1.0), (1.0, 0, 0), 0.03, 0.045, only=ff)
     gm = B.join([gm, B.dark_box(SP, (0, 0, 1.0), (1.0, 0, 0), 0.03, 0.045, 0.25, DARK_UV)]); print('sight port at', np.round(SP, 3), 'faces cut', ncut)
-    add('d_gunmask', 4, 'd_head', tr(TRUN - RING), {0: hit(gm.moved(TRUN), 'front'), **g3(gm.moved(TRUN))})
-    b_l = bar.moved(TRUN); add('d_gun', 4, 'd_gunmask', np.eye(4), {0: hit(b_l, 'front'), **g3(b_l)})
+    add('d_gunmask', 4, 'd_head', tr(TRUN - RING), {0: hit(gm.moved(TRUN), 'front', AT), **g3(gm.moved(TRUN))})
+    b_l = bar.moved(TRUN); add('d_gun', 4, 'd_gunmask', np.eye(4), {0: hit(b_l, 'roof', AT), **g3(b_l)})
     add('s_gun', 0, 'd_gun', tr(MUZ + [0, 0, 0.065] - TRUN));   # 11 Nov (user: the SU-152's ML-20S): 6.5 cm ahead of the brake's face, as on the SU-152
     add('s_mgun', 0, 'd_gunmask', tr(np.array([0.287, 1.031, 2.43]) - TRUN))   # 10 Nov: the co-axial DT's muzzle on the stub right of the gun (fired from inside the barrel)
     def hatch(name, lid, piv, xdir):
         """local z along the hinge (hatch axis 2), x from the hinge into the lid, y up"""
         x = np.asarray(xdir, float); x /= np.linalg.norm(x); y = np.array([0, 1.0, 0]); Rm = np.array([x, y, np.cross(x, y)])
         M = np.eye(4); M[:3, :3] = Rm; M[3, :3] = np.asarray(piv, float) - RING; L_l = backed(lid.moved(piv, Rm))
-        add(name, 4, 'd_head', M, {0: hit(L_l, 'roof'), **g3(L_l)})
+        add(name, 4, 'd_head', M, {0: hit(L_l, 'roof', AT), **g3(L_l)})
     Ll = B.join(lid_l); lo_, hi_ = Ll.lo(), Ll.hi()
     rc = rod.centre(); hatch('d_hatch_03', Ll, ((lo_[0] + hi_[0]) / 2, rc[1], rc[2]), (0, 0, -1.0))   # loader's lid: turns on the rod's axis
     hatch('d_hatch_04', lid_f, (cc[0], yk, zf), (0, 0, -1.0))          # cupola front leaf: opens forward on its front knuckle
@@ -210,11 +217,11 @@ def build(kv_path, obj_path):
     # rear ball MG (10 Nov, user: wrong): the mesh is expressed in the KV-1S socket's own turned frame, so it stays where the model has it;
     # the muzzle socket at the barrel's rear end in that frame
     mg = G['IS_2 Tower MG']; ball = mg.centre(); M = K.local('s_bow_rot_03').copy(); Rb = M[:3, :3].copy(); M[3, :3] = ball - RING; add('s_bow_rot_03', 0, 'd_head', M)
-    m_l = mg.moved(ball, Rb); add('d_mgun_02', 4, 's_bow_rot_03', np.eye(4), {0: hit(m_l, 'side'), **g3(m_l)})
+    m_l = mg.moved(ball, Rb); add('d_mgun_02', 4, 's_bow_rot_03', np.eye(4), {0: hit(m_l, 'side', AT), **g3(m_l)})
     muz = np.array([ball[0], ball[1], mg.lo()[2]]); add('s_mgun3', 0, 'd_mgun_02', tr((muz - ball) @ Rb.T))
     # the fixed bow DT fired from a port right of the visor (the model has no part for it): socket and damage box only
     bc = np.array([0.30, 0.30, 2.48]); M = K.local('s_bow_rot_02').copy(); M[3, :3] = bc; add('s_bow_rot_02', 0, 'd_hull', M)
-    Vb, Fb = geom.box((0, 0, 0.05), (0.08, 0.08, 0.20)); add('d_mgun_01', 1, 's_bow_rot_02', np.eye(4), {0: OLD.hit(Vb, Fb, arm, 'front')}); add('s_mgun2', 0, 'd_mgun_01', tr((0, 0, 0.15)))
+    Vb, Fb = geom.box((0, 0, 0.05), (0.08, 0.08, 0.20)); add('d_mgun_01', 1, 's_bow_rot_02', np.eye(4), {0: OLD.hit(Vb, Fb, AH, 'front')}); add('s_mgun2', 0, 'd_mgun_01', tr((0, 0, 0.15)))
     lc = lamp.centre(); add('d_light_01', 1, 'd_hull', tr((lc[0], lc[1], lamp.hi()[2] - 0.02)), {0: K.geo[('d_light_01', 0)]} if ('d_light_01', 0) in K.geo else {})
     add('s_light_01', 0, 'd_light_01', tr((0, 0, 0.04)))
     # ---- the KV-1S's crew stations, damage boxes, fires, marks, riders: turret ones follow the ring, gun ones the trunnion
@@ -283,3 +290,4 @@ if __name__ == '__main__':
     p = os.path.join(out, 'is2.mesh.loc_def.bin'); open(p, 'wb').write(data)
     m = azg2.read(p); print('written', p, len(data), 'bytes;', len(m['nodes']), 'nodes;', [(b['tag'], b['nv'], b['ni']) for b in m['blocks']])
     textures(lp_tex, out, ref); print('textures written')
+    armour.write(os.path.join(os.path.dirname(os.path.abspath(kv)), 'arm_kv1s_dift.armor.loc_def.bin'), os.path.join(out, 'arm_is2_dift.armor.loc_def.bin'), ARM_BLOCKS); print('armour map written', ARM_BLOCKS)

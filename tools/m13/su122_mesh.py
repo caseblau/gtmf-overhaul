@@ -523,6 +523,7 @@ def build(t34_path, m30_path, su152_path):
 
 # ---------------------------------------------------------------- writer
 def assemble(nodes, template_path):
+    nodes = bfs_order(nodes)   # 11 Nov: children in one run per parent, or the game never reaches them (bfs_order)
     tpl = azg2.parse(open(template_path, 'rb').read())
     names = [n['name'] for n in nodes]; idx = {n: i + 1 for i, n in enumerate(names)}
     allnodes = [dict(name='s_root', kind=0, parent=None, M=np.eye(4), geo={})] + nodes
@@ -654,3 +655,16 @@ if __name__ == '__main__':
                 for u, v in b['uv']: f.write('vt %.5f %.5f\n' % (u, 1 - v))
                 for t in b['idx'][:len(b['idx']) // 3 * 3].reshape(-1, 3) + 1 + o: f.write('f %d/%d %d/%d %d/%d\n' % (t[0], t[0], t[2], t[2], t[1], t[1]))
                 o += len(P)
+
+
+def bfs_order(nodes):
+    """nodes reordered breadth first, so every node's children sit in one run after their siblings' (11 Nov, the T-34-85's
+    invisible turret): the game walks the tree by each node's (first child, child count) run, not by the parent field, so a
+    child written outside its parent's run is never reached and its geometry is not drawn"""
+    kids = {}
+    for n in nodes: kids.setdefault(n['parent'] or ('' if n['name'] == 'd_hull' else 'd_hull'), []).append(n)
+    out, q = [], [n for n in nodes if n['name'] == 'd_hull']
+    while q:
+        n = q.pop(0); out.append(n); q.extend(kids.get(n['name'], []))
+    assert len(out) == len(nodes), (len(out), len(nodes))
+    return out

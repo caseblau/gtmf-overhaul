@@ -1,6 +1,7 @@
 i_unflat:unflat()
 {
 	common_res_mod                , config          , loc_def ;
+	ostovs                        , config          , loc_def ;
 	techn_base_oprum              , config          , loc_def ;
 	ui_params                     , config          , loc_def ;
 }

@@ -3,7 +3,7 @@ node+|t3485|1|0||@end
 node+|t3485/props|1|1|sssuuufffsbbbbbfsssufufsssssffvfffffsbfffffffubvvfsffffussuuuubfffuuusf|@top
 row+|t3485/props|@end|name|name|s:ui_t3485
 row+|t3485/props|@end|mesh|mesh|s:t3485
-row+|t3485/props|@end|ostov_type|ostov_type|s:tabs\\ostovs.cfgpack, rtank_ostov*
+row+|t3485/props|@end|ostov_type|ostov_type|s:tabs\\ostovs.cfgpack, t3485_ostov*
 row+|t3485/props|@end|mesh_lods|mesh_lods|u:3
 row+|t3485/props|@end|type|type|u:'TANK'
 row+|t3485/props|@end|select_as|select_as|u:2
@@ -48,10 +48,10 @@ row+|t3485/props|@end|eng_cur|eng_cur|f:5
 row+|t3485/props|@end|gen_power|gen_power|f:3
 row+|t3485/props|@end|transm_type|transm_type|u:0
 row+|t3485/props|@end|steer_wheel|steer_wheel|b:0
-row+|t3485/props|@end|arm|arm|v:50;30;25;10
+row+|t3485/props|@end|arm|arm|v:90;60;45;20
 row+|t3485/props|@end|arm_week|arm_week|v:30;25;-1;-1
-row+|t3485/props|@end|armor_thick|armor_thick|f:52
-row+|t3485/props|@end|armor_map|armor_map|s:arm_t34_42_utz_dift
+row+|t3485/props|@end|armor_thick|armor_thick|f:90
+row+|t3485/props|@end|armor_map|armor_map|s:arm_t3485_dift
 row+|t3485/props|@end|armor_qual|armor_qual|f:0.9
 row+|t3485/props|@end|armor_frail|armor_frail|f:0.6
 row+|t3485/props|@end|armor_str|armor_str|f:2000
@@ -125,12 +125,12 @@ row+|t3485/shells|@end|762_AP|s:762_AP|u:1953
 row+|t3485/shells|@end|RDG|s:RDG|u:12
 node+|t3485/shell_places|2|10|ssuubsffss|t3485/shells
 node+|t3485/heads|2|19|sssffffffffbuffbbbf|t3485/shell_places
-row+|t3485/heads|@end|head1|s:head1|s:d_head|s:d_gunmask|f:180|f:180|f:25|f:5|f:2|f:2|f:30|f:2|b:0|u:0|f:0|f:0|b:0|b:1|b:0|f:0
+row+|t3485/heads|@end|head1|s:head1|s:d_head|s:d_gunmask|f:180|f:180|f:22|f:5|f:2|f:2|f:30|f:2|b:0|u:0|f:0|f:0|b:0|b:1|b:0|f:0
 row+|t3485/heads|@end|head2|s:head2|s:s_bow_rot|s:d_mgun_01|f:15|f:15|f:15|f:15|f:10|f:10|f:10|f:10|b:0|u:0|f:0|f:0|b:0|b:0|b:0|f:0
 node+|t3485/work_places|2|34|sbbbbbbbfsssssssssufbbbbbbfsbssuuf|t3485/heads
 row+|t3485/work_places|@end|wp_driver|s:wp_driver|b:1|b:0|b:0|b:1|b:0|b:1|b:0|f:1.8|s:|s:sig_driver|s:driver|s:s_driver|s:s_driver|s:p_driver|s:p_driver|s:s_driver_exit|s:t34_driver|u:0|f:0.1|b:0|b:0|b:0|b:0|b:0|b:0|f:0|s:|b:0|s:|s:|u:0|u:0|f:0
 row+|t3485/work_places|@end|wp_gunner|s:wp_gunner|b:0|b:0|b:0|b:1|b:0|b:0|b:0|f:2|s:head1|s:sig_gunner|s:|s:s_gunner|s:|s:p_gunner|s:|s:s_gunner_exit|s:t34_gunner|u:2|f:0.3|b:0|b:0|b:0|b:0|b:0|b:0|f:0|s:|b:0|s:|s:|u:0|u:0|f:0
-row+|t3485/work_places|@end|wp_loader|s:wp_loader|b:0|b:0|b:0|b:1|b:0|b:0|b:0|f:1.5|s:|s:sig_loader|s:|s:s_loader|s:|s:p_loader|s:|s:s_loader_exit|s:t34_loader|u:1|f:0.05|b:0|b:0|b:0|b:0|b:0|b:0|f:0|s:|b:0|s:|s:|u:0|u:0|f:0.75
+row+|t3485/work_places|@end|wp_loader|s:wp_loader|b:0|b:0|b:0|b:1|b:0|b:0|b:0|f:1.5|s:|s:sig_loader|s:loader|s:s_loader|s:s_loader_out|s:p_loader|s:|s:s_loader_exit|s:t34_loader|u:1|f:0.05|b:0|b:0|b:0|b:0|b:0|b:0|f:0|s:|b:0|s:|s:|u:0|u:0|f:0.75
 row+|t3485/work_places|@end|wp_mgunner|s:wp_mgunner|b:0|b:0|b:0|b:1|b:0|b:0|b:0|f:1|s:head2|s:sig_mgunner|s:driver|s:s_mgunner|s:|s:p_mgunner|s:|s:s_mgunner_exit|s:t34_mgunner|u:7|f:0.05|b:0|b:0|b:0|b:0|b:0|b:0|f:0|s:|b:0|s:|s:|u:0|u:0|f:0
 row+|t3485/work_places|@end|wp_des_01|s:wp_des_01|b:1|b:0|b:0|b:1|b:1|b:0|b:0|f:0.01|s:|s:|s:|s:s_des_01|s:|s:|s:|s:s_des_out_02|s:des_01|u:5|f:0|b:1|b:0|b:1|b:0|b:0|b:0|f:0|s:|b:0|s:|s:|u:0|u:0|f:0
 row+|t3485/work_places|@end|wp_des_02|s:wp_des_02|b:1|b:0|b:0|b:1|b:1|b:0|b:0|f:0.01|s:|s:|s:|s:s_des_02|s:|s:|s:|s:s_des_out_01|s:des_02|u:5|f:0|b:1|b:0|b:1|b:0|b:0|b:0|f:0|s:|b:0|s:|s:|u:0|u:0|f:0
@@ -144,16 +144,17 @@ row+|t3485/work_places|@end|wp_des_09|s:wp_des_09|b:1|b:0|b:0|b:1|b:1|b:0|b:0|f:
 row+|t3485/work_places|@end|wp_des_10|s:wp_des_10|b:1|b:0|b:0|b:1|b:1|b:0|b:0|f:0.01|s:|s:|s:|s:s_des_10|s:|s:|s:|s:s_des_out_05|s:des_02|u:5|f:0|b:1|b:0|b:1|b:0|b:0|b:0|f:0|s:|b:0|s:|s:|u:0|u:0|f:0
 row+|t3485/work_places|@end|wp_des_11|s:wp_des_11|b:1|b:0|b:0|b:1|b:1|b:0|b:0|f:0.01|s:|s:|s:|s:s_des_11|s:|s:|s:|s:s_des_out_04|s:des_01|u:5|f:0|b:1|b:0|b:1|b:0|b:0|b:0|f:0|s:|b:0|s:|s:|u:0|u:0|f:0
 row+|t3485/work_places|@end|wp_des_12|s:wp_des_12|b:1|b:0|b:0|b:1|b:1|b:0|b:0|f:0.01|s:|s:|s:|s:s_des_12|s:|s:|s:|s:s_des_out_03|s:des_03|u:5|f:0|b:1|b:0|b:1|b:0|b:0|b:0|f:0|s:|b:0|s:|s:|u:0|u:0|f:0
-row+|t3485/work_places|@end|wp_commander|s:wp_commander|b:0|b:0|b:0|b:1|b:0|b:0|b:0|f:1|s:|s:sig_commander|s:|s:s_commander|s:|s:p_commander|s:|s:s_commander_exit|s:t34_gunner|u:4|f:0.2|b:0|b:0|b:0|b:0|b:0|b:0|f:0|s:|b:0|s:|s:|u:0|u:0|f:0
+row+|t3485/work_places|@end|wp_commander|s:wp_commander|b:0|b:0|b:0|b:1|b:0|b:0|b:0|f:1|s:|s:sig_commander|s:commander|s:s_commander|s:s_commander_out|s:p_commander|s:|s:s_commander_exit|s:t34_gunner|u:4|f:0.2|b:0|b:0|b:0|b:0|b:0|b:0|f:0|s:|b:0|s:|s:|u:0|u:0|f:0
 node+|t3485/sights|2|12|sssfssssssss|t3485/work_places
 row+|t3485/sights|@end|sig_driver_1|s:sig_driver_1|s:s_camera_driver_02|s:driver_tech|f:0|s:sig_driver|s:|s:|s:drv_cap_02|s:|s:|s:|s:
 row+|t3485/sights|@end|sig_driver_2|s:sig_driver_2|s:s_camera_driver_03|s:driver_tech|f:0|s:sig_driver|s:|s:|s:drv_cap_01|s:|s:|s:|s:
-row+|t3485/sights|@end|sig_gunner_pt4|s:sig_gunner_pt4|s:s_camera_pt4_7|s:pt4_7|f:0|s:sig_gunner|s:|s:|s:|s:|s:|s:|s:
+row+|t3485/sights|@end|sig_gunner_pt4|s:sig_gunner_pt4|s:s_camera_pt4_7|s:pt4_7|f:0|s:sig_gunner|s:d_sight_01|s:|s:|s:|s:|s:|s:
+row+|t3485/sights|@end|sig_loader_mk4|s:sig_loader_mk4|s:s_camera_loader_02|s:mk4|f:0|s:sig_loader|s:d_sight_02|s:|s:|s:|s:|s:|s:
 row+|t3485/sights|@end|sig_gunner_tmfd|s:sig_gunner_tmfd|s:s_camera_tmfd7|s:tmfd_7|f:0|s:sig_gunner|s:|s:|s:|s:|s:|s:|s:
 row+|t3485/sights|@end|sig_gunner_side|s:sig_gunner_side|s:s_camera_gunner|s:hole|f:0|s:sig_gunner|s:|s:|s:|s:|s:|s:|s:
 row+|t3485/sights|@end|sig_loader_side|s:sig_loader_side|s:s_camera_loader|s:hole|f:0|s:sig_loader|s:|s:|s:|s:|s:|s:|s:
 row+|t3485/sights|@end|sig_mgunner|s:sig_mgunner|s:s_camera_radist|s:gunner_mg|f:0|s:sig_mgunner|s:|s:|s:|s:|s:|s:|s:
-row+|t3485/sights|@end|sig_comh_01|s:sig_comh_01|s:s_camera_mk4_01|s:mk4|f:0|s:sig_commander|s:|s:|s:|s:|s:|s:|s:
+row+|t3485/sights|@end|sig_comh_01|s:sig_comh_01|s:s_camera_mk4_01|s:mk4|f:0|s:sig_commander|s:d_sight_03|s:|s:|s:|s:|s:|s:
 row+|t3485/sights|@end|sig_comh_02|s:sig_comh_02|s:s_camera_mk4_02|s:hole|f:0|s:sig_commander|s:|s:|s:|s:|s:|s:|s:
 row+|t3485/sights|@end|sig_comh_03|s:sig_comh_03|s:s_camera_mk4_03|s:hole|f:0|s:sig_commander|s:|s:|s:|s:|s:|s:|s:
 row+|t3485/sights|@end|sig_comh_04|s:sig_comh_04|s:s_camera_mk4_04|s:hole|f:0|s:sig_commander|s:|s:|s:|s:|s:|s:|s:
@@ -221,6 +222,8 @@ node+|t3485/hatchs|2|21|ssuffuuuuufsffssbbbss|t3485/rot_elems
 row+|t3485/hatchs|@end|driver|s:driver|s:d_hatch_01|u:0|f:-70|f:0|u:5|u:1|u:1|u:0|u:0|f:0|s:|f:0|f:0|s:|s:|b:0|b:1|b:0|s:|s:BR_HATCH
 row+|t3485/hatchs|@end|drv_cap_01|s:drv_cap_01|s:d_cap_01|u:0|f:-30|f:0|u:1|u:0|u:1|u:0|u:0|f:0|s:|f:0|f:0|s:|s:|b:0|b:0|b:0|s:|s:
 row+|t3485/hatchs|@end|drv_cap_02|s:drv_cap_02|s:d_cap_02|u:0|f:-30|f:0|u:1|u:0|u:1|u:0|u:0|f:0|s:|f:0|f:0|s:|s:|b:0|b:0|b:0|s:|s:
+row+|t3485/hatchs|@end|loader|s:loader|s:d_hatch_03|u:0|f:100|f:0|u:1|u:0|u:2|u:0|u:0|f:0|s:|f:0|f:0|s:|s:|b:0|b:0|b:0|s:|s:BR_RHATCH
+row+|t3485/hatchs|@end|commander|s:commander|s:d_hatch_04|u:0|f:100|f:0|u:1|u:0|u:2|u:0|u:0|f:0|s:|f:0|f:0|s:|s:|b:0|b:0|b:0|s:|s:BR_RHATCH
 node+|t3485/propellers|2|5|sfuss|t3485/hatchs
 node+|t3485/addins|2|8|ssffffff|t3485/propellers
 row+|t3485/addins|@end|T34UTZ_LBAL|s:T34UTZ_LBAL|s:d_balansir_01|f:0|f:0|f:0|f:0|f:0|f:0
