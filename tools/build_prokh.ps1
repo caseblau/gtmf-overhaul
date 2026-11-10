@@ -172,7 +172,7 @@ foreach ($side in @('GER', 'RUS')) {
     }
     # 4b. operation body (movement graph, deployment, markers) regenerated for the 22 x 24 square area by tools\prokh_op.py
     $py = $null
-    foreach ($c in @(@('py', '-3'), @('python'))) { try { $v = & $c[0] ($c[1..9] + @('-c', 'print(1)')) 2>$null; if ("$v" -eq '1') { $py = $c; break } } catch {} }
+    foreach ($c in @(@('python'), @('py', '-3.12'), @('py', '-3'))) { try { $v = & $c[0] ($c[1..9] + @('-c', 'import numpy; print(1)')) 2>$null; if ("$v" -eq '1') { $py = $c; break } } catch {} }   # prokh_op.py needs numpy; the py launcher's default may lack it
     $osm = Join-Path $repo 'docs\m12_terrain\osm\prokh.osm.json'
     if ($py -and (Test-Path $osm)) {
         foreach ($t in @('mg_nodes', 'plat_pos', 'tac_markers')) { & $gt3 csv $d $t (Join-Path $w "$t.csv") | Out-Null }

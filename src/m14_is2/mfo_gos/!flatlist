@@ -1,0 +1,9 @@
+i_unflat:unflat()
+{
+	is2                           , mesh            , loc_def ;
+	reg_is2_dift                  , texture         , loc_def ;
+	bump_is2_norsp                , texture         , loc_def ;
+	is2_ostov01                   , mesh            , loc_def ;
+	reg_is2_ostov_dift            , texture         , loc_def ;
+	bump_is2_ostov_norsp          , texture         , loc_def ;
+}

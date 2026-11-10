@@ -14,7 +14,7 @@ add-ins (SU76M_BARREL, SU76M_BREECH; registered in common_res_mod - second outpu
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import vehcfg, azg2, su76_mesh as SMM
+import vehcfg, azg2, su76_bought, su76_mesh as SMM   # su76_bought lays the running gear out on the purchased model's wheels
 
 def S(v): return 's:' + v
 
@@ -67,8 +67,8 @@ def build(tb, mesh):
             t['rows'] = [[S(c), S(w), S('')] for c, _, _, w in SMM.caret_layout()]
         elif name == 'addins':
             t['rows'] = [[S('T70M_LCARET' if p[0] < 0 else 'T70M_RCARET'), S(c)] + ['f:0'] * 6 for c, _, p, _ in SMM.caret_layout()]
-            t['rows'] += [[S('SU76M_BARREL'), S('d_gun')] + ['f:0'] * 6, [S('SU76M_BREECH'), S('d_zatvor')] + ['f:0'] * 6]
-            t['rows'] += [[S('T70M_WHEEL'), S('d_wheel_23')] + ['f:0'] * 6]          # v3: the spare wheel on the rear plate
+            # 9 Nov: the gun is the ZiS-3's (user): cradle, barrel and breech block as add-ins on their holder nodes
+            t['rows'] += [r for r in ([S(a), S(h)] + ['f:0'] * 6 for a, h in (('SU76M_RAMA', 'd_rama'), ('SU76M_CRADLE', 'd_gunmask'), ('SU76M_BARREL', 'd_gun'), ('SU76M_BREECH', 'd_zatvor'))) if ok(r)]
         elif name == 'weapons':    # the ZiS-3's own row (loader serves it, breech block d_zatvor), the T-70's smoke grenades
             z = find(rows(Z, 'weapons'), 'ZIS3'); z[5] = S('head1'); z[6] = S('wp_loader')
             g = find(rows(T, 'weapons'), 'GREN_TR'); g[6] = S('wp_commander')
@@ -83,7 +83,13 @@ def build(tb, mesh):
             hw = rows(H, 'work_places')
             gun = find(hw, 'wp_gunner'); gun[11] = S(''); gun[16] = S('s_gunner_exit')       # open-top crew (Sd.Kfz. 251/9)
             ldr = find(hw, 'wp_loader'); ldr[11] = S(''); ldr[16] = S('s_loader_exit')
+            ldr[17] = S('marder_loader')   # 9 Nov: the half-track's apc_loader loads empty-handed; the Marder III H's open-casemate loader carries the round
             com = find(hw, 'wp_commander'); com[11] = S(''); com[16] = S('s_commander_exit')
+            com[10] = S('sig_commander')       # 9 Nov: the commander had no sight, so no observation sector
+            com[17] = S('apc_commander'); com[13] = S('s_commander_out'); com[11] = S('commander')   # buttoned: seated at the periscope; open: stands head out   # sits on the right stool; unbuttoned he stands at the top periscope
+            ldr[10] = S('sig_loader'); ldr[13] = S('s_loader_out')         # marder_loader: sits idle, loads, stands at his top-left periscope
+            gun[17] = S('apc_shoter')                                      # seated on the handwheels (t34_gunner is a turret seat)
+            gun[17] = S('t34_gunner')          # seated on his stool at the sight (was apc_shoter, standing on the stool)
             for r in (gun, ldr, com): r[14] = S('p_' + vehcfg.text(r[0])[3:])                 # crew hit boxes
             des = [r for r in rows(T, 'work_places') if vehcfg.text(r[0]).startswith('wp_des_')]
             dn = ['wp_des_%02d' % k for k in range(1, 7)]; outs = ['s_des_out_01', 's_des_out_02', 's_des_out_01', 's_des_out_01', 's_des_out_02', 's_des_out_03']
@@ -96,9 +102,17 @@ def build(tb, mesh):
             def sg(n, cam, kind, grp): return [S(n), S(cam), S(kind), 'f:0', S(grp)] + blank
             pg = vehcfg.text(find(rows(Z, 'sights'), 'sig_gunner')[2])                        # the ZiS-3's panoramic sight
             t['rows'] = [sg('sig_driver', 's_camera_driver', vehcfg.text(find(rows(T, 'sights'), 'sig_driver')[2]), 'sig_driver'),
-                         sg('sig_gunner', 's_camera_gunner', pg, 'sig_gunner')]
+                         sg('sig_gunner', 's_camera_gunner', pg, 'sig_gunner'),
+                         sg('sig_gunner_01', 's_camera_gunner_01', 'hole', 'sig_gunner'),                # front-left round port
+                         sg('sig_commander', 's_camera_commander', 'periscope', 'sig_commander'),        # buttoned: top-right periscope
+                         sg('sig_commander_01', 's_camera_commander_out', 'commander_tech', 'sig_commander'), # unbuttoned: head out
+                         sg('sig_loader', 's_camera_loader', 'periscope', 'sig_loader'),                # top-left periscope
+                         sg('sig_loader_01', 's_camera_loader_01', 'hole', 'sig_loader'),               # left wall slit
+                         sg('sig_commander_02', 's_camera_commander_01', 'hole', 'sig_commander')]       # right wall slit
         elif name == 'hatchs':     # the driver's lid on the glacis, hinged at its top edge (node local x): opens up
-            h = find(rows(T, 'hatchs'), 'driver'); h[3] = 'f:-80'; h[7] = 'u:1'; t['rows'] = [h]
+            h = find(rows(T, 'hatchs'), 'driver'); h[3] = 'f:55'; h[7] = 'u:2'
+            # 10 Nov (user): the commander buttons up (seated at his periscope) or stands head out - an invisible hatch gives the game the switch
+            hc = list(h); hc[0] = S('commander'); hc[1] = S('d_hatch_03'); hc[3] = 'f:0'; t['rows'] = [h, hc]   # 10 Nov: at 80 deg the lid met the barrel   # axis 2: the node's z runs along the hinge
         elif name == 'damages':
             t['rows'] = [r for r in rows(T, 'damages') if ok(r)]
         elif name == 'mslots':
@@ -119,7 +133,7 @@ def build(tb, mesh):
         out.append(t)
     return out, T.root_type
 
-ADDINS = (('SU76M_BARREL', 'su76m_barrel'), ('SU76M_BREECH', 'su76m_breech'))
+ADDINS = (('SU76M_RAMA', 'su76m_rama'), ('SU76M_CRADLE', 'su76m_cradle'), ('SU76M_BARREL', 'su76m_barrel'), ('SU76M_BREECH', 'su76m_breech'))
 
 def addin_registry_delta():
     out = ['# SU-76M (1943) gun add-ins - generated by tools\\m13\\su76_config.py: the ZiS-3 barrel and breech block meshes',

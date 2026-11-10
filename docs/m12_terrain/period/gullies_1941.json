@@ -1,0 +1,197 @@
+{
+ "_comment": "Ravines the 1941 sheet draws with toothed or heavy brown lines (TM 30-548 nos. 292-293), hand traced; lattice metres. Carved into the 30 m elevation model, which smooths narrow gullies.",
+ "gullies": [
+  {
+   "name": "b. Molozhavaya main",
+   "depth": 4.0,
+   "half_width": 16,
+   "pts": [
+    [
+     5760.0,
+     10336.0
+    ],
+    [
+     5880.0,
+     10096.0
+    ],
+    [
+     5980.0,
+     9836.0
+    ],
+    [
+     6060.0,
+     9536.0
+    ],
+    [
+     6080.0,
+     9296.0
+    ],
+    [
+     6040.0,
+     9016.0
+    ]
+   ]
+  },
+  {
+   "name": "b. Molozhavaya east arm 1",
+   "depth": 2.5,
+   "half_width": 10,
+   "pts": [
+    [
+     6060.0,
+     9596.0
+    ],
+    [
+     6280.0,
+     9616.0
+    ],
+    [
+     6560.0,
+     9556.0
+    ]
+   ]
+  },
+  {
+   "name": "b. Molozhavaya east arm 2",
+   "depth": 2.5,
+   "half_width": 10,
+   "pts": [
+    [
+     6000.0,
+     9916.0
+    ],
+    [
+     6200.0,
+     9996.0
+    ],
+    [
+     6480.0,
+     10076.0
+    ]
+   ]
+  },
+  {
+   "name": "b. Molozhavaya east arm 3",
+   "depth": 2.0,
+   "half_width": 9,
+   "pts": [
+    [
+     6120.0,
+     9276.0
+    ],
+    [
+     6320.0,
+     9376.0
+    ],
+    [
+     6560.0,
+     9356.0
+    ]
+   ]
+  },
+  {
+   "name": "yar Zasolonny",
+   "depth": 3.5,
+   "half_width": 14,
+   "pts": [
+    [
+     2080.0,
+     7792.0
+    ],
+    [
+     2464.0,
+     7552.0
+    ],
+    [
+     2800.0,
+     7384.0
+    ],
+    [
+     3088.0,
+     7096.0
+    ],
+    [
+     3472.0,
+     7048.0
+    ],
+    [
+     3952.0,
+     7144.0
+    ],
+    [
+     4384.0,
+     7480.0
+    ],
+    [
+     4600.0,
+     7864.0
+    ]
+   ]
+  },
+  {
+   "name": "yar Volobuisky head",
+   "depth": 3.5,
+   "half_width": 14,
+   "pts": [
+    [
+     3136.0,
+     7000.0
+    ],
+    [
+     3520.0,
+     6976.0
+    ],
+    [
+     3952.0,
+     6952.0
+    ],
+    [
+     4528.0,
+     6880.0
+    ],
+    [
+     5128.0,
+     6688.0
+    ]
+   ]
+  },
+  {
+   "name": "Gryaznoye gully 1",
+   "depth": 2.5,
+   "half_width": 10,
+   "pts": [
+    [
+     2320.0,
+     8656.0
+    ],
+    [
+     2704.0,
+     8536.0
+    ],
+    [
+     3232.0,
+     8440.0
+    ]
+   ]
+  },
+  {
+   "name": "Gryaznoye gully 2",
+   "depth": 2.0,
+   "half_width": 9,
+   "pts": [
+    [
+     2752.0,
+     9496.0
+    ],
+    [
+     2992.0,
+     9400.0
+    ],
+    [
+     3232.0,
+     9304.0
+    ]
+   ]
+  }
+ ]
+}

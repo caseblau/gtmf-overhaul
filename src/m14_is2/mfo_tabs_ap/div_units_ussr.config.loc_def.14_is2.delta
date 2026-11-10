@@ -1,0 +1,5 @@
+# IS-2 unit and squads (tools\m13\is2_tables.py): 4-man crews, in service from December 1943
+row+|units|@end|rkkau_is2|s:rkkau_is2|s:ui_is2|s:i_techn|s:tabs\\techn_base_oprum.cfgpack|s:is2|u:4|u:16|v:0|s:|s:is2|s:|s:|b:0|s:|s:|s:kv1s_655cr_hp|s:
+row+|squads|@end|rkka_is2|s:rkka_is2|s:tr_rkka_med_tank|s:sq_tank|s:|u:0|s:rkka_htank|u:'TANK'|s:rus_lnk_std|a:900;20;37;17|u:'TECH'|u:'STR'|u:'TANK'|v:3.5;2|u:0x19430701|u:0x19451201|u:'USSR'|v:0.5|u:0|s:rkkau_is2|u:1|s:rkka_crew_stug3|u:1|s:|u:0|s:|u:0|s:|u:0|s:|u:0
+row+|squads|@end|rkka_is2_com|s:rkka_is2_com|s:|s:sq_tank|s:|u:0|s:rkka_htank_com|u:'COM'|s:rus_lnk_std|a:950;21;37;17|u:'TECH'|u:'STR'|u:'TANK'|v:3.5;2|u:0x19430701|u:0x19451201|u:'USSR'|v:0.5|u:0|s:rkkau_is2|u:1|s:rkka_crew_pcom4|u:1|s:|u:0|s:|u:0|s:|u:0|s:|u:0
+row+|squads|@end|rkka_is2_ccom|s:rkka_is2_ccom|s:|s:sq_tank|s:|u:0|s:rkka_htank_ccom|u:'COMC'|s:rus_lnk_std|a:1000;21;37;17|u:'TECH'|u:'COM'|u:'TANK'|v:3.5;2|u:0x19430701|u:0x19451201|u:'USSR'|v:0.3|u:0|s:rkkau_is2|u:1|s:rkka_crew_ccom4|u:1|s:|u:0|s:|u:0|s:|u:0|s:|u:0

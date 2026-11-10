@@ -36,10 +36,12 @@ def tangent_frame(V, F, UV):
         p = V[f]; q = UV[f]
         e1, e2 = p[1] - p[0], p[2] - p[0]; d1, d2 = q[1] - q[0], q[2] - q[0]
         r = d1[0] * d2[1] - d2[0] * d1[1]
-        if abs(r) < 1e-12: tt = np.cross([0, 1, 0], n[k]) if abs(n[k][1]) < 0.9 else np.array([1.0, 0, 0])
-        else: tt = (e1 * d2[1] - e2 * d1[1]) / r
+        if abs(r) < 1e-12: tt = np.cross([0, 1, 0], n[k]) if abs(n[k][1]) < 0.9 else np.array([1.0, 0, 0]); bv = None
+        else: tt = (e1 * d2[1] - e2 * d1[1]) / r; bv = (e2 * d1[0] - e1 * d2[0]) / r
         tt = tt - n[k] * (tt @ n[k]); tt /= np.linalg.norm(tt) + 1e-12
-        t[k] = tt; b[k] = np.cross(n[k], tt)
+        # the binormal points along +v, as in the game's own meshes (kv1s_late, zis3, t34: 99.9 % of faces): mirrored UV
+        # islands get -(n x t).  Until 9 Nov it was always n x t, which turned the bump map upside down on mirrored parts.
+        bb = np.cross(n[k], tt); t[k] = tt; b[k] = -bb if bv is not None and bb @ bv < 0 else bb
     return n, t, b
 
 def _nondegenerate(V, F):
@@ -50,14 +52,24 @@ def new_gxt(V, F, UV, N=None):
     (one per row of V, for flat input) to shade curved parts smoothly"""
     if len(UV) == len(F) * 3 and len(V) == len(UV):       # flat input: one UV per (unshared) vertex
         k = _nondegenerate(V, F); F = F[k]
+    if N is not None:
+        # 10 Nov: mesh reduction turns some faces inside out (the IS-2's drums, rear plate, turret roof: drawn from behind, as black
+        # wedges).  The source normals still point outward: a face whose winding opposes all three of its normals is turned back.
+        fn0 = geom.normals(V, F); dots = np.einsum('fj,fkj->fk', fn0, N[F])
+        flip = (dots < 0).all(1) & (dots.mean(1) < -0.2); F = F.copy(); F[flip] = F[flip][:, [0, 2, 1]]
+        if flip.any(): new_gxt.flipped = getattr(new_gxt, 'flipped', 0) + int(flip.sum())
     n, t, b = tangent_frame(V, F, UV); n, t, b = (np.nan_to_num(x) for x in (n, t, b))
     Vf = V[F].reshape(-1, 3); UVf = UV[F].reshape(-1, 2)
     rep = lambda a: np.repeat(a, 3, axis=0)
     n, t, b = rep(n), rep(t), rep(b)
     if N is not None:
-        n = N[F].reshape(-1, 3)
+        fn = np.repeat(geom.normals(V, F), 3, axis=0); n = N[F].reshape(-1, 3).astype(float)
+        # a vertex normal turned away from its face (mesh reduction folds them: 1320 faces of the IS-2, drawn as black slivers,
+        # 9 Nov) takes the face's own normal
+        away = np.sum(n * fn, 1) < 0.85; n[away] = fn[away]   # 10 Nov: > 32 deg off (was 75): long reduced faces kept a curved detail's sideways normal and shaded dark
+        hand = np.sign(np.sum(b * np.cross(fn, t), 1, keepdims=True)); hand[hand == 0] = 1
         t = t - n * np.sum(t * n, 1, keepdims=True); t /= np.linalg.norm(t, axis=1, keepdims=True) + 1e-12
-        b = np.cross(n, t)
+        b = np.cross(n, t) * hand                       # keeps the face's handedness (binormal along +v)
     return np.c_[Vf, UVf, n, t, b], np.arange(len(Vf)).reshape(-1, 3)
 
 # texture areas for the new parts (T-34 diffuse): a plain, weathered plate area of the (now unused) turret wall unwrap

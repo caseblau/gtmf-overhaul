@@ -25,8 +25,9 @@ class _Sampler:
     def draw(self, rng, n):
         return self.keys[np.minimum(np.searchsorted(self.cum, rng.random(n)), len(self.keys) - 1)]
 
-def tree(soil, slope, maxlevel=MAXLEVEL, obst=None, bld=None):
-    """the quadtree (shared by the four mover classes): list of dicts level, cx, cy, parent, children, soil, slope"""
+def tree(soil, slope, maxlevel=MAXLEVEL, obst=None, bld=None, ditch=None):
+    """the quadtree (shared by the four mover classes): list of dicts level, cx, cy, parent, children, soil, slope.
+    ditch: mask closed to vehicles only (the anti-tank ditch); encode(block_ditch=True) applies it."""
     H = soil.shape[0]
     onehot = np.stack([(soil == s) for s in range(16)], 0).astype(np.int32)
     sat = np.pad(onehot.cumsum(1).cumsum(2), ((0, 0), (1, 0), (1, 0))); del onehot
@@ -37,7 +38,7 @@ def tree(soil, slope, maxlevel=MAXLEVEL, obst=None, bld=None):
         return (ssat[y0 + s, x0 + s] - ssat[y0, x0 + s] - ssat[y0 + s, x0] + ssat[y0, x0]) / (s * s)
     def _sat(m):
         return None if m is None else np.pad(m.astype(np.int32).cumsum(0).cumsum(1), ((1, 0), (1, 0)))
-    osat, bsat = _sat(obst), _sat(bld)
+    osat, bsat, dsat = _sat(obst), _sat(bld), _sat(ditch)
     def frac(S, x0, y0, s):
         return 0.0 if S is None else (S[y0 + s, x0 + s] - S[y0, x0 + s] - S[y0 + s, x0] + S[y0, x0]) / (s * s)
     def _slope_var(x0, y0, s):
@@ -46,9 +47,9 @@ def tree(soil, slope, maxlevel=MAXLEVEL, obst=None, bld=None):
     def add(level, cx, cy, parent):
         s = H >> level; x0, y0 = cx - s // 2, cy - s // 2
         hh = hist(x0, y0, s); dom = int(hh.argmax()); uni = hh[dom] / (s * s)
-        of, bf = frac(osat, x0, y0, s), frac(bsat, x0, y0, s)
-        i = len(nodes); nodes.append(dict(level=level, cx=cx, cy=cy, parent=parent, children=None, soil=dom, slope=smean(x0, y0, s), obst=of, bld=bf))
-        mixed = 0.1 < of < 0.9 or 0.1 < bf < 0.9   # part open, part blocked: split so the open part stays usable
+        of, bf, df = frac(osat, x0, y0, s), frac(bsat, x0, y0, s), frac(dsat, x0, y0, s)
+        i = len(nodes); nodes.append(dict(level=level, cx=cx, cy=cy, parent=parent, children=None, soil=dom, slope=smean(x0, y0, s), obst=of, bld=bf, ditch=df))
+        mixed = 0.1 < of < 0.9 or 0.1 < bf < 0.9 or 0 < df < 0.9   # part open, part blocked: split so the open part stays usable
         split = level < 5 or (level < maxlevel and (uni < (0.8 if level < 7 else 0.6) or (level < 7 and _slope_var(x0, y0, s) > 0.01))) \
             or (level < OBSTLEVEL and mixed)
         if split:
@@ -71,7 +72,7 @@ def tree(soil, slope, maxlevel=MAXLEVEL, obst=None, bld=None):
         nd['nb'] = (find(L, nd['cx'], nd['cy'] + s), find(L, nd['cx'], nd['cy'] - s), find(L, nd['cx'] - s, nd['cy']), find(L, nd['cx'] + s, nd['cy']))
     return nodes
 
-def encode(nodes, model, rng):
+def encode(nodes, model, rng, block_ditch=False):
     """entry bytes of one mover class from the shared tree"""
     n = len(nodes)
     out = np.zeros((n, 40), np.uint8)
@@ -96,6 +97,9 @@ def encode(nodes, model, rng):
     blocked = (obst > 0.15) | (bld > 0.15)   # vanilla MgG3: ~13 % of the leaf area
     b3[blocked] = 15 << 4
     b0[bld > 0.15] |= 34
+    if block_ditch:   # 9 Nov: at the trench cost the path finder sent vehicles down into the anti-tank ditch, 3 m deep with 53 deg walls
+        dm = np.asarray([nd.get('ditch', 0.0) for nd in nodes]) > 0.15
+        b3[dm] = 15 << 4; cost[dm] = 250
     # bottom-up: deepest levels first
     for i in np.argsort(-lvl, kind='stable'):
         kids = nodes[i]['children']
@@ -119,11 +123,11 @@ def encode(nodes, model, rng):
     out[:, 39] = 0xff
     return out.tobytes()
 
-def build(soil, slope, model, rng, maxlevel=MAXLEVEL, nodes=None):
+def build(soil, slope, model, rng, maxlevel=MAXLEVEL, nodes=None, block_ditch=False):
     """soil: (2048,2048) uint8 low-nibble soil index; slope: (2048,2048) float gradient magnitude; model: one class of
     prokh_pen_model.json. Returns the entry bytes.  Pass `nodes` (from tree()) to share the quadtree between classes."""
     if nodes is None: nodes = tree(soil, slope, maxlevel)
-    return encode(nodes, model, rng)
+    return encode(nodes, model, rng, block_ditch)
 
 def load_model(path):
     return json.load(open(path))

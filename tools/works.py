@@ -30,9 +30,14 @@ TREN = 14
 # 0.5-0.8 m high 1-1.5 m wide at the rim on the enemy side, no smoothing.  The black interior seen in game is the
 # per-cell ambient-occlusion map (tools/aomap.py) darkening the slot - with the template's AO map (first builds) the same
 # slot looked like a lit notch.
-# 25 Oct (user): the fire trenches must stay passable for tanks, only the anti-tank ditch is the obstacle - so the slot is
-# narrower than the vanilla 3 m: 0.9 m floor, 2.0 m wide at half depth, 1.6 m deep (a T-34 / Pz IV track bridges 2 m).
-TRENCH = dict(depth=1.6, floor_w=0.9, top_w=2.0, par_h=0.5, par_off=1.9, par_w=1.4, rear_h=0.2, rear_off=1.7, rear_w=1.0, band=3.2)
+# 25 Oct (user): the fire trenches must stay passable for tanks, only the anti-tank ditch is the obstacle.  The narrow sheer
+# slot tried for that (2 m wide, 1.6 m deep) trapped them (user, 9 Nov): the track tips fell in and met a 2 m wall.  Median
+# cross-section of vanilla MgG3 measured from the floor outwards (tools: 9 Nov): a graded trough ~5 m wide and 1.2 m deep,
+# walls ~30 deg, no real parapet - TROUGH_D / TROUGH_Z below are those medians.
+TRENCH = dict(par_h=0.25, par_off=3.7, par_w=1.5, rear_h=0.1, rear_off=3.5, rear_w=1.0, band=3.7)
+# 10 Nov (user: too shallow): 1.7 m deep, half a metre wider, walls graded to at most 35 deg so tanks still climb out
+TROUGH_D = (0.25, 0.75, 1.25, 1.75, 2.25, 2.75, 3.25)      # metres from the centreline
+TROUGH_Z = (-1.70, -1.55, -1.25, -0.90, -0.55, -0.25, 0.0) # metres relative to the surrounding ground
 DITCH = dict(depth=3.0, floor_hw=1.0, top_hw=3.25, spoil_hw=6.5, spoil_h=1.2, berm_hw=4.5, berm_h=0.3)
 PITS = dict(GUN=dict(r14=4.5, floor=1.75, top=2.5, par=4.0, depth=0.6, par_h=0.3), MORT=dict(r14=3.0, floor=1.25, top=1.9, par=3.0, depth=0.5, par_h=0.25),
             INF=dict(r14=2.0, floor=0.75, top=1.25, par=2.2, depth=0.5, par_h=0.25))
@@ -275,17 +280,14 @@ def apply_cell(h, soil, x0, y0, works, open_mask=None, origin=(0.0, 0.0)):
             s_ += 8.0 + _hash(h0, k, 7) % 7; k += 1
     if tr or chain_pits:
         T = TRENCH
-        # cut (floor / wall levels, crisp) and parapet (soft) drawn separately on the 0.5 m grid: a 'floor' line 1 m wide
-        # at -depth inside a 'top' line 2.5 m wide at half depth gives the vanilla slot with one wall sample each side
-        imgs = {k: Image.new('L', (4096, 4096), 0) for k in ('floor', 'top')}; dr = {k: ImageDraw.Draw(v) for k, v in imgs.items()}
-        par = np.zeros((4096, 4096), np.float32)
+        # the trough from the distance to the trace on the 0.5 m grid (TROUGH_D / TROUGH_Z), the low spoil drawn separately
+        tl = Image.new('L', (4096, 4096), 0); d_tl = ImageDraw.Draw(tl)
         pim = Image.new('F', (4096, 4096), 0.0); d_p = ImageDraw.Draw(pim)
         cl = Image.new('L', (2048, 2048), 0); d_cl = ImageDraw.Draw(cl)
         for w in tr:
             pts = [(p[0] - x0, p[1] - y0) for p in w['pts']]; pts2 = [(2 * x, 2 * y) for x, y in pts]
             if len(pts) < 2: continue
-            dr['floor'].line(pts2, fill=255, width=max(1, int(round(2 * T['floor_w']))), joint='curve')
-            dr['top'].line(pts2, fill=255, width=int(round(2 * T['top_w'])), joint='curve')
+            d_tl.line(pts2, fill=255, width=1, joint='curve')
             d_cl.line(pts, fill=255, width=1, joint='curve')
             sg = _rear_sign(pts, w.get('side', 'USSR'))            # +1: the left normal points to the rear
             hgt = 0.5 if w.get('comm') else 1.0
@@ -295,18 +297,18 @@ def apply_cell(h, soil, x0, y0, works, open_mask=None, origin=(0.0, 0.0)):
         for (tag, px, py, _) in pits:
             P = PITS[tag]
             d_p.ellipse([2 * (px - P['par']), 2 * (py - P['par']), 2 * (px + P['par']), 2 * (py + P['par'])], fill=P['par_h'])
-        fl = np.asarray(imgs['floor']) > 0; top = np.asarray(imgs['top']) > 0
-        d = np.where(fl, -T['depth'], np.where(top, -0.55 * T['depth'], 0.0)).astype(np.float32)
-        cut = top.copy()
-        for (tag, px, py, _) in pits:   # round pits: floor / wall / rim
+        td = (ndi.distance_transform_edt(np.asarray(tl) == 0) * 0.5).astype(np.float32) if tr else np.full((4096, 4096), 1e6, np.float32)
+        d = np.interp(td, TROUGH_D, TROUGH_Z).astype(np.float32)
+        cut = td < TROUGH_D[-1]
+        for (tag, px, py, _) in pits:   # round pits: floor / wall / rim (the deeper of the pit and any trough it meets)
             P = PITS[tag]; r2 = int(2 * P['par']) + 2; ys, xs = int(2 * py), int(2 * px)
             sl = (slice(max(0, ys - r2), ys + r2 + 1), slice(max(0, xs - r2), xs + r2 + 1))
             yy, xx = np.mgrid[sl]; rr = np.hypot(yy - 2 * py, xx - 2 * px) * 0.5
-            d[sl] = np.where(rr <= P['floor'], -P['depth'], np.where(rr <= P['top'], -0.5 * P['depth'], d[sl]))
+            d[sl] = np.minimum(d[sl], np.where(rr <= P['floor'], -P['depth'], np.where(rr <= P['top'], -0.5 * P['depth'], 0.0)))
             cut[sl] |= rr <= P['top']
-        par = _blur(np.asarray(pim, dtype=np.float32), 1, 1)
+        par = _blur(np.asarray(pim, dtype=np.float32), 2, 2)
         delta += np.where(cut, d, par).astype(np.float32)
-        del fl, top, d, imgs, par, pim, cut
+        del td, d, tl, par, pim, cut
         dist = ndi.distance_transform_edt(~(np.asarray(cl) > 0))
         for (tag, px, py, _) in pits:
             P = PITS[tag]; r2 = int(P['par']) + 3; ys, xs = int(py), int(px)
@@ -383,6 +385,17 @@ def apply_cell(h, soil, x0, y0, works, open_mask=None, origin=(0.0, 0.0)):
                 else: recs.append(('INF', px, py, 8.3))
     for (tag, px, py, ang) in chain_pits: recs.append(('INF', px, py, 8.3))
     return [r for r in recs if 1.0 <= r[1] < 2047.0 and 1.0 <= r[2] < 2047.0 and (len(r) < 6 or (1.0 <= r[4] < 2047.0 and 1.0 <= r[5] < 2047.0))]
+
+def ditch_mask(x0, y0, works):
+    """2048 x 2048 (1 m, row 0 = south): the anti-tank ditch without its road gaps, for the vehicles' passability"""
+    im = Image.new('L', (2048, 2048), 0); dr = ImageDraw.Draw(im); gaps = []
+    for w in works:
+        if w['type'] != 'at_ditch' or not _touches(w['pts'], x0, y0): continue
+        dr.line([(p[0] - x0, p[1] - y0) for p in w['pts']], fill=255, width=int(2 * DITCH['top_hw'] + 1), joint='curve')
+        gaps += w.get('gaps', [])
+    for g in gaps:   # same 9 m radius as the gap carved by apply_cell
+        gx, gy = g[0] - x0, g[1] - y0; dr.ellipse([gx - 9, gy - 9, gx + 9, gy + 9], fill=0)
+    return np.asarray(im) > 0
 
 def _trample_profile(dist):
     """probability of a bare patch at `dist` m from the trace: 0.55 just outside the spoil, 0.3 at 12 m, 0 at 45 m"""

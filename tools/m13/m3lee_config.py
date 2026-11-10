@@ -73,14 +73,14 @@ def build(tb, tbo, mesh):
             t['rows'] = [h1, h2, h3, h4]
         elif name == 'work_places':
             w = rows('work_places')
-            drv = find(w, 'wp_driver'); drv[9] = S('head4'); drv[13] = S('')                   # the driver fires the bow guns
+            drv = find(w, 'wp_driver'); drv[9] = S('head4'); drv[13] = S('s_driver_out')       # the driver fires the bow guns; looks out of his visor door
             gun = find(w, 'wp_gunner')                                                       # 37 mm gunner (turret)
             ldr = find(w, 'wp_loader')                                                       # 37 mm loader (turret)
             g2 = find(w, 'wp_gunner'); g2[0] = S('wp_gunner_02'); g2[9] = S('head2'); g2[10] = S('sig_mgunner')
             g2[11] = S('mgunner'); g2[12] = S('s_gunner_02'); g2[14] = S('p_gunner_02'); g2[16] = S('s_gunner_02_exit')
-            l2 = find(w, 'wp_loader'); l2[0] = S('wp_loader_02'); l2[10] = S(''); l2[11] = S('mgunner')
-            l2[12] = S('s_loader_02'); l2[14] = S('p_loader_02'); l2[16] = S('s_loader_02_exit')
-            cmd = find(w, 'wp_commander')
+            l2 = find(w, 'wp_loader'); l2[0] = S('wp_loader_02'); l2[10] = S('sig_radist'); l2[11] = S('mgunner')   # his door slit
+            l2[12] = S('s_loader_02'); l2[13] = S('s_loader_02_out'); l2[14] = S('p_loader_02'); l2[16] = S('s_loader_02_exit')   # stands up in the roof hatch
+            cmd = find(w, 'wp_commander'); cmd[13] = S(''); cmd[17] = S('t34_gunner')   # 11 Nov (user): the cupola lid stays shut, so the commander stays inside (the KV-1S's commander row: no out socket)
             des = [r for r in w if vehcfg.text(r[0]).startswith('wp_des_')]
             t['rows'] = [r for r in [drv, gun, ldr, g2, l2, cmd] + des if ok(r)]
         elif name == 'sights':
@@ -91,13 +91,24 @@ def build(tb, tbo, mesh):
                          sg('sig_gunner', 's_camera_gunner_01', 'm40a2', 'sig_gunner'),        # 37 mm: M40 telescope
                          sg('sig_mgunner', 's_camera_gunner_04', 'm4', 'sig_mgunner'),         # 75 mm: M1 periscope
                          sg('sig_loader', 's_camera_loader_01', 'periscope', 'sig_loader'),
-                         sg('sig_commander', 's_camera_commander', 'm6', 'sig_commander')]
-        elif name == 'hatchs':   # column 7 is the hinge axis in the node's frame (1 = x, 2 = z), column 3 the opening angle
+                         sg('sig_commander', 's_camera_commander', 'm6', 'sig_commander'),
+                         # 9 Nov: the model's vision ports (m3lee_bought.py places the cameras)
+                         sg('sig_driver_03', 's_camera_driver_03', 'hole', 'sig_driver'),          # visor's vision block
+                         sg('sig_driver_04', 's_camera_driver_04', 'hole', 'sig_driver'),          # left door slit
+                         sg('sig_driver_05', 's_camera_driver_05', 'hole', 'sig_driver'),          # front-left corner block
+                         sg('sig_radist', 's_camera_loader_02_01', 'hole', 'sig_radist'),          # 75 mm loader: right door slit
+                         sg('sig_gunner_02', 's_camera_gunner_02', 'hole', 'sig_gunner'),          # turret left slit
+                         sg('sig_loader_02', 's_camera_loader_02', 'hole', 'sig_loader'),          # turret right slit
+                         sg('sig_commander_01', 's_camera_commander_01', 'hole', 'sig_commander'), # cupola front slit
+                         sg('sig_radist_02', 's_camera_loader_02_02', 'hole', 'sig_radist'),       # 75 mm loader: right-rear corner slit
+                         sg('sig_gunner_03', 's_camera_gunner_03', 'hole', 'sig_gunner')]          # turret front slit
+        elif name == 'hatchs':   # column 7 is the hinge axis in the node's frame (2 = z; 1 is the vertical y: the lids spun flat), column 3 the angle
             hr = rows('hatchs'); rs = []
-            h = find(hr, 'commander'); h[1] = S('d_hatch_01'); h[3] = 'f:-110'; h[7] = 'u:1'; rs.append(h)   # cupola lid, rear hinge
+            # 11 Nov (user): the cupola lid stays shut - no hatch row (an angle of 0 still opened it, and the turning cupola swung it off the tank)
+            h = find(hr, 'driver'); h[1] = S('d_hatch_05'); h[3] = 'f:75'; h[7] = 'u:2'; rs.append(h)         # driver's visor door, top hinge
             h = find(hr, 'driver'); h[1] = S('d_hatch_02'); h[3] = 'f:110'; h[7] = 'u:2'; rs.append(h)        # left door, front hinge
             h = find(hr, 'mgunner'); h[1] = S('d_hatch_03'); h[3] = 'f:110'; h[7] = 'u:2'; rs.append(h)       # right door
-            h = find(hr, 'mgunner'); h[1] = S('d_hatch_04'); h[3] = 'f:120'; h[7] = 'u:1'; rs.append(h)       # 75 mm roof hatch
+            h = find(hr, 'mgunner'); h[1] = S('d_hatch_04'); h[3] = 'f:120'; h[7] = 'u:2'; rs.append(h)       # 75 mm roof hatch
             t['rows'] = [r for r in rs if ok(r)]
         elif name == 'flames':
             t['rows'] = [r for r in rows('flames') if ok(r)]
@@ -108,7 +119,8 @@ def build(tb, tbo, mesh):
             t['rows'] = [ms('slog', 's_mark_02f', 's_mark_02', 0.5, 0, 0.003, 0.12), ms('slog', 's_mark_03f', 's_mark_03', 0.5, 0, 0.003, 0.12),
                          ms('num', 's_mark_04f', 's_mark_04', 0.45, 0, 0.006, 0.12), ms('num', 's_mark_05f', 's_mark_05', 0.45, 0, 0.006, 0.12)]
         elif name == 'addins':   # 4 Nov: the four Brownings are the game's own M1919A4 (add-in M1919A4_BODY) on the mesh's sockets
-            t['rows'] = [r for r in rows('addins') if ok(r)]
+            # the purchased model has its own lower hull and final-drive covers: the M4A2's belly add-ins would stand inside them
+            t['rows'] = [r for r in rows('addins') if ok(r) and vehcfg.text(r[0]) not in ('M4A2_BOTTOM', 'M4_BOTTOM_FR')]
             t['rows'] += [[S('M1919A4_BODY'), S(sk)] + ['f:0'] * 6 for sk in ('s_addin_mg_bow_l', 's_addin_mg_bow_r', 's_addin_mg_coax', 's_addin_mg_cup')]
             t['rows'] = [r for r in t['rows'] if ok(r)]
         elif name == 'lights':

@@ -24,7 +24,8 @@ param(
     [string]$GameRoot = $env:GTMF_ROOT,
     [string]$VanillaRoot = $env:GTMF_VANILLA,   # pristine unpacked 3598 tables (tabs\, tabs_oprum\, text_loc\ subfolders)
     [string]$BuildDir = '',
-    [switch]$Install
+    [switch]$Install,
+    [switch]$WithIS2     # include the optional IS-2 module (m14_is2): built from a paid model, keep it out of builds shared with others until its licence allows that
 )
 $ErrorActionPreference = 'Stop'
 $repo = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
@@ -42,6 +43,7 @@ $verNum = [uint32](($ver.Split('.') | ForEach-Object { [int]$_ }) | ForEach-Obje
 $separate = @(); if ($m['separate_modules']) { $separate = @($m['separate_modules'] -split ',' | ForEach-Object { $_.Trim() }) }
 
 # conflict check + merge plan (one line per contribution, in application order)
+if (-not $WithIS2) { $separate = @($separate) + 'm14_is2' }
 $plan = @(& (Join-Path $PSScriptRoot 'check_conflicts.ps1') -SrcRoot (Join-Path $repo 'src') -MergeOrder $m['table_merge_order'] -Skip $separate -Prefix $m['prefix'] -Plan)
 if ($LASTEXITCODE -ne 0) { throw 'conflict check failed' }
 foreach ($s in $separate) { "[$s] built separately (see tools\build_sounds.ps1)" }

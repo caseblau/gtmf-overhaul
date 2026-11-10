@@ -7,6 +7,10 @@ i_unflat:unflat()
 	su76m                         , mesh            , loc_def ;
 	su76m_barrel                  , mesh            , loc_def ;
 	su76m_breech                  , mesh            , loc_def ;
+	su76m_cradle                  , mesh            , loc_def ;
+	su76m_rama                    , mesh            , loc_def ;
 	reg_su76m_dift                , texture         , loc_def ;
 	bump_su76m_norsp              , texture         , loc_def ;
+	reg_mlee_dift                 , texture         , loc_def ;
+	bump_mlee_norsp               , texture         , loc_def ;
 }

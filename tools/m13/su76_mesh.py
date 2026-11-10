@@ -245,13 +245,23 @@ def build(t70_path, zis3_path):
     for k, p in enumerate([(-1.95, -0.3, 0.4), (1.95, -0.3, 0.4), (-1.95, -0.3, 1.4)], 1): sock('s_des_out_%02d' % k, 'd_hull', p)
     return nodes
 
+CRADLE_CUT_Z = 0.40     # cradle-local z: 0.40 m ahead of the trunnion, just inside the front of the mantle (su76_bought lays it out)
+RAMA_CUT_Z = 0.28       # upper-carriage-local z: the mantle's front
+
 def addin_meshes(zis3_path, template):
     """the ZiS-3's barrel (d_gun) and breech block (d_zatvor) as add-ins (the breech has no far LOD - LOD2 reused)"""
     Z = SM.Src(zis3_path); out = []
-    for stem, node in (('su76m_barrel', 'd_gun'), ('su76m_breech', 'd_zatvor')):
+    cut = {'d_gunmask': CRADLE_CUT_Z, 'd_rama': RAMA_CUT_Z}   # front ends inside the SU-76M's mantle and sleeve would poke out of them
+    for stem, node in (('su76m_rama', 'd_rama'), ('su76m_cradle', 'd_gunmask'), ('su76m_barrel', 'd_gun'), ('su76m_breech', 'd_zatvor')):
         geo = {}
         for L in (1, 2, 3):
             geo[L] = Z.geo[(node, L)] if (node, L) in Z.geo else geo[L - 1]
+            if node in cut:
+                A, F = geo[L]; F2 = np.asarray(F).reshape(-1, 3); ok_ = A[F2, 2].max(1) <= cut[node]
+                if node == 'd_rama':
+                    ok_ &= ~((A[F2, 2].max(1) > -0.15) & (np.abs(A[F2, 0]).max(1) > 0.25))   # outer trunnion brackets: through the casemate sides
+                    ok_ &= ~((A[F2, 0].max(1) < -0.17) & (A[F2, 1].min(1) > 0.06))           # its panoramic sight: the SU-76M's own stands in the casemate's port
+                geo[L] = (A, F2[ok_])   # assemble_addin flattens F
         out.append((stem, node, SM.assemble_addin(node, geo, template)))
     return out
 
