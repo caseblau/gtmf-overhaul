@@ -1,3 +1,3 @@
 # 122 mm D-25T and its AP shell (tools\m13\is2_tables.py); the HE is the game's own 122L46_OF_471
-row+|weapons|@end|D25T|s:D25T|u:0|u:0|u:'RBAR'|a:5;5|f:0|f:122|f:1|f:0.45|f:0.1|f:1|u:1|a:0|f:22|v:0|v:2;1|f:1|f:1|s:shot_howit|a:1|s:gun_d25t|u:'GUN'|s:|s:|s:122L46|u:0|u:0|f:1.1|v:25;30;200|f:0|u:0
+row+|weapons|@end|D25T|s:D25T|u:0|u:0|u:'RBAR'|a:5;5|f:0|f:122|f:1|f:0.45|f:0.1|f:1|u:1|a:0|f:22|v:0|v:2;1|f:1|f:1|s:shot_howit|a:1|s:gun_d25t|u:'GUN'|s:|s:|s:122L46|u:0|u:0|f:1|v:35;30;200|f:0|u:0
 row+|shells|@end|122L46_BR_471|s:122L46_BR_471|u:0|u:'AP'|s:122L46|v:800|f:0|f:0.79|f:0.3|f:0|v:1|v:800;6;700;28|u:0|f:25|f:0.156|f:0.09|f:8|f:0.5|f:0.5|v:0|v:2000|v:0.1;0.2;0.8;1|s:sh_122l46_br_471|u:'HE'|u:'BRKB'|u:'RICB'|u:'UAP'|u:'HE'|u:4294918208|f:3|f:0.2|s:|s:|s:|s:|s:tracer|f:3|v:0.1;0.1;0.5;1.5|v:3.5;1.5;1.7;0.1|f:0|v:0|v:0|f:1|f:0

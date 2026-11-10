@@ -1,0 +1,3 @@
+# T-34-85 UI rows (tools\m13\t3485_tables.py)
+row+|techns|@end|t3485|s:t3485|s:ui_t3485|v:45;45;40;20|v:45;45;45;20|v:90;75;52;20|s:tcl_harmor|v:-53;0;-45|v:60;40;47|v:30;20;20|s:med_tank|s:t3485|u:1|u:100|f:32|a:1944;1945;1944;11000|u:'USSR'|a:8150;3000;2720;400|a:5|u:'ROLH'|s:ZIS_S53|v:-5;25;-180;180|s:DT|s:|a:1;2|a:55;1953|s:sight_tmdf7|s:sight_pt4|s:engine_v2|a:5;1|a:500;300;250|a:50;25;500;76|v:35;0.75;2.5;1.3|s:9p|u:15|s:t34_500|s:|s:|s:|b:0|s:|s:|s:tabs\\techn_base_oprum.cfgpack|s:t3485
+row+|managed|@end|t3485|s:t3485|u:0|u:'USSR'|s:expl_rkka|s:egr020_med_tank|s:tcl_harmor|s:rkka_marks_01

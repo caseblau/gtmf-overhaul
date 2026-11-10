@@ -1,0 +1,6 @@
+i_unflat:unflat()
+{
+	t3485                         , mesh            , loc_def ;
+	reg_t3485__utz_dift           , texture         , loc_def ;
+	bump_t3485__utz_norsp         , texture         , loc_def ;
+}

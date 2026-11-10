@@ -175,7 +175,8 @@ def build(kv_path, obj_path):
     gm = B.join([gm, B.dark_box(SP, (0, 0, 1.0), (1.0, 0, 0), 0.03, 0.045, 0.25, DARK_UV)]); print('sight port at', np.round(SP, 3), 'faces cut', ncut)
     add('d_gunmask', 4, 'd_head', tr(TRUN - RING), {0: hit(gm.moved(TRUN), 'front'), **g3(gm.moved(TRUN))})
     b_l = bar.moved(TRUN); add('d_gun', 4, 'd_gunmask', np.eye(4), {0: hit(b_l, 'front'), **g3(b_l)})
-    add('s_gun', 0, 'd_gun', tr(MUZ - TRUN)); add('s_mgun', 0, 'd_gunmask', tr(np.array([0.287, 1.031, 2.43]) - TRUN))   # 10 Nov: the co-axial DT's muzzle on the stub right of the gun (fired from inside the barrel)
+    add('s_gun', 0, 'd_gun', tr(MUZ + [0, 0, 0.065] - TRUN));   # 11 Nov (user: the SU-152's ML-20S): 6.5 cm ahead of the brake's face, as on the SU-152
+    add('s_mgun', 0, 'd_gunmask', tr(np.array([0.287, 1.031, 2.43]) - TRUN))   # 10 Nov: the co-axial DT's muzzle on the stub right of the gun (fired from inside the barrel)
     def hatch(name, lid, piv, xdir):
         """local z along the hinge (hatch axis 2), x from the hinge into the lid, y up"""
         x = np.asarray(xdir, float); x /= np.linalg.norm(x); y = np.array([0, 1.0, 0]); Rm = np.array([x, y, np.cross(x, y)])

@@ -111,10 +111,11 @@ def main(root, mesh, mod):
     L = ["# 122 mm D-25T and its AP shell (tools\\m13\\is2_tables.py); the HE is the game's own 122L46_OF_471"]
     # 10 Nov (user: aims, no shot): built on the KV-1S's ZiS-5 tank-gun row - the SU-152's ML-20S row carried the field-gun flags
     # (u:8576, absent on every tank gun) and its indirect-fire settings; calibre, shells, reload, recoil and report from the 122 mm guns
-    g = find(table(crm, 'weapons'), 'ZIS5'); g[0] = S('D25T'); g[4] = 'a:5;5';   # 11 Nov (user: muzzle fumes don't match the muzzle): column 4 is flash size; gas pattern - 3 plain muzzle (A-19, M-30), 4-5 muzzle brake (PaK 40, KwK 36, ML-20S); the D-25T has a two-baffle brake
+    g = find(table(crm, 'weapons'), 'ZIS5'); g[0] = S('D25T'); g[4] = 'a:5;5';   # 11 Nov (user: muzzle fumes don't match the muzzle): column 4 is flash size; gas pattern - 3 plain muzzle (A-19, M-30), 4-5 muzzle brake (PaK 40, KwK 36, ML-20S); the D-25T has a two-baffle brake (a leFH 18M copy, a:5;3 inside the brake, was tried and reverted)
     g[6] = 'f:122'; g[8] = 'f:0.45'; g[13] = 'f:22'; g[15] = 'v:2;1'; g[17] = 'f:1'
     # 11 Nov (user: fires, no recoil or sound): shot_a19 is only used by towed / off-map 122 mm guns; the SU-152's ML-20S sound is one a vehicle plays
-    g[18] = S('shot_howit'); g[20] = S('gun_d25t'); g[24] = S('122L46'); L.append(row('weapons', g))
+    g[18] = S('shot_howit'); g[20] = S('gun_d25t'); g[24] = S('122L46'); g[27] = 'f:1'; g[28] = 'v:35;30;200'   # 11 Nov (user: muzzle fumes wrong): the big guns' smoke strength and scale (ML-20S, KwK 42), not the ZiS-5's
+    L.append(row('weapons', g))
     sh = table(crm, 'shells')
     a = find(sh, '152L29_BR_540'); a[0] = S('122L46_BR_471'); a[3] = S('122L46'); a[4] = 'v:800'; a[6] = 'f:0.79'; a[10] = 'v:800;6;700;28'; a[12] = 'f:25'; a[13] = 'f:0.156'; a[14] = 'f:0.09'; a[19] = 'v:2000'; a[21] = S('sh_122l46_br_471'); L.append(row('shells', a))
     w(os.path.join(tabs, 'common_res_mod.config.loc_def.14_is2.delta'), L)

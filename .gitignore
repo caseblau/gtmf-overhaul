@@ -24,3 +24,5 @@ src/m13_vehicles/mfo_gos/*.mesh.loc_def.bin
 src/m13_vehicles/mfo_gos/*.texture.loc_def.bin
 # the optional IS-2: same reason, a paid model
 src/m14_is2/mfo_gos/*.bin
+# the optional T-34-85: its turret is from a paid model
+src/m15_t3485/mfo_gos/*.bin

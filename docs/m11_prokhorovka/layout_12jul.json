@@ -8575,19 +8575,19 @@
    "day": 0
   },
   {
-   "brief": "",
+   "brief": "brief_16",
    "w0": "clear",
    "w1": "clear",
    "day": 0
   },
   {
-   "brief": "",
+   "brief": "brief_17",
    "w0": "clear",
    "w1": "clear",
    "day": 0
   },
   {
-   "brief": "",
+   "brief": "brief_18",
    "w0": "fog",
    "w1": "cloudy",
    "day": 1
@@ -8599,31 +8599,31 @@
    "day": 1
   },
   {
-   "brief": "",
+   "brief": "brief_20",
    "w0": "rain",
    "w1": "cloudy",
    "day": 1
   },
   {
-   "brief": "",
+   "brief": "brief_21",
    "w0": "cloudy",
    "w1": "clear",
    "day": 1
   },
   {
-   "brief": "",
+   "brief": "brief_22",
    "w0": "clear",
    "w1": "clear",
    "day": 1
   },
   {
-   "brief": "",
+   "brief": "brief_23",
    "w0": "clear",
    "w1": "clear",
    "day": 1
   },
   {
-   "brief": "",
+   "brief": "brief_24",
    "w0": "clear",
    "w1": "clear",
    "day": 2
@@ -8644,29 +8644,61 @@
    "06:00, 12 июля 1943. Немецкий клин стоит на свх. Октябрьский и выс. 252.2, в 2 км от станции; танковый полк Мёртвой головы ночью переправился через Псёл у Ключей, Дас Райх держит Ивановский Выселок - Ясную Поляну против 2 гв.ТК. 5 гв.ТА (18, 29 ТК, 2 гв.ТК, 5 гв.МК в резерве) и 5 гв.А (9 гв.ВДД, 95, 42, 52 гв.СД) наносят контрудар в 08:30 после 15-минутного артналёта: 29 ТК вдоль железной дороги на совхоз и 252.2, 18 ТК вдоль Псёла через Прелестное и Михайловку, 2 гв.ТК на Ясную Поляну и Калинин. На рассвете морось, после полудня ожидается гроза."
   ],
   "briefs": {
-   "brief_13": "06:00, 12 July. Counter-attack at 08:30 after a 15-minute barrage: 29 TC on the sovkhoz and 252.2, 18 TC along the Psel, 2 gds TC on Yasnaya Polyana. Drizzle at dawn.",
-   "brief_14": "10:00, 12 July. The tank corps are in the sovkhoz fields; LSSAH holds 252.2 with Tigers and the StuG bn, Totenkopf attacks 226.6 - Polezhayev. Air on both sides.",
-   "brief_15": "14:00, 12 July. Hold what has been taken, pull the damaged brigades back behind the AT ditch; thunderstorm towards 17:00.",
-   "brief_19": "06:00, 13 July. Rain. Both sides dig in on the line Vasilyevka - 252.2 - Storozhevoye; LSSAH and Totenkopf regroup for the Psel bend."
+   "brief_13": "06:00, 12 July. Overcast, clearing. Alarm from the south: German tanks have taken Rzhavets; two brigades of 5 gds MC and 26 gds TBr go south. Totenkopf attacks Vesyoly and 226.6. Counter-attack at 08:30 after artillery from 08:00: 29 TC on the sovkhoz and 252.2, 18 TC along the Psel, 2 gds TC on Yasnaya Polyana; 42 gds RD and 9 gds AB Div follow the tanks. Task: close the range fast - the Tigers and the guns on 252.2 outrange the T-34s.",
+   "brief_14": "10:00, 12 July. Clear, rain later. The tank corps are in the sovkhoz fields; 32 TBr lost more than 20 tanks in the first minutes at the anti-tank ditch and the guns on 252.2, 181 TBr is along the Psel at Andreyevka. LSSAH holds 252.2 with Tigers and the StuG bn. Air on both sides. Task: work round 252.2 from the flanks, not across the ditch; 18 TC keeps pushing on Vasilyevka.",
+   "brief_15": "14:00, 12 July. Thunderstorm, then clearing. The attack has stalled in front of 252.2. On the north bank 226.6 has been overrun and Totenkopf is pushing towards the Kartashevka road; 6 gds AB Div moves up to 236.7. Task: hold what has been taken, pull the damaged brigades back behind the anti-tank ditch; 52 and 95 gds RD and the 33 gds RC guns block Polezhayev - Vesyoly.",
+   "brief_16": "18:00, 12 July. Clear. The counter-attack has stopped: 29 TC has lost more than half its tanks in front of 252.2, 18 TC holds Andreyevka - Vasilyevka - Mikhaylovka. Totenkopf was halted at 17:30 short of the Kartashevka - Prokhorovka road. Task: hold the line and recover damaged tanks from the field; do not attack 252.2 again.",
+   "brief_17": "22:00, 12 July. Clear night. Front order 036/OP: continue the counter-attack on 13 July. 24 gds TBr and 10 gds MBr from the army reserve are sent to the north bank against the bridgehead; repair crews work through the night and the brigades form composite battalions. Task: man the trenches on Vesyoly - Polezhayev, keep the tank corps in the hollows.",
+   "brief_18": "02:00, 13 July. Fog over the Psel. Totenkopf's armour that reached the Kartashevka road is being driven back towards 226.6; LSSAH digs in south of the sovkhoz, Das Reich holds Storozhevoye. Task: 95 gds RD with 24 gds TBr, 51 gds TR and 1446 SAP prepares to attack 226.6 in the morning; 42 gds RD clears Polezhayev; 29 TC holds the brick works - Yamki.",
+   "brief_19": "06:00, 13 July. Rain, the tracks are mud again. Zhukov is at Front HQ. The attack on 226.6 waits for shells; 18 TC supports it with fire from the south bank. Elsewhere the lines face each other across the slopes of 252.2. Task: no frontal attacks on 252.2; hold the line and repair the tanks.",
+   "brief_20": "10:00, 13 July. Rain easing. 95 gds RD and 24 gds TBr attack 226.6 and take its first trench; 42 gds RD clears Polezhayev. 2 TC attacks Storozhevoye without its infantry. LSSAH has called off its own tank attack. Task: hold what is taken on 226.6 and dig in; keep the anti-tank line on the reverse slope north of the sovkhoz.",
+   "brief_21": "14:00, 13 July. Clearing. Totenkopf has retaken 226.6; the attack on Storozhevoye has failed. 29 TC and 9 gds AB Div hold the brick works - Lutovo. Task: keep the infantry in the trenches; bring the 5 gds TA artillery onto the bridgehead crossings at Bogoroditskoye and Klyuchi.",
+   "brief_22": "18:00, 13 July. Clear. Rotmistrov orders 18 and 29 TC to attack towards Komsomolets; there are not enough runners for it. Das Reich has attacked out of Storozhevoye towards Ivanovka - Vinogradovka and taken the woods north of Ivanovka. Task: rebuild the brigades, dig a second line 252.4 - the station; 2 gds TC and 183 RD hold Belenikhino - Vinogradovka.",
+   "brief_23": "22:00, 13 July. Clear night. 24 gds TBr and 1446 SAP are pulled out of the Psel bend, 10 gds MBr goes into reserve at Zhimolostnoye. The orders still call for attacks on the bridgehead tomorrow. Task: hold the present line, send night patrols into the bridgehead, keep the reserves ready for a German thrust on Pravorot.",
+   "brief_24": "02:00, 14 July. Clear. Last night of the operation. Hold the line Vesyoly - Polezhayev - Andreyevka - the brick works - Yamki; 2 gds TC is on Vinogradovka - Belenikhino - Shakhovo. At dawn Das Reich is expected to attack from Ivanovsky Vyselok on Vinogradovka and from Yasnaya Polyana on Belenikhino. Task: keep every unit in its position - the battle is decided by the ground still held."
   },
   "briefs_rus": {
-   "brief_13": "06:00, 12 июля. Контрудар в 08:30 после 15-минутного огневого налёта: 29 тк на совхоз и 252.2, 18 тк вдоль Псёла, 2 гв.тк на Ясную Поляну. На рассвете морось.",
-   "brief_14": "10:00, 12 июля. Танковые корпуса в совхозных полях; ЛАГ держит 252.2 Тиграми и дивизионом штурмовых орудий, Мёртвая голова атакует 226.6 - Полежаев. Авиация с обеих сторон.",
-   "brief_15": "14:00, 12 июля. Удержать занятое, отвести потрёпанные бригады за противотанковый ров; к 17:00 гроза.",
-   "brief_19": "06:00, 13 июля. Дождь. Обе стороны закрепляются на рубеже Васильевка - 252.2 - Сторожевое; ЛАГ и Мёртвая голова перегруппировываются для излучины Псёла."
+   "brief_13": "06:00, 12 июля. Пасмурно, проясняется. Тревога с юга: немецкие танки взяли Ржавец; две бригады 5 гв.мк и 26 гв.тбр уходят на юг. Мёртвая голова атакует Весёлый и 226.6. Контрудар в 08:30, артиллерия с 08:00: 29 тк на совхоз и 252.2, 18 тк вдоль Псёла, 2 гв.тк на Ясную Поляну; за танками 42 гв.сд и 9 гв.вдд. Задача: быстро сблизиться - Тигры и орудия на 252.2 бьют дальше Т-34.",
+   "brief_14": "10:00, 12 июля. Ясно, позже дождь. Танковые корпуса в совхозных полях; 32 тбр в первые минуты потеряла больше 20 танков у противотанкового рва и под огнём орудий с 252.2, 181 тбр вдоль Псёла у Андреевки. ЛАГ держит 252.2 Тиграми и дивизионом штурмовых орудий. Авиация с обеих сторон. Задача: обходить 252.2 с флангов, а не через ров; 18 тк продолжает на Васильевку.",
+   "brief_15": "14:00, 12 июля. Гроза, затем проясняется. Атака перед 252.2 захлебнулась. На северном берегу 226.6 потеряна, Мёртвая голова рвётся к дороге на Карташёвку; 6 гв.вдд выдвигается к 236.7. Задача: удержать занятое, отвести потрёпанные бригады за противотанковый ров; 52 и 95 гв.сд и орудия 33 гв.ск закрывают Полежаев - Весёлый.",
+   "brief_16": "18:00, 12 июля. Ясно. Контрудар остановился: 29 тк потерял больше половины танков перед 252.2, 18 тк держит Андреевку - Васильевку - Михайловку. Мёртвая голова остановлена в 17:30, не дойдя до дороги Карташёвка - Прохоровка. Задача: держать рубеж, эвакуировать подбитые танки с поля; на 252.2 больше не атаковать.",
+   "brief_17": "22:00, 12 июля. Ясная ночь. Приказ фронта 036/оп: 13 июля продолжать контрудар. 24 гв.тбр и 10 гв.мбр из резерва армии направлены на северный берег против плацдарма; ремонтники работают всю ночь, бригады сводятся в сводные батальоны. Задача: занять окопы на рубеже Весёлый - Полежаев, танки держать в балках.",
+   "brief_18": "02:00, 13 июля. Туман над Псёлом. Танки Мёртвой головы, вышедшие к дороге на Карташёвку, отбрасываются к 226.6; ЛАГ окапывается южнее совхоза, Рейх держит Сторожевое. Задача: 95 гв.сд с 24 гв.тбр, 51 гв.ттп и 1446 сап готовит утреннюю атаку на 226.6; 42 гв.сд очищает Полежаев; 29 тк держит кирпичный завод - Ямки.",
+   "brief_19": "06:00, 13 июля. Дождь, просёлки снова в грязи. Жуков в штабе фронта. Атака на 226.6 ждёт снарядов; 18 тк поддерживает её огнём с южного берега. На остальном фронте стороны стоят друг против друга на скатах 252.2. Задача: на 252.2 в лоб не атаковать; держать рубеж и ремонтировать танки.",
+   "brief_20": "10:00, 13 июля. Дождь стихает. 95 гв.сд и 24 гв.тбр атакуют 226.6 и берут первую траншею; 42 гв.сд очищает Полежаев. 2 тк без пехоты атакует Сторожевое. ЛАГ отменил свою танковую атаку. Задача: закрепиться на взятом на 226.6; держать противотанковый рубеж на обратном скате севернее совхоза.",
+   "brief_21": "14:00, 13 июля. Проясняется. Мёртвая голова отбила 226.6; атака на Сторожевое не удалась. 29 тк и 9 гв.вдд держат кирпичный завод - Лутово. Задача: пехоту держать в окопах; артиллерию 5 гв.ТА навести на переправы плацдарма у Богородицкого и Ключей.",
+   "brief_22": "18:00, 13 июля. Ясно. Ротмистров приказывает 18 и 29 тк наступать на Комсомолец; исправных танков для этого мало. Рейх атаковал от Сторожевого на Ивановку - Виноградовку и занял лес севернее Ивановки. Задача: восстановить бригады, отрыть второй рубеж 252.4 - станция; 2 гв.тк и 183 сд держат Беленихино - Виноградовку.",
+   "brief_23": "22:00, 13 июля. Ясная ночь. 24 гв.тбр и 1446 сап выведены из излучины Псёла, 10 гв.мбр в резерве у Жимолостного. Приказы по-прежнему требуют завтра атаковать плацдарм. Задача: удерживать занимаемый рубеж, ночная разведка в плацдарм, резервы наготове против удара немцев на Правороть.",
+   "brief_24": "02:00, 14 июля. Ясно. Последняя ночь операции. Удерживать рубеж Весёлый - Полежаев - Андреевка - кирпичный завод - Ямки; 2 гв.тк на рубеже Виноградовка - Беленихино - Шахово. На рассвете ожидается удар Рейха от Ивановского Выселка на Виноградовку и от Ясной Поляны на Беленихино. Задача: все части на своих позициях - исход решает удержанная земля."
   },
   "_comment_briefs_ger": "German-side turn briefings (op_GER uses briefs_ger / briefs_ger_rus, op_RUS briefs / briefs_rus; prokh_op.py picks by the op dir name)",
   "briefs_ger": {
-   "brief_13": "06:00, 12 July. Totenkopf attacks from the bridgehead along the Kartashevka road to cut the Prokhorovka - Oboyan road; LSSAH holds 252.2 - the sovkhoz and attacks only when Totenkopf is on 226.6; Das Reich attacks Storozhevoye - Vinogradovka. Drizzle at dawn.",
-   "brief_14": "10:00, 12 July. Mass of Russian tanks attacking along the railway on 252.2 and along the Psel on Mikhailovka - Vasilyevka; 2 gds TC on Das Reich at Yasnaya Polyana. Stand at the AT ditch, the panzer regiment counter-attacks from behind 252.2 at midday; Totenkopf continues on 226.6. Air on both sides.",
-   "brief_15": "14:00, 12 July. The field in front of the sovkhoz is full of burning T-34s; hold the line, recover vehicles. Totenkopf's panzers are on the Kartashevka road. Thunderstorm expected towards 17:00.",
-   "brief_19": "06:00, 13 July. Rain. Hold the line Vasilyevka - 252.2 - Storozhevoye and regroup; Totenkopf pulls back into the bridgehead; Das Reich pushes south on Belenikhino."
+   "brief_13": "06:00, 12 July. Overcast, clearing. Totenkopf attacks at dawn out of the bridgehead on Vesyoly and 226.6 along the Kartashevka road, to cut the Prokhorovka - Oboyan road; LSSAH holds 252.2 - the sovkhoz and attacks only when Totenkopf is on 226.6; Das Reich attacks Storozhevoye - Vinogradovka. Task: LSSAH stays in its positions and lets the Russian tanks come onto the guns.",
+   "brief_14": "10:00, 12 July. Clear, rain later. A mass of Russian tanks is attacking along the railway on 252.2 and along the Psel on Mikhailovka - Vasilyevka; 2 gds TC hits Das Reich at Yasnaya Polyana. Air on both sides. Task: stand at the anti-tank ditch; the panzer regiment counter-attacks from behind 252.2 at midday; Totenkopf continues on 226.6.",
+   "brief_15": "14:00, 12 July. Thunderstorm, then clearing. The field in front of the sovkhoz is full of burning T-34s; Totenkopf's panzers are on the Kartashevka road. Task: hold the line and recover the vehicles; the Pz-Jg battalion covers the gaps the counter-attack has opened.",
+   "brief_16": "18:00, 12 July. Clear. The Russian tank attack has broken down in front of 252.2 and in the Psel valley; LSSAH holds the line it had in the morning. Totenkopf has taken 226.6 but was stopped short of the Kartashevka - Prokhorovka road. Task: recover and repair tanks during the night; the recon battalion holds the Psel valley at Mikhailovka - Vasilyevka; Totenkopf tries for the road after dark.",
+   "brief_17": "22:00, 12 July. Clear night. Totenkopf's armour reports it has reached the Kartashevka road. Corps order for 13 July: Totenkopf continues on the north bank; LSSAH attacks north from the sovkhoz towards the Psel to close the gap between the divisions. Das Reich holds against 2 gds TC. Task: LSSAH forms a battle group for the morning; the rest digs in.",
+   "brief_18": "02:00, 13 July. Fog. Totenkopf's armoured group on the Kartashevka road is under attack and short of fuel and ammunition; it falls back towards 226.6. Russian night bombers and artillery over the sovkhoz. Task: get Totenkopf's spearhead back behind 226.6 before daylight; LSSAH's battle group ready for the morning.",
+   "brief_19": "06:00, 13 July. Rain. Totenkopf holds 226.6 and the bridgehead and expects counter-attacks from the north; LSSAH stands south of the sovkhoz facing the slopes of 252.2; Das Reich holds Storozhevoye. Task: hold the line; keep the panzers off the soaked fields until the attack hour.",
+   "brief_20": "10:00, 13 July. Rain easing. LSSAH's tank attack is called off: a Russian anti-tank line waits on the reverse slope. Russian infantry and tanks attack 226.6 and take its first trench; Polezhayev is lost. Russian tanks attack Storozhevoye without infantry. Task: Totenkopf counter-attacks to retake 226.6; LSSAH and Das Reich hold.",
+   "brief_21": "14:00, 13 July. Clearing. Totenkopf has retaken 226.6; the attack on Storozhevoye has been beaten off. Task: hold the line and recover the vehicles; no further attacks on Prokhorovka today.",
+   "brief_22": "18:00, 13 July. Clear. The corps is turned south: it is to clear its southern flank together with III Pz Corps. Das Reich has begun with an attack from Storozhevoye towards Ivanovka - Vinogradovka and taken the woods north of Ivanovka; its main attack follows at dawn. Task: LSSAH and Totenkopf hold and release forces for Das Reich.",
+   "brief_23": "22:00, 13 July. Clear night. News from Hitler's headquarters: Citadel is to be called off, but Army Group South may finish the fighting at Prokhorovka. Totenkopf stays in the 226.6 bridgehead; LSSAH hands over parts of its sector. Task: keep up artillery fire and patrols so that the Russians do not notice the regrouping; mine the approaches.",
+   "brief_24": "02:00, 14 July. Clear. Last night of the operation. Das Reich assembles at Ivanovsky Vyselok and Yasnaya Polyana to attack at dawn on Vinogradovka and Belenikhino; LSSAH holds south of the sovkhoz to Storozhevoye, Totenkopf the bridgehead. Task: hold every position until morning - the ground still held decides the outcome."
   },
   "briefs_ger_rus": {
-   "brief_13": "06:00, 12 июля. Мёртвая голова наступает с плацдарма вдоль дороги на Карташёвку, чтобы перерезать дорогу Прохоровка - Обоянь; ЛАГ удерживает 252.2 - совхоз и атакует лишь когда Мёртвая голова на 226.6; Рейх атакует Сторожевое - Виноградовку. На рассвете морось.",
-   "brief_14": "10:00, 12 июля. Масса русских танков атакует вдоль железной дороги на 252.2 и вдоль Псёла на Михайловку - Васильевку; 2 гв.тк на Рейх у Ясной Поляны. Стоять у противотанкового рва, танковый полк контратакует из-за 252.2 в полдень; Мёртвая голова продолжает на 226.6. Авиация с обеих сторон.",
-   "brief_15": "14:00, 12 июля. Поле перед совхозом полно горящих Т-34; держать рубеж, эвакуировать машины. Танки Мёртвой головы на дороге на Карташёвку. К 17:00 ожидается гроза.",
-   "brief_19": "06:00, 13 июля. Дождь. Удерживать рубеж Васильевка - 252.2 - Сторожевое и перегруппироваться; Мёртвая голова отходит на плацдарм; Рейх наступает на юг на Беленихино."
+   "brief_13": "06:00, 12 июля. Пасмурно, проясняется. Мёртвая голова на рассвете наступает с плацдарма на Весёлый и 226.6 вдоль дороги на Карташёвку, чтобы перерезать дорогу Прохоровка - Обоянь; ЛАГ удерживает 252.2 - совхоз и атакует лишь когда Мёртвая голова на 226.6; Рейх атакует Сторожевое - Виноградовку. Задача: ЛАГ остаётся на позициях и подпускает русские танки под огонь орудий.",
+   "brief_14": "10:00, 12 июля. Ясно, позже дождь. Масса русских танков атакует вдоль железной дороги на 252.2 и вдоль Псёла на Михайловку - Васильевку; 2 гв.тк бьёт по Рейху у Ясной Поляны. Авиация с обеих сторон. Задача: стоять у противотанкового рва; танковый полк в полдень контратакует из-за 252.2; Мёртвая голова продолжает на 226.6.",
+   "brief_15": "14:00, 12 июля. Гроза, затем проясняется. Поле перед совхозом полно горящих Т-34; танки Мёртвой головы на дороге на Карташёвку. Задача: держать рубеж и эвакуировать машины; противотанковый батальон закрывает бреши, пробитые контратакой.",
+   "brief_16": "18:00, 12 июля. Ясно. Русская танковая атака разбилась перед 252.2 и в долине Псёла; ЛАГ удерживает утренний рубеж. Мёртвая голова взяла 226.6, но остановлена, не дойдя до дороги Карташёвка - Прохоровка. Задача: ночью эвакуировать и ремонтировать танки; разведбат держит долину Псёла у Михайловки - Васильевки; Мёртвая голова в темноте пробивается к дороге.",
+   "brief_17": "22:00, 12 июля. Ясная ночь. Танки Мёртвой головы доносят о выходе к дороге на Карташёвку. Приказ корпуса на 13 июля: Мёртвая голова продолжает по северному берегу; ЛАГ наступает от совхоза на север к Псёлу, чтобы закрыть разрыв между дивизиями. Рейх держится против 2 гв.тк. Задача: ЛАГ к утру формирует боевую группу; остальные окапываются.",
+   "brief_18": "02:00, 13 июля. Туман. Танковая группа Мёртвой головы на дороге на Карташёвку под ударом, ей не хватает горючего и боеприпасов; она отходит к 226.6. Русские ночные бомбардировщики и артиллерия над совхозом. Задача: до рассвета отвести острие Мёртвой головы за 226.6; боевая группа ЛАГ готова к утру.",
+   "brief_19": "06:00, 13 июля. Дождь. Мёртвая голова держит 226.6 и плацдарм и ждёт контратак с севера; ЛАГ стоит южнее совхоза против скатов 252.2; Рейх держит Сторожевое. Задача: удерживать рубеж; танки на раскисшие поля до часа атаки не выводить.",
+   "brief_20": "10:00, 13 июля. Дождь стихает. Танковая атака ЛАГ отменена: на обратном скате ждёт русский противотанковый рубеж. Русская пехота с танками атакует 226.6 и берёт первую траншею; Полежаев потерян. Русские танки без пехоты атакуют Сторожевое. Задача: Мёртвая голова контратакует и возвращает 226.6; ЛАГ и Рейх обороняются.",
+   "brief_21": "14:00, 13 июля. Проясняется. Мёртвая голова вернула 226.6; атака на Сторожевое отбита. Задача: держать рубеж и эвакуировать машины; сегодня Прохоровку больше не атаковать.",
+   "brief_22": "18:00, 13 июля. Ясно. Корпус поворачивает на юг: вместе с III тк очистить свой южный фланг. Рейх начал атакой от Сторожевого на Ивановку - Виноградовку и занял лес севернее Ивановки; главный удар - на рассвете. Задача: ЛАГ и Мёртвая голова обороняются и высвобождают силы для Рейха.",
+   "brief_23": "22:00, 13 июля. Ясная ночь. Из ставки фюрера: Цитадель будет прекращена, но группа армий Юг может закончить бои у Прохоровки. Мёртвая голова остаётся на плацдарме у 226.6; ЛАГ передаёт часть своего участка. Задача: вести огонь артиллерии и разведку, чтобы русские не заметили перегруппировки; заминировать подступы.",
+   "brief_24": "02:00, 14 июля. Ясно. Последняя ночь операции. Рейх сосредоточивается у Ивановского Выселка и Ясной Поляны для удара на рассвете на Виноградовку и Беленихино; ЛАГ держит рубеж южнее совхоза до Сторожевого, Мёртвая голова - плацдарм. Задача: удерживать все позиции до утра - исход решает удержанная земля."
   },
   "op_canvas1": [
    "06:00, 12 July 1943. II SS-Panzerkorps attacks on towards Prokhorovka: LSSAH from svkh. Oktyabrsky and height 252.2 on the station, Totenkopf's panzer regiment out of the Klyuchi bridgehead along the north bank to the Kartashevka road, Das Reich on Storozhevoye and Vinogradovka. Facing us: 9 gds AB Div in two trench rows in front of the station, 2 TC at Storozhevoye, 2 gds TC at Belenikhino, 95 and 42 gds RD on both banks of the Psel - and the tank columns of 5 gds TA reported moving into Prokhorovka since the evening of 11 July. Drizzle at dawn, thunderstorms likely."
