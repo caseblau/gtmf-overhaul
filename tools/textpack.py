@@ -64,3 +64,38 @@ def translit(s):
 if __name__ == '__main__':
     import sys
     loc, e = read(sys.argv[1]); print(loc); [print(k, v) for k, v in e]
+
+
+# ---- Polish place names (M16 Okuniew, 10 Nov 2026): the game's text packs are cp1251, so the Latin name is folded to
+# ASCII and the Russian one transliterated the way the 1941 RKKA sheets spell Polish villages (Michalow -> Михалув,
+# Halinow -> Галинув, Dluga Koscielna -> Длуга Косьцельна)
+import unicodedata
+def pl_ascii(s):
+    s = s.replace('ł', 'l').replace('Ł', 'L')
+    return ''.join(ch for ch in unicodedata.normalize('NFKD', s) if not unicodedata.combining(ch))
+
+_PL_DI = [('szcz', 'щ'), ('sz', 'ш'), ('cz', 'ч'), ('rz', 'ж'), ('ch', 'х'), ('dż', 'дж'), ('dź', 'дзь'), ('dz', 'дз'),
+          ('dzię', 'дзен'), ('cię', 'цен'), ('się', 'сен'), ('nię', 'нен'), ('zię', 'зен'), ('sia', 'ся'), ('sie', 'се'), ('sio', 'сё'), ('siu', 'сю'), ('si', 'си'), ('cia', 'ця'), ('cie', 'це'), ('cio', 'цё'), ('ciu', 'цю'), ('ci', 'ци'),
+          ('nia', 'ня'), ('nie', 'не'), ('nio', 'нё'), ('niu', 'ню'), ('ni', 'ни'), ('zia', 'зя'), ('zie', 'зе'), ('zio', 'зё'), ('zi', 'зи'),
+          ('ię', 'ен'), ('ią', 'ён'), ('jó', 'ю'), ('ió', 'ю'), ('la', 'ля'), ('lu', 'лю'), ('ia', 'я'), ('ie', 'е'), ('io', 'ё'), ('iu', 'ю'), ('ja', 'я'), ('je', 'е'), ('jo', 'йо'), ('ju', 'ю'), ('ów', 'ув'), ('ąb', 'омб'), ('ęb', 'емб'), ('ąp', 'омп'), ('ęp', 'емп')]
+_PL_CH = {'a': 'а', 'ą': 'он', 'b': 'б', 'c': 'ц', 'ć': 'ць', 'd': 'д', 'e': 'е', 'ę': 'ен', 'f': 'ф', 'g': 'г', 'h': 'г', 'i': 'и', 'j': 'й',
+          'k': 'к', 'l': 'ль', 'ł': 'л', 'm': 'м', 'n': 'н', 'ń': 'нь', 'o': 'о', 'ó': 'у', 'p': 'п', 'r': 'р', 's': 'с', 'ś': 'сь', 't': 'т',
+          'u': 'у', 'w': 'в', 'y': 'ы', 'z': 'з', 'ź': 'зь', 'ż': 'ж', 'v': 'в', 'x': 'кс', 'q': 'к'}
+_VOW = 'aąeęioóuy'
+def pl_rus(s):
+    out = []; i = 0; lo = s.lower()
+    while i < len(s):
+        for a, b in _PL_DI:
+            if lo.startswith(a, i):
+                t = b; n = len(a); break
+        else:
+            ch = lo[i]; n = 1
+            if ch == 'l':   # soft: ль before a consonant / at the end, л before e / i / o / y (la / lu are digraphs above)
+                nx = lo[i + 1] if i + 1 < len(lo) else ' '
+                t = 'л' if nx in 'eęiooóy' else 'ль'
+            elif ch == 'e' and (i == 0 or lo[i - 1] in ' -'): t = 'э'
+            elif ch == 'i' and i > 0 and lo[i - 1] in 'aeouy': t = 'й'
+            else: t = _PL_CH.get(ch, s[i])
+        out.append(t.capitalize() if s[i].isupper() else t); i += n
+    r = ''.join(out)
+    return r.replace('ьь', 'ь').replace('ль ', 'ль ').replace('ыя', 'ия')

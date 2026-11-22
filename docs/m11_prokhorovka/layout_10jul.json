@@ -1,4 +1,5 @@
 {
+ "keep_offmap": true,
  "_comment": "10 July 1943 layout for the Prokh block (operation 10-13 July). Coordinates are DEM-lattice metres: x east from lon 36.4903, y north from lat 50.904605 (tools/prokh_op.py shifts them into the 9 x 9 block (prokh_gen.to_block: x - 0, y - 2048; block x 0..18432, y 2048..20480)). 'units' maps platoon-name prefixes of the OOB (tools/oob_12jul.ps1) to the positions their HQs and battle groups take on turn 1 (round-robin; HQ-type units - HQs, supply, construction - stand on a border node of their own ground instead, as in the vanilla operations), or - with 'turn' > 1 - to the map edge and turn they arrive on. Turn = 4 h from 06:00 10 July: 1 = 06-10 10 Jul, 5 = 22-02, 7 = 06-10 11 Jul, 13 = 06-10 12 Jul, 19 = 06-10 13 Jul. Sources: docs/m11_prokhorovka/sources_11_14jul.md and sources_10jul.md (Zamulin ch. 5-7, Lawrence ch. 7-9, Wheatley 2019).",
  "date_beg": "0x19430710",
  "time_beg": 1536,

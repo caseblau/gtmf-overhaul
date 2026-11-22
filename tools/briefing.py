@@ -465,6 +465,99 @@ def brief_13(s):
 brief_02 = brief_01
 brief_14 = brief_15 = brief_13
 
+# ------------------------------------------------------------------ M16 (Okuniew): sketches as data in the block's layout
+# layout 'sketches': {brief key: spec}, spec = {
+#   "front":   [[x, y], ...]  block metres (x east from the west edge, y north from the south edge), drawn so that the
+#              German side is on the RIGHT hand when walking along it (Okuniew: south to north, the Germans in the east)
+#   "fronts":  [[...], ...]   further line pieces (a pocket, a second sector), same rule
+#   "units":   [{"key": text key | null, "kind": "tank" | "mech" | "inf" | "mot" | "arty", "side": "GER" | "USSR",
+#                "xy": [x, y], "toward": [x, y] (the enemy / the direction of the attack; tank stem and the mech
+#                half-rhomb point face it), "label_dx": .., "label_dy": .. (metres, optional)}]
+#   "thrusts": [{"side": .., "pts": [[x, y], ...], "dash": false}]   movements / attacks (open arrowhead as on Soviet maps; dash = planned)
+#   unit "posture": "defend" (an arc in front of it) | "assembly" (an oval round it) | "" (moving / attacking); "frontage" squares
+#   "labels":  [{"key": .., "xy": [x, y], "size": 1.0}]               army / corps names, places
+# } - the label keys are the OOB formation keys (op_*), the op-map markers (op_tm_*) or the layout's briefing 'labels'.
+def _bm(p):
+    """block metres -> block op squares (x east, y south from the block's north edge); N() adds SQ_DX / SQ_DY, which turn block
+    squares into the map window's. 14 Nov: this returned window squares already, so every Warsaw sketch was shifted twice
+    (3 August: 6 km north, 31 July: 4 km west and 6 km north)"""
+    if not G.BLOCK:   # 22 Nov: Prokhorovka (tools/prokh_timetable.py) - block metres -> the old 7 x 5 frame's squares N() expects
+        return (p[0] / 1024.0 - G.SQ_DX, (G.ROWS * G.CELL - p[1]) / 1024.0 - G.SQ_DY)
+    return (p[0] / 1024.0, (int(G.BLOCK['rows']) * float(G.BLOCK['cell']) - p[1]) / 1024.0)
+
+def _inwin(c, m=0.6):
+    """a point (squares) inside the operation's map window, with a margin of m squares"""
+    x, y = N(*c); return -m / W_SQ <= x <= 1 + m / W_SQ and -m / H_SQ <= y <= 1 + m / H_SQ
+
+def _head(s, pts, col, dash):
+    """the open arrowhead of a Soviet map arrow: two strokes 0.25 squares at +-28 degrees from the end of the curve"""
+    sm = smooth(pts, 103) if len(pts) > 2 else pts
+    (x1, y1), (x0, y0) = sm[-1], sm[-4] if len(sm) > 4 else sm[0]
+    a = math.atan2(y1 - y0, x1 - x0)
+    for d in (math.radians(152), -math.radians(152)):
+        s.line([(x1 + 0.25 * math.cos(a + d), y1 + 0.25 * math.sin(a + d)), (x1, y1)], LIN[col])
+
+def _arc(s, c, ang, col, chord=2.0, dash=0.0):
+    """defence line of one unit: an open arc 0.6 squares in front of it (toward ang), convex toward the enemy, sagitta 0.14 x chord"""
+    fx, fy = math.cos(ang), math.sin(ang); px, py = -fy, fx; sag = 0.14 * chord
+    pts = [(c[0] + fx * (0.6 + sag * (1 - (2 * t - 1) ** 2)) + px * chord * (t - 0.5), c[1] + fy * (0.6 + sag * (1 - (2 * t - 1) ** 2)) + py * chord * (t - 0.5)) for t in [i / 20 for i in range(21)]]
+    s.line(pts, LIN[col], dash=dash, n=103)
+
+def _clamp(c, m):
+    """a point (block squares) pulled inside the operation's map window, m squares in from its edges"""
+    x0, x1 = -G.SQ_DX + m, W_SQ - G.SQ_DX - m; y0, y1 = -G.SQ_DY + m, H_SQ - G.SQ_DY - m
+    return (min(max(c[0], x0), x1), min(max(c[1], y0), y1))
+
+def from_spec(s, spec):
+    # 14 Nov (user): no front lines - 'front' / 'fronts' are kept in the data for the AI and the op map, not drawn
+    # 20 Nov (user: the sketches were "well outside of the playable map area" ... "just remake them so they are on map"):
+    # everything drawn is pulled onto the operation's map window - a unit standing off the map is drawn at the map edge
+    # nearest to it (its symbol, defence arc and label wholly inside), arrows are pulled inside point by point, labels too
+    for t in spec.get('thrusts', []):
+        col = BLUE if t.get('side') == 'GER' else RED
+        pts = [_clamp(_bm(p), 0.35) for p in t['pts']]
+        q = [pts[0]]
+        for p in pts[1:]:
+            if math.hypot(p[0] - q[-1][0], p[1] - q[-1][1]) > 0.05: q.append(p)
+        if len(q) < 2 or sum(math.hypot(b[0] - a[0], b[1] - a[1]) for a, b in zip(q, q[1:])) < 0.8: continue
+        dash = D if t.get('dash') else 0.0
+        s.curve(q, col, dash=dash); _head(s, q, col, dash)
+    for u in spec.get('units', []):
+        col = BLUE if u.get('side') == 'GER' else RED
+        c0 = _bm(u['xy']); tw = _bm(u.get('toward', u['xy']))
+        face = math.atan2(tw[1] - c0[1], tw[0] - c0[0])
+        k = u.get('kind', 'inf'); sc = u.get('scale', SC); post = u.get('posture', '')
+        ch_ = float(u.get('frontage', 2.0))
+        c = _clamp(c0, max(0.8, ch_ / 2 + 0.9) if post == 'defend' else 0.8)
+        # the traced glyphs carry the German stem (TANK + STEM) and the half-rhomb point (MECH) on their local -x side, so the
+        # glyph axis is turned half round from the facing: stem and point toward the enemy (user rule, Prokhorovka 0.2.0)
+        ang = face + math.pi
+        if k == 'tank': s.tank(c, col, ang, sc)
+        elif k in ('mech', 'mot'): s.mech(c, col, ang, sc)                       # motorised / mechanised: half-rhombs (vanilla MECH)
+        elif k == 'arty': s._glyph(INF, c, col, 0.0, CIRC[col], sc)              # artillery / anti-tank line: the vanilla circle with strokes
+        elif post != 'defend': s.ellipse(c, col, 0.6, 0.34, face + math.pi / 2)  # rifle formation: no pictogram, its area outline (Soviet practice)
+        if post == 'defend': _arc(s, c, face, col, ch_)
+        elif post == 'assembly' and k != 'inf': s.ellipse(c, col, 0.95, 0.55, face + math.pi / 2)
+        if u.get('key'):
+            lp = _clamp((c[0] + u.get('label_dx', 0.0) / 1024.0, c[1] - u.get('label_dy', -420.0) / 1024.0), 0.6)
+            s.label(u['key'], lp, 0.7143, LBL_W, LBL_H)
+    for l in spec.get('labels', []):
+        sz = float(l.get('size', 1.0))
+        s.label(l['key'], _clamp(_bm(l['xy']), 0.6 * sz), 0.7143 * sz, LBL_W * sz, LBL_H * sz)
+
+EXTRA_SKETCHES = {}   # 20 Nov: brief key -> spec made from the operation's timetable (tools/op_timetable.py), for turns without a drawn sketch
+
+def _block_sketch(key):
+    """the sketch of brief `key` from the block layout (G.BLOCK['layout']); None when the layout has none"""
+    if key in EXTRA_SKETCHES: return lambda s, spec=EXTRA_SKETCHES[key]: from_spec(s, spec)
+    if not G.BLOCK: return None
+    L = json.load(open(os.environ.get('MFO_LAYOUT') or G.repo_path(G.BLOCK['layout']), encoding='utf-8'))   # the operation's layout
+    sk = L.get('sketches', {})
+    k = key
+    while k in sk and isinstance(sk[k], str): k = sk[k]   # "brief_02": "brief_01" reuses a drawing
+    if k not in sk: return None
+    return lambda s, spec=sk[k]: from_spec(s, spec)
+
 SKETCHES = dict(brief_01=brief_01, brief_02=brief_02, brief_03=brief_03, brief_04=brief_04, brief_07=brief_07, brief_10=brief_10,
                 brief_13=brief_13, brief_14=brief_14, brief_15=brief_15, brief_19=brief_19)
 
@@ -475,7 +568,7 @@ def write_scripts(out_path, brief_keys, turns=24, turn_offset=0):
     keys = [k for k in dict.fromkeys(brief_keys) if k]
     funcs = {}   # name -> instruction list
     for k in keys:
-        s = Sketch(); SKETCHES.get(k, brief_01)(s); funcs['draw_' + k] = s.end()
+        s = Sketch(); (_block_sketch(k) or SKETCHES.get(k, brief_01))(s); funcs['draw_' + k] = s.end()
     funcs['settings'] = [(azsc.OP['font'], [(2, 'handw')]),
                          (azsc.OP['line_scale'], [(0, W_SQ * 1024.0), (0, H_SQ * 1024.0), (0, 1.0), (0, -(W_SQ * 512.0 + 1024)), (0, -(H_SQ * 512.0 + 1024))]),
                          (azsc.OP['text_scale'], [(0, W_SQ * 1024.0), (0, H_SQ * 1024.0), (0, 0.4), (0, -(W_SQ * 512.0 + 1024)), (0, -(H_SQ * 512.0 + 1024))]),
@@ -484,10 +577,12 @@ def write_scripts(out_path, brief_keys, turns=24, turn_offset=0):
     funcs['at_start'] = [(azsc.OP['log'], [(2, 'at_start()')]), (azsc.OP['dump'], []), (azsc.OP['break'], [])]
     funcs['at_end'] = [(azsc.OP['log'], [(2, 'at_end()')]), (azsc.OP['dump'], []), (azsc.OP['break'], [])]
     funcs['turn_any'] = [(azsc.OP['log'], [(2, 'turn_any()')]), (azsc.OP['break'], [])]
-    import ai_orders
+    import importlib
+    ai_orders = importlib.import_module(G.BLOCK['ai_orders']) if (G.BLOCK and G.BLOCK.get('ai_orders')) else importlib.import_module('ai_orders')   # M16: the block's own AI orders (tools/okun_ai.py)
     for t in range(1, turns + 1):   # the AI orders of the turn (tools/ai_orders.py): order(kind, ai_id, x, y)
         funcs['turn_%02d' % t] = [(azsc.OP['log'], [(2, 'turn_%02d()' % t)])] + \
-            [(azsc.OP['order'], [(2, k), (2, i), (3, x + G.SQ_DX), (3, y + G.SQ_DY)]) for k, i, x, y in ai_orders.ORDERS.get(t + turn_offset, [])] + [(azsc.OP['break'], [])]
+            [(azsc.OP['order'], [(2, k), (2, i), (3, x + G.SQ_DX), (3, y + G.SQ_DY)]) for k, i, x, y in ai_orders.ORDERS.get(t + turn_offset, [])
+             if 0 <= x + G.SQ_DX < W_SQ and 0 <= y + G.SQ_DY < H_SQ]   # orders to squares outside the map window are dropped + [(azsc.OP['break'], [])]
     names = sorted(funcs)
     # lay out: draw functions first, then settings, then the stubs (any order works; indices are resolved below)
     order = ['draw_' + k for k in keys] + ['settings'] + keys + ['at_start', 'at_end', 'turn_any'] + ['turn_%02d' % t for t in range(1, turns + 1)]

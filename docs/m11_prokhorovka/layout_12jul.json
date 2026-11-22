@@ -1,4 +1,5 @@
 {
+ "keep_offmap": true,
  "_comment": "12-13 July 1943 operation (12 turns from 06:00 12 July) on the 9 x 9 Prokh block - the second half of the 10-13 July campaign (layout_10jul.json, turns 13-24) as a separate operation. Same coordinate frame and the same works / villages / fields as the campaign layout; 'turn_offset' 12 = the campaign turn the operation's turn 1 corresponds to (tools/ai_orders.py and the air table are indexed by campaign turn). Positions 06:00 12 July: docs/m11_prokhorovka/positions_12jul.md (Zamulin ch. 7 and 9, Lawrence ch. 9).",
  "date_beg": "0x19430712",
  "time_beg": 1536,

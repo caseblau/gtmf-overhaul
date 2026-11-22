@@ -1,4 +1,5 @@
 {
+ "keep_offmap": true,
  "_comment": "10-11 July 1943 operation (12 turns from 06:00 10 July) = the first half of the 10-13 July campaign (layout_10jul.json, turns 1-12) as a separate operation: same layout, frames 1-12, reinforcements arriving after turn 12 left out. Regenerate it from layout_10jul.json after any change there (tools/make_layout_1011.py).",
  "date_beg": "0x19430710",
  "time_beg": 1536,
