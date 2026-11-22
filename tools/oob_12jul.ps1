@@ -535,6 +535,13 @@ foreach ($k in $AI.Keys) {
     }
 }
 Say "  AI group ids set on $nAi formations, $nHold HOLD rows added to ai_orders"
+# 22 Nov 2026 (user: "any battle after the first or second turn has only one unit involved for both sides"): the engine
+# builds its AI groups from the PLATOONS' 'ai' field, and the clones kept their template's id (all LSSAH in the Das Reich
+# groups, the cloned Soviet brigades in their template's). A doubled group that attacks makes all its platoons busy, and
+# busy AI platoons are left out of every other battle. Every platoon now takes its own formation's id (USER stays USER).
+$nPl = 0
+foreach ($p in $act.kids) { $pl = FS $p 'pool'; if ($pl -and $AI.ContainsKey($pl) -and [uint32](FU $p 'ai') -ne [uint32]1380275029) { SetU $p 'ai' (Fourcc-U32 $AI[$pl]); $nPl++ } }
+Say "  AI group ids set on $nPl platoons (their formation's id)"
 # command: a formation whose 'ai' field is USER is under the player's command; any other code hands it to an AI group
 # (vanilla: 13 RC / 3 gds RD are AI allies in the Soviet op, SS-TK 6 MIR in the German one). Every formation of the
 # player's side becomes USER, so all units can be moved; the enemy keeps its AI group codes (the templates' orders apply).
