@@ -28,11 +28,9 @@ FLAG = [("line", 0, [(-0.125, 0.211), (-0.125, -0.211)]), ("poly", 0, [(-0.125, 
 ARTY = [("poly", 0, [(0.0, 0.079), (0.106, -0.079), (-0.106, -0.079)])]
 TANK = [("poly", 0, [(0.234, -0.214), (-0.003, -0.327), (-0.234, -0.204), (0.003, -0.089)]),
         ("poly", 0, [(0.234, 0.203), (-0.003, 0.09), (-0.234, 0.214), (0.003, 0.328)]), ("line", 0, [(0.003, -0.124), (0.009, 0.114)])]
-MECH = [(k, d, [(-x, y) for x, y in pts]) for k, d, pts in [("poly", 0, [(0.189, -0.323), (0.215, -0.324), (0.215, -0.135), (-0.044, -0.135), (-0.225, -0.23), (-0.044, -0.323)]),
-        ("poly", 0, [(0.189, 0.12), (0.215, 0.12), (0.215, 0.308), (-0.044, 0.308), (-0.225, 0.214), (-0.044, 0.12)]), ("line", 0, [(0.055, -0.17), (0.055, 0.155)])]]
-# 11 Nov (user: mechanised icons backwards): mirrored so the point of the half-rhombs faces forward, towards the enemy
-STEM = [("line", 0, [(0.0, 0.0), (0.42, 0.0)])]         # 11 Nov (user: icons backwards): the vanilla sketches (Stepanovka, Saur) draw a solid stem
-                                                         # from the centre FORWARD, towards the enemy / the attack, on tanks of both sides
+MECH = [("poly", 0, [(0.189, -0.323), (0.215, -0.324), (0.215, -0.135), (-0.044, -0.135), (-0.225, -0.23), (-0.044, -0.323)]),
+        ("poly", 0, [(0.189, 0.12), (0.215, 0.12), (0.215, 0.308), (-0.044, 0.308), (-0.225, 0.214), (-0.044, 0.12)]), ("line", 0, [(0.055, -0.17), (0.055, 0.155)])]
+STEM = [("line", D, [(0.0, 0.0), (-0.35, 0.0)])]       # the dashed stroke the vanilla sketch adds to German tank / mech symbols
 _C = [(0.211 * math.cos(t), 0.211 * math.sin(t)) for t in [i * 2 * math.pi / 84 for i in range(85)]]
 INF = [("line", 0, _C), ("line", 0, [(-0.098, -0.041), (-0.008, -0.094)]), ("line", 0, [(-0.012, 0.104), (0.078, 0.051)]), ("line", 0, [(-0.145, 0.085), (0.127, -0.076)])]
 MOT = [("line", 0, _C), ("line", 0, [(0.091, 0.053), (-0.006, 0.093)]), ("line", 0, [(0.027, -0.101), (-0.07, -0.06)]), ("line", 0, [(0.156, -0.064), (-0.097, 0.045)]),
@@ -97,8 +95,8 @@ class Sketch:
     def boundary(self, pts, col): self.curve(pts, col, dash=D)
     def leader(self, a, b): self.line([a, b], BLACK, dash=DL, w=WL, n=22)
     def inf(self, c, col, motor=False, scale=1.0): self._glyph(MOT if motor else INF, c, col, 0.0, CIRC[col], scale)
-    def tank(self, c, col, ang=0.0, scale=1.0): self._glyph(TANK + STEM, c, col, ang, None, scale)   # rhombs abreast, long axis along ang
-    def mech(self, c, col, ang=0.0, scale=1.0): self._glyph(MECH + STEM, c, col, ang, None, scale)
+    def tank(self, c, col, ang=0.0, scale=1.0): self._glyph(TANK + (STEM if SYM[col] == BLUE else []), c, col, ang, None, scale)   # rhombs abreast, long axis along ang
+    def mech(self, c, col, ang=0.0, scale=1.0): self._glyph(MECH + (STEM if SYM[col] == BLUE else []), c, col, ang, None, scale)
     def flag(self, c, col):
         if not self.lean: self._glyph(FLAG, c, col)
     def arty(self, c, col, scale=1.0):
@@ -172,14 +170,14 @@ def brief_01(s):
     s.arc((1.0, 3.2), BLUE, -1.8); s.arc((2.3, 3.4), BLUE, -1.0)
     # Soviets
     s.label('op_ra_183rd', (4.2, 6.6), 0.7143, 0.1); s.inf((3.6, 5.9), RED); s.inf((4.4, 7.7), RED); s.inf((7.5, 7.2), RED); s.flag((7.7, 9.5), RED); s.arty((7.2, 9.2), RED)
-    s.tank((2.6, 3.2), RED, 3.34); s.label('op_ra_99tbr', (3.3, 2.7), 0.5714, 0.08)
-    s.tank((6.0, 4.6), RED, 3.44); s.label('op_ra_26tbr', (6.7, 4.2), 0.5714, 0.08)
-    s.tank((7.6, 6.2), RED, 3.44); s.label('op_ra_169tbr', (8.4, 6.0), 0.5714, 0.09)
+    s.tank((2.6, 3.2), RED, 0.2); s.label('op_ra_99tbr', (3.3, 2.7), 0.5714, 0.08)
+    s.tank((6.0, 4.6), RED, 0.3); s.label('op_ra_26tbr', (6.7, 4.2), 0.5714, 0.08)
+    s.tank((7.6, 6.2), RED, 0.3); s.label('op_ra_169tbr', (8.4, 6.0), 0.5714, 0.09)
     s.label('op_ra_2tc', (6.3, 7.5), 1.0, 0.1); s.flag((6.9, 8.1), RED); s.ellipse((6.5, 5.4), RED, 1.1, 0.5, 0.9)
     s.inf((1.0, 1.4), RED); s.arty((1.6, 0.7), RED); s.label('op_ra_52grd', (1.9, 0.6), 0.7143, 0.1)
-    s.mech((3.9, 1.0), RED, 3.44); s.label('op_ra_11mrbr', (4.6, 0.6), 0.5714, 0.09)
+    s.mech((3.9, 1.0), RED, 0.3); s.label('op_ra_11mrbr', (4.6, 0.6), 0.5714, 0.09)
     s.label('op_ra_9gabd', (11.5, 2.4), 0.7143, 0.12); s.inf((9.5, 3.0), RED); s.inf((12.3, 3.3), RED)
-    s.label('op_ra_2gtc', (6.8, 13.4), 1.0, 0.1); s.tank((5.9, 12.2), RED, 3.64); s.tank((6.8, 12.8), RED, 3.64); s.flag((7.6, 13.5), RED); s.inf((7.0, 10.6), RED)
+    s.label('op_ra_2gtc', (6.8, 13.4), 1.0, 0.1); s.tank((5.9, 12.2), RED, 0.5); s.tank((6.8, 12.8), RED, 0.5); s.flag((7.6, 13.5), RED); s.inf((7.0, 10.6), RED)
     s.label('op_ra_5gta', (12.5, 6.5), 1.429, 0.14, 0.05); s.spot((13.3, 5.2), RED, math.pi); s.spot((13.3, 7.7), RED, math.pi)
     s.flag((13.6, 2.1), RED); s.label('op_ra_48rc', (13.0, 1.6), 0.5714, 0.08)
     s.inf((-0.6, 11.7), BLUE, True); s.label('op_we_dr', (-1.6, 12.2), 0.5714, 0.1)
@@ -203,13 +201,13 @@ def brief_03(s):
     s.inf((1.6, 3.5), BLUE, True); s.label('op_we_tk', (1.0, 5.0), 0.7143, 0.14); s.tank((2.0, 5.5), BLUE, 0.0); s.flag((0.7, 5.3), BLUE)
     s.arc((1.0, 2.6), BLUE, -1.7); s.arc((2.2, 2.6), BLUE, -1.1)
     s.label('op_ra_183rd', (5.6, 8.0), 0.7143, 0.1); s.inf((5.2, 7.0), RED); s.inf((7.5, 7.2), RED); s.flag((7.7, 9.5), RED); s.arty((7.2, 9.2), RED)
-    s.tank((2.6, 3.2), RED, 3.34); s.label('op_ra_99tbr', (3.3, 2.7), 0.5714, 0.08)
-    s.tank((6.0, 4.6), RED, 3.44); s.label('op_ra_26tbr', (6.7, 4.2), 0.5714, 0.08)
-    s.tank((7.3, 6.4), RED, 3.44); s.label('op_ra_169tbr', (8.3, 6.2), 0.5714, 0.09); s.thrust((7.0, 6.4), (5.6, 6.6), RED)
+    s.tank((2.6, 3.2), RED, 0.2); s.label('op_ra_99tbr', (3.3, 2.7), 0.5714, 0.08)
+    s.tank((6.0, 4.6), RED, 0.3); s.label('op_ra_26tbr', (6.7, 4.2), 0.5714, 0.08)
+    s.tank((7.3, 6.4), RED, 0.3); s.label('op_ra_169tbr', (8.3, 6.2), 0.5714, 0.09); s.thrust((7.0, 6.4), (5.6, 6.6), RED)
     s.label('op_ra_2tc', (6.3, 7.5), 1.0, 0.1); s.flag((6.9, 8.1), RED); s.ellipse((6.5, 5.4), RED, 1.1, 0.5, 0.9)
     s.inf((1.0, 1.4), RED); s.arty((1.6, 0.7), RED); s.label('op_ra_52grd', (1.9, 0.6), 0.7143, 0.1)
     s.label('op_ra_9gabd', (11.5, 2.4), 0.7143, 0.12); s.inf((9.5, 3.0), RED); s.inf((12.3, 3.3), RED)
-    s.label('op_ra_2gtc', (6.8, 13.4), 1.0, 0.1); s.tank((5.9, 12.2), RED, 3.64); s.tank((6.8, 12.8), RED, 3.64); s.inf((7.0, 10.6), RED)
+    s.label('op_ra_2gtc', (6.8, 13.4), 1.0, 0.1); s.tank((5.9, 12.2), RED, 0.5); s.tank((6.8, 12.8), RED, 0.5); s.inf((7.0, 10.6), RED)
     s.label('op_ra_5gta', (12.5, 6.5), 1.429, 0.14, 0.05); s.spot((13.3, 5.2), RED, math.pi); s.spot((13.3, 7.7), RED, math.pi)
     s.inf((-0.6, 11.7), BLUE, True); s.inf((-2.6, 1.2), BLUE, True); s.flag((-3.2, 0.4), BLUE); s.inf((-0.5, -0.4), RED)
 
@@ -231,13 +229,13 @@ def brief_07(s):
     s.inf((2.0, 1.6), BLUE, True); s.label('op_we_tk', (1.0, 0.6), 0.7143, 0.14); s.tank((1.6, 3.3), BLUE, 0.0); s.flag((0.7, 4.6), BLUE)
     s.arc((3.2, 1.0), BLUE, -0.3)
     s.label('op_ra_9gabd', (10.4, 2.0), 0.7143, 0.12); s.inf((8.6, 3.4), RED); s.inf((9.7, 3.3), RED); s.flag((11.6, 3.0), RED); s.arty((10.6, 4.2), RED)
-    s.tank((6.0, 3.6), RED, 3.44); s.label('op_ra_26tbr', (6.7, 3.0), 0.5714, 0.08)
-    s.tank((8.0, 6.5), RED, 3.44); s.label('op_ra_169tbr', (8.9, 6.3), 0.5714, 0.09); s.label('op_ra_2tc', (7.6, 8.0), 1.0, 0.1)
+    s.tank((6.0, 3.6), RED, 0.3); s.label('op_ra_26tbr', (6.7, 3.0), 0.5714, 0.08)
+    s.tank((8.0, 6.5), RED, 0.3); s.label('op_ra_169tbr', (8.9, 6.3), 0.5714, 0.09); s.label('op_ra_2tc', (7.6, 8.0), 1.0, 0.1)
     s.inf((3.8, 1.0), RED); s.label('op_ra_52grd', (4.6, 0.5), 0.7143, 0.1)
     s.label('op_ra_95grd', (6.5, 0.4), 0.7143, 0.1)
-    s.label('op_ra_5gta', (12.0, 6.0), 1.429, 0.14, 0.05); s.tank((12.0, 3.0), RED, 3.64); s.label('op_ra_18tc', (12.8, 2.6), 0.5714, 0.08); s.flag((13.4, 6.4), RED); s.ellipse((12.4, 3.6), RED, 1.3, 0.6, 1.2)
-    s.tank((12.5, 4.6), RED, 3.64); s.label('op_ra_29tc', (13.2, 4.3), 0.5714, 0.08)
-    s.label('op_ra_2gtc', (6.8, 13.4), 1.0, 0.1); s.tank((5.9, 12.2), RED, 3.64); s.tank((6.8, 12.8), RED, 3.64); s.inf((7.0, 10.6), RED); s.inf((-0.6, 11.7), BLUE, True); s.inf((-2.6, 1.2), BLUE, True); s.flag((-3.2, 0.4), BLUE)
+    s.label('op_ra_5gta', (12.0, 6.0), 1.429, 0.14, 0.05); s.tank((12.0, 3.0), RED, 0.5); s.label('op_ra_18tc', (12.8, 2.6), 0.5714, 0.08); s.flag((13.4, 6.4), RED); s.ellipse((12.4, 3.6), RED, 1.3, 0.6, 1.2)
+    s.tank((12.5, 4.6), RED, 0.5); s.label('op_ra_29tc', (13.2, 4.3), 0.5714, 0.08)
+    s.label('op_ra_2gtc', (6.8, 13.4), 1.0, 0.1); s.tank((5.9, 12.2), RED, 0.5); s.tank((6.8, 12.8), RED, 0.5); s.inf((7.0, 10.6), RED); s.inf((-0.6, 11.7), BLUE, True); s.inf((-2.6, 1.2), BLUE, True); s.flag((-3.2, 0.4), BLUE)
 
 
 def brief_10(s):
@@ -248,12 +246,12 @@ def brief_10(s):
     s.inf((7.0, 7.4), BLUE, True); s.label('op_we_dr', (5.8, 7.9), 0.7143, 0.14); s.flag((4.6, 9.2), BLUE)
     s.inf((2.4, 1.6), BLUE, True); s.label('op_we_tk', (1.0, 0.6), 0.7143, 0.14); s.tank((1.6, 3.3), BLUE, 0.0)
     s.label('op_ra_9gabd', (10.8, 2.2), 0.7143, 0.12); s.inf((9.6, 3.2), RED); s.inf((10.4, 3.9), RED)
-    s.tank((8.6, 5.6), RED, 3.44); s.label('op_ra_169tbr', (9.4, 5.4), 0.5714, 0.09); s.label('op_ra_2tc', (9.0, 7.6), 1.0, 0.1)
+    s.tank((8.6, 5.6), RED, 0.3); s.label('op_ra_169tbr', (9.4, 5.4), 0.5714, 0.09); s.label('op_ra_2tc', (9.0, 7.6), 1.0, 0.1)
     s.inf((4.2, 1.0), RED); s.label('op_ra_52grd', (5.0, 0.5), 0.7143, 0.1); s.label('op_ra_95grd', (6.6, 0.4), 0.7143, 0.1)
     s.label('op_ra_5gta', (12.0, 6.0), 1.429, 0.14, 0.05)
-    s.tank((12.0, 2.6), RED, 3.64); s.label('op_ra_18tc', (12.8, 2.2), 0.5714, 0.08); s.tank((12.3, 4.4), RED, 3.64); s.label('op_ra_29tc', (13.1, 4.0), 0.5714, 0.08)
-    s.tank((13.0, 8.0), RED, 3.64); s.label('op_ra_5gmc', (13.0, 8.6), 0.5714, 0.09)
-    s.label('op_ra_2gtc', (6.8, 13.4), 1.0, 0.1); s.tank((5.9, 12.2), RED, 3.64); s.tank((6.8, 12.8), RED, 3.64); s.inf((7.0, 10.6), RED); s.inf((-0.6, 11.7), BLUE, True); s.inf((-2.6, 1.2), BLUE, True); s.flag((-3.2, 0.4), BLUE)
+    s.tank((12.0, 2.6), RED, 0.5); s.label('op_ra_18tc', (12.8, 2.2), 0.5714, 0.08); s.tank((12.3, 4.4), RED, 0.5); s.label('op_ra_29tc', (13.1, 4.0), 0.5714, 0.08)
+    s.tank((13.0, 8.0), RED, 0.5); s.label('op_ra_5gmc', (13.0, 8.6), 0.5714, 0.09)
+    s.label('op_ra_2gtc', (6.8, 13.4), 1.0, 0.1); s.tank((5.9, 12.2), RED, 0.5); s.tank((6.8, 12.8), RED, 0.5); s.inf((7.0, 10.6), RED); s.inf((-0.6, 11.7), BLUE, True); s.inf((-2.6, 1.2), BLUE, True); s.flag((-3.2, 0.4), BLUE)
     s.boundary([(9.0, 3.0), (11.0, 3.4), (13.9, 3.2)], RED); s.flag((13.4, 6.4), RED); s.flag((11.6, 3.0), RED)
 
 
@@ -266,10 +264,10 @@ def brief_13(s):
     s.inf((2.6, 1.5), BLUE, True); s.inf((0.4, -0.8), BLUE, True); s.label('op_we_tk', (1.0, 0.6), 0.7143, 0.14); s.tank((3.2, -0.2), BLUE, 0.0); s.label('op_we_tk_tr', (4.0, -0.7), 0.5714, 0.08)
     s.arc((4.8, -0.5), BLUE, -0.3); s.arc((4.2, 2.1), BLUE, 0.4); s.arc((2.0, -1.8), BLUE, -1.5)
     s.label('op_ra_9gabd', (10.8, 2.2), 0.7143, 0.12); s.inf((9.6, 3.2), RED); s.inf((10.4, 3.9), RED)
-    s.tank((10.4, 2.4), RED, 3.64); s.label('op_ra_18tc', (11.2, 2.0), 0.5714, 0.08); s.thrust((10.0, 2.6), (7.2, 3.3), RED, -0.3); s.thrust((10.0, 2.0), (6.5, 2.6), RED, -0.3)
-    s.tank((10.8, 4.0), RED, 3.64); s.label('op_ra_29tc', (11.6, 4.4), 0.5714, 0.08); s.thrust((10.4, 4.1), (8.2, 4.1), RED); s.thrust((10.6, 4.8), (8.6, 5.6), RED)
-    s.tank((7.4, 12.4), RED, 3.64); s.tank((8.2, 11.4), RED, 3.64); s.label('op_ra_2gtc', (8.6, 13.0), 1.0, 0.1); s.thrust((7.2, 12.2), (5.0, 12.6), RED); s.thrust((8.0, 11.2), (7.0, 10.0), RED); s.inf((-0.6, 11.7), BLUE, True); s.inf((-2.6, 1.2), BLUE, True); s.flag((-3.2, 0.4), BLUE); s.inf((-1.0, -2.6), RED); s.flag((13.4, 6.0), RED); s.flag((11.6, 3.0), RED)
-    s.tank((13.0, 6.5), RED, 3.64); s.label('op_ra_5gmc', (13.0, 7.1), 0.5714, 0.09)
+    s.tank((10.4, 2.4), RED, 0.5); s.label('op_ra_18tc', (11.2, 2.0), 0.5714, 0.08); s.thrust((10.0, 2.6), (7.2, 3.3), RED, -0.3); s.thrust((10.0, 2.0), (6.5, 2.6), RED, -0.3)
+    s.tank((10.8, 4.0), RED, 0.5); s.label('op_ra_29tc', (11.6, 4.4), 0.5714, 0.08); s.thrust((10.4, 4.1), (8.2, 4.1), RED); s.thrust((10.6, 4.8), (8.6, 5.6), RED)
+    s.tank((7.4, 12.4), RED, 0.5); s.tank((8.2, 11.4), RED, 0.5); s.label('op_ra_2gtc', (8.6, 13.0), 1.0, 0.1); s.thrust((7.2, 12.2), (5.0, 12.6), RED); s.thrust((8.0, 11.2), (7.0, 10.0), RED); s.inf((-0.6, 11.7), BLUE, True); s.inf((-2.6, 1.2), BLUE, True); s.flag((-3.2, 0.4), BLUE); s.inf((-1.0, -2.6), RED); s.flag((13.4, 6.0), RED); s.flag((11.6, 3.0), RED)
+    s.tank((13.0, 6.5), RED, 0.5); s.label('op_ra_5gmc', (13.0, 7.1), 0.5714, 0.09)
     s.inf((5.6, -1.6), RED); s.label('op_ra_52grd', (2.6, -2.6), 0.7143, 0.1); s.label('op_ra_95grd', (6.4, -2.2), 0.7143, 0.1); s.inf((3.0, -2.4), RED)
     s.label('op_ra_5gta', (12.0, 5.5), 1.429, 0.14, 0.05); s.label('op_ra_2tc', (9.5, 7.3), 1.0, 0.1)
 
@@ -277,13 +275,13 @@ def brief_13(s):
 def brief_14(s):
     """10:00 12 July: 29 TC into the anti-tank ditch at 252.2, 18 TC in Vasilyevka - Andreyevka, Totenkopf across the Psel"""
     brief_13(s)
-    s.tank((8.6, 3.2), RED, 3.64); s.tank((8.9, 4.4), RED, 3.64); s.tank((8.3, 4.2), BLUE, 0.3); s.tank((5.6, 2.6), RED, 3.64)
+    s.tank((8.6, 3.2), RED, 0.5); s.tank((8.9, 4.4), RED, 0.5); s.tank((8.3, 4.2), BLUE, 0.3); s.tank((5.6, 2.6), RED, 0.5)
 
 
 def brief_15(s):
     """14:00 12 July: the field between the sovkhoz and the ditch, Storozhevoye lost, Totenkopf on the Kartashevka road"""
     brief_13(s)
-    s.tank((9.0, 3.6), RED, 3.64); s.tank((8.4, 4.4), BLUE, 0.3); s.tank((6.0, 3.0), RED, 3.64); s.tank((7.0, 0.8), BLUE, 0.0)
+    s.tank((9.0, 3.6), RED, 0.5); s.tank((8.4, 4.4), BLUE, 0.3); s.tank((6.0, 3.0), RED, 0.5); s.tank((7.0, 0.8), BLUE, 0.0)
     s.thrust((7.6, 7.0), (8.8, 7.4), BLUE)
 
 
@@ -295,8 +293,8 @@ def brief_19(s):
     s.inf((7.6, 7.4), BLUE, True); s.label('op_we_dr', (6.4, 7.9), 0.7143, 0.14)
     s.inf((2.8, 1.5), BLUE, True); s.inf((0.4, -0.8), BLUE, True); s.label('op_we_tk', (1.0, 0.6), 0.7143, 0.14); s.tank((3.4, -0.2), BLUE, 0.0); s.thrust((3.6, 0.6), (2.2, 2.6), BLUE); s.flag((5.0, 6.2), BLUE); s.flag((4.6, 9.2), BLUE)
     s.label('op_ra_9gabd', (10.8, 2.2), 0.7143, 0.12); s.inf((9.6, 3.2), RED)
-    s.tank((9.8, 2.6), RED, 3.64); s.label('op_ra_18tc', (10.6, 2.2), 0.5714, 0.08); s.tank((10.4, 4.2), RED, 3.64); s.label('op_ra_29tc', (11.2, 4.6), 0.5714, 0.08)
-    s.tank((7.6, 12.4), RED, 3.64); s.tank((8.4, 11.4), RED, 3.64); s.label('op_ra_2gtc', (8.8, 13.0), 1.0, 0.1); s.inf((-0.6, 11.7), BLUE, True); s.inf((-2.6, 1.2), BLUE, True); s.flag((-3.2, 0.4), BLUE); s.inf((-1.0, -2.6), RED)
+    s.tank((9.8, 2.6), RED, 0.5); s.label('op_ra_18tc', (10.6, 2.2), 0.5714, 0.08); s.tank((10.4, 4.2), RED, 0.5); s.label('op_ra_29tc', (11.2, 4.6), 0.5714, 0.08)
+    s.tank((7.6, 12.4), RED, 0.5); s.tank((8.4, 11.4), RED, 0.5); s.label('op_ra_2gtc', (8.8, 13.0), 1.0, 0.1); s.inf((-0.6, 11.7), BLUE, True); s.inf((-2.6, 1.2), BLUE, True); s.flag((-3.2, 0.4), BLUE); s.inf((-1.0, -2.6), RED)
     s.inf((5.6, -1.6), RED); s.label('op_ra_52grd', (2.6, -2.6), 0.7143, 0.1); s.label('op_ra_95grd', (6.4, -2.2), 0.7143, 0.1); s.inf((3.0, -2.4), RED); s.label('op_ra_42grd', (6.4, 1.6), 0.7143, 0.1)
     s.label('op_ra_5gta', (12.0, 5.5), 1.429, 0.14, 0.05); s.label('op_ra_2tc', (9.5, 7.3), 1.0, 0.1)
 
@@ -322,12 +320,9 @@ def _sq(x, y):
 
 # (text key, main arm, battle groups by the FIRST form of their layout entry) - only the manoeuvre groups set the centre
 FORMATIONS = [
-    ('op_we_lah', 'mech', ['we_lah_1mir', 'we_lah_2mir', 'we_lah_rb']),
-    (None, 'tank', ['we_lah_tr', 'we_lah_stug']),                 # 11 Nov (user: no German tank icons): the panzer regiment and StuGs
-    ('op_we_dr', 'mech', ['we_dr_3mir', 'we_dr_4mir', 'we_dr_rb']),
-    (None, 'tank', ['we_dr_tr', 'we_dr_stug']),                 # 11 Nov (user: no German tank icons): the panzer regiment and StuGs
-    ('op_we_tk', 'mech', ['we_tk_5mir', 'we_tk_6mir']),
-    (None, 'tank', ['we_tk_tr', 'we_tk_stug']),                 # 11 Nov (user: no German tank icons): the panzer regiment and StuGs
+    ('op_we_lah', 'mech', ['we_lah_1mir', 'we_lah_2mir', 'we_lah_tr', 'we_lah_stug', 'we_lah_rb']),
+    ('op_we_dr', 'mech', ['we_dr_3mir', 'we_dr_4mir', 'we_dr_tr', 'we_dr_stug', 'we_dr_rb']),
+    ('op_we_tk', 'mech', ['we_tk_5mir', 'we_tk_6mir', 'we_tk_tr', 'we_tk_stug']),
     ('op_ra_183rd', 'inf', ['ra_285', 'ra_295', 'ra_227']),
     ('op_ra_52grd', 'inf', ['ra_151', 'ra_153', 'ra_155']),
     ('op_ra_95grd', 'inf', ['ra_284', 'ra_287', 'ra_290']),
@@ -470,13 +465,101 @@ def brief_13(s):
 brief_02 = brief_01
 brief_14 = brief_15 = brief_13
 
+# ------------------------------------------------------------------ M16 (Okuniew): sketches as data in the block's layout
+# layout 'sketches': {brief key: spec}, spec = {
+#   "front":   [[x, y], ...]  block metres (x east from the west edge, y north from the south edge), drawn so that the
+#              German side is on the RIGHT hand when walking along it (Okuniew: south to north, the Germans in the east)
+#   "fronts":  [[...], ...]   further line pieces (a pocket, a second sector), same rule
+#   "units":   [{"key": text key | null, "kind": "tank" | "mech" | "inf" | "mot" | "arty", "side": "GER" | "USSR",
+#                "xy": [x, y], "toward": [x, y] (the enemy / the direction of the attack; tank stem and the mech
+#                half-rhomb point face it), "label_dx": .., "label_dy": .. (metres, optional)}]
+#   "thrusts": [{"side": .., "pts": [[x, y], ...], "dash": false}]   movements / attacks (open arrowhead as on Soviet maps; dash = planned)
+#   unit "posture": "defend" (an arc in front of it) | "assembly" (an oval round it) | "" (moving / attacking); "frontage" squares
+#   "labels":  [{"key": .., "xy": [x, y], "size": 1.0}]               army / corps names, places
+# } - the label keys are the OOB formation keys (op_*), the op-map markers (op_tm_*) or the layout's briefing 'labels'.
+def _bm(p):
+    """block metres -> block op squares (x east, y south from the block's north edge); N() adds SQ_DX / SQ_DY, which turn block
+    squares into the map window's. 14 Nov: this returned window squares already, so every Warsaw sketch was shifted twice
+    (3 August: 6 km north, 31 July: 4 km west and 6 km north)"""
+    if not G.BLOCK:   # 22 Nov: Prokhorovka (tools/prokh_timetable.py) - block metres -> the old 7 x 5 frame's squares N() expects
+        return (p[0] / 1024.0 - G.SQ_DX, (G.ROWS * G.CELL - p[1]) / 1024.0 - G.SQ_DY)
+    return (p[0] / 1024.0, (int(G.BLOCK['rows']) * float(G.BLOCK['cell']) - p[1]) / 1024.0)
+
+def _inwin(c, m=0.6):
+    """a point (squares) inside the operation's map window, with a margin of m squares"""
+    x, y = N(*c); return -m / W_SQ <= x <= 1 + m / W_SQ and -m / H_SQ <= y <= 1 + m / H_SQ
+
+def _head(s, pts, col, dash):
+    """the open arrowhead of a Soviet map arrow: two strokes 0.25 squares at +-28 degrees from the end of the curve"""
+    sm = smooth(pts, 103) if len(pts) > 2 else pts
+    (x1, y1), (x0, y0) = sm[-1], sm[-4] if len(sm) > 4 else sm[0]
+    a = math.atan2(y1 - y0, x1 - x0)
+    for d in (math.radians(152), -math.radians(152)):
+        s.line([(x1 + 0.25 * math.cos(a + d), y1 + 0.25 * math.sin(a + d)), (x1, y1)], LIN[col])
+
+def _arc(s, c, ang, col, chord=2.0, dash=0.0):
+    """defence line of one unit: an open arc 0.6 squares in front of it (toward ang), convex toward the enemy, sagitta 0.14 x chord"""
+    fx, fy = math.cos(ang), math.sin(ang); px, py = -fy, fx; sag = 0.14 * chord
+    pts = [(c[0] + fx * (0.6 + sag * (1 - (2 * t - 1) ** 2)) + px * chord * (t - 0.5), c[1] + fy * (0.6 + sag * (1 - (2 * t - 1) ** 2)) + py * chord * (t - 0.5)) for t in [i / 20 for i in range(21)]]
+    s.line(pts, LIN[col], dash=dash, n=103)
+
+def _clamp(c, m):
+    """a point (block squares) pulled inside the operation's map window, m squares in from its edges"""
+    x0, x1 = -G.SQ_DX + m, W_SQ - G.SQ_DX - m; y0, y1 = -G.SQ_DY + m, H_SQ - G.SQ_DY - m
+    return (min(max(c[0], x0), x1), min(max(c[1], y0), y1))
+
+def from_spec(s, spec):
+    # 14 Nov (user): no front lines - 'front' / 'fronts' are kept in the data for the AI and the op map, not drawn
+    # 20 Nov (user: the sketches were "well outside of the playable map area" ... "just remake them so they are on map"):
+    # everything drawn is pulled onto the operation's map window - a unit standing off the map is drawn at the map edge
+    # nearest to it (its symbol, defence arc and label wholly inside), arrows are pulled inside point by point, labels too
+    for t in spec.get('thrusts', []):
+        col = BLUE if t.get('side') == 'GER' else RED
+        pts = [_clamp(_bm(p), 0.35) for p in t['pts']]
+        q = [pts[0]]
+        for p in pts[1:]:
+            if math.hypot(p[0] - q[-1][0], p[1] - q[-1][1]) > 0.05: q.append(p)
+        if len(q) < 2 or sum(math.hypot(b[0] - a[0], b[1] - a[1]) for a, b in zip(q, q[1:])) < 0.8: continue
+        dash = D if t.get('dash') else 0.0
+        s.curve(q, col, dash=dash); _head(s, q, col, dash)
+    for u in spec.get('units', []):
+        col = BLUE if u.get('side') == 'GER' else RED
+        c0 = _bm(u['xy']); tw = _bm(u.get('toward', u['xy']))
+        face = math.atan2(tw[1] - c0[1], tw[0] - c0[0])
+        k = u.get('kind', 'inf'); sc = u.get('scale', SC); post = u.get('posture', '')
+        ch_ = float(u.get('frontage', 2.0))
+        c = _clamp(c0, max(0.8, ch_ / 2 + 0.9) if post == 'defend' else 0.8)
+        # the traced glyphs carry the German stem (TANK + STEM) and the half-rhomb point (MECH) on their local -x side, so the
+        # glyph axis is turned half round from the facing: stem and point toward the enemy (user rule, Prokhorovka 0.2.0)
+        ang = face + math.pi
+        if k == 'tank': s.tank(c, col, ang, sc)
+        elif k in ('mech', 'mot'): s.mech(c, col, ang, sc)                       # motorised / mechanised: half-rhombs (vanilla MECH)
+        elif k == 'arty': s._glyph(INF, c, col, 0.0, CIRC[col], sc)              # artillery / anti-tank line: the vanilla circle with strokes
+        elif post != 'defend': s.ellipse(c, col, 0.6, 0.34, face + math.pi / 2)  # rifle formation: no pictogram, its area outline (Soviet practice)
+        if post == 'defend': _arc(s, c, face, col, ch_)
+        elif post == 'assembly' and k != 'inf': s.ellipse(c, col, 0.95, 0.55, face + math.pi / 2)
+        if u.get('key'):
+            lp = _clamp((c[0] + u.get('label_dx', 0.0) / 1024.0, c[1] - u.get('label_dy', -420.0) / 1024.0), 0.6)
+            s.label(u['key'], lp, 0.7143, LBL_W, LBL_H)
+    for l in spec.get('labels', []):
+        sz = float(l.get('size', 1.0))
+        s.label(l['key'], _clamp(_bm(l['xy']), 0.6 * sz), 0.7143 * sz, LBL_W * sz, LBL_H * sz)
+
+EXTRA_SKETCHES = {}   # 20 Nov: brief key -> spec made from the operation's timetable (tools/op_timetable.py), for turns without a drawn sketch
+
+def _block_sketch(key):
+    """the sketch of brief `key` from the block layout (G.BLOCK['layout']); None when the layout has none"""
+    if key in EXTRA_SKETCHES: return lambda s, spec=EXTRA_SKETCHES[key]: from_spec(s, spec)
+    if not G.BLOCK: return None
+    L = json.load(open(os.environ.get('MFO_LAYOUT') or G.repo_path(G.BLOCK['layout']), encoding='utf-8'))   # the operation's layout
+    sk = L.get('sketches', {})
+    k = key
+    while k in sk and isinstance(sk[k], str): k = sk[k]   # "brief_02": "brief_01" reuses a drawing
+    if k not in sk: return None
+    return lambda s, spec=sk[k]: from_spec(s, spec)
+
 SKETCHES = dict(brief_01=brief_01, brief_02=brief_02, brief_03=brief_03, brief_04=brief_04, brief_07=brief_07, brief_10=brief_10,
                 brief_13=brief_13, brief_14=brief_14, brief_15=brief_15, brief_19=brief_19)
-# 11 Nov: every turn has a briefing (tools/prokh_briefs.py); a turn without its own drawing shows the last one drawn
-# before it (the night turns keep the evening picture), never 10 July's
-for _t in range(1, 25):
-    _k = 'brief_%02d' % _t
-    if _k not in SKETCHES: SKETCHES[_k] = SKETCHES['brief_%02d' % max(int(k[6:]) for k in SKETCHES if int(k[6:]) < _t)]
 
 
 def write_scripts(out_path, brief_keys, turns=24, turn_offset=0):
@@ -485,7 +568,7 @@ def write_scripts(out_path, brief_keys, turns=24, turn_offset=0):
     keys = [k for k in dict.fromkeys(brief_keys) if k]
     funcs = {}   # name -> instruction list
     for k in keys:
-        s = Sketch(); SKETCHES.get(k, brief_01)(s); funcs['draw_' + k] = s.end()
+        s = Sketch(); (_block_sketch(k) or SKETCHES.get(k, brief_01))(s); funcs['draw_' + k] = s.end()
     funcs['settings'] = [(azsc.OP['font'], [(2, 'handw')]),
                          (azsc.OP['line_scale'], [(0, W_SQ * 1024.0), (0, H_SQ * 1024.0), (0, 1.0), (0, -(W_SQ * 512.0 + 1024)), (0, -(H_SQ * 512.0 + 1024))]),
                          (azsc.OP['text_scale'], [(0, W_SQ * 1024.0), (0, H_SQ * 1024.0), (0, 0.4), (0, -(W_SQ * 512.0 + 1024)), (0, -(H_SQ * 512.0 + 1024))]),
@@ -494,10 +577,12 @@ def write_scripts(out_path, brief_keys, turns=24, turn_offset=0):
     funcs['at_start'] = [(azsc.OP['log'], [(2, 'at_start()')]), (azsc.OP['dump'], []), (azsc.OP['break'], [])]
     funcs['at_end'] = [(azsc.OP['log'], [(2, 'at_end()')]), (azsc.OP['dump'], []), (azsc.OP['break'], [])]
     funcs['turn_any'] = [(azsc.OP['log'], [(2, 'turn_any()')]), (azsc.OP['break'], [])]
-    import ai_orders
+    import importlib
+    ai_orders = importlib.import_module(G.BLOCK['ai_orders']) if (G.BLOCK and G.BLOCK.get('ai_orders')) else importlib.import_module('ai_orders')   # M16: the block's own AI orders (tools/okun_ai.py)
     for t in range(1, turns + 1):   # the AI orders of the turn (tools/ai_orders.py): order(kind, ai_id, x, y)
         funcs['turn_%02d' % t] = [(azsc.OP['log'], [(2, 'turn_%02d()' % t)])] + \
-            [(azsc.OP['order'], [(2, k), (2, i), (3, x + G.SQ_DX), (3, y + G.SQ_DY)]) for k, i, x, y in ai_orders.ORDERS.get(t + turn_offset, [])] + [(azsc.OP['break'], [])]
+            [(azsc.OP['order'], [(2, k), (2, i), (3, x + G.SQ_DX), (3, y + G.SQ_DY)]) for k, i, x, y in ai_orders.ORDERS.get(t + turn_offset, [])
+             if 0 <= x + G.SQ_DX < W_SQ and 0 <= y + G.SQ_DY < H_SQ]   # orders to squares outside the map window are dropped + [(azsc.OP['break'], [])]
     names = sorted(funcs)
     # lay out: draw functions first, then settings, then the stubs (any order works; indices are resolved below)
     order = ['draw_' + k for k in keys] + ['settings'] + keys + ['at_start', 'at_end', 'turn_any'] + ['turn_%02d' % t for t in range(1, turns + 1)]

@@ -91,7 +91,11 @@ def write_objects(path, recs):
         for k, (_, node, x, y, rot, *rest) in enumerate(rs):
             if k: out.append(b'\0\0\0\0')
             s = b'' if node == prev else node.encode('latin1'); prev = node
-            out.append(struct.pack('<I', len(s)) + s + struct.pack('<3f2I', x, y, rot, 0, 0))
+            # 14 Nov (audit): the 4th value is a float - the absolute ground height for the abs_hei models (builds_cap: the stone
+            # houses, the church, the long barns), a fixed offset for others (izba1 +0.15, barn1 / windmill1 / well0 -0.2, bridge0
+            # -0.3); it was always written 0, which put every abs_hei building about 100 m under the ground
+            z = float(rest[0]) if rest else 0.0
+            out.append(struct.pack('<I', len(s)) + s + struct.pack('<4fI', x, y, rot, z, 0))
     open(path, 'wb').write(b''.join(out))
 
 # ---------------------------------------------------------------- trench_pos / op_pos (written empty for now)
@@ -167,11 +171,14 @@ COL_TRACK = 0xff1d0a04
 # ---------------------------------------------------------------- water (MxD1): water_levels = 512x512 u8 index (4 m) into
 # water_pal = 16 B header (u32 64, 4, 5, 512) + 64 f32 surface heights (entry 0 = descriptor water_h) padded to 516 B;
 # water_map = ATF1 DXT5 512x512, RGB ~(228,238,231) alpha ~21 where water, alpha 0 elsewhere.
-def write_water(dir_path, levels_idx, pal_levels, water_h=23.0, wm1=None):
+def write_water(dir_path, levels_idx, pal_levels, water_h=23.0, wm1=None, recs=None):
     import os, atf1
     # vanilla river cell (Korotich KgD3): water_pal header 64;4;2;512, level bytes = 0x40 | palette index, and the
     # water_map carries the water itself: dark green with alpha ~250 where water is rendered, alpha 0 elsewhere
-    pal = np.full(64, 10.0, '<f4'); pal[1:1 + len(pal_levels)] = pal_levels[:63]   # unused entries 10.0 as in the vanilla cell
+    # 14 Nov: with a patch list handed in (tools/waterpools.py: runs of wet 8 m tiles, so the plane of a level is never drawn over
+    # ground that belongs to another level) entry 0 and the unused entries are the polygon's water_h, as in every vanilla cell
+    recs_in = recs
+    pal = np.full(64, 10.0 if recs_in is None else water_h, '<f4'); pal[1:1 + len(pal_levels)] = pal_levels[:63]   # unused entries 10.0 as in the vanilla cell
     # after the palette: the water patches the renderer draws - u32 count, then (x0, y0, x1, y1, level index) in METRES
     # (Korotich KgD3: records x 830-999 / y 742-1003 cover exactly the water_levels zone at 512-grid px 208-249 / 185-250,
     # i.e. px * 4); the vanilla cell splits each level's bounding box into chunks of <= ~90 m. Without this table the
@@ -187,6 +194,7 @@ def write_water(dir_path, levels_idx, pal_levels, water_h=23.0, wm1=None):
             for j in range(ny):
                 cx0 = x0 + (x1 - x0) * i // nx; cx1 = x0 + (x1 - x0) * (i + 1) // nx; cy0 = y0 + (y1 - y0) * j // ny; cy1 = y0 + (y1 - y0) * (j + 1) // ny
                 if m[cy0 // 4:max(cy0 // 4 + 1, -(-cy1 // 4)), cx0 // 4:max(cx0 // 4 + 1, -(-cx1 // 4))].any(): recs.append((cx0, cy0, min(cx1, 2048), min(cy1, 2048), k))
+    if recs_in is not None: recs = [tuple(int(v) for v in r) for r in recs_in]
     body = struct.pack('<4I', 64, 4, min(63, len(pal_levels)) + 1, 512) + pal.tobytes() + struct.pack('<I', len(recs)) + b''.join(struct.pack('<5I', *r) for r in recs)
     open(os.path.join(dir_path, 'water_pal.cell.loc_def.bin'), 'wb').write(body)
     lv = levels_idx.astype(np.uint8); lv = np.where(lv > 0, lv | 0x40, 0).astype(np.uint8)
